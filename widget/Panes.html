@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+<title>SplitPane Widget Demo</title>
+
+<script type="text/javascript">
+
+	var djConfig = {isDebug: true };
+
+</script>
+<script type="text/javascript" src="../../dojo.js"></script>
+<script language="JavaScript" type="text/javascript">
+
+	dojo.require("dojo.widget.HtmlFloatingPane");
+	dojo.require("dojo.widget.HtmlLayoutPane");
+	dojo.require("dojo.widget.HtmlSplitPane");
+	dojo.hostenv.writeIncludes();
+</script>
+</head>
+<body>
+
+<div dojoType="FloatingPane"
+	title="Inlook Express"
+	constrainToContainer="1"
+	style="width: 500px; height: 300px; left: 100px; top: 100px;"
+>
+
+<div dojoType="SplitPane"
+	orientation="horizontal"
+	sizerWidth="5"
+	activeSizing="1"
+	layoutAlign="client"
+	style="border: 2px solid black;"
+>
+	<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
+
+		tree view here
+
+	</div>
+
+	<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3">
+
+		<div dojoType="SplitPane"
+			orientation="vertical"
+			sizerWidth="5"
+			activeSizing="1"
+			layoutAlign="client"
+			style="border: 2px solid black;"
+		>
+
+			<div dojoType="SplitPanePanel" sizeMin="30" sizeShare="30">
+
+				message list here
+
+			</div>
+
+			<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="70">
+
+				<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
+					message headers<br />go here
+				</div>
+
+				<div dojoType="LayoutPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
+					main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
+				</div>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+</body>
+</html>
