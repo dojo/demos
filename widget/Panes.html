@@ -16,6 +16,7 @@
 	dojo.require("dojo.widget.HtmlLayoutPane");
 	dojo.require("dojo.widget.HtmlSplitPane");
 	dojo.require("dojo.widget.HtmlResizeHandle");
+	dojo.require("dojo.widget.Tree2");
 
 </script>
 <style>
@@ -67,18 +68,30 @@ div.statusPanel {
 	>
 		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
 
-			tree view here
+			<div dojoType="Tree2" toggle="fade">
+				<div dojoType="Tree2Node" title="Mail Account">
+					<div dojoType="Tree2Node" title="Inbox"></div>
+					<div dojoType="Tree2Node" title="Sent Mail"></div>
+					<div dojoType="Tree2Node" title="Deleted"></div>
+					<div dojoType="Tree2Node" title="Saved Mail">
+						<div dojoType="Tree2Node" title="Friends">
+							<div dojoType="Tree2Node" title="Bob"></div>
+							<div dojoType="Tree2Node" title="Jack"></div>
+						</div>
+						<div dojoType="Tree2Node" title="Work"></div>
+					</div>
+				</div>
+			</div>
 
 		</div>
 
-		<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3">
+		<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3" style="padding: 0">
 
 			<div dojoType="SplitPane"
 				orientation="vertical"
 				sizerWidth="5"
 				activeSizing="1"
 				layoutAlign="client"
-				style="border: 2px solid black;"
 				debugName="split pane 2"
 			>
 
@@ -88,7 +101,10 @@ div.statusPanel {
 
 				</div>
 
-				<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="70">
+				<div dojoType="SplitPanePanel" 
+					sizeMin="60" sizeShare="70"
+					style="margin: 0; padding: 0;"
+				>
 
 					<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
 						message headers<br />go here
