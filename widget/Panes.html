@@ -35,7 +35,16 @@ div.statusPanel {
 }
 
 .dojoFloatingPaneClient {
+	margin: 0 !important;
 	padding: 0 !important;
+	border: 0 !important;
+}
+
+.mainClient {
+	border: 1px solid;
+	border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
+	margin: 2px 2px 0px 2px;
+	background-color: ThreeDFace;
 }
 
 </style>
@@ -54,6 +63,7 @@ div.statusPanel {
 		activeSizing="1"
 		layoutAlign="client"
 		debugName="split pane 1"
+		class="mainClient"
 	>
 		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
 
