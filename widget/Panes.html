@@ -15,62 +15,99 @@
 	dojo.require("dojo.widget.HtmlFloatingPane");
 	dojo.require("dojo.widget.HtmlLayoutPane");
 	dojo.require("dojo.widget.HtmlSplitPane");
+	dojo.require("dojo.widget.HtmlResizeHandle");
 
 </script>
+<style>
+
+div.statusBar {
+	background-color: ThreeDFace;
+	height: 28px;
+	padding: 1px;
+}
+
+div.statusPanel {
+	background-color: ThreeDFace;
+	border: 1px solid;
+	border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
+	margin: 1px;
+	padding: 2px 6px;
+}
+
+.dojoFloatingPaneClient {
+	padding: 0 !important;
+}
+
+</style>
 </head>
 <body>
 
 <div dojoType="FloatingPane"
+	widgetId="testWindow"
 	title="Inlook Express"
 	constrainToContainer="1"
 	style="width: 500px; height: 300px; left: 100px; top: 100px;"
 >
+	<div dojoType="SplitPane"
+		orientation="horizontal"
+		sizerWidth="5"
+		activeSizing="1"
+		layoutAlign="client"
+		debugName="split pane 1"
+	>
+		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
 
-<div dojoType="SplitPane"
-	orientation="horizontal"
-	sizerWidth="5"
-	activeSizing="1"
-	layoutAlign="client"
-	style="border: 2px solid black;"
-	debugName="split pane 1"
->
-	<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
+			tree view here
 
-		tree view here
+		</div>
 
-	</div>
+		<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3">
 
-	<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3">
+			<div dojoType="SplitPane"
+				orientation="vertical"
+				sizerWidth="5"
+				activeSizing="1"
+				layoutAlign="client"
+				style="border: 2px solid black;"
+				debugName="split pane 2"
+			>
 
-		<div dojoType="SplitPane"
-			orientation="vertical"
-			sizerWidth="5"
-			activeSizing="1"
-			layoutAlign="client"
-			style="border: 2px solid black;"
-			debugName="split pane 2"
-		>
+				<div dojoType="SplitPanePanel" sizeMin="30" sizeShare="30">
 
-			<div dojoType="SplitPanePanel" sizeMin="30" sizeShare="30">
+					message list here
 
-				message list here
-
-			</div>
-
-			<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="70">
-
-				<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
-					message headers<br />go here
 				</div>
 
-				<div dojoType="LayoutPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
-					main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
-				</div>
+				<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="70">
 
+					<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
+						message headers<br />go here
+					</div>
+
+					<div dojoType="LayoutPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
+						main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
+					</div>
+
+				</div>
 			</div>
 		</div>
+
 	</div>
-</div>
+
+	<div dojoType="LayoutPane" layoutAlign="bottom" class="statusBar">
+
+		<div dojoType="LayoutPane" layoutAlign="left" class="statusPanel">
+			panel 1
+		</div>
+		<div dojoType="LayoutPane" layoutAlign="left" class="statusPanel">
+			panel 2
+		</div>
+		<div dojoType="LayoutPane" layoutAlign="client" class="statusPanel" style="padding-right: 0px; z-index: 1;">
+			panel 3
+		</div>
+		<div dojoType="ResizeHandle" targetElmId="testWindow"></div>
+	</div>
+
 
 </div>
 
