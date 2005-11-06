@@ -41,6 +41,10 @@ div.statusPanel {
 	border: 0 !important;
 }
 
+.dojoTree2 {
+	margin: 4px !important;
+}
+
 .mainClient {
 	border: 1px solid;
 	border-color: ThreeDShadow ThreeDHighlight ThreeDHighlight ThreeDShadow;
@@ -67,9 +71,9 @@ div.statusPanel {
 		class="mainClient"
 		minHeight="100"
 	>
-		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1">
+		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1" style="padding: 0;">
 
-			<div dojoType="Tree2" toggle="fade">
+			<div dojoType="Tree2" toggle="fade" layoutAlign="client">
 				<div dojoType="Tree2Node" title="Mail Account">
 					<div dojoType="Tree2Node" title="Inbox"></div>
 					<div dojoType="Tree2Node" title="Sent Mail"></div>
