@@ -16,7 +16,7 @@
 	dojo.require("dojo.widget.HtmlLayoutPane");
 	dojo.require("dojo.widget.HtmlSplitPane");
 	dojo.require("dojo.widget.HtmlResizeHandle");
-	dojo.require("dojo.widget.Tree2");
+	dojo.require("dojo.widget.Tree");
 
 </script>
 <style>
@@ -41,7 +41,7 @@ div.statusPanel {
 	border: 0 !important;
 }
 
-.dojoTree2 {
+.dojoTree {
 	margin: 4px !important;
 }
 
@@ -73,17 +73,17 @@ div.statusPanel {
 	>
 		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1" style="padding: 0;">
 
-			<div dojoType="Tree2" toggle="fade" layoutAlign="client">
-				<div dojoType="Tree2Node" title="Mail Account">
-					<div dojoType="Tree2Node" title="Inbox"></div>
-					<div dojoType="Tree2Node" title="Sent Mail"></div>
-					<div dojoType="Tree2Node" title="Deleted"></div>
-					<div dojoType="Tree2Node" title="Saved Mail">
-						<div dojoType="Tree2Node" title="Friends">
-							<div dojoType="Tree2Node" title="Bob"></div>
-							<div dojoType="Tree2Node" title="Jack"></div>
+			<div dojoType="Tree" toggle="fade" layoutAlign="client">
+				<div dojoType="TreeNode" title="Mail Account">
+					<div dojoType="TreeNode" title="Inbox"></div>
+					<div dojoType="TreeNode" title="Sent Mail"></div>
+					<div dojoType="TreeNode" title="Deleted"></div>
+					<div dojoType="TreeNode" title="Saved Mail">
+						<div dojoType="TreeNode" title="Friends">
+							<div dojoType="TreeNode" title="Bob"></div>
+							<div dojoType="TreeNode" title="Jack"></div>
 						</div>
-						<div dojoType="Tree2Node" title="Work"></div>
+						<div dojoType="TreeNode" title="Work"></div>
 					</div>
 				</div>
 			</div>
