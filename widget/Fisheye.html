@@ -5,35 +5,21 @@
 <title>FisheyeList Widget Demo</title>
 
 <script type="text/javascript">
-
-	var djConfig = {isDebug: true};
-
+	var djConfig = {isDebug: true, debugAtAllCosts: true};
 </script>
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
-
 	dojo.require("dojo.widget.HtmlFisheyeList");
+	dojo.hostenv.writeIncludes();
+</script>
 
+<script>
 	function load_app(id){
 		alert('Icon '+id+' was clicked');
 	}
-
-
 </script>
+
 <style>
-
-.dojoHtmlFisheyeListItemLabel {
-	font-family: Arial, Helvetica, sans-serif;
-	background-color: #eee;
-	border: 2px solid #666;
-	padding: 2px;
-}
-
-.dojoHtmlFisheyeListItemImage {
-}
-
-.dojoHtmlFisheyeListItemLink {
-}
 
 .dojoHtmlFisheyeListBar {
 	margin: 0 auto;
@@ -59,7 +45,6 @@ body {
 	padding: 60px 20px 20px 20px;
 }
 
-
 </style>
 </head>
 <body>
@@ -74,37 +59,31 @@ body {
 	itemPadding="10"
 	attachEdge="top"
 	labelEdge="bottom"
-	enableCrappySvgSupport="0"
+	enableCrappySvgSupport="false"
 >
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(1);" svgSrc="images/icon_browser.svg">
-		<a href="#1"><img src="images/icon_browser.png" /></a>
-		<label>Web Browser</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(1);" 
+		iconsrc="images/icon_browser.png" caption="Web Browser">
 	</div>
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(2);" svgSrc="images/icon_calendar.svg">
-		<a href="#2"><img src="images/icon_calendar.png" /></a>
-		<label>Calendar</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(2);"
+		iconsrc="images/icon_calendar.png" caption="Calendar">
 	</div>
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(3);" svgSrc="images/icon_email.svg">
-		<a href="#3"><img src="images/icon_email.png" /></a>
-		<label>Email</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(3);"
+		iconsrc="images/icon_email.png" caption="Email">
 	</div>
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(4);" svgSrc="images/icon_texteditor.svg">
-		<a href="#4"><img src="images/icon_texteditor.png" /></a>
-		<label>Text Editor</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(4);"
+		iconsrc="images/icon_texteditor.png" caption="Text Editor">
 	</div>
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(5);" svgSrc="images/icon_update.svg">
-		<a href="#5"><img src="images/icon_update.png" /></a>
-		<label>Software Update</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(5);"
+		iconsrc="images/icon_update.png" caption="Software Update">
 	</div>
 
-	<div dojoType="FisheyeListItem" onclickicon="load_app(6);" svgSrc="images/icon_users.svg">
-		<a href="#6"><img src="images/icon_users.png" /></a>
-		<label>Users</label>
+	<div dojoType="FisheyeListItem" onclickicon="load_app(6);"
+		iconsrc="images/icon_users.png" caption="Users" >
 	</div>
 </div>
 
