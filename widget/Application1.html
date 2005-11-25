@@ -32,17 +32,7 @@
     }
 
 	.dojoHtmlFisheyeListItemLabel {
-		font-family: Arial, Helvetica, sans-serif;
-		background-color: #eee;
-		border: 2px solid #666;
-		padding: 2px;
 		color: black;
-	}
-
-	.dojoHtmlFisheyeListItemImage {
-	}
-	
-	.dojoHtmlFisheyeListItemLink {
 	}
 	
 	.dojoHtmlFisheyeListBar {
@@ -59,52 +49,6 @@
 	
 	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" style="background-color: #274383; color: white; font: bold;">
 		<u>F</u>ile <u>Edit</u> <u>V</u>iew <u>H</u>elp
-	</div>
-
-	<div id="bottomMenu" dojoType="LayoutPane" layoutAlign="bottom" style="background-color: #274383; color: white; text-align: center;" align="center">
-	  <div align="center">
-		<div dojoType="FisheyeList"
-			itemWidth="40" itemHeight="40"
-			itemMaxWidth="150" itemMaxHeight="150"
-			orientation="horizontal"
-			effectUnits="2"
-			itemPadding="10"
-			attachEdge="bottom"
-			labelEdge="top"
-		>
-			<div dojoType="FisheyeListItem"
-				onclickicon="alert('click on 1!');"
-			>
-				<a href="1.htm"><img src="images/icon_browser.png" /></a>
-				<label>Top</label>
-			</div>
-		
-			<div dojoType="FisheyeListItem">
-				<img src="images/icon_calendar.png" />
-				<label>Schedule</label>
-			</div>
-		
-			<div dojoType="FisheyeListItem">
-				<img src="images/icon_email.png" />
-				<label>E-mail</label>
-			</div>
-		
-			<div dojoType="FisheyeListItem">
-				<img src="images/icon_texteditor.png" />
-				<label>Editor</label>
-			</div>
-		
-			<div dojoType="FisheyeListItem">
-				<img src="images/icon_update.png" />
-				<label>Update</label>
-			</div>
-		
-			<div dojoType="FisheyeListItem">
-				<img src="images/icon_users.png" />
-				<label>Users</label>
-			</div>
-		</div>
-	  </div>
 	</div>
 
 	<div dojoType="LayoutPane" layoutAlign="client">
@@ -141,29 +85,17 @@
 					style="width: 100%; height: 100%;"
 				>
 					<div id="contents" dojoType="SplitPanePanel" sizeMin="20" sizeShare="50">
-						<ul class="tabs" dojoType="tabs">
-							<li><a href="#tab1">Friends</a></li>
-							<li><a href="#tab2">Enemies</a></li>
-							<li><a href="#tab3">World Leaders</a></li>
+						<ul dojoType="tabs">
+							<li dojotype="tab" label="Pending">
+								<ol><li>taxes</li><li>expense report</li></ol>
+							</li>
+							<li dojotype="tab" label="Waiting">
+								<ol><li>research results</li></ol>
+							</li>
+							<li dojotype="tab" label="Done">
+								<ol><li>documentation</li><li>unit tests</li></ol>
+							</li>
 						</ul>
-					
-						<div id="tab3">
-							George Bush<br>
-							Tony Blair<br>
-							Bill Gates
-						</div>
-						<div id="tab2">
-							Cauliflower<br>
-							Brussel Sprouts<br>
-							Broccili
-						</div>
-						<div id="tab1">
-							Chocolate<br>
-							Candy<br>
-							Ice Cream
-						</div>
-					
-
 					</div>
 					<div dojoType="SplitPanePanel" sizeMin="20" sizeShare="50">
 						<div class="page dojo-Editor" style="background: white; border: solid blue;"
@@ -191,6 +123,50 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- bottom pane.  set overflow:visible so that the fisheye menu icons don't get cut off when
+		they expand -->
+	<div id="bottomMenu" dojoType="LayoutPane" layoutAlign="bottom"
+		style="background-color: #274383; color: white; overflow: visible; text-align: center;" align="center">
+		<div align="center">
+			<div dojoType="FisheyeList"
+				itemWidth="50" itemHeight="50"
+				itemMaxWidth="200" itemMaxHeight="200"
+				orientation="horizontal"
+				effectUnits="2"
+				itemPadding="10"
+				attachEdge="bottom"
+				labelEdge="top"
+				enableCrappySvgSupport="false"
+			>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(1);" 
+					iconsrc="images/icon_browser.png" caption="Web Browser">
+				</div>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(2);"
+					iconsrc="images/icon_calendar.png" caption="Calendar">
+				</div>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(3);"
+					iconsrc="images/icon_email.png" caption="Email">
+				</div>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(4);"
+					iconsrc="images/icon_texteditor.png" caption="Text Editor">
+				</div>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(5);"
+					iconsrc="images/icon_update.png" caption="Software Update">
+				</div>
+			
+				<div dojoType="FisheyeListItem" onClick="load_app(6);"
+					iconsrc="images/icon_users.png" caption="Users" >
+				</div>
+			</div>
+		</div>
+	</div>
+
 </div>
 </body>
 </html>
