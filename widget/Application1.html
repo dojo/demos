@@ -84,17 +84,17 @@
 				style="width: 100%; height: 100%;"
 			>
 				<div id="contents" dojoType="SplitPanePanel" sizeMin="20" sizeShare="50">
-					<ul dojoType="tabset" layoutAlign="flood">
-						<li dojotype="tab" label="Pending">
+					<div dojoType="tabset" layoutAlign="flood">
+						<div dojotype="tab" label="Pending">
 							<ol><li>taxes</li><li>expense report</li></ol>
-						</li>
-						<li dojotype="tab" label="Waiting">
+						</div>
+						<div dojotype="tab" label="Waiting">
 							<ol><li>research results</li></ol>
-						</li>
-						<li dojotype="tab" label="Done">
+						</div>
+						<div dojotype="tab" label="Done">
 							<ol><li>documentation</li><li>unit tests</li></ol>
-						</li>
-					</ul>
+						</div>
+					</div>
 				</div>
 				<div dojoType="SplitPanePanel" sizeMin="20" sizeShare="50">
 					<div class="page dojo-Editor" style="background: white; border: solid blue;"
@@ -136,6 +136,7 @@
 				attachEdge="bottom"
 				labelEdge="top"
 				enableCrappySvgSupport="false"
+				conservativeTrigger="true"
 			>
 			
 				<div dojoType="FisheyeListItem" onClick="load_app(1);" 
