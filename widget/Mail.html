@@ -1,0 +1,232 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Mail</title>
+
+<script type="text/javascript">
+
+	var djConfig = {isDebug: true};
+
+	//djConfig.debugAtAllCosts = true;
+
+</script>
+<script type="text/javascript" src="../../dojo.js"></script>
+<script language="JavaScript" type="text/javascript">
+	dojo.require("dojo.widget.LayoutPane");
+	dojo.require("dojo.widget.FloatingPane");
+	dojo.require("dojo.widget.ColorPalette");
+	dojo.require("dojo.widget.SplitPane");
+	dojo.require("dojo.widget.ColorPalette");
+	dojo.require("dojo.widget.FisheyeList");
+	dojo.require("dojo.widget.Editor");	
+	dojo.require("dojo.widget.DatePicker");	
+	dojo.require("dojo.widget.Tree");
+	dojo.require("dojo.widget.TabSet");
+	dojo.require("dojo.widget.Button2");
+	//dojo.require("dojo.widget.Checkbox");
+	dojo.require("dojo.widget.ResizeHandle");
+	dojo.require("dojo.widget.ComboBox");
+	dojo.hostenv.writeIncludes();
+</script>
+  <style>
+    html, body{	
+		width: 100%;	/* make the body expand to fill the visible window */
+		height: 100%;
+		overflow: hidden;	/* erase window level scrollbars */
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+    }
+
+
+	/* list of messages */
+	tr:hover, td:hover {
+		background: gray;
+		cursor: pointer;
+	}
+	tr, td { cursor: pointer; }
+
+	#topMenu {
+		background: #660000;
+		color: white;
+		font: bold;
+	}
+
+	tr.header {
+		background-color: #274383; color: white; font: bold;
+	}
+	
+	body .dojoFloatingPaneDragbar {
+		background-color: #274383; 
+	}
+	.subject {
+		background: gray;
+		width: 100%;
+		padding-top: 5px;
+		padding-bottom: 10px;
+	}
+
+	.message {
+		border: black 2px;
+	}
+	
+	#treePane, #listPane, #contentPane {
+		background: beige;
+		overflow: auto;
+	}
+	/* group multiple buttons in a row */
+	.box {
+		display: block;
+		float: right;
+	}
+	.box .dojoButton {
+		float: left;
+		margin-right: 10px;
+	}
+	.dojoButton .dojoButtonContents {
+	}
+   </style>
+<script>
+	function onLoad(){
+		var options = dojo.widget.getWidgetById("options");
+		options.hide();
+		var editor = dojo.widget.getWidgetById("editor");
+		editor.hide();
+	}
+	dojo.addOnLoad(onLoad);
+
+	function displayList(){
+	    this.update = function(message) {
+	        var clickedTreeNode =     
+	            dojo.widget.getWidgetById(message);
+
+			var listPane = dojo.widget.getWidgetById("listPane");
+			var url = "Mail/"+clickedTreeNode.title.replace(" ","") + ".html";
+			
+			listPane.setUrl(url);
+	    };
+	}
+	var displayer = new displayList();
+	var nodeSelectionTopic = dojo.event.topic.getTopic("listSelected");
+	nodeSelectionTopic.subscribe(displayer, "update");
+
+	function displayMessage(name){
+			var contentPane = dojo.widget.getWidgetById("contentPane");
+			var url = "Mail/"+name.replace(" ","") + ".html";
+			contentPane.setUrl(url);
+	}
+</script>
+</head>
+<body>
+<div dojoType="LayoutPane"
+	layoutChildPriority='top-bottom'
+	style="border: 2px solid black; width: 100%; height: 100%;">
+	
+	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" class="header">
+		<div style="float: left;">
+			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('editor').show()">New Message</button>
+		</div>
+		<div style="float: right;">
+			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').show()">Options</button>
+		</div>
+		<div align=center>My mailbox</div>
+		
+	</div>
+
+	<div dojoType="SplitPane"
+		orientation="horizontal"
+		sizerWidth="5"
+		activeSizing="0"
+		layoutAlign="client"
+	>
+		<div id="treePane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="20">
+			<div dojoType="Tree" toggle="fade" layoutAlign="flood" publishSelectionTopic="listSelected">
+				<div dojoType="TreeNode" title="Mail Account">
+					<div dojoType="TreeNode" title="Inbox"></div>
+					<div dojoType="TreeNode" title="Sent Mail"></div>
+					<div dojoType="TreeNode" title="Deleted"></div>
+					<div dojoType="TreeNode" title="Saved Mail">
+						<div dojoType="TreeNode" title="Friends">
+							<div dojoType="TreeNode" title="Bob"></div>
+							<div dojoType="TreeNode" title="Jack"></div>
+						</div>
+						<div dojoType="TreeNode" title="Work"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div dojoType="SplitPanePanel" sizeMin="50" sizeShare="100">
+			<div dojoType="SplitPane"
+				orientation="vertical"
+				sizerWidth="5"
+				activeSizing="0"
+				style="width: 100%; height: 100%;"
+			>
+				<div id="listPane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="30">
+				</div>
+				<div id="contentPaneWrapper" dojoType="SplitPanePanel" sizeMin="20" sizeShare="70"
+						style="padding: 0px;">
+					<div id="contentPane" dojoType="LayoutPane" layoutAlign="flood" url="Mail/MailAccount.html"></div>
+				</div>
+			</div>
+		</div>
+</div>
+
+<div id="options" dojoType="FloatingPane" title="Options"
+	style="width: 300px; height: 200px; left: 300px; top: 300px;"  hasShadow="true" resizable="false" fancyTitleBar="false">
+  <div dojoType="TabSet" layoutAlign="client">
+  	<div dojoType="Tab" label="Sending/Receiving">
+  		Transport type
+  		<select>
+  			<option>POP3</option>
+  			<option>IMAP</option>
+  		</select>
+  		<br>
+  		Server: <input type="text"></input>
+  	</div>
+  	<div dojoType="Tab" label="Composition">
+		<input type="checkbox" name="cb1" id="cb1" dojoType="Checkbox" /> <label for="cb1">hello world</label><br />
+		<input type="checkbox" name="cb2" id="cb2" dojoType="Checkbox" /> <label for="cb2">foo bar baz</label><br />
+		<input type="checkbox" name="cb3" id="cb3" dojoType="Checkbox" /> <label for="cb3">woo yay hoopla</label><br /> 	
+  	</div>
+  </div>
+  <div dojoType="LayoutPane" layoutAlign="bottom" style="height: 25px; padding-top: 5px;">
+  	<div class="box">
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">Cancel</button>
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">OK</button>
+		<div style="clear: both;"></div>
+	</div>
+  </div>
+</div>
+
+<div id="editor" dojoType="FloatingPane" title="New Message"
+	style="width: 600px; height: 400px;  left: 100px; top: 100px;" hasShadow="true" resizable="true" fancyTitleBar="false">
+	<div dojoType="LayoutPane" layoutAlign="top" style="border: solid ##274383; z-index: 2; overflow: visible; padding-bottom: 15px;">
+		<div align=center>
+			<div style="float: left; padding-right: 20px;">To:</div>
+			<select dojoType="combobox" style="width: 100px;">
+				<option>adam@yahoo.com</option>
+				<option>barry@yahoo.com</option>
+				<option>bob@yahoo.com</option>
+				<option>cal@yahoo.com</option>
+				<option>chris@yahoo.com</option>
+				<option>courtney@yahoo.com</option>
+			</select>
+		</div>
+	</div>
+	<div dojoType="LayoutPane" layoutAlign="client" style="border: solid ##274383">
+		<div id="editable" dojoType="Editor" widgetId="editdiv" items="formatblock;|;insertunorderedlist;insertorderedlist;|;bold;italic;underline;strikethrough;|;createLink;">
+			Type the address above (try an address starting with a,b,c,d, to test autocompletion,
+			and then type your message here...
+			<br><br><br><br><br><br><br><br><br><br>
+		</div>
+	</div>
+  <div dojoType="LayoutPane" layoutAlign="bottom" style="height: 25px; padding-top: 5px;">
+  	<div class="box">
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('editor').hide();">Cancel</button>
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('editor').hide();">Send</button>
+		<div style="clear: both;"></div>
+	</div>
+  </div>
+</body>
+</html>
