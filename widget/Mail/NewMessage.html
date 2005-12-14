@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>New Message</title>
+
+<script type="text/javascript">
+
+	var djConfig = {isDebug: true};
+
+	//djConfig.debugAtAllCosts = true;
+
+</script>
+<script type="text/javascript" src="../../../dojo.js"></script>
+<script language="JavaScript" type="text/javascript">
+	dojo.require("dojo.widget.Editor");	
+	dojo.require("dojo.widget.ComboBox");
+	dojo.require("dojo.widget.LayoutPane");
+	dojo.require("dojo.widget.Button2");
+	dojo.hostenv.writeIncludes();
+</script>
+  <style>
+    html, body{	
+		width: 100%;	/* make the body expand to fill the visible window */
+		height: 100%;
+		overflow: hidden;	/* erase window level scrollbars */
+		padding: 0 0 0 0;
+		margin: 0 0 0 0;
+    }
+	/* group multiple buttons in a row */
+	.box {
+		display: block;
+		float: right;
+	}
+	.box .dojoButton {
+		float: left;
+		margin-right: 10px;
+	}
+   </style>
+</head>
+<body>
+<div align=center>
+	<div style="float: left; padding-right: 20px;">To:</div>
+	<select dojoType="combobox" style="width: 100px;">
+		<option>adam@yahoo.com</option>
+		<option>barry@yahoo.com</option>
+		<option>bob@yahoo.com</option>
+		<option>cal@yahoo.com</option>
+		<option>chris@yahoo.com</option>
+		<option>courtney@yahoo.com</option>
+	</select>
+</div>
+
+<div id="editable" dojoType="Editor" widgetId="editdiv" items="formatblock;|;insertunorderedlist;insertorderedlist;|;bold;italic;underline;strikethrough;|;createLink;">
+	Type the address above (try an address starting with a,b,c,d, to test autocompletion,
+	and then type your message here...
+	<br><br><br><br><br><br><br><br><br><br>
+</div>
+
+<div class="box">
+	<button dojoType="Button2" onclick="close();">Cancel</button>
+	<button dojoType="Button2" onclick="close();">Send</button>
+	<div style="clear: both;"></div>
+</div>
+
+</body>
+</html>
