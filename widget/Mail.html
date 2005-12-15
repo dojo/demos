@@ -114,12 +114,25 @@
 	layoutChildPriority='top-bottom'
 	style="border: 2px solid black; width: 100%; height: 100%;">
 	
-	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" class="header">
+	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" class="header"
+	 style="padding-bottom: 5px;">
+		<div style="float: left; margin-right: 10px;">
+			<button dojoType="Button2" onclick="alert('pretending to download new mail');">
+				<img src="Mail/mail_get.gif" height=18>
+				Get Mail
+			</button>
+		</div>
 		<div style="float: left;">
-			<button dojoType="Button2" onclick='open("Mail/NewMessage.html",null,"height=400,width=600,status=yes,toolbar=no,menubar=no,location=no");'>New Message</button>
+			<button dojoType="Button2" onclick='open("Mail/NewMessage.html",null,"height=300,width=600,status=yes,toolbar=no,menubar=no,location=no");'>
+				<img src="Mail/mail_new.gif" height=18>
+				New Message
+			</button>
 		</div>
 		<div style="float: right;">
-			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').show()">Options</button>
+			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').show()">
+				<img src="Mail/checkmark.gif" height=18>
+				Options
+			</button>
 		</div>
 		<div align=center>My mailbox</div>
 		
@@ -133,16 +146,16 @@
 	>
 		<div id="treePane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="20">
 			<div dojoType="Tree" toggle="fade" layoutAlign="flood" publishSelectionTopic="listSelected">
-				<div dojoType="TreeNode" title="Mail Account">
-					<div dojoType="TreeNode" title="Inbox"></div>
-					<div dojoType="TreeNode" title="Sent Mail"></div>
-					<div dojoType="TreeNode" title="Deleted"></div>
-					<div dojoType="TreeNode" title="Saved Mail">
-						<div dojoType="TreeNode" title="Friends">
-							<div dojoType="TreeNode" title="Bob"></div>
-							<div dojoType="TreeNode" title="Jack"></div>
+				<div dojoType="TreeNode" title="Mail Account" childIconSrc="Mail/mailbox1.gif">
+					<div dojoType="TreeNode" title="Inbox"  childIconSrc="Mail/folder_inbox.gif"></div>
+					<div dojoType="TreeNode" title="Sent Mail" childIconSrc="Mail/folder_sent_mail.gif"></div>
+					<div dojoType="TreeNode" title="Deleted"  childIconSrc="Mail/trashcan_full.gif"></div>
+					<div dojoType="TreeNode" title="Saved Mail" childIconSrc="Mail/folder_documents.gif">
+						<div dojoType="TreeNode" title="Friends" childIconSrc="Mail/folder_documents.gif">
+							<div dojoType="TreeNode" title="Bob" childIconSrc="Mail/folder_documents.gif"></div>
+							<div dojoType="TreeNode" title="Jack" childIconSrc="Mail/folder_documents.gif"></div>
 						</div>
-						<div dojoType="TreeNode" title="Work"></div>
+						<div dojoType="TreeNode" title="Work" childIconSrc="Mail/folder_documents.gif"></div>
 					</div>
 				</div>
 			</div>
@@ -186,8 +199,14 @@
   </div>
   <div dojoType="LayoutPane" layoutAlign="bottom" style="height: 25px; padding-top: 5px;">
   	<div class="box">
-		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">Cancel</button>
-		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">OK</button>
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">
+			<img src="Mail/cancel.gif" height=18>
+			Cancel
+		</button>
+		<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').hide();">
+			<img src="Mail/ok.gif" height=18>
+			OK
+		</button>
 		<div style="clear: both;"></div>
 	</div>
   </div>

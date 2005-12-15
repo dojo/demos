@@ -36,6 +36,14 @@
 		margin-right: 10px;
 	}
    </style>
+   <script>
+   		function onLoad(){
+   			// this is just to workaround a bug on firefox
+   			dojo.widget.getWidgetById("cancel").onResized();
+   			dojo.widget.getWidgetById("ok").onResized();
+   		}
+   		dojo.addOnLoad(onLoad);
+   	</script>
 </head>
 <body>
 <div align=center>
@@ -57,8 +65,15 @@
 </div>
 
 <div class="box">
-	<button dojoType="Button2" onclick="close();">Cancel</button>
-	<button dojoType="Button2" onclick="close();">Send</button>
+	<button id="cancel" dojoType="Button2" onclick="close();">
+		<img src="cancel.gif" height=18>
+		Cancel
+	</button>
+	<button id="ok" dojoType="Button2" onclick="close();">
+		<img src="ok.gif" height=18>
+		OK
+	</button>
+
 	<div style="clear: both;"></div>
 </div>
 
