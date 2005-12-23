@@ -4,11 +4,8 @@
 <title>New Message</title>
 
 <script type="text/javascript">
-
 	var djConfig = {isDebug: true};
-
 	//djConfig.debugAtAllCosts = true;
-
 </script>
 <script type="text/javascript" src="../../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
@@ -18,32 +15,16 @@
 	dojo.require("dojo.widget.Button2");
 	dojo.hostenv.writeIncludes();
 </script>
-  <style>
-    html, body{	
-		width: 100%;	/* make the body expand to fill the visible window */
-		height: 100%;
-		overflow: hidden;	/* erase window level scrollbars */
-		padding: 0 0 0 0;
-		margin: 0 0 0 0;
-    }
-	/* group multiple buttons in a row */
-	.box {
-		display: block;
-		float: right;
-	}
-	.box .dojoButton {
-		float: left;
-		margin-right: 10px;
-	}
-   </style>
-   <script>
-   		function onLoad(){
-   			// this is just to workaround a bug on firefox
-   			dojo.widget.getWidgetById("cancel").onResized();
-   			dojo.widget.getWidgetById("ok").onResized();
-   		}
-   		dojo.addOnLoad(onLoad);
-   	</script>
+<link rel=stylesheet href="mail.css" type="text/css">
+
+<script>
+   	function onLoad(){
+   		// this is just to workaround a bug on firefox
+   		dojo.widget.getWidgetById("cancel").onResized();
+   		dojo.widget.getWidgetById("ok").onResized();
+   	}
+   	dojo.addOnLoad(onLoad);
+</script>
 </head>
 <body>
 <div align=center>
