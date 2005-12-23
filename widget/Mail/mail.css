@@ -7,11 +7,11 @@ html, body, #main{
 }
 
 /* list of messages */
-tr:hover, td:hover {
+#listPane tr:hover, #listPane td:hover {
 	background: gray;
 	cursor: pointer;
 }
-tr, td { cursor: pointer; }
+#listPane tr, #listPane td { cursor: pointer; }
 
 #topMenu {
 	background: #660000;

@@ -27,17 +27,21 @@
 </script>
 </head>
 <body>
-<div align=center>
-	<div style="float: left; padding-right: 20px;">To:</div>
-	<select dojoType="combobox" style="width: 100px;">
-		<option>adam@yahoo.com</option>
-		<option>barry@yahoo.com</option>
-		<option>bob@yahoo.com</option>
-		<option>cal@yahoo.com</option>
-		<option>chris@yahoo.com</option>
-		<option>courtney@yahoo.com</option>
-	</select>
-</div>
+<table width=100%>
+	<tr>
+		<td style="padding-right: 20px;">To:</td>
+		<td width=100%>
+			<select dojoType="combobox" style="width: 100%;">
+				<option>adam@yahoo.com</option>
+				<option>barry@yahoo.com</option>
+				<option>bob@yahoo.com</option>
+				<option>cal@yahoo.com</option>
+				<option>chris@yahoo.com</option>
+				<option>courtney@yahoo.com</option>
+			</select>
+		</td>
+	</tr>
+</table>
 
 <div id="editable" dojoType="Editor" widgetId="editdiv" items="formatblock;|;insertunorderedlist;insertorderedlist;|;bold;italic;underline;strikethrough;|;createLink;">
 	Type the address above (try an address starting with a,b,c,d, to test autocompletion,

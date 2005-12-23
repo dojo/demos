@@ -4,11 +4,8 @@
 <title>Mail</title>
 
 <script type="text/javascript">
-
 	var djConfig = {isDebug: true};
-
 	//djConfig.debugAtAllCosts = true;
-
 </script>
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
@@ -25,94 +22,17 @@
 	dojo.require("dojo.widget.ResizeHandle");
 	dojo.hostenv.writeIncludes();
 </script>
-  <style>
-    html, body{	
-		width: 100%;	/* make the body expand to fill the visible window */
-		height: 100%;
-		overflow: hidden;	/* erase window level scrollbars */
-		padding: 0 0 0 0;
-		margin: 0 0 0 0;
-    }
 
+<link rel=stylesheet href="mail/mail.css" type="text/css">
 
-	/* list of messages */
-	tr:hover, td:hover {
-		background: gray;
-		cursor: pointer;
-	}
-	tr, td { cursor: pointer; }
+<script type="text/javascript" src="mail/mail.js"></script>
 
-	#topMenu {
-		background: #660000;
-		color: white;
-		font: bold;
-	}
-
-	tr.header {
-		background-color: #274383; color: white; font: bold;
-	}
-	
-	body .dojoFloatingPaneDragbar {
-		background-color: #274383; 
-	}
-	.subject {
-		background: gray;
-		width: 100%;
-		padding-top: 5px;
-		padding-bottom: 10px;
-	}
-
-	.message {
-		border: black 2px;
-	}
-	
-	#treePane, #listPane, #contentPane {
-		background: beige;
-		overflow: auto;
-	}
-	/* group multiple buttons in a row */
-	.box {
-		display: block;
-		float: right;
-	}
-	.box .dojoButton {
-		float: left;
-		margin-right: 10px;
-	}
-	.dojoButton .dojoButtonContents {
-	}
-   </style>
-<script>
-	function onLoad(){
-	}
-	dojo.addOnLoad(onLoad);
-
-	function displayList(){
-	    this.update = function(message) {
-	        var clickedTreeNode =     
-	            dojo.widget.getWidgetById(message);
-
-			var listPane = dojo.widget.getWidgetById("listPane");
-			var url = "Mail/"+clickedTreeNode.title.replace(" ","") + ".html";
-			
-			listPane.setUrl(url);
-	    };
-	}
-	var displayer = new displayList();
-	var nodeSelectionTopic = dojo.event.topic.getTopic("listSelected");
-	nodeSelectionTopic.subscribe(displayer, "update");
-
-	function displayMessage(name){
-			var contentPane = dojo.widget.getWidgetById("contentPane");
-			var url = "Mail/"+name.replace(" ","") + ".html";
-			contentPane.setUrl(url);
-	}
-</script>
 </head>
 <body>
 <div dojoType="LayoutPane"
 	layoutChildPriority='top-bottom'
-	style="border: 2px solid black; width: 100%; height: 100%;">
+	id="main"
+>
 	
 	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" class="header"
 	 style="padding-bottom: 5px;">
