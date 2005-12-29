@@ -11,6 +11,7 @@
 <script language="JavaScript" type="text/javascript">
 	dojo.require("dojo.widget.LayoutPane");
 	dojo.require("dojo.widget.FloatingPane");
+	dojo.require("dojo.widget.BasicPane");
 	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.SplitPane");
 	dojo.require("dojo.widget.ColorPalette");
@@ -33,8 +34,7 @@
 	layoutChildPriority='top-bottom'
 	id="main"
 >
-	
-	<div id="topMenu" dojoType="LayoutPane" layoutAlign="top" class="header"
+	<div id="topMenu" dojoType="BasicPane" layoutAlign="top" class="header"
 	 style="padding-bottom: 5px;">
 		<div style="float: left; margin-right: 10px;">
 			<button dojoType="Button2" onclick="alert('pretending to download new mail');">
@@ -64,36 +64,34 @@
 		activeSizing="0"
 		layoutAlign="client"
 	>
-		<div id="treePane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="20">
-			<div dojoType="Tree" toggle="fade" layoutAlign="flood" publishSelectionTopic="listSelected">
-				<div dojoType="TreeNode" title="Mail Account" childIconSrc="Mail/mailbox1.gif">
-					<div dojoType="TreeNode" title="Inbox"  childIconSrc="Mail/folder_inbox.gif"></div>
-					<div dojoType="TreeNode" title="Sent Mail" childIconSrc="Mail/folder_sent_mail.gif"></div>
-					<div dojoType="TreeNode" title="Deleted"  childIconSrc="Mail/trashcan_full.gif"></div>
-					<div dojoType="TreeNode" title="Saved Mail" childIconSrc="Mail/folder_documents.gif">
-						<div dojoType="TreeNode" title="Friends" childIconSrc="Mail/folder_documents.gif">
-							<div dojoType="TreeNode" title="Bob" childIconSrc="Mail/folder_documents.gif"></div>
-							<div dojoType="TreeNode" title="Jack" childIconSrc="Mail/folder_documents.gif"></div>
-						</div>
-						<div dojoType="TreeNode" title="Work" childIconSrc="Mail/folder_documents.gif"></div>
+		<div id="treePane" dojoType="Tree" toggle="fade" layoutAlign="flood" publishSelectionTopic="listSelected"
+			sizeMin="20" sizeShare="20">
+			<div dojoType="TreeNode" title="Mail Account" childIconSrc="Mail/mailbox1.gif">
+				<div dojoType="TreeNode" title="Inbox"  childIconSrc="Mail/folder_inbox.gif"></div>
+				<div dojoType="TreeNode" title="Sent Mail" childIconSrc="Mail/folder_sent_mail.gif"></div>
+				<div dojoType="TreeNode" title="Deleted"  childIconSrc="Mail/trashcan_full.gif"></div>
+				<div dojoType="TreeNode" title="Saved Mail" childIconSrc="Mail/folder_documents.gif">
+					<div dojoType="TreeNode" title="Friends" childIconSrc="Mail/folder_documents.gif">
+						<div dojoType="TreeNode" title="Bob" childIconSrc="Mail/folder_documents.gif"></div>
+						<div dojoType="TreeNode" title="Jack" childIconSrc="Mail/folder_documents.gif"></div>
 					</div>
+					<div dojoType="TreeNode" title="Work" childIconSrc="Mail/folder_documents.gif"></div>
 				</div>
 			</div>
 		</div>
 
-		<div dojoType="SplitPanePanel" sizeMin="50" sizeShare="100">
-			<div dojoType="SplitPane"
-				orientation="vertical"
-				sizerWidth="5"
-				activeSizing="0"
-				style="width: 100%; height: 100%;"
-			>
-				<div id="listPane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="30">
-				</div>
-				<div id="contentPaneWrapper" dojoType="SplitPanePanel" sizeMin="20" sizeShare="70"
-						style="padding: 0px;">
-					<div id="contentPane" dojoType="LayoutPane" layoutAlign="flood" url="Mail/MailAccount.html"></div>
-				</div>
+		<div dojoType="SplitPane"
+			orientation="vertical"
+			sizerWidth="5"
+			activeSizing="0"
+			style="width: 100%; height: 100%;"
+			sizeMin="50" sizeShare="100"
+		>
+			<div id="listPane" dojoType="SplitPanePanel" sizeMin="20" sizeShare="30">
+			</div>
+			<div id="contentPaneWrapper" dojoType="SplitPanePanel" sizeMin="20" sizeShare="70"
+					style="padding: 0px;">
+				<div id="contentPane" dojoType="LayoutPane" layoutAlign="flood" url="Mail/MailAccount.html"></div>
 			</div>
 		</div>
 </div>

@@ -41,7 +41,7 @@ div.statusPanel {
 	border: 0 !important;
 }
 
-.dojoTree {
+body .dojoTree {
 	margin: 4px !important;
 }
 
@@ -71,58 +71,52 @@ div.statusPanel {
 		class="mainClient"
 		minHeight="100"
 	>
-		<div dojoType="SplitPanePanel" sizeMin="60" sizeShare="1" style="padding: 0;">
-
-			<div dojoType="Tree" toggle="fade" layoutAlign="client">
-				<div dojoType="TreeNode" title="Mail Account">
-					<div dojoType="TreeNode" title="Inbox"></div>
-					<div dojoType="TreeNode" title="Sent Mail"></div>
-					<div dojoType="TreeNode" title="Deleted"></div>
-					<div dojoType="TreeNode" title="Saved Mail">
-						<div dojoType="TreeNode" title="Friends">
-							<div dojoType="TreeNode" title="Bob"></div>
-							<div dojoType="TreeNode" title="Jack"></div>
-						</div>
-						<div dojoType="TreeNode" title="Work"></div>
+		<div dojoType="Tree" toggle="fade"
+			sizeMin="60" sizeShare="1" style="overflow: auto;">
+			<div dojoType="TreeNode" title="Mail Account">
+				<div dojoType="TreeNode" title="Inbox"></div>
+				<div dojoType="TreeNode" title="Sent Mail"></div>
+				<div dojoType="TreeNode" title="Deleted"></div>
+				<div dojoType="TreeNode" title="Saved Mail">
+					<div dojoType="TreeNode" title="Friends">
+						<div dojoType="TreeNode" title="Bob"></div>
+						<div dojoType="TreeNode" title="Jack"></div>
 					</div>
+					<div dojoType="TreeNode" title="Work"></div>
 				</div>
 			</div>
-
 		</div>
 
-		<div dojoType="SplitPanePanel" sizeMin="100" sizeShare="3" style="padding: 0">
+		<div dojoType="SplitPane"
+			orientation="vertical"
+			sizerWidth="5"
+			activeSizing="1"
+			layoutAlign="client"
+			debugName="split pane 2"
+			sizeMin="100" sizeShare="3" 
+		>
 
-			<div dojoType="SplitPane"
-				orientation="vertical"
-				sizerWidth="5"
-				activeSizing="1"
-				layoutAlign="client"
-				debugName="split pane 2"
+			<div dojoType="SplitPanePanel" sizeMin="30" sizeShare="30">
+
+				message list here
+
+			</div>
+
+			<div dojoType="SplitPanePanel" 
+				sizeMin="60" sizeShare="70"
+				style="margin: 0; padding: 0;"
 			>
 
-				<div dojoType="SplitPanePanel" sizeMin="30" sizeShare="30">
-
-					message list here
-
+				<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
+					message headers<br />go here
 				</div>
 
-				<div dojoType="SplitPanePanel" 
-					sizeMin="60" sizeShare="70"
-					style="margin: 0; padding: 0;"
-				>
-
-					<div dojoType="LayoutPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
-						message headers<br />go here
-					</div>
-
-					<div dojoType="LayoutPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
-						main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
-					</div>
-
+				<div dojoType="LayoutPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
+					main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
 				</div>
+
 			</div>
 		</div>
-
 	</div>
 
 	<div dojoType="LayoutPane" layoutAlign="bottom" class="statusBar">
@@ -138,7 +132,6 @@ div.statusPanel {
 		</div>
 		<div dojoType="ResizeHandle" targetElmId="testWindow"></div>
 	</div>
-
 
 </div>
 
