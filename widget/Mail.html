@@ -10,16 +10,14 @@
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
 	dojo.require("dojo.widget.LayoutPane");
-	dojo.require("dojo.widget.FloatingPane");
+	dojo.require("dojo.widget.FloatingLayoutPane");
 	dojo.require("dojo.widget.BasicPane");
-	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.SplitPane");
 	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.DatePicker");	
 	dojo.require("dojo.widget.Tree");
 	dojo.require("dojo.widget.TabSet");
 	dojo.require("dojo.widget.Button2");
-	//dojo.require("dojo.widget.Checkbox");
 	dojo.require("dojo.widget.ResizeHandle");
 	dojo.hostenv.writeIncludes();
 </script>
@@ -49,7 +47,7 @@
 			</button>
 		</div>
 		<div style="float: right;">
-			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').show()">
+			<button dojoType="Button2" onclick="dojo.widget.getWidgetById('options').restoreWindow()">
 				<img src="Mail/checkmark.gif" height=18>
 				Options
 			</button>
@@ -96,9 +94,9 @@
 		</div>
 </div>
 
-<div id="options" dojoType="FloatingPane" title="Options"
-	style="width: 300px; height: 200px; left: 300px; top: 300px; display:none;"
-	hasShadow="true" resizable="true" titleBarDisplay="simple">
+<div id="options" dojoType="FloatingLayoutPane" title="Options"
+	style="width: 300px; height: 200px; left: 300px; top: 300px;"
+	hasShadow="true" resizable="true" titleBarDisplay="simple" windowState="minimized">
   <div dojoType="TabSet" layoutAlign="client">
   	<div dojoType="Tab" label="Sending/Receiving">
   		Transport type
