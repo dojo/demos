@@ -13,7 +13,7 @@
 <script language="JavaScript" type="text/javascript">
 
 	dojo.require("dojo.widget.FloatingLayoutPane");
-	dojo.require("dojo.widget.BasicPane");
+	dojo.require("dojo.widget.ContentPane");
 	dojo.require("dojo.widget.LayoutPane");
 	dojo.require("dojo.widget.SplitPane");
 	dojo.require("dojo.widget.ResizeHandle");
@@ -97,7 +97,7 @@ body .dojoTree {
 			sizeMin="100" sizeShare="3" 
 		>
 
-			<div dojoType="BasicPane" sizeMin="30" sizeShare="30">
+			<div dojoType="ContentPane" sizeMin="30" sizeShare="30">
 
 				message list here
 
@@ -108,11 +108,11 @@ body .dojoTree {
 				style="margin: 0; padding: 0;"
 			>
 
-				<div dojoType="BasicPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
+				<div dojoType="ContentPane" layoutAlign="top" style="background-color: #b39b86; padding: 8px;">
 					message headers<br />go here
 				</div>
 
-				<div dojoType="BasicPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
+				<div dojoType="ContentPane" layoutAlign="client" style="background-color: #f5ffbf; padding: 10px;">
 					main panel with <a href="http://www.dojotoolkit.org/">a link</a>.<br />
 				</div>
 
@@ -122,13 +122,13 @@ body .dojoTree {
 
 	<div dojoType="LayoutPane" layoutAlign="bottom" class="statusBar">
 
-		<div dojoType="BasicPane" layoutAlign="left" class="statusPanel">
+		<div dojoType="ContentPane" layoutAlign="left" class="statusPanel">
 			panel 1
 		</div>
-		<div dojoType="BasicPane" layoutAlign="left" class="statusPanel">
+		<div dojoType="ContentPane" layoutAlign="left" class="statusPanel">
 			panel 2
 		</div>
-		<div dojoType="BasicPane" layoutAlign="client" class="statusPanel" style="padding-right: 0px; z-index: 1;" minWidth="100">
+		<div dojoType="ContentPane" layoutAlign="client" class="statusPanel" style="padding-right: 0px; z-index: 1;" minWidth="100">
 			panel 3
 		</div>
 		<div dojoType="ResizeHandle" targetElmId="testWindow"></div>

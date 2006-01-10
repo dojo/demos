@@ -11,7 +11,7 @@
 <script language="JavaScript" type="text/javascript">
 	dojo.require("dojo.widget.LayoutPane");
 	dojo.require("dojo.widget.FloatingLayoutPane");
-	dojo.require("dojo.widget.BasicPane");
+	dojo.require("dojo.widget.ContentPane");
 	dojo.require("dojo.widget.SplitPane");
 	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.DatePicker");	
@@ -32,7 +32,7 @@
 	layoutChildPriority='top-bottom'
 	id="main"
 >
-	<div id="topMenu" dojoType="BasicPane" layoutAlign="top" class="header"
+	<div id="topMenu" dojoType="ContentPane" layoutAlign="top" class="header"
 	 style="padding-bottom: 5px;">
 		<div style="float: left; margin-right: 10px;">
 			<button dojoType="Button2" onclick="alert('pretending to download new mail');">
