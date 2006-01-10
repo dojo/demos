@@ -16,7 +16,7 @@
 	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.DatePicker");	
 	dojo.require("dojo.widget.Tree");
-	dojo.require("dojo.widget.TabSet");
+	dojo.require("dojo.widget.TabPane");
 	dojo.require("dojo.widget.Button2");
 	dojo.require("dojo.widget.ResizeHandle");
 	dojo.hostenv.writeIncludes();
@@ -97,7 +97,7 @@
 <div id="options" dojoType="FloatingLayoutPane" title="Options"
 	style="width: 300px; height: 200px; left: 300px; top: 300px;"
 	hasShadow="true" resizable="true" titleBarDisplay="simple" windowState="minimized">
-  <div dojoType="TabSet" layoutAlign="client">
+  <div dojoType="TabPane" layoutAlign="client">
   	<div dojoType="Tab" label="Sending/Receiving">
   		Transport type
   		<select>
