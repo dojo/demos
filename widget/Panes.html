@@ -12,7 +12,7 @@
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
 
-	dojo.require("dojo.widget.FloatingLayoutPane");
+	dojo.require("dojo.widget.FloatingPane");
 	dojo.require("dojo.widget.ContentPane");
 	dojo.require("dojo.widget.LayoutPane");
 	dojo.require("dojo.widget.SplitPane");
@@ -57,11 +57,13 @@ body .dojoTree {
 </head>
 <body>
 
-<div dojoType="FloatingLayoutPane"
+<div dojoType="FloatingPane"
 	widgetId="testWindow"
 	title="Inlook Express"
 	constrainToContainer="1"
 	style="width: 500px; height: 300px; left: 100px; top: 100px;"
+	contentWrapper="layout"
+	overflow="hide"
 >
 	<div dojoType="SplitPane"
 		orientation="horizontal"
@@ -117,8 +119,8 @@ body .dojoTree {
 				</div>
 
 			</div>
-		</div>
-	</div>
+		</div>  <!-- end vertical split pane -->
+	</div>  <!-- end horizontal split pane -->
 
 	<div dojoType="LayoutPane" layoutAlign="bottom" class="statusBar">
 

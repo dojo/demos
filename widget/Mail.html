@@ -10,7 +10,7 @@
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
 	dojo.require("dojo.widget.LayoutPane");
-	dojo.require("dojo.widget.FloatingLayoutPane");
+	dojo.require("dojo.widget.FloatingPane");
 	dojo.require("dojo.widget.ContentPane");
 	dojo.require("dojo.widget.SplitPane");
 	dojo.require("dojo.widget.ColorPalette");
@@ -94,9 +94,10 @@
 		</div>
 </div>
 
-<div id="options" dojoType="FloatingLayoutPane" title="Options"
+<div id="options" dojoType="FloatingPane" title="Options"
 	style="width: 300px; height: 200px; left: 300px; top: 300px;"
-	hasShadow="true" resizable="true" titleBarDisplay="simple" windowState="minimized">
+	hasShadow="true" resizable="true" titleBarDisplay="simple" windowState="minimized"
+	contentWrapper="layout">
   <div dojoType="TabPane" layoutAlign="client">
   	<div dojoType="Tab" label="Sending/Receiving">
   		Transport type
