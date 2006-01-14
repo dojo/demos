@@ -63,7 +63,6 @@ body .dojoTree {
 	constrainToContainer="1"
 	style="width: 500px; height: 300px; left: 100px; top: 100px;"
 	contentWrapper="layout"
-	overflow="hide"
 >
 	<div dojoType="SplitPane"
 		orientation="horizontal"
@@ -75,7 +74,7 @@ body .dojoTree {
 		minHeight="100"
 	>
 		<div dojoType="Tree" toggle="fade"
-			sizeMin="60" sizeShare="1" style="overflow: auto;">
+			sizeMin="60" sizeShare="1">
 			<div dojoType="TreeNode" title="Mail Account">
 				<div dojoType="TreeNode" title="Inbox"></div>
 				<div dojoType="TreeNode" title="Sent Mail"></div>
@@ -100,9 +99,7 @@ body .dojoTree {
 		>
 
 			<div dojoType="ContentPane" sizeMin="30" sizeShare="30">
-
 				message list here
-
 			</div>
 
 			<div dojoType="LayoutPane" 
