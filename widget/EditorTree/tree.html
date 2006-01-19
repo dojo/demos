@@ -1,10 +1,45 @@
 <html>
 <head>
 <title>Dojo EditorTree Widget Test (ajax, drag'n'drop and more)</title>
+<style>
+
+.dojoTree {
+	font: caption;
+	font-size: 11px;
+	font-weight: normal;
+	overflow: auto;
+	padding: 1px;
+}
+
+
+.dojoTreeNodeLabelTitle {
+	padding-left: 2px;
+	color: WindowText;
+}
+
+.dojoTreeNodeLabel {
+	cursor:hand;
+	cursor:pointer;
+}
+
+.dojoTreeNodeLabelSelected {
+	background-color: Highlight;
+	color: HighlightText;
+}
+
+.dojoTree div {
+	white-space: nowrap;
+}
+
+.dojoTree img, .dojoTreeNodeLabel img {
+	vertical-align: middle;
+}
+
+
+</style>
 
 <script type="text/javascript">
-	var djConfig = {isDebug: true};
-	//var djConfig = {isDebug: true, debugAtAllCosts: true };
+	var djConfig = {isDebug: true, debugAtAllCosts: true };
 </script>
 <script type="text/javascript" src="../../../dojo.js"></script>
 
@@ -39,16 +74,15 @@
 			return false;
 		}
 
-		this.icon.src = 'static/loading.jpg';
-
-		var mover = (direction == 'up') ? controller.moveUp : controller.moveDown;
-
-		var res = mover.apply(controller, [selectedNode, dojo.lang.hitch(this, restoreIconSrc)]);
-
-		// local checks failed
-		if (res == false) {
-			restoreIconSrc.apply(this);
+		if (direction == 'up') {
+			if (!selectedNode.getPreviousSibling()) return;
+			var res = controller.changeParent(selectedNode, selectedNode.parent, selectedNode.getParentIndex()-1);
 		}
+		else {
+			if (!selectedNode.getNextSibling()) return;
+			var res = controller.changeParent(selectedNode, selectedNode.parent, selectedNode.getParentIndex()+1);
+		}
+
 	}
 
 	/* process create operation */
@@ -143,19 +177,22 @@
 		}
 
 
-		/* add context menu to all nodes of firstTree that exist already*/
+		/* add context menu to all nodes of firstTree that exist already */
 		var nodes = firstTree.getDescendants();
 		var menu = dojo.widget.manager.getWidgetById('treeContextMenu');
+
 		for(var i=0; i<nodes.length; i++) {
 			if (nodes[i].widgetType != 'EditorTreeNode') continue;
 			menu.bindDomNode(nodes[i].labelNode);
 		}
 
-		/* bind context menu to all nodes that will be created in the future (e.g loaded from server) */
+
+		/* bind context menu to all nodes that will be created in the future (e.g loaded from server)*/
 
 		dojo.event.topic.subscribe(firstTree.eventNames.nodeCreate,
 			function(message) { menu.bindDomNode(message.source.labelNode); }
 		);
+
 
 		/* handle drags between trees.. Wire/unwire context menu if needed */
 		var controller = dojo.widget.manager.getWidgetById('treeController');
@@ -170,6 +207,9 @@
 				}
 			}
 		);
+
+
+		dojo.widget.manager.getWidgetById('1.1.1').addChild(dojo.widget.createWidget('EditorTreeNode', {title:'new'}));
 
 
 
@@ -205,7 +245,7 @@
 	Controller is not a real widget. But I need to bind it to the tree in the moment of creations,
 	so I use this syntax. Waiting for dojo:propertySet
 -->
-<div dojoType="EditorTreeController" widgetId="treeController" eventNaming="default" enabledDND="true"></div>
+<div dojoType="EditorTreeController" widgetId="treeController" eventNaming="default" DNDMode="between"></div>
 
 <div dojoType="EditorTreeSelector" widgetId="treeSelector"></div>
 
@@ -238,18 +278,18 @@
 </div>
 <hr/>
 
-<!--
+
 <div dojoType="DebugConsole"
 	title="Debug Console"
 	constrainToContainer="1"
-	style="width: 400px; height: 300px; left: 200px;"
+	style="width: 800px; height: 300px; left: 200px;"
 	hasShadow="true"
 	resizable="true"
 	displayCloseAction="true"
 	layoutAlign="client"
 >
 </div>
--->
+
 
 <!--
 	Every node must have widgetId to get recognized by server (ajax)
@@ -257,11 +297,11 @@
 -->
 <table class="treeTable" cellpadding="10">
 <tr>
-<td style="border:1px dashed black">
+<td style="border:1px dashed black" id="ttt">
 <h4>firstTree</h4>
 <div dojoType="EditorTree" toggle="default" selector="treeSelector" eventNaming="default" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
 
-    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1">
+    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="true">
 
        	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true"></div>
 
@@ -302,6 +342,7 @@ You can <u>drag'n'drop a node</u> to change parent
 <li>You can't drop an ancestor to any of its descenants</li>
 <li>You can't drop a child to its closest parent</li>
 <li>A node is highlighted if you can drop onto it</li>
+<li>There are two DnD modes: "between" and "onto". Between is used in the demo.</li>
 </ul>
 </li>
 
