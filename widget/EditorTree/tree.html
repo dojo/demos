@@ -108,7 +108,7 @@
 		}
 	}
 
-	function deleteClicked(selectedNode, controllerId, icon) {
+	function removeClicked(selectedNode, controllerId, icon) {
 
 		this.icon = icon;
 		this.oldIconSrc = icon.src;
@@ -197,32 +197,9 @@
 		);
 
 
-		//dojo.widget.manager.getWidgetById('1.1.1').addChild(dojo.widget.createWidget('EditorTreeNode', {title:'new'}));
-
-
 
 	});
 
-
-	function onCreate(menuitem) {
-		var treeNode = menuitem.getTreeNode();
-		createClicked(treeNode, 'treeController', treeNode.expandIcon);
-	}
-
-	function onRemove(menuitem) {
-		var treeNode = menuitem.getTreeNode();
-		deleteClicked(treeNode, 'treeController', treeNode.expandIcon);
-	}
-
-	function onUp(menuitem) {
-		var treeNode = menuitem.getTreeNode();
-		moveClicked(treeNode, 'treeController', treeNode.expandIcon, 'up');
-	}
-
-	function onDown(menuitem) {
-		var treeNode = menuitem.getTreeNode();
-		moveClicked(treeNode, 'treeController', treeNode.expandIcon, 'down');
-	}
 
 </script>
 
@@ -238,12 +215,38 @@
 <div dojoType="EditorTreeSelector" widgetId="treeSelector"></div>
 
 
-<div dojoType="EditorTreeContextMenu" toggle="explode" eventNaming="default" contextMenuForWindow="false" widgetId="treeContextMenu">
-	<div dojoType="EditorTreeMenuItem" for_folders="false" iconSrc="static/createsmall.gif" caption="Create" onclick="onCreate(this);"></div>
-	<div dojoType="EditorTreeMenuItem" iconSrc="static/removesmall.gif" caption="Remove" onclick="onRemove(this);"></div>
-	<div dojoType="EditorTreeMenuItem" iconSrc="static/downsmall.png" caption="Up" onClick="onUp(this)"></div>
-	<div dojoType="EditorTreeMenuItem" iconSrc="static/upsmall.png" caption="Down" onClick="onDown(this)"></div>
+<div dojoType="EditorTreeContextMenu" toggle="explode" contextMenuForWindow="false" widgetId="treeContextMenu">
+	<div dojoType="EditorTreeMenuItem" treeActions="addChild" iconSrc="static/createsmall.gif" widgetId="treeContextMenuCreate" caption="Create"></div>
+	<div dojoType="EditorTreeMenuItem" treeActions="remove" iconSrc="static/removesmall.gif" caption="Remove" widgetId="treeContextMenuRemove"></div>
+	<div dojoType="EditorTreeMenuItem" treeActions="move" iconSrc="static/downsmall.png" caption="Up" widgetId="treeContextMenuUp"></div>
+	<div dojoType="EditorTreeMenuItem" treeActions="move" iconSrc="static/upsmall.png" caption="Down" widgetId="treeContextMenuDown"></div>
 </div>
+<script>
+
+dojo.addOnLoad(function() {
+
+	dojo.event.topic.subscribe('treeContextMenuCreate/engage',
+		function (menuItem) { createClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+	);
+
+	dojo.event.topic.subscribe('treeContextMenuRemove/engage',
+		function (menuItem) { removeClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon); }
+	);
+
+	dojo.event.topic.subscribe('treeContextMenuUp/engage',
+		function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'up'); }
+	);
+
+	dojo.event.topic.subscribe('treeContextMenuDown/engage',
+		function (menuItem) { moveClicked( menuItem.getTreeNode(), 'treeController',  menuItem.getTreeNode().expandIcon, 'down'); }
+	);
+
+
+});
+
+
+</script>
+
 
 
 <style>
@@ -261,7 +264,7 @@
 <img src="static/create.gif" onclick="createClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this);"/>
 <img src="static/up.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'up');"/>
 <img src="static/down.gif" onclick="moveClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode,'treeController', this, 'down');"/>
-<img src="static/recyclebin.gif" onclick="deleteClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);"/>
+<img src="static/recyclebin.gif" onclick="removeClicked(dojo.widget.manager.getWidgetById('treeSelector').selectedNode, 'treeController', this);"/>
 
 </div>
 <hr/>
@@ -276,16 +279,16 @@
 <tr>
 <td style="border:1px dashed black;">
 <h4>firstTree</h4>
-<div dojoType="EditorTree" toggle="default" selector="treeSelector" eventNaming="default" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
+<div dojoType="EditorTree" toggle="default" selector="treeSelector" eventNaming="default" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
 
-    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="false">
+    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="true" actionsDisabled="remove,move">
 
        	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true"></div>
 
     </div>
 
 	<div dojoType="EditorTreeNode" widgetId="1.2" title="Item 1.2"></div>
-	<div dojoType="EditorTreeNode" widgetId="1.3" title="Item 1.3" isFolder="true"></div>
+	<div dojoType="EditorTreeNode" widgetId="1.3" title="Item 1.3" actionsDisabled="remove" isFolder="true"></div>
 
 </div>
 </td>
@@ -322,6 +325,7 @@ Read the description about it.<br/>
 Also, if something does not work, please read it before reporting.</h3>
 
 <ol>
+<li>Every node can be initially opened or closed. Also, some actions upon it may be disabled, you'll see that on demo</li>
 <li>
 You can <u>drag'n'drop a node</u> to change parent
 <ul>
