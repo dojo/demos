@@ -22,6 +22,11 @@
 	dojo.hostenv.writeIncludes();
 
 	function restoreIconSrc() {
+		// icon was changed during the action => no need to move it back
+		//alert("Restore "+this.icon.src.substr(-18))
+		if (this.icon.src.substr(-18) != 'static/loading.jpg') { // check if icon.src is loading icon
+			return;
+		}
 		this.icon.src = this.oldIconSrc;
 	}
 
@@ -81,6 +86,12 @@
 	}
 
 	function removeClicked(selectedNode, controllerId, icon) {
+
+		if (!selectedNode) {
+			alert('No node selected');
+			return false;
+		}
+
 		if (selectedNode.actionIsDisabled(selectedNode.actions.REMOVE)) {
 			return false;
 		}
@@ -90,10 +101,6 @@
 
 		this.controller = dojo.widget.manager.getWidgetById(controllerId);
 
-		if (!selectedNode) {
-			alert('No node selected');
-			return false;
-		}
 
 		this.icon.src = 'static/loading.jpg';
 
@@ -108,13 +115,13 @@
 	}
 
 	var reporter = function(reporter) {
-					this.name = eventName;
-					this.go = function(message) {
-						var rep = [ reporter + " -- event: "+this.name ];
-						for(i in message) rep.push(i+": "+message[i]);
-						dojo.debug(rep.join(', '));
-					}
-				}
+		this.name = eventName;
+		this.go = function(message) {
+			var rep = [ reporter + " -- event: "+this.name ];
+			for(i in message) rep.push(i+": "+message[i]);
+			dojo.debug(rep.join(', '));
+		}
+	}
 
 	dojo.addOnLoad(function(){
 
@@ -164,7 +171,7 @@
 	Controller is not a real widget. But I need to bind it to the tree in the moment of creations,
 	so I use this syntax. Waiting for dojo:propertySet
 -->
-<div dojoType="EditorTreeController" widgetId="treeController" eventNaming="default" DNDMode="between"></div>
+<div dojoType="EditorTreeController" widgetId="treeController" DNDMode="between"></div>
 
 <div dojoType="EditorTreeSelector" widgetId="treeSelector"></div>
 
@@ -190,6 +197,7 @@ dojo.addOnLoad(function() {
 	var controller = dojo.widget.manager.getWidgetById('treeController');
 	dojo.event.topic.subscribe(controller.eventNames.move,
 		function(message) {
+			//dojo.debugShallow(message)
 			if (message.oldParent.tree === message.newParent.tree) return; // same tree, nothing to be done
 			if (message.newParent.tree.widgetId != 'firstTree') { // only first tree has context menu
 				dojo.lang.forEach(message.child.getDescendants(), function(child) { menu.unBindDomNode(child.labelNode); });
@@ -255,9 +263,9 @@ dojo.addOnLoad(function() {
 <tr>
 <td style="border:1px dashed black;">
 <h4>firstTree</h4>
-<div dojoType="EditorTree" toggle="default" selector="treeSelector" eventNaming="default" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
+<div dojoType="EditorTree" myArr="a;b" myBool="true" selector="treeSelector" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
 
-    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="true" actionsDisabled="remove,move">
+    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="true" actionsDisabled="remove;move">
 
        	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true"></div>
 
@@ -270,7 +278,7 @@ dojo.addOnLoad(function() {
 </td>
 <td style="border:1px dashed black;">
 <h4>secondTree</h4>
-<div dojoType="EditorTree" toggle="default" selector="treeSelector" eventNaming="default" widgetId="secondTree" acceptDropSources="secondTree,firstTree"  controller="treeController">
+<div dojoType="EditorTree" toggle="default" selector="treeSelector" widgetId="secondTree" acceptDropSources="secondTree;firstTree"  controller="treeController">
 
     <div dojoType="EditorTreeNode" title="Item 2.1" widgetId="2.1" isFolder="true"></div>
     <div dojoType="EditorTreeNode" title="Item 2.2" widgetId="2.2" isFolder="true"></div>
