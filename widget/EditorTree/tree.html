@@ -263,11 +263,19 @@ dojo.addOnLoad(function() {
 <tr>
 <td style="border:1px dashed black;">
 <h4>firstTree</h4>
-<div dojoType="EditorTree" myArr="a;b" myBool="true" selector="treeSelector" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
 
-    <div dojoType="EditorTreeNode" title="Item 1.1" widgetId="1.1" isExpanded="true" actionsDisabled="remove;move">
 
-       	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true"></div>
+
+<div dojoType="EditorTree" selector="treeSelector" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
+
+    <div dojoType="EditorTreeNode" widgetId="1.1" isExpanded="true" actionsDisabled="remove">
+	<div dojoType="EditorTreePropertySetter" property="title">Item 1.1</div>
+
+	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true">
+
+		<div dojoType="EditorTreePropertySetter" property="title"><i>Item 1.1.1</i></div>
+	</div>
+
 
     </div>
 
@@ -289,7 +297,7 @@ dojo.addOnLoad(function() {
 </table>
 
 
-<!--
+
 <div dojoType="DebugConsole"
 	title="Debug Console"
 	style="width: 600px; height: 300px; left: 200px;"
@@ -302,7 +310,6 @@ dojo.addOnLoad(function() {
 
 
 <hr>
--->
 
 <h3>The tree should provide most functionality requested by apps.<br/>
 Read the description about it.<br/>
