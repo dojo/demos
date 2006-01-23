@@ -268,14 +268,11 @@ dojo.addOnLoad(function() {
 
 
 
-<div dojoType="EditorTree" selector="treeSelector" actionsDisabled="addChild" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
+<div dojoType="EditorTree" selector="treeSelector" actionsDisabled="addChild" toggler="fade" widgetId="firstTree" acceptDropSources="secondTree" controller="treeController">
 
-    <div dojoType="EditorTreeNode" widgetId="1.1" isExpanded="true" actionsDisabled="remove">
-	<div dojoType="EditorTreePropertySetter" property="title">Item 1.1</div>
+    <div dojoType="EditorTreeNode" widgetId="1.1" title="<b>Item 1.1</b>" isExpanded="true" actionsDisabled="remove">
 
 	<div dojoType="EditorTreeNode" widgetId="1.1.1" title="Item 1.1.1" isFolder="true">
-
-		<div dojoType="EditorTreePropertySetter" property="title"><i>Item 1.1.1</i></div>
 	</div>
 
 
@@ -288,7 +285,7 @@ dojo.addOnLoad(function() {
 </td>
 <td style="border:1px dashed black;">
 <h4>secondTree</h4>
-<div dojoType="EditorTree" toggle="default" selector="treeSelector" widgetId="secondTree" acceptDropSources="secondTree;firstTree"  controller="treeController">
+<div dojoType="EditorTree" selector="treeSelector" widgetId="secondTree" acceptDropSources="secondTree;firstTree"  controller="treeController">
 
     <div dojoType="EditorTreeNode" title="Item 2.1" widgetId="2.1" isFolder="true"></div>
     <div dojoType="EditorTreeNode" title="Item 2.2" widgetId="2.2" isFolder="true"></div>
