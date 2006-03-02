@@ -58,7 +58,7 @@
 
 	/* process create operation */
 	function createClicked(selectedNode, controllerId, icon) {
-		if (selectedNode.actionIsDisabled(selectedNode.actions.ADDCHILD)) {
+		if (!selectedNode || selectedNode.actionIsDisabled(selectedNode.actions.ADDCHILD)) {
 			return false;
 		}
 
