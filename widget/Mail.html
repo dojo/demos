@@ -16,6 +16,7 @@
 	dojo.require("dojo.widget.ColorPalette");
 	dojo.require("dojo.widget.DatePicker");	
 	dojo.require("dojo.widget.Tree");
+	dojo.require("dojo.widget.TreeSelector");
 	dojo.require("dojo.widget.Checkbox");
 	dojo.require("dojo.widget.TabPane");
 	dojo.require("dojo.widget.Button2");
@@ -29,6 +30,7 @@
 
 </head>
 <body>
+<div dojoType="TreeSelector" eventNames="select:listSelected" widgetId="treeSelector"></div>
 <div dojoType="LayoutPane"
 	layoutChildPriority='top-bottom'
 	id="main"
@@ -63,7 +65,7 @@
 		activeSizing="0"
 		layoutAlign="client"
 	>
-		<div id="treePane" dojoType="Tree" toggle="fade" layoutAlign="flood" publishSelectionTopic="listSelected"
+		<div id="treePane" dojoType="Tree" toggle="wipe" toggleDuration="500" selector="treeSelector"
 			sizeMin="20" sizeShare="15">
 			<div dojoType="TreeNode" title="Mail Account" childIconSrc="Mail/mailbox1.gif">
 				<div dojoType="TreeNode" title="Inbox"  childIconSrc="Mail/folder_inbox.gif"></div>
@@ -94,8 +96,8 @@
 </div>
 
 <div id="options" dojoType="FloatingPane" title="Options"
-	style="width: 300px; height: 200px; left: 300px; top: 300px;"
-	hasShadow="true" resizable="true" titleBarDisplay="simple" windowState="minimized">
+	style="width: 300px; height: 200px; left: 300px; top: 300px; display: none;"
+	hasShadow="true" resizable="true">
 	<div dojoType="LayoutPane" style="width: 100%; height: 100%">
 	  <div dojoType="TabPane" layoutAlign="client">
 	  	<div dojoType="ContentPane" label="Sending/Receiving">

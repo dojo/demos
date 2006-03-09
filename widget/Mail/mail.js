@@ -4,7 +4,7 @@
 function displayList(){
     this.update = function(message) {
         var clickedTreeNode =     
-            dojo.widget.getWidgetById(message);
+            message.node;
 
 		var listPane = dojo.widget.getWidgetById("listPane");
 		var url = "Mail/"+clickedTreeNode.title.replace(" ","") + ".html";
