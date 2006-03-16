@@ -102,7 +102,7 @@
 
 		this.icon.src = 'static/loading.jpg';
 
-		var res = controller.removeChild(selectedNode, dojo.lang.hitch(this, restoreIconSrc));
+		var res = controller.removeNode(selectedNode, dojo.lang.hitch(this, restoreIconSrc));
 
 		// local checks failed
 		if (res == false) {
