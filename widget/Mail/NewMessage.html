@@ -11,7 +11,7 @@
 <script language="JavaScript" type="text/javascript">
 	dojo.require("dojo.widget.Editor");	
 	dojo.require("dojo.widget.ComboBox");
-	dojo.require("dojo.widget.LayoutPane");
+	dojo.require("dojo.widget.LayoutContainer");
 	dojo.require("dojo.widget.Button2");
 	dojo.hostenv.writeIncludes();
 </script>
@@ -27,9 +27,9 @@
 </script>
 </head>
 <body>
-<div dojoType="LayoutPane" id="main">
+<div dojoType="LayoutContainer" id="main">
 
-<div dojoType="LayoutPane" layoutAlign="top" style="overflow: visible; z-index: 10;">
+<div dojoType="LayoutContainer" layoutAlign="top" style="overflow: visible; z-index: 10;">
 	<table width=100%>
 		<tr>
 			<td style="padding-right: 20px;">To:</td>
@@ -59,7 +59,7 @@
 	</table>
 </div>
 
-<div dojoType="LayoutPane" layoutAlign="client">
+<div dojoType="LayoutContainer" layoutAlign="client">
 	<div id="editable" dojoType="Editor" widgetId="editdiv" items="formatblock;|;insertunorderedlist;insertorderedlist;|;bold;italic;underline;strikethrough;|;createLink;">
 		Type the address above (try an address starting with a,b,c,d, to test autocompletion,
 		and then type your message here...
@@ -67,7 +67,7 @@
 	</div>
 </div>
 
-<div dojoType="LayoutPane" layoutAlign="bottom">
+<div dojoType="LayoutContainer" layoutAlign="bottom">
 	<div layoutAlign="right" class="box">
 		<button id="cancel" dojoType="Button2" onclick="close();">
 			<img src="cancel.gif" height=18>
