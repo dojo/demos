@@ -37,7 +37,7 @@ body .dojoFloatingPaneDragbar {
 	border: black 2px;
 }
 
-body .dojoHtmlSplitterPanePanel {
+body .dojoSplitPane {
 	background: beige;
 	overflow: auto;
 }
