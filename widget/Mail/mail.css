@@ -53,3 +53,7 @@ body .dojoSplitPane {
 
 .dojoButton .dojoButtonContents {
 }
+
+.dojoTabPaneWrapper {
+	padding: 8px 8px 8px 8px;
+}
