@@ -1,5 +1,4 @@
 dojo.require("dojo.dom");
-dojo.require("dojo.io.*");
 dojo.require("dojo.event.*");
 dojo.require("dojo.html");
 dojo.require("dojo.fx.*");
@@ -101,7 +100,7 @@ var Moxie = {
 	_save: function(key, value){
 		this._printStatus("Saving '" + key + "'...");
 		var self = this;
-		var saveHandler = function(status, keyName) {
+		var saveHandler = function(status, keyName){
 			if(status == dojo.storage.PENDING){
 				// The Flash dialog plus the underlying Editor on Firefox
 				// creates screen glitches; temporary
@@ -203,7 +202,7 @@ var Moxie = {
 };
 
 // wait until the storage system is finished loading
-if(dojo.flash.ready == false){ // storage might already be loaded when we get here
+if(dojo.storage.manager.isInitialized() == false){ // storage might already be loaded when we get here
 	dojo.event.connect(dojo.storage.manager, "loaded", Moxie, 
 	                  Moxie.initialize);
 }else{
