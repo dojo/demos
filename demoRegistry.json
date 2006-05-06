@@ -1,0 +1,69 @@
+{
+	navigation: [
+			{
+				name: "Widget Demos",
+				demos: ["test_DatePicker","Fisheye", "Editor","Mail","test_SortableTable"]
+			},
+			{
+				name: "Event Demos",
+				demos: ["test_DatePicker","Mail"]
+			},
+			{
+				name: "I/O Demos",
+				demos: ["JsonService"]
+			},
+
+		],
+
+	definitions: {
+		"test_DatePicker": {
+			url: "../tests/widget/test_DatePicker.html",
+			author: "Dylan Schiemann",
+			thumbnail: "screenshots/test_DatePickerThumb.png",
+			screenShot: "screenshots/test_DatePicker.png",
+			description: "test_DatePicker demonstrates the use of the the DatePicker widget"
+		},
+
+		"Fisheye": {
+			url: "widget/Fisheye.html",
+			author: "Anonymous",
+			thumbnail: "",
+			screenShot: "",
+			description: "Very Simple demonstration of the Dojo Fisheye Widget",
+		},
+
+		"JsonService": {
+			url: "../tests/rpc/test_JsonService.html",
+			author: "Dustin Machi",
+			thumbnail: "",
+			screenShot: "",
+			description: "JSON-RPC Test Page"
+		},
+
+		"Editor": {
+			url: "widget/Editor.html",
+			author: "Somebody",
+			thumbnail: "",
+			screenShot: "",
+			description: "Example Editor Application"
+		},
+
+		"Mail": {
+			url: "widget/Mail.html",
+			author: "Bil Keese",
+			thumbnail: "",
+			screenShot: "",
+			description: "Simple Mail Application demonstration"
+		},
+
+		"test_SortableTable": {
+			url: "../tests/widget/test_SortableTable.html",
+			author: "Tom Trenka",
+			thumbnail: "",
+			screenShot: "",
+			description: "test_SortableTable demonstrates the use of the the SortableTable widget"
+		}
+
+	}
+
+}

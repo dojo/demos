@@ -1,0 +1,140 @@
+	#container {
+		width: 700px;
+		height: 450px;
+		border: 1px solid black;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	div.demoEngineNavigation, div.demoEngineDemoContainer {
+/*		border: 1px solid black; */
+		width: 700px;
+		height: 450px;
+		overflow: hidden;
+		padding: 0px;
+		margin: 0px;
+		position: relative;
+		top: 0px;
+		left: 0px;
+	}
+
+	div.dojoTabContainer {
+		width: 700px;
+		height: 450px;
+/*		position: absolute;*/ //This makes things look correct, but then it menu return div isn't clickable :/ 
+		top: 0px;
+		left: 0px;
+		float: right;
+	}
+
+	div.dojoTabContainer iframe {
+		overflow: auto;
+		width: 700px;
+		height: 425px;
+		border: 0px;
+		padding: 0px;
+		margin: 0px;	
+	}
+
+	div.demoEngineDemoHeader {
+		top: 0px;
+		left: 0px;
+		width: 550px;
+		height: 65px;
+		position: absolute;
+		overflow: none;
+		/*border: 1px solid black;*/
+	}
+
+	div.demoEngineDemoHeader h1 {
+		font-size: 1em;
+	}
+
+	div.demoEngineDemoHeader h2 {
+		font-size: .75em	
+	}
+
+	div.demoEngineDemoHeader div {
+		/*margin: 10px;*/
+		float: left;
+		/*margin-left: 120px;*/
+		position: absolute;
+		top: 0px;
+		left: 120px;
+	}
+
+	div.demoEngineDemoHeader div:first-child {
+		left: 5px;
+		top: 10px;
+		width: 75px;
+	}
+
+	.collapseTo {
+		position: relative;
+		width: 1px;
+		height: 1px;
+		top: 0px;
+		left: 0px;
+	}
+
+	div.dojoTabLabels-top {
+		position : absolute;
+		top : 0px;
+		left : 0px;
+		overflow : visible;
+		padding-top: 20px;
+		margin-bottom: 20px;
+		margin-right: 0px;
+		width : 150px;
+	}
+
+	div.dojoTabPaneTab {
+		float: right;
+	}
+
+	div.demoEngineMenuNavigation {
+		float: left;
+		left: 225px;
+	/*	border: 1px solid black; */
+		width: 250px;
+		height: 448px;
+		margin: 0px;
+		padding: 0px; position: relative;
+	}
+
+	div.demoEngineDemoNavigation {
+		float: right;
+		width: 440px;
+		height: 448px;
+		/*border: 1px solid black;*/
+		margin: 0px;
+		padding: 0px;
+		position: relative;
+		overflow: auto;
+	}
+
+	table.demoEngineDemoListings {
+		background: #efefef;
+		width: 100%;
+	}
+
+	table.demoEngineDemoListings img {
+		width: 100px;
+		height: 80px;
+	}
+
+	.demoEngineCollapsedMenu {
+		border: 1px solid black;
+	}
+
+	.dojoButton {
+		margin: 10px;
+	}	
+	.dojoButton .dojoButtonContents {
+		font-size: large;
+	}
+
+	.dojoButtonContents {
+		width: 180px;
+	}
+
