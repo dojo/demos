@@ -21,7 +21,6 @@
 	div.dojoTabContainer {
 		width: 700px;
 		height: 450px;
-/*		position: absolute;*/ //This makes things look correct, but then it menu return div isn't clickable :/ 
 		top: 0px;
 		left: 0px;
 		float: right;
@@ -42,7 +41,7 @@
 		width: 550px;
 		height: 65px;
 		position: absolute;
-		overflow: none;
+		overflow: hidden;
 		/*border: 1px solid black;*/
 	}
 
@@ -104,7 +103,7 @@
 	}
 
 	div.dojoTabPaneTab.current {
-		backgroiund: #ffffff;
+		background: #ffffff;
 		border-bottom: 2px solid black;
 	}
 
