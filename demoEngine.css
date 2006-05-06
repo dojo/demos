@@ -90,6 +90,22 @@
 
 	div.dojoTabPaneTab {
 		float: right;
+		background: #ffffff;
+		border: 0px;
+		padding: 0px;
+		margin-left: 10px;
+	}
+
+	div.dojoTabPaneTab span {	
+		background: #ffffff;
+		border: 0px;
+		padding: 0px;
+		margin: 0px;
+	}
+
+	div.dojoTabPaneTab.current {
+		backgroiund: #ffffff;
+		border-bottom: 2px solid black;
 	}
 
 	div.demoEngineMenuNavigation {
@@ -121,6 +137,10 @@
 	table.demoEngineDemoListings img {
 		width: 100px;
 		height: 80px;
+	}
+
+	table.demoEngineDemoListings tr:hover {
+		background: yellow;
 	}
 
 	.demoEngineCollapsedMenu {
