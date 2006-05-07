@@ -2,20 +2,362 @@
 	navigation: [
 			{
 				name: "Widget Demos",
-				demos: ["test_DatePicker","Fisheye", "Editor","Mail","test_SortableTable"]
+				demos: [
+						"Editor",
+						"Forms",
+						"Fisheye",
+						"Mail",
+						"Moxie",
+						"Panes",
+						"Tree",
+						"test_Accordion",
+						"test_Button2",
+						"test_Chart",
+						"test_Checkbox",
+						"test_CiviCrmDateTimePicker",
+						"test_ColorPalette",
+						"test_ComboBox",
+						"test_ContentPane",
+						"test_DatePicker",
+						"test_Dialog",
+						"test_Dialog2",
+						"test_Dialog3",
+						"test_DialogRemote",
+						"test_Editor",
+						"test_Editor2",
+						"test_Editor2Toolbar",
+						"test_Editor_from_textarea",
+						"test_FisheyeList",
+						"test_FloatingPane",
+						"test_GoogleMap",
+						"test_InlineEditBox",
+						"test_Layout",
+						"test_LayoutCode",
+						"test_LayoutContainer",
+						"test_LayoutContainer_2",
+						"test_Menu2",
+						"test_Menu2_Bar",
+						"test_Menu2_Node",
+						"test_RemotePane",
+						"test_Menu2_Position",
+						"test_RichText",
+						"test_SlideShow",
+						"test_SplitContainer",
+						"test_SplitContainer_2",
+						"test_SortableTable",
+						"test_TabContainer",
+						"test_TaskBar",
+						"test_TimePicker",
+						"test_TitlePane",
+						"test_Toggler",
+						"test_Toolbar",	
+						"test_Toolbar_Markup",
+						"test_Tooltip",
+						"test_Wizard",
+						"test_YahooMap"
+					]
 			},
+
 			{
 				name: "Event Demos",
-				demos: ["test_DatePicker","Mail"]
+				demos: ["Mail","test_DatePicker","test_DialogRemote","test_Editor2"]
 			},
 			{
 				name: "I/O Demos",
 				demos: ["JsonService"]
 			},
 
+			{
+				name: "Storage Demos",
+				demos: ["Moxie"]
+			}
+
 		],
 
 	definitions: {
+
+		"test_YahooMap": {
+			url: "../tests/widget/test_YahooMap.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Map widget with Yahoo as the src"
+		},
+
+		"test_Wizard": {
+			url: "../tests/widget/test_Wizard.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Wizard widget"
+		},
+
+		"test_Tooltip": {
+			url: "../tests/widget/test_Tooltip.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Tooltip widget"
+		},
+
+		"test_Toolbar_Markup": {
+			url: "../tests/widget/test_Toolbar_Markup.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Toolbar widget with creation from markup"
+		},
+
+		"test_Toolbar": {
+			url: "../tests/widget/test_Toolbar.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Toolbar widget"
+		},
+
+		"test_Toggler": {
+			url: "../tests/widget/test_Toggler.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Toggler widget"
+		},
+
+		"test_TitlePane": {
+			url: "../tests/widget/test_TitlePane.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the TitlePane widget"
+		},
+
+		"test_TimePicker": {
+			url: "../tests/widget/test_TimePicker.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the TimePicker widget"
+		},
+
+		"test_TaskBar": {
+			url: "../tests/widget/test_TaskBar.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Taskbar widget"
+		},
+
+		"test_TabContainer": {
+			url: "../tests/widget/test_TabContainer.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the TabContainer widget"
+		},
+
+		"test_SplitContainer_2": {
+			url: "../tests/widget/test_SplitContainer_2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the SplitContainer widget"
+		},
+
+		"test_SplitContainer": {
+			url: "../tests/widget/test_SplitContainer.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the SplitContainer widget"
+		},
+
+		"test_SlideShow": {
+			url: "../tests/widget/test_SlideShow.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the SlideShow widget"
+		},
+
+		"test_RichText": {
+			url: "../tests/widget/test_RichText.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the RichText widget"
+		},
+
+		"test_RemotePane": {
+			url: "../tests/widget/test_RemotePane.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the remotely loaded pane"
+		},
+
+		"test_Menu2_Position": {
+			url: "../tests/widget/test_Menu2_Position.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Tests the positioning of popup menus defined within other containers"
+		},
+
+		"test_Menu2_Node": {
+			url: "../tests/widget/test_Menu2_Node.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the ContextMenus attached to a node"
+		},
+
+		"test_Menu2_Bar": {
+			url: "../tests/widget/test_Menu2_Bar.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the MenuBar and ContextMenu widgets"
+		},
+
+		"test_Menu2": {
+			url: "../tests/widget/test_Menu2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Menu2 ContextMenu widget"
+		},
+
+		"test_LayoutContainer_2": {
+			url: "../tests/widget/test_LayoutContainer_2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the LayoutContainer widget"
+		},
+
+		"test_LayoutContainer": {
+			url: "../tests/widget/test_LayoutContainer.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the LayoutContainer widget"
+		},
+
+		"test_LayoutCode": {
+			url: "../tests/widget/test_LayoutCode.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Layout widgets with programmatic creation"
+		},
+
+		"test_Layout": {
+			url: "../tests/widget/test_Layout.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Layout widgets"
+		},
+
+		"test_InlineEditBox": {
+			url: "../tests/widget/test_InlineEditBox.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the InlineEditBox widget"
+		},
+
+		"test_GoogleMap": {
+			url: "../tests/widget/test_GoogleMap.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the GoogleMap Widget (use from sites outside of dojotoolkit.org will require a google key)"
+		},
+
+		"test_FloatingPane": {
+			url: "../tests/widget/test_FloatingPane.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the FloatingPane widget"
+		},
+
+		"test_FisheyeList": {
+			url: "../tests/widget/test_FisheyeList.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Fisheye widget"
+		},
+
+		"test_Editor_from_textarea": {
+			url: "../tests/widget/test_Editor_from_textarea.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Editor widget with inital content from a textarea"
+		},
+
+		"test_Editor2Toolbar": {
+			url: "../tests/widget/test_Editor2Toolbar.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Editor2ToolBar widget"
+		},
+
+		"test_Editor2": {
+			url: "../tests/widget/test_Editor2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Editor2 widget"
+		},
+
+		"test_Editor": {
+			url: "../tests/widget/test_Editor.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Editor widget"
+		},
+
+		"test_DialogRemote": {
+			url: "../tests/widget/test_DialogRemote.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Dialog widget with the dialogs content loaded remotely"
+		},
+
+		"test_Dialog3": {
+			url: "../tests/widget/test_Dialog3.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Dialog widget"
+		},
+
+		"test_Dialog2": {
+			url: "../tests/widget/test_Dialog2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the Dialog widget"
+		},
+
+
+		"test_Dialog": {
+			url: "../tests/widget/test_Dialog.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the the Dialog widget"
+		},
+
+
 		"test_DatePicker": {
 			url: "../tests/widget/test_DatePicker.html",
 			author: "Dylan Schiemann",
@@ -24,12 +366,109 @@
 			description: "test_DatePicker demonstrates the use of the the DatePicker widget"
 		},
 
+		"test_Accordion": {
+			url: "../tests/widget/test_Accordion.html",
+			author: "Dustin Machi",
+			thumbnail: "",
+			screenShot: "",
+			description: "test_Accordion demonstrates the use of the the Accordion widget"
+		},
+
+		"test_Button2": {
+			url: "../tests/widget/test_Button2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "test_Button2 demonstrates the use of the the Button2 widget and a custom widget extended from Button"
+		},
+
+		"test_Chart": {
+			url: "../tests/widget/test_Chart.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "test_Chart demonstrates SVG Charting in dojo.  It requires a browser capable of inline SVG"
+		},
+
+		"test_Checkbox": {
+			url: "../tests/widget/test_Checkbox.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "test_Checkbox demonstrates the use of the the Checkbox widget"
+		},
+
+		"test_CiviCrmDateTimePicker": {
+			url: "../tests/widget/test_CiviCrmDateTimePicker.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the the DatePicker and TimePicker widgets"
+		},
+
+		"test_ColorPalette": {
+			url: "../tests/widget/test_ColorPalette.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the the ColorPalette widget"
+		},
+
+		"test_ComboBox": {
+			url: "../tests/widget/test_ComboBox.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the the ComboBox widget"
+		},
+
+		"test_ContentPane": {
+			url: "../tests/widget/test_ContentPane.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstrates the use of the the ContentPane widget"
+		},
+
+
+		"Tree": {
+			url: "widget/Tree/tree.html",
+			author: "Ilia Kantor",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstration of the Dojo's Tree Widget",
+		},
+
+		"Panes": {
+			url: "widget/Panes.html",
+			author: "Anonymous",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstration of Dojo's layout Containers and Panes"
+		},
+
+		"Moxie": {
+			url: "storage/editor.html",
+			author: "Brad Neuburg",
+			thumbnail: "",
+			screenShot: "",
+			description: "Editor application that demonstrates use of dojo.strorage for offline use"
+		},
+
+		"Forms": {
+			url: "widget/Form.html",
+			author: "Anonymous",
+			thumbnail: "",
+			screenShot: "",
+			description: "Demonstration of the Dojo's Form Widgets"
+		},
+
 		"Fisheye": {
 			url: "widget/Fisheye.html",
 			author: "Anonymous",
 			thumbnail: "",
 			screenShot: "",
-			description: "Very Simple demonstration of the Dojo Fisheye Widget",
+			description: "Very Simple demonstration of the Dojo Fisheye Widget"
 		},
 
 		"JsonService": {
