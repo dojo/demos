@@ -1,63 +1,114 @@
 {
 	navigation: [
 			{
-				name: "Widget Demos",
+				name: "Demo Applications",
 				demos: [
-						"Editor",
-						"FormWidgets",
-						"Fisheye",
 						"Mail",
 						"Moxie",
-						"Panes",
-						"Tree",
-						"Accordion",
-						"Button2",
-						"Chart",
-						"Checkbox",
-						"CiviCrmDateTimePicker",
-						"ColorPalette",
-						"ComboBox",
-						"ContentPane",
-						"DatePicker",
-						"Dialog",
-						"GoogleMap",
-						"InlineEditBox",
-						"Layout",
-						"LayoutContainer",
-						"LayoutContainer_2",
-						"Menu",
-						"SlideShow",
-						"SplitContainer",
-						"SplitContainer_2",
-						"SortableTable",
-						"TabContainer",
-						"TimePicker",
-						"TitlePane",
-						"Toggler",
-						"Tooltip",
-						"Windows",
-						"Wizard",
-						"YahooMap"
+						"FormTour",
+						"LayoutTour"
 					]
 			},
 
 			{
-				name: "Event Demos",
-				demos: ["Mail","DatePicker","DialogRemote","Editor"]
+				name: "Effects",
+				demos: ["Effects"]
 			},
 			{
-				name: "I/O Demos",
-				demos: ["JsonService"]
+				name: "Drag And Drop",
+				demos: ["DragDrop", "DragMove", "DragHandle"]
 			},
 
 			{
-				name: "Storage Demos",
+				name: "Storage",
 				demos: ["Moxie"]
+			},
+			
+			{
+				name: "Layout",
+				demos: [
+						"LayoutTour",
+						"Accordion",
+						"ContentPane",
+						"Dialog",
+						"Layout",
+						"LayoutContainer",
+						"LayoutContainer_2",
+						"SplitContainer",
+						"SplitContainer_2",
+						"TabContainer",
+						"TitlePane",
+						"Windows",
+						"Wizard"
+					]
+			},
+			{
+				name: "Forms",
+				demos: [
+						"FormTour",
+						"Editor",
+						"Checkbox",
+						"CiviCrmDateTimePicker",
+						"ColorPalette",
+						"ComboBox",
+						"DatePicker",
+						"Dialog",
+						"TimePicker"
+					]
+			},
+			{
+				name: "General Widgets",
+				demos: [
+						"Tree",
+						"Button2",
+						"Menu",
+						"Fisheye",
+						"InlineEditBox",
+						"SortableTable",
+						"Chart",
+						"Tooltip",
+						"Toggler",
+						"SlideShow",
+						"GoogleMap",
+						"YahooMap"
+					]
 			}
 
 		],
 
 	definitions: {
+
+		"DragDrop": {
+			url: "../tests/dnd/test_simple.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Dragging items from one list to another"
+		},
+
+		"DragMove": {
+			url: "../tests/dnd/test_dragmove.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Dragging items around the screen"
+		},
+
+		"DragHandle": {
+			url: "../tests/dnd/test_draghandle_2.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Dragging things by a handle"
+		},
+
+		"Effects": {
+			url: "../tests/lfx/test_lfx.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Fades, wipes, slides, etc."
+		},
 
 		"YahooMap": {
 			url: "../tests/widget/test_YahooMap.html",
@@ -291,12 +342,12 @@
 			description: "Tree widget featuring lazy loading of data, drag & drop, etc."
 		},
 
-		"Panes": {
+		"LayoutTour": {
 			url: "widget/Panes.html",
-			author: "Anonymous",
+			author: "Bill Keese",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstration of Dojo's layout Containers and Panes"
+			description: "Demonstration of Dojo's layout containers and panes"
 		},
 
 		"Moxie": {
@@ -307,12 +358,12 @@
 			description: "Editor application that demonstrates use of dojo.strorage for offline use"
 		},
 
-		"FormWidgets": {
+		"FormTour": {
 			url: "widget/Form.html",
 			author: "Anonymous",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstration of the Dojo's Form Widgets"
+			description: "Overview of the Dojo's Form Widgets"
 		},
 
 		"Fisheye": {
