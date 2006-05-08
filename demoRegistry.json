@@ -48,7 +48,8 @@
 						"ComboBox",
 						"DatePicker",
 						"Dialog",
-						"TimePicker"
+						"TimePicker",
+						"Validation"
 					]
 			},
 			{
@@ -62,7 +63,7 @@
 						"SortableTable",
 						"Chart",
 						"Tooltip",
-						"Toggler",
+						/*"Toggler",  broken :-( */
 						"SlideShow",
 						"GoogleMap",
 						"YahooMap"
@@ -153,6 +154,14 @@
 			description: "Widget to input a time (ex: 3:15PM)"
 		},
 
+		"Validation": {
+			url: "../tests/widget/test_validate.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "Dojo has many widgets to validate and/or correct user keyboard input."
+		},
+
 		"Windows": {
 			url: "../tests/widget/test_TaskBar.html",
 			author: "various",
@@ -234,8 +243,8 @@
 		},
 
 		"Editor": {
-			url: "../tests/widget/test_Editor2.html",
-			author: "Alex Russell",
+			url: "widget/Editor.html",
+			author: "",
 			thumbnail: "",
 			screenShot: "",
 			description: "Dojo's rich text editor"
@@ -306,7 +315,7 @@
 		},
 
 		"ComboBox": {
-			url: "../tests/widget/test_ComboBox.html",
+			url: "widget/comboBox.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
