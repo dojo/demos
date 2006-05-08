@@ -4,9 +4,7 @@
 				name: "Demo Applications",
 				demos: [
 						"Mail",
-						"Moxie",
-						"FormTour",
-						"LayoutTour"
+						"Moxie"
 					]
 			},
 
@@ -27,15 +25,12 @@
 			{
 				name: "Layout",
 				demos: [
-						"LayoutTour",
+						"Layout",
 						"Accordion",
 						"ContentPane",
 						"Dialog",
-						"Layout",
 						"LayoutContainer",
-						"LayoutContainer_2",
 						"SplitContainer",
-						"SplitContainer_2",
 						"TabContainer",
 						"TitlePane",
 						"Windows",
@@ -167,23 +162,15 @@
 		},
 
 		"TabContainer": {
-			url: "../tests/widget/test_TabContainer.html",
+			url: "widget/tabContainer.html",
 			author: "Bill Keese",
 			thumbnail: "",
 			screenShot: "",
 			description: "A set of tabs."
 		},
 
-		"SplitContainer_2": {
-			url: "../tests/widget/test_SplitContainer_2.html",
-			author: "",
-			thumbnail: "",
-			screenShot: "",
-			description: "Another demo of SplitContainer"
-		},
-
 		"SplitContainer": {
-			url: "../tests/widget/test_SplitContainer.html",
+			url: "widget/splitContainer.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
@@ -199,7 +186,7 @@
 		},
 
 		"ContentPane": {
-			url: "../tests/widget/test_RemotePane.html",
+			url: "widget/contentPane.html",
 			author: "Bill Keese, Fredrik Johansson",
 			thumbnail: "",
 			screenShot: "",
@@ -214,20 +201,12 @@
 			description: "Demonstrates the use of the MenuBar (like a File menu) and ContextMenu (right-click menu) widgets."
 		},
 
-		"LayoutContainer_2": {
-			url: "../tests/widget/test_LayoutContainer_2.html",
-			author: "",
-			thumbnail: "",
-			screenShot: "",
-			description: "Demonstrates the use of the LayoutContainer widget"
-		},
-
 		"LayoutContainer": {
-			url: "../tests/widget/test_LayoutContainer.html",
+			url: "widget/layoutContainer.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstrates the use of the LayoutContainer widget"
+			description: "Delphi-like position of children into left/right/top/bottom/client positions."
 		},
 
 		"Layout": {
@@ -235,7 +214,7 @@
 			author: "",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstrates the use of the Layout widgets"
+			description: "Demonstrates the use of some of the layout widgets"
 		},
 
 		"InlineEditBox": {
@@ -279,11 +258,11 @@
 		},
 
 		"Accordion": {
-			url: "../tests/widget/test_Accordion.html",
+			url: "widget/accordionContainer.html",
 			author: "Dustin Machi",
 			thumbnail: "",
 			screenShot: "",
-			description: "Accordion demonstrates the use of the the Accordion widget"
+			description: "Demonstrates the use of the the Accordion widget"
 		},
 
 		"Button2": {
@@ -340,14 +319,6 @@
 			thumbnail: "",
 			screenShot: "",
 			description: "Tree widget featuring lazy loading of data, drag & drop, etc."
-		},
-
-		"LayoutTour": {
-			url: "widget/Panes.html",
-			author: "Bill Keese",
-			thumbnail: "",
-			screenShot: "",
-			description: "Demonstration of Dojo's layout containers and panes"
 		},
 
 		"Moxie": {
