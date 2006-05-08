@@ -56,7 +56,7 @@
 				name: "General Widgets",
 				demos: [
 						"Tree",
-						"Button2",
+						"Button",
 						"Menu",
 						"Fisheye",
 						"InlineEditBox",
@@ -123,7 +123,7 @@
 		},
 
 		"Tooltip": {
-			url: "../tests/widget/test_Tooltip.html",
+			url: "widget/tooltip.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
@@ -231,7 +231,7 @@
 			author: "",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstrates the use of the InlineEditBox widget"
+			description: "This widget essentially lets you edit page items in-place, without bringing up an edit page."
 		},
 
 		"GoogleMap": {
@@ -274,12 +274,12 @@
 			description: "Demonstrates the use of the the Accordion widget"
 		},
 
-		"Button2": {
+		"Button": {
 			url: "../tests/widget/test_Button2.html",
 			author: "Bill Keese",
 			thumbnail: "",
 			screenShot: "",
-			description: "Button2 demonstrates the use of the the Button2 widget and a custom widget extended from Button"
+			description: "Dojo supports simple buttons, drop down list buttons, and combobuttons; users can customize the button style."
 		},
 
 		"Chart": {
