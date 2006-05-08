@@ -436,7 +436,7 @@
 			author: "Ilia Kantor",
 			thumbnail: "",
 			screenShot: "",
-			description: "Demonstration of the Dojo's Tree Widget",
+			description: "Demonstration of the Dojo's Tree Widget"
 		},
 
 		"Panes": {
