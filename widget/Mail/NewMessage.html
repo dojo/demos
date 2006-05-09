@@ -12,7 +12,7 @@
 	dojo.require("dojo.widget.Editor");	
 	dojo.require("dojo.widget.ComboBox");
 	dojo.require("dojo.widget.LayoutContainer");
-	dojo.require("dojo.widget.Button2");
+	dojo.require("dojo.widget.Button");
 	dojo.hostenv.writeIncludes();
 </script>
 <link rel=stylesheet href="mail.css" type="text/css">
@@ -69,11 +69,11 @@
 
 <div dojoType="LayoutContainer" layoutAlign="bottom">
 	<div layoutAlign="right" class="box">
-		<button id="cancel" dojoType="Button2" onclick="close();">
+		<button id="cancel" dojoType="Button" onclick="close();">
 			<img src="cancel.gif" height=18>
 			Cancel
 		</button>
-		<button id="ok" dojoType="Button2" onclick="close();">
+		<button id="ok" dojoType="Button" onclick="close();">
 			<img src="ok.gif" height=18>
 			OK
 		</button>

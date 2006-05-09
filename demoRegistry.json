@@ -287,7 +287,7 @@
 		},
 
 		"Button": {
-			url: "../tests/widget/test_Button2.html",
+			url: "../tests/widget/test_Button.html",
 			author: "Bill Keese",
 			thumbnail: "",
 			screenShot: "",
