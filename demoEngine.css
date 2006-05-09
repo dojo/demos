@@ -1,4 +1,4 @@
-	#container {
+	 {
 		width: 700px;
 		height: 450px;
 		border: 1px solid black;
@@ -18,6 +18,11 @@
 		top: 0px;
 		left: 0px;
 		font-family: Myriad,Tahoma,Verdana,sans-serif;
+	/*	color: white;*/
+	}
+
+	div.demoEngineNavigation {
+		color: white;
 	}
 
 	div.dojoTabContainer {
@@ -54,15 +59,19 @@
 		height: 65px;
 		position: absolute;
 		overflow: hidden;
+		color: black;
 		/*border: 1px solid black;*/
 	}
 
 	div.demoEngineDemoHeader h1 {
 		font-size: 1em;
+		font-weight: 300;
+		margin: 2px;
 	}
 
 	div.demoEngineDemoHeader h2 {
-		font-size: .75em	
+		font-size: .75em;
+		font-weight: 200;
 	}
 
 	div.demoEngineDemoHeader div {
@@ -94,7 +103,7 @@
 		left : 0px;
 		overflow : visible;
 		padding-top: 20px;
-		margin-bottom: 20px;
+		padding-bottom: 20px;
 		margin-right: 0px;
 		width : 150px;
 	}
@@ -131,7 +140,7 @@
 
 	div.demoEngineDemoNavigation {
 		float: right;
-		width: 440px;
+		width: 450px;
 		height: 448px;
 		/*border: 1px solid black;*/
 		margin: 0px;
@@ -144,6 +153,7 @@
 		/*background: #dedede;*/
 		width: 100%;
 		border-collapse: collapse;
+		cursor: pointer;
 	}
 
 	table.demoEngineDemoListings img {
@@ -160,14 +170,14 @@
 
 	table.demoEngineDemoListings tr {
 		padding: 0px;
-		background: #A8CAFD;
+		background: #95b9ed;
 		border-bottom: 2px solid #6f96cf;
 	}
 
 	table.demoEngineDemoListings tr:hover {
-		background: #7d9fd3;
+		background: #a3c5f9;
 		border-bottom: 2px solid #dedede;
-		color: white;
+		/*color: #6f96cf;*/
 	}
 
 	.demoEngineCollapsedMenu {
