@@ -4,6 +4,7 @@
 		border: 1px solid black;
 		padding: 0px;
 		margin: 0px;
+		overflow: hidden;
 	}
 
 	div.demoEngineNavigation, div.demoEngineDemoContainer {
