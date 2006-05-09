@@ -182,6 +182,7 @@
 
 	.demoEngineCollapsedMenu {
 		border: 1px solid black;
+		cursor: pointer;
 	}
 
 	.dojoButton {
