@@ -23,7 +23,12 @@
 			},
 			
 			{
-				name: "Layout",
+				name: "RPC",
+				demos: ["rpc"]
+			},
+			
+			{
+				name: "Layout Widgets",
 				demos: [
 						"Layout",
 						"Accordion",
@@ -38,7 +43,7 @@
 					]
 			},
 			{
-				name: "Forms",
+				name: "Form Widgets",
 				demos: [
 						"FormTour",
 						"Editor",
@@ -74,6 +79,13 @@
 
 	definitions: {
 
+		"rpc": {
+			url: "../tests/rpc/test_JsonService.html",
+			author: "",
+			thumbnail: "",
+			screenShot: "",
+			description: "RPC service using JSON (a SOAP like meta-language well suited to web applications)"
+		},
 		"DragDrop": {
 			url: "../tests/dnd/test_simple.html",
 			author: "",
@@ -259,7 +271,7 @@
 		},
 
 		"DatePicker": {
-			url: "../tests/widget/test_DatePicker.html",
+			url: "widget/datePicker.html",
 			author: "Dylan Schiemann",
 			thumbnail: "screenshots/test_DatePickerThumb.png",
 			screenShot: "screenshots/test_DatePicker.png",
