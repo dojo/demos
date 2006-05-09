@@ -43,6 +43,7 @@ body .dojoSplitPane {
 	background: #ededff;
 	overflow: auto;
 }
+
 /* group multiple buttons in a row */
 .box {
 	display: block;
@@ -51,6 +52,10 @@ body .dojoSplitPane {
 .box .dojoButton {
 	float: left;
 	margin-left: 10px;
+}
+
+.dojoTree {
+	padding: 5px;
 }
 
 .dojoButton .dojoButtonContents {
