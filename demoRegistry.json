@@ -24,7 +24,7 @@
 			
 			{
 				name: "RPC",
-				demos: ["rpc"]
+				demos: ["JSON-RPC Client"]
 			},
 			
 			{
@@ -79,12 +79,12 @@
 
 	definitions: {
 
-		"rpc": {
+		"JSON-RPC Client": {
 			url: "../tests/rpc/test_JsonService.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
-			description: "RPC service using JSON (a SOAP like meta-language well suited to web applications)"
+			description: "Example of using Dojo's JSON-RPC Client. Lighweight JSON is ideal for marshalling RPC in webapps."
 		},
 		"DragDrop": {
 			url: "../tests/dnd/test_simple.html",
