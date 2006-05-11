@@ -65,7 +65,7 @@
 		overflow: hidden;
 		color: black;
 		/*border: 1px solid black;*/
-		zoom: 1;
+		z-index: 500;
 	}
 
 	div.demoEngineDemoHeader h1 {
@@ -95,8 +95,11 @@
 	}*/
 
 	div.demoEngineDemoHeader span {
-		top; 10px;
-		padding: 10px;
+		top: 0px;
+		padding-left: 70px;
+		padding-right: 0px;
+		padding-top: 0px;
+		padding-bottom: 35px;
 		width: 75px;
 	}
 
