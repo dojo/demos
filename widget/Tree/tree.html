@@ -3,21 +3,17 @@
 <title>Dojo Tree Widget Test (ajax, drag'n'drop and more)</title>
 
 <script type="text/javascript">
-	var djConfig = {isDebug: true, debugAtAllCosts: true };
+	var djConfig = {isDebug: true };
 </script>
 <script type="text/javascript" src="../../../dojo.js"></script>
 
 <script type="text/javascript">
 	dojo.require("dojo.lang.*");
-	dojo.require("dojo.fx.html");	// so can use toggle="fade"
 	dojo.require("dojo.widget.Tree");
 	dojo.require("dojo.widget.TreeRPCController");
 	dojo.require("dojo.widget.TreeSelector");
 	dojo.require("dojo.widget.TreeNode");
 	dojo.require("dojo.widget.TreeContextMenu");
-
-
-	dojo.hostenv.writeIncludes();
 
 	function restoreIconSrc() {
 		// icon was changed during the action => no need to move it back
