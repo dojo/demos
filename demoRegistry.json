@@ -263,7 +263,7 @@
 		},
 
 		"Dialog": {
-			url: "../tests/widget/test_Dialog.html",
+			url: "widget/dialog.html",
 			author: "",
 			thumbnail: "",
 			screenShot: "",
