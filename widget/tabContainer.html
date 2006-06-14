@@ -1,4 +1,3 @@
-
 <meta http-equiv="Context-Type" content="text/html; charset=UTF-8">
 <!--
 <!DOCTYPE html
@@ -20,6 +19,7 @@
 	dojo.require("dojo.widget.LinkPane");
 	dojo.require("dojo.widget.ContentPane");
 	dojo.require("dojo.widget.LayoutContainer");
+	dojo.require("dojo.widget.Checkbox");
 </script>
 
 <style type="text/css">
@@ -38,11 +38,12 @@ body {
 	files tab1.html and tab2.html. Tab 3 and Another Tab are using content that is already
 	part of this page.</p>
 
-	<div id="mainTabContainer" dojoType="TabContainer" style="width: 100%; height: 70%" selectedTab="tab1">
+	<div id="mainTabContainer" dojoType="TabContainer" style="width: 100%; height: 70%" selectedTab="tab1" >
 	
-		<div id="tab1" dojoType="ContentPane" label="Tab 1">
+		<div id="tab1" dojoType="ContentPane" label="Tab 1" >
 			<h1>First Tab</h1>
 			I'm the first tab and my content is local.  Try clicking tab#2.  It's loading remotely.
+			<input type="checkbox" name="cb1" id="cb1" dojoType="Checkbox" /> <label for="cb1">hello world</label>
 		</div>
 		
 		<a dojoType="LinkPane" href="../../tests/widget/tab2.html" refreshOnShow="true" style="display: none">Tab 2</a>
