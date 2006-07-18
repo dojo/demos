@@ -1,7 +1,7 @@
 dojo.require("dojo.dom");
 dojo.require("dojo.event.*");
 dojo.require("dojo.html");
-dojo.require("dojo.fx.*");
+dojo.require("dojo.lfx.*");
 dojo.require("dojo.widget.Editor");
 dojo.require("dojo.storage.*");
 
@@ -197,7 +197,7 @@ var Moxie = {
 		status.innerHTML = message;
 		
 		top.appendChild(status);
-		dojo.fx.html.fadeOut(status, 2000) 
+		dojo.lfx.fadeOut(status, 2000).play();
 	}
 };
 
