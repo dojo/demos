@@ -9,19 +9,7 @@
 </script>
 <script type="text/javascript" src="../../dojo.js"></script>
 <script language="JavaScript" type="text/javascript">
-	dojo.require("dojo.widget.LayoutContainer");
-	dojo.require("dojo.widget.FloatingPane");
-	dojo.require("dojo.widget.ContentPane");
-	dojo.require("dojo.widget.SplitContainer");
-	dojo.require("dojo.widget.ColorPalette");
-	dojo.require("dojo.widget.DatePicker");	
-	dojo.require("dojo.widget.Tree");
-	dojo.require("dojo.widget.TreeSelector");
-	dojo.require("dojo.widget.Checkbox");
-	dojo.require("dojo.widget.TabContainer");
-	dojo.require("dojo.widget.Button");
-	dojo.require("dojo.widget.ResizeHandle");
-	dojo.hostenv.writeIncludes();
+	dojo.require("dojo.widget.*");
 </script>
 
 <link rel=stylesheet href="Mail/mail.css" type="text/css">
@@ -39,19 +27,19 @@
 	 style="padding-bottom: 5px;">
 		<div style="float: left; margin-right: 10px;">
 			<button dojoType="Button" onclick="alert('pretending to download new mail');">
-				<img src="Mail/mail_get.gif" height=18>
+				<img src="Mail/mail_get.gif" height=18 width=18>
 				Get Mail
 			</button>
 		</div>
 		<div style="float: left;">
 			<button dojoType="Button" onclick='open("Mail/NewMessage.html",null,"height=500,width=600,status=yes,toolbar=no,menubar=no,location=no");'>
-				<img src="Mail/mail_new.gif" height=18>
+				<img src="Mail/mail_new.gif" height=18 width=18>
 				New Message
 			</button>
 		</div>
 		<div style="float: right;">
 			<button dojoType="Button" onclick="dojo.widget.byId('options').show()">
-				<img src="Mail/checkmark.gif" height=18>
+				<img src="Mail/checkmark.gif" height=18 width=18>
 				Options
 			</button>
 		</div>
@@ -117,11 +105,11 @@
 	<div dojoType="ContentPane" layoutAlign="bottom" style="height: 25px; padding-top: 5px;">
 	  	<div class="box">
 			<button dojoType="Button" onclick="dojo.widget.byId('options').hide();">
-				<img src="Mail/cancel.gif" height=18>
+				<img src="Mail/cancel.gif" height=18 width=18>
 				Cancel
 			</button>
 			<button dojoType="Button" onclick="dojo.widget.byId('options').hide();">
-				<img src="Mail/ok.gif" height=18>
+				<img src="Mail/ok.gif" height=18 width=18>
 				OK
 			</button>
 		</div>
