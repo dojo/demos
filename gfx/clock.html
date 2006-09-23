@@ -1,0 +1,121 @@
+﻿<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office">
+<head>
+<title>Clock</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<script type="text/javascript">djConfig = { isDebug: true };</script>-->
+<script type="text/javascript" src="../../dojo.js"></script>
+<!--<script type="text/javascript" src="../../src/gfx/vml.js"></script>-->
+<!--<script type="text/javascript" src="../../src/gfx/svg.js"></script>-->
+<script type="text/javascript">
+
+dojo.require("dojo.gfx.*");
+
+var hour_hand   = null;
+var minute_hand = null;
+var second_hand = null;
+
+var hour_shadow   = null;
+var minute_shadow = null;
+var second_shadow = null;
+
+var center = {x: 385 / 2, y: 385 / 2};
+
+var hour_shadow_shift   = {dx: 2, dy: 2};
+var minute_shadow_shift = {dx: 3, dy: 3};
+var second_shadow_shift = {dx: 4, dy: 4};
+
+placeHand = function(shape, angle, shift) {
+	var move = {dx: center.x + (shift ? shift.dx : 0), dy: center.y + (shift ? shift.dy : 0)};
+	return shape.setTransform([move, dojo.gfx.matrix.rotateg(-angle)]);
+};
+
+placeHourHand = function(h, m, s) {
+	var angle = 30 * (h + m / 60 + s / 3600);
+	placeHand(hour_hand, angle);
+	placeHand(hour_shadow, angle, hour_shadow_shift);
+};
+
+placeMinuteHand = function(m, s) {
+	var angle = 6 * (m + s / 60);
+	placeHand(minute_hand, angle);
+	placeHand(minute_shadow, angle, minute_shadow_shift);
+};
+
+placeSecondHand = function(s) {
+	var angle = 6 * s;
+	placeHand(second_hand, angle);
+	placeHand(second_shadow, angle, second_shadow_shift);
+};
+
+setTime = function() {
+	var time = new Date();
+
+	var h = time.getHours() % 12;
+	var m = time.getMinutes();
+	var s = time.getSeconds();
+	
+	placeHourHand(h, m, s);
+	placeMinuteHand(m, s);
+	placeSecondHand(s);
+};
+
+createPoly = function(parent, points) {
+    var path = parent.createPath();
+	var first = true;
+	dojo.lang.forEach(points, function(c) {
+		if(first) {
+			path.moveTo(c.x, c.y);
+			first = false;
+		} else {
+			path.lineTo(c.x, c.y);
+		}
+	});
+	return path;
+};
+
+makeShapes = function(){
+	var surface = dojo.gfx.createSurface("gfx_holder", 385, 385);
+    surface.createRect({width: 385, height: 385});
+    surface.createImage({width: 385, height: 385, src: "images/clock_face.jpg"});
+    
+    var hour_hand_points = [{x: -7, y: 15}, {x: 7, y: 15}, {x: 0, y: -60}, {x: -7, y: 15}];
+    var minute_hand_points = [{x: -5, y: 15}, {x: 5, y: 15}, {x: 0, y: -100}, {x: -5, y: 15}];
+    var second_hand_points = [{x: -2, y: 15}, {x: 2, y: 15}, {x: 2, y: -105}, {x: 6, y: -105}, {x: 0, y: -116}, {x: -6, y: -105}, {x: -2, y: -105}, {x: -2, y: 15}];
+    
+    hour_shadow = createPoly(surface, hour_hand_points)
+		.setFill([0, 0, 0, 0.1])
+		;
+    hour_hand = createPoly(surface, hour_hand_points)
+		.setStroke({color: "black", width: 2})
+		.setFill("#889")
+		;
+    minute_shadow = createPoly(surface, minute_hand_points)
+		.setFill([0, 0, 0, 0.1])
+		;
+    minute_hand = createPoly(surface, minute_hand_points)
+		.setStroke({color: "black", width: 2})
+		.setFill("#ccd")
+		;
+    second_shadow = createPoly(surface, second_hand_points)
+		.setFill([0, 0, 0, 0.1])
+		;
+    second_hand = createPoly(surface, second_hand_points)
+		.setStroke({color: "#800", width: 1})
+		.setFill("#d00")
+		;
+		
+	surface.createCircle({r: 1}).setFill("black").setTransform({dx: 192.5, dy: 192.5});
+
+	// start the clock		
+	setTime();
+	window.setInterval(setTime, 1000);
+};
+
+dojo.addOnLoad(makeShapes);
+
+</script>
+</head>
+<body>
+	<div id="gfx_holder" style="width: 385px; height: 385px;"></div>
+</body>
+</html>
