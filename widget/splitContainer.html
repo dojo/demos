@@ -19,13 +19,16 @@
 	.dojoSplitPane{
 		margin: 5px;
 	}
+	body .dojoSplitContainerSizerV, body .dojoSplitContainerSizerH {
+		background: blue;
+	}
    </style>
 </head>
 <body>
 	<div dojoType="SplitContainer"
 		orientation="horizontal"
-		sizerWidth="5"
-		activeSizing="0"
+		sizerWidth="10"
+		activeSizing="false"
 		style="width: 100%; height: 100%; background: #eeeeee; padding: 10px;"
 	>
 		<div dojoType="ContentPane" sizeShare="20"
@@ -39,10 +42,10 @@
 		<div dojoType="SplitContainer"
 			id="rightPane"
 			orientation="vertical"
-			sizerWidth="5"
-			activeSizing="0"
+			sizerWidth="10"
+			activeSizing="false"
 			sizeShare="60">
-			<div dojoType="ContentPane" sizeShare="50">
+			<div dojoType="ContentPane" sizeShare="50" sizeMin="20" style="overflow:auto">
 				This is the top part of the inner split container.
 			</div>
 			<div dojoType="ContentPane" sizeShare="50">
