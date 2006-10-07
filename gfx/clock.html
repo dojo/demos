@@ -8,6 +8,7 @@
 dojo.require("dojo.gfx.*");
 dojo.require("dojo.event.*");
 dojo.require("dojo.html.layout");
+dojo.require("dojo.html.style");
 dojo.require("dojo.date.format");
 
 var current_time = new Date();
@@ -223,6 +224,9 @@ makeShapes = function(){
 		.setStroke({color: "#800", width: 1})
 		.setFill("#d00")
 		;
+	dojo.html.setClass(hour_hand  .getEventSource(), "movable");
+	dojo.html.setClass(minute_hand.getEventSource(), "movable");
+	dojo.html.setClass(second_hand.getEventSource(), "movable");
 	surface.createCircle({r: 1}).setFill("black").setTransform({dx: 192.5, dy: 192.5});
 	
 	// attach events
@@ -241,6 +245,9 @@ makeShapes = function(){
 dojo.addOnLoad(makeShapes);
 
 </script>
+<style type="text/css">
+.movable { cursor: hand; }
+</style>
 </head>
 <body>
 	<h1>dojo.gfx: interactive analog clock</h1>
