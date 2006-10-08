@@ -33,20 +33,6 @@ var container_position = null;
 var text_time = null;
 var diff_time = new Date();
 
-createPoly = function(parent, points) {
-    var path = parent.createPath();
-	var first = true;
-	dojo.lang.forEach(points, function(c) {
-		if(first) {
-			path.moveTo(c.x, c.y);
-			first = false;
-		} else {
-			path.lineTo(c.x, c.y);
-		}
-	});
-	return path;
-};
-
 placeHand = function(shape, angle, shift) {
 	var move = {dx: center.x + (shift ? shift.dx : 0), dy: center.y + (shift ? shift.dy : 0)};
 	return shape.setTransform([move, dojo.gfx.matrix.rotateg(-angle)]);
@@ -203,24 +189,24 @@ makeShapes = function(){
     var second_hand_points = [{x: -2, y: 15}, {x: 2, y: 15}, {x: 2, y: -105}, {x: 6, y: -105}, {x: 0, y: -116}, {x: -6, y: -105}, {x: -2, y: -105}, {x: -2, y: 15}];
     
     // create shapes
-    hour_shadow = createPoly(surface, hour_hand_points)
+    hour_shadow = surface.createPolyline(hour_hand_points)
 		.setFill([0, 0, 0, 0.1])
 		;
-    hour_hand = createPoly(surface, hour_hand_points)
+    hour_hand = surface.createPolyline(hour_hand_points)
 		.setStroke({color: "black", width: 2})
 		.setFill("#889")
 		;
-    minute_shadow = createPoly(surface, minute_hand_points)
+    minute_shadow = surface.createPolyline(minute_hand_points)
 		.setFill([0, 0, 0, 0.1])
 		;
-    minute_hand = createPoly(surface, minute_hand_points)
+    minute_hand = surface.createPolyline(minute_hand_points)
 		.setStroke({color: "black", width: 2})
 		.setFill("#ccd")
 		;
-    second_shadow = createPoly(surface, second_hand_points)
+    second_shadow = surface.createPolyline(second_hand_points)
 		.setFill([0, 0, 0, 0.1])
 		;
-    second_hand = createPoly(surface, second_hand_points)
+    second_hand = surface.createPolyline(second_hand_points)
 		.setStroke({color: "#800", width: 1})
 		.setFill("#d00")
 		;
