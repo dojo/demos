@@ -54,7 +54,10 @@
 						"DatePicker",
 						"Dialog",
 						"TimePicker",
-						"Validation"
+						"Validation",
+						"Select",
+						"Spinner",
+						"Form Bind"
 					]
 			},
 			{
@@ -78,6 +81,14 @@
 		],
 
 	definitions: {
+
+		"Form Bind": {
+			url: "http://mastodon.dojotoolkit.org/~david/formBind/",
+			author: "David Schontzler",
+			thumbnail: "screenshots/test_NoThumb.gif",
+			screenShot:"",
+			description:"This makes it easier to send forms via dojo.io.bind in a way that duplicates (as much as possible) a regular form submission (read: non-Ajax)"
+		},
 
 		"JSON-RPC Client": {
 			url: "../tests/rpc/test_JsonService.html",
@@ -145,7 +156,7 @@
 		"Toggler": {
 			url: "../tests/widget/test_Toggler.html",
 			author: "",
-			thumbnail: "",
+			thumbnail: "screenshots/test_NoThumb.gif",
 			screenShot: "",
 			description: "Toggles (shows/hides) another widget."
 		},
@@ -257,7 +268,7 @@
 		"Editor": {
 			url: "widget/Editor.html",
 			author: "",
-			thumbnail: "",
+			thumbnail: "screenshots/test_NoThumb.gif",
 			screenShot: "",
 			description: "Dojo's rich text editor"
 		},
@@ -265,7 +276,7 @@
 		"Dialog": {
 			url: "widget/dialog.html",
 			author: "",
-			thumbnail: "",
+			thumbnail: "screenshots/test_NoThumb.gif",
 			screenShot: "",
 			description: "A modal dialog similar to an alert or confirm or popup window"
 		},
@@ -369,7 +380,7 @@
 		"JsonService": {
 			url: "../tests/rpc/test_JsonService.html",
 			author: "Dustin Machi",
-			thumbnail: "",
+			thumbnail: "screenshots/test_NoThumb.gif",
 			screenShot: "",
 			description: "JSON-RPC Test Page"
 		},
@@ -388,6 +399,22 @@
 			thumbnail: "screenshots/test_SortableTableThumb.gif",
 			screenShot: "",
 			description: "A table where the user can sort by column, the rows can be color coded, etc."
+		},
+
+		"Select":{
+			url: "../tests/widget/test_Select.html",
+			author: "",
+			thumbnail: "screenshots/test_NoThumb.gif",
+			screenShot: "",
+			description: "The Select widget is an enhanced version of HTML's <select> tag."
+		},
+		
+		"Spinner": {
+			url: "../tests/widget/test_Spinner.html",
+			author: "",
+			thumbnail:"screenshots/test_NoThumb.gif",
+			screenShot: "",
+			description: "Use the up/down arrow keys and/or the arrow push buttons to spin"
 		}
 
 	}
