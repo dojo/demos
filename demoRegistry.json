@@ -30,11 +30,12 @@
 			{
 				name: "Layout Widgets",
 				demos: [
-						"Layout",
 						"Accordion",
 						"ContentPane",
 						"Dialog",
+						"Layout",
 						"LayoutContainer",
+						"Rounded Corners",
 						"SplitContainer",
 						"TabContainer",
 						"TitlePane",
@@ -45,34 +46,35 @@
 			{
 				name: "Form Widgets",
 				demos: [
-						"FormTour",
-						"Editor",
 						"Checkbox",
 						"CiviCrmDateTimePicker",
 						"ColorPalette",
 						"ComboBox",
 						"DatePicker",
 						"Dialog",
+						"Editor",
+						"Form Bind",
+						"FormTour",
 						"TimePicker",
-						"Validation",
 						"Select",
 						"Spinner",
-						"Form Bind"
+						"Validation"
 					]
 			},
 			{
 				name: "General Widgets",
 				demos: [
-						"Tree",
 						"Button",
-						"Menu",
+						"Chart",
 						"Fisheye",
 						"InlineEditBox",
+						"Menu",
+						"Progress",
 						"SortableTable",
-						"Chart",
-						"Tooltip",
-						/*"Toggler",  broken :-( */
 						"SlideShow",
+						"Tooltip",
+						"Tree",
+						/*"Toggler",  broken :-( */
 						"GoogleMap",
 						"YahooMap"
 					]
@@ -82,6 +84,22 @@
 
 	definitions: {
 
+		"Progress": {
+			url: "../tests/widget/test_ProgressBar.html",
+			author: "",
+			thumbnail:"screenshots/test_NoThumb.gif",
+			screenShot:"",
+			description: "Configurable progress indicator."
+		},
+	
+		"Rounded Corners": {
+			url: "widget/rounded.html",
+			author: "",
+			thumbnail:"screenshots/test_NoThumb.gif",
+			screenShot: "",
+			description: "A port of Curvy Corners (no image rounded corners) to Dojo."
+		},
+	
 		"Form Bind": {
 			url: "http://mastodon.dojotoolkit.org/~david/formBind/",
 			author: "David Schontzler",
