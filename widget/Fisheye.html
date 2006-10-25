@@ -8,9 +8,8 @@
 	var djConfig = {isDebug: true, debugAtAllCosts: false};
 </script>
 <script type="text/javascript" src="../../dojo.js"></script>
-<script language="JavaScript" type="text/javascript">
-	dojo.require("dojo.widget.FisheyeList");
-	dojo.hostenv.writeIncludes();
+<script type="text/javascript">
+	dojo.require("dojo.widget.*");
 </script>
 
 <script>
@@ -51,39 +50,39 @@ body {
 
 <div class="outerbar">
 
-<div class="dojo-FisheyeList"
-	dojo:itemWidth="50" dojo:itemHeight="50"
-	dojo:itemMaxWidth="200" dojo:itemMaxHeight="200"
-	dojo:orientation="horizontal"
-	dojo:effectUnits="2"
-	dojo:itemPadding="10"
-	dojo:attachEdge="top"
-	dojo:labelEdge="bottom"
-	dojo:enableCrappySvgSupport="false"
+<div dojoType="FisheyeList"
+	itemWidth="50" itemHeight="50"
+	itemMaxWidth="200" itemMaxHeight="200"
+	orientation="horizontal"
+	effectUnits="2"
+	itemPadding="10"
+	attachEdge="top"
+	labelEdge="bottom"
+	enableCrappySvgSupport="false"
 >
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(1);" 
-		dojo:iconsrc="images/icon_browser.png" caption="Web Browser">
+	<div dojoType="FisheyeListItem" onClick="load_app(1);" 
+		iconsrc="images/icon_browser.png" caption="Web Browser">
 	</div>
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(2);"
-		dojo:iconsrc="images/icon_calendar.png" caption="Calendar">
+	<div dojoType="FisheyeListItem" onClick="load_app(2);"
+		iconsrc="images/icon_calendar.png" caption="Calendar">
 	</div>
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(3);"
-		dojo:iconsrc="images/icon_email.png" caption="Email">
+	<div dojoType="FisheyeListItem" onClick="load_app(3);"
+		iconsrc="images/icon_email.png" caption="Email">
 	</div>
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(4);"
-		dojo:iconsrc="images/icon_texteditor.png" caption="Text Editor">
+	<div dojoType="FisheyeListItem" onClick="load_app(4);"
+		iconsrc="images/icon_texteditor.png" caption="Text Editor">
 	</div>
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(5);"
-		dojo:iconsrc="images/icon_update.png" caption="Software Update">
+	<div dojoType="FisheyeListItem" onClick="load_app(5);"
+		iconsrc="images/icon_update.png" caption="Software Update">
 	</div>
 
-	<div class="dojo-FisheyeListItem" onClick="load_app(6);"
-		dojo:iconsrc="images/icon_users.png" dojo:caption="Users" >
+	<div dojoType="FisheyeListItem" onClick="load_app(6);"
+		iconsrc="images/icon_users.png" caption="Users" >
 	</div>
 </div>
 
