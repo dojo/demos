@@ -2,7 +2,7 @@ dojo.require("dojo.dom");
 dojo.require("dojo.event.*");
 dojo.require("dojo.html");
 dojo.require("dojo.lfx.*");
-dojo.require("dojo.widget.Editor");
+dojo.require("dojo.widget.Editor2");
 dojo.require("dojo.storage.*");
 
 var Moxie = {
@@ -48,8 +48,8 @@ var Moxie = {
 		
 		// get the new values
 		var key = dojo.byId("storageKey").value;
-		var value = dojo.widget.byId("storageValue").getEditorContent();
-		
+		var richTextControl = dojo.widget.byId("storageValue");
+		var value = richTextControl.getEditorContent();
 		
 		if(key == null || typeof key == "undefined" || key == ""){
 			alert("Please enter a file name");
@@ -173,9 +173,12 @@ var Moxie = {
 		var results = dojo.storage.get(key);
 		
 		// set the new Editor widget value
-		var storageValue = dojo.widget.byId("storageValue"); 
-		storageValue._richText.editNode.innerHTML = results;
-		storageValue._richText._updateHeight();
+		var richTextControl = dojo.widget.byId("storageValue")
+		richTextControl.replaceEditorContent(results);
+		// FIXME: Editor2 should be reflowing this height
+		// internally; we shouldn't be exposed to this - fix
+		// bug in Editor2
+		richTextControl._updateHeight();
 	
 		// print out that we are done
 		this._printStatus("Loaded '" + key + "'");
