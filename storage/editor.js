@@ -5,6 +5,17 @@ dojo.require("dojo.lfx.*");
 dojo.require("dojo.widget.Editor2");
 dojo.require("dojo.storage.*");
 
+// IE 7.0 does not support XHR loading from file:// URLs
+// when loaded from a file:// URL itself - this breaks
+// us for loading all of our Editor2 widget resources.
+// This is if we want to use Moxie in conjunction with the 
+// dojo.storage.browser.FileStorageProvider for web apps
+// loaded from the native file system
+if(dojo.render.html.ie70 == true
+	&& window.location.protocol.indexOf("file") != -1){
+	alert("Moxie on Internet Explorer 7.0 is not yet supported when loaded from the file:// URL");		
+}
+
 var Moxie = {
 	initialize: function(){
 		//dojo.debug("test_storage.initialize()");
