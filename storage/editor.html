@@ -70,6 +70,11 @@
 		Click Here to Begin Editing
 		</div>
 	</div>
+	<script>
+		if(dojo.render.html.safari){
+			dojo.byId(storageValue).setAttribute("height", "500px");
+		}
+	</script>
 </body>
 
 </html>
