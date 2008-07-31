@@ -1,3 +1,6 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/soria/soria.css";
+
 html, body, #main{	
 	width: 100%;	/* make the body expand to fill the visible window */
 	height: 100%;
@@ -34,7 +37,7 @@ th {
 	font-weight:: bold !important;
 	margin:0;
 	padding:3px; 
-	background-image:url('../../themes/soria/images/titleBar.png');
+	background-image:url('../../dijit/themes/soria/images/titleBar.png');
 	background-position:0px -1px; 
 }
 
@@ -62,7 +65,7 @@ th.arrowUp .arrowNode {
 	margin-bottom: 5px;
 	width: 15px;
 	height:15px;
-	background:transparent url("../../themes/soria/images/spriteRoundedIconsSmall.png") -45px top no-repeat;
+	background:transparent url("../../dijit/themes/soria/images/spriteRoundedIconsSmall.png") -45px top no-repeat;
 }
 
 th.arrowDown .arrowNode {
@@ -71,7 +74,7 @@ th.arrowDown .arrowNode {
 	margin-bottom: 5px;
 	width: 15px;
 	height:15px;
-	background:transparent url("../../themes/soria/images/spriteRoundedIconsSmall.png") -15px top no-repeat;
+	background:transparent url("../../dijit/themes/soria/images/spriteRoundedIconsSmall.png") -15px top no-repeat;
 }
 
 .demoTable td { padding:3px; } 
@@ -155,3 +158,21 @@ body .dojoSplitPane {
 .mailIconMailbox { background-position: -154px; }
 .mailIconOk { background-position: -176px; }
 .mailIconTrashcanFull { background-position: -198px; }
+
+/* page inline styles */
+
+#inbox .dijitSplitterH { height: 5px }
+#inbox .dijitSplitterV { width: 5px }
+
+#preLoader {
+	width:100%; height:100%; margin:0; padding:0;
+	position:absolute; top:0; left:0;
+	background:#fff url('../../dojox/image/resources/images/loading.gif') no-repeat center center;
+	z-index:999;
+}
+#preLoader p {
+	color:#ededed;
+	font:72pt Arial,san-serif;
+	font-weight:bold;
+	
+}
