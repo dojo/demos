@@ -1,12 +1,11 @@
 dojo.provide("demos.mojo.src.drop");
 // adds gravity effect to mojoDemo
 dojo.require("dojo.fx");
-dojo.require("dojox.fx.easing");
+dojo.require("dojo.fx.easing");
 dojo.require("dijit._base.place");
 (function(){ 
 
 	var mojo = {};
-	// global here:
 	var nodes;
 	var _coords = [];
 	var cb = null;
@@ -61,7 +60,7 @@ dojo.require("dijit._base.place");
 				// play the anim, and set overflow:auto on body
 				var _anim = dojo.fx.combine(_anims);
 				var con = dojo.connect(_anim,"onEnd",function(){
-					dojo.style(dojo.body(),"overflow","visible"); 
+					dojo.style(dojo.body(), "overflow", "visible"); 
 				});
 				_anim.play();
 			}

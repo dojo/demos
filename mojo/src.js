@@ -21,8 +21,8 @@ dojo.require("demos.mojo.src.download"); // download link code
 			// hide the node, first thing, and undo native-css hiding:
 			dojo.style(n, { opacity:0, visibility:"visible" });
 
-			// the drag handle will be the h1 element in this div			
-			var handle = dojo.query("h1",n)[0];
+			// the drag handle will be the h1 element in this div
+			var handle = dojo.query("h1", n)[0];
 			new dojo.dnd.Moveable(n, { handle: handle });
 
 			// there is really only one image in here though:
@@ -57,15 +57,16 @@ dojo.require("demos.mojo.src.download"); // download link code
 				}
 			}))
 			
-			dojo.query("img",n).forEach(function(img){
+			dojo.query("img", n).forEach(function(img){
 				_anims.push(dojo.animateProperty({
 					duration:450,
-					delay:_delay + 1000,
-					node:img,
+					delay: _delay + 1000,
+					node: img,
 					properties: {
-						width: { end:310, unit:"px" },
-						height: { end:310, unit:"px" },
-						top: { end:0 }, left: { end: 0 }
+						width: 310, //{ end:310, unit:"px" },
+						height: 310, //{ end:310, unit:"px" },
+						top: 0, // { end:0 }, 
+						left: 0 // { end: 0 }
 					}
 				}));
 			});
@@ -100,7 +101,8 @@ dojo.require("demos.mojo.src.download"); // download link code
 		
 		var roller = new dojox.widget.RollerSlide({ delay:5000, autoStart:false },"whyList");
 		dojo.connect(anim,"onEnd", roller, "start");
-		setTimeout(dojo.hitch(anim,"play"),5);
+
+		setTimeout(dojo.hitch(anim,"play"), 15);
 		
 		var _coords = null;
 		var _z = null;
@@ -111,13 +113,13 @@ dojo.require("demos.mojo.src.download"); // download link code
 			_coords = dojo.coords(n);
 			// and "bring to top"
 			// and make it partially opaque
-			_z = dojo.style(n,"zIndex");
-			dojo.style(n,{ zIndex:"888", opacity:0.65 });
+			_z = dojo.style(n, "zIndex");
+			dojo.style(n, { zIndex:888, opacity:0.65 });
 		});
 		
-		dojo.subscribe("/dnd/move/stop",function(e){
+		dojo.subscribe("/dnd/move/stop", function(e){
 			// when it ends, reset z-index, opacity, and animate back to spot
-			dojo.style(e.node,"opacity","1");
+			dojo.style(e.node, "opacity", 1);
 			if(_coords){
 				dojo.fx.slideTo({
 					node: e.node, // drag node
@@ -126,7 +128,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 					easing: dojo.fx.easing.elasticOut,
 					duration:950 // ms
 				}).play(5); // small delay for performance?
-				dojo.style(e.node,"zIndex",_z);
+				dojo.style(e.node, "zIndex", _z);
 			}
 		});	
 

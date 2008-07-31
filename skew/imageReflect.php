@@ -25,7 +25,18 @@ forEach($defaults as $key => $pair){
 	$$key = (empty($_REQUEST[$key]) ? $pair : $_REQUEST[$key]);	
 }
 
-$cachefile = "cache/" . md5($greyscale . $src . $skew . $reflect . $angle . $spread . $decay . $spacing . $refdir . $thumbsize) . ".png";
+$cachefile = "cache/" . md5(
+		$src . 
+		$skew .
+		$reflect . 
+		$angle . 
+		$spread . 
+		$decay . 
+		$spacing . 
+		$refdir . 
+		$thumbsize .
+		$greyscale 
+	) . ".png";
 
 if(file_exists($cachefile)){
 
@@ -37,9 +48,9 @@ if(file_exists($cachefile)){
 	
 	if(!$cached){
 		header("Content-Length: " . filesize($cachefile));
-		if($fp = fopen($cachefile,"r")){
+		if($fp = fopen($cachefile, "r")){
 			while(!feof($fp)){
-				print fgets($fp,2048);
+				print fgets($fp, 2048);
 			}
 		}
 	}
@@ -69,7 +80,6 @@ if(file_exists($cachefile)){
 		}else{
 			$display = $im;
 		}
-
 
 		imagepng($display, $cachefile);
 		imagepng($display);
