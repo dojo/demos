@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+
+	<title>Math Flash Card</title>
+	
+	<link rel="stylesheet" href="demo.css">
+
+	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="src.js"></script>
+
+</head>
+<body class="tundra">
+	<table style="width: 75%" class="chalkBoard">
+		<tr>
+			<td colspan="3">
+				<div id="start" dojoType="dijit.form.Button" onClick="getStarted()">Get Started</div>
+				<div id="restart" dojoType="dijit.form.Button" onClick="restart()" style="display:none">Try Again</div>
+			</td>
+
+		</tr>
+		<tr>
+			<td style="width:40%"><div class="messages" id="messages"></div></td>
+			<td align="center">
+				<div layoutAlign="client" class="container" id="card"  dojoType="dojofun.widget.MathFlashCard" numberProblems="20" maxInt="10" timer="5" problemType="addition" style="display:none">
+				</div>
+			</td>
+			<td style="width:40%;" align="right" valign="top">
+				<table id="scoreTable" style="display:none"> 
+					<tr><td id="score"colspan="2">Your Score</td></tr>
+					<tr>
+						<td id="remaining" align="left">Questions Remaining: </td>
+						<td id="remainingTd"></td>
+					</tr>
+					<tr>
+						<td id="correct" align="left">Correct Answers:</td>
+						<td id="correctTd"></td>
+					</tr>
+					<tr>
+						<td id="incorrect" align="left">Incorrect Answers:</td>
+						<td id="incorrectTd"></td>
+					</tr>
+					<tr>
+						<td id="tooSlow" align="left">Too Slow:</td>
+						<td id="tooSlowTd"></td>
+					</tr>
+				</table>	
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3" align="center">
+				
+			</td>
+		</tr>
+	</table>
+</body>
+</html>

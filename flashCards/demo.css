@@ -1,0 +1,97 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/tundra/tundra.css";
+
+.tundra {
+	margin:0;
+	background:#222;
+}
+
+.container {
+	border:3px solid #445545;
+	padding: 10px 10px;
+	cursor: default;
+	radius:8pt;
+	background:#445545;
+	-moz-border-radius:8pt 8pt;
+	-webkit-border-radius:7pt;
+	font-size: 72pt;
+	color:#FFF;
+	width:200px;
+}
+
+.container input {
+	background:#445545;
+}
+
+.messages {
+	font-size: 46pt;
+	padding: 10px;
+	color: #FFF;
+}
+
+.messages .correct {
+	color: green;
+}
+
+.messages .incorrect{
+	color: red;
+}
+
+.chalkBoard {
+	background:#445545;
+	margin:60px auto;
+	padding:40px;
+	radius:8pt;
+	-moz-border-radius:8pt 8pt;
+	border:40px solid #E0E0E0;
+}
+
+#scoreTable {
+	color:#FFF;
+	font-size:20pt;
+	text-align:left;
+}
+
+#score {
+	font-size:30pt;
+}
+
+#remaining {
+	background:url("images/questions.png") no-repeat center left;
+	padding-left:35px;
+}
+
+#correct {
+	background:url("images/correct.png") no-repeat center left;
+	padding-left:35px;
+}
+
+#incorrect {
+	background:url("images/incorrect.png") no-repeat center left;
+	padding-left:35px;
+}
+
+#tooSlow {
+	background:url("images/alarm.png") no-repeat center left;
+	padding-left:35px;
+}
+
+.answerInput {
+	width:100%; 
+	height: 100%; 
+	font-size: 72pt; 
+	border: 0px; 
+	color: #FFF; 
+	text-align: right;
+	outline:0;
+}
+
+.answerWrap {
+	margin: 0px; 
+	padding:0px;
+}
+
+.dividerLine {
+	border-bottom: 4px solid white;
+	height:4px;
+}
