@@ -1,15 +1,17 @@
+dojo.require("dojo.parser");
+
 dojo.require("dijit.Dialog");
 dojo.require("dijit.form.Button");
 dojo.require("dijit.layout.LayoutContainer");
 dojo.require("dijit.layout.ContentPane");
+
 dojo.require("demos.flashCards.src.MathFlashCard");
-dojo.require("dojo.parser");	// scan page for widgets and instantiate them
 
 //global storage point for our fade animations
 var messageFadeEvent = null;
 
 //reset the score board
-var resetScore = function() {
+var resetScore = function(){
 	var card = dijit.byId("card");
 	dojo.byId("remainingTd").innerHTML = card.numberProblems;
 	dojo.byId("correctTd").innerHTML = 0;
@@ -41,11 +43,11 @@ var getStarted = function(){
 			messageFadeEvent.stop();
 		}
 
-//		var card = dijit.byId("card");
 		dojo.byId("correctTd").innerHTML = c.correctAnswers;
 
 		if (c.started){
 			dojo.byId("remainingTd").innerHTML = c.numberProblems - c.currentProblem;
+			// FIXME: which node?
 			dojo.removeClass("incorrect");
 			dojo.addClass("correct");
 			dojo.style("messages", "opacity", 1);
@@ -54,7 +56,6 @@ var getStarted = function(){
 		}
 	});
 
-
 	//attach to the onIncorrect event of the card.  When this event happens
 	//we want to display a fading message and update the score board				
 	dojo.connect(c, "onIncorrect", function(e){
@@ -62,7 +63,6 @@ var getStarted = function(){
 			messageFadeEvent.stop();
 		}
 
-//		var card = dijit.byId("card");
 		dojo.byId("incorrectTd").innerHTML = c.incorrectAnswers;
 
 		if(c.started){
@@ -78,20 +78,20 @@ var getStarted = function(){
 	//attach to the onTooSlow event of the card.  When this event happens
 	//we want to display a fading message and update the score board				
 	dojo.connect(c, "onTooSlow", function(e){
-		if (messageFadeEvent){
+		if(messageFadeEvent){
 			messageFadeEvent.stop();
 		}
 
-//		var card = dijit.byId("card");
 		dojo.byId("tooSlowTd").innerHTML = c.tooSlow;
 
 		if(c.started){
 			dojo.byId("remainingTd").innerHTML = c.numberProblems - c.currentProblem;
+			// FIXME: which node?
 			dojo.addClass("incorrect");
 			dojo.removeClass("correct");
 			dojo.style("messages", "opacity", 1);
 			dojo.byId("messages").innerHTML = "C'mon, pick up the pace!";
-			messageFadeEvent=dojo.fadeOut({node: dojo.byId("messages"), duration: 2000}).play();
+			messageFadeEvent = dojo.fadeOut({ node: "messages", duration: 2000}).play();
 		}
 		
 	});
@@ -119,11 +119,10 @@ var getStarted = function(){
 		var message = dojo.byId("messages");
 		message.innerHTML= msg;
 
-		dojo.style(message, "opacity", 1);
-		dojo.style(message, "display", "block");
-		dojo.style(c.domNode,"display","none");
-		dojo.style(dijit.byId("restart").domNode,"display","");
-		dojo.byId("remainingTd").innerHTML="0";
+		dojo.style(message, { opacity:1, display:"block" });
+		dojo.style(c.domNode, "display", "none");
+		dojo.style(dijit.byId("restart").domNode, "display", "");
+		dojo.byId("remainingTd").innerHTML = "0";
 
 	});
 

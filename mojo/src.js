@@ -26,7 +26,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 			new dojo.dnd.Moveable(n, { handle: handle });
 
 			// there is really only one image in here though:
-			dojo.query("img",n).forEach(function(img){
+			dojo.query("img", n).forEach(function(img){
 				dojo.style(img,{
 					width:"1px", height:"1px",
 					top:"155px", left:"155px;"
