@@ -28,5 +28,8 @@ Installation instructions
 	archive called skewDemo.tar.gz that you [should] be able to drop
 	on any webserver and view (only optimized, instead)
 	
+	If the demo stalls on the loader, your cache/ folder probably isn't
+	writable by your webserver. Check the logs. 
+	
 -------------------------------------------------------------------------------
 

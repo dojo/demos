@@ -5,7 +5,7 @@
 	"committers": [
 		{
 			name:"Alex Russell",
-			title:"Dojo Project Lead",
+			title:"Co-Founder, Foundation President",
 			handle:"alex",
 			irc:"slightlyoff",
 			location:"San Francisco, CA",
@@ -58,7 +58,7 @@
 		{
 			name:"Peter Higgins",
 			handle:"dante",
-			title:"Community Enabler",
+			title:"Dojo Project Lead",
 			irc:"phiggins",
 			location:"Greeneville, TN",
 			coords: { x:36.1647, y:-82.8281 },
@@ -104,7 +104,6 @@
 				"Accessibility"
 			]
 		},
-
 		{
 			name: "Bryan Forbes",
 			title: "Committer",
@@ -118,7 +117,6 @@
 				"fx", "Grid"
 			]
 		},
-
 		{
 			name:"Neil Roberts",
 			title: "Committer",
@@ -348,7 +346,7 @@
 			imgUrl:"images/users/jared_j.jpg",
 			blameFor:[
 				"dojo.data",
-                                "dojox.wire"
+				"dojox.wire"
 			]
 		},
 		{
@@ -361,13 +359,24 @@
 			imgUrl:"images/users/kris.jpg",
 			blameFor:[
 				"REST Stores",
-                                "Various JSON modules",
-                                "RPC/SMD",
-                                "IO/Communication",
-                                "Comet/Channels"
+				"Various JSON modules",
+				"RPC/SMD",
+				"IO/Communication",
+				"Comet/Channels"
+			]
+		},
+		{
+		
+			name:"Sam Foster",
+			title:"Committer",
+			handle:"sfoster",
+			irc:"sfoster",
+			location:"Leeds, UK",
+			employer: "SitePen, Inc",
+			blameFor:[
+				"dojo.html", "dojox.html"
 			]
 		}
-
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)
@@ -378,75 +387,6 @@
 		
 		// other non-code-committing commiters?
 		// (crieke)
-	],
-	
-	contributors: [
-		
-	],
-	
-	companies: [
-		// standard CCLA's on file:
-		{ name:"ActiveGrid, Inc." },
-		{ name:"Adaptive Technology Resource Centre" },
-		{ name:"AG Interactive" },
-		{ name:"AOL, LLC" },
-		{ name:"Atomic Labs, Inc." },
-		{ name:"BEA Systems" },
-		{ name:"Claritum, Ltd" },
-		{ name:"Clipperz SRl" },
-		{ name:"Cogini Hong Kong Limited" },
-		{ name:"Curam Software" },
-		{ name:"DFKI GmbH" },
-		{ name:"Defence Science & Technology Organisation" },
-		{ name:"Elastic Path Software, Inc." },
-		{ name:"Emerald Hand, Inc." },
-		{ name:"Engineering Solutions & Products, Inc." },
-		{ name:"EuroClick, LLC" },
-		{ name:"Excentos GMBH" },
-		{ name:"France Telecom" },
-		{ name:"GCGF" },
-		{ name:"Global Media Systems" },
-		{ name:"GreenPlum" },
-		{ name:"IBM" },
-		{ name:"Indico Group" },
-		{ name:"KnowNow, Inc." },
-		{ name:"Laszlo Systems, Inc." },
-		{ name:"Media Hive" },
-		{ name:"Meebo" },
-		{ name:"Mobular Technologies"},
-		{ name:"Nexaweb Technologies, Inc." },
-		{ name:"One Track Mind Limited" },
-		{ name:"OpenBravo" },
-		{ name:"PIXAR" },
-		{ name:"RedHat" },
-		{ name:"The Regents of the University of California" },
-		{ name:"Renkoo" },
-		{ name:"RusSte, Inc."},
-		{ name:"Sinergis"},
-		{ name:"SitePen, Inc."},
-		{ name:"SnapLogic, Inc." },
-		{ name:"Spider Strategies" },
-		{ name:"Sun Microsystems, Inc." },
-		{ name:"Suretec Systems, Ltd." },
-		{ name:"Tietoteema Oy" },
-		{ name:"University of Toronto" },
-		{ name:"UC Davis" },
-		{ name:"UPW Innovative IT - Losungen GMBH" },
-		{ name:"Weswit S.R.L." },
-		{ name:"Wotan, LLC" },
-		{ name:"Yuma Union High School District #70" },
-		{ name:"Zend Technologies, Inc." },
-
-		// revised CCLA's on file:
-		{ name:"Clipperz Srl" },
-		{ name:"Cogini Hong Kong Limited" },
-		{ name:"Mayflower GMBH" },
-		{ name:"Mobular Technologies, Inc." },
-		{ name:"One Track mind Limited" },
-		{ name:"Renkoo, Inc." },
-		{ name:"SitePen, Inc" },
-		{ name:"SureTec Systems, Ltd." },
-		{ name:"University of Toronto" },
-		{ name:"WesWit SRL" }
 	]
+		
 }

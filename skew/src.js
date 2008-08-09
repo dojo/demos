@@ -68,18 +68,18 @@ dojo.require("dojox.layout.RadioGroup");
 	}
 
 	var _oneBroke = function(n,e){
-//		console.log('broken:', n);
 		_gotOne(n,e);
-	};
+	}
+
 	// the handler for our image onloader.
 	// FIXME: if we get a 404, we'll never finish ...
 	var _gotOne = function(n,e){
 		_loaded.push(n);
 		if(_loaded.length >= $._neededImages){
 			$.forEach(_connects, $.disconnect);
-			_doneAnim();			
+			_doneAnim();
 		}
-	};
+	}
 
 	// the onLoad function
 	var init = function(){
@@ -197,7 +197,6 @@ dojo.require("dojox.layout.RadioGroup");
 					// if you don't touch the .src attribute _after_ connecting to onload, it 
 					// won't fire in weird conditions.
 					if($.isIE){ n.src = n.src; }
-				// and just return the lenth of this array as our "images needed" length
 				});
 				
 				ic.startup();
@@ -208,10 +207,7 @@ dojo.require("dojox.layout.RadioGroup");
 			
 				// make it small, so we can wipe it in
 				$.style("imageContainer",{ height:"1px", opacity:0 });
-			
-				// big animation sequence. we'll call it _doneAnim because it plays
-				// after _gotOne was called as many times as needed.length
-		
+					
 			}
 		})
 	};

@@ -4,7 +4,7 @@ dojo.require("dojo.parser");
 dojo.require("dijit._Widget");
 dojo.require("dijit._Templated");
 dojo.require("dojo.fx");
-dojo.require("dojox.fx.easing");
+dojo.require("dojo.fx.easing");
 
 dojo.declare("image.Skewed",
 	[dijit._Widget, dijit._Templated],{
@@ -90,7 +90,7 @@ dojo.declare("image.Container",
 	
 	// easing: String|Function
 	//		An easing function [name] to use
-	easing:"dojox.fx.easing.easeOut",
+	easing:"dojo.fx.easing.easeOut",
 	
 	templateString:
 		'<div tabIndex="0"><div class="imageContainer" dojoAttachPoint="containerWrapper,containerNode">'+
