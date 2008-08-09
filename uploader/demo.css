@@ -1,0 +1,53 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/dijit.css";
+@import "../../dijit/themes/tundra/form/Button.css";
+@import "../../dijit/tests/css/dijitTests.css"; 
+@import "../../dojox/form/resources/FileInput.css"; 
+
+#wrapper{
+	width:100%;
+}
+
+.browse{
+}
+
+#uploadBtn{
+
+}
+
+.uploadBtn{
+
+}
+
+#fileToUpload{
+	border:#CCCCCC 1px solid;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+
+.uploadedFilesLabel{
+
+}
+
+#uploadedFiles{
+	border:#CCCC00 1px solid;
+	background:#FFFFCC;
+}
+
+.leftCol{
+	width:500px;
+	padding:5px;
+	vertical-align:top;
+}
+
+.rgtCol{
+	vertical-align:top;
+}
+
+textarea{
+	display:block;
+}
+
+#noFlash button, #hasFlash button{
+	font-size:9px;
+}
