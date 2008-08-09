@@ -103,7 +103,7 @@ dojo.require("dojox.layout.RadioGroup");
 		// set it all off: grab some data from a remote file, and create
 		// the interface
 		$.xhrGet({
-			url:"users.json",
+			url:"../resources/users.json",
 			handleAs:"json",
 			load:function(data){
 			
