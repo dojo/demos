@@ -8,25 +8,11 @@
 	width:100%;
 }
 
-.browse{
-}
-
-#uploadBtn{
-
-}
-
-.uploadBtn{
-
-}
 
 #fileToUpload{
 	border:#CCCCCC 1px solid;
 	overflow-y:auto;
 	overflow-x:hidden;
-}
-
-.uploadedFilesLabel{
-
 }
 
 #uploadedFiles{
@@ -40,7 +26,7 @@
 	vertical-align:top;
 }
 
-.rgtCol{
+#rgtCol{
 	vertical-align:top;
 }
 
@@ -50,4 +36,37 @@ textarea{
 
 #noFlash button, #hasFlash button{
 	font-size:9px;
+}
+
+.picFrame{
+	border:#CCCCCC 1px solid;
+	padding:3px;
+	width:320px;
+	margin:5px;
+}
+.picFrame img{
+	display:block;
+	margin-bottom:3px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.picDesc{
+	text-align:left;
+	border:#CCCCCC 1px solid;
+	padding:2px;
+	font-size:10px;
+	color:#999999;
+}
+.picDesc .name{
+font-size:14px;
+color:#000033;
+}
+.picDesc strong{
+color:#666666;
+}
+.picDesc .date{
+}
+.picDesc .size{
+}
+.picDesc .dim{
 }

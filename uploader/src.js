@@ -55,6 +55,25 @@ var showSingle = function(){
 	}
 }
 
+var imageHTML = function(data){
+	console.log("DATA:", data);
+	var w = (data.width<320)?data.width:320;
+	var d = data.creationDate.toString().split(" ");
+	console.log("D:", d)
+	var date = d[0]+" "+d[1]+" "+d[2]+" "+d[3];
+	console.log("DATE:",date);
+	var txt = 	'<div class="picFrame">'+
+    			'<img src="'+data.file+'" width="'+w+'">'+
+				'<div class="picDesc"'+
+					'<div class="name"><strong>'+data.name+'</strong></div>'+
+					'<div class="date">Date Created: <strong>'+date+'</strong></div>'+
+					'<div class="dim">Dimensions: <strong>'+data.width+' x '+data.height+'</strong></div>'+
+					'<div class="size">Size: <strong>'+Math.ceil(data.size*.001)+'KB</strong></div>'+
+					
+				'</div>'+
+				'</div>'
+	return txt;
+}
 var uploadUrl = "UploadFile.php";
 var rmFiles = "";
 var fileMask = [
@@ -139,7 +158,7 @@ dojo.addOnLoad(function(){
 		console.warn("onComplete", data);
 		dojo.forEach(data, function(d){
 			dojo.byId("uploadedFiles").value += d.file+" \n";
-			dojo.byId("rgtCol").innerHTML += '<img src="'+d.file+'" />';
+			dojo.byId("rgtCol").innerHTML += imageHTML(d);//'<img src="'+d.file+'" />';
 			rmFiles+=d.file+";";
 		});
 	});
