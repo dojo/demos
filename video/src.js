@@ -192,12 +192,10 @@ controls = {
 			
 			this.volDim = dojo.coords(this.volNode);
 			var v = player.initialVolume; // returns 0 - 1
-			//console.log("init vol:", this.volDim.w, v, this.volDim.w*v);
 			dojo.style(this.volBack, "backgroundPosition", "-"+(this.volDim.w-(this.volDim.w*v))+"px 0px");
 			
 			dojo.connect(this.volNode, "mousedown", this, "begDrag");
 			dojo.connect(dojo.doc, "mouseup", this, "endDrag");
-			
 			dojo.connect(this.volNode, "mouseover", this, "over");
 			dojo.connect(this.volNode, "mouseout", this, "out");
 		},
