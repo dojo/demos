@@ -75,7 +75,7 @@ dojo.addOnLoad(function(){
 	
 	
 	
-	player = new dojox.av.FLVideo({initialVolume:.4, isDebug:true}, "video");
+	player = new dojox.av.FLVideo({initialVolume:.2, isDebug:true}, "video");
 	
 	
 	dojo.connect(player, "onLoad", controls, "init");
