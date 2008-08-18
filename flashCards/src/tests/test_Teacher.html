@@ -4,25 +4,23 @@
 	
     <title>Did you practice your Dojo today?</title>
 
-    <link type="text/css" rel="stylesheet" href="../resources/Teacher.css">
+    <link type="text/css" rel="stylesheet" href="../Teacher.css">
 
-    <script type="text/javascript" src="../../dojo/dojo.js"></script>
+    <script type="text/javascript" src="../../../../dojo/dojo.js"></script>
 
 	<script type="text/javascript">
-		dojo.require("teacher.Teacher");
+		dojo.require("demos.flashCards.src.Teacher");
 		
 		dojo.addOnLoad(function(){
 			
-			var lady = new teacher.Teacher({
+			var lady = new demo.Teacher({
 				id:"lady1",
 				style: "top: 200px; left: 200px"
-			});
+			}).placeAt(dojo.body(),"last");
 			
 			var words = ["Hi friend", "How are you?", "Lets practice your math."];
 			var counter = 0;
-			
-			dojo.body().appendChild(lady.domNode);
-			
+						
 			setTimeout(dojo.hitch(lady,"frown"), 1500);
 			setTimeout(dojo.hitch(lady,"frown", false), 3500);
 			setInterval(dojo.hitch(lady,"blink"), 2500);
