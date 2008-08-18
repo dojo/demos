@@ -4,8 +4,8 @@ dojo.require("dijit.Dialog");
 dojo.require("dijit.form.Button");
 dojo.require("dijit.layout.LayoutContainer");
 dojo.require("dijit.layout.ContentPane");
-
 dojo.require("demos.flashCards.src.MathFlashCard");
+dojo.require("demos.flashCards.src.teacher.Teacher");
 
 //global storage point for our fade animations
 var messageFadeEvent = null;
@@ -20,9 +20,22 @@ var resetScore = function(){
 	dojo.style("scoreTable", "display", "");
 };
 
+var goodAnswers = ["Great job. Did you know that doing math regularly keeps you sharp?", "Hey, this is correct, did you ever concider joining a math competition?", "I am impressed! Not so many students are good in math, congratulations!"];
+var indexGood = 0;
+var countGood = 0;
+
+var badAnswers = ["Hmm, you are letting me down! Did you practice enough?", "This is wrong, why don't you know such a simple answer?", "I might have to send you back to school, this is not good"];
+var indexBad = 0;
+
+var slowAnswers = ["Hmm, I thought you could have beena little faster to be honest", "You could have counted the result on your fingers my friend.", "Slow slow slow, what are we going to do about this?"];
+var indexSlow = 0;
+
+var countBad = 0;
+
 //start the flashcards, result of pressing "getStarted"
 var getStarted = function(){
-
+	dijit.byId("teacher").speak("Hi student! Let's go. Just enter the correct results and press enter.");
+	
 	//call the card widgets getStarted() method
 	var c = dijit.byId("card");
 	c.getStarted();
@@ -42,6 +55,12 @@ var getStarted = function(){
 		if (messageFadeEvent){
 			messageFadeEvent.stop();
 		}
+		
+		countGood++;
+		countBad = 0;
+		if (countGood == 2){
+			dijit.byId("teacher").frown(false);
+		}
 
 		dojo.byId("correctTd").innerHTML = c.correctAnswers;
 
@@ -50,9 +69,10 @@ var getStarted = function(){
 			// FIXME: which node?
 			dojo.removeClass("incorrect");
 			dojo.addClass("correct");
-			dojo.style("messages", "opacity", 1);
-			dojo.byId("messages").innerHTML="Great Job!";
-			messageFadeEvent = dojo.fadeOut({node: "messages", duration: 2000 }).play();
+			
+			dijit.byId("teacher").speak(goodAnswers[indexGood], 5000);
+			indexGood++;
+			if (indexGood == goodAnswers.length) { indexGood=0; }
 		}
 	});
 
@@ -62,6 +82,12 @@ var getStarted = function(){
 		if(messageFadeEvent){
 			messageFadeEvent.stop();
 		}
+		
+		countBad++;
+		countGood = 0;
+		if (countBad == 2){
+			dijit.byId("teacher").frown(true);
+		}
 
 		dojo.byId("incorrectTd").innerHTML = c.incorrectAnswers;
 
@@ -69,9 +95,10 @@ var getStarted = function(){
 			dojo.byId("remainingTd").innerHTML = c.numberProblems - c.currentProblem;
 			dojo.addClass("incorrect");
 			dojo.removeClass("correct");
-			dojo.style("messages", "opacity", 1);
-			dojo.byId("messages").innerHTML = "Sorry, keep trying!";
-			messageFadeEvent = dojo.fadeOut({ node: "messages", duration: 2000}).play();
+			
+			dijit.byId("teacher").speak(badAnswers[indexBad], 5000);
+			indexBad++;
+			if (indexBad == badAnswers.length) { indexBad=0; }
 		}
 	});
 
@@ -81,6 +108,12 @@ var getStarted = function(){
 		if(messageFadeEvent){
 			messageFadeEvent.stop();
 		}
+		
+		countBad++;
+		countGood = 0;
+		if (countBad == 2){
+			dijit.byId("teacher").frown(true);
+		}
 
 		dojo.byId("tooSlowTd").innerHTML = c.tooSlow;
 
@@ -89,9 +122,10 @@ var getStarted = function(){
 			// FIXME: which node?
 			dojo.addClass("incorrect");
 			dojo.removeClass("correct");
-			dojo.style("messages", "opacity", 1);
-			dojo.byId("messages").innerHTML = "C'mon, pick up the pace!";
-			messageFadeEvent = dojo.fadeOut({ node: "messages", duration: 2000}).play();
+			
+			dijit.byId("teacher").speak(slowAnswers[indexSlow], 5000);
+			indexSlow++;
+			if (indexSlow == slowAnswers.length) { indexSlow=0; }
 		}
 		
 	});
@@ -115,13 +149,15 @@ var getStarted = function(){
 				msg += slow + " problems.";
 			}
 		}
+		
+		if (c.correctAnswers > 8){
+			dijit.byId("teacher").frown(false);
+		}
 
-		var message = dojo.byId("messages");
-		message.innerHTML= msg;
-
-		dojo.style(message, { opacity:1, display:"block" });
+		dijit.byId("teacher").speak(msg);
+		
 		dojo.style(c.domNode, "display", "none");
-		dojo.style(dijit.byId("restart").domNode, "display", "");
+		dojo.style(dojo.byId("restart"), "display", "");
 		dojo.byId("remainingTd").innerHTML = "0";
 
 	});
@@ -134,9 +170,9 @@ var getStarted = function(){
 
 //the restart function
 var restart = function(){
-	dojo.style(dijit.byId("restart").domNode,"display","none");
+	dojo.style(dojo.byId("restart"),"display","none");
 	dojo.style(dijit.byId("card").domNode,"display","");
-	dojo.style("messages", "opacity", 0);
+	dijit.byId("teacher").speak("What a delightful student you are, keep practicing! Your way to success.");
 	dijit.byId("card").restart();
 };
 
@@ -144,4 +180,7 @@ dojo.addOnLoad(function(){
 	
 	dojo.parser.parse();
 	
+	setInterval(function(){
+		dijit.byId("teacher").blink();
+	}, 2500);
 });

@@ -3,30 +3,23 @@
 <html>
 <head>
 
-	<title>Math Flash Card</title>
+	<title>Dojo.schools()</title>
 	
 	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="src/teacher/resources/Teacher.css">
 
 	<script type="text/javascript" src="../../dojo/dojo.js"></script>
 	<script type="text/javascript" src="src.js"></script>
 
 </head>
 <body class="tundra">
-	<table style="width: 75%" class="chalkBoard">
-		<tr>
-			<td colspan="3">
-				<div id="start" dojoType="dijit.form.Button" onClick="getStarted()">Get Started</div>
-				<div id="restart" dojoType="dijit.form.Button" onClick="restart()" style="display:none">Try Again</div>
-			</td>
-
-		</tr>
-		<tr>
-			<td style="width:40%"><div class="messages" id="messages"></div></td>
-			<td align="center">
-				<div layoutAlign="client" class="container" id="card"  dojoType="dojofun.widget.MathFlashCard" numberProblems="20" maxInt="10" timer="5" problemType="addition" style="display:none">
-				</div>
-			</td>
-			<td style="width:40%;" align="right" valign="top">
+	<div class="classContainer">
+		<div class="classRoomOutline">
+			<div dojoType="demos.flashCards.src.teacher.Teacher" id="teacher" class="classRoomTeacher"></div>
+			<div class="classRoomBoard">
+				<div layoutAlign="client" class="container" id="card"  dojoType="dojofun.widget.MathFlashCard" numberProblems="20" maxInt="10" timer="5" problemType="addition" style="display:none"></div>			
+			</div>
+			<div class="classRoomResult">
 				<table id="scoreTable" style="display:none"> 
 					<tr><td id="score"colspan="2">Your Score</td></tr>
 					<tr>
@@ -45,14 +38,15 @@
 						<td id="tooSlow" align="left">Too Slow:</td>
 						<td id="tooSlowTd"></td>
 					</tr>
-				</table>	
-			</td>
-		</tr>
-		<tr>
-			<td colspan="3" align="center">
-				
-			</td>
-		</tr>
-	</table>
+				</table>
+			</div>
+			<div class="classRoomStart" id="start">
+				<div class="classRoomStartContent" onClick="getStarted()" dojoAttachPoint="roomControl">Start</div>
+			</div>
+			<div class="classRoomStart" id="restart" style="display: none">
+				<div class="classRoomStartContent" onClick="restart()" dojoAttachPoint="roomControl" >Restart</div>
+			</div>
+		</div>
+	</div>	
 </body>
 </html>
