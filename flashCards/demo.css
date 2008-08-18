@@ -1,5 +1,6 @@
 @import "../../dojo/resources/dojo.css";
 @import "../../dijit/themes/tundra/tundra.css";
+@import "src/Teacher.css";
 
 .tundra {
 	margin:0;

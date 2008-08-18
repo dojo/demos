@@ -1,10 +1,10 @@
-dojo.provide("demos.flashCards.src.teacher.Teacher");
+dojo.provide("demos.flashCards.src.Teacher");
 
 dojo.require("dijit._Widget");
 dojo.require("dijit._Templated");
 dojo.require("dojox.timing.Sequence");
 
-dojo.declare("beer._TeacherBehavior", null, {
+dojo.declare("demo._TeacherBehavior", null, {
 	
 	constructor: function(){
 		this._batEyes = [
@@ -21,9 +21,9 @@ dojo.declare("beer._TeacherBehavior", null, {
 		
 });
 
-dojo.declare("demos.flashCards.src.teacher.Teacher", [dijit._Widget, dijit._Templated, beer._TeacherBehavior], {
+dojo.declare("demo.Teacher", [dijit._Widget, dijit._Templated, demo._TeacherBehavior], {
 
-	templatePath: dojo.moduleUrl("demos.flashCards.src.teacher","templates/Teacher.html"),
+	templatePath: dojo.moduleUrl("demos.flashCards.src","Teacher.html"),
 
 	constructor: function(args, node){
 		dojo.mixin(this, args);
@@ -53,8 +53,6 @@ dojo.declare("demos.flashCards.src.teacher.Teacher", [dijit._Widget, dijit._Temp
 		this._timeout = setTimeout(dojo.hitch(this, function(){
 			dojo.removeClass(this.teacherBubbleOuter, "teacherSpeaking")
 		}), timeout);
-	},
+	}
 	
-	
-		
 });

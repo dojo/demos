@@ -1,5 +1,5 @@
 div.teacher {
-	background: url("../resources/teacher_body.png");
+	background: url("../images/teacher_body.png");
 	width: 187px;
 	height: 493px;
 	position: absolute;
@@ -13,14 +13,14 @@ div.beerLadyInner {
 }
 
 div.teacherAngry {
-	background:url('../resources/teacher_mouth_angry.png') no-repeat center center;
+	background:url('../images/teacher_mouth_angry.png') no-repeat center center;
 	height:18px; 
 	width:27px;
 	top:48px;
 	left:42px;
 }
 div.teacherBlink {
-	background:url('../resources/teacher_eyes_closed.png') no-repeat center center;
+	background:url('../images/teacher_eyes_closed.png') no-repeat center center;
 	top: 31px;
 	left: 33px;
 	width: 39px;
@@ -39,7 +39,7 @@ div.teacher .teacherBeingAngry .teacherAngry {
 }
 
 div.teacherBubble {
-	background:url('../resources/bubble.png') no-repeat center center;
+	background:url('../images/bubble.png') no-repeat center center;
 	width: 200px;
 	height: 130px;
 	position: absolute;

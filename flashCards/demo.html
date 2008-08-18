@@ -6,7 +6,6 @@
 	<title>Dojo.schools()</title>
 	
 	<link rel="stylesheet" href="demo.css">
-	<link rel="stylesheet" href="src/teacher/resources/Teacher.css">
 
 	<script type="text/javascript" src="../../dojo/dojo.js"></script>
 	<script type="text/javascript" src="src.js"></script>
@@ -15,7 +14,7 @@
 <body class="tundra">
 	<div class="classContainer">
 		<div class="classRoomOutline">
-			<div dojoType="demos.flashCards.src.teacher.Teacher" id="teacher" class="classRoomTeacher"></div>
+			<div dojoType="demo.Teacher" id="teacher" class="classRoomTeacher"></div>
 			<div class="classRoomBoard">
 				<div layoutAlign="client" class="container" id="card"  dojoType="dojofun.widget.MathFlashCard" numberProblems="20" maxInt="10" timer="5" problemType="addition" style="display:none"></div>			
 			</div>
