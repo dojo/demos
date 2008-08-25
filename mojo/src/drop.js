@@ -39,7 +39,7 @@ dojo.require("dijit._base.place");
 					_anims.push(dojo.fx.slideTo({
 						top:t, left:l, node:n,
 						duration:1000, 
-						easing:dojox.fx.easing.bounceOut
+						easing:dojo.fx.easing.bounceOut
 					}));
 				});
 				// play the _anims as one animation

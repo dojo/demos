@@ -12,14 +12,15 @@ dojo.require("demos.mojo.src.download"); // download link code
 
 (function(){ 
 		
-	var nodes;
+	var nodes, style = dojo.style;
+	
 	dojo.addOnLoad(function(){
 		
 		nodes = dojo.query("#container > div");
 		// iterate over each div in the container
 		nodes.forEach(function(n){
 			// hide the node, first thing, and undo native-css hiding:
-			dojo.style(n, { opacity:0, visibility:"visible" });
+			style(n, { opacity:0, visibility:"visible" });
 
 			// the drag handle will be the h1 element in this div
 			var handle = dojo.query("h1", n)[0];
@@ -27,7 +28,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 
 			// there is really only one image in here though:
 			dojo.query("img", n).forEach(function(img){
-				dojo.style(img,{
+				style(img,{
 					width:"1px", height:"1px",
 					top:"155px", left:"155px;"
 				});
@@ -90,7 +91,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 			node:"downloadButton",
 			duration:400,
 			delay:2000,
-			beforeBegin: dojo.partial(dojo.style, "downloadButton", { 
+			beforeBegin: dojo.partial(style, "downloadButton", { 
 				opacity:0, visibility:"visible" 
 			})
 		}));
@@ -113,13 +114,13 @@ dojo.require("demos.mojo.src.download"); // download link code
 			_coords = dojo.coords(n);
 			// and "bring to top"
 			// and make it partially opaque
-			_z = dojo.style(n, "zIndex");
-			dojo.style(n, { zIndex:888, opacity:0.65 });
+			_z = style(n, "zIndex");
+			style(n, { zIndex:888, opacity:0.65 });
 		});
 		
 		dojo.subscribe("/dnd/move/stop", function(e){
 			// when it ends, reset z-index, opacity, and animate back to spot
-			dojo.style(e.node, "opacity", 1);
+			style(e.node, "opacity", 1);
 			if(_coords){
 				dojo.fx.slideTo({
 					node: e.node, // drag node
@@ -128,7 +129,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 					easing: dojo.fx.easing.elasticOut,
 					duration:950 // ms
 				}).play(5); // small delay for performance?
-				dojo.style(e.node, "zIndex", _z);
+				style(e.node, "zIndex", _z);
 			}
 		});	
 
