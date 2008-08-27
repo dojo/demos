@@ -373,6 +373,8 @@
 			irc:"sfoster",
 			location:"Leeds, UK",
 			employer: "SitePen, Inc",
+			coords: { x: 53.8241, y:-1.5661 },
+			imgUrl:"images/users/sfoster.png",
 			blameFor:[
 				"dojo.html", "dojox.html"
 			]
