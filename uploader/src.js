@@ -58,9 +58,13 @@ var showSingle = function(){
 var imageHTML = function(data){
 	console.log("DATA:", data);
 	var w = (data.width<320)?data.width:320;
-	var d = data.creationDate.toString().split(" ");
-	console.log("D:", d)
-	var date = d[0]+" "+d[1]+" "+d[2]+" "+d[3];
+	if(data.creationDate){
+		var d = data.creationDate.toString().split(" ");
+		console.log("D:", d)
+		var date = d[0]+" "+d[1]+" "+d[2]+" "+d[3];
+	}else{
+		date = "NA";	
+	}
 	console.log("DATE:",date);
 	var txt = 	'<div class="picFrame">'+
     			'<img src="'+data.file+'" width="'+w+'">'+
