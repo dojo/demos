@@ -66,10 +66,11 @@ var imageHTML = function(data){
 		date = "NA";	
 	}
 	console.log("DATE:",date);
+	var name = data.file.split("/")[data.file.split("/").length-1];
 	var txt = 	'<div class="picFrame">'+
     			'<img src="'+data.file+'" width="'+w+'">'+
 				'<div class="picDesc"'+
-					'<div class="name"><strong>'+data.name+'</strong></div>'+
+					'<div class="name"><strong>'+name+'</strong></div>'+
 					'<div class="date">Date Created: <strong>'+date+'</strong></div>'+
 					'<div class="dim">Dimensions: <strong>'+data.width+' x '+data.height+'</strong></div>'+
 					'<div class="size">Size: <strong>'+Math.ceil(data.size*.001)+'KB</strong></div>'+
@@ -130,10 +131,11 @@ dojo.addOnLoad(function(){
 		uploadOnChange:false, 
 		selectMultipleFiles:selectMultipleFiles,
 		fileMask:fileMask,
-		isDebug:false
+		isDebug:true
 	});
 	
 	doUpload = function(){
+		console.log("doUpload")
 		dojo.byId("fileToUpload").innerHTML = "uploading...";
 		f0.upload();
 	}
