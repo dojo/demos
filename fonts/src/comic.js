@@ -7,7 +7,7 @@ var balloon, digistrip, timer, phrases = [
 	"Go ahead...make my day!",
 	"You still haven't typed anything in?  What the hell are you waiting for?!?!?",
 	"Can't you see I'm waitin' here?"
-], position = 0, intvl = 7500;
+], position = 0, intvl = 15000;
 
 function init(){
 	var s = dojox.gfx.createSurface("canvas", 900, 600);
