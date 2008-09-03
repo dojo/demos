@@ -1,29 +1,57 @@
 @import "../../dojo/resources/dojo.css";
 @import "../../dijit/tests/css/dijitTests.css"; 
 
-#canvas {
+#comics #canvas {
 	position: absolute;
 	bottom:0;
 	left:0;
 	width:900px; 
 	height:600px; 
 }
-#title {
+#comics #title {
 	position: absolute;
 	bottom:121px;
 	left:601px;
 	width: 300px;
 	height: 18px;
 }
-#text-input {
+#comics #text-input {
 	position: absolute;
 	bottom:0;
 	left:601px;
 	width: 300px;
 	height: 120px;
 }
-#doIt {
+#comics #doIt {
 	position: absolute;
 	bottom: 125px;
 	left: 860px;
 }
+
+#charts .label {
+	width: 228px;
+	text-align: center;
+	position: absolute;
+	bottom:0;
+	font-size: 11px;
+}
+#charts #container {
+	position: relative;
+	margin: 12px auto;
+	width: 684px;
+	height: 248px;
+}
+#charts #pie1,
+#charts #pie2,
+#charts #pie3 {
+	position: absolute;
+	bottom: 24px;
+	width: 228px;
+	height: 228px;
+}
+#charts #pie1,
+#charts #label1 { left: 0; }
+#charts #pie2,
+#charts #label2 { left: 228px; }
+#charts #pie3,
+#charts #label3 { left: 228px; }
