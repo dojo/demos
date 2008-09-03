@@ -163,7 +163,7 @@ function init(){
 	digistrip = new dojox.gfx.VectorFont("resources/digistrip.svg");
 	balloon = g.createGroup();
 	balloon.setTransform({ dx: 294, dy: 56 });
-	doText(str);
+	doText(str, true);
 
 	//	do the title of the textarea
 	var t = dojox.gfx.createSurface("title", 300, 18);
@@ -183,7 +183,7 @@ function nextPhrase(){
 	doText(phrases[position++ % phrases.length]);
 }
 
-function doText(text){
+function doText(text, startTimer){
 	if(!digistrip || !balloon){ return false; }
 	balloon.clear();
 	clearInterval(timer);
@@ -192,6 +192,7 @@ function doText(text){
 	window.resizeBy(1,0);
 	setTimeout(function(){ window.resizeBy(-1,0); }, 1);
 
+	var b = (text === undefined);
 	text = text || dojo.byId("text-input").value;
 	digistrip.draw(balloon, 
 		{ text: text, x:0, y:0, width: 170, height: 132, align: "middle", fitting: dojox.gfx.vectorFontFitting.FIT, leading: 1.2 },
@@ -199,6 +200,8 @@ function doText(text){
 		"#181818"
 	);
 
-	timer = setInterval(nextPhrase, intvl);
+	if(b || startTimer){
+		timer = setInterval(nextPhrase, intvl);
+	}
 	return false;
 }
