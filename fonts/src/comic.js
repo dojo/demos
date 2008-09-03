@@ -152,7 +152,7 @@ function init(){
 	//	the balloon
 	g = main.createGroup();
 	g.createPath("M513.365,122.949 c0-52.717-60.427-95.449-134.962-95.449c-74.54,0-134.967,42.732-134.967,95.449c0,45.105,44.261,82.877,103.736,92.848 c-4.844,16.874-12.919,36.768-25.591,46.703c24.417,0.043,48.495-23.498,65.001-44.297 C457.309,215.209,513.365,173.715,513.365,122.949z")
-		.setStroke({ color:"#181818", width:5 })
+		.setStroke({ color:"#918585", width:5 })
 		.setFill("#fff");
 
 	//	figure out the bounding box.
@@ -197,7 +197,7 @@ function doText(text, startTimer){
 	digistrip.draw(balloon, 
 		{ text: text, x:0, y:0, width: 170, height: 132, align: "middle", fitting: dojox.gfx.vectorFontFitting.FIT, leading: 1.2 },
 		{ size: "12pt", family:"DigitalStrip" },
-		"#181818"
+		"#333"
 	);
 
 	if(b || startTimer){
