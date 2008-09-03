@@ -173,6 +173,8 @@ function init(){
 		"#181818"
 	);
 
+	dojo.connect(dojo.byId("doIt"), "onclick", function(){ doText(); });
+
 	//	start the timer.
 	timer = setInterval(nextPhrase, intvl);
 }
