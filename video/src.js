@@ -2,7 +2,6 @@ dojo.require("dojox.av.FLVideo");
 dojo.require("dijit.form.Button");
 dojo.require("dijit.form.Slider"); 
 dojo.require("dojo.dnd.Source");
-//dojo.require("dojo.dnd.Target");
 dojo.require("dojo.parser");
 
 var passthrough = function(msg){
@@ -17,7 +16,7 @@ var dndItem = {};
 
 var extended = {
 	onDropExternal: function(){
-		//console.log("check to copy, move, or none:", dndItem);
+		console.warn("DROP --- check to copy, move, or none:", dndItem);
 		var node = dojo.byId(dndItem.dragNode.id);
 		var target = dndItem.dropNode;
 		if(target.id == "videoOverlay") return;
@@ -28,6 +27,7 @@ var extended = {
 };
 //dojo.extend(dojo.dnd.Source, extended);
 dojo.extend(dojo.dnd.Target, extended);
+//dojo.dnd.Target.prototype.onDropExternal = extended.onDropExternal;
 
 createRelated = function(items){
 	var txt = '<span class="relText">Related Items:</span>'
@@ -43,8 +43,11 @@ createRelated = function(items){
 	return txt;
 }
 
+
+
+
 dojo.addOnLoad(function(){
-	libNode = dojo.byId("library");
+	libNode = dojo.byId("library"); //dojo.dnd.Source; jsId="dnd_library" within "libContainer"
 	lib = dnd_library;
 
 	dojo.xhrGet({
@@ -72,11 +75,7 @@ dojo.addOnLoad(function(){
 	});
 	
 	
-	
-	
-	
-	player = new dojox.av.FLVideo({initialVolume:.2, isDebug:true}, "video");
-	
+	player = new dojox.av.FLVideo({initialVolume:.2, isDebug:false}, "video");
 	
 	dojo.connect(player, "onLoad", controls, "init");
 	dojo.connect(player, "onClick", player, "togglePause");
@@ -158,11 +157,13 @@ controls = {
 		watchTime: function(){
 			
 				var time = player.getTime();
-				this.timeNode.innerHTML = this.timecode(time);
 				//console.log(time, "::", this.timecode(time));
+				this.timeNode.innerHTML = this.timecode(time);
+				//
 			if(this.duration){
 				if(!this.seeking){
-					var p = time/this.duration;
+					// IE freaks if the prgressBar's value goes over 1.0
+					var p = Math.min(time/this.duration, 1);
 					this.progressBar.attr("value", p*100);
 				}
 			}
@@ -248,6 +249,7 @@ controls = {
 		this.conTog = dojo.connect(dojo.byId("videoOverlay"), "click", player, "togglePause");
 	},
 	onVideoEnd: function(){
+		console.log("onVideoEnd")
 		dojo.disconnect(this.conTog);
 		var rel, m1, m2;
 		for(var i=0, len=this.items.length;i<len;i++){
@@ -275,6 +277,7 @@ controls = {
 		});
 		this.showOverlay();
 		this.showPlay();
+		console.log("onVideoEnd done")
 	},
 	hideOverlay: function(){
 		dojo.style(dojo.byId("relatedContainer"), "display", "none");
@@ -320,5 +323,5 @@ controls = {
 	showPause: function(){
 		dojo.style(dijit.byId("pauseButton").domNode, "display", "");
 		dojo.style(dijit.byId("playButton").domNode, "display", "none");
-	},
+	}
 }

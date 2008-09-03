@@ -14,16 +14,23 @@
 }
 #video{
 	height:240px;
+	position:absolute;
 }
 #vidContainer{
 	width:320px;
 	height:240px;
+	
 }
 #videoOverlay{
 	position:absolute;
 	width:320px;
 	height:240px;
 	cursor:pointer;
+	
+	/* IE needs a "color" for the drop target*/
+	background-color:#00FFFF;
+	opacity:0;
+	filter:alpha(opacity:0);
 }
 #progressContainer{
 	clear:both;
