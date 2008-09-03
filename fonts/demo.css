@@ -1,0 +1,29 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/tests/css/dijitTests.css"; 
+
+#canvas {
+	position: absolute;
+	bottom:0;
+	left:0;
+	width:900px; 
+	height:600px; 
+}
+#title {
+	position: absolute;
+	bottom:121px;
+	left:601px;
+	width: 300px;
+	height: 18px;
+}
+#text-input {
+	position: absolute;
+	bottom:0;
+	left:601px;
+	width: 300px;
+	height: 120px;
+}
+#doIt {
+	position: absolute;
+	bottom: 125px;
+	left: 860px;
+}

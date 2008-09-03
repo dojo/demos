@@ -1,5 +1,4 @@
-dojo.require("dojox.gfx");
-dojo.require("dojox.gfx.VectorText");
+dojo.provide("demos.fonts.src.comic");
 
 var balloon, digistrip, timer, phrases = [
 	"Come on...I'm waiting!",
@@ -177,6 +176,7 @@ function init(){
 	//	start the timer.
 	timer = setInterval(nextPhrase, intvl);
 }
+
 dojo.addOnLoad(init);
 
 function nextPhrase(){
