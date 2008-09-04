@@ -206,7 +206,7 @@ dojo.require("dojox.gfx.utils");
 
 				//	the value
 				var label = main.createGroup(), 
-					txtArgs = { text: d.label.toUpperCase(), x:0, y:0, width:r, height:r, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
+					txtArgs = { text: dojo.trim(d.label.toUpperCase()), x:0, y:0, width:r, height:r, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
 					fontArgs = { size: "8px" };
 				label.setTransform(m.rotategAt(lastAngle-((lastAngle-a)/2), c, c));
 
@@ -239,11 +239,13 @@ dojo.require("dojox.gfx.utils");
 
 				var txt = this.font.draw(label, txtArgs, fontArgs, this.stroke.color), 
 					txtscale = this.findScale(d.label.toUpperCase(), r/1.65), 
-					txty = Math.round(this.font.viewbox.height*txtscale)/2;
+					txty = Math.round(this.font.viewbox.height*txtscale)/2,
+					txtw = this.font.getWidth(d.label.toUpperCase(), txtscale);
 				if(Math.round(this.font.viewbox.height*txtscale) > maxh){
 					//	recalc the scale based on height
 					txtscale = maxh/this.font.viewbox.height;
 					txty = Math.round(this.font.viewbox.height*txtscale)/2;
+					txtw = this.font.getWidth(d.label.toUpperCase(), txtscale);
 				}
 
 				if(lastAngle>=90-this.rotation && lastAngle<=270-this.rotation){
@@ -254,12 +256,13 @@ dojo.require("dojox.gfx.utils");
 					]);
 				} else {
 					var mtrx=new dojox.gfx.Matrix2D([
-						m.translate((r*2)-6-(r/1.65), c-txty), 
+						m.translate((r*2)-txtw-6, c-txty), 
 						m.scale(txtscale)
 					]);
 				}
 				txt.setTransform(mtrx);
 			}
+			return g; //	dojox.gfx.Group
 		}
 	});
 })();
