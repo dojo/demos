@@ -165,7 +165,7 @@ function init(){
 	doText(str, true);
 
 	//	do the title of the textarea
-	var t = dojox.gfx.createSurface("title", 300, 18);
+	var t = dojox.gfx.createSurface("prompt", 300, 18);
 	g = t.createGroup();
 	digistrip.draw(g, 
 		{ text: "Make me say something silly!", x:0, y:0, width: 300, height: 18, align: "start" },
