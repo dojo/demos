@@ -33,7 +33,7 @@ dojo.require("dojox.gfx.utils");
 			var cw = 0;
 			for(var i=0; i<g.length; i++){
 				var tw = g[i].xAdvance;
-				if(i+1<g.length && g[i].kern && g[i].kern[g[i+1].code]){
+				if(i+1<g.length && g[i].kern && g[i+1] && g[i+1].code && g[i].kern[g[i+1].code]){
 					tw += g[i].kern[g[i+1].code].x;
 				}
 				cw += tw;

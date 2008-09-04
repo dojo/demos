@@ -13,15 +13,19 @@ function init(){
 	var t = dojo.byId("title"),
 		b = dojo.marginBox(t),
 		txt = t.innerHTML,
-		w = book.getWidth(txt, book._getBestFit(txt, b.w, b.h, 1.2).scale);
+		w = book.getWidth(txt, book._getSizeFactor("72px"));
 	t.innerHTML = "";
-	var s = dojox.gfx.createSurface(t, w, b.h),
+	var s = dojox.gfx.createSurface(t, w, 72),
 		g = s.createGroup();
 	book.draw(g, 
-		{ text: "The Dojo Times", width:w, height:b.h, align:"middle", fitting: dojox.gfx.vectorFontFitting.FIT },
-		{ size: b.h+"px" },
+		{ text: txt, width:w, height:60, align:"middle" },
+		{ size: "72px" },
 		"#181818"
 	);
+
+	if(dojo.isIE){
+		t.parentNode.style.textAlign = "left";
+	}
 
 	var t = dojo.byId("subtitle"),
 		txt = t.innerHTML,
@@ -75,7 +79,6 @@ function init(){
 		{ size: "9px" },
 		"#000"
 	);
-
 
 	//	draw the pie chart and scale it down.
 	var data = [
