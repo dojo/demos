@@ -78,10 +78,11 @@ dojo.addOnLoad(function(){
 	player = new dojox.av.FLVideo({initialVolume:.2, isDebug:false}, "video");
 	
 	dojo.connect(player, "onLoad", controls, "init");
-	dojo.connect(player, "onClick", player, "togglePause");
+	dojo.connect(player, "onClick", controls, "toggle");
 	dojo.connect(player, "onMetaData", controls.progress, "onMeta");
-	dojo.connect(player, "onVideoEnd", controls, "onVideoEnd");
-	dojo.connect(player, "onVideoStart", controls, "onVideoStart");
+	dojo.connect(player, "onEnd", controls, "onEnd");
+	dojo.connect(player, "onStart", controls, "onStart");
+	dojo.connect(player, "onPosition", controls.progress, "onPosition");
 	
 	dojo.subscribe("/dnd/source/over", function(evt){ 
 		//console.log("onDndSourceOver", evt);
@@ -122,7 +123,7 @@ controls = {
 			dojo.connect(this.progressBar.sliderHandle, "mousedown", this, "startDrag");
 			this.timeNode = dojo.byId("timeNode");
 			this.durNode = dojo.byId("durNode");
-			setInterval(dojo.hitch(this, "watchTime"), 100);
+			this.initialized = true;
 		},
 		onMeta: function(data){
 			if(data && data.duration){
@@ -154,17 +155,16 @@ controls = {
 			dojo.disconnect(this.conUp);
 			dojo.disconnect(this.conChg);
 		},
-		watchTime: function(){
-			
-				var time = player.getTime();
-				//console.log(time, "::", this.timecode(time));
+		onPosition: function(time){
+			if(this.initialized){
 				this.timeNode.innerHTML = this.timecode(time);
-				//
-			if(this.duration){
-				if(!this.seeking){
-					// IE freaks if the prgressBar's value goes over 1.0
-					var p = Math.min(time/this.duration, 1);
-					this.progressBar.attr("value", p*100);
+				
+				if(this.duration){
+					if(!this.seeking){
+						// IE freaks if the prgressBar's value goes over 1.0
+						var p = Math.min(time/this.duration, 1);
+						this.progressBar.attr("value", p*100);
+					}
 				}
 			}
 		},
@@ -176,8 +176,8 @@ controls = {
 			}else if(ts.length - ts.indexOf(".")==2){
 				ts+="0"
 			}else if(ts.length - ts.indexOf(".")>2){
-                            ts = ts.substring(0, ts.indexOf(".")+3)
-                        }
+				ts = ts.substring(0, ts.indexOf(".")+3)
+			}
 			return ts;
 		}
 	},
@@ -240,16 +240,23 @@ controls = {
 	setItems:function(_items){
 		this.items = _items;
 	},
-	onVideoStart: function(){
+	onStart: function(){
 		this.hideOverlay();
 		this.showPause();
 		if(this.conM1) dojo.disconnect(this.conM1);
 		if(this.conM2) dojo.disconnect(this.conM1);
 		if(this.conTog) dojo.disconnect(this.conTog);
-		this.conTog = dojo.connect(dojo.byId("videoOverlay"), "click", player, "togglePause");
+		this.conTog = dojo.connect(dojo.byId("videoOverlay"), "click", this, "toggle");
 	},
-	onVideoEnd: function(){
-		console.log("onVideoEnd")
+	toggle: function(){
+		if(player.isPlaying){
+			player.pause();
+		}else{
+			player.play();
+		}
+	},
+	onEnd: function(){
+		console.log("onEnd")
 		dojo.disconnect(this.conTog);
 		var rel, m1, m2;
 		for(var i=0, len=this.items.length;i<len;i++){
@@ -277,7 +284,7 @@ controls = {
 		});
 		this.showOverlay();
 		this.showPlay();
-		console.log("onVideoEnd done")
+		console.log("onEnd done")
 	},
 	hideOverlay: function(){
 		dojo.style(dojo.byId("relatedContainer"), "display", "none");
