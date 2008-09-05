@@ -205,7 +205,7 @@ controls = {
 			if(x<0) x = 0;
 			if(x>this.volDim.w) x = this.volDim.w;
 			var p = x/this.volDim.w;
-			player.setVolume(p);
+			player.volume(p);
 			var prex = x
 			x = Math.ceil(x*.1)*10;
 			dojo.style(this.volBack, "backgroundPosition", "-"+(this.volDim.w-x)+"px 0px");
