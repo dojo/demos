@@ -71,7 +71,14 @@ dojo.declare(
 				// This callback converts a comma separated list of locales into
 				// an array of locale objects, and passes that array to onComplete
 				var callback2 = dojo.hitch(this, function(localeList){
-					var locales = dojo.map(localeList.split(","), function(loc){
+					// split into array, ignoring final blank entry due to trailing comma
+					var ary = dojo.filter(localeList.split(","), function(loc){
+						return loc;
+					});
+
+					// map array into locale objects
+					var locales = dojo.map(ary, function(loc){
+
 						// get language object for the page language
 						var langISO = loc.replace(/-.*/, "");
 
