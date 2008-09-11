@@ -4,6 +4,7 @@
 #   2. unzip main.zip (alternately download from http://www.unicode.org/cldr)
 #   3. cd main
 #   4. run this script from there
+#   5. use normalizeJson.html to remove trailing commas so IE doesn't choke
 
 echo "["
 for lang in $(ls [a-z][a-z].xml |sed s/.xml//)
