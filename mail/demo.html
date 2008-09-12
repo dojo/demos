@@ -30,6 +30,7 @@
 		</tbody>
 
 		<script type="dojo/method">
+			// Postscript code... run this right after widget has been created
 			dojo.forEach(this.columns, function(item, idx){
 				var icn = item.className||"";
 				// add a header for each column
@@ -80,7 +81,12 @@
 				n.innerHTML = tv;
 			}, this);
 			this.body.appendChild(tr);
-			dojo.connect(tr, "onclick", this, function(){ this.onClick(item); });
+			dojo.connect(tr, "onclick", this, function(){ 
+				this.onClick(item);
+			});
+		</script>
+		<script type="dojo/method" event="onClick" args="item">
+			// user should set this
 		</script>
 	</table>
 
