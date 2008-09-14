@@ -93,6 +93,7 @@ dojo.declare(
 
 					// map array into locale objects
 					var locales = dojo.map(ary, function(loc){
+						loc = loc.toLowerCase();
 
 						// get language object for the page language
 						var langISO = loc.replace(/-.*/, "");
