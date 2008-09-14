@@ -68,11 +68,26 @@ dojo.declare(
 				}
 				break;
 			case "country":
-				// This callback converts a comma separated list of locales into
-				// an array of locale objects, and passes that array to onComplete
-				var callback2 = dojo.hitch(this, function(localeList){
-					// split into array, ignoring final blank entry due to trailing comma
-					var ary = dojo.filter(localeList.split(","), function(loc){
+				// First time we are asked for the children of a country, need to load
+				// the mapping from language code --> language name in the current page's locale
+				if(!this.d2){
+					this.d2 = dojo.xhrGet({url: "languages.json", handleAs: "json-comment-optional"});
+					this.d2.addCallback(this, function(data){
+						// first item on deferred chain filters languages.json data down to
+						// language names in current page's locale
+						return dojo.filter(data, function(l){
+							return l.iso == this.lang;
+						})[0] || {};
+					});
+				}
+				// Once we have mapping from language ISO code to language name, use it
+				this.d2.addCallback(function(mapping){
+					// summary:
+					//		Converts a comma separated list of locales into
+					//		an array of locale objects, and passes that array to onComplete
+
+					// split localeList into array, ignoring final blank entry due to trailing comma
+					var ary = dojo.filter(item.languages.split(","), function(loc){
 						return loc;
 					});
 
@@ -83,7 +98,7 @@ dojo.declare(
 						var langISO = loc.replace(/-.*/, "");
 
 						// get localized name of language
-						var name = this.languages[langISO] || "";
+						var name = mapping[langISO] || "";
 
 						return {
 							type: "locale",
@@ -91,23 +106,10 @@ dojo.declare(
 							lang: langISO,
 							name: name + " \u202b(" + loc + ")\u202c"
 						};
-					}, this);
-					onComplete(locales); 
-				});
-
-				// First time we are asked for the children of a country, need to load
-				// the names of every language in the current page's locale
-				if(!this.languages){
-					var d2 = dojo.xhrGet({url: "languages.json", handleAs: "json-comment-optional"});
-					d2.addCallback(this, function(data){
-						this.languages = dojo.filter(data, function(l){
-							return l.iso == this.lang;
-						})[0] || {};
-						callback2(item.languages);
 					});
-				}else{
-					callback2(item.languages);
-				}
+					onComplete(locales); 
+					return mapping;		// Deferreds need to return their original arg for the next guy in chain (in the future)
+				});
 				break;
 		}
 	},
