@@ -157,7 +157,8 @@ dojo.require("dojox.gfx.utils");
 				//	lets calculate some dimensions here for font fitting.
 				var _0 = (a+1)*rad;
 				var _1 = (lastAngle-1)*rad;
-				var _2 = (lastAngle-((lastAngle-a)/2))*rad;
+				var _center = lastAngle-((lastAngle-a)/2);
+				var _2 = _center*rad;
 
 				//	if this is the "other", define our anchor points.
 				if(d.isOther){
@@ -223,7 +224,7 @@ dojo.require("dojox.gfx.utils");
 					//	14 being the pixel scale we rendered the font at.
 					pctscale = tinyh/this.font.viewbox.height;
 				}
-				if(lastAngle>=90-this.rotation && lastAngle<=270-this.rotation){
+				if(_center>=90-this.rotation && _center<=270-this.rotation){
 					mtrx=new dojox.gfx.Matrix2D([
 						m.translate(r+24, c+(pctscale?Math.round(this.font.viewbox.height*pctscale)/2:3)), 
 						pctscale?m.scale(pctscale):pct.getTransform(),
@@ -248,7 +249,7 @@ dojo.require("dojox.gfx.utils");
 					txtw = this.font.getWidth(d.label.toUpperCase(), txtscale);
 				}
 
-				if(lastAngle>=90-this.rotation && lastAngle<=270-this.rotation){
+				if(_center>=90-this.rotation && _center<=270-this.rotation){
 					var mtrx=new dojox.gfx.Matrix2D([
 						m.translate(r*2-10, c+txty), 
 						m.scale(txtscale),
