@@ -1,3 +1,5 @@
+dojo.provide("demos.i18n.src");
+
 // For accessing Geonames service
 dojo.require("dojo.io.script");
 dojo.require("dojox.rpc.Service");
@@ -14,8 +16,4 @@ dojo.require("dijit.ColorPalette");
 dojo.require("dijit.Menu");
 dojo.require("dojo.parser");
 
-var model = null;
 dojo.require("demos.i18n.model");
-(function(){
-	model = new i18nTreeModel({ lang: lang });
-})();

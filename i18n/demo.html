@@ -8,10 +8,11 @@
 	<link rel="stylesheet" href="demo.css">
 	
 	<script>
-		var djConfig = { parseOnLoad: false, isDebug: true},
-			locale,
-			lang,
-			bidi;
+		var djConfig = {
+			parseOnLoad: false,
+			isDebug: true
+		};
+		var locale, lang, bidi;
 
 		// read in HREF arguments
 		if(window.location.href.indexOf("?") > -1){
@@ -35,15 +36,15 @@
 		}
 	</script>
 	<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
-	<script type="text/javascript" src="src.js" charset="utf-8"></script>
-	<script type="text/javascript">	
+	<script type="text/javascript">
+		dojo.require("demos.i18n.src");
 		var model;
 		dojo.addOnLoad(function(){
+			model = new i18nTreeModel({ lang: lang });
 
 			dojo.parser.parse();
 			dojo.byId("locale").innerHTML = locale || "default";
 			dojo.byId("dir").innerHTML = bidi || "default";
-//			model = new i18nTreeModel({ lang: lang });
 			dojo.fadeOut({
 				node:"preLoader",
 				onEnd: function(){
