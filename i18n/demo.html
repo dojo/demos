@@ -96,8 +96,8 @@
 				<!-- clicking a node refreshes the page with new locale setting -->
 				<script type="dojo/method" event="onClick" args="item, node">
 					if(item.type=="locale") {	// language
-						var locale = item.iso, lang = locale.replace(/-.*/, "");
-						dir = /ar|fa|he|ps|ur|yi/i.test(lang) ? "rtl" : "ltr";
+						var locale = item.iso, lang = locale.replace(/-.*/, ""),
+							dir = (/ar|fa|he|ps|ur|yi/i).test(lang) ? "rtl" : "ltr";
 						window.location.href = window.location.href.replace(/\?.*/, "") + "?locale=" + locale + "&dir=" + dir;
 					}
 				</script>
