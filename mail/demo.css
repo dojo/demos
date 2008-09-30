@@ -1,5 +1,7 @@
 @import "../../dojo/resources/dojo.css";
 @import "../../dijit/themes/soria/soria.css";
+@import "../../dojox/grid/resources/Grid.css";
+@import "../../dojox/grid/resources/soriaGrid.css";
 
 html, body, #main{	
 	width: 100%;	/* make the body expand to fill the visible window */

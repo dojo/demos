@@ -26,6 +26,8 @@ dojo.require("dijit.layout.AccordionContainer");
 dojo.require("dijit.layout.TabContainer");
 dojo.require("dijit.layout.ContentPane");
 
+dojo.require("dojox.grid.DataGrid");
+
 dojo.addOnLoad(function(){
 
 	dojo.parser.parse();
@@ -44,6 +46,22 @@ dojo.addOnLoad(function(){
 });
 
 var paneId = 1;
+
+function onMessageClick(cell){
+	// summary: when user clicks a row in the message list pane
+	var item = cell.grid.getItem(cell.rowIndex),
+		sender = this.store.getValue(item, "sender"),
+		subject = this.store.getValue(item, "label"),
+		sent = dojo.date.locale.format(
+				dojo.date.stamp.fromISOString(this.store.getValue(item, "sent")),
+				{formatLength: "long", selector: "date"}),
+		text = this.store.getValue(item, "text"),
+		messageInner = "<span class='messageHeader'>From: " + sender + "<br>" +
+		"Subject: "+ subject + "<br>" +
+		"Date: " + sent + "<br><br></span>" +
+		text;
+	dijit.byId("message").setContent(messageInner);	
+}
 
 // for "new message" tab closing
 function testClose(pane,tab){

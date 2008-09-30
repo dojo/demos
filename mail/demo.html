@@ -15,81 +15,6 @@
 	<div dojoType="dojo.data.ItemFileWriteStore" jsId="mailStore"
 		url="mail.json"></div>
 
-	<!-- Inline declaration of a table widget (thanks Alex!) -->
-
-	<table dojoType="dijit.Declaration"
-		widgetClass="demo.Table" class="demoTable"
-		defaults="{ store: null, query: { query: { type: 'message' } }, columns: [ { name: 'From', attribute: 'sender' }, { name: 'Subject', attribute: 'label' }, { name: 'Sent on', attribute: 'sent',
-		format: function(v){ return dojo.date.locale.format(dojo.date.stamp.fromISOString(v), {selector: 'date'}); }
-		} ] }">
-		<thead dojoAttachPoint="head">
-			<tr dojoAttachPoint="headRow"></tr>
-		</thead>
-		<tbody dojoAttachPoint="body">
-			<tr dojoAttachPoint="row"></tr>
-		</tbody>
-
-		<script type="dojo/method">
-			// Postscript code... run this right after widget has been created
-			dojo.forEach(this.columns, function(item, idx){
-				var icn = item.className||"";
-				// add a header for each column
-				var tth = document.createElement("th");
-				tth.innerHTML = "<span class='arrowNode'></span> "+ item.name;
-				tth.className = icn;
-				dojo.connect(tth, "onclick", dojo.hitch(this, "onSort", idx));
-				this.headRow.appendChild(tth);
-
-				// and fill in the column cell in the template row
-				this.row.appendChild(document.createElement("td"));
-				this.row.lastChild.className = icn;
-			}, this);
-			this.runQuery();
-		</script>
-		<script type="dojo/method" event="onSort" args="index">
-			var ca = this.columns[index].attribute;
-			var qs = this.query.sort;
-			// clobber an existing sort arrow
-			dojo.query("> th", this.headRow).removeClass("arrowUp").removeClass("arrowDown");
-			if(qs && qs[0].attribute == ca){
-				qs[0].descending = !qs[0].descending;
-			}else{
-				this.query.sort = [{
-					attribute: ca,
-					descending: false
-				}];
-			}
-			var th = dojo.query("> th", this.headRow)[index];
-			dojo.addClass(th, (this.query.sort[0].descending ? "arrowUp" : "arrowDown"));
-			this.runQuery();
-		</script>
-		<script type="dojo/method" event="runQuery">
-			this.query.onBegin = dojo.hitch(this, function(){ dojo.query("tr", this.body).orphan(); });
-			this.query.onItem = dojo.hitch(this, "onItem");
-			this.query.onComplete = dojo.hitch(this, function(){
-				dojo.query("tr:nth-child(odd)", this.body).addClass("oddRow");
-				dojo.query("tr:nth-child(even)", this.body).removeClass("oddRow");
-			});
-			this.store.fetch(this.query);
-		</script>
-		<script type="dojo/method" event="onItem" args="item">
-			var tr = this.row.cloneNode(true);
-			dojo.query("td", tr).forEach(function(n, i, a){
-				var tc = this.columns[i];
-				var tv = this.store.getValue(item, tc.attribute)||"";
-				if(tc.format){ tv = tc.format(tv, item, this.store); }
-				n.innerHTML = tv;
-			}, this);
-			this.body.appendChild(tr);
-			dojo.connect(tr, "onclick", this, function(){ 
-				this.onClick(item);
-			});
-		</script>
-		<script type="dojo/method" event="onClick" args="item">
-			// user should set this
-		</script>
-	</table>
-
 	<!-- Inline declaration for programmatically created "New Message" tabs -->
 	<div dojoType="dijit.Declaration"
 		widgetClass="mail.NewMessage">
@@ -217,11 +142,10 @@
 									return;	// top level node in tree doesn't correspond to any item
 								}
 								/* filter the message list to messages in this folder */
-								table.query.query = {
+								table.setQuery({
 									type: "message",
 									folder: mailStore.getValue(item, "id")
-								};
-								table.runQuery();
+								});
 							</script>
 							<script type="dojo/method" event="getIconClass" args="item">
 								return (item && mailStore.getValue(item, "icon")) || "mailIconFolderDocuments";
@@ -229,47 +153,35 @@
 						</div>
 					</div>
 					<div dojoType="dijit.layout.AccordionPane" title="Address Book">
-						<span dojoType="demo.Table" store="mailStore"
-							query="{ query: { type: 'address' }, columns: [ {name: 'User name', attribute: 'label'} ], sort: [ { attribute: 'label' } ]  }"
+						<table dojoType="dojox.grid.DataGrid" store="mailStore"
+							query="{ type: 'address' }"
 							id="addresses" style="width: 100%">
-							<script type="dojo/method" event="preamble">
-								this.query = { type: "address" };
-								this.columns = [
-									{
-										name: "Name",
-										attribute: "label"
-									}
-								];
-							</script>
-							<script type="dojo/method" event="onClick" args="item">
-								table.query.query.sender = mailStore.getValue(item, "sender");
-								delete table.query.query.folder;
-								table.runQuery();
-							</script>
-						</span>
+							<thead>
+								<tr>
+									<th field="label" width="200px">User Name</th>
+								</tr>
+							</thead>
+						</table>
 					</div>
 				</div>  <!-- end of Accordion -->
 
 				<!-- list of messages pane -->
 				<div id="listPane" dojoType="dijit.layout.ContentPane" region="top" minSize="20" style="height:134px;" splitter="true">
-					<span dojoType="demo.Table" store="mailStore"
-						query="{ query: { type: 'message' }, sort: [ { attribute: 'label' } ]  }"
-						id="foo" jsId="table" style="width: 100%">
-						<script type="dojo/method" event="onClick" args="item">
-							var sender = this.store.getValue(item, "sender");
-							var subject = this.store.getValue(item, "label");
-							var sent = dojo.date.locale.format(
-								dojo.date.stamp.fromISOString(this.store.getValue(item, "sent")),
-								{formatLength: "long", selector: "date"});
-							var text = this.store.getValue(item, "text");
-							var messageInner = "<span class='messageHeader'>From: " + sender + "<br>" +
-								"Subject: "+ subject + "<br>" +
-								"Date: " + sent + "<br><br></span>" +
-								text;
-							dijit.byId("message").setContent(messageInner);
-						</script>
-					</span>
-				</div> <!-- end of listPane -->
+				<table dojoType="dojox.grid.DataGrid"
+					region="top" minSize="20" splitter="true"
+					jsId="table"
+					store="mailStore" query="{ type: 'message' }"
+					onRowClick="onMessageClick"
+					style="height: 150px">
+					<thead>
+						<tr>
+							<th field="sender" width="100px">Sender</th>
+							<th field="label" width="auto">Subject</th>
+							<th field="sent" width="auto">Date</th>
+						</tr>
+					</thead>
+				</table> <!-- end of listPane -->
+				</div>
 
 				<!-- message preview pane -->
 				<div id="message" dojoType="dijit.layout.ContentPane" region="center" minSize="20">
