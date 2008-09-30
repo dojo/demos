@@ -155,7 +155,7 @@
 					<div dojoType="dijit.layout.AccordionPane" title="Address Book">
 						<table dojoType="dojox.grid.DataGrid" store="mailStore"
 							query="{ type: 'address' }"
-							id="addresses" style="width: 100%">
+							id="addresses" style="width: 100%; height: 100%;">
 							<thead>
 								<tr>
 									<th field="label" width="200px">User Name</th>
@@ -166,22 +166,20 @@
 				</div>  <!-- end of Accordion -->
 
 				<!-- list of messages pane -->
-				<div id="listPane" dojoType="dijit.layout.ContentPane" region="top" minSize="20" style="height:134px;" splitter="true">
 				<table dojoType="dojox.grid.DataGrid"
 					region="top" minSize="20" splitter="true"
 					jsId="table"
 					store="mailStore" query="{ type: 'message' }"
 					onRowClick="onMessageClick"
-					style="height: 150px">
+					style="height: 150px; width: 100%;">
 					<thead>
 						<tr>
-							<th field="sender" width="100px">Sender</th>
-							<th field="label" width="auto">Subject</th>
-							<th field="sent" width="auto">Date</th>
+							<th field="sender" width="10%">Sender</th>
+							<th field="label" width="80%">Subject</th>
+							<th field="sent" width="10%">Date</th>
 						</tr>
 					</thead>
 				</table> <!-- end of listPane -->
-				</div>
 
 				<!-- message preview pane -->
 				<div id="message" dojoType="dijit.layout.ContentPane" region="center" minSize="20">
