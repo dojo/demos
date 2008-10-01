@@ -14,7 +14,8 @@
 		    $email = strtolower($first) . "." . strtolower($last) . $ext[$counter%3];
 		    $display = $name . " <" . $email . ">";
 			print "{ " .
-					"name: '" . $name . "',\n" .
+					"first: '" . $first . "',\n" .
+					"last: '" . $last . "',\n" .
 					"email: '" . $email . "',\n" .
 					"display: '" . $display . "'\n" .
 				 "},\n";

@@ -18,6 +18,9 @@ dojo.require("dijit.ProgressBar");
 
 dojo.require("dijit.form.ComboBox");
 dojo.require("dijit.form.CheckBox");
+dojo.require("dijit.form.Textarea");
+dojo.require("dijit.form.TextBox");
+dojo.require("dijit.form.ComboBox");
 dojo.require("dijit.form.FilteringSelect");
 dojo.require("dijit.form.Textarea");
 
@@ -42,7 +45,20 @@ dojo.addOnLoad(function(){
 			dojo.style(n,"display","none");
 		}
 	}).play();
-		
+
+	// Set up handler so that when contact information is updated the "display field"
+	// (used by "To" field drop-down") is also updated
+	dojo.connect(contactStore, "onSet", function(/* item */ item, 
+					/* attribute-name-string */ attribute, 
+					/* object | array */ oldValue,
+					/* object | array */ newValue){
+		if(attribute != "display"){
+			contactStore.setValue(item, "display", 
+					contactStore.getValue(item, "first") + " " +
+					contactStore.getValue(item, "last") + " <" +
+					contactStore.getValue(item, "email") + ">");
+		}		
+	});
 });
 
 var paneId = 1;
@@ -61,6 +77,19 @@ function onMessageClick(cell){
 		"Date: " + sent + "<br><br></span>" +
 		text;
 	dijit.byId("message").setContent(messageInner);	
+}
+
+function searchMessages(){
+	// summary: do a custom search for messages across inbox folders
+	var query = {type: "message"};
+	var searchCriteria = searchForm.attr('value');
+	for(var key in searchCriteria){
+		var val = searchCriteria[key];
+		if(val){
+			query[key] = "*" + val + "*";
+		}
+		table.setQuery(query, {ignoreCase: true});
+	}
 }
 
 // for "new message" tab closing
