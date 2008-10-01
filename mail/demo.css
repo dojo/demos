@@ -178,3 +178,20 @@ body .dojoSplitPane {
 	font-weight:bold;
 	
 }
+
+/* buttons on Contact tab for filtering list of contacts to a given letter */
+.contactIndex, .contactIndexAll {
+	margin: 0.5em;
+	color: blue;
+	font-style: italic;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.contactIndexAll {
+	/* for the word ALL that appears before and after the letters A-Z */
+	color: purple;
+}
+.contactIndexSelected {
+	/* the most recently selected letter gets this class too */
+	color: red;
+}

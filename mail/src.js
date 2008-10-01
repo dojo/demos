@@ -30,6 +30,7 @@ dojo.require("dijit.layout.TabContainer");
 dojo.require("dijit.layout.ContentPane");
 
 dojo.require("dojox.grid.DataGrid");
+dojo.require("dojox.widget.FisheyeLite"),
 
 dojo.addOnLoad(function(){
 
@@ -62,7 +63,45 @@ dojo.addOnLoad(function(){
 	
 	// make tooltips go down (from buttons on toolbar) rather than to the right
 	dijit.Tooltip.defaultPosition = ["above", "below"];
+	
+	// Write A-Z "links" on contactIndex tab to do filtering
+	genIndex();
+
 });
+
+function genIndex(){
+	// summary:  generate A-Z push buttons for navigating contact list
+	var ci = dojo.byId("contactIndex");
+	
+	function addChar(c, func, cls){
+		// add specified character, when clicked will execute func
+		var span = document.createElement("span");
+		span.innerHTML = c;
+		span.className = cls || "contactIndex";
+		ci.appendChild(span);
+		new dojox.widget.FisheyeLite(
+			{
+				properties: {fontSize: 1.5}, 	
+				easeIn: dojo.fx.easing.linear,
+				durationIn: 100,
+				easeOut: dojo.fx.easing.linear,
+				durationOut: 100
+			},
+			span
+		);
+		dojo.connect(span, "onclick", func || function(){ contactTable.setQuery({first: c+"*"}, {ignoreCase: true}) });
+		dojo.connect(span, "onclick", function(){
+			dojo.query(">", ci).removeClass("contactIndexSelected");
+			dojo.addClass(span, "contactIndexSelected");
+		});
+	}
+
+	addChar("ALL", function(){contactTable.setQuery({})}, 'contactIndexAll' );
+	for(var l = "A".charCodeAt(0); l <= "Z".charCodeAt(0); l++){
+		addChar(String.fromCharCode(l))
+	}
+	addChar("ALL", function(){contactTable.setQuery({})}, 'contactIndexAll' );
+}
 
 var paneId = 1;
 

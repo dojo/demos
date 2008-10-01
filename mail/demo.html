@@ -213,11 +213,10 @@
 			</div> <!-- end of inbox -->
 			
 			<div dojoType="dijit.layout.BorderContainer" title="Contacts">
-				<div dojoType="dijit.layout.ContentPane" region="top">
-					Edit your contact information from this page by clicking entries in the table below.
-					<div id="contactIndex"></div>
+				<div dojoType="dijit.layout.ContentPane" region="top" style="height: 1.5em;">
+					<center id="contactIndex"></center>
 				</div>
-				<table dojoType="dojox.grid.DataGrid" store="contactStore" region="center" editable="true">
+				<table dojoType="dojox.grid.DataGrid" jsId="contactTable" store="contactStore" region="center" editable="true">
 					<thead>
 						<tr>
 							<th field="first" width="25%" editable="true">First Name</th>
@@ -226,12 +225,15 @@
 						</tr>
 					</thead>
 				</table>
+				<div dojoType="dijit.layout.ContentPane" region="bottom">
+					Edit your contact information from this page by clicking entries in the table above.
+				</div>
 			</div>
 
 		</div> <!-- end of TabContainer -->
 
 		<div dojoType="dijit.layout.ContentPane" region="bottom" id="footer" align="left">
-			<span style="float:right;">DojoMail v1.0 (demo only)</span>
+			<span style="float:right;">DojoMail v1.2 (demo only)</span>
 			<div id="fetchMail" style="opacity:0;visibility:hidden">
 				<div id="fakeFetch" dojoType="dijit.ProgressBar" style="height:15px; width:275px;" indeterminate="true" report="fakeReport"></div>
 			</div>
