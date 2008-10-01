@@ -59,6 +59,9 @@ dojo.addOnLoad(function(){
 					contactStore.getValue(item, "email") + ">");
 		}		
 	});
+	
+	// make tooltips go down (from buttons on toolbar) rather than to the right
+	dijit.Tooltip.defaultPosition = ["above", "below"];
 });
 
 var paneId = 1;
