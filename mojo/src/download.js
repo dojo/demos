@@ -3,7 +3,7 @@ dojo.provide("demos.mojo.src.download");
 dojo.require("dojo.io.iframe");
 (function(){
 
-	var dojo_ver = "1.1.1";
+	var dojo_ver = "1.2.0";
 	
 	var node = null;
 	var _downloadDialog = {
@@ -24,14 +24,14 @@ dojo.require("dojo.io.iframe");
 					//paddingTop: { end:1, start:155, unit:"px" }//,
 					//opacity: { end: 1, start: 0 }
 				},
-				easing: dojox.fx.easing.elasticOut
+				easing: dojo.fx.easing.elasticOut
 			});
 			var anim2 = dojo.fx.slideTo({
 				node:this.node,
 				top: e.pageY - 55,
 				left: e.pageX - 155,
 				duration:900,
-				easing: dojox.fx.easing.elasticOut
+				easing: dojo.fx.easing.elasticOut
 			})
 			dojo.fx.combine([anim1,anim2]).play();
 			dojo.byId("gravity").disabled = true;
@@ -41,7 +41,7 @@ dojo.require("dojo.io.iframe");
 			dojo.byId("gravity").disabled = false;
 			e.preventDefault();
 			dojo.fx.slideTo({ node:this.node, duration:375, left:-310, top:-50,
-				easing:dojox.fx.easing.backIn				
+				easing:dojo.fx.easing.backIn				
 			}).play();
 		},
 
