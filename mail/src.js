@@ -30,7 +30,7 @@ dojo.require("dijit.layout.TabContainer");
 dojo.require("dijit.layout.ContentPane");
 
 dojo.require("dojox.grid.DataGrid");
-dojo.require("dojox.widget.FisheyeLite"),
+dojo.require("dojox.widget.FisheyeLite");
 
 dojo.addOnLoad(function(){
 
