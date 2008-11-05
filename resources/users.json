@@ -378,6 +378,22 @@
 			blameFor:[
 				"dojo.html", "dojox.html"
 			]
+		},
+		{
+		
+			name:"Chris Barber",
+			title:"Committer",
+			handle:"cb1kenobi",
+			irc:"CB1",
+			location:"Shakopee, MN",
+			employer: "CB1, INC.",
+			website: "http://www.cb1inc.com",
+			coords: { x: 44.7869, y:-93.4789 },
+			imgUrl:"images/users/cb1kenobi.png",
+			blameFor:[
+				"dojox.image.LightboxNano",
+				"dojox.layout.RotatorContainer"
+			]
 		}
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
