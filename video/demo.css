@@ -29,8 +29,9 @@
 	
 	/* IE needs a "color" for the drop target*/
 	background-color:#00FFFF;
-	opacity:0;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
 	filter:alpha(opacity:0);
+	opacity:0;
 }
 #progressContainer{
 	clear:both;
