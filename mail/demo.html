@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="src.js" charset="utf-8"></script>
 
 </head>
-<body class="soria">
+<body class="soria" role="application">
 	<div id="preLoader"><p></p></div>
 	<div dojoType="dojo.data.ItemFileWriteStore" jsId="mailStore"
 		url="mail.json"></div>
@@ -82,7 +82,7 @@
 	<div dojoType="dijit.layout.BorderContainer" id="main">
 
 		<!-- toolbar with new mail button, etc. -->
-		<div dojoType="dijit.Toolbar" region="top" style="height:25px;">
+		<div dojoType="dijit.Toolbar" region="top" style="height:1.5em;">
 			<div id="getMail" dojoType="dijit.form.ComboButton"
 				iconClass="mailIconGetMail" optionsTitle="Mail Source Options">
 				<script type="dojo/method" event="onClick">
@@ -187,7 +187,7 @@
 				</table> <!-- end of listPane -->
 
 				<!-- message preview pane -->
-				<div id="message" dojoType="dijit.layout.ContentPane" region="center" minSize="20">
+				<div id="message" dojoType="dijit.layout.ContentPane" region="center" role="region" aria-live="assertive" aria-atomic="true" minSize="20">
 					<p>
 					This is a simple application mockup showing some of the dojo widgets:
 					</p>
