@@ -82,7 +82,7 @@
 	<div dojoType="dijit.layout.BorderContainer" id="main">
 
 		<!-- toolbar with new mail button, etc. -->
-		<div dojoType="dijit.Toolbar" region="top" style="height:1.5em;">
+		<div dojoType="dijit.Toolbar" region="top">
 			<div id="getMail" dojoType="dijit.form.ComboButton"
 				iconClass="mailIconGetMail" optionsTitle="Mail Source Options">
 				<script type="dojo/method" event="onClick">
@@ -213,7 +213,7 @@
 			</div> <!-- end of inbox -->
 			
 			<div dojoType="dijit.layout.BorderContainer" title="Contacts">
-				<div dojoType="dijit.layout.ContentPane" region="top" style="height: 1.5em;">
+				<div dojoType="dijit.layout.ContentPane" region="top">
 					<center id="contactIndex"></center>
 				</div>
 				<table dojoType="dojox.grid.DataGrid" jsId="contactTable" store="contactStore" region="center" editable="true">
