@@ -119,7 +119,9 @@ dojo.declare(
 	// Inspecting items
 
 	getIdentity: function(/* item */ item){
-		return item.iso || item.countryCode;
+		// Prefer item.key over item.countryCode to differentiate between countries and continents
+		// w/same iso code (like AN).
+		return item.root ? "world" : (item.key || item.iso || item.countryCode);
 	},
 
 	getLabel: function(/*dojo.data.Item*/ item){
