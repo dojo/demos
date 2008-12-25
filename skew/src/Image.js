@@ -305,7 +305,7 @@ dojo.declare("image.Container",
 		dojo.stopEvent(e);
 		var scroll = e[(!dojo.isMozilla ? "wheelDelta" : "detail")] * (!dojo.isMozilla ? 1 : -1);
 		this._handleKey({
-			keyCode: dojo.keys[(scroll > 0 ? "LEFT_ARROW" : "RIGHT_ARROW")]	
+			charOrCode: dojo.keys[(scroll > 0 ? "LEFT_ARROW" : "RIGHT_ARROW")]	
 		});
 		
 	}
