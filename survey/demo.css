@@ -1,0 +1,76 @@
+body, html {
+    margin:0; padding:15px 4%;
+	font-family:Myriad, Verdana, Arial;
+}
+
+p {
+	margin-top:.5em;
+}
+
+.pageTitleWrapper {
+	/* background:url("../images/sitepen250.gif") no-repeat center right; */
+	height:61px;
+	border-bottom:3px solid #5eb346;
+}
+
+.pageTitleWrapper h1 {
+	margin:0;
+	font-weight:normal;
+	font-size:2em;
+	padding:0;
+	position:relative;
+	top:15px;
+}
+
+.container {
+    width:90%;
+    margin:0 auto;   
+}
+
+h2 {
+	color:#3b9022;
+	padding-bottom:3px;
+	border-bottom:1px solid #a7a7a7;
+	margin-top:2em;
+}
+
+h2 + div {
+    margin-left:12px;
+    padding:12px;
+}
+
+h3 + div {
+    padding-left:20px; 
+    margin-left:8px;
+    border-left:1px solid #dadada;
+}
+
+#chart {
+    width:475px;
+    height:250px;
+}
+.chartHolder {
+    margin-right:20px;
+    visibility:hidden; 
+    padding:12px;
+    padding-bottom:3px;
+    width:500px;
+    -moz-border-radius:4pt;
+}
+p.note {
+    font-size:8pt;
+    color:#666;
+}
+
+.resultsPage .container {
+    width:840px; 
+}
+.resultsPage #holder {
+    margin:0 auto;
+    width:90%;
+}
+
+.resultsPage #chart {
+    width:100%;
+    height:260px;
+}

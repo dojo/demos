@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+    "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<link rel="stylesheet" href="demo.css">
+
+	<title>Survey Demo, Results Only | The Dojo Toolkit</title>
+
+	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+
+	<script type="text/javascript" src="src/chart.js"></script>
+	<script type="text/javascript" src="src/comet.js"></script> 
+
+	<script type="text/javascript">
+		// draw the chart on page load:
+		dojo.addOnLoad(function(){
+			getResults();	
+		});
+	</script>
+
+</head>
+<body class="resultsPage">
+	<div class="pageTitleWrapper"><h1 class="pageTitle">Toolkit Survey Results</h1></div>
+
+	<h2>Results:</h2>
+	<!-- a node for the chart -->
+	<div class="chartHolder" id="holder">
+		<div id="chart"></div>
+		<p class="note">* percentages based on number of people surveyed <span id="lastUpdate"></span></p>
+	</div>
+
+</body>
+</html>
