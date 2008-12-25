@@ -1,6 +1,6 @@
 <?php
 
-	/* my New BSD Image library ... */
+	/* A New BSD / AFL Image library ... */
 
 	function imageGreyscale($im){
 
@@ -43,12 +43,12 @@
 	
 		$thumb = imagecreatetruecolor($size,$size);
 		if($ow > $oh){
-		   $off_w = ($ow-$oh)/2;
+		   $off_w = ($ow - $oh) / 2;
 		   $off_h = 0;
 		   $ow = $oh;
 		}elseif($oh > $ow){
 		   $off_w = 0;
-		   $off_h = ($oh-$ow)/2;
+		   $off_h = ($oh-$ow) / 2;
 		   $oh = $ow;
 		}else{
 		   $off_w = 0;

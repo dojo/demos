@@ -270,12 +270,12 @@ dojo.declare("image.Container",
 	
 	_handleKey: function(e){
 		// summary: keyboard handling code
-		var dk = dojo.keys;
-		var key = (e.charCode == dk.SPACE ? dk.SPACE : e.keyCode);
-		var cur = this.nl.indexOf(this.selectedChild.domNode || this.nl[0]);
-		var ni;
+		var dk = dojo.keys,
+			cur = this.nl.indexOf(this.selectedChild.domNode || this.nl[0]),
+			ni
+		;
 		
-		switch(key){
+		switch(e.charOrCode){
 			
 			case dk.RIGHT_ARROW:
 				// goto next item or stop if loop='false' and at end

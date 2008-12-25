@@ -9,17 +9,18 @@ dojo.require("dojox.layout.RadioGroup");
 
 (function($){
 	
-	var _stuffMoving = false;
-	var _started = false;
-	var _stalltime = 650; // ms
-	var _doneAnim = null;
-	var _needed = null;
-	var _loaded = [];
-	var _connects = [];
-	var profileWidget = null;
-	var stack = null;
-	var timer = null;
-	var _profiletimer = null;
+	var _stuffMoving = false,
+		_started = false,
+		_stalltime = 650, // ms
+		_doneAnim = null,
+		_needed = null,
+		_loaded = [],
+		_connects = [],
+		profileWidget = null,
+		stack = null,
+		timer = null,
+		_profiletimer = null
+	;
 	
 	var _doneAnim = function(){
 		
