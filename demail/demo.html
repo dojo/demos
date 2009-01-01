@@ -212,7 +212,7 @@
 		djConfig = {
 			parseOnLoad: true,
 			modulePaths: {
-				"acme": "../demos/mail_new"
+				"acme": "../demos/demail"
 			}
 		};
 	</script>
@@ -303,7 +303,7 @@
 			detail: "",
 			detailNode: null,
 			_onNodeFocus: function(){
-				console.debug(this.domNode);
+				// console.debug(this.domNode);
 				this.inherited(arguments);
 			},
 			_setDetail: function(v){
@@ -333,7 +333,7 @@
 			templatePath: dojo.moduleUrl("acme", "newTree.html"),
 			_createTreeNode: function(args){
 				// console.dir(args);
-				console.debug(args.tree.model.getLabel(args.item));
+				// console.debug(args.tree.model.getLabel(args.item));
 				if(args.label){
 					args.detail = ""+args.label.length;
 				}
@@ -404,7 +404,7 @@
 		</script>
 		<script type="dojo/connect" event="onOpen" args="evt">
 			for(var x in evt){
-				console.debug(x);
+				// console.debug(x);
 			}
 		</script>
 		<div dojoType="dijit.MenuItem" onClick="alert('Hello world');">Enabled Item</div>
