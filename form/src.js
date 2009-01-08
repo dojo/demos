@@ -9,7 +9,11 @@ dojo.require("dijit.form.CheckBox");
 dojo.require("dijit.form.DateTextBox");
 dojo.require("dijit.form.CurrencyTextBox");
 dojo.require("dijit.form.NumberSpinner");
-dojo.require("dijit.form.Slider");
+
+dojo.require("dijit.form.HorizontalSlider");
+dojo.require("dijit.form.HorizontalRule");
+dojo.require("dijit.form.HorizontalRuleLabels");
+
 dojo.require("dijit.form.Textarea");
 dojo.require("dijit.Editor");
 dojo.require("dijit._editor.plugins.FontChoice");

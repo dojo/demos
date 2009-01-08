@@ -1,6 +1,6 @@
 dojo.require("dojox.av.FLVideo");
 dojo.require("dijit.form.Button");
-dojo.require("dijit.form.Slider"); 
+dojo.require("dijit.form.HorizontalSlider"); 
 dojo.require("dojo.dnd.Source");
 dojo.require("dojo.parser");
 
