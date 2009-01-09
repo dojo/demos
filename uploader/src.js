@@ -124,6 +124,7 @@ dojo.addOnLoad(function(){
 
 	console.log("LOC:", window.location)
 	console.log("UPLOAD URL:",uploadUrl);
+	
 	var f0 = new dojox.form.FileUploader({
 		button:dijit.byId("btn0"), 
 		degradable:true,
