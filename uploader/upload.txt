@@ -1,0 +1,45 @@
+---------------------------------------------------------
+TmpDir:/tmp
+returnFlashdata.... 
+moved:
+file: UploadedFiles/Sizer.gif  gif 
+returnFlashdata
+---------------------------------------------------------
+TmpDir:/tmp
+returnFlashdata.... 
+moved:1
+file: UploadedFiles/Sizer.png  png 320
+returnFlashdata
+---------------------------------------------------------
+TmpDir:/tmp
+returnFlashdata.... 
+moved:1
+file: UploadedFiles/Winter.jpg  jpg 800
+returnFlashdata
+---------------------------------------------------------
+TmpDir:/tmp
+returnFlashdata.... 
+moved:1
+file: UploadedFiles/Sizer.png  png 320
+returnFlashdata
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
+---------------------------------------------------------
+TmpDir:/tmp
+DELETING FILES
