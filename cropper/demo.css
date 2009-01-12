@@ -1,0 +1,100 @@
+@import "../../dijit/themes/dijit.css";
+@import "../../dijit/themes/tundra/Dialog.css";
+@import "../../dojox/image/resources/Lightbox.css";
+
+/* Generic Demo Styles: */
+body, html { margin:0; padding:0; background:#fff; }
+h1 { margin-top:0; margin-bottom:0; }
+.clear { clear:both; }
+
+#body {
+	padding:0;
+	margin:0 auto;
+	width:710px;
+}
+
+#title {
+	font:21pt Arial,sans-serif;
+	color:#333;
+	font-weight:bold;
+}
+
+#demo { 
+	margin:0; padding:0; 
+	#position:relative;
+}
+
+#heading {
+	margin-top:1em;
+	border-bottom:1px solid #ccc;
+	margin-bottom:10px;
+	padding-bottom:5px;
+}
+
+#footing {
+	margin-top:10px;
+	margin-bottom:8px;
+	border-top:1px solid #ccc; 
+	border-bottom:1px solid #ccc;
+	height:99px;
+	background:#ededed;
+}
+#footing p { display:none; }
+#footing img { border:none; }
+#footing ul {
+	margin:0;
+	text-align:center;
+	padding:0;
+	margin-left:15px;
+	margin-top:10px;
+	list-style-type:none;
+}
+#footing ul li { 
+	float:left; 
+	padding:0;
+	padding-right:10px;
+}
+#footing ul li a {
+	border-bottom:3px solid #ededed;
+}
+#footing ul li a:hover {
+	border-bottom:3px solid #ccc;
+}
+
+/* style the image */
+#me {
+	width:400px;
+	height:300px;
+}
+
+/* part of the widget: drag handle styles */
+.imageDragger {
+	/* required: */
+	position:absolute;
+	/* optional: */
+	cursor:move;
+	z-index:999;
+	background:#000;
+	border:1px solid #fff;
+}
+
+/* test: Resizer Widget Styles */
+.overlayTotal { position:absolute; }
+.overlayInner { position:relative; }
+
+.handleTL, .handleT, .handleTR,
+.handleML, .handleMR,
+.handleBL, .handleB, .handleBR {
+	position:absolute;
+	height:8px;
+	border:1px solid #000;
+	background:#fff;	
+}
+
+.handleTL, .handleT, .handleTR { 
+	top:-5px;
+}
+
+.handleBL, .handleBR {
+	bottom:-5px;
+}
