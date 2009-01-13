@@ -1,3 +1,5 @@
+dojo.provide("demos.babelChat.src");
+
 dojo.require("dojox.cometd");
 dojo.require("dojox.rpc.Service");
 dojo.require("dojox.io.scriptFrame");
@@ -9,10 +11,8 @@ dojo.require("dijit._Templated");
 
 (function(d){
 
-	var user = null;
-	var goog = null;
-	var comet = dojox.cometd;
-	var chatroom = "/babelchat/messages";
+	var user, good, comet = dojox.cometd,
+		chatroom = "/babelchat/messages";
 
 	d.declare("chat.Message", [dijit._Widget, dijit._Templated],{
 
