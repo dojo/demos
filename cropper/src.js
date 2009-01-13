@@ -21,15 +21,18 @@ dojo.require("demos.cropper.src.preview");
 		
 		// create a default instance of this:
 		var preview = new image.Preview({}, "me");
+		// or if no ref needed: $("#me").preview();
 		
+		// setup the clicking for the thumbnails
 		$("#footing").onclick(function(e){
 			e.preventDefault();
-			
+
+			// it's the link or the img
 			var et = e.target,
-				// it's the link or the img
 				src = et.parentNode.href || et.href;
 				
 			if(src){
+				// when we have a src to load, set both images
 				preview.domNode.src = src;
 				preview.image.src = src; 
 				dojo.byId("title").innerHTML = preview.image.alt = et.alt;

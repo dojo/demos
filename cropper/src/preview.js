@@ -50,10 +50,12 @@ dojo.require("dojo.dnd.move");
 				"class":"imageDragger",
 				style: { 
 					opacity: this.hoverable ? 0 : 0.25, 
-					width: gs + "px", height: gs + "px"
+					width: gs + "px", 
+					height: gs + "px"
 				}
 			}, this.domNode, "before");
-						
+			
+			// create the preview node. _positionPicker places it.
 			this.preview = d.create('div', {
 				style:{
 					position:abs,
@@ -77,17 +79,21 @@ dojo.require("dojo.dnd.move");
 				.onload(d.hitch(this, function(e){
 
 					var tc = this.coords, 
-						ts = { 
+						gss = this.glassSize * this.scale,
+						ts = this.targetSize = { 
 							w: e.target.width, 
 							h: e.target.height 
 						};
 						
-					this.targetSize = ts;
-						
-					this.ratio = {
-						x: ts.w / tc.w, y: ts.h / tc.w
+					var tr = this.ratio = {
+						x: ts.w / tc.w, y: ts.h / tc.h
 					};
-															
+					
+					d.style(this.picker, {
+						height: gss / tr.y + "px",
+						width: gss / tr.x + "px"
+					});
+					
 				}))[0];
 			
 			// setup dnd for the picker:
@@ -103,6 +109,7 @@ dojo.require("dojo.dnd.move");
 				
 				
 			if(d.isIE){
+				// janky IE bug. onload doesn't fire until reset of .src
 				this.image.src = this.image.src;
 			}
 			
@@ -110,8 +117,9 @@ dojo.require("dojo.dnd.move");
 		},
 		
 		_positionPicker: function(e){
+			// place the preview thinger somewhere relative to the container 
+			// we wrapped around the orig image.
 			var tc = this.coords = dojo.coords(this.container, true);
-			console.log(tc, tc.l + tc.w + 10);
 			d.style(this.preview,{
 				left: tc.x + tc.w + 10 + "px",
 				top: tc.y + "px"
@@ -154,6 +162,7 @@ dojo.require("dojo.dnd.move");
 			// destroy our domNodes. this is a behavioral widget.
 			dojo.forEach(["preview","picker","container","image"], function(n){
 				dojo.destroy(this[n]);
+				delete this[n];
 			}, this);
 			this.inherited(arguments);
 		}
