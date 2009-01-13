@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>Image Preview Demo</title>
+	<style type="text/css">
+		.tcontainer { margin:0 auto; width:400px;}
+		p.answer { visibility:hidden; }
+	</style>
+
+	<script type="text/javascript" src="../../../dojo/dojo.js" charset="utf-8"></script>
+	<script>
+		dojo.addOnLoad(function(){
+		
+			dojo.query("img", "tcontainer")
+				.style({ position:"absolute", zIndex:999, "cursor":"pointer" })
+				.forEach(function(n){
+
+					var altimg = dojo.create("img", {
+						src: "../images/sand_grey.jpg",
+						style:{
+							position:"absolute"
+						}
+					}, "tcontainer");
+					
+					dojo.connect(n, "onclick", function(e){
+						setTimeout(function(){
+							dojo.style(n, "display", "none");
+						}, 20000);
+					});
+					
+				});
+		
+			
+		});
+	</script>
+	
+</head>
+<body>
+	
+	<div class="tcontainer">
+		<h2 class="title">An Optical Delusion: click to start</h2>
+	
+		<div id="tcontainer">
+			<img src="../images/sand_inv.jpg">
+		</div>
+	
+		<p class="answer">
+			When the inverted image is removed, the image seems in color but is 
+			really just greyscale.
+		</p>
+	</div>
+	
+</body>
+</html>
