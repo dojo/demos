@@ -139,7 +139,10 @@ dojo.require("dojo.dnd.move");
 		
 		_stopDnd: function(){
 			// dnd operations are done, remove the timer
-			this._interval && this.disconnect(this._interval);
+			if(this._interval){
+				this.disconnect(this._interval);
+				delete this._interval; // remember to delete it ;)
+			}
 		},
 		
 		_whileMoving: function(){
@@ -162,9 +165,8 @@ dojo.require("dojo.dnd.move");
 		
 		destroy: function(){
 			// destroy our domNodes. this is a behavioral widget.
-			// we can .destroy(true) and leave the image, but I
-			// this we're destroying it with "container" destruction.
-			// FIXME:
+			// we can .destroy(true) and leave the image
+			dojo.place(this.domNode, this.container, "before");
 			dojo.forEach(["preview","picker","container","image"], function(n){
 				dojo.destroy(this[n]);
 				delete this[n];
