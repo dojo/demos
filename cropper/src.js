@@ -1,5 +1,6 @@
 dojo.provide("demos.cropper.src");
 dojo.require("demos.cropper.src.preview");
+dojo.require("dojox.analytics.Urchin");
 // dojo . require("dojox.image.Lightbox");
 
 ;(function(d, $){
@@ -60,6 +61,12 @@ dojo.require("demos.cropper.src.preview");
 				});
 			});
 		}
+		
+		setTimeout(function(){
+			// shortly after onLoad, track the page (prevent UI blocking)
+			new dojox.analytics.Urchin({ acct: "UA-3572741-1" });	
+		}, 1500);
+		
 		
 	});
 	
