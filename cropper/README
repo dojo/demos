@@ -15,6 +15,7 @@ Dependencies:
 
 	Dojo Core (dnd)
 	Dijit _Widget foundation
+	DojoX ResizeHandle
 
 -------------------------------------------------------------------------------
 Installation instructions

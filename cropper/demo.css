@@ -1,13 +1,20 @@
 /* space is to trick build to exlucde inline (in theory)
 @  import "../../dijit/themes/dijit.css";
 @  import "../../dijit/themes/tundra/Dialog.css";
-@  import "../../dojox/image/resources/Lightbox.css";
-*/
+@  import "../../dojox/image/resources/Lightbox.css"; */
+@import "../../dojox/layout/resources/ResizeHandle.css";
 
 /* Generic Demo Styles: */
 body, html { margin:0; padding:0; background:#fff; }
 h1 { margin-top:0; margin-bottom:0; }
 .clear { clear:both; }
+
+#loader {
+	float:right;
+	height:32px;
+	width:32px;
+	background:url('../../dojox/image/resources/images/loading.gif') no-repeat center center;
+}
 
 #body {
 	padding:0;
@@ -80,7 +87,7 @@ h1 { margin-top:0; margin-bottom:0; }
 	cursor:move;
 	z-index:999;
 	background:#000;
-	border:1px solid #fff;
+/*	border:1px solid #fff; */
 }
 
 /* test: Resizer Widget Styles */

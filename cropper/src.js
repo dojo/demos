@@ -19,32 +19,45 @@ dojo.require("demos.cropper.src.preview");
 		
 	d.addOnLoad(function(){
 		
+		var loadIndicator = dojo.byId("loader"),
+			hide = dojo.fadeOut({ node: loadIndicator }),
+			show = dojo.fadeIn({ node: loadIndicator })
+		;
+		
 		// create a default instance of this:
-		var preview = new image.Preview({}, "me");
+		var preview = new image.Preview({
+			imageReady: dojo.hitch(hide, "play"),
+			hoverable:true
+		}, "me");
 		// or if no ref needed: $("#me").preview();
 		
 		// setup the clicking for the thumbnails
 		$("#footing").onclick(function(e){
 			e.preventDefault();
-
+			
 			// it's the link or the img
 			var et = e.target,
 				src = et.parentNode.href || et.href;
 				
 			if(src){
+				
+				show.play();
 				// when we have a src to load, set both images
 				preview.domNode.src = src;
 				preview.image.src = src; 
-				dojo.byId("title").innerHTML = preview.image.alt = et.alt;
+				dojo.byId("titleText").innerHTML = preview.image.alt = et.alt;
 			}
 			
 		});
-
+		
 		// just don't load Lightbox resource if you don't want this:
 		if(dojox && dojox.image && dojox.image.Lightbox){
 			var lb = new dojox.image.LightboxDialog(); lb.startup();
 			dojo.connect(preview.preview, "onclick", function(e){
-				lb.show({ href: preview.image.src, title:preview.title });
+				lb.show({ 
+					href: preview.image.src, 
+					title:preview.title 
+				});
 			});
 		}
 		
