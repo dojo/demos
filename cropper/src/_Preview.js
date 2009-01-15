@@ -1,4 +1,4 @@
-dojo.provide("demos.cropper.src.preview");
+dojo.provide("demos.cropper.src.Preview");
 dojo.require("dijit._Widget");
 dojo.require("dojo.dnd.move");
 dojo.require("dojox.layout.ResizeHandle");
@@ -25,6 +25,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		
 		// the size of the draggable/moveable window
 		glassSize:150,
+		
 		// the size of the preview window relative to the glassSize
 		scale:2,
 		
@@ -39,6 +40,10 @@ dojo.require("dojox.layout.ResizeHandle");
 		// hoverable: Boolean
 		//		Does this image react to hovering to show/hide the dragger
 		hoverable: false,
+		
+		// resizeable: Boolean
+		//		Can the glass be resized, and provide zooming of the preview?
+		resizeable: true,
 		
 		// opacity: Float
 		//		Opacity value to use in hoverable or non-hoverable cases.
@@ -98,31 +103,34 @@ dojo.require("dojox.layout.ResizeHandle");
 				{ area: "content", within: true }
 			);
 			
-			// create the resize handle for the glass:
-			this._handle = new dojox.layout.ResizeHandle({
-				targetContainer: this.picker,
-				fixedAspect: true,
+			if(this.resizeable){
+				// create the resize handle for the glass:
+				this._handle = new dojox.layout.ResizeHandle({
+					
+					// the draggable node is the one to resize. 
+					// maintain aspect to keep inline with preview
+					targetContainer: this.picker,
+					fixedAspect: true,
 				
-				// rescale the image often, activeResize is true
-				intermediateChanges: true,
-				activeResize: true,
-				onResize: d.hitch(this, function(e,f){
-					this._adjustImage(e,f);
-					this._whileMoving();
-				}),
+					// rescale the image often, activeResize is true
+					intermediateChanges: true,
+					activeResize: true,
+					onResize: d.hitch(this, function(e,f){
+						this._adjustImage(e,f);
+						this._whileMoving();
+					}),
 				
-				// constrain to box. FIXME: when dragged, we should
-				// update this._handle.max* so users can't resize
-				// out of bounds.
-				constrainMax: true,
-				maxWidth: mb.w, 
-				maxHeight: mb.h,
+					// constrain to box. 
+					constrainMax: true,
+					maxWidth: mb.w, 
+					maxHeight: mb.h,
 				
-				// sane default minimums:
-				minWidth:40, 
-				minHeight:40
+					// sane default minimums:
+					minWidth:40, 
+					minHeight:40
 				
-			}).placeAt(this.picker);
+				}).placeAt(this.picker);
+			}
 			
 			// setup dnd behavior
 			d.subscribe("/dnd/move/start", this, "_startDnd");
@@ -141,7 +149,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			
 		},
 		
-		_adjustImage: function(e, force){
+		_adjustImage: function(e){
 			
 			var tc = this.coords, 
 				s = this.scale; 
@@ -182,6 +190,18 @@ dojo.require("dojox.layout.ResizeHandle");
 			if(this._interval){
 				this.disconnect(this._interval);
 				delete this._interval; // remember to delete it ;)
+				if(this.resizeable && this._lastXY){
+					// update the max size values of our handle to 
+					// be based on our current position, only allowing
+					// for the glass to be resized to the offset box
+					// we're in (eg, @ top 50 with size 50, max next
+					// size is 250). if top 0, use orig container size.
+					var tc = this.coords;
+					this._handle.maxSize = {
+						h: _floor(tc.h - (this._lastXY.t - tc.t)),
+						w: _floor(tc.w - (this._lastXY.l - tc.l))
+					}
+				}
 			}
 		},
 		
@@ -189,7 +209,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			// while dnd in progress, adjust the backgroundPosition of the preview
 			
 			var s = this.scale,
-				xy = d.coords(this.picker), 
+				xy = this._lastXY = d.coords(this.picker), 
 				tc = this.coords, 
 				x = _floor((xy.l - tc.l) * s), 
 				y = _floor((xy.t - tc.t) * s);
