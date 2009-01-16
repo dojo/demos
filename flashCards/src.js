@@ -4,6 +4,7 @@ dojo.require("dijit.Dialog");
 dojo.require("dijit.form.Button");
 dojo.require("dijit.layout.LayoutContainer");
 dojo.require("dijit.layout.ContentPane");
+dojo.require("dojox.analytics.Urchin")
 dojo.require("demos.flashCards.src.MathFlashCard");
 dojo.require("demos.flashCards.src.Teacher");
 
@@ -183,4 +184,12 @@ dojo.addOnLoad(function(){
 	setInterval(function(){
 		dijit.byId("teacher").blink();
 	}, 2500);
+	
+	new dojox.analytics.Urchin({ 
+		acct: "UA-3572741-1", 
+		GAonLoad: function(){
+			this.trackPageView("/demos/flashCards");
+		}
+	});	
+	
 });

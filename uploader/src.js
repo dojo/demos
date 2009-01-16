@@ -1,6 +1,7 @@
 dojo.require("dojox.form.FileUploader");
 dojo.require("dijit.form.Button"); 
 dojo.require("dojo.parser");
+dojo.require("dojox.analytics.Urchin");
 
 //using this early for the forceNoFlash test:
 dojo.require("dojox.embed.Flash");
@@ -173,6 +174,13 @@ dojo.addOnLoad(function(){
 	Destroy = function(){
 		f0.destroyAll();
 	}
+	
+	new dojox.analytics.Urchin({ 
+		acct: "UA-3572741-1", 
+		GAonLoad: function(){
+			this.trackPageView("/demos/uploader");
+		}
+	});	
 	
 });
 

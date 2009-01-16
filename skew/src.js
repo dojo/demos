@@ -6,6 +6,7 @@ dojo.require("dojo.NodeList-fx");
 dojo.require("dojo.fx.easing");
 dojo.require("dojox.widget.Dialog");
 dojo.require("dojox.layout.RadioGroup");
+dojo.require("dojox.analytics.Urchin");
 
 (function($){
 	
@@ -84,6 +85,14 @@ dojo.require("dojox.layout.RadioGroup");
 
 	// the onLoad function
 	var init = function(){
+	
+		// tracking demo:
+		new dojox.analytics.Urchin({ 
+			acct: "UA-3572741-1", 
+			GAonLoad: function(){
+				this.trackPageView("/demos/skew");
+			}
+		});	
 	
 		$.style("whoNode","opacity", 0);
 	

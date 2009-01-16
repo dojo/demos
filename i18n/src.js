@@ -17,3 +17,13 @@ dojo.require("dijit.Menu");
 dojo.require("dojo.parser");
 
 dojo.require("demos.i18n.model");
+
+dojo.require("dojox.analytics.Urchin");
+dojo.addOnLoad(function(){
+	new dojox.analytics.Urchin({ 
+		acct: "UA-3572741-1", 
+		GAonLoad: function(){
+			this.trackPageView("/demos/i18n");
+		}
+	});	
+});

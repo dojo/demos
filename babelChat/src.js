@@ -8,6 +8,7 @@ dojo.require("dojo.fx");
 dojo.require("dijit._base.place");
 dojo.require("dijit._Widget");
 dojo.require("dijit._Templated");
+dojo.require("dojox.analytics.Urchin");
 
 (function(d){
 
@@ -169,6 +170,14 @@ dojo.require("dijit._Templated");
 				}).play();
 			}
 		});
+		
+		new dojox.analytics.Urchin({ 
+			acct: "UA-3572741-1", 
+			GAonLoad: function(){
+				this.trackPageView("/demos/babelChat");
+			}
+		});	
+		
 		
 	});
 	

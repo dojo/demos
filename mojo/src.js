@@ -6,6 +6,9 @@ dojo.require("dojo.fx");
 dojo.require("dojo.fx.easing");
 dojo.require("dojox.widget.Roller");
 
+// tracking:
+dojo.require("dojox.analytics.Urchin");
+
 // our custom code:
 dojo.require("demos.mojo.src.drop"); // gravity code
 dojo.require("demos.mojo.src.download"); // download link code
@@ -130,6 +133,13 @@ dojo.require("demos.mojo.src.download"); // download link code
 					duration:950 // ms
 				}).play(5); // small delay for performance?
 				style(e.node, "zIndex", _z);
+			}
+		});	
+		
+		new dojox.analytics.Urchin({ 
+			acct: "UA-3572741-1", 
+			GAonLoad: function(){
+				this.trackPageView("/demos/mojo");
 			}
 		});	
 

@@ -3,6 +3,7 @@ dojo.require("dijit.form.Button");
 dojo.require("dijit.form.HorizontalSlider"); 
 dojo.require("dojo.dnd.Source");
 dojo.require("dojo.parser");
+dojo.require("dojox.analytics.Urchin");
 
 var passthrough = function(msg){
 	//for catching messages from Flash
@@ -111,6 +112,14 @@ dojo.addOnLoad(function(){
 	dojo.subscribe("/dnd/cancel", function(evt){ 
 		//console.log( "onDndCancel")
 	});
+	
+	new dojox.analytics.Urchin({ 
+		acct: "UA-3572741-1", 
+		GAonLoad: function(){
+			this.trackPageView("/demos/video");
+		}
+	});	
+	
 });
 
 

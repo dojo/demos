@@ -1,6 +1,7 @@
 dojo.require("dijit.layout.AccordionContainer");
 dojo.require("dojox.layout.ScrollPane");
 dojo.require("dojox.widget.FisheyeLite");
+dojo.require("dojox.analytics.Urchin");
 //dojo.require("dojox.layout.DragPane");
 dojo.require("dojo.NodeList-fx");
 dojo.require("dojo.fx");
@@ -60,6 +61,15 @@ var show = null;
 		content1.innerScroller.layout();
 	
 		$('.dijitAccordionText').style('opacity', 0.01);
+
+		// demo usage tracking: 
+		new dojox.analytics.Urchin({ 
+			acct: "UA-3572741-1", 
+			GAonLoad: function(){
+				this.trackPageView("/demos/castle");
+			}
+		});	
+		
 	}
 
 	dojo.addOnLoad(init);

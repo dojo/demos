@@ -31,6 +31,7 @@ dojo.require("dijit.layout.ContentPane");
 
 dojo.require("dojox.grid.DataGrid");
 dojo.require("dojox.widget.FisheyeLite");
+dojo.require("dojox.analytics.Urchin");
 
 dojo.addOnLoad(function(){
 
@@ -66,6 +67,13 @@ dojo.addOnLoad(function(){
 	
 	// Write A-Z "links" on contactIndex tab to do filtering
 	genIndex();
+
+	new dojox.analytics.Urchin({ 
+		acct: "UA-3572741-1", 
+		GAonLoad: function(){
+			this.trackPageView("/demos/dijitmail");
+		}
+	});	
 
 });
 
