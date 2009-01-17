@@ -208,11 +208,10 @@ dojo.require("dojox.layout.ResizeHandle");
 		_whileMoving: function(){
 			// while dnd in progress, adjust the backgroundPosition of the preview
 			
-			var s = this.scale,
-				xy = this._lastXY = d.coords(this.picker), 
+			var xy = this._lastXY = d.coords(this.picker), 
 				tc = this.coords, 
-				x = _floor((xy.l - tc.l) * s), 
-				y = _floor((xy.t - tc.t) * s);
+				x = _floor((xy.l - tc.l) / tc.w * this.image.width), 
+				y = _floor((xy.t - tc.t) / tc.h * this.image.height);
 			
 			// position the image relative to the picker's position 
 			// in the container.

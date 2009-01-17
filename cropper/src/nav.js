@@ -4,15 +4,16 @@ dojo.require("dojo.fx");
 dojo.require("dojo.fx.easing");
 
 ;(function(d, $){
-	
+
 	// quick `plugd` plugin:
+	var jankyEv = "mouse" + (d.isIE ? "enter" : "over");
 	d.extend(d.NodeList, {
 		hover:function(func, optFunc){
 			return this.onmouseenter(func).onmouseleave(optFunc || func);
 		},
 		hoverClass:function(className){
 			return this.hover(function(e){
-				d[(e.type == "mouseover" ? "addClass" : "removeClass")](e.target, className);
+				d[(e.type == jankyEv ? "addClass" : "removeClass")](e.target, className);
 			});
 		}
 	});
@@ -45,7 +46,7 @@ dojo.require("dojo.fx.easing");
 					node: n, duration:375,
 					delay: delay * i,
 					properties: { top:45 },
-					easing: dojo.fx.easing.backIn
+					easing: d.fx.easing.backIn
 				})
 			);
 			// fade separate because easing doesn't reach 100% ? might be edge case.
@@ -129,7 +130,11 @@ dojo.require("dojo.fx.easing");
 				pages.push(other.slice(6));
 
 				// make the pager nav, with event connections:
-				var pager = d.create('ul', { id:"pager" }, "navi");
+				var pager = d.create('ul', { 
+					id:"pager",
+					style:{ opacity:0 }
+				}, "navi");
+				
 				d.forEach(pages, function(p, i){
 					
 					var n = d.create("li", {
@@ -144,9 +149,10 @@ dojo.require("dojo.fx.easing");
 						d.addClass(n, "selected");
 						switchPage(pages[i]);
 					});
-					
+										
 				});
 				
+				d.fadeIn({ node:pager }).play();
 			}
 		});
 		
