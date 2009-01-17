@@ -47,7 +47,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		
 		// opacity: Float
 		//		Opacity value to use in hoverable or non-hoverable cases.
-		opacity: 0.25, 
+		opacity: 0.35, 
 		
 		postCreate: function(){
 			
@@ -81,7 +81,6 @@ dojo.require("dojox.layout.ResizeHandle");
 					height: _floor(gs * s) + pixels
 				}
 			}, d.body());
-			this._positionPicker();
 
 			// wrap the full image, so we can position it easily relative
 			// to the outer node. embedded position:rel/absolute/rel/abs here
@@ -95,6 +94,8 @@ dojo.require("dojox.layout.ResizeHandle");
 			this.image = d.query('img', this.preview)
 				// when it is loaded, use those numbers:
 				.onload(d.hitch(this, "_adjustImage"))[0]; // the [0] is for the array
+			
+			this._positionPicker();
 			
 			// setup dnd for the picker:
 			this.mover = new d.dnd.move.parentConstrainedMoveable(this.picker,
@@ -146,6 +147,8 @@ dojo.require("dojox.layout.ResizeHandle");
 				this.connect(this.container, "onmouseenter", "_enter");
 				this.connect(this.container, "onmouseleave", "_leave");
 			}
+			
+			setTimeout(dojo.hitch(this, "_positionPicker"), 125);
 			
 		},
 		
@@ -210,8 +213,9 @@ dojo.require("dojox.layout.ResizeHandle");
 			
 			var xy = this._lastXY = d.coords(this.picker), 
 				tc = this.coords, 
-				x = _floor((xy.l - tc.l) / tc.w * this.image.width), 
-				y = _floor((xy.t - tc.t) / tc.h * this.image.height);
+				r = this.image.width / tc.w,
+				x = _floor((xy.l - tc.l) * r), 
+				y = _floor((xy.t - tc.t) * r);
 			
 			// position the image relative to the picker's position 
 			// in the container.
@@ -239,14 +243,14 @@ dojo.require("dojox.layout.ResizeHandle");
 		_enter: function(e){
 			// handler for mouseenter event
 			this._anim && this._anim.stop();
-			this._anim = d._fade({ node: this.picker, end: this.opacity }).play();
+			this._anim = d.anim(this.picker, { opacity: this.opacity });
 		},
 		
 		_leave: function(e){
 			// handler for mouseleave event
 			if(!this._interval && !this._handle._isSizing){
 				this._anim && this._anim.stop();
-				this._anim = d.fadeOut({ node: this.picker }).play();
+				this._anim = d.anim(this.picker, { opacity: 0 });
 			}
 		}
 		
