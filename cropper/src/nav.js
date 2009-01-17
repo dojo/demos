@@ -50,7 +50,6 @@ dojo.require("dojo.fx.easing");
 			);
 			// fade separate because easing doesn't reach 100% ? might be edge case.
 			_anims.push(d.fadeOut({ node:n, delay: delay * i, duration:375 }) );
-
 			
 			// also make animations to fade back in, and slide back to top:0
 			_outa.push(
@@ -64,13 +63,13 @@ dojo.require("dojo.fx.easing");
 		});
 		
 		// create grouped animations from the lists:
-		var _in = dojo.fx.combine(_anims), _out = dojo.fx.combine(_outa);
+		var _in = d.fx.combine(_anims), _out = d.fx.combine(_outa);
 		
 		var switchPage = function(arr){
 			// summary: switch out all the thumbnails with src's from this new array of 
 			//		urls. 
 			
-			var c = dojo.connect(_in, "onEnd", function(){
+			var c = d.connect(_in, "onEnd", function(){
 				// when thumbnails are hidden, do this:
 				
 				// we set the a.href in this loop so the existing behavior from src.js
@@ -78,7 +77,7 @@ dojo.require("dojo.fx.easing");
 				// and we've got to work around that:
 				
 				nodes.query("a").forEach(function(n, i){
-					dojo.attr(n, {
+					d.attr(n, {
 						// this is janktastic -- we only know the thumb url
 						// and a pattern between it and the full url. fragile.
 						href: arr[i].replace(/\/thumb/,"").replace(/t\./, ".")
@@ -87,11 +86,11 @@ dojo.require("dojo.fx.easing");
 				
 				// set the thumbnails to the new list passed:
 				nodes.query("img").forEach(function(n,i){
-					dojo.attr(n, "src", arr[i])
+					d.attr(n, "src", arr[i])
 				});
 				
 				// we connect each page listen, this is connectOnce
-				dojo.disconnect(c);
+				d.disconnect(c);
 				
 				// play this hide animation
 				_out.play();
@@ -102,7 +101,7 @@ dojo.require("dojo.fx.easing");
 			_in.play();
 		}
 		
-		dojo.xhrGet({ 
+		d.xhrGet({ 
 			
 			// load a list of additional images from a url:
 			url:"images.json", handleAs:"json",
@@ -139,9 +138,9 @@ dojo.require("dojo.fx.easing");
 					
 					// hook up some logic to unselect other items 
 					// in this group, and handle hover state:
-					d.query(n).hoverClass("over").onclick(function(e){
+					$(n).hoverClass("over").onclick(function(e){
 						if(d.hasClass(n, "selected")){ return; }
-						d.query("> li", pager).removeClass("selected");
+						$("> li", pager).removeClass("selected");
 						d.addClass(n, "selected");
 						switchPage(pages[i]);
 					});

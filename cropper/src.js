@@ -32,8 +32,6 @@ dojo.require("dojox.analytics.Urchin");
 			var et = e.target,
 				src = et.parentNode.href || et.href;
 			
-			console.log(et, src);
-			
 			if(src && preview.image.src != src){
 				// show the loader after each click
 				show.play();
@@ -48,10 +46,11 @@ dojo.require("dojox.analytics.Urchin");
 		
 		// hook up the nav.js link in footer text:
 		var c = d.connect(dojo.byId("navjs"), "onclick", function(e){
-			d.disconnect(c); // only do this one time
-			dojo["require"]("demos.cropper.src.nav"); // special syntax to trick build system
-		})
-				
+			// special syntax to trick build system
+			d["require"]("demos.cropper.src.nav"); 
+			d.disconnect(c);
+		});
+		
 		// shortly after onLoad, track the page (prevent UI blocking)
 		new dojox.analytics.Urchin({ 
 			acct: "UA-3572741-1", 
@@ -59,7 +58,7 @@ dojo.require("dojox.analytics.Urchin");
 				this.trackPageView("/demos/cropper");
 			}
 		});	
-				
+		
 	});
 	
 		
