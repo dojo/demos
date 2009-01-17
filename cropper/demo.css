@@ -146,7 +146,7 @@ li.navButton {
 	cursor:move;
 	z-index:999;
 	background:#fff;
-	border:1px solid #000; 
+/*	border:1px solid #000; */
 }
 
 /* test: Resizer Widget Styles */
