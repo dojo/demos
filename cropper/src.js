@@ -45,10 +45,10 @@ dojo.require("dojox.analytics.Urchin");
 		});
 		
 		// hook up the nav.js link in footer text:
-		var c = d.connect(dojo.byId("navjs"), "onclick", function(e){
+		$("#navjs").onclick(function(e){
 			// special syntax to trick build system
 			d["require"]("demos.cropper.src.nav"); 
-			d.disconnect(c);
+			e.preventDefault();
 		});
 		
 		// shortly after onLoad, track the page (prevent UI blocking)
