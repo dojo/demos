@@ -2,9 +2,7 @@ dojo.provide("demos.cropper.src");
 
 dojo.require("demos.cropper.src.Preview");
 dojo.require("dojox.analytics.Urchin");
-
-// remove to disable json/paging
-// dojo . require("demos.cropper.src.nav"); 
+dojo.require("demos.cropper.src.nav"); 
 
 ;(function(d, $){
 	
@@ -36,8 +34,7 @@ dojo.require("dojox.analytics.Urchin");
 				// show the loader after each click
 				show.play();
 				// when we have a src to load, set both images
-				preview.domNode.src = src;
-				preview.image.src = src; 
+				preview.domNode.src = preview.image.src = src; 
 				// update the title text:
 			//	d.byId("titleText").innerHTML = preview.image.alt = et.alt;
 			}

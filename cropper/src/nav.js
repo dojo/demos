@@ -2,15 +2,18 @@ dojo.provide("demos.cropper.src.nav");
 
 dojo.require("dojo.fx");
 dojo.require("dojo.fx.easing");
+dojo.require("dojox.image._base");
 
 ;(function(d, $){
 
 	// quick `plugd` plugin:
 	var jankyEv = "mouse" + (d.isIE ? "enter" : "over");
 	d.extend(d.NodeList, {
+		// summary: add hover connections to each node in this list
 		hover:function(func, optFunc){
 			return this.onmouseenter(func).onmouseleave(optFunc || func);
 		},
+		// summary: toggle a class on hover automatically for a node
 		hoverClass:function(className){
 			return this.hover(function(e){
 				d[(e.type == jankyEv ? "addClass" : "removeClass")](e.target, className);
@@ -18,18 +21,6 @@ dojo.require("dojo.fx.easing");
 		}
 	});
 	
-	// quick hack to preload list of images:
-	var cache, preLoad = function(urls){
-		if(!cache){
-			cache = d.create('div',{
-				style:{ position:"absolute", top:"-9999px", visibility:"hidden" }
-			}, d.body());
-		}
-		d.forEach(urls, function(url){
-			d.create("img", { src: url }, cache);
-		});
-	}
-
 	d.addOnLoad(function(){
 
 		// some placeholders:
@@ -116,7 +107,7 @@ dojo.require("dojo.fx.easing");
 					var thumb = item.src.replace(/\./, "t.");
 					return "images/thumb/" + thumb;
 				});
-				preLoad(thumbs);
+				dojox.image.preload(thumbs);
 				
 				// break the list into pages of 6, skipping whatever
 				// urls happened to be in the list on page load
@@ -147,9 +138,9 @@ dojo.require("dojo.fx.easing");
 						if(d.hasClass(n, "selected")){ return; }
 						$("> li", pager).removeClass("selected");
 						d.addClass(n, "selected");
-						switchPage(pages[i]);
+						switchPage(p);
 					});
-										
+						
 				});
 				
 				d.fadeIn({ node:pager }).play();
