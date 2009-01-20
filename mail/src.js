@@ -23,6 +23,7 @@ dojo.require("dijit.form.TextBox");
 dojo.require("dijit.form.ComboBox");
 dojo.require("dijit.form.FilteringSelect");
 dojo.require("dijit.form.Textarea");
+dojo.require("dijit.form.Form")
 
 dojo.require("dijit.layout.BorderContainer");
 dojo.require("dijit.layout.AccordionContainer");
