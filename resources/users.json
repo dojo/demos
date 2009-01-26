@@ -233,7 +233,7 @@
 			imgUrl:"images/users/blowery.jpg",
 			website: "http://blowery.org/",
 			coords: { x: 43.055719, y: -73.79508 },
-			employer: "Bloglines.com",
+			employer: "Joost.com",
 			blameFor: [ "dojo.back" ]
 		},
 		{
