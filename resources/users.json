@@ -213,13 +213,13 @@
 		{
 			name:"Heng Liu",
 			title: "Committer",
-			location: "York, UK",
+			location: "Oakland, CA",
 			irc:"liucougar",
 			handle:"liucougar",
 			website:"http://liucougar.net/",
 			imgUrl:"images/users/heng.png",
-			coords:{x: 53.9577, y: -1.0823},
-			employer:"TeamPatent LLC",
+			coords:{x: 37.8455, y: -122.2146},
+			employer:"teampatent.com",
 			blameFor:[
 				"dijit Editor?"
 			]
