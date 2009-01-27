@@ -1,5 +1,7 @@
 dojo.require("dojo.parser");
 dojo.require("dojo.data.ItemFileWriteStore");
+dojo.require("dojo.date.locale");
+dojo.require("dojo.date.stamp");
 
 dojo.require("dijit.dijit");
 dojo.require("dijit.Declaration");
@@ -196,5 +198,9 @@ var showSendBar = function(){
 	dijit.byId('fakeSend').update({ indeterminate: true });
 	dijit.byId('sendDialog').show();
 	setTimeout(function(){stopSendBar();}, 3000);
+}
+
+var formatDate = function(inDatum){
+    return dojo.date.locale.format(dojo.date.stamp.fromISOString(inDatum), {selector: "date"});
 }
 
