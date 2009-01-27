@@ -8,6 +8,13 @@
 
 	<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
 	<script type="text/javascript" src="src.js" charset="utf-8"></script>
+	<script type="text/javascript">
+		dojo.require("dojo.date.locale");
+		dojo.require("dojo.date.stamp");
+        formatDate = function(inDatum){
+            return dojo.date.locale.format(dojo.date.stamp.fromISOString(inDatum), {selector: "date"});
+        }
+	</script>
 
 </head>
 <body class="soria" role="application">
@@ -183,7 +190,7 @@
 						<tr>
 							<th field="sender" width="10%">Sender</th>
 							<th field="label" width="80%">Subject</th>
-							<th field="sent" width="10%">Date</th>
+							<th field="sent" width="10%" formatter="formatDate">Date</th>
 						</tr>
 					</thead>
 				</table> <!-- end of listPane -->
