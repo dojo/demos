@@ -65,14 +65,15 @@ body{
 }
 
 
-#accordionPanel{
+.tundra #accordionPanel {
 	position:absolute;
 	top: 190px;
 	left: 50%;
 	margin-left: -475px;
 	width:455px;
 	height:270px;
-	z-index: 1000
+	z-index: 1000;
+	background:none !important;
 }
 
 li{
@@ -122,32 +123,32 @@ a:hover{
 	background-color: #ffcc00;
 }
 
-#pane1 .dijitAccordionTitle{
+#pane1_button.dijitAccordionTitle{
 	background-image: url(images/25.png) !important;
 	background-repeat: no-repeat !important;
 }
 
-#pane2 .dijitAccordionTitle{
+#pane2_button.dijitAccordionTitle{
 	background-image: url(images/26.png) !important;
 	background-repeat: no-repeat !important;
 }
 
-#pane3 .dijitAccordionTitle{
+#pane3_button.dijitAccordionTitle{
 	background-image: url(images/27.png) !important;
 	background-repeat: no-repeat !important;
 }
 
-#pane1  .dijitAccordionTitle:hover{
+#pane1_button.dijitAccordionTitle:hover{
 	background-image: url(images/25_over.png) !important;
 	background-repeat: no-repeat !important;
 }
 
-#pane2 .dijitAccordionTitle:hover{
+#pane2_button.dijitAccordionTitle:hover{
 	background-image: url(images/26_over.png) !important;
 	background-repeat: no-repeat !important;
 }
 
-#pane3 .dijitAccordionTitle:hover{
+#pane3_button.dijitAccordionTitle:hover{
 	background-image: url(images/27_over.png) !important;
 	background-repeat: no-repeat !important;
 }
@@ -156,8 +157,11 @@ ul li{
 	text-align: left;
 	}
 
+.dijitAccordionContainer-child {
+	overflow:hidden !important;
+}
 
-.dijitAccordionBody, .dijitAccordionTitle, .dijitAccordionTitle-selected, .dijitAccordionPane, .dijitAccordionArrow{
+.dijitAccordionBody, .dijitAccordionTitle, .dijitAccordionTitle-selected, .dijitAccordionContainer-child, .dijitAccordionArrow{
 	background: none !important;
 	background-color: transparent !important;
 	border: 0px !important;

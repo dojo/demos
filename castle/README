@@ -19,11 +19,6 @@ Dependencies:
 Installation instructions
 
 	Simply run the included demo.html
-	
-	To build, use the supplied demo.profile.js as your profileFile,
-	or run the included buildDemo.sh -- which [should] create an 
-	archive called skewDemo.tar.gz that you [should] be able to drop
-	on any webserver and view (only optimized, instead)
-	
+		
 -------------------------------------------------------------------------------
 
