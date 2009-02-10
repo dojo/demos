@@ -61,6 +61,7 @@ h1 { margin-top:0; margin-bottom:0; }
 	border-bottom:1px solid #ccc;
 	height:99px;
 	background:#ededed;
+	overflow:hidden;
 }
 p.notas { 
 	clear:both;

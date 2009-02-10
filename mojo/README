@@ -25,4 +25,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-
+@display:fullscreen @category:shiny
