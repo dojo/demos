@@ -21,7 +21,7 @@
 		.app .leftTree {
 			/* make it use mac-like fonts */
 			/* font-family: "Myriad Pro", Myriad, Geneva, sans-serif; */
-			padding: 0 0 0 0;
+			padding: 0 0 0 5px;
 			background-color: #d6dde5;
 			width: 200px;
 		}
@@ -58,8 +58,16 @@
 		/* make the open/close buttons smaller */
 
 		.app .dijitTreeExpando {
-			width: 10px;
+			width: 14px;
 			height: 10px;
+		}
+		
+		.app .dijitTreeExpandoClosed {
+			background: url("resources/arrow-closed.png") no-repeat;
+		}
+		
+		.app .dijitTreeExpandoOpened {
+			background: url("resources/arrow-open.png") no-repeat;
 		}
 
 		.app .subNode .subNodeDetail {
@@ -71,7 +79,6 @@
 			-webkit-border-radius: 7px;
 			-moz-border-radius: 7px;
 			padding: 1px 5px 0px 5px;
-			margin-top: 2px;
 			margin-right: 4px;
 			font-weight: bold;
 			font-size: 10px;
@@ -96,7 +103,7 @@
 		.app .dijitTreeIsRoot > .dijitTreeRow {
 			color: #606e8e;
 			font-weight: bold;
-			font-family: Verdana;
+			font-family: "Helvetica Neue", Helvetica, Verdana;
 			padding-left: 5px;
 			/*
 			border: 1px solid black;
@@ -104,19 +111,31 @@
 		}
 
 		.app .dijitSplitterV {
-			width: 1px;
-			border-left: 1px solid #8b8b8b; /* #555555; */
+			width: 0px;
+			border-left: 1px solid #8b8b8b; 
+			/* #555555; */
+			
 		}
 		.app .dijitSplitterV .dijitSplitterThumb {
 			display: none;
 		}
 
-		.app .dijitTreeRow {
-			border-top: 1px solid transparent;
-			height: 20px;
+		.app .dijitSplitterH {
+			height: 7px;
+			border-top: 0.6px solid #a5a5a5;
+			border-bottom: 0.6px solid #a5a5a5;
+			background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#dfdfdf));
+			-webkit-background-origin: border;
+			-webkit-background-clip: border;
 		}
 
-		.app .dijitTreeLabelFocused {
+		.app .dijitTreeRow {
+			padding-top: 2px;
+			border-top: none;
+			height: 16px;
+		}
+
+		.app .dijitTreeNodeSelected {
 			outline: none;
 			border: none;
 
@@ -143,22 +162,33 @@
 
 		}
 
-		.app .dijitTreeIsRoot > .dijitTreeLabelFocused {
+		.app .dijitTreeIsRoot > .dijitTreeRow {
+			background: none;
+		}
+
+		.app .dijitTreeIsRoot > .dijitTreeRow .dijitTreeNodeSelected {
 			border-top: 1px solid transparent;
 			background: none;
 		}
 
-		.app .dijitTreeLabelFocused .subNodeDetail {
+		.app .dijitTreeNodeSelected .subNodeDetail {
 			color: #8b9ab8;
 			background-color: white;
 		}
 
 		.app .dijitTreeLabel {
-			/* 
-				clobber the text outline since we give visual indication 
+			/*	clobber the text outline since we give visual indication 
 				with a background 
 			*/
 			outline: none;
+		}
+
+		.app .dijitTreeNodeSelected .dijitTreeLabel {
+			background-color: transparent;
+		}
+
+		.app .dijitTreeExpandoLeaf {
+			background: none;
 		}
 
 		.app .dojoxGridRowOdd {
@@ -166,6 +196,7 @@
 		}
 
 		.app .dojoxGridCell {
+			font-family: "Helvetica Neue", Helvetica, Verdana;
 			font-size: 11px;
 			border-bottom: none;
 			border-right: 1px solid #dadada;
@@ -173,7 +204,7 @@
 
 		.app .dojoxGridHeader .dojoxGridCell {
 			border-bottom: 1px solid #575757;
-			background: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#bbbbbb));
+			background: -webkit-gradient(linear, left top, left bottom, from(#dbdbdb), to(#bbbbbb), color-stop(0.4, #dbdbdb));
 			-webkit-background-origin: border;
 			-webkit-background-clip: border;
 		}
@@ -217,24 +248,8 @@
 		};
 	</script>
 	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="src.js"></script>
 	<script type="text/javascript">
-		// util
-		dojo.require("dojo.parser");
-
-		// widgets
-		dojo.require("dijit.dijit");
-		dojo.require("dojox.grid.DataGrid");
-		dojo.require("dijit.layout.BorderContainer");
-		dojo.require("dijit.Tree");
-		dojo.require("dijit.tree.ForestStoreModel");
-		dojo.require("dijit.layout.ContentPane");
-		dojo.require("dijit.form.Button");
-		dojo.require("dijit.form.FilteringSelect");
-		dojo.require("dijit.Menu");
-
-		// data 
-		dojo.require("dojo.data.ItemFileReadStore");
-		dojo.require("dojox.data.CsvStore");
 
 		var csvStore = new dojox.data.CsvStore({
 			url: dojo.moduleUrl("dojox", "charting/tests/data/msft_prices.csv")
@@ -310,31 +325,14 @@
 			_setDetail: function(v){
 				this._detailNode.innerHTML = v;
 			},
-			templatePath: dojo.moduleUrl("acme", "newTreeNode.html"),
-			onFocus: function(){
-				console.log("focused on: "+this);
-
-				dojo.addClass(this.rowNode, "dijitTreeLabelFocused");
-				// set tabIndex so that the tab key can find this node
-				dojo.attr(this.labelNode, "tabIndex", "0");
-				dijit.setWaiState(this.labelNode, "selected", true);
-			},
-			onBlur: function(){
-				console.log("blured: "+this);
-
-				dojo.removeClass(this.rowNode, "dijitTreeLabelFocused");
-				dojo.attr(this.labelNode, "tabIndex", "-1");
-				dijit.setWaiState(this.labelNode, "selected", false);
-			},
-			// over-ride Dijit's broke-ass css setter:
-			_onMouseEnter: function(){ /* squelch */ }
+			templatePath: dojo.moduleUrl("acme", "newTreeNode.html")
 		});
+
+		dijit.defaultDuration = 150;
 
 		dojo.extend(dijit.Tree, {
 			templatePath: dojo.moduleUrl("acme", "newTree.html"),
 			_createTreeNode: function(args){
-				// console.dir(args);
-				// console.debug(args.tree.model.getLabel(args.item));
 				if(args.label){
 					args.detail = ""+args.label.length;
 				}
@@ -368,7 +366,9 @@
 			region="leading" 
 			jsId="leading"
 			splitter="true">
+			<!--
 			<div id="treeContainer"></div>
+			-->
 			<div dojoType="dijit.Tree"
 				model="folderModel" openOnClick="true"
 				showRoot="false"></div>
