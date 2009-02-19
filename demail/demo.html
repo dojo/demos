@@ -65,14 +65,6 @@
 			d.items[7].children.push({ _reference: "country"+x });
 		}
 
-		/*
-		formatPrice = function(ind, attr){
-			console.debug(arguments);
-			return "$ "+val;
-		}
-		*/
-
-
 		var folders = new dojo.data.ItemFileReadStore({ data: d });
 
 		var folderModel =  new dijit.tree.ForestStoreModel({
@@ -103,25 +95,7 @@
 					args.detail = ""+args.label.length;
 				}
 				return new acme._TreeNode(args);
-			},
-
-			// fixes for incorrect design tree widget design decisions
-			_onTreeFocus: function(/*dijit._TreeNode*/ node){
-				if(!node){ return; }
-				if(node != this.lastFocused){
-					this.blurNode();
-				}
-				node.onFocus();
-				this.lastFocused = node;
-			},
-
-			blurNode: function(){
-				var node = this.lastFocused;
-				if(!node){ return; }
-				node.onBlur();
-				this.lastFocused = null;
 			}
-
 		});
 	</script>
 </head>
