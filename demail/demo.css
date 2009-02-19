@@ -105,6 +105,7 @@ html, body, #main{
 
 .app .dijitSplitterV {
 	width: 0px;
+	border: none;
 	border-left: 1px solid #8b8b8b; 
 	/* #555555; */
 	
@@ -126,6 +127,13 @@ html, body, #main{
 	padding-top: 2px;
 	border-top: none;
 	height: 16px;
+
+	/*
+	overflow: hidden;
+	white-space: nowrap;
+	-webkit-text-overflow: ellipsis;
+	text-overflow: ellipsis;
+	*/
 }
 
 .app .dijitTreeNodeSelected {
@@ -182,6 +190,16 @@ html, body, #main{
 
 .app .dijitTreeExpandoLeaf {
 	background: none;
+}
+
+.app .messagePane {
+	border-left: none;
+	border-bottom: none;
+}
+
+.app .dojoxGrid {
+	border-left: none;
+	border-top: none;
 }
 
 .app .dojoxGridRowOdd {

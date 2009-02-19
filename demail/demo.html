@@ -16,6 +16,9 @@
 	<script type="text/javascript" src="../../dojo/dojo.js"></script>
 	<script type="text/javascript" src="src.js"></script>
 	<script type="text/javascript">
+		dojo.extend(dijit.layout._Splitter, {
+			_tickSize: 1
+		});
 
 		var csvStore = new dojox.data.CsvStore({
 			url: dojo.moduleUrl("dojox", "charting/tests/data/msft_prices.csv")
@@ -60,7 +63,8 @@
 				{ name:'Russia', type:'country' }
 			]
 		};
-		for(var x = 0; x < 1000; x++){
+
+		for(var x = 0; x < 100; x++){
 			d.items.push({ type: "country", name: "country"+x });
 			d.items[7].children.push({ _reference: "country"+x });
 		}
@@ -129,7 +133,8 @@
 			</thead>
 		</table>
 		<div dojoType="dijit.layout.ContentPane" region="bottom" 
-			style="height: 100px;" splitter="true">
+			style="height: 100px;" splitter="true"
+			class="messagePane">
 			bottom bar
 		</div>
 		<!--
