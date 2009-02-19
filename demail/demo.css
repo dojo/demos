@@ -13,7 +13,7 @@ html, body, #main{
 .app .leftTree {
 	/* make it use mac-like fonts */
 	/* font-family: "Myriad Pro", Myriad, Geneva, sans-serif; */
-	padding: 0 0 0 5px;
+	padding: 0 0 0 0;
 	background-color: #d6dde5;
 	width: 200px;
 }
@@ -96,9 +96,10 @@ html, body, #main{
 	color: #606e8e;
 	font-weight: bold;
 	font-family: "Helvetica Neue", Helvetica, Verdana;
-	padding-left: 5px;
+	margin-left: 5px;
+	border: none;
 	/*
-	border: 1px solid black;
+	border-top: 1px solid transparent;
 	*/
 }
 
@@ -132,22 +133,22 @@ html, body, #main{
 	border: none;
 
 	/** dark gradient bg **/
-	/*
 	border-top: 1px solid #67788c;
 	background: #9499b0;
 	color: white;
 	background: -webkit-gradient(linear, left top, left bottom, from(#8092a5), to(#415a73));
 	-webkit-background-origin: border;
 	-webkit-background-clip: border;
-	*/
 
 	/** the lighter version **/
+	/*
 	border-top: 1px solid #9499b0;
 	background: #9499b0;
 	color: white;
 	background: -webkit-gradient(linear, left top, left bottom, from(#a7b5c2), to(#8091a3));
 	-webkit-background-origin: border;
 	-webkit-background-clip: border;
+	*/
 	/*
 	background-color: #8091a3;
 	*/
