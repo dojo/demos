@@ -41,7 +41,7 @@ dojo.require("dojo.io.iframe");
 			dojo.byId("gravity").disabled = false;
 			e.preventDefault();
 			dojo.fx.slideTo({ node:this.node, duration:375, left:-310, top:-50,
-				easing:dojo.fx.easing.backIn				
+				easing:dojo.fx.easing.backIn
 			}).play();
 		},
 
