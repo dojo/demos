@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-BabelChat Demo - Translating Chat Prototype
+BabelChat - Translating chat prototype with comet.
 -------------------------------------------------------------------------------
 Author: Peter Higgins (dante)
 -------------------------------------------------------------------------------
@@ -27,4 +27,4 @@ Installation instructions
 	Simply run the included demo.html
 			
 -------------------------------------------------------------------------------
-
+@rank:-999

@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The Form Demo
+Simple Form - Variety of Dijit input elements.
 -------------------------------------------------------------------------------
 Author: Bill Keese (wildbill)
 -------------------------------------------------------------------------------
@@ -26,3 +26,5 @@ Installation instructions
 Note: this should be expanded into a full demo, utilizing backend
 logic and interaction, or migrated back to tests/form/
 
+-----------------
+@rank:7

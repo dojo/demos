@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The DojoX Flash Video Demo
+Video Player - Sample Video playing with DojoX
 -------------------------------------------------------------------------------
 Author: Mike Wilcox (AnM8tR)
 -------------------------------------------------------------------------------
@@ -23,14 +23,11 @@ Installation instructions
 
 	Simply run the included demo.html
 	
-	To build, use the supplied demo.profile.js as your profileFile,
-	or run the included buildDemo.sh -- which [should] create an 
-	archive called videoDemo.tar.gz that you [should] be able to drop
-	on any webserver and view (only optimized, instead)
+	To build, use the supplied demo.profile.js as your profileFile
 	
 	If there are video errors (Stream Not Found), check that your 
     server handles the FLV mime type. Also be sure that the media
     is accessible by the web ACL (aka, permissions are set).
 	
 -------------------------------------------------------------------------------
-
+@rank:2

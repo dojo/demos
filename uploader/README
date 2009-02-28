@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The DojoX File Uploader Demo
+File Uploader - Multi-file uploading with Flash
 -------------------------------------------------------------------------------
 Author: Mike Wilcox (AnM8tR)
 -------------------------------------------------------------------------------
@@ -27,13 +27,10 @@ Installation instructions
 
 	Simply run the included demo.html
 	
-	To build, use the supplied demo.profile.js as your profileFile,
-	or run the included buildDemo.sh -- which [should] create an 
-	archive called uploaderDemo.tar.gz that you [should] be able to drop
-	on any webserver and view (only optimized, instead)
+	To build, use the supplied demo.profile.js as your profileFile
 	
 	If the demo stalls on the loader, your UploadedFiles/ folder probably isn't
 	writable by your webserver. Check the logs. 
 	
 -------------------------------------------------------------------------------
-
+@rank:1

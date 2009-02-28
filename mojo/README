@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The dojo.moj.oe Demo
+dojo.moj.oe - FX demonstration with Drag and Drop
 -------------------------------------------------------------------------------
 Author: Peter Higgins (dante)
 -------------------------------------------------------------------------------
@@ -25,4 +25,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-@display:fullscreen @category:shiny
+@display:fullscreen @category:shiny @rank:9

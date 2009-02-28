@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The Dojo Flash Card Demo 
+Flash Cards - Simple interactive math game
 -------------------------------------------------------------------------------
 Author: Dustin Machi (dmachi)
 -------------------------------------------------------------------------------
@@ -8,6 +8,9 @@ Demo description
 	A small demo showing off some of the capabilities of the Dojo Toolkit.
 	Animations, Custom Widgetry, Keyboard interaction, and time-based 
  	controls. 
+
+	Backend/code courtesy Nikolai Onken and Dustin Machi. 
+	Design courtesy Victoria Ionushonis
 	
 -------------------------------------------------------------------------------
 Dependencies:
@@ -26,4 +29,4 @@ Installation instructions
 	on any webserver and view (only optimized, instead)
 	
 -------------------------------------------------------------------------------
-
+@rank:7

@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Another i18n Demo
+Dijit i18n - Another look at basic internationalization
 -------------------------------------------------------------------------------
 Author: Bill Keese (wildbill)
 -------------------------------------------------------------------------------
@@ -26,3 +26,6 @@ Installation instructions
 Note:
 
 This should likely be in tests/i18n/ 
+
+------------------------
+@rank:3

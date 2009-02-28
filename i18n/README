@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-The dijit i18n (internationalization) Demo
+Dijit i18n - Internationalization and remote providers
 -------------------------------------------------------------------------------
 Author: Bill Kease (wildbill)
 -------------------------------------------------------------------------------
@@ -32,4 +32,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-
+@rank:6
