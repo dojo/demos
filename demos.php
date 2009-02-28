@@ -31,6 +31,9 @@
 			<p>Welcome to the Dojo Toolkit Demo Index</p><br>
 			<?php
 			
+			// turn to true if you want to link to dirindex/ or demos.[php|html] is setup to be dirIndex
+			$in_index = false; // true;
+			
 			$out = array();
 
 			// feature explorer is manually included:
@@ -54,7 +57,7 @@
 					$base = $demo . "/";
 										
 					// sillyness
-					if(!$is_index){
+					if(!$in_index){
 						$demobase = $base . "demo.";
 						if(file_exists($demobase."html")){
 							$link = $demobase."html";
