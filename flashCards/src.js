@@ -185,11 +185,14 @@ dojo.addOnLoad(function(){
 		dijit.byId("teacher").blink();
 	}, 2500);
 	
-	new dojox.analytics.Urchin({ 
-		acct: "UA-3572741-1", 
-		GAonLoad: function(){
-			this.trackPageView("/demos/flashCards");
-		}
-	});	
+	// stall this just a little
+	setTimeout(function(){
+		new dojox.analytics.Urchin({ 
+			acct: "UA-3572741-1", 
+			GAonLoad: function(){
+				this.trackPageView("/demos/flashCards");
+			}
+		});	
+	}, 1500);
 	
 });

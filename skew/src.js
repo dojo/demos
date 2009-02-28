@@ -87,7 +87,7 @@ dojo.require("dojox.analytics.Urchin");
 	var init = function(){
 	
 		// tracking demo:
-		new dojox.analytics.Urchin({ 
+		var u = new dojox.analytics.Urchin({ 
 			acct: "UA-3572741-1", 
 			GAonLoad: function(){
 				this.trackPageView("/demos/skew");
@@ -133,7 +133,7 @@ dojo.require("dojox.analytics.Urchin");
 							overflow:"hidden"
 						})
 						return page; // dijit._Widget
-					}						
+					}
 				},"stack");
 		
 				// iterate over each of the returned committers, setting up the canvas
@@ -271,8 +271,8 @@ dojo.require("dojox.analytics.Urchin");
 			// FIXME: weirdness w/ IE7 and no respecting -42 marginLegf
 			$.anim("profileArea",{ 
 				opacity:{ start:0, end: 0.99 }, 
-				paddingLeft:{ start:72, end:0 } }, 520, $.fx.easing.bounceOut
-			); 
+				paddingLeft:{ start:72, end:0 } 
+			}, 520, $.fx.easing.bounceOut); 
 		}
 	});
 

@@ -40,9 +40,9 @@
 			$out[] = array(
 				"demo" => "explorer",
 				"link" => "http://dojocampus.org/explorer/",
-				"img" => "resources/images/blank.png",
+				"img" => "resources/images/explorer.png",
 				"rank" => 900,
-				"header" => "Feature Explorer"
+				"header" => "Feature Explorer - Comprehensive collection of small examples"
 			);
 
 			$exclude = array("resources", ".", "..", ".svn");
@@ -148,7 +148,11 @@
 			}
 			print "</ul>";
 		
-		?></div>
+		?>
+		
+		<p>Additional external demos can be found on the <a href="http://dojotoolkit.org/key-links">Key Links index</a></p>
+		</div>
+		
 	</div>
 	<div id="footer">
 		<div class="content">
