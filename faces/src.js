@@ -1,7 +1,7 @@
 dojo.provide("dojoc.demos.faces.src");
 
 dojo.require("dojox.fx.flip");
-dojo.require("dojoc.demos.faces.src.block");
+dojo.require("demos.faces.src.block");
 dojo.require("dijit._base.sniff");
 dojo.require("dojox.image._base");
 dojo.require("dojox.image.LightboxNano");
@@ -20,7 +20,8 @@ dojo.require("dojox.image.LightboxNano");
 	var base64Img = "";
 	
 	var sortDivsByLengthOfFirstChildUl = function(id){
-		console.log("calling ridiculously named function");
+		// don't ever let me see you doing this outside of a demo situation. there has
+		// got to be a better way.
 		id = d.byId(id);
 		dojo.query("> div", id).sort(function(a,b){
 			var q = "ul > li", al = d.query(q, a).length, bl = d.query(q, b).length;

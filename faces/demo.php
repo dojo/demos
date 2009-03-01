@@ -26,8 +26,6 @@
 	?></style>
 	
 	<!-- load dojo, and requirements: -->
-	<script djConfig="isDebug:true" src="../../dojo/dojo.js"></script>
-	<script src="src.js"></script>
 	<script type="text/javascript">
 		// use PHP to create a JavaScript Array of people:
 		var people = [<?php 
@@ -96,6 +94,9 @@
 		<div class="content">
 			&copy <a href="http://dojofoundation.org">The Dojo Foundation</a>, 2004-2009	
 		</div>
+
+		<script src="../../dojo/dojo.js"></script>
+		<script src="src.js"></script>
 
 	</div>	
 </body>

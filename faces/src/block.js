@@ -1,4 +1,4 @@
-dojo.provide("dojoc.demos.faces.src.block");
+dojo.provide("demos.faces.src.block");
 
 (function(){
 	
@@ -150,22 +150,8 @@ dojo.provide("dojoc.demos.faces.src.block");
 	});
 	
 	d.extend(d.NodeList, {	
-		block: // d.NodeList._mapIn("block", true), // refs #7295
-			function(args){
-				// summary: Wraps dojo.block, calling it for each node in this NodeList
-				// 		See dojo._Blocker and dojo.block for full list of passable parameters.
-				return this.forEach(function(n){
-					d.block(n, args);
-				});
-			},
-		
-		unblock: // d.NodeList._mapIn("unblock", true) // refs #7295
-			function(args){
-				// summary: Wraps dojo.unblock, calling it for each node in this NodeList
-				return this.forEach(function(n){
-					d.unblock(n, args);
-				});
-			}
+		block: d.NodeList._adaptAsForEach("block"),
+		unblock: d.NodeList._adaptAsForEach("unblock")
 	});
 	
 })();

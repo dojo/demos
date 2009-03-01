@@ -1,4 +1,4 @@
-dojo.provide("dojoc.demos.src.webcam");
+dojo.provide("demos.faces.src.webcam");
 dojo.require("dojox.embed.Flash");
 
 function setImage(data){
