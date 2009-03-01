@@ -5,6 +5,7 @@ dojo.require("demos.faces.src.block");
 dojo.require("dijit._base.sniff");
 dojo.require("dojox.image._base");
 dojo.require("dojox.image.LightboxNano");
+dojo.require("dojox.analytics.Urchin");
 
 (function(d){
 	
@@ -210,7 +211,15 @@ dojo.require("dojox.image.LightboxNano");
 			});
 		}, 300); // after a bit of time
 
-		
+		// stall this just a little
+		setTimeout(function(){
+			new dojox.analytics.Urchin({ 
+				acct: "UA-3572741-1", 
+				GAonLoad: function(){
+					this.trackPageView("/demos/faces");
+				}
+			});	
+		}, 1500);
 
 	};
 
