@@ -30,10 +30,7 @@
 		<div class="content">
 			<p>Welcome to the Dojo Toolkit Demo Index</p><br>
 			<?php
-			
-			// turn to true if you want to link to dirindex/ or demos.[php|html] is setup to be dirIndex
-			$in_index = false; // true;
-			
+						
 			$out = array();
 
 			// feature explorer is manually included:
@@ -55,18 +52,7 @@
 					$title = $demo;
 					$rank = 500;
 					$base = $demo . "/";
-										
-					// sillyness
-					if(!$in_index){
-						$demobase = $base . "demo.";
-						if(file_exists($demobase."html")){
-							$link = $demobase."html";
-						}elseif(file_exists($demobase."php")){
-							$link = $demobase."php";
-						}
-					}else{
-						$link = $base;
-					}
+					$link = $base;
 					
 					$readme = $base . "README";
 					if(file_exists($readme)){
@@ -96,7 +82,7 @@
 							// with a thumbnail, they are higher ranked
 							$rank += 20;
 						}else{
-							$thumb_img = "resources/images/blank.png";
+							$thumb_img = "resources/images/no_thumb.gif";
 						}
 						
 					}else{
