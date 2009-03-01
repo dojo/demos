@@ -1,7 +1,8 @@
 
 	/* these are the core requirements: */
-	@import "../../dijit/themes/dijit.css";
 	@import "../resources/demos.css";
+
+	@import "../../dijit/themes/dijit.css";
 
 	/* custom styling: dojo.block() function */
 	.dojoBlockOverlay {
