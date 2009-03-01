@@ -12,7 +12,6 @@ dojo.require("dojox.analytics.Urchin");
 	// to reuse
 	d.NodeList.prototype.makeNano = function(){
 		return this.forEach(function(n){
-			console.log('making nano:',n);
 			new dojox.image.LightboxNano({ href: d.attr(n, "href") }, n);
 		});
 	}
@@ -135,17 +134,20 @@ dojo.require("dojox.analytics.Urchin");
 							"<p class='who'>" + nameset() + "</p>" +
 							"<h2 id='currentName'>" + data["name"] + "</h2>" 
 							;
+
+						var c = data['clan'];
 							
 						if(!data['duplicate']){
 							// figure out clan
-							
-							var clan = dojo.query("ul." + data['clan']);
+
+							var clan = dojo.query("ul." + c);
 							if(!clan.length){
 								var t = 
 									dojo.create("div",{
 										"class":"clan",
-										innerHTML:"<h2>" + data['clan'] + "</h2>"
-											+ "<ul class='" + data['clan'] + "'></ul>"
+										id: c,
+										innerHTML:"<h2><a href='#" + c + "'>" + c + "</a></h2>"
+											+ "<ul class='" + c + "'></ul>"
 									}, "thumbnails");
 								clan = dojo.query("ul", t);
 							}
@@ -164,6 +166,10 @@ dojo.require("dojox.analytics.Urchin");
 						
 						sortDivsByLengthOfFirstChildUl("thumbnails");
 						
+						setTimeout(function(){
+							window.location.hash = c;
+						}, 400);
+	
 					}
 					blocker.hide();
 				}, 
@@ -199,10 +205,12 @@ dojo.require("dojox.analytics.Urchin");
 			n.disabled = false; 
 		});
 		
-		d.query("#thumbnails a").makeNano();
+		d.query(".imageThumb").makeNano();
 		
 		// now set the three images to something random:
 		// FIXME: should we look for a #hash first, too?
+		sortDivsByLengthOfFirstChildUl("thumbnails");
+
 		setTimeout(function(){
 			d.forEach(pieceId, function(p, i){
 				setTimeout(function(){

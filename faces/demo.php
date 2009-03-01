@@ -124,8 +124,8 @@
 		
 		// put each thumbnail into an UL by clan name
 		foreach($clans as $clan => $data){
-			print "<div class='clan'>";
-			print "<h2>" . $clan ."</h2>";
+			print "<div id='" . $clan . "' class='clan'>";
+			print "<h2><a href='#" . $clan . "'>" . $clan ."</a></h2>";
 			print "<ul class='" . $clan ."'>";
 			foreach($data as $file){
 				print "\n\t\t<li class='thumbnail'><a href='cache/" . 

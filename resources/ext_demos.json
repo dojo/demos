@@ -1,0 +1,19 @@
+{
+	"external":[
+		{
+			"demo" : "explorer",
+			"link" : "http://dojocampus.org/explorer/",
+			"img" : "resources/images/explorer.png",
+			"rank" : 900,
+			"header" : "Feature Explorer - Comprehensive collection of small examples"
+		},
+		{
+			"demo": "dnd",
+			"link": "http://www.sitepen.com/labs/code/dnd/intro/dnd/5-dnd.html",
+			"header": "Shopping Cart - Dylan's Original Junk Outlet, with DND",
+			"rank":	30,
+			"img" : "resources/images/no_thumb.gif"
+		
+		}
+	]
+}

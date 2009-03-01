@@ -80,6 +80,7 @@
 		padding:15px;
 		border:1px solid #ededed;
 		background:#fff;
+		position:relative;
 	}
 	.clan li.thumbnail { float:left; padding-right:7px; }
 	.clan ul { 
@@ -116,3 +117,10 @@
 		background:#DFE8EE;
 	}
 	
+	h2 a { text-decoration:none; color:#455058; cursor:pointer; margin-bottom:8px; }
+	h2 a:link { text-decoration:none; color:#455058; }
+	h2 a:visited { text-decoration:none; color:#455058; }
+	h2 a:hover { text-decoration:none; color:#000; }
+	h2 a:active { color:#000; }
+	
+	.clan ul { margin-top:4px; }
