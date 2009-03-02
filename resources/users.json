@@ -20,7 +20,7 @@
 			handle:"bill",
 			irc:"wildbill",
 			location:"Sapporo, Japan",
-			employer: "IBM, Inc",
+			employer: "IBM",
 			imgUrl:"images/users/wildbill.png",
 			coords: { x: 43.054798, y: 141.37449 },
 			blameFor:[
@@ -34,7 +34,7 @@
 			irc:"peller",
 			location:"Boston, MA",
 			coords: { x:42.3308, y:-71.2070 },
-			employer: "IBM, Inc",
+			employer: "IBM",
 			blameFor:[
 				"everything."
 			]
@@ -98,7 +98,7 @@
 			irc:"becka11y",
 			handle:"becky",
 //			coords:{ x:41.9781, y:-91.6425 },
-			employer:"IBM, Inc",
+			employer:"IBM",
 			imgUrl:"images/users/becka11y.png",
 			blameFor:[
 				"Accessibility"
@@ -153,7 +153,7 @@
 			irc:"tagneto",
 			handle:"jburke",
 			coords:{ x:33.6550, y:-117.8448 },
-			employer:"AOL, Inc",
+			employer:"AOL",
 			blameFor:[
 				"Dojo Build / Package System",
 				"X-Domain Loader"
@@ -342,7 +342,7 @@
 			handle:"jared",
 			irc:"jared_j",
 			location:"Raleigh, NC",
-			employer: "IBM, Inc",
+			employer: "IBM",
 			imgUrl:"images/users/jared_j.jpg",
 			blameFor:[
 				"dojo.data",
