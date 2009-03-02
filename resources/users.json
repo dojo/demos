@@ -35,6 +35,7 @@
 			location:"Boston, MA",
 			coords: { x:42.3308, y:-71.2070 },
 			employer: "IBM",
+			imgUrl:"images/users/peller.png",
 			blameFor:[
 				"everything."
 			]
