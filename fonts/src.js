@@ -8,7 +8,7 @@ dojo.addOnLoad(function(){
 	new dojox.analytics.Urchin({ 
 		acct: "UA-3572741-1", 
 		GAonLoad: function(){
-			this.trackPageView("/demos/cropper");
+			this.trackPageView("/demos/fonts");
 		}
 	});	
 });
