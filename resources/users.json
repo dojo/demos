@@ -9,7 +9,7 @@
 			handle:"alex",
 			irc:"slightlyoff",
 			location:"San Francisco, CA",
-			employer: "SitePen, Inc", 
+			employer: "Google", 
 			coords: { x: 37.7752, y:-122.4192 },
 			imgUrl:"images/users/alex.png",
 			website:"http://alex.dojotoolkit.org"
