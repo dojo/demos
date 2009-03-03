@@ -64,7 +64,7 @@
 			location:"Greeneville, TN",
 			coords: { x:36.1647, y:-82.8281 },
 			website:"http://higginsforpresident.net",
-			employer: "SitePen, Inc",
+			employer: "",
 			imgUrl:"images/users/dante.jpg",
 			blameFor:[
 				"dojox.fx",
@@ -84,7 +84,7 @@
 			coords: {
 				x:52.3746, y:4.8145
 			},
-			employer: "Contractor",
+			employer: "Uxebu",
 			blameFor:[
 				"Themes",
 				"Dojo Campus / Community",
@@ -313,7 +313,7 @@
 			title: "Committer",
 			location: "Munich, Germany",
 			coords: {x:48.1391, y:11.5802},
-			employer: "self-employed",
+			employer: "Uxebu",
 			irc: "mccain",
 			handle: "mccain",
 			website: "http://wolfram.kriesing.de/blog",
