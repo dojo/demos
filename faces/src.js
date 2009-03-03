@@ -23,13 +23,23 @@ dojo.require("dojox.analytics.Urchin");
 		// don't ever let me see you doing this outside of a demo situation. there has
 		// got to be a better way.
 		id = d.byId(id);
-		dojo.query("> div", id).sort(function(a,b){
+		d.query("> div", id).sort(function(a,b){
 			var q = "ul > li", al = d.query(q, a).length, bl = d.query(q, b).length;
 			return al > bl ? 0 : al < bl ? 1 : -1;
 		}).forEach(function(n){
 			id.appendChild(n);
 		});
 	}
+	
+	var nameset = function(){
+		// quick, generate a list of names from top to bottom
+		var byid = d.byId;
+		return	"" +
+				byid("hair").parentNode.className + ", " +
+				byid("eyes").parentNode.className + ", and " +
+				byid("mouth").parentNode.className + " make: "
+				;
+	};
 	
 	var demo = function(){	
 		
@@ -119,73 +129,63 @@ dojo.require("dojox.analytics.Urchin");
 
 		});
 
-		var saveFace = function(data){
+		var saveFace = function(pay){
 			// a function to send the list of currently selected users to the backend
 			var url; 
 			d.xhrPost({
 				url: "resources/imageMaker.php",
 				handleAs: "json",
-				handle: function(data){
-					console.log(data);
-					url = data["file"];
-					if(data["name"]){
-						// FIXME: should move this out into a function. set the images then call setNames()
-						d.byId("savedName").innerHTML = 
-							"<p class='who'>" + nameset() + "</p>" +
-							"<h2 id='currentName'>" + data["name"] + "</h2>" 
-							;
+				handle: function(response){
+				//	try{
+						url = response["file"];
+						if(response["name"]){
+							d.byId("savedName").innerHTML = 
+								"<p class='who'>" + nameset() + "</p>" +
+								"<h2 id='currentName'>" + response["name"] + "</h2>" 
+								;
 
-						var c = data['clan'];
+							var c = response['clan'];
 							
-						if(!data['duplicate']){
-							// figure out clan
+							if(!response['duplicate'] && c){
+								// figure out clan
 
-							var clan = dojo.query("ul." + c);
-							if(!clan.length){
-								var t = 
-									dojo.create("div",{
-										"class":"clan",
-										id: c,
-										innerHTML:"<h2><a href='#" + c + "'>" + c + "</a></h2>"
-											+ "<ul class='" + c + "'></ul>"
-									}, "thumbnails");
-								clan = dojo.query("ul", t);
+								var clan = dojo.query("ul." + c);
+								if(!clan.length){
+									var t = 
+										dojo.create("div",{
+											"class":"clan",
+											id: c,
+											innerHTML:"<h2><a href='#" + c + "'>" + c + "</a></h2>"
+												+ "<ul class='" + c + "'></ul>"
+										}, "thumbnails");
+									clan = dojo.query("ul", t);
+								}
+							
+								var td = dojo.create("li", { 
+									"class":"thumbnail",
+									style:{ opacity:0 },
+									innerHTML:"<a href ='" + response["file"] + "'><img src='" + response["thumb"] + "'></a>"
+								}, clan[0]);
+							
+								dojo.query("a", td).makeNano();
+							
+								dojo.fadeIn({ node: td }).play();
+							
 							}
-							
-							var td = dojo.create("li", { 
-								"class":"thumbnail",
-								style:{ opacity:0 },
-								innerHTML:"<a href ='" + data["file"] + "'><img src='" + data["thumb"] + "'></a>"
-							}, clan[0]);
-							
-							dojo.query("a", td).makeNano();
-							
-							dojo.fadeIn({ node: td }).play();
-							
-						}
 						
-						sortDivsByLengthOfFirstChildUl("thumbnails");
+							sortDivsByLengthOfFirstChildUl("thumbnails");
 						
-						setTimeout(function(){
-							window.location.hash = c;
-						}, 400);
+							setTimeout(function(){
+								window.location.hash = c;
+							}, 400);
 	
-					}
+						}
+				//	}catch(e){ console.warn(e); }
 					blocker.hide();
 				}, 
-				content: data
+				content: pay
 			});
 		}
-
-		var nameset = function(){
-			// quick, generate a list of names from top to bottom
-			var byid = d.byId;
-			return	"" +
-					byid("hair").parentNode.className + ", " +
-					byid("eyes").parentNode.className + ", and " +
-					byid("mouth").parentNode.className + " make: "
-					;
-		};
 
 		// preload all the available images in people array:
 		dojox.image.preload(d.map(people, function(person){
