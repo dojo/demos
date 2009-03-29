@@ -90,8 +90,8 @@ dojo.require("dojox.analytics.Urchin");
 			var msg = new chat.Message({
 				lang: this.lang,
 				messageLang: data.lang,
-				message: data.message,
-				user: data.user
+				message: data.message.replace(/</g, "&lt;"),
+				user: data.user.replace(/</g, "&lt;")
 			}).placeAt("messages","first");
 
 		},
