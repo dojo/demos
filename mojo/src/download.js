@@ -3,7 +3,7 @@ dojo.provide("demos.mojo.src.download");
 dojo.require("dojo.io.iframe");
 (function(){
 
-	var dojo_ver = "1.3.0b2";
+	var dojo_ver = "1.3.0";
 	
 	var node = null;
 	var _downloadDialog = {
