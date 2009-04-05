@@ -56,10 +56,10 @@ dojo.require("demos.mojo.src.download"); // download link code
 				node: n, delay: _delay + 1200,
 				properties: {
 					paddingTop: {
-						start:155, end:1, unit:"px"
+						start:155, end:1
 					},
 					fontSize:{
-						start:0.1, end:16, unit:"px"
+						start:0.1, end:16
 					}
 				}
 			}))

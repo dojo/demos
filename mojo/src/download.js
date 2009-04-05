@@ -17,12 +17,10 @@ dojo.require("dojo.io.iframe");
 				node: dojo.query("img",this.node)[0],
 				duration:1500,
 				properties: {
-					width: { end: 310, start:1, unit:"px" },
-					height: { end: 310, start:1, unit:"px" },
-					top: { end:0, start:155, unit:"px" },
-					left: { end:0, start:155, unit:"px" }//,
-					//paddingTop: { end:1, start:155, unit:"px" }//,
-					//opacity: { end: 1, start: 0 }
+					width: { end: 310, start:1 },
+					height: { end: 310, start:1 },
+					top: { end:0, start:155 },
+					left: { end:0, start:155 }
 				},
 				easing: dojo.fx.easing.elasticOut
 			});
@@ -40,7 +38,10 @@ dojo.require("dojo.io.iframe");
 		hide: function(e){
 			dojo.byId("gravity").disabled = false;
 			e.preventDefault();
-			dojo.fx.slideTo({ node:this.node, duration:375, left:-310, top:-50,
+			dojo.fx.slideTo({ 
+				node:this.node, 
+				duration:375, 
+				left:-310, top:-50,
 				easing:dojo.fx.easing.backIn
 			}).play();
 		},
@@ -54,7 +55,8 @@ dojo.require("dojo.io.iframe");
 			
 			// make the url:
 			var host = "http://download.dojotoolkit.org/";
-			var url = host + "release-" + (ver) + "/dojo-release-" + (ver) + (includeSource ? "-src." : ".") + (ext);
+			var url = host + "release-" + (ver) + "/dojo-release-" + (ver) 
+				+ (includeSource ? "-src." : ".") + (ext);
 
 			// trigger the save as ... dialog
 			dojo.io.iframe.send({
@@ -79,7 +81,7 @@ dojo.require("dojo.io.iframe");
 			// dynamically create the dialog box:
 
 			var img = dojo.query("img.clone")[0];
-			this.node = dojo.body().appendChild(dojo.doc.createElement('div'));			
+			this.node = dojo.body().appendChild(dojo.doc.createElement('div'));
 			var nimg = this.node.appendChild(dojo.clone(img));
 			dojo.style(nimg,"position","absolute");
 
