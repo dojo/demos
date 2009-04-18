@@ -65,7 +65,7 @@ dojo.require("dojox.cometd");
 	// and label
 	var lab = dojo.doc.createElement('label');
 	lab.setAttribute("for",lc); // must set 'for' this way
-	lab.innerHTML = " "+choice; // added space to match markup
+	lab.innerHTML = " "+ choice.replace(/</g, "&lt;"); // added space to match markup
 
 	// and line break, and append them all to the node
 	// with the other checkboxes
