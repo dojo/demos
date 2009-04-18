@@ -55,7 +55,6 @@ dojo.require("dojox.analytics.Urchin");
 		
 		_tcallback: function(response){
 			if(response && response.responseData){
-				// might ought to escape HTML entities?
 				this._localMessage = response.responseData.translatedText;
 				this.messageNode.innerHTML = this._localMessage;
 				this._translated = true;
@@ -90,7 +89,7 @@ dojo.require("dojox.analytics.Urchin");
 			var msg = new chat.Message({
 				lang: this.lang,
 				messageLang: data.lang,
-				message: data.message,
+				message: data.message.replace(/</g, "&lt;"),
 				user: data.user
 			}).placeAt("messages","first");
 
@@ -108,8 +107,9 @@ dojo.require("dojox.analytics.Urchin");
 
 	var postLogin = function(){
 		
-		var val = d.byId("user").value,
-			lang = d.query("#langpicker option").filter(function(n){ return n.selected; })[0].value;
+		var val = d.byId("user").value.replace(/</g, "&lt;"),
+			lang = d.query("#langpicker option").filter(function(n){ return n.selected; })[0].value
+		;
 		
 		if(val && lang){
 
