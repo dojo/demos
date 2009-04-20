@@ -395,6 +395,27 @@
 				"dojox.image.LightboxNano",
 				"dojox.layout.RotatorContainer"
 			]
+		},
+		{
+		
+			name:"Shane O'Sullivan",
+			title:"Committer",
+			handle:"sos",
+			irc:"sos_",
+			location:"Dublin, Ireland",
+			employer: "Curam Software",
+			website: "http://www.chofter.com",
+			coords: { x: 53.330899, y:-6.260726 },
+			imgUrl:"images/users/sos.png",
+			blameFor:[
+				"dojox.image.Gallery",
+				"dojox.image.Slideshow",
+				"dojox.image.ThumbnailPicker",
+				"dojox.widget.Calendar",
+				"dojox.form.DateTextBox",
+				"Numerous dojox.data stores",
+				"Dojo Demo Explorer"
+			]
 		}
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
