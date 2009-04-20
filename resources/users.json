@@ -416,22 +416,22 @@
 				"Numerous dojox.data stores",
 				"Dojo Demo Explorer"
 			]
-        },
-        {
-
-            name:"Nicola Rizzo",
-            title:"Committer",
-            handle:"nic",
-            irc:"nicrizzo",
-            location:"Como, Italy",
-            employer: "Ex Machina SAGL",
-            website: "http://www.nicolarizzo.com",
-            coords: { x: 45.85463, y: 9.085693 },
-            imgUrl:"images/users/nicrizzo.jpg",
-            blameFor:[
-                "dojox.fx.flip"
-            ]
-        }
+		},
+		{
+		
+			name:"Nicola Rizzo",
+			title:"Committer",
+			handle:"nic",
+			irc:"nicrizzo",
+			location:"Como, Italy",
+			employer: "Ex Machina SAGL",
+			website: "http://www.nicolarizzo.com",
+			coords: { x: 45.85463, y: 9.085693 },
+			imgUrl:"images/users/nicrizzo.jpg",
+			blameFor:[
+				"dojox.fx.flip"
+			]
+		}
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)
