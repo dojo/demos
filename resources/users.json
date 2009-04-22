@@ -431,6 +431,16 @@
 			blameFor:[
 				"dojox.fx.flip"
 			]
+		},
+		{
+			name:"Ben Hockey",
+			title:"Committer",
+			handle:"neonstalwart",
+			irc:"neonstalwart",
+			location:"Watchung, NJ",
+			website:"http://neonstalwart.blogspot.com/",
+			imgUrl:"images/users/neonstalwart.png",
+			blameFor:["dojox.data.ItemExplorer", "free help on irc"]
 		}
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
