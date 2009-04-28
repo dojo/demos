@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+	
+    <title>Dojo.beer() - earn you daily dose</title>
+
+	
+    <title>Dojo.beer() - earn you daily dose</title>
+
+    <link type="text/css" rel="stylesheet" href="../../demo.css">
+
+    <script type="text/javascript" src="../../../../dojo/dojo.js"></script>
+    <script type="text/javascript" src="../../src/Lady.js"></script>
+
+
+	<script type="text/javascript">
+		dojo.addOnLoad(function(){
+			
+			var lady = new beer.Lady({
+				id:"lady1"
+			});
+			
+			dojo.body().appendChild(lady.domNode);
+			
+			setTimeout(dojo.hitch(lady,"smile"), 1500);
+			setTimeout(dojo.hitch(lady,"smile", false), 3500);
+			setInterval(dojo.hitch(lady,"blink"), 2500);
+
+			var smiling = false;
+			dojo.connect(lady.domNode,"onclick", lady, function(){
+				smiling = !smiling;
+				this.smile(smiling);
+			});
+
+			var batter = new beer.Lady({
+				id:"lady2"
+			});
+			dojo.body().appendChild(batter.domNode);
+			dojo.style(batter.domNode,{
+				left:"180px"
+			});
+
+			dojo.connect(batter.domNode,"onclick", batter, function(){
+				this.bat(1000);
+			});
+
+			var pissy = new beer.Lady({});
+			dojo.body().appendChild(pissy.domNode);
+			dojo.style(pissy.domNode, {
+				left:"360px"
+			});
+			
+			var pissed = false;
+			dojo.connect(pissy.domNode,"onclick", pissy, function(){
+				pissed = !pissed;
+				this.frown(pissed);
+			});
+
+
+		});
+	</script>
+
+</head>
+<body>
+
+	
+</body>
+</html>

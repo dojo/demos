@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+<head>
+	
+    <title>Dojo.beer() - earn you daily dose</title>
+
+    <link type="text/css" rel="stylesheet" href="../../demo.css">
+
+    <script type="text/javascript" src="../../../../dojo/dojo.js"></script>
+    <script type="text/javascript" src="../../src/Bottle.js"></script>
+
+	<script type="text/javascript">
+		dojo.require("dojo.dnd.Source");
+		
+		dojo.addOnLoad(function(){
+
+			var small = dojo.byId("smallBox"),
+				large = dojo.byId("largeBox"),
+				dnd = dojo.byId("dndBox"),
+				source = dojo.byId("sourceBox");
+			
+			for(var i = 0; i < 10; i++){
+				
+				// small beer is defualt:
+				small.appendChild(new beer.Bottle({
+					beerIndex: i
+				}).domNode);
+
+				large.appendChild(new beer.Bottle({
+					size:"large",
+					beerIndex: i
+				}).domNode);
+
+				dnd.appendChild(new beer.Bottle({
+					size:"large",
+					beerIndex: i
+				}).domNode);
+
+				source.appendChild(new beer.Bottle({
+					beerIndex: i, size:"large"
+				}).domNode);
+
+			}
+
+			dojo.query("div", dnd).addClass("dojoDndItem");
+			var dndthing = new dojo.dnd.Source("dndBox");
+			
+			dojo.query("div", source).addClass("dojoDndItem");
+			new dojo.dnd.Source("sourceBox", { copyOnly: true });
+			new dojo.dnd.Target("targetBox", { accepTypes:["div"] });
+
+		});
+	</script>
+
+</head>
+<body>
+
+	<h2>Small Beers:</h2>
+	<div id="smallBox"></div>
+	
+	<h2>Large Beers:</h2>
+	<div id="largeBox"></div>
+	
+	<h2>Reordered beers</h2>
+	<div id="dndBox"></div>
+	
+	<h2>DnD copyOnly</h2>
+	<div id="sourceBox"></div>
+	
+	<h2>A target for above:</h2>
+	<div id="targetBox" style="border:2px solid #ededed; height:120px;">
+		
+	</div>
+	
+</body>
+</html>
