@@ -53,6 +53,7 @@ dojo.require("dojox.gfx.utils");
 			var sum=0, idx=-1, max=0, valueLimit=5, other, otherSum, pct=0;
 			dojo.forEach(data, function(item){ sum += item.value; });
 			dojo.forEach(data, function(item, i){
+				item.label = item.label.toUpperCase();
 				item.pct = Math.round(item.value * (100/sum));
 				pct += item.pct;
 				if(item.pct > max){
@@ -68,7 +69,8 @@ dojo.require("dojox.gfx.utils");
 			}, this);
 			if(pct<100){ data[idx].pct += 100 - pct; }
 			if(other){
-				data.push(other); 
+				data.push(other);
+				other.label = other.label.toUpperCase();
 			}
 
 			//	create the main group.
@@ -92,10 +94,10 @@ dojo.require("dojox.gfx.utils");
 
 			//	do the biggest slice
 			var info = g.createGroup(), 
-				txtArgs = { text: data[idx].label.toUpperCase(), x:0, y:0, width:r/1.65, height:r/1.65, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
+				txtArgs = { text: data[idx].label, x:0, y:0, width:r/1.65, height:r/1.65, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
 				fontArgs = { size: "10px" };
 			var txt = this.font.draw(info, txtArgs, fontArgs, this.stroke.color), 
-				txtscale = this.findScale(data[idx].label.toUpperCase(), r/1.65), 
+				txtscale = this.findScale(data[idx].label, r/1.65), 
 				txty = Math.round(this.font.viewbox.height*txtscale)/2;
 			if(this.rotation>90 && this.rotation<270){
 				txt.setTransform(new dojox.gfx.Matrix2D([
@@ -207,7 +209,7 @@ dojo.require("dojox.gfx.utils");
 
 				//	the value
 				var label = main.createGroup(), 
-					txtArgs = { text: dojo.trim(d.label.toUpperCase()), x:0, y:0, width:r, height:r, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
+					txtArgs = { text: dojo.trim(d.label), x:0, y:0, width:r, height:r, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
 					fontArgs = { size: "8px" };
 				label.setTransform(m.rotategAt(lastAngle-((lastAngle-a)/2), c, c));
 
@@ -239,14 +241,14 @@ dojo.require("dojox.gfx.utils");
 				pct.setTransform(mtrx);
 
 				var txt = this.font.draw(label, txtArgs, fontArgs, this.stroke.color), 
-					txtscale = this.findScale(d.label.toUpperCase(), r/1.65), 
+					txtscale = this.findScale(d.label, r/1.65), 
 					txty = Math.round(this.font.viewbox.height*txtscale)/2,
-					txtw = this.font.getWidth(d.label.toUpperCase(), txtscale);
+					txtw = this.font.getWidth(d.label, txtscale);
 				if(Math.round(this.font.viewbox.height*txtscale) > maxh){
 					//	recalc the scale based on height
 					txtscale = maxh/this.font.viewbox.height;
 					txty = Math.round(this.font.viewbox.height*txtscale)/2;
-					txtw = this.font.getWidth(d.label.toUpperCase(), txtscale);
+					txtw = this.font.getWidth(d.label, txtscale);
 				}
 
 				if(_center>=90-this.rotation && _center<=270-this.rotation){
