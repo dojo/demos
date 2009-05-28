@@ -50,6 +50,7 @@
 			employer:"SitePen, Inc.",
 			imgUrl:"images/users/dylanks.png",
 			website:"http://dylanschiemann.com/",
+			twitter:"dylans",
 			blameFor:[
 				"The Dojo Foundation",
 				"SitePen, Inc",
@@ -66,6 +67,7 @@
 			website:"http://higginsforpresident.net",
 			employer: "",
 			imgUrl:"images/users/dante.jpg",
+			twitter:"phiggins",
 			blameFor:[
 				"dojox.fx",
 				"Lightbox / dojox.image",
@@ -85,6 +87,7 @@
 				x:52.3746, y:4.8145
 			},
 			employer: "Uxebu",
+			twitter:"nonken",
 			blameFor:[
 				"Themes",
 				"Dojo Campus / Community",
@@ -98,6 +101,7 @@
 			location: "",
 			irc:"becka11y",
 			handle:"becky",
+			twitter:"becka11y",
 //			coords:{ x:41.9781, y:-91.6425 },
 			employer:"IBM",
 			imgUrl:"images/users/becka11y.png",
@@ -111,6 +115,7 @@
 			location: "Cedar Rapids, IA",
 			irc:"mxpxpod",
 			handle:"mxpxpod",
+			twitter:"BryanForbes",
 			coords:{ x:41.9781, y:-91.6425 },
 			employer:"SitePen, Inc",
 			imgUrl:"images/users/bforbes.png",
@@ -124,6 +129,7 @@
 			location: "Cedar Rapids, IA",
 			irc:"pottedmeat",
 			handle:"pottedmeat",
+			twitter:"pottedmeat",
 			website:"http://someclosure.com",
 			coords:{ x:41.9761, y:-91.6465 },
 			employer:"SitePen, Inc",
@@ -153,6 +159,7 @@
 			location:"Los Angeles, CA",
 			irc:"tagneto",
 			handle:"jburke",
+			twitter:"jrburke",
 			coords:{ x:33.6550, y:-117.8448 },
 			employer:"AOL",
 			blameFor:[
@@ -178,6 +185,7 @@
 			handle:"tk",
 			title:"Committer",
 			irc:"tk",
+			twitter:"ktiedt",
 			location:"Colorado Springs, CO",
 			coords: { x:38.8381, y:-104.8214 },
 			employer: "Coyote Point Systems",
@@ -191,6 +199,7 @@
 			location: "Auckland, New Zealand",
 			irc:"rcoup",
 			handle:"rcoup",
+			twitter:"amatix",
 			imgUrl:"images/users/rcoup.png",
 			website:"http://rob.coup.net.nz/",
 			coords:{ y:174.7629, x:-36.8486 },
@@ -202,6 +211,7 @@
 			location: "Plano, TX",
 			irc:"uhop",
 			handle:"eugene",
+			twitter:"uhop",
 			imgUrl:"images/users/eugene.jpg",
 			website:"http://lazutkin.com/",
 			coords:{x: 33.0560, y: -96.7704},
@@ -231,6 +241,7 @@
 			location: "Saratoga Springs, NY",
 			irc: "blowery",
 			handle: "blowery",
+			twitter:"blowery",
 			imgUrl:"images/users/blowery.jpg",
 			website: "http://blowery.org/",
 			coords: { x: 43.055719, y: -73.79508 },
@@ -243,6 +254,7 @@
 			location: "Gilbert, AZ",
 			irc:"itorrey",
 			handle:"itorrey",
+			twitter:"itorrey",
 			website:"http://sitepen.com/",
 			imgUrl:"images/users/itorrey.jpg",
 			coords:{x: 53.9577, y: -1.0823},
@@ -314,8 +326,9 @@
 			location: "Munich, Germany",
 			coords: {x:48.1391, y:11.5802},
 			employer: "Uxebu",
-			irc: "mccain",
+			irc: "mccaintosh",
 			handle: "mccain",
+			twitter:"wolframkriesing",
 			website: "http://wolfram.kriesing.de/blog",
 			imgUrl: "images/users/mccain.jpg",
 			blameFor:[
@@ -329,6 +342,7 @@
 			location: "Toronto, Canada",
 			irc:"davidb",
 			handle:"davidb",
+			twitter:"davidb",
 			coords:{ x:43.664238, y:-79.398674 },
 			employer:"University of Toronto",
 			website: "http://mindforks.blogspot.com/",
@@ -355,6 +369,7 @@
 			title:"Committer",
 			handle:"kriszyp",
 			irc:"kriszyp",
+			twitter:"kriszyp",
 			location:"Salt Lake City, UT",
 			employer: "SitePen, Inc",
 			imgUrl:"images/users/kris.jpg",
@@ -372,6 +387,7 @@
 			title:"Committer",
 			handle:"sfoster",
 			irc:"sfoster",
+			twitter:"samfosteriam",
 			location:"Leeds, UK",
 			employer: "SitePen, Inc",
 			coords: { x: 53.8241, y:-1.5661 },
@@ -395,6 +411,53 @@
 				"dojox.image.LightboxNano",
 				"dojox.layout.RotatorContainer"
 			]
+		},
+		{
+		
+			name:"Shane O'Sullivan",
+			title:"Committer",
+			handle:"shaneosullivan",
+			irc:"sos_",
+			location:"Dublin, Ireland",
+			employer: "Curam Software",
+			website: "http://www.chofter.com",
+			coords: { x: 53.330899, y:-6.260726 },
+			imgUrl:"images/users/sos.png",
+			blameFor:[
+				"dojox.image.Gallery",
+				"dojox.image.Slideshow",
+				"dojox.image.ThumbnailPicker",
+				"dojox.widget.Calendar",
+				"dojox.form.DateTextBox",
+				"Numerous dojox.data stores",
+				"Dojo Demo Explorer"
+			]
+		},
+		{
+		
+			name:"Nicola Rizzo",
+			title:"Committer",
+			handle:"nic",
+			irc:"nicrizzo",
+			twitter:"nicrizzo",
+			location:"Como, Italy",
+			employer: "Ex Machina SAGL",
+			website: "http://www.nicolarizzo.com",
+			coords: { x: 45.85463, y: 9.085693 },
+			imgUrl:"images/users/nicrizzo.jpg",
+			blameFor:[
+				"dojox.fx.flip"
+			]
+		},
+		{
+			name:"Ben Hockey",
+			title:"Committer",
+			handle:"neonstalwart",
+			irc:"neonstalwart",
+			location:"Watchung, NJ",
+			website:"http://neonstalwart.blogspot.com/",
+			imgUrl:"images/users/neonstalwart.png",
+			blameFor:["dojox.data.ItemExplorer", "free help on irc"]
 		}
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
