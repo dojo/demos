@@ -167,7 +167,7 @@
 	</div>
 	<div id="footer">
 		<div class="content">
-			&copy; <a href="http://dojofoundation.org">The Dojo Foundation</a>, 2004-2009	
+			&copy; <a href="http://dojofoundation.org">The Dojo Foundation</a>, 2004-2009
 		</div>
 
 	</div>
@@ -175,11 +175,14 @@
 	<!-- load dojo, if available -->
 	<script type="text/javascript" src="../dojo/dojo.js"></script>
 	
-	<!-- basic page onload script after dojo.js if available -->
+	<!-- 
+		basic page onload script after dojo.js [if available] - degrades gracefullly 
+		though none of the demos will "work" without JavaScript enabled / dojo.js
+	-->
 	<script>
 		dojo && dojo.addOnLoad(function(){
 			
-			dojo.removeClass(dojo.body(), "no-js");
+			dojo.query("body").removeClass("no-js");
 			
 			var list = dojo.query("#mainlist li");
 			var props = {

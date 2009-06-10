@@ -14,6 +14,14 @@
 			"rank":	30,
 			"img" : "resources/images/no_thumb.gif"
 		
+		},
+		{
+			"demo": "tweeters",
+			"link": "http://dante.dojotoolkit.org/tweeters/",
+			"header": "twitterverse - Aggregate Twitter information about Dojo, using Dojo",
+			"rank": 150,
+			"img": "resources/images/no_thumb.gif"
+		
 		}
 	]
 }
