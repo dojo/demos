@@ -158,11 +158,11 @@
 			name:"James Burke",
 			title:"Committer",
 			location:"Los Angeles, CA",
-			irc:"tagneto",
+			irc:"jamestag",
 			handle:"jburke",
 			twitter:"jrburke",
 			coords:{ x:33.6550, y:-117.8448 },
-			employer:"AOL",
+			employer:"Mozilla Messaging",
 			blameFor:[
 				"Dojo Build / Package System",
 				"X-Domain Loader"
