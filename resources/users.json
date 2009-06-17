@@ -32,6 +32,7 @@
 			title:"DojoX Overlord",
 			handle:"peller",
 			irc:"peller",
+			twitter:"apeller",
 			location:"Boston, MA",
 			coords: { x:42.3308, y:-71.2070 },
 			employer: "IBM",
@@ -44,7 +45,7 @@
 			name:"Dylan Schiemann",
 			title:"Co-founder",
 			handle:"dylan",
-			irc:"dylanks",
+			irc:"dylans",
 			location:"Gilbert, AZ",
 			coords: { x:33.3501, y:-111.7557 },
 			employer:"SitePen, Inc.",
@@ -342,7 +343,7 @@
 			location: "Toronto, Canada",
 			irc:"davidb",
 			handle:"davidb",
-			twitter:"davidb",
+			twitter:"davidbolter",
 			coords:{ x:43.664238, y:-79.398674 },
 			employer:"University of Toronto",
 			website: "http://mindforks.blogspot.com/",
@@ -455,10 +456,12 @@
 			handle:"neonstalwart",
 			irc:"neonstalwart",
 			location:"Watchung, NJ",
+			twitter:"neonstalwart",
 			website:"http://neonstalwart.blogspot.com/",
 			imgUrl:"images/users/neonstalwart.png",
 			blameFor:["dojox.data.ItemExplorer", "free help on irc"]
 		}
+		
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)
