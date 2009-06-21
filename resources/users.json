@@ -216,7 +216,7 @@
 			imgUrl:"images/users/eugene.jpg",
 			website:"http://lazutkin.com/",
 			coords:{x: 33.0560, y: -96.7704},
-			employer:"SitePen, Inc.",
+			employer:"Independent Contractor",
 			blameFor:[
 				"dojox.gfx", "dojox.charting", "dojox.lang",
 				"dojo.dnd", "dojox.gfx3d"
