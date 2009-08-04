@@ -51,7 +51,7 @@ dojo.provide("demos.faces.src.block");
 		},
 		
 		_position: function(){
-			var pos = d._abs(this.node, true);
+			var pos = d.position(this.node, true);
 			// adjust for margins/padding: (edge case, may only be this demo's styles)
 			pos = dojo.mixin(dojo.marginBox(this.node), {
 				l: pos.x, t: pos.y

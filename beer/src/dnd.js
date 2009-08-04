@@ -13,7 +13,7 @@ dojo.declare("beer.MadeDnd", null, {
 	
 	_dragStart: function(e){
 		this.avatar = dojo.place(dojo.clone(this.node), dojo.body());
-		var xy = this._origxy = dojo.coords(this.node);
+		var xy = this._origxy = dojo.position(this.node);
 		dojo.style(this.avatar, {
 			position:"absolute", 
 			top: xy.y + "px", 
