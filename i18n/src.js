@@ -5,7 +5,7 @@ dojo.require("dojo.io.script");
 dojo.require("dojox.rpc.Service");
 
 dojo.require("dijit.Tree");
-dojo.require("dijit._Calendar");
+dojo.require("dijit.Calendar");
 dojo.require("dijit.layout.BorderContainer");
 dojo.require("dijit.layout.ContentPane");
 dojo.require("dijit.form.DateTextBox");

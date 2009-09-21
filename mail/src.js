@@ -11,7 +11,7 @@ dojo.require("dijit.Tree");
 dojo.require("dijit.Tooltip");
 dojo.require("dijit.Dialog");
 dojo.require("dijit.Toolbar");
-dojo.require("dijit._Calendar");
+dojo.require("dijit.Calendar");
 dojo.require("dijit.ColorPalette");
 dojo.require("dijit.Editor");
 dojo.require("dijit._editor.plugins.LinkDialog");
