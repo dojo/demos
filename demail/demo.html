@@ -77,7 +77,7 @@
 			childrenAttrs: [ "children" ]
 		});
 
-		dojo.declare("acme._TreeNode", [ dijit._TreeNode ], {
+		dojo.declare("acme._TreeNode", dijit._TreeNode, {
 			detail: "",
 			detailNode: null,
 			_onNodeFocus: function(){

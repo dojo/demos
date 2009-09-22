@@ -2,7 +2,7 @@ dojo.provide("demos.beer.src.Bottle");
 
 dojo.require("dijit._Widget");
 
-dojo.declare("beer.Bottle", [dijit._Widget], { 
+dojo.declare("beer.Bottle", dijit._Widget, { 
 	// summary: A Beer visual. 
 	
 	beerIndex: 0,
@@ -23,7 +23,7 @@ dojo.declare("beer.Bottle", [dijit._Widget], {
 
 });
 
-dojo.declare("beer.UserProfile", [dijit._Widget], {
+dojo.declare("beer.UserProfile", dijit._Widget, {
 	// summary: A shelf of beers for a particular Person
 	
 	user:"",
