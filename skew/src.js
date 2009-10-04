@@ -126,7 +126,7 @@ dojo.require("dojox.analytics.Urchin");
 				stack = new dojox.layout.RadioGroupSlide({
 					style:"width:180px; height:200px",
 					// FIXME: when did StackContainer start setting relative explicitly?
-					_setupChild: function(/*Widget*/ page){
+					_setupChild: function(/*dijit._Widget*/ page){
 						$.style(page.domNode,{
 							display:"none",
 							position:"absolute",
