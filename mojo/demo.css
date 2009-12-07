@@ -120,11 +120,11 @@ p {
 
 #downloadButton {
 	background:url("images/download.gif") no-repeat top center;
-	visibility:hidden;
+/* 	visibility:hidden; */
 	height:45px;
 	width:300px;
 	cursor:pointer;
-	z-index:42;
+	z-index:43;
 }
 
 #downloadForm { visibility: hidden; }
@@ -146,5 +146,8 @@ span.a11ytext { visibility:hidden; cursor:pointer; }
 	text-align:center;
 	width:300px;
 	height:2em;
-	position:relative;
+/* 	z-index:45; */
+}
+.dj_ie7 #whyDojoBox ul {
+	left:-50%;
 }

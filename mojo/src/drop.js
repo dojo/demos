@@ -5,10 +5,7 @@ dojo.require("dojo.fx.easing");
 dojo.require("dijit._base.place");
 (function(){ 
 
-	var mojo = {};
-	var nodes;
-	var _coords = [];
-	var cb = null;
+	var mojo = {}, nodes, _coords = [], cb;
 	
 	dojo.mixin(mojo, {
 		drop: {
@@ -79,9 +76,12 @@ dojo.require("dijit._base.place");
 		// setup the "gravity toggler"
 		cb = dojo.byId("gravity");
 		cb.checked = false;
+		
+		// var del = dojo.byId("interact");
+		dojo.connect(cb, dojo.isIE ? "onclick" : "onchange", _toggleGravity);
 		// FIXME: ie7 fires onchange after blur() ... ugh
-		dojo.connect(cb,"onchange",_toggleGravity);
-
+		//	dojo.connect(cb,"onchange",_toggleGravity);
+		
 		// just in case, because our nodes are absolutely positioned:
 		dojo.connect(window,"onresize",mojo.drop,"_calcPositions");
 
