@@ -2,7 +2,8 @@ dojo.provide("demos.mojo.src.drop");
 // adds gravity effect to mojoDemo
 dojo.require("dojo.fx");
 dojo.require("dojo.fx.easing");
-dojo.require("dijit._base.place");
+dojo.require("dojo.window");
+
 (function(){ 
 
 	var mojo = {}, nodes, _coords = [], cb;
@@ -26,7 +27,7 @@ dojo.require("dijit._base.place");
 
 				_coords = mojo.drop._calcPositions(); // store positions for later
 				// ball is 310px, so the bottom edges are height - 310 roughly.
-				var t = dijit.getViewport().h - 310; 
+				var t = dojo.window.getBox().h - 310; 
 				dojo.style(dojo.body(),"overflow","hidden");
 
 				var _anims = [];
