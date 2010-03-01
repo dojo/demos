@@ -1,193 +1,890 @@
-body, html {
-	margin:0; padding:0; width:100%; background:#fff;
-	font-family:Verdana,sans-serif;
-	font-size:9pt;
-	color:#455058;
+body {
+	margin:0;
+	padding:0;
+	font-family:Lucida Sans,Lucida Grande,Arial;
+	font-size:62.5%;
 }
-#header, #footer {
-	font-size:88%;
-	border-bottom:1px solid #666;
-	background:#455058; color:#fff;
+#header {
+	margin:0;
+	padding:0;
+	background:#142A38 url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/header/header.png) repeat-x scroll center top;
+	border-bottom:3px solid #0099CC;
+	-moz-box-shadow:-3px 0 3px #000;
+	-webkit-box-shadow:-3px 0 3px #000;
+	box-shadow:-3px 0 3px #000;
+	width:100%;
+	display:table;
 }
-#footer div { line-height:3.2em; }
-#footer { padding-bottom:250px; }
-#nav { height:3.2em; }
-#footer a,
-#nav a {
-	color:#fff; text-decoration:none; line-height:3.2em;
+	#header .container {
+		width:960px;
+		height:8.3em;
+		text-align:left;
+		margin-left:auto;
+		margin-right:auto;
+		position:relative;
+	}
+	
+	
+	#header #logo {
+		display:inline-block;
+		position:absolute;
+		font-size:3em;
+		line-height:1.65em;
+		font-weight:bold;
+		margin:0;
+	}
+		#header #logo a {
+			color:#fff;
+			text-decoration:none;
+			padding-top:0.7em;
+			display:block;
+		}
+			#header #logo a img {
+				padding:0;
+				border:medium none;
+			}
+	
+	
+	#header ul {
+		position:absolute;
+		right:190px;
+		margin:3.9em 0 0 0;
+		padding:0 0 0 11.55em;
+	}
+		#header ul li {
+			list-style:none;
+			display:inline;
+		}
+			#header ul li a {
+				margin:0 0 0 0.5825em;
+				padding:0 0.76em;
+				display:block;
+				float:left;
+				color:#fff;
+				font-size:1.15em;
+				font-weight:400;
+				line-height:1.5em;
+				text-decoration:none;
+				letter-spacing:-0.0035em;
+			}
+				#header ul li a:link,
+			    #header ul li a:visited,
+			    #header ul li a:hover,
+			    #header ul li a:active {
+			        color:#fff;
+			    }
+				#header ul li a:hover {
+					border-bottom:2px solid #0099CC;
+				}
+			
+			#header ul li.active a {
+				font-weight:bold;
+				border-bottom:2px solid #0099CC;
+			}
+	
+	
+	#header form {
+		position:absolute;
+		right:0px;
+		margin-top:3.5em;
+	}
+		#header form span {
+			display:block;
+			background:transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/header/search.gif) no-repeat scroll 0 0;
+			height:25px;
+			width:178px;
+		}
+		
+		#header form input {
+			background:transparent;
+			border:medium none;
+			margin-top:5px;
+			padding-left:14px;
+			width:150px;
+			outline:none;
+			
+		}
+		
+		#header form label, #header form button {
+			display:none;
+		}
+body {
+	-x-system-font:none;
+	font-family: "Lucida Grande", "Lucida Sans", Geneva, verdana, san-serif;
+	font-size: 62.5%; 
+	font-size-adjust:none;
+	font-stretch:normal;
+	font-style:normal;
+	font-variant:normal;
+	font-weight:normal;
+	line-height: 1.4em;
+	vertical-align: baseline;
+	text-align: start;
+	color: #333;
 }
-#footer a:link, 
-#nav a:link { color:#fff; }
+h1, h2, h3, h4, h5, h6,
+p, blockquote, code, pre, 
+div, form, table {
+	vertical-align: baseline;
+}
+.accessibility {
+	display: none;
+	visibility: visible;
+}
+hr {
+	height: 1px;
+	width: auto;
+	border: medium none;
+	background: #DDDDDD;
+	margin: 10px 0;
+}
+em, i {font-style: italic;}
+strong, b {font-weight: bold;}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	color: #333333;
+	clear: both;
+}
+h1 {
+	font-family: Futura, "Century Gothic", AppleGothic, sans-serif;
+	font-size: 28px;
+	line-height: 120%;
+	margin: 0 0 18px 0;
+	clear: none;
+	display: inline;
+}
+h2 {
+	font-size: 20px;
+	line-height: 120%;
+	margin: 33px 0 10px 0;
+	color:#cc0000;
+}
+h2 em {
+	color:#333;
+	font-style:normal;
+}
+h3 {
+	font-size: 16px;
+	color: #CC0000;
+	line-height: 120%;
+	margin: 40px 0 10px 0;
+}
+h4 {
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 120%;
+	margin: 37px 0 10px 0;
+}
+p, ol, ul, dl {
+	font-size: 12px;
+	color: #555;
+	line-height: 125%;
+	margin: 0 0 12px;
+}
+ol, ul {
+	margin: 0 0 12px 40px;
+	padding: 0px;
+	-moz-padding-start: 0px;
+}
+ol {
+	list-style-type: decimal;
+	list-style-position: outside;
+}
+ul {
+	list-style-type: disc;
+	list-style-position: outside;
+}
+dl {
+	margin: 0 0 12px 0;
+}
+	dl dt {
+		font-weight: bold;
+	}
+	dl dd {
+		margin: 0 0 0 40px;
+		padding: 0px;
+		-moz-padding-start: 0px;
+	}
+pre, code {
+	font-family: "Lucida Grande", "Lucida Sans", Geneva, verdana, san-serif;
+}
+	pre {
+		margin: 12px 0;
+		padding: 6px 9px 7px;
+		font-size: 11px;
+		border: 1px solid #CCCCCC;
+		background: #FFFFEB;
+		color: #555;
+	}
+	code {
+	}
+object, video {
+	margin: 12px 0 12px;
+}
+a, a:link {
+	color: #005197;
+	text-decoration: none;
+}
+a:active, a:visited {
+	color: #140586;
+}
+a:hover, a:focus {
+	text-decoration: underline;
+}
+a:hover img {
+	border-color: #005197;
+}
+.displayNone {
+	display: none;
+}
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	width: 100%;
+	margin: 0;
+	font-family: Lucida Sans,Lucida Grande,Arial;
+	font-size: 12px;
+	display:table;
+	background:white;
+}
+.accessibility {
+	font-size:1px;
+	position:absolute;
+	top:-9999px;
+	padding: 1em 0;
+	text-align:center;
+}
+#page {
+	position: relative;
+}
+.innerBox {
+	
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	position: relative;
+}
+.demosPage #header ul .demos a,
+.downloadPage #header ul .download a,
+.communityPage #header ul .community a,
+.blogPage #header ul .blog a,
+.docPage #header ul .docs a {
+	font-weight:bold;
+	border-bottom:2px solid #0099CC;
+}
+.highlightHead {
+	padding:0;
+	margin: 0 0 0.5em 0;
+	background:#E9E9E9;
+	border:1px solid #DDDDDD;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	padding:0.35em 1em;
+	font-size:14px;
+	color:black;
+	font-weight:bold;
+	line-height:120%;
+}
+.subnav {
+	list-style: none;
+	margin: 6px 0 0 0;
+	padding: 0;
+	float: right;
+}
+	.subnav li {
+		font-size: 12px;
+		line-height: 14px;
+		height: 26px;
+		display: inline;
+	}
+		.subnav li a {
+			display:inline;
+			float: left;
+			margin: 0 8px 0 0;
+			text-decoration: none;
+			color: #004fb1;
+			height: 26px;
+  	}
+			.subnav li a span {
+				display: block;
+				padding: 4px 12px 8px 0;
+				margin: 0 0 0 12px;
+			}
+		.subnav li.active a,
+		.subnav li a:hover {
+			color: #050b10;
+			background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/subnav_sprite.png) 0px -27px no-repeat;
+		}
+			.subnav li.active a span,
+			.subnav li a:hover span {
+				background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/subnav_sprite.png) top right no-repeat;
+			}
+			
+.defaultList {
+	margin:0.5em 0 0 1.5em;
+}
+.defaultList li {
+	list-style-type:none;
+	padding:0.6em 0;
+}
+.homePage #intro {
 
-#footer a:visited, 
-#nav a:visited { color:#fff; }
-
-#footer a:hover,
-#nav a:hover { color:#ccc; }
-
-#footer a:active,
-#nav a:active { color:#fff; }
-
-.content {
-	margin:0 auto;
-	width:740px;
+		margin-top:30px;
 }
-#nav a:focus { 
-	border-bottom:1px solid #fff;
-	outline:0;
+.homePage #intro .line {
+        padding:35px 0 27px 275px;
+    }
+.homePage #intro .firstUnit {
+    }
+#main {
+	padding: 0px 0px;
 }
-#subheader {
-	background:#DFE8EE;
+	#main .firstUnit {
+	}
+	#main .sidebar .mod {
+		margin-bottom: 20px;
+	}
+	#main .sidebar h1 {
+		padding-bottom:10px;
+	}
+.spacer {
+	padding-right: 65px;
 }
-#subheader p {
-	padding-bottom:17px; margin:0;
-	padding-left:2px;
+.rightUnitSpacer {
+	margin-right: 2em;
 }
-#intro {
-	margin:0; padding-top:37px;
-	padding-bottom:17px;
-	font-size:37pt;
+.leftUnitSpacer {
+	margin-left: 2em;
 }
-#menu {
-	float:right;
-	margin:0; padding:0; list-style:none;
-}
-#menu li { 
-	float:left; margin-left:15px; line-height:3.2em; 
-}
-#container {
+#foot {
+	height: 24px;
+	left: 0px;
+	color: #333;
+	font-size: 0.8em;
+	padding-top: 13px;
 	border-top:1px solid #ccc;
-	min-height:400px;
 }
-#container .content {
+#contentLeft {
+	float: left;
+	width: 575px;
+	padding-right: 20px;
+	position: relative;
+	background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/sepLrg.gif) no-repeat right 30px;
+}
+#contentNavRight {
+	float: right;
+	width: 250px;
+}
+#contentRight {
+	float: right;
+	width: 655px;
+	position: relative;
+}
+#contentNavLeft {
+	float: left;
+	width: 180px;
+	background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/sepLrg.gif) no-repeat right 30px;
+	padding-right: 10px;
+}
+.sidebar h4 {
+	padding:0;
+	margin:0;
+	background:#E9E9E9;
+	border:1px solid #DDDDDD;
+	-webkit-border-radius:6px;
+	-moz-border-radius:6px;
+	padding:0.35em 1em;
+}
+.sidebar ul {
+	margin:10px 0;
+	padding-left:15px;
+}
+.sidebar ul li {
+	list-style-type:none;
+	padding:0.3em 0;
+}
+.clearfix {
+	min-height: 1%;
+}
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+* html .clearfix { height: 1%; }
+.line, .lastUnit {overflow: hidden; _overflow: visible; zoom:1;width:auto !important;}
+.unit{float:left;zoom:1;}
+.size1of1{float:none;}
+.size1of2{width:50%;_width:49.9% !important;}
+.size1of3{width:33.33333%;_width:33.25% !important;}
+.size2of3{width:66.66666%;_width:66.65% !important;}
+.size1of4{width:25%;_width:24.95% !important;}
+.size3of4{width:75%;_width:74.95% !important;}
+.size1of5{width:20%;_width:19.95% !important;}
+.size2of5{width:40%;_width:39.95% !important;}
+.size3of5{width:60%;_width:59.95% !important;}
+.size4of5{width:80%;_width:79.95% !important;}
+.lastUnit {float:none;_float:right;}
+.btn {
+    display: inline-block;
+    
+}
+.btn span {
+    display: inline-block;
+}
+.go {
+    background: transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/buttons/goR.png) no-repeat scroll top right;
+    padding-right: 34px; 
+    color: white;
+    font-size: 14px;
+    line-height: 41px;
+    text-decoration: none;
+}
+.go span {
+    background: transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/buttons/goL.png) no-repeat;
+    padding: 0 10px 0 20px;
+    line-height: 41px;
+    height:41px;
+    cursor:pointer;
+}
+.go:hover, .go:hover span {
+    text-decoration:underline;
+}
+.link {
+    background: transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/buttons/linkR.png) no-repeat scroll top right;
+    padding-right: 24px; 
+    color:#323F48;
+    font-size: 11px;
+    line-height: 26px;
+    text-decoration: none;
+}
+.link span {
+    background: transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/buttons/linkL.png) no-repeat;
+    padding: 0 10px 0 15px;
+    line-height: 26px;
+    height:26px;
+    cursor:pointer;
+}
+.link:hover, .link:hover span {
+    text-decoration:underline;
+}
+#main h1 {
+    margin: 0 0 25px 0;
+}
+h4.icon {
+    padding: 4px 0 0 27px;
+}
+table th {
+    background-color:#DDDDDD;
+    font-size:11px;
+    padding:0.6em;
+}
+table td {
+    border-collapse:collapse;
+    border:1px solid #FFFFFF;
+    border-width:0 1px 1px 0;
+    font-size:11px;
+    padding:0.6em;
+}
+.hide {
+    display:none;
+}
+.pageTitleContainer {
+	padding:0em 0 1.5em 0;
+	border-bottom:1px solid #ccc;
+	margin-bottom:2em;
+	margin-top:35px;
+}
+.dj_ie .pageTitleContainer {
+	position:relative;
+	height:25px;
+}
+.dj_ie .pageTitleContainer h1 {
+	position:absolute;
+	left:0;
+}
+.notice {
+    color: #e52b00;
+}
+img.inlined {
+	border: 1px solid #ccc;
+	padding: 2px;
+	margin: 12px 0 12px;
+}
+a img {
+    border: none;
+}
+input {
+    color:#666666;
+    font-style:italic;
+}
+.introText {
+    font-size:2.5em;
+    color:#1BA6DF;
+    font-weight:bold;
+	margin:0;
 	padding:0;
 	position:relative;
+	top:-5px;
 }
-.content p {
-	padding-left:2px;
-	color:#455058;
-	margin-top:11px;
-	margin-bottom:11px;
+.introText em, h1 em {
+	font-style:normal;
+	color:#196daa;
 }
-
-.marginbox {
-	border-top-color:red;
-	border-bottom-color:blue;
-	border-right-color:green;
-	border-bottom-color:yellow;
-}
-
-pre {
-	color:#333;
-	border-top:1px solid #ccc;
-	border-bottom:1px solid #ccc;
-	background:#DFE8EE;
-	padding:12px;
-}
-#topics {
-	clear:both;
-}
-
-#nav p { display:none; }
-.no-js #hidojo-suprise { display:none; }
-#hidojo { 
-	display:inline-block;
-	padding:4px;
-	padding-left:0;
+.introSubText {
+	width:70%;
+    font-size:1.15em;
+    color:#666666;
+    padding-bottom:20px;
+	line-height:1.76em;
+	font-weight:normal;
+	padding-top:0;
+	margin-top:0px;
 	position:relative;
 }
-
-#fadereplace {
-	border:1px solid #ccc;
-	background:#DFE8EE;
-	width:275px;
+.introSubText img {
+	display:block;
+	margin-top:18px;
 }
-#fadereplace p { cursor:pointer; padding:8px; color:#333; }
-
-#colorlist {
-	list-style:none;
-	height:75px;
-	margin:0; padding:0;
-}
-#colorlist li {
-	float:left;
-	width:75px;
-	height:75px;
-	margin:0; padding:0;
-	margin-right:5px;
-}
-.red { background:red; }
-.green { background:green; }
-.blue { background:blue; }
-.white { background:yellow; }
-
-a.source { 
-	color:#dedede; text-decoration:none; font-weight:bold; 
-	font-size:1.75em; -moz-border-radius:3pt; margin-top:-4px;
-	-webkit-border-radius:4pt;
-}
-a.source:hover { color:#455058;  }
-
-#view-source {
+.homePage .version {
+	width:200px;
+	height:200px;
 	position:absolute;
-	top:0;
-	left:-999px;
-	width:780px;
-	border:1px solid #ccc;
-	background:#DFE8EE;
-	padding:17px;
-	z-index:999;
-	padding-top:7px;
-	padding-bottom:7px;
+	left:45px;
+	top:15px;
 }
-#source-code {
-	margin-top:3px;
-	margin-bottom:3px;
+.homePage .version h1 {
+	font-size:120px;
+	color:#fff;
+	font-family:"Georgia", "Lucida Grande", "Arial", "Helvetica", sans-serif;
+	padding:0;
+	margin:0;
+}
+.homePage .version span {
+	font-size:14px;
+	display:block;
+	text-align:center;
+	position:relative;
+	left:15px;
+	top:0px;
+	color:#fff;
+	width:120px;
+}
+.companiesStrip {
+	background:#0B8CD4 url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/imagesimages/companiesStripBg.gif) repeat-x bottom left;
+	height:37px;
+	margin-bottom:55px;
+}
+.companiesStrip img {
+	vertical-align:middle;
+	margin-right:10px;
+}
+.featuresGrid {
+	margin-top:25px;
+	margin-bottom:55px;
+	clear:left;
+}
+.featuresGrid h2, .featuresGrid h2 a:link, .featuresGrid h2 a:visited {
+	margin:0;
+	padding:0;
+	font-size:15px;
+	color:#cc0000;
+}
+.featuresGrid .iconContainer {
+	width:75px !important;
+	padding:0 10px;
+}
+.star {
+    background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/icons/star.png) no-repeat;
+    height: 22px;
+}
+.check {
+    background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/icons/check.png) no-repeat;
+    height: 22px;
+}
+.downloadInfo li ul {
+  list-style:none;
+  margin-right:18px;
+  padding-left:30px;
+}
+ul.downloadInfo {
+	padding-left:10px;
+	border-bottom:1px solid #ddd;
+	padding-bottom:15px;
+	margin-bottom:30px;
+	margin-left:0;
+	clear:left;
+}
+.downloadInfo ul.inlineList {
+  margin: 15px 0 10px 0;
+  padding:0;
+  padding-left:0;
+  font-size:1.2em;
+}
+.downloadInfo ul.inlineList li img {
+	margin-right:7px;
+}
+.downloadInfo ul.inlineList li {
+}
+.downloadInfo li ul li {
+  float:left;
+  padding-right:8px;
+}
+.featureExplorer {
+    width:546px;
+}
+    .featureExplorer .line {
+        margin-bottom:10px;
+    }
+    .featureExplorer p {
+        margin-bottom:3px;
+    }
+.feature {
+    overflow:hidden;
+    position:relative;
+    height:81px;
+    width:82px;
+    display:block;
+}
+    .feature:hover {
+        opacity:0.4;
+        filter:alpha(opacity=40);
+    }
+    .feature .bg {
+        background: url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/overlays/featured.png) no-repeat;
+        overflow:hidden;
+        position:absolute;
+        top:0;
+        left:0;
+        height:81px;
+        width:82px;
+        cursor:pointer;
+        z-index:1;
+    }
+.codeSample {
+	border:1px solid #ccc;
+	background:#ffffeb;
+	padding:5px;
+}
+.buttonShelf {
+	margin:50px 0 35px 0;
+	background:url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/buttonShelf.png) no-repeat 50% 100%;
+	height:115px;
+	text-align:center;
+}
+.buttonShelf a:link img, .buttonShelf a:visited img {
+	border:none;
+	margin:0 15px;
+}
+#popularSolutions {
+	margin-top:15px;
+	border-bottom:1px solid #ccc;
+}
+#popularSolutions strong {
+	color:#999999;
+}
+#popularSolutions ul {
+	margin:5px 0 20px 15px;
+}
+#popularSolutions ul li {
+	list-style-type:none;
+	padding:0.4em 0;
+	margin:0;
+}
+#popularSolutions .unit {
+	padding-left:15px;
+}
+#books a {
+	margin-right:15px;
+}
+.commentsTitle {
+	border-top:1px dotted #ddd;
+	padding-top:20px;
+	padding-bottom:10px;
+	font-size:16px;
+	color:#cc0000;
+	font-weight:normal;
+}
+.go {
+    margin-top: 17px;
+}
+.headerLink {
+	font-size:10px;
+	padding-left:1em;
+}
+.navTab {
+	list-style: none;
+	margin: 0;
+	padding: 4px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 20px;
+}
+.navTab li {
+	display: inline;
+	border: 1px solid #ccc;
+	padding: 5px 10px;
+	background: #e3e3e3;
+	color: #333;
+	cursor: pointer;
+}
+.navTab li.active {
+	background: white;
+	border-bottom: 1px solid white;
+	text-decoration: underline;
+}
+.downloadPage .downloadInfo {
+	list-style: none;
+}
+.downloadPage .downloadInfo hr {
+	margin-bottom: 15px;
+}
+.downloadInfo li strong {
+	font-size:13px;
+	font-weight:bold;
+	color:#333;
+}
+.downloadPage .help {
+	border: 1px solid #ccc;
+	padding: 10px;
+	margin: 10px 10px 30px 0px;
+	background:#F5FFFE;
+}
+.downloadPage .info {
+	padding: 0px;
+	margin: 15px 0px;
+}
+.downloadPage .help img {
+	float: left;
+	margin: 5px 8px 5px 0;
+}
+.downloadPage .help p {
+	margin-bottom: 0;
+}
+.downloadPage img {
+	vertical-align: middle;
+}
+.downloadPage div.group {
+	clear: left;
+}
+.downloadPage div.group h1 {
+	margin: 0 0 5px 0 !important; 
+}
+.downloadPage hr {
+	height: 1px;
+	width: 100%;
+	margin: 3px 0;
+	clear: left;
+}
+.downloadPage div.group .checkbox {
+	float: left;
+	width: 30%;
+	clear: both;
+	margin-top: 10px;
+}
+.downloadPage div.group .content {
+	float: left;
+	width: 70%;
+	margin-top: 10px;
+}
+.downloadPage .depHeader {
+	float: right;
+	font-size: 80%;
+}
+.downloadPage .depFooter {
+	float: right;
+	clear: left;
+	font-size: 80%;
+	margin-top: 8px;
+}
+.downloadPage .depWarning {
+    vertical-align: middle;
+}
+.dijitTooltip {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.dijitTooltipContainer {
+    background: #EEFFCC !important;
+    border: 1px solid #AACC99 !important;
+}
+.dijitTooltipConnector {
+    background: none !important;
+}
+#nabbleforum {
+	margin-top:25px;
+}
+#nabbleforum .medium-border-color {
+	border:0 !important;
+}
+.homeIntro .browsers {
+	position:absolute;
+	right:-170px;
+	bottom:-25px;
+}
+#resultbox {
+	border: 3px solid #999;
+	background:#fff;
+	padding:15px;
+	width:420px;
+	margin-top:5px;
+	margin-bottom:10px;
+	color:#000;
+	position:absolute;
+	right:0;
+	z-index:20;
+	-webkit-box-shadow:0 0 10px #333;
+	-moz-box-shadow:0 0 10px #333;
+	outline:none;
+}
+ 
+#googlesearch, #sitesearch {
+	margin-left:20px;
+}
+#header form span.gs-spacer {
+	background:none;
+	display:inline;
+	width:auto;
+	height:auto;
+}
+.googleheader {
+	margin:5px 0;
+	font-weight:bold;
+} 
+ 
+.gsc-search-box, .gsc-configLabelCell {
+	display:none;
+}
+.gsc-control {
 	width:100%;
-	height:20em;
 }
-
-#filler { display:none; 
-	width:700px;
+ 
+.gsc-tabHeader {
+	display:none;
+} 
+#resultbox a, .gs-title, .gs-title b {
+	font-size:13px;
+	font-weight:bold;
+	color:#2253AA !important;
 }
-
-#basic-post {
-	width:20em;
-	padding:12px;
-	background:#dfe8ee;
-	border:1px solid #ccc;
+.gs-visibleUrl, .gs-visibleUrl-short {
+	color:#666 !important;
 }
-#basic-post label {
-	line-height:3.2em;
-	display:inline-block;
-	width:6em;
+#searchClose {
+	text-align:right;
 }
-#basic-post-submit {
-	margin-left:7em;
+#searchClose a {
+	font-size:10px !important;
+	color:#cc0000;
 	cursor:pointer;
-	padding:5px 12px 5px 12px;
-	border:1px solid #ccc;
-	background:#455058; color:#fff;
 }
-#basic-post-submit:hover {
-	background:#000; color:#dedede;
+#resultbox_underlay {
+	opacity:0;
 }
 
-#core-list {
-	width:520px;
-}
-
-/* basic DnD styles: */
-.dojoDndItem {
-	padding:2px 8px 2px 8px;
-	border:2px solid #fff;
-	cursor:move;
-}
-
-
-#footer pre {
-	background-color:455058; color:#fff;
-}
 
 #mainlist li img {
 	position:absolute;
@@ -206,7 +903,6 @@ a.source:hover { color:#455058;  }
 	margin-right:22px;
 	margin-left:48px;
 }
-
 #mainlist li a span {
 	z-index:9;
 	cursor:pointer;
@@ -217,7 +913,6 @@ a.source:hover { color:#455058;  }
 	text-decoration:none;
 	font-weight:normal;
 }
-
 #mainlist {
 	margin-top:5px;
 	height:auto;
@@ -226,21 +921,12 @@ a.source:hover { color:#455058;  }
 	#margin-left:30px;
 }
 #explist img { display:none; }
-
-/* janky IE nessss */
 .content {
 	#width:800px;
 }
-#intro {
-	#margin-left:48px;
-}
-
 #mainlist a { font-weight:bold; color:#999; text-decoration:none;  line-height:1.2em; }
 #mainlist a:link { color:#333; }
 #mainlist a:visited { color:#333; }
 #mainlist a:hover { color:#000; }
 #mainlist a:hover span { color:#666; }
 #mainlist a:active { color:#333; }
-
-
-.clear { clear:both; }

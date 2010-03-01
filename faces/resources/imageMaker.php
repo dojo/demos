@@ -38,7 +38,7 @@
 			$width = 230; $height = 326;
 			
 			$im = imageCreateTrueColor($width, $height);
-			$bgColor = imagecolorallocate($img, 255,255,255);
+			$bgColor = imagecolorallocate($im, 255,255,255);
 			imagefill($im, 0, 0, $bgColor);
 			
 			$parts = array(
