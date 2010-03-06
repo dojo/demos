@@ -1,0 +1,29 @@
+body, html{
+	/*background:#ddf;*/
+	background:#ddd;
+	padding:0;
+	margin:0;
+	text-align:center;
+	/*overflow:hidden;*/
+	height:100%;
+}
+#mainContainer{
+	position:relative;
+}
+.menu{
+	color:#766;
+	width:600px;
+	margin:100px auto 0 auto;
+	padding:0;
+	font:28px sans;
+	position:relative;
+}
+.menu div{
+	position:absolute;
+	width: 150px;
+	height:150px;
+	background:white;
+	border:4px solid #ccc;
+	line-height:150px;
+	cursor:pointer;
+}

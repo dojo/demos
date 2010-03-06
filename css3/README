@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+css3 - Demonstration of the x-browser css3 transformations
+-------------------------------------------------------------------------------
+Author: nicrizzo
+-------------------------------------------------------------------------------
+Demo description
+
+	A small demo showing off some of the capabilities of the Dojo Toolkit,
+	css3 transformations and animations.
+
+-------------------------------------------------------------------------------
+Dependencies:
+
+	DojoX (css3.fx)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+
+-------------------------------------------------------------------------------
+@rank:1
