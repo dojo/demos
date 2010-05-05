@@ -185,11 +185,12 @@
 			name:"Karl Tiedt",
 			handle:"tk",
 			title:"Committer",
-			irc:"tk",
+			irc:"tekky",
 			twitter:"ktiedt",
-			location:"Colorado Springs, CO",
-			coords: { x:38.8381, y:-104.8214 },
-			employer: "Coyote Point Systems",
+			location:"College Station, TX",
+			coords: { x:30.5668, y:-96.2804 },
+			imgUrl:"images/users/tk.jpg",
+			employer: "Independent Contractor",
 			blameFor:[
 				"everything else."
 			]
