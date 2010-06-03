@@ -1,0 +1,73 @@
+<b>PrettyPrint</b> &ndash; A &lsquo;headless&rsquo; plugin that formats the HTML
+output of the editor into more &lsquo;human-readable&rsquo; HTML.&nbsp; It tries
+to properly indent blocks of text, lists, and so on cleanly.&nbsp; It can also
+be configured with options such as indenting by tab or space, how much, and how
+long text lines should be.
+<br>
+<br>
+<b>View Block Nodes</b> &ndash; A useful plugin that highlights the internal
+structure of the document.&nbsp; It shows the block elements, in other words.
+<br>
+<br>
+<b>Page Break</b> &ndash; A plugin that inserts a CSS page-break-after style
+that will cause printing of the document to page-break at that point.
+<br>
+<br>
+<b>Preview</b> &ndash; A plugin that will load the editor content in a new
+browser window and apply any defined styles or stylesheets to the content.
+<br>
+<br>
+<b>Save</b> &ndash; A simple plugin intended to be extended to define a
+&lsquo;save button&rsquo; and its behavior.
+<br>
+<br>
+<b>NormalizeIndentOutdent </b>&ndash; The indent and outdent function behavior
+vary across browser due to inconsistencies in how browsers implement the
+function.&nbsp; This plugin tries to fix that behavior and make it completely
+consistent on how indenting and outdenting work for lists, text, and block
+elements across browser.&nbsp; It is new and has been tested, but may still have
+some quirks, hence the &lsquo;experimental&rsquo; status.
+<br>
+<br>
+<b>Breadcrumb </b>&ndash; A useful plugin that adds a &lsquo;toolbar&rsquo; to
+the bottom of the Editor.&nbsp; This toolbar shows what element the user is
+currently in and provides mechanisms to select the content, the entire element,
+and do operations such as delete upon it. This plugin does not work well in
+1.4.0 with FullScreen.&nbsp; It has since been fixed and the fix is under
+consideration for back port.
+<br>
+<br>
+<b>Find/Replace</b> &ndash; A plugin for finding and replacing text strings in
+the editor content.&nbsp; This plugin makes use of the native find functions
+various browsers provide, which means it works generally well on Safari, Chrome
+(Webkit), FireFox, and IE (forward only, backwards mode does not work in
+IE).&nbsp; It does not work on Opera, as Opera does not provide native support
+for find.
+<br>
+<br>
+<b>Insert Entity</b> &ndash; A plugin for inserting entity characters into the
+document, such as the copyright character, the trademark character, and so on.
+<br>
+<br>
+<b>Paste From Word</b> &ndash; A plugin that adds a new paste dialog that you
+can paste content from popular word processors and it will try to filter and
+normalize the content for injection into the editor.
+<br>
+<br>
+<b>Blockquote</b> &ndash; A plugin that allows you to select paragraphs and
+similar and blockquote them (wrap them in blockquote tags), to highlight a
+section of text.
+<br>
+<br>
+<b>dojox.editor.plugins.TextColor</b> &ndash; An augmented version of
+dijit._editor.plugins.TextColor that makes use of the dojox.widget.ColorPicker
+for selecting the font color and background color of text.
+<br>
+<br>
+<b>Collapsible Toolbar </b> &ndash; A plugin that augments the editor toolbar
+and makes it collaspible, meaning it can be reduced for more editing space.
+<br>
+<br>
+<b>Status Bar </b> &ndash; An experimental plugin that augments the editor
+footer with a bar area for status.  It also has an optional resize handler for
+resizing the editor when it is not within a content pane controlling its size.
