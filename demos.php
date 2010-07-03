@@ -29,10 +29,10 @@
 			<div class="container">
 				<span id="logo"><a href="http://dojotoolkit.org/" title="Dojo Homepage"><img src="http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/logo.png" alt="Dojo Toolkit" /></a></span>
 				<ul id="navigation">
-					<li class="download"><a href="/download/">Download</a></li>
-					<li class="docs"><a href="/documentation/">Documentation</a></li>
-					<li class="community"><a href="/community/">Community</a></li>
-					<li class="blog"><a href="/blog/">Blog</a></li>
+					<li class="download"><a href="http://dojotoolkit.org/download/">Download</a></li>
+					<li class="docs"><a href="http://dojotoolkit.org/documentation/">Documentation</a></li>
+					<li class="community"><a href="http://dojotoolkit.org/community/">Community</a></li>
+					<li class="blog"><a href="http://dojotoolkit.org/blog/">Blog</a></li>
 				</ul>
 			</div>
 		</div>
