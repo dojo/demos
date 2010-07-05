@@ -461,6 +461,17 @@
 			website:"http://neonstalwart.blogspot.com/",
 			imgUrl:"images/users/neonstalwart.png",
 			blameFor:["dojox.data.ItemExplorer", "free help on irc"]
+		},
+		{
+			"name": "Mark Wubben",
+			"title": "Web Hacker",
+			"handle": "markwubben",
+			"irc": "markwubben",
+			"twitter": "novemberborn",
+			"location": "Copenhagen, Denmark",
+			"website": "http://novemberborn.net",
+			"imgUrl": "images/users/markwubben.png",
+			"coords": { "x": 55.6763, "y": 12.5681 }
 		}
 		
 		// from ohloh + not above:
