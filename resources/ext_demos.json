@@ -29,6 +29,13 @@
 			"header": "TaskSpeed Charts - dojox.gfx chart renderings from TaskSpeed report data",
 			"rank": 300,
 			"img": "resources/images/no_thumb.gif"
+		},
+		{
+			"demo": "mfu",
+			"link": "http://developers.sirika.com/mfu/demo.html",
+			"header": "MultiFileUploader - HTML based multiple file uploads",
+			"rank": 75,
+			"img": "resources/images/mfu.png"
 		}
 	]
 }
