@@ -10,12 +10,11 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
     
     // Instantiate widgets in the template HTML.
     this.controller.parse();
-    
+
 	this.serviceBtn = dijit.byId("serviceBtn");
 	this.setService("FourSquare");
-	
 	var _this = this;
-	
+
 	dojo.connect(this.serviceBtn, "onClick", function(event){
 		this.controller.popupSubMenu({
 	      choices: [
@@ -25,7 +24,6 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	      ],
 
 	      fromNode: event.target,
-	      
 	      onChoose: function(value){
 		  	if(!value){
 				return;
@@ -85,7 +83,7 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	dojo.publish("/images", [imageUrls]);
 	return imageUrls;
   },
-  
+
   parseImageResults: function(data){
   	if(!data.json || !data.json.responseData || !data.json.responseData.results){
 		return null;

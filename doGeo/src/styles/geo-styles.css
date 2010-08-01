@@ -1,5 +1,6 @@
-.detail-view {
-	height: 400px;
+.mblRoundRect.detail-view {
+	height: 350px;
+	background-color: black;
 }
 
 
