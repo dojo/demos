@@ -1,0 +1,10 @@
+.detail-view {
+	height: 400px;
+}
+
+.dropdownBtn {
+	padding-right: 10px;
+	background-image: url(../images/dropdown_icon.png);
+	background-repeat: no-repeat;
+	background-position: right top;
+}
