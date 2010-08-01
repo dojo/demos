@@ -14,6 +14,10 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	this.serviceBtn = dijit.byId("serviceBtn");
 	this.setService("FourSquare");
 	var _this = this;
+	
+	// Parameterised YQL search string for finding Four Square venues based upon a latitude and longitude
+	this.searchYQL = "select * from foursquare.venues where geolong = '${0}' and geolat = '${1}'";
+	
 
 	dojo.connect(this.serviceBtn, "onClick", function(event){
 		this.controller.popupSubMenu({
@@ -34,29 +38,20 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	});
 	dojo.subscribe("/service", dojo.hitch(this, this.setService));
 
-	/*
-	var covers = [
-	      { image: "images/cover0.jpg", title: "title0", backFaceId: "backface1" },
-	      { image: "images/cover1.jpg", title: "title1", backFaceId: "backface1" },
-	      { image: "images/cover2.jpg", title: "title2", backFaceId: "backface1" },
-	      { image: "images/cover3.jpg", title: "title3", backFaceId: "backface1" },
-	      { image: "images/cover4.jpg", title: "title4", backFaceId: "backface1" },
-	      { image: "images/cover5.jpg", title: "title5", backFaceId: "backface1" },
-	      { image: "images/cover6.jpg", title: "title6", backFaceId: "backface1" },
-	      { image: "images/cover7.jpg", title: "title7", backFaceId: "backface1" },
-	      { image: "images/cover8.jpg", title: "title8", backFaceId: "backface1" },
-	      { image: "images/cover9.jpg", title: "title9", backFaceId: "backface1" }
-      ];
-	this.dataAvailable(covers);
-*/
-
-	dojo.subscribe("/images", dojo.hitch(this, function(imageArray){
-	    this.dataAvailable(
-	        imageArray.map(function(url, i){
-	        	return { image: url, title: "title"+i, backFaceId: "backface1" };
-	        })
+	dojo.subscribe("/images", function(images){
+		console.log("Got images ", images);
+        
+        this.dataAvailable(
+            _this.venues.map(function(record, i){
+                record.image = images[i];
+                record.title = record.name;
+                record.backFaceId = "backface1";
+                return record;
+            })
 	    );
-	}));
+		
+	});
+	
   },
 
   dataAvailable: function(data){
@@ -80,24 +75,73 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
   activate: function(data){
     console.log("In main assistant activate");
     
-    this.findAddressImages(["London", "Paris"], this.handleAddressResults);
+   // this.findAddressImages(["London", "Paris"], this.handleAddressResults);
+	
+	var _this = this;
+	this.getVenuesNearby(function(data){
+		
+		console.log("---->>>> getVenues: ", data);
+		data = data.query.results.venues.group.venue;
+		
+		console.log("---->>>> getVenues: ", data);
+		if(!dojo.isArray(data)){
+			data = [data]; 
+		}
+		
+		_this.venues = data;
+		_this.findAddressImages(dojo.map(data, function(item){
+			var str = item.name;
+			
+//			if(item.address){
+//				str += "," + item.address;
+//			}
+//			if(item.city){
+//				str += "," + item.city;
+//			}
+			
+			return str;
+		}), _this.handleAddressResults);
+		
+	}, function(){
+		console.log("error");
+	});
   },
   
   findAddressImages: function(addresses, callback){
   	//http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20query.multi%20where%20queries%3D%22
 	//select%20*%20from%20json%20where%20url%3D%27http%3A%2F%2Fajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3DLondon%26count%3D1%27
 	//%3B
-	//select%20*%20from%20json%20where%20url%3D%27http%3A%2F%2Fajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3DParis%26count%3D1%27
+
+	//http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20query.multi%20where%20queries%3D%22
+	//select%20*%20from%20json%20where%20url%3D%27http%3A%2F%2Fajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3D101%20Allen%20Laundromat%20Inc%2C101%20Allen%20Street%26count%3D1%27
+	//%3B
+	//select%20*%20from%20json%20where%20url%3D%27http%3A%2F%2Fajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3DBank%20Street%20Laundromat%2C296%20West%204th%20Street%26count%3D1%27
 	//%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
+	
+	
+//	
+//	if(addresses.length > 5){
+//		addresses = addresses.slice(0, 5);
+//	}
+		addresses = addresses.slice(0, 2);
 	
     var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20query.multi%20where%20queries%3D%22";
     var urlEnd = "%27%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys;"
 
     url += dojo.map(addresses, function(address){
-		return "select%20*%20from%20json%20where%20url%3D%27http%3A%2F%2F" + 
-		"ajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3D"
-		+ address
-		+ "%26count%3D1%27";
+		var google = "http://ajax.googleapis.com/ajax/services/search/images?v=1.0&count=1&q="
+		+ address;
+		
+		console.log("===>> " + google);
+		
+		google = escape(google);
+		
+		return "select%20*%20from%20json%20where%20url%3D%27" + google;
+		
+		
+//		"ajax.googleapis.com%2Fajax%2Fservices%2Fsearch%2Fimages%3Fv%3D1.0%26q%3D"
+//		+ escape(address)
+//		+ "%26count%3D1%27";
 	}).join("%3B") + "%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
 	
 	
@@ -131,6 +175,47 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 		return null;
 	}
 	return data.json.responseData.results[0].tbUrl;
+  },
+  
+  // Retrieve venues near the user's current location as listed 
+  // by four square. Use YQL to parse and return response from 
+  // the Four Square API. HTML5 Geolocation API used to extract the current
+  // location. 
+  getVenuesNearby : function (callback, errback) { 
+	// Callback to search Four Square, through YQL, for venues
+	// near the location passed in.
+	
+	var searchCallback = dojo.hitch(this, function (location) {
+		console.log("lat long searchCallback", location);
+		
+		var url = "http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20foursquare.venues%20where%20%20geolong%20%3D%20'"
+		+ location[0]
+		+ "'%20and%20geolat%20%3D%20'"
+		+ location[1]
+		+ "'&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
+		
+		var deferred = dojo.io.script.get({
+			url: url,
+			jsonp: "callback"
+		});
+		deferred.addBoth(callback);
+	});
+	// Current latitude and longitude
+	this.getCurrentLatLong(searchCallback);
+  },
+
+  // Use HTML5 GeoLocation API to retrieve current user's location.
+  getCurrentLatLong : function (callback) {
+  	callback([40.7204, -73.9933]);//nyc
+	return;
+	if (navigator.geolocation) {
+	  navigator.geolocation.getCurrentPosition(function(position) { 
+		// Grab and pass the latitude and longitude attributes and execute callback
+		callback([position.coords.latitude, position.coords.longitude]);
+   	  });
+	} else {
+		console.log("No geo");
+	}
   },
   
   setService: function(name){
