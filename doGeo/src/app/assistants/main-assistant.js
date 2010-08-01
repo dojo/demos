@@ -33,12 +33,54 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	    });
 	});
 	dojo.subscribe("/service", dojo.hitch(this, this.setService));
+
+	/*
+	var covers = [
+	      { image: "images/cover0.jpg", title: "title0", backFaceId: "backface1" },
+	      { image: "images/cover1.jpg", title: "title1", backFaceId: "backface1" },
+	      { image: "images/cover2.jpg", title: "title2", backFaceId: "backface1" },
+	      { image: "images/cover3.jpg", title: "title3", backFaceId: "backface1" },
+	      { image: "images/cover4.jpg", title: "title4", backFaceId: "backface1" },
+	      { image: "images/cover5.jpg", title: "title5", backFaceId: "backface1" },
+	      { image: "images/cover6.jpg", title: "title6", backFaceId: "backface1" },
+	      { image: "images/cover7.jpg", title: "title7", backFaceId: "backface1" },
+	      { image: "images/cover8.jpg", title: "title8", backFaceId: "backface1" },
+	      { image: "images/cover9.jpg", title: "title9", backFaceId: "backface1" }
+      ];
+	this.dataAvailable(covers);
+*/
+
+	dojo.subscribe("/images", dojo.hitch(this, function(imageArray){
+	    this.dataAvailable(
+	        imageArray.map(function(url, i){
+	        	return { image: url, title: "title"+i, backFaceId: "backface1" };
+	        })
+	    );
+	}));
+  },
+
+  dataAvailable: function(data){
+    var coverflow = new wink.ui.xyz.CoverFlow({
+      covers: data,
+      size: 300,
+      viewportWidth: window.innerWidth,
+      reflected: true,
+      displayTitle: true,
+      fadeEdges: true,
+      handleOrientationChange: true,
+      handleGesture: true,
+      backgroundColor: { r: 0, g: 0, b: 0 },
+      coverSpacing: 25, 			// [optional]
+      displayTitleDuration: 1000,	// [optional]
+      borderSize: 2 				// [optional]
+    });
+    $("container").appendChild(coverflow.getDomNode());
   },
   
   activate: function(data){
     console.log("In main assistant activate");
     
-	//this.findAddressImages(["London", "Paris"], this.handleAddressResults);
+    this.findAddressImages(["London", "Paris"], this.handleAddressResults);
   },
   
   findAddressImages: function(addresses, callback){
