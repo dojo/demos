@@ -9,8 +9,30 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
     // Instantiate widgets in the template HTML.
     this.controller.parse();
     
-	this.setService("FourSquare")
+	this.serviceBtn = dijit.byId("serviceBtn");
+	this.setService("FourSquare");
 	
+	var _this = this;
+	
+	dojo.connect(this.serviceBtn, "onClick", function(event){
+		this.controller.popupSubMenu({
+	      choices: [
+	        {label: "FourSquare", value: "FourSquare"},
+	        {label: "Twitter", value: "Twitter"},
+	        {label: "Flickr", value: "Flickr"}
+	      ],
+
+	      fromNode: event.target,
+	      
+	      onChoose: function(value){
+		  	if(!value){
+				return;
+			}
+			dojo.publish("/service", [value]);
+	      }
+	    });
+	});
+	dojo.subscribe("/service", dojo.hitch(this, this.setService));
   },
   
   activate: function(data){
@@ -19,7 +41,10 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
   },
   
   setService: function(name){
-  	dijit.byId("serviceBtn").domNode.innerHTML = name;
+  	this.serviceName = name;
+  	dojo.query("span", this.serviceBtn.domNode)[0].innerHTML = name;
+	
+	
   }
   
 });

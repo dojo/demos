@@ -2,9 +2,10 @@
 	height: 400px;
 }
 
-.dropdownBtn {
-	padding-right: 10px;
-	background-image: url(../images/dropdown_icon.png);
+
+.mblDropDownButton span {
+	background-image: url(../images/dropdown-icon.png);
+	padding-right: 15px;
+	background-position: 4px right;
 	background-repeat: no-repeat;
-	background-position: right top;
 }
