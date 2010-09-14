@@ -82,13 +82,6 @@
         
 		dojo.addOnLoad(function(){
 			try{
-				// Initialize all the animations, etc.
-				var leadText = dojo.byId("leadText");
-				var introText = dojo.byId("introText");
-				var dojoText = dojo.byId("dojoText");
-				var textArea = dojo.byId("textArea");
-				var introDiv = dojo.byId("introDiv");
-
 				var plugins = [
 					'collapsibletoolbar', 'breadcrumb', 'newpage', 'save',
 					{name: 'viewSource', stripScripts: true, stripComments: true}, 
@@ -114,17 +107,35 @@
 					{name: 'dijit._editor.plugins.EnterKeyHandling', blockNodeForEnter: "P"},
 					'normalizeindentoutdent', 'normalizestyle', {name: 'statusbar', resizer: false}
 				];
+				
+				// Declare my own so I can pass in my plugins list without resoring to globals.
+				dojo.declare("custom.Editor", [dijit.Editor], {
+					constructor: function(){
+						this.plugins = plugins;
+						this.height = "100%";
+						this.inherited(arguments);
+					}
+				});
+				
 
 				//Configure some default states.
-				dojo.style(dojo.byId("editorDiv"), "opacity", 0);
 				var deferred = dojo.xhrGet({
 				   url: "editorDemoInfo/editorContent.html",
 				   handleAs: "text",
 				   preventCache: true
 				});
 				deferred.addCallback(function(text){
-					dojo.byId("editorDiv").innerHTML = text;
-					var editor = new dijit.Editor({plugins: plugins, height: "100%"}, "editorDiv");
+					// Build the content pane text.
+					var eText = "<div id='editor' dojoType='custom.Editor'></div>";
+					var cPane = dijit.byId("editorPane");
+					// Config the pane to be hidden until the editor loads.
+					dojo.style(cPane.domNode, "visibility", "hidden");
+					cPane.set("content", eText);
+					var editor = dijit.byId("editor");
+					dojo.style(editor.domNode, "opacity", 0);
+					dojo.style(cPane.domNode, "visibility", "");
+					cPane.resize();
+					editor.onLoadDeferred.addCallback(function() { editor.set("value", text) });
 					var uCount = 0;
 					setInterval(function(){
 						editor.statusBar.set("value", "<b><i>Status updated [" + uCount++ + "] times.</i></b>");
@@ -148,15 +159,11 @@
 </head>
 
 <body class="claro">
-	<div dojoType="dijit.layout.BorderContainer" style="width: 100%; height: 100%" gutters="false">
+	<div dojoType="dijit.layout.BorderContainer" style="width: 100%; height: 100%" gutters="false" id="editorContainer">
 		<div dojoType="dijit.layout.ContentPane" region="top" style="height: 75px; padding: 0px; margin: 0px; overflow: hidden" splitter="false" role="banner" class="banner">
 			<img src="editorDemoImages/editorBanner.jpg" alt="dijit.Editor: A rich text editor for the new web." />
 		</div>
-		<div id="editorContainer" dojoType="dijit.layout.BorderContainer" design="sidebar" region="center" gutters="false">
-    		<div dojoType="dijit.layout.ContentPane" region="center" style="overflow: hidden">
-				<div id="editorDiv">
-				</div>
-			</div>
+	    <div id="editorPane" dojoType="dijit.layout.ContentPane" region="center" style="overflow: hidden;">
 		</div>
 	</div>
 </body>
