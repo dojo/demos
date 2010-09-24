@@ -114,6 +114,15 @@
 					{name: 'dijit._editor.plugins.EnterKeyHandling', blockNodeForEnter: "P"},
 					'normalizeindentoutdent', 'normalizestyle', {name: 'statusbar', resizer: false}
 				];
+				
+				// Declare my own so I can pass in my plugins list without resoring to globals.
+				dojo.declare("custom.Editor", [dijit.Editor], {
+					constructor: function(){
+						this.plugins = plugins;
+						this.height = "100%";
+						this.inherited(arguments);
+					}
+				});
 
 				//Configure some default states.
 				dojo.style(textArea, "opacity", 0);
@@ -154,24 +163,28 @@
 														 "opacity" : {start: 1, end: 0}
 													 },
 													 onEnd: function() {
-                                                         dojo.style(introDiv, "display", "none");
-														 introDiv.parentNode.removeChild(introDiv);
-                                                         dojo.style("editorDiv", {
-                                                             opacity: 0
-                                                         });
-
-                                                         var deferred = dojo.xhrGet({
-                                                            url: "editorDemoInfo/editorContent.html",
-                                                            handleAs: "text",
-                                                            preventCache: true
+														dojo.style(introDiv, "display", "none");
+														introDiv.parentNode.removeChild(introDiv);
+														var deferred = dojo.xhrGet({
+														url: "editorDemoInfo/editorContent.html",
+															handleAs: "text",
+															preventCache: true
 														 });
-								deferred.addCallback(function(text){
-								dojo.byId("editorDiv").innerHTML = text;
-															 var editor = new dijit.Editor({plugins: plugins, height: "100%"}, "editorDiv");
-								var uCount = 0;
-								setInterval(function(){
-									editor.statusBar.set("value", "<b><i>Status updated [" + uCount++ + "] times.</i></b>");
-								}, 5000);
+														 deferred.addCallback(function(text){
+															var eText = "<div id='editor' dojoType='custom.Editor'></div>";
+															var cPane = dijit.byId("editorPane");
+															// Config the pane to be hidden until the editor loads.
+															dojo.style(cPane.domNode, "visibility", "hidden");
+															cPane.set("content", eText);
+															var editor = dijit.byId("editor");
+															dojo.style(editor.domNode, "opacity", 0);
+															dojo.style(cPane.domNode, "visibility", "");
+															cPane.resize();
+															editor.onLoadDeferred.addCallback(function() { editor.set("value", text) });
+															var uCount = 0;
+															setInterval(function(){
+																editor.statusBar.set("value", "<b><i>Status updated [" + uCount++ + "] times.</i></b>");
+															}, 5000);
 															 dijit.byId("editorContainer").resize();
 															 dojo.animateProperty({
 																 node: editor.domNode,
@@ -232,14 +245,12 @@
 				<div dojoType="dijit.layout.ContentPane" title="&lt;i&gt;New in dojo 1.4+!&lt;/i&gt;  View Source!" href="editorDemoInfo/viewsource.html"></div>
 				<div dojoType="dijit.layout.ContentPane" title="&lt;i&gt;New in dojo 1.4+!&lt;/i&gt;  Many, many, more!" href="editorDemoInfo/more.html"></div>
 			</div>
-			<div dojoType="dijit.layout.ContentPane" region="center" style="overflow: hidden">
+			<div dojoType="dijit.layout.ContentPane" region="center" style="overflow: hidden" id="editorPane">
 				<div id="introDiv">
 					<div id="leadText" style="font-size: 2.5em; padding-bottom: 1em;"></div>
 					<textarea id="textArea" style="width: 400px; height: 100px; display: none; margin-left: 40px;"></textarea>
 					<div id="introText" style="font-size: 1.5em; padding-top: 2.0em; margin-left: 80px;"></div>
 					<div id="dojoText" style="font-size: 1.5em; padding-top: 2.0em; margin-left: 120px;"></div>
-				</div>
-				<div id="editorDiv">
 				</div>
 			</div>
 		</div>
