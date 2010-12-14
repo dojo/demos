@@ -9,7 +9,7 @@
 			handle:"alex",
 			irc:"slightlyoff",
 			location:"San Francisco, CA",
-			employer: "Google", 
+			employer: "Google",
 			coords: { x: 37.7752, y:-122.4192 },
 			imgUrl:"images/users/alex.png",
 			website:"http://alex.dojotoolkit.org"
@@ -151,7 +151,7 @@
 			imgUrl:"images/users/ttrenka.png",
 			blameFor:[
 				"dojox.av",
-				"dojox oversight" 
+				"dojox oversight"
 			]
 		},
 		{
@@ -384,7 +384,7 @@
 			]
 		},
 		{
-		
+
 			name:"Sam Foster",
 			title:"Committer",
 			handle:"sfoster",
@@ -399,7 +399,7 @@
 			]
 		},
 		{
-		
+
 			name:"Chris Barber",
 			title:"Committer",
 			handle:"cb1kenobi",
@@ -415,7 +415,7 @@
 			]
 		},
 		{
-		
+
 			name:"Shane O'Sullivan",
 			title:"Committer",
 			handle:"shaneosullivan",
@@ -436,7 +436,7 @@
 			]
 		},
 		{
-		
+
 			name:"Nicola Rizzo",
 			title:"Committer",
 			handle:"nic",
@@ -472,8 +472,20 @@
 			"website": "http://novemberborn.net",
 			"imgUrl": "images/users/markwubben.png",
 			"coords": { "x": 55.6763, "y": 12.5681 }
+		},
+		{
+			name: "Jens Arps",
+			title:"Committer",
+			handle:"jensarps",
+			irc:"jensarps",
+			location:"Bonn, Germany",
+			twitter:"jensarps",
+			website:"http://jensarps.de/",
+			employer: "Uxebu",
+			imgUrl:"images/users/jens.jpg",
+			blameFor:["dojox.storage providers for userData, localStorage and cookies"]
 		}
-		
+
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)
@@ -481,9 +493,9 @@
 		// Owen Willaims (?) (owen)
 		// Simon Bates (simonjb)
 		// Steve Orvell (sorvell)
-		
+
 		// other non-code-committing commiters?
 		// (crieke)
 	]
-		
+
 }
