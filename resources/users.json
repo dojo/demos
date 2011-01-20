@@ -484,6 +484,19 @@
 			employer: "Uxebu",
 			imgUrl:"images/users/jens.jpg",
 			blameFor:["dojox.storage providers for userData, localStorage and cookies"]
+		},
+		{
+			"name":"Kenneth G. Franqueiro",
+			"title":"Committer",
+			"handle":"kgf",
+			"irc":"kgf",
+			"twitter":"kfranqueiro",
+			"location":"Mineola, NY",
+			"employer":"FatWire",
+			"coords": { x:40.7521, y:-73.6235 },
+			"website":"http://kennethfranqueiro.com/",
+			"imgUrl":"images/users/kgf.jpg",
+			"blameFor":["IRC help", "bad jokes"]
 		}
 
 		// from ohloh + not above:
