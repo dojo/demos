@@ -6,8 +6,8 @@ dojo.require("dojox.charting.themes.PlotKit.green");
 
 var masterChart = null;
 var initChart = function(){
-	masterChart = new dojox.charting.Chart2D("chart");	
-	masterChart.addPlot("default", {type: "Bars"});    
+	masterChart = new dojox.charting.Chart2D("chart");
+	masterChart.addPlot("default", {type: "Bars"});
 };
 
 var getResults = function(){
@@ -18,18 +18,18 @@ var getResults = function(){
 		load:function(data,ioArgs){
 			makeChart(data);
 		}
-	});	
+	});
 };
 
 var makeChartData = function(/* Object */args){
 	// summary: parse an object and create Arrays of labels and percentages
 	// returns: object with toolkits[] and data[] params
-	var i = 0;	
+	var i = 0;
 	//
 	var toolkits = [{value:0,text:""}];
 	var seriesData = [];
 
-	// the data comes like data:{ "dojo":42,"jquery":30 }	
+	// the data comes like data:{ "dojo":42,"jquery":30 }
 	for(var toolkit in args.data){
 		// the value is a percentage of people polled
 		seriesData.push((args.data[toolkit]/args.total)*100);
@@ -76,7 +76,7 @@ var makeChart = function(args){
 	// if the window resizes, redraw the chart
 	if(!windowSizer){
 		windowSizer = dojo.connect(window,"onresize",function(){
-			c.resize();	
+			c.resize();
 		});
 	}
 };

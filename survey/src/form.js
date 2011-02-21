@@ -24,7 +24,7 @@ dojo.require("dojox.cometd");
 				getResults();
 				dojox.cometd.publish("/demo/survey/redraw",{ content: _d });
     				dojox.cometd.subscribe("/demo/survey/redraw",function(){
-				    getResults(); 
+				    getResults();
 				});
 			    }
 			}).play(5);
@@ -36,7 +36,7 @@ dojo.require("dojox.cometd");
     
     // add elemts to the selectable list
     var addChoice = function(e){
-	var choice, lc, isE; 
+	var choice, lc, isE;
 
 	// now, if it comes as a string instead of an event, we can
 	// use that label (coming from cometd)
@@ -69,7 +69,7 @@ dojo.require("dojox.cometd");
 
 	// and line break, and append them all to the node
 	// with the other checkboxes
-	var br = dojo.doc.createElement('br');	
+	var br = dojo.doc.createElement('br');
 	var node = dojo.byId("choices");
 	node.appendChild(cb);
 	node.appendChild(lab);

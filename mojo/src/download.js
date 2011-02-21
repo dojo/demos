@@ -38,9 +38,9 @@ dojo.require("dojo.io.iframe");
 		hide: function(e){
 			dojo.byId("gravity").disabled = false;
 			e.preventDefault();
-			dojo.fx.slideTo({ 
-				node:this.node, 
-				duration:375, 
+			dojo.fx.slideTo({
+				node:this.node,
+				duration:375,
 				left:-310, top:-50,
 				easing:dojo.fx.easing.backIn
 			}).play();
@@ -51,11 +51,11 @@ dojo.require("dojo.io.iframe");
 			var includeUtils = dojo.byId("build").checked;
 			var includeSource = dojo.byId("sourceR").checked;
 			var ext = (dojo.byId("tgz").checked ? "tar.gz" : "zip");
-			var ver = dojo_ver; 
+			var ver = dojo_ver;
 			
 			// make the url:
 			var host = "http://download.dojotoolkit.org/";
-			var url = host + "release-" + (ver) + "/dojo-release-" + (ver) 
+			var url = host + "release-" + (ver) + "/dojo-release-" + (ver)
 				+ (includeSource ? "-src." : ".") + (ext);
 
 			// trigger the save as ... dialog

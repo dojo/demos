@@ -152,31 +152,31 @@ dojo.require("dojox.analytics.Urchin");
 				
 		d.query("#starter").onclick(function(e){
 			if(postLogin()){
-				d.fadeOut({ 
-					node: "loginstuff", 
+				d.fadeOut({
+					node: "loginstuff",
 					onEnd: function(){
 						d.style("chatRoom", { opacity:0, visibility:"visible" });
 						d.fx.combine([
-							d.animateProperty({ 
-								node: "loginstuff", 
-								properties: { height: 1 }, 
+							d.animateProperty({
+								node: "loginstuff",
+								properties: { height: 1 },
 								onEnd: function(){
 									d.style("loginstuff","display","none");
 								}
 							}),
 							d.fadeIn({ node:"chatRoom" })
 						]).play(25);
-					} 
+					}
 				}).play();
 			}
 		});
 		
-		new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/babelChat");
 			}
-		});	
+		});
 		
 		
 	});

@@ -12,6 +12,6 @@ dojo.require("dijit.form.Button");
 dojo.require("dijit.form.FilteringSelect");
 // dojo.require("dijit.Menu");
 
-// data 
+// data
 dojo.require("dojo.data.ItemFileReadStore");
 dojo.require("dojox.data.CsvStore");

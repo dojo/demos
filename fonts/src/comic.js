@@ -167,7 +167,7 @@ function init(){
 	//	do the title of the textarea
 	var t = dojox.gfx.createSurface("prompt", 300, 18);
 	g = t.createGroup();
-	digistrip.draw(g, 
+	digistrip.draw(g,
 		{ text: "Make me say something silly!", x:0, y:0, width: 300, height: 18, align: "start" },
 		{ size: "10pt", family:"DigitalStrip" },
 		"#181818"
@@ -196,7 +196,7 @@ function doText(text, startTimer){
 
 	var b = (text === undefined);
 	text = text || dojo.byId("text-input").value;
-	digistrip.draw(balloon, 
+	digistrip.draw(balloon,
 		{ text: text, x:0, y:0, width: 170, height: 132, align: "middle", fitting: dojox.gfx.vectorFontFitting.FIT, leading: 1.2 },
 		{ size: "12pt", family:"DigitalStrip" },
 		"#333"

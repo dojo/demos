@@ -17,7 +17,7 @@ function init(){
 	t.innerHTML = "";
 	var s = dojox.gfx.createSurface(t, w, 72),
 		g = s.createGroup();
-	book.draw(g, 
+	book.draw(g,
 		{ text: txt, width:w, height:60, align:"middle" },
 		{ size: "72px" },
 		"#181818"

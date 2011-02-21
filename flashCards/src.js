@@ -47,11 +47,11 @@ var getStarted = function(){
 	//hide the getStarted Button
 	dojo.style("start", "display", "none");
 
-	//reset the score board	
+	//reset the score board
 	resetScore();
 
 	//attach to the onCorrect event of the card.  When this event happens
-	//we want to display a fading message and update the score board				
+	//we want to display a fading message and update the score board
 	dojo.connect(c, "onCorrect", function(e){
 		if (messageFadeEvent){
 			messageFadeEvent.stop();
@@ -78,7 +78,7 @@ var getStarted = function(){
 	});
 
 	//attach to the onIncorrect event of the card.  When this event happens
-	//we want to display a fading message and update the score board				
+	//we want to display a fading message and update the score board
 	dojo.connect(c, "onIncorrect", function(e){
 		if(messageFadeEvent){
 			messageFadeEvent.stop();
@@ -104,7 +104,7 @@ var getStarted = function(){
 	});
 
 	//attach to the onTooSlow event of the card.  When this event happens
-	//we want to display a fading message and update the score board				
+	//we want to display a fading message and update the score board
 	dojo.connect(c, "onTooSlow", function(e){
 		if(messageFadeEvent){
 			messageFadeEvent.stop();
@@ -163,7 +163,7 @@ var getStarted = function(){
 
 	});
 
-	//attach to the restart method of the card.  We dont' want to reset the 
+	//attach to the restart method of the card.  We dont' want to reset the
 	//score onEnd since people want a chance to review their score, this won't
 	//happen until they actually click restart
 	dojo.connect(c, "restart", resetScore);
@@ -187,12 +187,12 @@ dojo.addOnLoad(function(){
 	
 	// stall this just a little
 	setTimeout(function(){
-		new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/flashCards");
 			}
-		});	
+		});
 	}, 1500);
 	
 });

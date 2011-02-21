@@ -7,7 +7,7 @@
 
 /**
  * math geometric library - a wink.math extension.
- * 
+ *
  * @methods:
  * 	--> radToDeg: 				Convert the given radian angle in degree
  * 	--> degToRad: 				Convert the given degree angle in radian
@@ -19,18 +19,18 @@
  * 	--> getScalarVector: 		Returns the scalar value of these two vectors
  * 	--> getVector: 				Returns a vector with the given two points
  * 	--> multiplyMatrixVector: 	Returns the vector result of the multiplication between the matrix and this vector
- * 
+ *
  * @compatibility
  *  --> Iphone OS2, Iphone OS3, Android 1.1, Android 1.5, Android 2.1
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
-wink.json.concat(wink.math, 
+wink.json.concat(wink.math,
 {
 	/**
 	 * Converts the given radian angle in degree
-	 * 
+	 *
 	 * @parameters:
 	 *	--> angleRad: the angle in radian
 	 */
@@ -40,7 +40,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Converts the given degree angle in radian
-	 * 
+	 *
 	 * @parameters:
 	 *	--> angleDeg: the angle in degree
 	 */
@@ -50,7 +50,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the angle corresponding to the distance between two points on a plane cutting a virtual sphere
-	 * 
+	 *
 	 * @parameters:
 	 *	--> radius: the radius of the virtual sphere
 	 *	--> distance: the distance between the two points
@@ -77,7 +77,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the angle between two vectors
-	 * 
+	 *
 	 * @parameters:
 	 *	--> u: first vector
 	 *	--> v: second vector
@@ -96,7 +96,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the normalized vector from the given
-	 * 
+	 *
 	 * @parameters:
 	 *	--> u: the vector to normalize
 	 */
@@ -116,7 +116,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the norm of the given vector
-	 * 
+	 *
 	 * @parameters:
 	 *	--> u: the vector
 	 */
@@ -128,7 +128,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the normal vector formed by these two vectors
-	 * 
+	 *
 	 * @parameters:
 	 *	--> u: first vector
 	 *	--> v: second vector
@@ -143,7 +143,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the scalar value of these two vectors
-	 * 
+	 *
 	 * @parameters:
 	 *	--> u: first vector
 	 *	--> v: second vector
@@ -156,7 +156,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns a vector with the given two points
-	 * 
+	 *
 	 * @parameters:
 	 *	--> p1: the first point
 	 *	--> p2: the second point
@@ -171,7 +171,7 @@ wink.json.concat(wink.math,
 	},
 	/**
 	 * Returns the vector result of the multiplication between a matrix and a vector
-	 * 
+	 *
 	 * @parameters:
 	 *	--> matrix: the matrix
 	 *	--> vector: the vector

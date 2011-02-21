@@ -15,8 +15,8 @@ dojo.declare("beer.MadeDnd", null, {
 		this.avatar = dojo.place(dojo.clone(this.node), dojo.body());
 		var xy = this._origxy = dojo.position(this.node);
 		dojo.style(this.avatar, {
-			position:"absolute", 
-			top: xy.y + "px", 
+			position:"absolute",
+			top: xy.y + "px",
 			left: xy.x + "px"
 		});
 		this._listeners.push(
@@ -30,7 +30,7 @@ dojo.declare("beer.MadeDnd", null, {
 			mb = this._size
 		;
 		s.top = e.pageY - (mb.h / 2) + "px";
-		s.left = e.pageX - (mb.w / 2) + "px"; 
+		s.left = e.pageX - (mb.w / 2) + "px";
 	},
 	
 	_dragStop: function(e){
@@ -42,14 +42,14 @@ dojo.declare("beer.MadeDnd", null, {
 			new dojo.dnd.Moveable(this.avatar);
 			
 		}else{
-			dojo.animateProperty({ 
+			dojo.animateProperty({
 				node:this.avatar,
 				onEnd: function(n){
 					dojo.destroy(n);
 				},
 				properties:{
 					opacity:0,
-					top: this._origxy.y, 
+					top: this._origxy.y,
 					left: this._origxy.x
 				},
 				duration:175
@@ -59,7 +59,7 @@ dojo.declare("beer.MadeDnd", null, {
 	},
 	
 	overTarget: function(e){
-		return true; 
+		return true;
 //		return dojo.some(beer.targets, function(target){
 //			return true;
 //		})[0];

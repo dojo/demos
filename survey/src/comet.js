@@ -8,5 +8,5 @@ var startService = function(){
 	    getResults();
 	});
 	
-};    
+};
 dojo.addOnLoad(startService);

@@ -8,7 +8,7 @@
 /**
  * Implements a Cover Flow. Developed to be as flexible and configurable as possible.
  * The user must pay attention to the fact that the parameters significantly affect performance (reflected and displayTitle especially)
- * 
+ *
  * @properties:
  * 	data =
  * 	{
@@ -18,8 +18,8 @@
  * 				- [title]: 			the id of the title node that will appear below image (mandatory if "displayTitle" is set to true)
  * 				- [backFaceId]: 	the id of the backface node that will appear when selecting a cover (if no action is specified)
  * 				- [action]:			the callback action that will be invoked when selecting a cover
- * 
- * 		size: 						the Cover Flow size 
+ *
+ * 		size: 						the Cover Flow size
  * 		viewportWidth: 				the width of the viewport
  * 		reflected: 					boolean that indicates if reflection must be displayed
  * 		displayTitle: 				boolean that indicates if title must be displayed
@@ -31,7 +31,7 @@
  * 		displayTitleDuration: 		[optional] the duration in millisecond of the title display
  * 		borderSize:					[optional] the cover shaded border size
  * 	}
- * 
+ *
  * @methods:
  * 	--> getDomNode: 				Returns the Cover Flow dom node
  *  --> updateSize: 				Update the Cover Flow size and the viewportWidth
@@ -46,10 +46,10 @@
  * 	--> wink.math._matrix
  *  --> wink.fx._xyz
  *  --> wink.ux.gesture
- * 
+ *
  * @compatibility:
  * 	--> Iphone OS2 (slow), Iphone OS3
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
@@ -135,7 +135,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Update the Cover Flow size and the viewportWidth
-	 * 
+	 *
 	 * @parameters:
 	 *	--> size: the component size
 	 *	--> viewportWidth: the viewport width
@@ -256,7 +256,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	/**
 	 * Check if the properties are correct
 	 */
-	_validateProperties: function() 
+	_validateProperties: function()
 	{
 		if (!wink.isset(this._properties.covers) || this._properties.covers.length == 0)
 		{
@@ -278,7 +278,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 			wink.log('[CoverFlow] Error: backgroundColor property must be specified');
 			return false;
 		}
-		if (!wink.isset(this._properties.backgroundColor.r) 
+		if (!wink.isset(this._properties.backgroundColor.r)
 			|| !wink.isset(this._properties.backgroundColor.g)
 			|| !wink.isset(this._properties.backgroundColor.b)) {
 			wink.log('[CoverFlow] Error: backgroundColor property must be specified with "r, g, b" values');
@@ -317,7 +317,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Check if the given cover is valid.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> cover: the cover to check
 	 */
@@ -332,7 +332,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	/**
 	 * Initialize datas with given properties
 	 */
-	_initProperties: function() 
+	_initProperties: function()
 	{
 		this._covers 					= new Array().concat(this._properties.covers);
 		this._currentPosition 			= Math.floor(this._covers.length / 2);
@@ -467,13 +467,13 @@ wink.ui.xyz.CoverFlow.prototype = {
 		this._hideBackFaces();
 		this._organizeDepth();
 		this.updateSize(this._size, this._viewportWidth);
-		this.setBackgroundColor(this._backgroundColor);		
+		this.setBackgroundColor(this._backgroundColor);
 		wink.setTimeout(this, "_setImages", this._DELAY_BEFORE_IMAGE_LOADING);
 	},
 	/**
 	 * Initialize listeners
 	 */
-	_initListeners: function() 
+	_initListeners: function()
 	{
 		this._movementtracker = new wink.ux.MovementTracker({ target: this._gestureNode });
 		wink.subscribe('/movementtracker/events/mvtbegin', { context: this, method: '_handleMovementBegin' });
@@ -483,20 +483,20 @@ wink.ui.xyz.CoverFlow.prototype = {
 		if (this._handleGesture)
 		{
 			this._gestureNode.listenToGesture(
-				"instant_rotation", 
-				{ context: this, method: "_handleRotation", arguments: null }, 
+				"instant_rotation",
+				{ context: this, method: "_handleRotation", arguments: null },
 				true
 			);
 			this._gestureNode.listenToGesture(
-				"gesture_end", 
-				{ context: this, method: "_handleGestureEnd", arguments: null }, 
+				"gesture_end",
+				{ context: this, method: "_handleGestureEnd", arguments: null },
 				true
 			);
 		}
 	},
 	/**
 	 * Handle the rotation Gesture that impacts the Cover Flow rotation on x-axis
-	 * 
+	 *
 	 * @parameters:
 	 *	--> gestureInfos: see wink.ux.gesture Events
 	 */
@@ -519,7 +519,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handle the end of the Gesture
-	 * 
+	 *
 	 * @parameters:
 	 *	--> gestureInfos: see wink.ux.gesture Events
 	 */
@@ -532,11 +532,11 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handles the movement start
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> publishedInfos: see wink.ux.MovementTracker Events
 	 */
-	_handleMovementBegin: function(publishedInfos) 
+	_handleMovementBegin: function(publishedInfos)
 	{
 		var publisher = publishedInfos.publisher;
 		if (publisher.uId != this._movementtracker.uId)
@@ -547,11 +547,11 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handles the movement updates.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> publishedInfos: see wink.ux.MovementTracker Events
 	 */
-	_handleMovementChanged: function(publishedInfos) 
+	_handleMovementChanged: function(publishedInfos)
 	{
 		var publisher = publishedInfos.publisher;
 		if (publisher.uId != this._movementtracker.uId)
@@ -584,7 +584,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handles the movement end : flip, unflip or invoke action
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> publishedInfos: see wink.ux.MovementTracker Events
 	 */
@@ -748,7 +748,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handles an orientation change
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> properties: see wink.ux.Window Events
 	 */
@@ -759,7 +759,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Returns the current position (the middle Cover) that depends on covers positions
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> x: the current coordinate
 	 */
@@ -778,12 +778,12 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Slide to the given position.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> x: the targeted position
 	 * 	--> force: true only if view must be slided even if there is no position difference
 	 */
-	_slideTo: function(x, force) 
+	_slideTo: function(x, force)
 	{
 		var newX = wink.math.round(x, 2);
 		if (newX != this._view.x || force === true)
@@ -794,7 +794,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 		}
 	},
 	/**
-	 * Updates the view if the current displayed cover has changed. 
+	 * Updates the view if the current displayed cover has changed.
 	 */
 	_updateView: function()
 	{
@@ -869,11 +869,11 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Handles a rendered cover
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the index of the rendered cover
 	 */
-	_handleCoverRendered: function(index) 
+	_handleCoverRendered: function(index)
 	{
 		this._lastRenderedIndex = index;
 		if (this._covers[index].handleEnd != null)
@@ -889,7 +889,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Add to the renderer process queue the given position
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> position: the position to render
 	 */
@@ -905,7 +905,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Update transformation of the covers
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> middlePosition: the middle position
 	 */
@@ -940,7 +940,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Update transitions of the covers
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> middlePosition: the middle position
 	 * 	--> durationForMiddle: the transition duration for the cover at the middle
@@ -1008,7 +1008,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Returns true if the givens transformations are considered different
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> t1: the first transformation
 	 * 	--> t2: the second transformation
@@ -1060,7 +1060,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Returns the transformation to apply to the given index
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the current index
 	 * 	--> middle: the middle index
@@ -1082,7 +1082,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Show the title
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the index of the associated cover
 	 */
@@ -1104,7 +1104,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Updates sur title opacity
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the index of the associated cover
 	 * 	--> opacity: the opacity value
@@ -1170,7 +1170,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Apply Reflection on a cover
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the index of the cover to reflect
 	 */
@@ -1186,7 +1186,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	},
 	/**
 	 * Reflection process
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> index: the index of the cover to reflect
 	 * 	--> image: the image to reflect
@@ -1257,7 +1257,7 @@ wink.ui.xyz.CoverFlow.prototype = {
 	/**
 	 * Get bounds informations that allows caller to determine if the target is out of bounds,
 	 * the direction associated, the distance to the bound and the position to reach.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> nextX: the next position on x
 	 */

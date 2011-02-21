@@ -25,14 +25,14 @@ dojo.require("dojox.analytics.Urchin");
 	
 	var _doneAnim = function(){
 		
-		$.fadeOut({ 
+		$.fadeOut({
 			// fade out the overlay
-			node: "overlay", 
+			node: "overlay",
 			duration: 300,
 			onEnd: function(){
 				// then make our image surface 240px, and fade it in
 				$.animateProperty({
-					node:"imageContainer", 
+					node:"imageContainer",
 					properties: {
 						height: 240,
 						opacity:1
@@ -45,15 +45,15 @@ dojo.require("dojox.analytics.Urchin");
 					onEnd: function(){
 						// hide the actual overlay so you can click underneath it
 						$.style("overlay","display","none");
-						_started = true;	
-						// take all the elements with "startsHidden" class, and 
+						_started = true;
+						// take all the elements with "startsHidden" class, and
 						// set them up, fade them in, and remove hidden class
 						$.query(".startsHidden")
 							.style("opacity", "0")
 							.removeClass("startsHidden")
 							.fadeIn().play(500);
 					}
-				}).play(); 
+				}).play();
 			}
 		}).play();
 		
@@ -64,7 +64,7 @@ dojo.require("dojox.analytics.Urchin");
 		//if(!_started){ return; }
 		_stuffMoving = true;
 		// conveniently, later, we stored a reference to our avatar (RadioGroupSlide child)
-		// in the Image widget. 
+		// in the Image widget.
 		stack.selectChild(datawidget._avatar);
 		profileWidget.setData(datawidget._userInfo);
 	}
@@ -87,19 +87,19 @@ dojo.require("dojox.analytics.Urchin");
 	var init = function(){
 	
 		// tracking demo:
-		var u = new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		var u = new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/skew");
 			}
-		});	
+		});
 	
 		$.style("whoNode","opacity", 0);
 	
 		// see, the page "degrades" ;) . This contributor listing page is only a link to
 		// http://dojo.jot.com/ContrbutorListing
-		$.query("a[href^=http://dojo.jot]").forEach(function(n){ 
-			n.parentNode.innerHTML = n.innerHTML; 
+		$.query("a[href^=http://dojo.jot]").forEach(function(n){
+			n.parentNode.innerHTML = n.innerHTML;
 		});
 	
 		// create a "help" dialog out of the node in the page.
@@ -139,9 +139,9 @@ dojo.require("dojox.analytics.Urchin");
 				// iterate over each of the returned committers, setting up the canvas
 				$.forEach(data.committers,function(user, i){
 				
-					// create an Image in the container, and store the user profile data 
+					// create an Image in the container, and store the user profile data
 					// in it's instance.
-					var im = new image.Skewed({ 
+					var im = new image.Skewed({
 						// use a default square.png if no imgUrl found.
 						imgUrl: user.imgUrl || "images/square.png",
 						value: user.name
@@ -179,7 +179,7 @@ dojo.require("dojox.analytics.Urchin");
 				// turn the container holding all the image widgets into the interface
 				var ic = new image.Container({
 					// for performance (it's a big list/lot of images)
-					offOpacity:1, 
+					offOpacity:1,
 					onShow: function(widget){
 						// onShow fires _every_ time an image is "centered" visually (no skew)
 						// so for UX, we'll defer the "updateProfile()" call until some delay,
@@ -187,7 +187,7 @@ dojo.require("dojox.analytics.Urchin");
 						timer = setTimeout($.partial(updateProfile, widget), _stalltime);
 						// but still update one label from our widget data
 						labelNode.innerHTML = widget.value + "";
-						$.anim("profileArea",{ opacity:0 }, 175); 
+						$.anim("profileArea",{ opacity:0 }, 175);
 					},
 					// should be lower, but i want to stage opacity on the edges rather
 					// than display:none, so for now this looks better.
@@ -204,7 +204,7 @@ dojo.require("dojox.analytics.Urchin");
 				_needed.forEach(function(n,i){
 					_connects.push($.connect(n, "onload", $.partial(_gotOne, n)));
 					_connects.push($.connect(n, "onerror", $.partial(_oneBroke, n)));
-					// if you don't touch the .src attribute _after_ connecting to onload, it 
+					// if you don't touch the .src attribute _after_ connecting to onload, it
 					// won't fire in weird conditions.
 					if($.isIE){ n.src = n.src; }
 				});
@@ -212,7 +212,7 @@ dojo.require("dojox.analytics.Urchin");
 				ic.startup();
 				_lastNode.center(); // center the first node (from above creating image widgets)
 			
-				// resize the image container when the window does, it's fluid 
+				// resize the image container when the window does, it's fluid
 				$.connect(window, "onresize", ic, "resize");
 			
 				// make it small, so we can wipe it in
@@ -236,7 +236,7 @@ dojo.require("dojox.analytics.Urchin");
 				"employer" : $$("proEmployer"),
 				"title"    : $$("proRole")
 			}
-		}, 
+		},
 		
 		setData: function(data){
 			var node = this.nodeReferences;
@@ -245,8 +245,8 @@ dojo.require("dojox.analytics.Urchin");
 				if(i in data){
 					$.style(node[i],"display","");
 					var txt = (
-						i == "website" ? 
-							"<a href='" + data[i] + "'>" + data[i] + "</a><br>"   : 
+						i == "website" ?
+							"<a href='" + data[i] + "'>" + data[i] + "</a><br>"   :
 							data[i]
 					);
 					node[i].innerHTML = txt;
@@ -267,12 +267,12 @@ dojo.require("dojox.analytics.Urchin");
 			}
 			$.byId("proAliases").innerHTML = nick;
 			
-			// fade and swipe in the content. 
+			// fade and swipe in the content.
 			// FIXME: weirdness w/ IE7 and no respecting -42 marginLegf
-			$.anim("profileArea",{ 
-				opacity:{ start:0, end: 0.99 }, 
-				paddingLeft:{ start:72, end:0 } 
-			}, 520, $.fx.easing.bounceOut); 
+			$.anim("profileArea",{
+				opacity:{ start:0, end: 0.99 },
+				paddingLeft:{ start:72, end:0 }
+			}, 520, $.fx.easing.bounceOut);
 		}
 	});
 
@@ -281,7 +281,7 @@ dojo.require("dojox.analytics.Urchin");
 		window.location.href = "http://" + (confirm("Hi IE6 user! Is it 2008?") ? "webkit.org" : "mozilla.org") + "/";
 	}
 
-	// setup our branch launch: ;) 
+	// setup our branch launch: ;)
 	$.addOnLoad(($.isIE < 7 ? newp : init));
 
 })(dojo);

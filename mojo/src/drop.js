@@ -4,7 +4,7 @@ dojo.require("dojo.fx");
 dojo.require("dojo.fx.easing");
 dojo.require("dojo.window");
 
-(function(){ 
+(function(){
 
 	var mojo = {}, nodes, _coords = [], cb;
 	
@@ -27,7 +27,7 @@ dojo.require("dojo.window");
 
 				_coords = mojo.drop._calcPositions(); // store positions for later
 				// ball is 310px, so the bottom edges are height - 310 roughly.
-				var t = dojo.window.getBox().h - 310; 
+				var t = dojo.window.getBox().h - 310;
 				dojo.style(dojo.body(),"overflow","hidden");
 
 				var _anims = [];
@@ -36,7 +36,7 @@ dojo.require("dojo.window");
 					var l = _coords[idx].l;
 					_anims.push(dojo.fx.slideTo({
 						top:t, left:l, node:n,
-						duration:1000, 
+						duration:1000,
 						easing:dojo.fx.easing.bounceOut
 					}));
 				});
@@ -53,12 +53,12 @@ dojo.require("dojo.window");
 					_anims.push(dojo.fx.slideTo({
 						top: t, left:l, node:n,
 						duration:500
-					}));			
+					}));
 				});
 				// play the anim, and set overflow:auto on body
 				var _anim = dojo.fx.combine(_anims);
 				var con = dojo.connect(_anim,"onEnd",function(){
-					dojo.style(dojo.body(), "overflow", "visible"); 
+					dojo.style(dojo.body(), "overflow", "visible");
 				});
 				_anim.play();
 			}

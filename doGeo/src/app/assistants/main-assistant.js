@@ -85,7 +85,7 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 		
 		console.log("---->>>> getVenues: ", data);
 		if(!dojo.isArray(data)){
-			data = [data]; 
+			data = [data];
 		}
 		
 		_this.venues = data;
@@ -119,7 +119,7 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	//%22&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys
 	
 	
-//	
+//
 //	if(addresses.length > 5){
 //		addresses = addresses.slice(0, 5);
 //	}
@@ -177,11 +177,11 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
 	return data.json.responseData.results[0].tbUrl;
   },
   
-  // Retrieve venues near the user's current location as listed 
-  // by four square. Use YQL to parse and return response from 
+  // Retrieve venues near the user's current location as listed
+  // by four square. Use YQL to parse and return response from
   // the Four Square API. HTML5 Geolocation API used to extract the current
-  // location. 
-  getVenuesNearby : function (callback, errback) { 
+  // location.
+  getVenuesNearby : function (callback, errback) {
 	// Callback to search Four Square, through YQL, for venues
 	// near the location passed in.
 	
@@ -209,7 +209,7 @@ dojo.declare("MainAssistant", dojox.mobile.app.SceneAssistant, {
   	callback([40.7204, -73.9933]);//nyc
 	return;
 	if (navigator.geolocation) {
-	  navigator.geolocation.getCurrentPosition(function(position) { 
+	  navigator.geolocation.getCurrentPosition(function(position) {
 		// Grab and pass the latitude and longitude attributes and execute callback
 		callback([position.coords.latitude, position.coords.longitude]);
    	  });

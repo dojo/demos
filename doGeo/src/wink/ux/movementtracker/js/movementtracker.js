@@ -7,27 +7,27 @@
 
 /**
  * Implements a Movement Tracker. The Movement Tracker follows the touch movement performed on a node.
- * It listens to touch events and elaborates a movement which consists of points statements sequence. 
+ * It listens to touch events and elaborates a movement which consists of points statements sequence.
  * Each point statement includes these informations : a position, a direction, a distance and a duration.
- * 
+ *
  * @properties:
  * 	data =
  * 	{
  * 		target: 	 	the target DOM node which must be tracked
  * 		captureFlow:	indicates whether the capture event flow is used
  * 	}
- * 
+ *
  * @attributes:
  *  --> uId: unique identifier of the component
- * 
+ *
  * @events
  * 	--> /movementtracker/events/mvtbegin: the movement begins { publisher, movement, uxEvent, target }
  * 	--> /movementtracker/events/mvtchanged: the movement changes { publisher, movement, uxEvent, target }
  * 	--> /movementtracker/events/mvtstored: the movement stops { publisher, movement, uxEvent, target }
- * 
+ *
  * @compatibility
  *  --> Iphone OS2, Iphone OS3, Android 1.5, Android 2.1
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
@@ -53,7 +53,7 @@ wink.ux.MovementTracker = function(properties) {
 	
 	if (this._validateProperties() === false) return;
 	
-	this._initProperties();	
+	this._initProperties();
 	this._initListeners();
 };
 
@@ -94,7 +94,7 @@ wink.ux.MovementTracker.prototype = {
 	},
 	/**
 	 * Handle touch start
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 */
@@ -125,7 +125,7 @@ wink.ux.MovementTracker.prototype = {
 	},
 	/**
 	 * Handle touch move
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 */
@@ -152,7 +152,7 @@ wink.ux.MovementTracker.prototype = {
 	},
 	/**
 	 * Handle touch end
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 */
@@ -179,7 +179,7 @@ wink.ux.MovementTracker.prototype = {
 	},
 	/**
 	 * Add a point statement to the movement
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated to the touch
 	 */

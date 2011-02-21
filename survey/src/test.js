@@ -34,7 +34,7 @@ dojo.require("dojox.cometd");
 	var lc = choice.toLowerCase();
 
 	// stop event and return if choice exists or empty
-    	dojo.stopEvent(e);	
+    	dojo.stopEvent(e);
 	if(!choice || dojo.byId(lc)){ return; }
 
 	// make the input
@@ -50,7 +50,7 @@ dojo.require("dojox.cometd");
 
 	// and line break, and append them all to the node
 	// with the other checkboxes
-	var br = dojo.doc.createElement('br');	
+	var br = dojo.doc.createElement('br');
 	var node = dojo.byId("choices");
 	node.appendChild(cb);
 	node.appendChild(lab);

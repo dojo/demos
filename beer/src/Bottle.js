@@ -2,8 +2,8 @@ dojo.provide("demos.beer.src.Bottle");
 
 dojo.require("dijit._Widget");
 
-dojo.declare("beer.Bottle", dijit._Widget, { 
-	// summary: A Beer visual. 
+dojo.declare("beer.Bottle", dijit._Widget, {
+	// summary: A Beer visual.
 	
 	beerIndex: 0,
 	
@@ -15,7 +15,7 @@ dojo.declare("beer.Bottle", dijit._Widget, {
 	postCreate: function(){
 		
 		dojo.addClass(this.domNode, "dijitInline beerBox-" + this.size);
-		var offset = this.sizes[this.size]; 
+		var offset = this.sizes[this.size];
 		dojo.style(this.domNode,{
 			backgroundPosition:"-" + (this.beerIndex * offset) + "px 1px"
 		});

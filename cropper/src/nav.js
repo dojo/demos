@@ -33,7 +33,7 @@ dojo.require("dojox.image._base");
 
 			// make animation to drop the node out of view
 			_anims.push(
-				d.animateProperty({ 
+				d.animateProperty({
 					node: n, duration:375,
 					delay: delay * i,
 					properties: { top:45 },
@@ -58,8 +58,8 @@ dojo.require("dojox.image._base");
 		var _in = d.fx.combine(_anims), _out = d.fx.combine(_outa);
 		
 		var switchPage = function(arr){
-			// summary: switch out all the thumbnails with src's from this new array of 
-			//		urls. 
+			// summary: switch out all the thumbnails with src's from this new array of
+			//		urls.
 			
 			var c = d.connect(_in, "onEnd", function(){
 				// when thumbnails are hidden, do this:
@@ -89,11 +89,11 @@ dojo.require("dojox.image._base");
 				
 			});
 			
-			// play the show animation, trigger the above connection 
+			// play the show animation, trigger the above connection
 			_in.play();
 		}
 		
-		d.xhrGet({ 
+		d.xhrGet({
 			
 			// load a list of additional images from a url:
 			url:"images.json", handleAs:"json",
@@ -117,11 +117,11 @@ dojo.require("dojox.image._base");
 					return d.indexOf(pages[0], url) < 0;
 				});
 				// janky: ie6 is giving me a different order of this array:
-				pages.push(other.slice(0, 6)); 
+				pages.push(other.slice(0, 6));
 				pages.push(other.slice(6));
 
 				// make the pager nav, with event connections:
-				var pager = d.create('ul', { 
+				var pager = d.create('ul', {
 					id:"pager",
 					style:{ opacity:0 }
 				}, "navi");
@@ -132,7 +132,7 @@ dojo.require("dojox.image._base");
 						innerHTML: (1 + i) + ""
 					}, pager);
 					
-					// hook up some logic to unselect other items 
+					// hook up some logic to unselect other items
 					// in this group, and handle hover state:
 					$(n).hoverClass("over").onclick(function(e){
 						if(d.hasClass(n, "selected")){ return; }

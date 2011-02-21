@@ -14,10 +14,10 @@ dojo.require("dojox.layout.ResizeHandle");
 			d.place(n, node, "before");
 			d.place(node, n, "first");
 			return n;
-		}, 
-		// some quick aliases for shrinksafe: 
-		abs = "absolute", 
-		pos = "position", 
+		},
+		// some quick aliases for shrinksafe:
+		abs = "absolute",
+		pos = "position",
 		pixels = "px",
 		_floor = Math.floor;
 	
@@ -48,11 +48,11 @@ dojo.require("dojox.layout.ResizeHandle");
 		
 		// opacity: Float
 		//		Opacity value to use in hoverable or non-hoverable cases.
-		opacity: 0.35, 
+		opacity: 0.35,
 		
 		postCreate: function(){
 			
-			var gs = this.glassSize, 
+			var gs = this.glassSize,
 				s = this.scale;
 			
 			// wrap the target in a div so we can control it with dnd.
@@ -66,9 +66,9 @@ dojo.require("dojox.layout.ResizeHandle");
 			// create a draggable handle thing over our target
 			this.picker = d.create('div', {
 				"class":"imageDragger",
-				style: { 
-					opacity: this.hoverable ? 0 : this.opacity, 
-					width: gs + pixels, 
+				style: {
+					opacity: this.hoverable ? 0 : this.opacity,
+					width: gs + pixels,
 					height: gs + pixels
 				}
 			}, this.domNode, "before");
@@ -78,7 +78,7 @@ dojo.require("dojox.layout.ResizeHandle");
 				style:{
 					position:abs,
 					overflow:"hidden",
-					width: _floor(gs * s) + pixels, 
+					width: _floor(gs * s) + pixels,
 					height: _floor(gs * s) + pixels
 				}
 			}, d.body());
@@ -87,7 +87,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			// to the outer node. embedded position:rel/absolute/rel/abs here
 			var n = wrap(d.create('img', {
 						style:{ position: abs },
-				 		src: this.altSrc || this.domNode.src 
+				 		src: this.altSrc || this.domNode.src
 					}, this.preview), "div");
 			d.style(n, pos, "relative");
 			d.style(this.domNode, pos, abs);
@@ -101,7 +101,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			// setup dnd for the picker:
 			this.mover = new d.dnd.move.parentConstrainedMoveable(this.picker,
 				// Safari and IE seem to be pickup up paddings and whatnot
-				// as container? ugh. 
+				// as container? ugh.
 				{ area: "content", within: true }
 			);
 			
@@ -109,7 +109,7 @@ dojo.require("dojox.layout.ResizeHandle");
 				// create the resize handle for the glass:
 				this._handle = new dojox.layout.ResizeHandle({
 					
-					// the draggable node is the one to resize. 
+					// the draggable node is the one to resize.
 					// maintain aspect to keep inline with preview
 					targetContainer: this.picker,
 					fixedAspect: true,
@@ -122,13 +122,13 @@ dojo.require("dojox.layout.ResizeHandle");
 						this._whileMoving();
 					}),
 				
-					// constrain to box. 
+					// constrain to box.
 					constrainMax: true,
-					maxWidth: mb.w, 
+					maxWidth: mb.w,
 					maxHeight: mb.h,
 				
 					// sane default minimums:
-					minWidth:40, 
+					minWidth:40,
 					minHeight:40
 				
 				}).placeAt(this.picker);
@@ -155,11 +155,11 @@ dojo.require("dojox.layout.ResizeHandle");
 		
 		_adjustImage: function(e){
 			
-			var tc = this.coords, 
-				s = this.scale; 
+			var tc = this.coords,
+				s = this.scale;
 			
 			// if we were called from the resizehandle, we probably need to adjust our scale.
-			if(e && e.type && (e.type == "mouseup" || e.type == "mousemove")){ 
+			if(e && e.type && (e.type == "mouseup" || e.type == "mousemove")){
 				var xy = d.coords(this.picker);
 				this.scale = d.coords(this.preview).w / xy.w;
 			}else if(e && e.type && e.type == "load" && this.imageReady(e)){ /* noop, imageReady fired */ }
@@ -172,7 +172,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		},
 		
 		_positionPicker: function(e){
-			// place the preview thinger somewhere relative to the container 
+			// place the preview thinger somewhere relative to the container
 			// we wrapped around the orig image.
 			var tc = this.coords = d.coords(this.container, true);
 			d.style(this.preview,{
@@ -184,7 +184,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		_startDnd: function(n){
 			// listen for dnd Start, determine if we care:
 			if(!this._interval && n && n.node == this.picker){
-				// listen to doc onmousemove 
+				// listen to doc onmousemove
 				this._interval = this.connect(d.doc, "onmousemove", "_whileMoving");
 			}
 		},
@@ -195,7 +195,7 @@ dojo.require("dojox.layout.ResizeHandle");
 				this.disconnect(this._interval);
 				delete this._interval; // remember to delete it ;)
 				if(this.resizeable && this._lastXY){
-					// update the max size values of our handle to 
+					// update the max size values of our handle to
 					// be based on our current position, only allowing
 					// for the glass to be resized to the offset box
 					// we're in (eg, @ top 50 with size 50, max next
@@ -212,16 +212,16 @@ dojo.require("dojox.layout.ResizeHandle");
 		_whileMoving: function(){
 			// while dnd in progress, adjust the backgroundPosition of the preview
 			
-			var xy = this._lastXY = d.coords(this.picker), 
-				tc = this.coords, 
+			var xy = this._lastXY = d.coords(this.picker),
+				tc = this.coords,
 				r = this.image.width / tc.w,
-				x = _floor((xy.l - tc.l) * r), 
+				x = _floor((xy.l - tc.l) * r),
 				y = _floor((xy.t - tc.t) * r);
 			
-			// position the image relative to the picker's position 
+			// position the image relative to the picker's position
 			// in the container.
 			d.style(this.image, {
-				top: "-" + y + pixels, 
+				top: "-" + y + pixels,
 				left: "-" + x + pixels
 			});
 		},

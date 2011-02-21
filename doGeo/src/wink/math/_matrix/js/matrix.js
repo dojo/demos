@@ -7,21 +7,21 @@
 
 /**
  * math matrix library - a wink.math extension.
- * 
+ *
  * @methods:
  * 	--> createTransformMatrix: 	Create a transformation matrix with the given css transform
- * 
+ *
  * @compatibility
  *  --> Iphone OS2, Iphone OS3, Android 2.1
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
-wink.json.concat(wink.math, 
+wink.json.concat(wink.math,
 {
 	/**
 	 * Creates a transformation matrix with the given css transform
-	 * 
+	 *
 	 * @parameters:
 	 *	--> cssTransform: the css transform as string or WebKitCSSMatrix
 	 */
@@ -38,13 +38,13 @@ wink.json.concat(wink.math,
 
 /**
  * Implements a matrix encapsulation object (of order 4) that is representative of a 3d transformation.
- * 
+ *
  * @properties:
  * 	data =
  * 	{
  * 		values: the matrix values - array of 16 elements
  * 	}
- * 
+ *
  * @methods:
  * 	--> scale: 				Apply a scale operation to the matrix.
  * 	--> translate:			Apply a translate operation to the matrix.
@@ -54,10 +54,10 @@ wink.json.concat(wink.math,
  * 	--> loadCssTransform:	Load the given transformation
  * 	--> getValues:			Returns the matrix values as an array
  * 	--> getCssMatrix:		Return the corresponding WebKitCSSMatrix
- * 
+ *
  * @attributes:
  *  --> uId: unique identifier of the component
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
@@ -70,14 +70,14 @@ wink.math.Matrix = function(properties)
 	
 	if (this._validateProperties() === false) return;
 	
-	this._initProperties();	
+	this._initProperties();
 };
 
-wink.math.Matrix.prototype = 
+wink.math.Matrix.prototype =
 {
 	/**
 	 * Apply a scale operation to the matrix.
-	 * 
+	 *
 	 * @parameters:
 	 *	--> x: x scale component
 	 *	--> y: y scale component
@@ -91,7 +91,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Apply a translate operation to the matrix.
-	 * 
+	 *
 	 * @parameters:
 	 *	--> x: x translation component
 	 *	--> y: y translation component
@@ -105,7 +105,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Apply a rotation operation to the matrix.
-	 * 
+	 *
 	 * @parameters:
 	 *	--> x: x rotation component
 	 *	--> y: y rotation component
@@ -120,7 +120,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Multiply the current matrix by an other one.
-	 * 
+	 *
 	 * @parameters:
 	 *	--> otherWinkMatrix: the other matrix
 	 */
@@ -139,7 +139,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Load the given transformation
-	 * 
+	 *
 	 * @parameters:
 	 *	--> transformation: the css transform as string or WebKitCSSMatrix
 	 */
@@ -219,7 +219,7 @@ wink.math.Matrix.prototype =
 	_loadIdentity: function()
 	{
 		this._load([
-			1, 0, 0, 0, 
+			1, 0, 0, 0,
 			0, 1, 0, 0,
 			0, 0, 1, 0,
 			0, 0, 0, 1
@@ -227,7 +227,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Load the given values
-	 * 
+	 *
 	 * @parameters:
 	 *	--> values: an array of 16 matrix values
 	 */
@@ -243,7 +243,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Returns a WebKitCSSMatrix with the given array of values
-	 * 
+	 *
 	 * @parameters:
 	 *	--> values: an array of 16 matrix values
 	 */
@@ -273,7 +273,7 @@ wink.math.Matrix.prototype =
 	},
 	/**
 	 * Returns an array of values with the given WebKitCSSMatrix
-	 * 
+	 *
 	 * @parameters:
 	 *	--> cssMatrix: the WebKitCSSMatrix
 	 */

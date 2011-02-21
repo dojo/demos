@@ -41,15 +41,15 @@ dojo.require("dojox.analytics.Urchin");
 				;
 	};
 	
-	var demo = function(){	
+	var demo = function(){
 		
-		// each region has an id, and this order is convenient. keep it: 
+		// each region has an id, and this order is convenient. keep it:
 		var pieceId = ["hair", "eyes", "mouth"],
 		
 		// cache a ref to this node, and always make it 'off' by default
 			checknode = d.byId("random");
 			
-		checknode.checked = false; 
+		checknode.checked = false;
 		
 		var nextImage = function(n){
 			// FIXME: there is no unity to this. should keep an index
@@ -65,7 +65,7 @@ dojo.require("dojox.analytics.Urchin");
 				// otherwise, just set the image
 				d.style(n, "backgroundImage", "");
 				n.parentNode.className = people[x];
-			}		
+			}
 		};
 
 		var flip = function(e){
@@ -85,7 +85,7 @@ dojo.require("dojox.analytics.Urchin");
 		// random logic, could move out into module:
 		var randomInterval;
 		var stopRandom = function(){
-			checknode.checked = false; 
+			checknode.checked = false;
 			clearTimeout(randomInterval);
 			randomInterval = null;
 		}
@@ -100,9 +100,9 @@ dojo.require("dojox.analytics.Urchin");
 		
 		d.query("#flipper").onclick(function(e){
 			if(randomInterval){ stopRandom(); }
-			flip(e); 
+			flip(e);
 		});
-		d.connect(checknode, "onchange", function(e){	
+		d.connect(checknode, "onchange", function(e){
 			// check if we should be looping or stop it:
 			if(!e.target.checked){
 				stopRandom();
@@ -122,8 +122,8 @@ dojo.require("dojox.analytics.Urchin");
 			// onclick, create a data object from the selected faces and send to backend
 			var data = {};
 			d.forEach(pieceId, function(piece){
-				data[piece] = d.byId(piece).parentNode.className || ""; 
-			});	
+				data[piece] = d.byId(piece).parentNode.className || "";
+			});
 			setTimeout(d.partial(saveFace, data), 50);
 			stopRandom();
 
@@ -131,7 +131,7 @@ dojo.require("dojox.analytics.Urchin");
 
 		var saveFace = function(pay){
 			// a function to send the list of currently selected users to the backend
-			var url; 
+			var url;
 			d.xhrPost({
 				url: "resources/imageMaker.php",
 				handleAs: "json",
@@ -139,9 +139,9 @@ dojo.require("dojox.analytics.Urchin");
 				//	try{
 						url = response["file"];
 						if(response["name"]){
-							d.byId("savedName").innerHTML = 
+							d.byId("savedName").innerHTML =
 								"<p class='who'>" + nameset() + "</p>" +
-								"<h2 id='currentName'>" + response["name"] + "</h2>" 
+								"<h2 id='currentName'>" + response["name"] + "</h2>"
 								;
 
 							var c = response['clan'];
@@ -151,7 +151,7 @@ dojo.require("dojox.analytics.Urchin");
 
 								var clan = dojo.query("ul." + c);
 								if(!clan.length){
-									var t = 
+									var t =
 										dojo.create("div",{
 											"class":"clan",
 											id: c,
@@ -161,7 +161,7 @@ dojo.require("dojox.analytics.Urchin");
 									clan = dojo.query("ul", t);
 								}
 							
-								var td = dojo.create("li", { 
+								var td = dojo.create("li", {
 									"class":"thumbnail",
 									style:{ opacity:0 },
 									innerHTML:"<a href ='" + response["file"] + "'><img src='" + response["thumb"] + "'></a>"
@@ -182,7 +182,7 @@ dojo.require("dojox.analytics.Urchin");
 						}
 				//	}catch(e){ console.warn(e); }
 					blocker.hide();
-				}, 
+				},
 				content: pay
 			});
 		}
@@ -202,7 +202,7 @@ dojo.require("dojox.analytics.Urchin");
 			d["require"]("dojoc.demos.faces.src.webcam");
 		}).forEach(function(n){
 			// in the "progressive case", FF and others retain all states :/ force it back.
-			n.disabled = false; 
+			n.disabled = false;
 		});
 		
 		d.query(".imageThumb").makeNano();
@@ -221,12 +221,12 @@ dojo.require("dojox.analytics.Urchin");
 
 		// stall this just a little
 		setTimeout(function(){
-			new dojox.analytics.Urchin({ 
-				acct: "UA-3572741-1", 
+			new dojox.analytics.Urchin({
+				acct: "UA-3572741-1",
 				GAonLoad: function(){
 					this.trackPageView("/demos/faces");
 				}
-			});	
+			});
 		}, 1500);
 
 	};

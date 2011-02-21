@@ -6,7 +6,7 @@ dojo.addOnLoad(function(){
 
 	var beerService = {
 		"SMDVersion": "2.0",
-		"id": "dojoBeer", 
+		"id": "dojoBeer",
 		"description": "Dojo Beer Demo API",
 		"transport": "JSON",
 		"envelope": "URL",
@@ -19,7 +19,7 @@ dojo.addOnLoad(function(){
 					{ "name": "pass" }
 				]
 			}
-		}	
+		}
 	};
 
 	beer.api = new dojox.rpc.Service(dojo.moduleUrl("demos.beer.resources","api.smd"));

@@ -87,17 +87,17 @@ dojo.require("dojox.gfx.utils");
 			//	figure out the start and end angles for the arc overlay
 			var startAngle = 0,
 				endAngle = (360*(100-data[idx].pct))/100,
-				offset = (360-endAngle)/2; 
+				offset = (360-endAngle)/2;
 
 			//	now that we know where the start angle is really supposed to be, recalculate start and end.
 			startAngle = offset, endAngle = (startAngle+(360*(100-data[idx].pct))/100)%360;
 
 			//	do the biggest slice
-			var info = g.createGroup(), 
+			var info = g.createGroup(),
 				txtArgs = { text: data[idx].label, x:0, y:0, width:r/1.65, height:r/1.65, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
 				fontArgs = { size: "10px" };
-			var txt = this.font.draw(info, txtArgs, fontArgs, this.stroke.color), 
-				txtscale = this.findScale(data[idx].label, r/1.65), 
+			var txt = this.font.draw(info, txtArgs, fontArgs, this.stroke.color),
+				txtscale = this.findScale(data[idx].label, r/1.65),
 				txty = Math.round(this.font.viewbox.height*txtscale)/2;
 			if(this.rotation>90 && this.rotation<270){
 				txt.setTransform(new dojox.gfx.Matrix2D([
@@ -208,7 +208,7 @@ dojo.require("dojox.gfx.utils");
 				var tinyh = Math.sqrt(tiny.dx*tiny.dx + tiny.dy*tiny.dy);
 
 				//	the value
-				var label = main.createGroup(), 
+				var label = main.createGroup(),
 					txtArgs = { text: dojo.trim(d.label), x:0, y:0, width:r, height:r, align:"start", fitting:dojox.gfx.vectorFontFitting.NONE },
 					fontArgs = { size: "8px" };
 				label.setTransform(m.rotategAt(lastAngle-((lastAngle-a)/2), c, c));
@@ -228,7 +228,7 @@ dojo.require("dojox.gfx.utils");
 				}
 				if(_center>=90-this.rotation && _center<=270-this.rotation){
 					mtrx=new dojox.gfx.Matrix2D([
-						m.translate(r+24, c+(pctscale?Math.round(this.font.viewbox.height*pctscale)/2:3)), 
+						m.translate(r+24, c+(pctscale?Math.round(this.font.viewbox.height*pctscale)/2:3)),
 						pctscale?m.scale(pctscale):pct.getTransform(),
 						m.rotateg(180)
 					]);
@@ -240,8 +240,8 @@ dojo.require("dojox.gfx.utils");
 				}
 				pct.setTransform(mtrx);
 
-				var txt = this.font.draw(label, txtArgs, fontArgs, this.stroke.color), 
-					txtscale = this.findScale(d.label, r/1.65), 
+				var txt = this.font.draw(label, txtArgs, fontArgs, this.stroke.color),
+					txtscale = this.findScale(d.label, r/1.65),
 					txty = Math.round(this.font.viewbox.height*txtscale)/2,
 					txtw = this.font.getWidth(d.label, txtscale);
 				if(Math.round(this.font.viewbox.height*txtscale) > maxh){
@@ -253,13 +253,13 @@ dojo.require("dojox.gfx.utils");
 
 				if(_center>=90-this.rotation && _center<=270-this.rotation){
 					var mtrx=new dojox.gfx.Matrix2D([
-						m.translate(r*2-10, c+txty), 
+						m.translate(r*2-10, c+txty),
 						m.scale(txtscale),
 						m.rotateg(180)
 					]);
 				} else {
 					var mtrx=new dojox.gfx.Matrix2D([
-						m.translate((r*2)-txtw-6, c-txty), 
+						m.translate((r*2)-txtw-6, c-txty),
 						m.scale(txtscale)
 					]);
 				}

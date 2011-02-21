@@ -22,10 +22,10 @@ dojo.declare("image.Skewed",
 	//		Is image initially selected
 	selected:"",
 	// value: String
-	//		Each Item has a value associated with it's image. 
+	//		Each Item has a value associated with it's image.
 	value:"",
 
-	reflectSpacing: 5,	
+	reflectSpacing: 5,
 	angle: 25,
 
 	templateString:
@@ -82,7 +82,7 @@ dojo.declare("image.Container",
 	
 	
 	// only use even numbers:
-	visibleItems: 15, 
+	visibleItems: 15,
 	
 	// offOpacity: Float
 	//		An opacity value to set to the images that do not have focus
@@ -106,7 +106,7 @@ dojo.declare("image.Container",
 		this.easing = (dojo.isString(this.easing) ? dojo.getObject(this.easing) : this.easing);
 
 		if(dojo.isIE){
-			// FIXME: can move to css with .dj_ie prefix 
+			// FIXME: can move to css with .dj_ie prefix
 			dojo.style(this.containerNode,"overflow","hidden");
 		}
 
@@ -183,7 +183,7 @@ dojo.declare("image.Container",
 		
 		// FIXME: we can use just a slice around +/- x for long lists! (alex?)
 		var _delay = 10;
-		var _diff = this._spacing; 
+		var _diff = this._spacing;
 		var thresh = this.threshold;
 		var some = this.nl.map(function(n,i){
 			var dist = Math.abs(i - x);
@@ -201,7 +201,7 @@ dojo.declare("image.Container",
 					zIndex:69
 				};
 
-				var c;				
+				var c;
 				if(i > x){
 					c = "alignRight";
 					// stagger z-index downward from center on
@@ -217,7 +217,7 @@ dojo.declare("image.Container",
 				}
 				dojo.style(n, _mix);
 				dojo.forEach(["alignLeft","alignRight","alignCenter"],function(cl){
-					dojo.removeClass(n,cl);	
+					dojo.removeClass(n,cl);
 				});
 				dojo.addClass(n,c);
 				
@@ -244,7 +244,7 @@ dojo.declare("image.Container",
 					);
 					// oh so slightly, or less if going away from node:
 					_delay += (d < 0 ? 15 : -15);
-				}	
+				}
 
 			}, this) // forEach
 		;
@@ -305,7 +305,7 @@ dojo.declare("image.Container",
 		dojo.stopEvent(e);
 		var scroll = e[(!dojo.isMozilla ? "wheelDelta" : "detail")] * (!dojo.isMozilla ? 1 : -1);
 		this._handleKey({
-			charOrCode: dojo.keys[(scroll > 0 ? "LEFT_ARROW" : "RIGHT_ARROW")]	
+			charOrCode: dojo.keys[(scroll > 0 ? "LEFT_ARROW" : "RIGHT_ARROW")]
 		});
 		
 	}

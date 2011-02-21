@@ -10,7 +10,7 @@ dojo.provide("demos.faces.src.block");
 		//
 		// duration: Integer
 		//		The duration of the fadeIn/fadeOut for the overlay
-		duration: 400, 
+		duration: 400,
 		
 		// opacity: Float
 		//		The final opacity of the overlay. A number from 0 to 1
@@ -25,10 +25,10 @@ dojo.provide("demos.faces.src.block");
 		zIndex: 999,
 		
 		constructor: function(node, args){
-			// the constructor function is always called by dojo.declare. 
+			// the constructor function is always called by dojo.declare.
 			// first, mixin any passed args into this instance to override defaults, or hook in custom stuff
 			d.mixin(this, args);
-			// in-case someone passed node:"something", force this.node to be the first param 
+			// in-case someone passed node:"something", force this.node to be the first param
 			this.node = d.byId(node);
 			// create a node for our overlay.
 			this.overlay = d.doc.createElement('div');
@@ -39,7 +39,7 @@ dojo.provide("demos.faces.src.block");
 				.place(d.body(),"last")
 				// give it a common class
 				.addClass("dojoBlockOverlay")
-				// mixin our styles. I'd prefer to do this purly in CSS, but that would 
+				// mixin our styles. I'd prefer to do this purly in CSS, but that would
 				// require external css somehow, and is an extra file. ;)
 				.style({
 					backgroundColor: this.backgroundColor,
@@ -57,17 +57,17 @@ dojo.provide("demos.faces.src.block");
 				l: pos.x, t: pos.y
 			});
 	
-			dojo.style(this.overlay,{ 
+			dojo.style(this.overlay,{
 				position:"absolute",
-				left: pos.l + "px", 
-				width: pos.w + "px", 
+				left: pos.l + "px",
+				width: pos.w + "px",
 				height: pos.h + "px",
 				top: pos.t + "px"
-			});	
+			});
 		},
 		
 		show: function(){
-			// summary: Show this overlay 
+			// summary: Show this overlay
 			
 			if(this._showing){ return; }
 			var	ov = this.overlay;
@@ -85,9 +85,9 @@ dojo.provide("demos.faces.src.block");
 		hide: function(){
 			// summary: Hide this overlay
 			
-			d.fadeOut({ 
+			d.fadeOut({
 				node: this.overlay,
-				duration: this.duration, 
+				duration: this.duration,
 				// when the fadeout is done, set the overlay to display:none
 				onEnd: d.hitch(this, function(){
 					d.style(this.overlay, "display", "none");
@@ -102,7 +102,7 @@ dojo.provide("demos.faces.src.block");
 	});
 
 	// Generates a unique id for a node
-	var id_count = 0; 
+	var id_count = 0;
 	var _uniqueId = function(){
 		var id_base = "dojo_blocked",
 			id;
@@ -112,19 +112,19 @@ dojo.provide("demos.faces.src.block");
 		return id;
 	}
 
-	var blockers = {}; // hash of all blockers	
+	var blockers = {}; // hash of all blockers
 	d.mixin(d, {
 		block: function(/* String|DomNode */node, /* dojo.block._blockArgs */args){
-			// summary: Overlay the passed node to prevent further input, creates an 
+			// summary: Overlay the passed node to prevent further input, creates an
 			//		instance of dojo._Blocker attached to this node byId, or generates a
 			//		unique id if the node doesn't have one already.
 			//
 			//	node: The node to overlay
-			//	args: An object hash of configuration options. See dojo._Blocker for 
+			//	args: An object hash of configuration options. See dojo._Blocker for
 			//		a list of parameters mixed in.
 			//
 			//	returns: The dojo._Blocker instance created for the passed node for convenience.
-			//		You can call var thing = dojo.block("someNode"); thing.hide(); or simply call 
+			//		You can call var thing = dojo.block("someNode"); thing.hide(); or simply call
 			//		dojo.unblock("someNode"), whichever you prefer.
 			var n = d.byId(node);
 			var id = d.attr(n, "id");
@@ -149,7 +149,7 @@ dojo.provide("demos.faces.src.block");
 		
 	});
 	
-	d.extend(d.NodeList, {	
+	d.extend(d.NodeList, {
 		block: d.NodeList._adaptAsForEach("block"),
 		unblock: d.NodeList._adaptAsForEach("unblock")
 	});

@@ -14,7 +14,7 @@ dojo.require("dojox.analytics.Urchin");
 	}
 
 	var init = function(){
-			// turn li's in this page into fisheye items, presumtiously:  
+			// turn li's in this page into fisheye items, presumtiously:
 		dojo.query("#hidden ul > li").forEach(function(n){
 			new dojox.widget.FisheyeLite({
 				properties:{
@@ -33,14 +33,14 @@ dojo.require("dojox.analytics.Urchin");
 		// children are scrollpanes, add titles (and id for css styles)
 		var dates = ["25.07.2008", "26.07.2008", "27.07.2008"];
 		dojo.forEach(["day1","day2","day3"], function(id,i){
-			new dojox.layout.ScrollPane({ 
-				id: "pane" + (i+1), 
-				style: "width:450px;height:170px", 
-				title: dates[i] 
+			new dojox.layout.ScrollPane({
+				id: "pane" + (i+1),
+				style: "width:450px;height:170px",
+				title: dates[i]
 			}, id).placeAt(accordion);
 		});
 
-		// we do this because despite accordion passing correct sizes, scrollpane uses 
+		// we do this because despite accordion passing correct sizes, scrollpane uses
 		// it's scrollheight/etc for sizing
 		dojo.subscribe("accordionPanel-selectChild", function(child){
 			setTimeout(dojo.hitch(child, "resize"), accordion.duration + 50);
@@ -51,13 +51,13 @@ dojo.require("dojox.analytics.Urchin");
 
 		dojo.query('.dijitAccordionText').style('opacity', 0.01);
 
-		// demo usage tracking: 
-		new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		// demo usage tracking:
+		new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/castle");
 			}
-		});	
+		});
 		
 	}
 

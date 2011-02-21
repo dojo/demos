@@ -7,17 +7,17 @@
 
 /**
  * Implements a Gesture management system.
- * Determines whether some gestures (with exactly 2 fingers) are performed on the nodes and if so, 
+ * Determines whether some gestures (with exactly 2 fingers) are performed on the nodes and if so,
  * inform the listeners. Gestures that can be listened are referenced in the "_knownGestures" attribute below.
  * The notifications to the listeners include parameters that depends on gesture type.
- * 
+ *
  * @methods:
  * 	--> listenTo: Allows to listen for a specific gesture on a dom Node.
  *  --> unlistenTo: Allows to unlisten for a specific gesture on a dom Node.
- * 
+ *
  * @compatibility
  *  --> Iphone OS2, Iphone OS3
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
@@ -42,7 +42,7 @@ wink.ux.gesture =
 	
 	/**
 	 * Allows to listen for a specific gesture on a dom Node.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> domNode: the dom node that listen
 	 * 	--> gesture: the gesture name to listen
@@ -63,7 +63,7 @@ wink.ux.gesture =
 		}
 		var gestureElement = null;
 		var index = this._getGestureElementIndex(domNode);
-		if (index == null) 
+		if (index == null)
 		{
 			gestureElement = this._createGestureElement(domNode, preventDefault);
 			this._gestureElements.push(gestureElement);
@@ -79,7 +79,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Allows to unlisten for a specific gesture on a dom Node.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> domNode: the dom node that unlisten
 	 * 	--> gesture: the gesture name to unlisten
@@ -205,10 +205,10 @@ wink.ux.gesture =
 	 */
 	_getGestureElementIndex: function(domNode)
 	{
-		for (var i = 0; i < this._gestureElements.length; i++) 
+		for (var i = 0; i < this._gestureElements.length; i++)
 		{
 			var gestureElementI = this._gestureElements[i];
-			if (gestureElementI.domNode == domNode) 
+			if (gestureElementI.domNode == domNode)
 			{
 				return i;
 			}
@@ -217,7 +217,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Invoke callbacks that are concerned by the gesture on the given element.
-	 * 
+	 *
 	 * @parameters:
 	 *  --> gesture: the gesture name
 	 * 	--> gestureElement: the gesture element
@@ -230,14 +230,14 @@ wink.ux.gesture =
 		}
 		
 		var callbacks = gestureElement.getGestureHandler(gesture).callbacks;
-		for (var j = 0; j < callbacks.length; j++) 
+		for (var j = 0; j < callbacks.length; j++)
 		{
 			var callbackJ = callbacks[j];
 			
 			var arguments = callbackJ.arguments;
 			var args = [ gestureInfos ];
 			
-			if (wink.isset(arguments) && arguments.length > 0) 
+			if (wink.isset(arguments) && arguments.length > 0)
 			{
 				args = args.concat(arguments);
 			}
@@ -247,7 +247,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle touch start
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -288,7 +288,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle touch move
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -310,7 +310,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle touch end
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -350,7 +350,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Check if two digits are pressed on the given gesture element.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> gestureElement: the GestureElement associated
 	 */
@@ -367,7 +367,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle gesture start
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -381,7 +381,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle gesture change
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -433,7 +433,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Handle gesture end
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> uxEvent: the wink.ux.Event associated
 	 * 	--> gestureElement: the GestureElement associated
@@ -450,7 +450,7 @@ wink.ux.gesture =
 	},
 	/**
 	 * Returns the digit information.
-	 * 
+	 *
 	 * @parameters:
 	 * 	--> touch: the touch
 	 * 	--> uxEvent: the wink.ux.Event

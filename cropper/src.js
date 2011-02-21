@@ -2,7 +2,7 @@ dojo.provide("demos.cropper.src");
 
 dojo.require("demos.cropper.src.Preview");
 dojo.require("dojox.analytics.Urchin");
-dojo.require("demos.cropper.src.nav"); 
+dojo.require("demos.cropper.src.nav");
 
 ;(function(d, $){
 	
@@ -34,7 +34,7 @@ dojo.require("demos.cropper.src.nav");
 				// show the loader after each click
 				show.play();
 				// when we have a src to load, set both images
-				preview.domNode.src = preview.image.src = src; 
+				preview.domNode.src = preview.image.src = src;
 				// update the title text:
 			//	d.byId("titleText").innerHTML = preview.image.alt = et.alt;
 			}
@@ -44,17 +44,17 @@ dojo.require("demos.cropper.src.nav");
 		// hook up the nav.js link in footer text:
 		$("#navjs").onclick(function(e){
 			// special syntax to trick build system
-			d["require"]("demos.cropper.src.nav"); 
+			d["require"]("demos.cropper.src.nav");
 			e.preventDefault();
 		});
 		
 		// shortly after onLoad, track the page (prevent UI blocking)
-		new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/cropper");
 			}
-		});	
+		});
 		
 	});
 	

@@ -7,7 +7,7 @@ dojo.require("demos.beer.src.Lady")
 dojo.require("demos.beer.src.dnd");
 
 dojo.addOnLoad(function(){
-//	beer.api = new dojox.rpc.Service(dojo.moduleUrl("demos.beer.resources","api.smd"));	
+//	beer.api = new dojox.rpc.Service(dojo.moduleUrl("demos.beer.resources","api.smd"));
 	
 	var shelf = dojo.byId("shelf-offer").firstChild;
 	for(var i = 0; i < 10; i++){

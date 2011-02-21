@@ -108,7 +108,7 @@ dojo.declare(
 							name: name + " \u202b(" + loc + ")\u202c"
 						};
 					});
-					onComplete(locales); 
+					onComplete(locales);
 					return mapping;		// Deferreds need to return their original arg for the next guy in chain (in the future)
 				});
 				break;

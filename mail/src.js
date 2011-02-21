@@ -46,23 +46,23 @@ dojo.addOnLoad(function(){
 		node:n,
 		duration:720,
 		onEnd:function(){
-			// dojo._destroyElement(n); 
+			// dojo._destroyElement(n);
 			dojo.style(n,"display","none");
 		}
 	}).play();
 
 	// Set up handler so that when contact information is updated the "display field"
 	// (used by "To" field drop-down") is also updated
-	dojo.connect(contactStore, "onSet", function(/* item */ item, 
-					/* attribute-name-string */ attribute, 
+	dojo.connect(contactStore, "onSet", function(/* item */ item,
+					/* attribute-name-string */ attribute,
 					/* object | array */ oldValue,
 					/* object | array */ newValue){
 		if(attribute != "display"){
-			contactStore.setValue(item, "display", 
+			contactStore.setValue(item, "display",
 					contactStore.getValue(item, "first") + " " +
 					contactStore.getValue(item, "last") + " <" +
 					contactStore.getValue(item, "email") + ">");
-		}		
+		}
 	});
 	
 	// make tooltips go down (from buttons on toolbar) rather than to the right
@@ -71,12 +71,12 @@ dojo.addOnLoad(function(){
 	// Write A-Z "links" on contactIndex tab to do filtering
 	genIndex();
 
-	new dojox.analytics.Urchin({ 
-		acct: "UA-3572741-1", 
+	new dojox.analytics.Urchin({
+		acct: "UA-3572741-1",
 		GAonLoad: function(){
 			this.trackPageView("/demos/dijitmail");
 		}
-	});	
+	});
 
 });
 
@@ -92,7 +92,7 @@ function genIndex(){
 		ci.appendChild(span);
 		new dojox.widget.FisheyeLite(
 			{
-				properties: {fontSize: 1.5}, 	
+				properties: {fontSize: 1.5},
 				easeIn: dojo.fx.easing.linear,
 				durationIn: 100,
 				easeOut: dojo.fx.easing.linear,
@@ -129,7 +129,7 @@ function onMessageClick(cell){
 		"Subject: "+ subject + "<br>" +
 		"Date: " + sent + "<br><br></span>" +
 		text;
-	dijit.byId("message").setContent(messageInner);	
+	dijit.byId("message").setContent(messageInner);
 }
 
 function searchMessages(){
@@ -162,7 +162,7 @@ var updateFetchStatus = function(x){
 		dojo.fadeOut({ node: 'fetchMail', duration:800,
 			// set progress back to indeterminate. we're cheating, because this
 			// doesn't actually have any data to "progress"
-			onEnd: function(){ 
+			onEnd: function(){
 				dijit.byId('fakeFetch').update({ indeterminate: true });
 				dojo.byId('fetchMail').style.visibility='hidden'; // remove progress bar from tab order
 			}
@@ -186,11 +186,11 @@ var fakeDownload = function(){
 	}
 }
 
-// fake sending dialog progress bar 
+// fake sending dialog progress bar
 var stopSendBar = function(){
 	dijit.byId('fakeSend').update({ indeterminate: false });
 	dijit.byId('sendDialog').hide();
-	tabs.selectedChildWidget.onClose = function(){return true;};  // don't want confirm message 
+	tabs.selectedChildWidget.onClose = function(){return true;};  // don't want confirm message
 	tabs.closeChild(tabs.selectedChildWidget);
 }
 	 

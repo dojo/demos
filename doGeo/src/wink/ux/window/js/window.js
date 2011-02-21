@@ -7,7 +7,7 @@
 
 /**
  * Implements the Window component that captures resize and scroll events and warns listeners of changes.
- * It Handles with these properties: 
+ * It Handles with these properties:
  * 		{
  * 			screenWidth
  * 			screenHeight
@@ -15,17 +15,17 @@
  * 			height
  * 			orientation
  * 		}
- * 
+ *
  * @methods:
  *	--> getProperties: Returns the window component properties.
  *
  * @events
  * 	--> /window/events/resize				: when window is resized
  * 	--> /window/events/orientationchange	: when orientation changed
- * 
+ *
  * @compatibility
  *  --> Iphone OS2, Iphone OS3, Android 1.1, Android 1.5, Android 2.1
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
@@ -142,11 +142,11 @@ wink.ux.Window.prototype =
 	/**
 	 * Initialize listeners
 	 */
-	_initListeners: function() 
+	_initListeners: function()
 	{
 		var _this = this;
 		
-		this._handlers = 
+		this._handlers =
 		{
 			resizeHandler: function(e) { _this._handleResize(e); },
 			scrollHandler: function(e) { _this._handleScroll(e); }

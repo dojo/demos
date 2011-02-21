@@ -7,10 +7,10 @@
 
 /**
  * The 3d fx object is an extension of wink.fx (2d fx) that allows more advanced transformations (e.g.: simple or composed 3d transformations).
- * Because a change of scale followed by a translation does not give the same result if you reverse the two transformations, 
+ * Because a change of scale followed by a translation does not give the same result if you reverse the two transformations,
  * the main role is to simplify the implementation of composed transformations, it is made by using a user-defined order.
- * 
- * A 3d fx transformation is defined as : 
+ *
+ * A 3d fx transformation is defined as :
  * 		transformation: {
  * 			type: value in { "translate", "scale", "rotate" }
  * 			x: x transformation component
@@ -18,7 +18,7 @@
  * 			z: z transformation component
  * 			[angle: rotation angle ]
  * 		}
- * 
+ *
  * @methods:
  * 	--> set3dTransform:				Apply to the given node a xyz transformation
  * 	--> initComposedTransform:		Initialize a composed transformation to the given node
@@ -29,20 +29,20 @@
  *
  * @dependencies:
  * 	--> wink.math._matrix
- * 
+ *
  * @compatibility:
  * 	--> Iphone OS2, Iphone OS3
- * 
+ *
  * @author:
  * 	--> Sylvain LALANDE
  */
-wink.json.concat(wink.fx, 
+wink.json.concat(wink.fx,
 {
 	_nodeTransforms: [],
 	
 	/**
 	 * Apply to the given node a 3dfx transformation
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the transformation
 	 *	--> transformation: the 3dfx transformation
@@ -68,7 +68,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Initialize a composed transformation to the given node
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the composed transformation
 	 *	--> keepCurrent: true if the previous node transformation must be kept
@@ -86,7 +86,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Set a composed transformation part at the given index
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the composed transformation
 	 *	--> index: the index of the given transformation part
@@ -120,7 +120,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Apply a composed transformation to the node
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the composed transformation
 	 *	--> store: indicates if transformation parts must be stored in only one
@@ -151,7 +151,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Store all the composed transformation parts in one to enhance performance
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the composed transformation
 	 */
@@ -161,7 +161,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Close the composed transformation associated to the given node
-	 * 
+	 *
 	 * @parameters:
 	 *	--> node: the node that hosts the composed transformation
 	 */
@@ -178,7 +178,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Check the validity of the given 3dfx transformation
-	 * 
+	 *
 	 * @parameters:
 	 *	--> transformation: the transformation to check
 	 */
@@ -203,7 +203,7 @@ wink.json.concat(wink.fx,
 	},
 	/**
 	 * Returns the associated matrix of the given 3dfx transformation
-	 * 
+	 *
 	 * @parameters:
 	 *	--> transformation: the 3dfx transformation
 	 */

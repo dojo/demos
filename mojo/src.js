@@ -13,7 +13,7 @@ dojo.require("dojox.analytics.Urchin");
 dojo.require("demos.mojo.src.drop"); // gravity code
 dojo.require("demos.mojo.src.download"); // download link code
 
-(function(){ 
+(function(){
 		
 	var nodes, style = dojo.style;
 	
@@ -70,10 +70,10 @@ dojo.require("demos.mojo.src.download"); // download link code
 					delay: _delay + 1000,
 					node: img,
 					properties: {
-						width: 310, 
-						height: 310, 
-						top: 0, 
-						left: 0 
+						width: 310,
+						height: 310,
+						top: 0,
+						left: 0
 					}
 				}));
 			});
@@ -86,7 +86,7 @@ dojo.require("demos.mojo.src.download"); // download link code
 		_anims.push(dojo.animateProperty({
 			node: "header",
 			properties: {
-				top: 5, 
+				top: 5,
 				left: 5
 			},
 			delay: _delay,
@@ -97,8 +97,8 @@ dojo.require("demos.mojo.src.download"); // download link code
 			node:"downloadButton",
 			duration:400,
 			delay:2000,
-			beforeBegin: dojo.partial(style, "downloadButton", { 
-				opacity:0, visibility:"visible" 
+			beforeBegin: dojo.partial(style, "downloadButton", {
+				opacity:0, visibility:"visible"
 			})
 		}));
 		
@@ -137,14 +137,14 @@ dojo.require("demos.mojo.src.download"); // download link code
 				}).play(5); // small delay for performance?
 				style(e.node, "zIndex", _z);
 			}
-		});	
+		});
 		
-		new dojox.analytics.Urchin({ 
-			acct: "UA-3572741-1", 
+		new dojox.analytics.Urchin({
+			acct: "UA-3572741-1",
 			GAonLoad: function(){
 				this.trackPageView("/demos/mojo");
 			}
-		});	
+		});
 
 	});
 

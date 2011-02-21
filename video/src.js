@@ -1,6 +1,6 @@
 dojo.require("dojox.av.FLVideo");
 dojo.require("dijit.form.Button");
-dojo.require("dijit.form.HorizontalSlider"); 
+dojo.require("dijit.form.HorizontalSlider");
 dojo.require("dojo.dnd.Source");
 dojo.require("dojo.parser");
 dojo.require("dojox.analytics.Urchin");
@@ -8,7 +8,7 @@ dojo.require("dojox.analytics.Urchin");
 var passthrough = function(msg){
 	//for catching messages from Flash
 	if(window.console){
-		console.log(msg);	
+		console.log(msg);
 	}
 }
 
@@ -34,13 +34,13 @@ createRelated = function(items){
 	var txt = '<span class="relText">Related Items:</span>'
 	dojo.forEach(items, function(m){
 		var id = m.title.replace(/\s/g,"");
-		var path = "media/"+id+".flv"; 
-		var thumb = "media/thumbs/"+id+".jpg"; 	 
+		var path = "media/"+id+".flv";
+		var thumb = "media/thumbs/"+id+".jpg";
 		txt += 	'<div class="related" id="click_'+id+'"><div class="thumb" style="background-image:url(media/thumbs/'+id+'.jpg)"></div>'+
 				'<div class="title">'+m.title+'</div>'+
 				'<div class="desc">'+m.desc+'</div></div>';
 	});
-	txt +='';	
+	txt +='';
 	return txt;
 }
 
@@ -59,14 +59,14 @@ dojo.addOnLoad(function(){
 				var txt = '';
 				dojo.forEach(items, function(m){
 					var id = m.id = m.title.replace(/\s/g,"");
-					var path = m.path = "media/"+id+".flv"; 
-					var thumb = m.thumb = "media/thumbs/"+id+".jpg"; 
+					var path = m.path = "media/"+id+".flv";
+					var thumb = m.thumb = "media/thumbs/"+id+".jpg";
 					txt += ''+
 					'<div class="dojoDndItem" id="dnd_'+id+'" path="'+path+'" dndType="blue">'+
 						'<div id="'+id+'" class="thumb" style="background-image:url('+thumb+');"></div>'+
 						'<div class="title">'+m.title+'</div>'+
 						'<div class="desc">'+m.desc+'</div>'+
-					'</div>';						 
+					'</div>';
 				});
 				libNode.innerHTML = txt;
 				lib.sync();
@@ -85,7 +85,7 @@ dojo.addOnLoad(function(){
 	dojo.connect(player, "onStart", controls, "onStart");
 	dojo.connect(player, "onPosition", controls.progress, "onPosition");
 	
-	dojo.subscribe("/dnd/source/over", function(evt){ 
+	dojo.subscribe("/dnd/source/over", function(evt){
 		//console.log("onDndSourceOver", evt);
 		if(evt){
 			if(evt.node){
@@ -97,7 +97,7 @@ dojo.addOnLoad(function(){
 		}
 	});
 	dojo.subscribe("/dnd/start",  function(evt){ console.log("onDndStart", evt)});
-	dojo.subscribe("/dnd/drop",   function(evt){ 
+	dojo.subscribe("/dnd/drop",   function(evt){
 		//console.log( "onDndDrop", evt);
 		//console.log("dndItem:", dndItem)
 		var node = dojo.byId(dndItem.dragNode.id);
@@ -109,16 +109,16 @@ dojo.addOnLoad(function(){
 			controls.showPause();
 		}
 	});
-	dojo.subscribe("/dnd/cancel", function(evt){ 
+	dojo.subscribe("/dnd/cancel", function(evt){
 		//console.log( "onDndCancel")
 	});
 	
-	new dojox.analytics.Urchin({ 
-		acct: "UA-3572741-1", 
+	new dojox.analytics.Urchin({
+		acct: "UA-3572741-1",
 		GAonLoad: function(){
 			this.trackPageView("/demos/video");
 		}
-	});	
+	});
 	
 });
 
@@ -235,7 +235,7 @@ controls = {
 		},
 		out: function(){
 			if(!this.dragging){
-				dojo.removeClass(this.volBack, "volBackHover");	
+				dojo.removeClass(this.volBack, "volBackHover");
 			}
 		}
 	},
@@ -276,7 +276,7 @@ controls = {
 					m1=0;
 					m2=1;
 				}else if(m2>len-1){
-					m2=0;	
+					m2=0;
 				}
 				break;
 			}
@@ -286,10 +286,10 @@ controls = {
 		var txt = createRelated([ m1, m2 ]);
 		dojo.byId("relatedNode").innerHTML=txt;
 		this.conM1 = dojo.connect(dojo.byId("click_"+m1.id), "click", this, function(){
-			this.load(m1.path);																
+			this.load(m1.path);
 		});
 		this.conM2 = dojo.connect(dojo.byId("click_"+m2.id), "click", this, function(){
-			this.load(m2.path);																
+			this.load(m2.path);
 		});
 		this.showOverlay();
 		this.showPlay();
@@ -330,7 +330,7 @@ controls = {
 	},
 	doPause: function(){
 		player.pause();
-		this.showPlay();	
+		this.showPlay();
 	},
 	showPlay: function(){
 		dojo.style(dijit.byId("pauseButton").domNode, "display", "none");

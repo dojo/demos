@@ -1,5 +1,5 @@
 dojo.require("dojox.form.FileUploader");
-dojo.require("dijit.form.Button"); 
+dojo.require("dijit.form.Button");
 dojo.require("dojo.parser");
 dojo.require("dojox.analytics.Urchin");
 
@@ -9,7 +9,7 @@ dojo.require("dojox.embed.Flash");
 var passthrough = function(msg){
 	//for catching messages from Flash
 	if(window.console){
-		console.log(msg);	
+		console.log(msg);
 	}
 }
 
@@ -40,7 +40,7 @@ var showWithFlash = function(){
 
 var showWithoutFlash = function(){
 	if(!forceNoFlash){
-		setLoc((selectMultipleFiles) ? "?forceNoFlash&multiMode" : "?forceNoFlash"); 
+		setLoc((selectMultipleFiles) ? "?forceNoFlash&multiMode" : "?forceNoFlash");
 	}
 }
 
@@ -52,7 +52,7 @@ var showMulti = function(){
 
 var showSingle = function(){
  	if(selectMultipleFiles){
-		setLoc((forceNoFlash) ? "?forceNoFlash" : ""); 
+		setLoc((forceNoFlash) ? "?forceNoFlash" : "");
 	}
 }
 
@@ -64,7 +64,7 @@ var imageHTML = function(data){
 		console.log("D:", d)
 		var date = d[0]+" "+d[1]+" "+d[2]+" "+d[3];
 	}else{
-		date = "NA";	
+		date = "NA";
 	}
 	console.log("DATE:",date);
 	var name = data.file.split("/")[data.file.split("/").length-1];
@@ -127,10 +127,10 @@ dojo.addOnLoad(function(){
 	console.log("UPLOAD URL:",uploadUrl);
 	
 	var f0 = new dojox.form.FileUploader({
-		button:dijit.byId("btn0"), 
+		button:dijit.byId("btn0"),
 		degradable:true,
-		uploadUrl:uploadUrl, 
-		uploadOnChange:false, 
+		uploadUrl:uploadUrl,
+		uploadOnChange:false,
 		selectMultipleFiles:selectMultipleFiles,
 		fileMask:fileMask,
 		isDebug:true
@@ -175,12 +175,12 @@ dojo.addOnLoad(function(){
 		f0.destroyAll();
 	}
 	
-	new dojox.analytics.Urchin({ 
-		acct: "UA-3572741-1", 
+	new dojox.analytics.Urchin({
+		acct: "UA-3572741-1",
 		GAonLoad: function(){
 			this.trackPageView("/demos/uploader");
 		}
-	});	
+	});
 	
 });
 

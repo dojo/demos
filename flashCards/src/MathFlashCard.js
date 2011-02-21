@@ -35,11 +35,11 @@ dojo.declare("dojofun.widget.MathFlashCard",
 			}
 
 			return problems;
-		}, 
+		},
 
 		restart: function(){
 			this.problemSet = this.generateProblemSet();
-			dojo.forEach(["currentProblem","correctAnswers","incorrectAnswers","tooSlow"], 
+			dojo.forEach(["currentProblem","correctAnswers","incorrectAnswers","tooSlow"],
 				function(attr){
 					this[attr] = 0;
 			}, this)
@@ -50,7 +50,7 @@ dojo.declare("dojofun.widget.MathFlashCard",
 		renderProblem: function(prob){
 			this.topR.innerHTML = this.problemSet[prob].x;
 			this.bottomR.innerHTML = this.problemSet[prob].y;
-			this.answerInput.value = "";	
+			this.answerInput.value = "";
 			if (this.problemSet[prob].type == "addition"){
 				this.bottomL.innerHTML = "+";
 			}
@@ -66,7 +66,7 @@ dojo.declare("dojofun.widget.MathFlashCard",
 			this.fadeOp = dojo.fadeOut({
 				node: this.domNode,
 				duration: (this.timer * 1000),
-				onEnd: dojo.hitch(this, "onTooSlow") 
+				onEnd: dojo.hitch(this, "onTooSlow")
 			}).play();
 
 			if (!this.started){
@@ -124,7 +124,7 @@ dojo.declare("dojofun.widget.MathFlashCard",
 				this.onEnd(this.correctAnswers,this.problemSet.length,this.tooSlow);
 			}
 
-		},	
+		},
 
 		onIncorrect: function(){
 			this.incorrectAnswers++;
