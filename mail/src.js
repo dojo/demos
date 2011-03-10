@@ -5,7 +5,7 @@ dojo.require("dojo.date.stamp");
 
 dojo.require("dijit.dijit");
 dojo.require("dijit.Declaration");
-dojo.require("dijit.form.Button");
+
 dojo.require("dijit.Menu");
 dojo.require("dijit.Tree");
 dojo.require("dijit.Tooltip");
@@ -18,6 +18,7 @@ dojo.require("dijit._editor.plugins.LinkDialog");
 dojo.require("dijit._editor.plugins.FontChoice");
 dojo.require("dijit.ProgressBar");
 
+dojo.require("dijit.form.ComboButton");
 dojo.require("dijit.form.ComboBox");
 dojo.require("dijit.form.CheckBox");
 dojo.require("dijit.form.Textarea");
