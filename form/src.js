@@ -6,6 +6,7 @@ dojo.require("dijit.form.ValidationTextBox");
 dojo.require("dijit.form.ComboBox");
 dojo.require("dijit.form.FilteringSelect");
 dojo.require("dijit.form.CheckBox");
+dojo.require("dijit.form.RadioButton");
 dojo.require("dijit.form.DateTextBox");
 dojo.require("dijit.form.CurrencyTextBox");
 dojo.require("dijit.form.NumberSpinner");
