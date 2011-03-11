@@ -22,6 +22,7 @@
 		@import "../../dojox/editor/plugins/resources/css/PasteFromWord.css";
 		@import "../../dojox/editor/plugins/resources/css/Smiley.css";
 		@import "../../dojox/editor/plugins/resources/css/StatusBar.css";
+		@import "../../dojox/editor/plugins/resources/css/SafePaste.css";
 		@import "../../dojox/editor/plugins/resources/editorPlugins.css";
 		body, html { width:100%; height:100%; margin:0; padding:0; overflow: hidden}
 
@@ -79,6 +80,7 @@
 		dojo.require("dojox.editor.plugins.Smiley");
 		dojo.require("dojox.editor.plugins.NormalizeStyle");
 		dojo.require("dojox.editor.plugins.StatusBar");
+		dojo.require("dojox.editor.plugins.SafePaste");
         
 		dojo.addOnLoad(function(){
 			try{
@@ -105,7 +107,7 @@
 					{name: 'dojox.editor.plugins.TablePlugins', command: 'tableContextMenu'}, 
 					{name: 'prettyprint', indentBy: 3, lineLength: 80, entityMap: dojox.html.entities.html.concat(dojox.html.entities.latin)},
 					{name: 'dijit._editor.plugins.EnterKeyHandling', blockNodeForEnter: "P"},
-					'normalizeindentoutdent', 'normalizestyle', {name: 'statusbar', resizer: false}
+					'normalizeindentoutdent', 'normalizestyle', {name: 'statusbar', resizer: false}, "safepaste"
 				];
 				
 				// Declare my own so I can pass in my plugins list without resoring to globals.
