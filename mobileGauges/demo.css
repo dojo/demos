@@ -1,0 +1,42 @@
+@import "../../dijit/themes/dijit.css";
+
+
+.content {
+    padding: 0px 10px;
+    background-color: white;
+    color: black;
+}
+
+p {
+    font-family: Helvetica;
+    font-size: 12px;
+}
+
+.title {
+    color: blue;
+    margin-bottom: 4px;
+}
+
+.subtitle {
+    font-style: italic;
+    color: gray;
+    margin: 0px;
+    margin-bottom: 4px;
+}
+
+.subsubtitle {
+    margin: 16px 0px 0px 0px;
+}
+
+.lst {
+    margin: 0px;
+    padding: 0px 14px;
+}
+
+.lst li {
+    font-family: Helvetica;
+    font-size: 12px;
+    margin: 0px;
+    list-style-type: square;
+}
+

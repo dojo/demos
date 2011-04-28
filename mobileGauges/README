@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Dojo Gauges - Dojo Mobile Gauges Demo
+-------------------------------------------------------------------------------
+Authors: Emmanuel Tissandier, Philippe Toussaint
+-------------------------------------------------------------------------------
+Demo description
+
+	This is the gauges demo, a mobile application showcasing several different 
+	type of gauges.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo
+	Dijit
+	Dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+	To build, use the supplied demo.profile.js as your profileFile
+	
+-------------------------------------------------------------------------------
+@rank:1
