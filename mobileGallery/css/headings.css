@@ -1,0 +1,90 @@
+ul#headingTabBar {
+	display:inline;
+}
+
+#headings h1 {
+	padding-left: 24px;
+	padding-right: 24px;
+}
+
+h1#segmentHeading {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#headings h1 {
+	text-align: justify;
+}
+
+ul#headingTabBar li.mblTabButton {
+	background-color: #5877A2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
+}
+
+ul#headingTabBar li.mblTabButtonSelected {
+	background-color: #394D77;
+    background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
+}
+
+div#headings button.baseBtn {
+	display: block;
+	float: left;
+    -webkit-background-clip: padding-box;
+    -webkit-box-align: center;
+    background-clip: padding-box;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+    font-family: 'Helvetica Neue', HelveticaNeue, Helvetica-Neue, Helvetica, 'BBAlpha Sans';
+    font-size: 13px;
+    font-weight: bold;
+    -webkit-box-shadow: rgba(255, 255, 255, 0.0976563) 0px 0.1em 0px;
+    vertical-align: middle;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+button.defaultBtn {
+    text-shadow: rgba(255, 255, 255, 0.246094) 0px 0.08em 0px;
+    border-color: #9CACC0;
+    background-color: #5877A2;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
+}
+
+button.defaultBtn.backBtn:before {
+	background: #999;
+}
+
+button.defaultBtn.backBtn:after {
+    background-color: #CCC;
+    background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
+}
+
+button.defaultBtnSelected, button.defaultBtnSelected.backBtn:after {
+	background-color: #394D77;
+	background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
+}
+
+#headingPane {
+	text-align:center;
+	padding-top: 20px;
+}
+
+/* style of the "Back" and "Source" buttons. */
+#header button {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	width: 84px;
+	color: white;
+	font-family: 'Helvetica';
+	font-weight: bold;
+	font-size: 13px;
+}
+
+/* Temp fix for heading button label color */
+#headings h1 div {
+	color: white;
+}

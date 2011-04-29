@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+#tabView1, #tabView2, #tabView3 {
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+#tabView1 div, #tabView2 div, #tabView3 div {
+    margin: auto;
+	background-image:url("../images/tabbar_all.png");
+	width: 229px;
+	height: 229px;
+}
+
+#tabView2 div {
+	background-position-y: -229px;
+}
+
+#tabView3 div {
+	background-position-y: -458px;
+}
+
+#demoTabBar {
+	/* fix the widht of the tab bar 
+	width:inherit;*/
+}
+
+#tabBarContent {
+	border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+	margin-top:20px;
+}
+
+div.mblTabButton {
+    height: 61px;
+}
+
+div.mblTabButtonImgDiv {
+    display: block;
+    height: 40px;
+}
+
+div.mblTabButtonImgDiv IMG {
+    margin-top: 8px;
+}
+
+#tabContainer .mblTabPanelHeader {
+    height: 70px;
+}
+
+#demoTabBar {
+    height: 36px;
+}
+
+#demoTabBar div.mblTabBarButtonDivInner {
+	top: 2px;
+	height: 30px;
+}
+
+#tabBarContent {
+    border-style: solid;
+    border-width: 1px;
+}
+
+#demoTabBar, #tabPanel {
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+}
+
+#tabPanel {
+    -moz-box-shadow: 10px 10px 5px #888;
+    -webkit-box-shadow: 10px 10px 5px #888;
+    box-shadow: 10px 10px 5px #888;
+    margin-left: 5px;
+    margin-right: 5px;
+}

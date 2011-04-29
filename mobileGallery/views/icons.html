@@ -1,0 +1,15 @@
+<div id="icons" dojoType="dojox.mobile.ScrollableView">
+	<ul dojoType="dojox.mobile.IconContainer" iconBase="images/iconitems-all.png">
+		<li dojoType="dojox.mobile.IconItem" iconPos="0,0,65,65" lazy="true">
+			<div class="box" style="padding: 20px 30px;">
+				Click the close icon on the right top corner to close this box.
+			</div>
+		</li>
+		<li dojoType="dojox.mobile.IconItem" id="moveToIcon" iconPos="65,0,65,65" moveTo="icons-moveTo" transition="slide"></li> 
+		<li dojoType="dojox.mobile.IconItem" id="urlIcon" iconPos="130,0,65,65" url="icons-url.html" transition="slide" sync="false"></li>
+	</ul>
+</div>
+<div id="icons-moveTo" dojoType="dojox.mobile.View"> 
+	<h1 dojoType="dojox.mobile.Heading" back="Back" moveTo="icons"></h1> 
+	<div><img src="images/flip1.jpg"/></div> 
+</div>

@@ -1,0 +1,79 @@
+form#testForm div.fieldset {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: white;
+    margin: 2px 5px;
+    padding: 2px 6px;
+}
+
+form#testForm div.field-row {
+    width: 100%;
+}
+
+form#testForm div.field-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1em .7em .3em;
+}
+
+form#testForm span {
+	display:-moz-inline-box;
+	display:inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    text-shadow: rgba(255, 255, 255, 0.25);
+    vertical-align: middle;
+    width: 140px;
+	vertical-align:middle;
+}
+
+form#testForm input, form#testForm textarea {
+	width: 145px;
+	padding: 0px;
+    margin-left: 0px;
+	margin-right: 0px;
+}
+
+form#testForm input[type="radio"], form#testForm input[type="checkbox"] {
+	width: 15px;
+}
+
+/* Below are for date spinner */
+form#testForm .mblSpinWheel {
+    height: 58px;
+    border-left: 1px;
+    border-right: 1px;
+}
+
+form#testForm .mblSpinWheelBar {
+    top: 20px;
+    border: solid 1px #7B8497;
+    height: 18px;
+}
+
+form#testForm .mblSpinWheelDatePicker {
+    width: 152px;
+}
+
+form#testForm .mblSpinWheelSlot {
+    width: 50px;
+    border-left: 1px;
+    border-right: 1px;
+}
+
+form#testForm .mblSpinWheelSlotLabel {
+    padding: 0;
+    height: 18px;
+    font: bold 18px Helvetica,sans-serif;
+	text-align:center;
+}
+
+#alertSwitch {
+	display:-moz-inline-box;
+	display:inline-block;
+}
+
+#alertSlider {
+	margin: 10px 4px;
+}

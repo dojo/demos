@@ -1,0 +1,24 @@
+<div id="animations" dojoType="dojox.mobile.View">
+	<div id="animationView1" dojoType="dojox.mobile.ScrollableView" selected="true">
+		<h2 dojoType="dojox.mobile.RoundRectCategory" style="margin-left:20px;">Transition Effects</h2>
+		<ul dojoType="dojox.mobile.RoundRectList">
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView2" transition="slide">Slide</li>
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView2" transition="flip">Flip</li>
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView2" transition="fade">Fade</li>
+		</ul>
+	</div>
+	<div id="animationView2" dojoType="dojox.mobile.ScrollableView">
+		<h2 dojoType="dojox.mobile.RoundRectCategory" style="margin-left:20px;">Transition Effects</h2>
+		<ul dojoType="dojox.mobile.RoundRectList" style="background-color:#FFEBB5;">
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView1" transition="slide">Slide</li>
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView1" transition="flip">Flip</li>
+			<li dojoType="dojox.mobile.ListItem"
+				moveTo="animationView1" transition="fade">Fade</li>
+		</ul>
+	</div>
+</div>
