@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Mobile Charting - A simple stock charting demo for mobile devices
+-------------------------------------------------------------------------------
+Authors: Damien Mandrioli, Christophe Jolif
+-------------------------------------------------------------------------------
+Demo description
+
+	 A stock chart demo showing dojox.charting mobile features including touch interactions
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core (fx.easing, fx)
+	Dijit (Chart)
+	DojoX (mobile, charting)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:100

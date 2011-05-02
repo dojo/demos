@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Mobile Charting Demo</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+	content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="stylesheet" type="text/css"
+	href="../../dojox/mobile/themes/iphone/iphone.css">
+<!--				<link rel="stylesheet" type="text/css" href="../../../../dojo_current/dojox/mobile/themes/android/android.css">-->
+<script type="text/javascript" src="../../dojo/dojo.js"
+	djConfig="parseOnLoad: true"></script>
+<script type="text/javascript" src="src.js" charset="utf-8"></script>
+</head>
+<body>
+	<div id="view1" dojoType="dojox.mobile.View" selected="true">
+		<h1 dojoType="dojox.mobile.Heading">Mobile Charting Demo</h1>
+		<h2 dojoType="dojox.mobile.RoundRectCategory">Choose a company</h2>
+		<ul id="companyChooser" dojoType="dojox.mobile.RoundRectList">
+			<li id="googLink" dojoType="dojox.mobile.ListItem"
+				icon="resources/images/a-icon-11.png" moveTo="view2"
+				transition="slide">Google Inc.</li>
+			<li id="yahooLink" dojoType="dojox.mobile.ListItem"
+				icon="resources/images/a-icon-11.png" moveTo="view2"
+				transition="slide">Yahoo! Inc.</li>
+			<li id="msftLink" dojoType="dojox.mobile.ListItem"
+				icon="resources/images/a-icon-11.png" moveTo="view2"
+				transition="slide">Microsoft Corp.</li>
+		</ul>
+	</div>
+	<div id="view2" dojoType="dojox.mobile.View">
+		<h1 id="view2head1" dojoType="dojox.mobile.Heading" back="Back"
+			moveTo="view1">Stock View</h1>
+		<div dojoType="dojox.mobile.RoundRect" id="container">
+			<button dojoType="dojox.mobile.Button" class="mblBlueButton"
+				style="width: 40px; height: 27px;" id="zoomButton1">3m</button>
+			<button dojoType="dojox.mobile.Button" class="mblBlueButton"
+				style="width: 40px; height: 27px;" id="zoomButton2">6m</button>
+			<button dojoType="dojox.mobile.Button" class="mblBlueButton"
+				style="width: 40px; height: 27px;" id="zoomButton3">1y</button>
+			<button dojoType="dojox.mobile.Button" class="mblBlueButton"
+				style="width: 45px; height: 27px;" id="zoomButton4">Max</button>
+			<button dojoType="dojox.mobile.Button" class="mblRedButton"
+				id="indicatorMode" duration="0" style="width: 99px; height: 27px;">Touch
+				Mode</button>
+			<div dojoType="dojox.charting.widget.Chart"
+				margins="{ l: 0, r: 0, t: 10, b: 0 }" theme="customClaroTheme"
+				style="-webkit-user-select: none; outline: none"
+				id="stockChart">
+				<div class="plot" name="gridPlot" type="Grid" enableCache="true"></div>
+				<div class="axis" name="x" enableCache="true"
+					font="normal normal normal 11pt Helvetica" fixUpper="major"
+					includeZero="true" majorTickStep="50" labelFunc="timeLabelFunction"></div>
+				<div class="axis" name="y" vertical="true" min="0"
+					font="normal normal normal 11pt Helvetica"></div>
+				<div class="axis" name="y2" vertical="true" min="0"
+					leftBottom="false" type="Invisible"
+					font="italic normal normal 8pt Helvetica"></div>
+				<div class="plot" name="volumePlot" type="Columns"
+					enableCache="true" vAxis="y2"></div>
+				<div class="plot" name="default" type="Areas"></div>
+			</div>
+		</div>
+		<div id="touchLabel"
+			style="display: none; background-color: white; border: 1px solid #333333; position: absolute; top: 150px; left: 80px; right: 80px; text-align: center; font-size: 16pt; font-weight: bolder; color: #333333"; margin-left:80px;></div>
+		<div id="helpBox" dojoType="dojox.mobile.RoundRect">
+			<img src="resources/images/a-icon-12.png"
+				style="vertical-align: middle;" /><b>Chart Interactions</b><br />
+			<b>Double-tap</b>: Zoom / Unzoom.<br />
+			<b>Chart Touch</b>: Slide visible data range or show data indicator.
+			(click &laquo;Touch Mode&raquo; button to alternate).<br />
+			<b>Wide-Screen View</b>: Flip the screen horizontally.
+		</div>
+	</div>
+</body>
+</html>
