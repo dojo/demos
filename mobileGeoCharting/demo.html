@@ -1,0 +1,46 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>US demographics</title>
+		<link rel="stylesheet" type="text/css" href="demo.css">
+		<link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/iphone/iphone.css">
+		<link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/common/SpinWheel.css">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+		<script type="text/javascript" djConfig="parseOnLoad:true,gfxRenderer:'svg,canvas,vml,silverlight'"
+				src="../../dojo/dojo.js"></script>
+		<script type="text/javascript" src="src.js" charset="utf-8"></script>
+	</head>
+	<body>
+		<!-- csv dataStore -->
+		<div dojoType="dojox.data.CsvStore" jsId="csvStore" url="resources/data/USPopulation.csv"
+					identifier="Id" label="State"></div>
+		
+		<!-- map display page -->
+		<div id="mapView" dojoType="dojox.mobile.View" selected="true" style="width: 100%; height: 100%; background: rgb(120, 120, 120);">
+	
+			<h1 dojoType="dojox.mobile.Heading" id="mapHeader" >US population from 1960 to 2009</h1>
+
+			<div id="mapWidget" dojoType="dojox.geo.charting.widget.Map" shapeFile="resources/data/US_States_intermediate.json"
+				 dataStore="csvStore" series="resources/data/series.json"  markerData="resources/data/markers.json" showTooltips="false"
+				 animateOnResize="false" colorAnimationDuration="300"
+				 adjustMapCenterOnResize="true" adjustMapScaleOnResize="true" dataBindingAttribute="2009"
+				 dataBindingValueFunction="getPopulationForYear"  enableMouseSupport="true"
+				 enableMousePan="true" enableMouseZoom="true"
+				 onFeatureClick="onFeatureClick" enableFeatureZoom="false" enableTouchSupport="true"
+				 style="height: 100%; width: 100%;">
+			</div>
+			<div id="mapLegend" dojoType="dojox.geo.charting.widget.Legend" map="dijit.byId('mapWidget').getInnerMap()"
+				swatchSize="10" horizontal="false">
+			</div>
+		    <div id="yearSpinner" dojoType="dojox.mobile.SpinWheel">
+				<div  id="yearSlot" dojoType="dojox.mobile.SpinWheelSlot"
+					labels="['1960','1970','1980','1990','2000','2009']"
+					value = "2009"
+					style="text-align:center;width:100%;">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

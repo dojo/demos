@@ -1,0 +1,31 @@
+-------------------------------------------------------------------------------
+Dojo Maps - Dojo Mobile Geo Charting Demo
+-------------------------------------------------------------------------------
+Authors: Erwan Aullas
+-------------------------------------------------------------------------------
+Demo description
+
+	This is a mobile application showcasing the use of the geo charting dijit component.
+	It displays a simplified map of the U.S. States colored according to their population
+	throughout the five last decades.
+	It is tailored for mobile devices, featuring touch support (multi-touch on enabled devices):
+	panning (one-fingered), zooming (pinch/spread if available), single tap to select a state and 
+	display population count, and double tap to zoom on a particular state.
+	
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo
+	Dijit
+	Dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+	To build, use the supplied demo.profile.js as your profileFile
+	
+-------------------------------------------------------------------------------
+@rank:99
