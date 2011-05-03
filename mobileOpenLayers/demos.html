@@ -1,0 +1,41 @@
+<html>
+    <head profile="http://www.w3.org/2002/12/namespace">
+        <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <title>Dojo OpenLayers Map Demo</title>
+        <link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/iphone/iphone.css">
+        <!-- hosted version of Open Layer libraries -->
+        <script type="text/javascript" src="http://openlayers.org/api/OpenLayers.js">
+        </script>
+        <script type="text/javascript">
+            var djConfig = {
+            	parseOnLoad: true
+            };
+        </script>
+        <script type="text/javascript" src="../../dojo/dojo.js"></script>
+        <script type="text/javascript" src="src.js" charset="utf-8"></script>
+    </head>
+    <body>
+        <div id="home" dojoType="dojox.mobile.View" selected="true" style="width: 100%; height: 100%;">
+            <h1 dojoType="dojox.mobile.Heading">Dojo OpenLayers Map Demo</h1>
+            <h2 dojoType="dojox.mobile.RoundRectCategory">Go To:</h2>
+            <ul dojoType="dojox.mobile.RoundRectList">
+                <li id="paris" dojoType="dojox.mobile.ListItem" moveTo="mapPage" transition="slide">
+                    Paris
+                </li>
+                <li id="newyork" dojoType="dojox.mobile.ListItem" moveTo="mapPage" transition="flip">
+                    New York
+                </li>
+                <li id="lacolle" dojoType="dojox.mobile.ListItem" moveTo="mapPage" transition="fade">
+                    La Colle sur Loup
+                </li>
+            </ul>
+        </div>
+        <div id="mapPage" dojoType="dojox.mobile.View" style="width: 100%; height: 100%;">
+            <h1 dojoType="dojox.mobile.Heading" back="Home" moveTo="home">Map</h1>
+            <div id="map" style="background-color: #b5d0d0; width: 100%; height: 100%;">
+            </div>
+        </div>
+    </body>
+</html>
