@@ -39,7 +39,8 @@ define(function(){
 					speclevel: "6",
 					iconPos: "29,0,29,29",
 					title: "Forms",
-					demourl: "views/forms.html"
+					demourl: "views/forms.html",
+					jsmodule: "demos/mobileGallery/src/forms"
 				}, {
 					id: "flippableView",
 					speclevel: "6",
@@ -51,7 +52,8 @@ define(function(){
 					speclevel: "6",
 					iconPos: "87,0,29,29",
 					title: "Icons",
-					demourl: "views/icons.html"
+					demourl: "views/icons.html",
+					jsmodule: "demos/mobileGallery/src/icons"
 				}, {
 					id: "tabBar",
 					speclevel: "6",
@@ -63,13 +65,15 @@ define(function(){
 					speclevel: "6",
 					iconPos: "145,0,29,29",
 					title: "Headings",
-					demourl: "views/headings.html"
+					demourl: "views/headings.html",
+					jsmodule: "demos/mobileGallery/src/headings"
 				}, {
 					id: "map",
 					speclevel: "6",
 					iconPos: "174,0,29,29",
 					title: "Map (Google)",
-					demourl: "views/map.html"
+					demourl: "views/map.html",
+					jsmodule: "demos/mobileGallery/src/map"
 				}, {
 					id: "list",
 					speclevel: "6",
@@ -109,13 +113,15 @@ define(function(){
 					speclevel: "6",
 					iconPos: "319,0,29,29",
 					title: "JSON P",
-					demourl: "views/jsonp.html"
+					demourl: "views/jsonp.html",
+					jsmodule: "demos/mobileGallery/src/jsonp"
 				}, {
 					id: "ajax",
 					speclevel: "6",
 					iconPos: "348,0,29,29",
 					title: "AJAX",
-					demourl: "views/ajax.html"
+					demourl: "views/ajax.html",
+					jsmodule: "demos/mobileGallery/src/ajax"
 				}]
 			}],
 			/* Below are internal views. */

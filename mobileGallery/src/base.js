@@ -1,18 +1,37 @@
 define(["dojo", "dijit", "dojox/mobile/parser",
+        "dojo/data/ItemFileReadStore",
+        "dojox/mobile/EdgeToEdgeDataList",
          "dojox/mobile/ProgressIndicator",
          "demos/mobileGallery/src/_base",
          "demos/mobileGallery/src/Viewport",
-         "demos/mobileGallery/src/ajax",
-         "demos/mobileGallery/src/forms",
-         "demos/mobileGallery/src/headings",
-         "demos/mobileGallery/src/icons",
-         "demos/mobileGallery/src/jsonp",
-         "demos/mobileGallery/src/map",
-         "demos/mobileGallery/src/source",
          "demos/mobileGallery/src/structure"], function(dojo){
+	
+	function goToView(event) {
+		var currentView = demos.mobileGallery.src.structure.layout.rightPane.currentView;
+		
+		if (currentView) {
+			var targetView = "";
+			var moveDir = 1;
+			if (event.target.id === "sourceButton") {
+				targetView = "source";
+			} else {
+				// TODO targetView for navButton should be set to header's
+				// moveTo
+				// targetView="settings";
+				targetView = this.moveTo;
+				moveDir = -1;
+			}
+			if (targetView !== currentView.id) {
+				currentView.performTransition(targetView, moveDir,
+						this.transition);
+			}
+		}
+	};
+	
+	
 	dojo.provide("demos.mobileGallery.src.base");
 	
-	dojo.mixin(demos.mobileGallery.src.base, {
+	demos.mobileGallery.src.base = {
 		/**
 		 * Initialize all views.
 		 *
@@ -38,6 +57,40 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 				this.initView(view);
 			}, this);
 		},
+		
+		/**
+		 * Add syntax highlight to passed-in HTML code.
+		 *  
+		 * @param raw HTML code to apply syntax highlight.
+		 * @returns a string which is an HTML code snippet containing
+		 * syntax highlight.
+		 */
+		syntaxHighLight: function(raw) {
+			var data = raw;
+			//highlight element name, attribute name and value in HTML
+			var regex = /<([\/a-zA-Z0-9]+)(\s*)([^>]*)>/g;
+			regex.compile(regex);
+			var match;
+			while (match = regex.exec(data)) {
+				var idx = match.index;
+				var length = match[0].length;
+				var replacement;
+				replacement = "<span style=\"color:#0A0096\">&lt;" + match[1] + "</span>" + match[2];
+				var regex2 = /(\w+)(\s*)=(\s*)('|")(.*?)\4(\s*)/g;
+				var attrs = match[3];
+				if (attrs && attrs !== '') {
+					var match2;
+					while (match2 = regex2.exec(attrs)) {
+						replacement += "<span style=\"color:#F6834A\">" + match2[1] + "</span>" + match2[2] + "=" + match2[3];
+						replacement += "<span style=\"color:#9B3000\">" + match2[4] + match2[5] + match2[4] + "</span>" + match2[6];
+					}
+				}
+				replacement += "<span style=\"color:#0A0096\">&gt;</span>";
+				data = data.slice(0, idx) + replacement + data.slice(idx + length);
+				regex.lastIndex = idx + replacement.length;
+			}
+			return data;
+		},
 			
 		/**
 		 * initialize each view page
@@ -48,7 +101,6 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 		 * @returns
 		 */
 		initView: function(args){
-			dojo.ready(function(){
 				var view = dijit.byId(args.id);
 				var viewType = (args.type) ? args.type : 'demo';
 				
@@ -78,39 +130,8 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 						
 						// TODO: FIX-ME find a better way to handle views which are not loaded
 						// asynchronously or should not show source codes.
-						if (args.src){
-							// get source code for current view
-							var xhrArgs = {
-									url: args.src,
-									handleAs: "text",
-									load: function(data){
-										//highlight element name, attribute name and value in HTML
-										var regex = /<([\/a-zA-Z0-9]+)(\s*)([^>]*)>/g;
-										regex.compile(regex);
-										var match;
-										while (match = regex.exec(data)) {
-											var idx = match.index;
-											var length = match[0].length;
-											var replacement;
-											replacement = "<span style=\"color:#0A0096\">&lt;" + match[1] + "</span>" + match[2];
-											var regex2 = /(\w+)(\s*)=(\s*)('|")(.*?)\4(\s*)/g;
-											var attrs = match[3];
-											if (attrs && attrs !== '') {
-												var match2;
-												while (match2 = regex2.exec(attrs)) {
-													replacement += "<span style=\"color:#F6834A\">" + match2[1] + "</span>" + match2[2] + "=" + match2[3];
-													replacement += "<span style=\"color:#9B3000\">" + match2[4] + match2[5] + match2[4] + "</span>" + match2[6];
-												}
-											}
-											replacement += "<span style=\"color:#0A0096\">&gt;</span>";
-											data = data.slice(0, idx) + replacement + data.slice(idx + length);
-											regex.lastIndex = idx + replacement.length;
-										}
-										
-										dojo.byId("sourceContent").innerHTML = data;
-									}
-							};
-							dojo.xhrGet(xhrArgs);
+						if (args.srcCode){
+							dojo.byId("sourceContent").innerHTML = args.srcCode;
 						}
 					}
 					else 
@@ -148,61 +169,76 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 						}
 					demos.mobileGallery.src.structure.layout.setCurrentView(this);
 				});
-			});
 		},
 		
 		/**
-		 * Load contents of an array of views to the SplitterPanes
-		 * @returns
-		 */
-		loadViews: function(){
-			//initialize the load structure
-			demos.mobileGallery.src.structure.load.loaded = 0;
-			
-			// now prepare the total views to add.
-			var viewsToLoad = [];
-			
-			// For each category, add all views which need loading
-			dojo.forEach(demos.mobileGallery.src.structure.demos, function(dm){
-				var candidateViews = dojo.filter(dm.views, function(view){
-					// exclude external-linked demo page
-					return !!view.demourl;
-				});
-				viewsToLoad = viewsToLoad.concat(candidateViews);
-			});
-			
-			demos.mobileGallery.src.structure.load.target = viewsToLoad.length;
-			
-			// load all views
-			dojo.forEach(viewsToLoad, function(view){
-				this.loadView(view);
-			}, this);
-		},
-		
-		/**
-		 * Load contents of a view to SplitterPane before dojox.mobile.paser parse dom nodes.
+		 * Load contents of a view to SplitterPane and switch to it.
 		 * @param args
-		 * 			args should have args.src and args.holder
-		 * 			src: the url where loader can get the source of view
+		 * 			args should have args.demourl and args.holder
+		 * 			demourl: the url where loader can get the source of view
 		 * 			holder: the id of pane that will hold the view
 		 * @returns
 		 */
-		loadView: function(args){
+		
+		loadAndSwitchView: function(args, li) {
 			var xhrArgs = {
-					url: args.demourl,
-					handleAs: "text", //only text can work now, xml will result in null responseXML
-					load: function(data){
-						var holder = dojo.byId("rightPane");
-						holder.innerHTML = holder.innerHTML + data;
-						demos.mobileGallery.src.structure.load.loaded++;
-						if (demos.mobileGallery.src.structure.load.loaded === demos.mobileGallery.src.structure.load.target) {
-							dojo.publish("viewsLoaded");
-						}
-						//console.log(data);
-					}
+				url: args.demourl,
+				handleAs: "text" //only text can work now, xml will result in null responseXML
 			};
+			/**
+			 * Callback handler of loading view.
+			 * @param data
+			 */
+			function parseViewHTML(data){
+				var rightPane = dojo.byId("rightPane");
+				var tmpContainer = dojo.create("DIV");
+				tmpContainer.innerHTML = data;
+				rightPane.appendChild(tmpContainer);
+				var ws = dojo.parser.parse(tmpContainer);
+				dojo.forEach(ws, function(w){
+					if(w && !w._started && w.startup){
+						w.startup();
+					}
+				});
+				// reparent
+				rightPane.removeChild(tmpContainer);
+				for (var i = 0; i < tmpContainer.childNodes.length; i ++) {
+					rightPane.appendChild(tmpContainer.childNodes[i]);
+				}
+				args.srcCode = dojo.global.demos.mobileGallery.src.base.syntaxHighLight(data);
+				// TODO: FIX-ME temp work around for the async startup 
+				setTimeout(function(){
+					demos.mobileGallery.src.base.initView(args);
+					li.transitionTo(args.id);
+				},0);
+			}
 			
-			dojo.xhrGet(xhrArgs);
+			if (args.jsmodule) {
+				require([args.jsmodule], function(module){
+					var deferred = dojo.xhrGet(xhrArgs);
+					deferred.addCallback(function(data){
+						parseViewHTML(data);
+						if (module.init)
+							module.init();
+					});
+				});
+			} else {
+				var deferred = dojo.xhrGet(xhrArgs);
+				deferred.addCallback(parseViewHTML);
+			}
+		},
+		
+		/**
+		 * Show the view of each show case. Load it first, if it's not loaded.
+		 * @param args
+		 * @param li
+		 */
+		showView: function(args, li){
+			if (dijit.byId(args.id)) {
+				li.transitionTo(args.id);
+			} else {
+				this.loadAndSwitchView(args, li);
+			}
 		},
 		
 		/**
@@ -221,13 +257,18 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 				var items = [];
 				dojo.forEach(demo.views, function(item){
 					// mapping "id" to "moveTo" for EdgeToEdgeList
-					var def = {// TODO: better copying
-							moveTo: item.id,
+					var def = {
 							iconPos: item.iconPos,
 							label: item.title + "<sup>1." + item.speclevel + "</sup>",
 							href: item.href,
 							hrefTarget: item.hrefTarget
 					};
+					if (item.demourl){
+						def.moveTo = "#";
+						def.onclick = function(){
+							dojo.global.demos.mobileGallery.src.base.showView(item, this);
+						};
+					}
 					items.push(def);
 				});
 				var list = new dojox.mobile.EdgeToEdgeDataList({
@@ -318,7 +359,7 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 				dijit.byId('splitter').startup();
 			}//else (the current layout match the screen width, then do nothing)
 		}
-	});
+	};
 	
 	dojo.ready(function(){
 		// switch themes for specific device
@@ -338,12 +379,6 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 		// set view port size
 		demos.mobileGallery.src.Viewport.onViewportChange();
 		
-		//hide all page content loaded and display the progress indicator
-		dojo.style(dojo.byId('splitter'), "visibility", "hidden");
-		var prog = dojox.mobile.ProgressIndicator.getInstance();
-		dojo.body().appendChild(prog.domNode);
-		prog.start();
-		
 		if (demos.mobileGallery.src.structure.layout.leftPane.hidden) {
 			//hide the leftPane is when the screen is small
 			//define layout, hide leftPane and keep navButton visibile
@@ -356,43 +391,35 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 			dojo.addClass(dojo.byId('navButton'), "hidden");
 		}
 		
-		// load views through xhr and add them to their holder/holders
-		demos.mobileGallery.src.base.loadViews();
+		var hideLeftPane = demos.mobileGallery.src.structure.layout.leftPane.hidden;
+		dojo.attr("navigation", "selected", "true");
+		//when the screen is small, only show "navigation"
+		if (!hideLeftPane) 
+			dojo.attr("welcome", "selected", "true");
 		
-		//after the dom node are loaded then we can parse the document
-		//and initialize views
-		dojo.subscribe("viewsLoaded", function(){
-			var hideLeftPane = demos.mobileGallery.src.structure.layout.leftPane.hidden;
-			
-			dojo.attr("navigation", "selected", "true");
-			//when the screen is small, only show "navigation"
-			if (!hideLeftPane) 
-				dojo.attr("welcome", "selected", "true");
-			
-			dojox.mobile.parser.parse(dojo.body());
-			demos.mobileGallery.src.base.initUI();
-			dijit.byId("navigation").onAfterTransitionIn();
-			if (!hideLeftPane) //initialize view with two splitter pane
-				dijit.byId("welcome").onAfterTransitionIn();
-			
-			//hide progress indicator and show page
-			prog.stop();
-			dojo.style(dojo.byId('splitter'), "visibility", "visible");
-			
-			//when there is any resize or orientationchange event, call changeLayout
-			//to check and change layout if necessary 
-			dojo.connect(dojo.global, "onorientationchange", function(event){
-				demos.mobileGallery.src.Viewport.onViewportChange();
-				demos.mobileGallery.src.base.changeLayout(event);
-			});
-			dojo.connect(dojo.global, "onresize", function(){
-				demos.mobileGallery.src.base.changeLayout(event);
-			});
-			
-			dojox.mobile.resizeAll();
-			
-			dojo.publish("viewsRendered");
+		dojox.mobile.parser.parse(dojo.body());
+		dojo.forEach(demos.mobileGallery.src.structure._views, function(view){
+			demos.mobileGallery.src.base.initView(view);
 		});
+		demos.mobileGallery.src.base.initNavList(demos.mobileGallery.src.structure.demos);
+		dojo.connect(dojo.byId("sourceButton"), "onclick",
+				dijit.byId("header"), goToView);
+		dojo.connect(dojo.byId("navButton"), "onclick", dijit.byId("header"),
+				goToView);
+		
+		dijit.byId("navigation").onAfterTransitionIn();
+		if (!hideLeftPane) //initialize view with two splitter pane
+			dijit.byId("welcome").onAfterTransitionIn();
+		
+		dojo.connect(dojo.global, "onorientationchange", function(event){
+			demos.mobileGallery.src.Viewport.onViewportChange();
+			demos.mobileGallery.src.base.changeLayout(event);
+		});
+		dojo.connect(dojo.global, "onresize", function(){
+			demos.mobileGallery.src.base.changeLayout(event);
+		});
+		
+		dojox.mobile.resizeAll();
 	});
 });
 

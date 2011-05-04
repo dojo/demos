@@ -19,6 +19,9 @@ define(["dojo", "dojox/mobile/ProgressIndicator"], function(dojo, ProgressIndica
 					prog.stop();
 					prog = null;
 					pane.innerHTML = data;
+				},
+				error: function(err) {
+					pane.innerHTML = err;
 				}
 			});
 		}

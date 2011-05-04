@@ -9,7 +9,7 @@ define(["dojo"], function(){
 	
 	/*
 	 * parse url parameter to get the device parameter if any. Temporarily use hard
-	 * coded values. We can change to use dojo.hash after the conflict is resolved.
+	 * coded values. We can change to use dojo.hash in the future.
 	 */
 	var href = dojo.global.location.href;
 	if (href) {
@@ -21,7 +21,7 @@ define(["dojo"], function(){
 				dojo.forEach(queryPairs, function(pairStr) {
 					if (pairStr && pairStr.indexOf("=") > -1) {
 						var query = pairStr.split("=");
-						if (query[0] === "device" && query[1]) {
+						if (query[0] === "theme" && query[1]) {
 							// overwrite the agent detection result
 							switch (query[1].toLowerCase()) {
 							case "iphone":
@@ -39,12 +39,12 @@ define(["dojo"], function(){
 								_base.isWebOS = true;
 								_base.isAndroid = false;
 								break;
-							}
-						}
-					}
+							};
+						};
+					};
 				});
-			}
-		}
+			};
+		};
 	};
 	return _base;
-})
+});

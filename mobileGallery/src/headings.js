@@ -8,25 +8,54 @@ define(["dojo", "dojo/string", "dojox/mobile", "dojox/mobile/ToolBarButton", "./
 				template, {"label" : label});
 		});
 	};
-
-	dojo.subscribe("viewsRendered", function() {
-		new ToolBarButton({
-			icon : (_base.isAndroid ? "images/tab-icons-25.png"
-					: "images/tab-icons.png"),
-			iconPos : (_base.isAndroid ? "24,0,24,24" : "29,0,29,29")
-		}, "tbIconBtn2");
-
-		mobile.createDomButton(dojo.byId("tbDomBtn"));
-
-		registerClickHandler("tbDefaultBtn", "Default");
-		registerClickHandler("tbRoundBtn", "Round");
-		registerClickHandler("tbToggleBtn", "Toggle");
-		registerClickHandler("tbNewBtn", "New");
-		registerClickHandler("tbHotBtn", "What\'s Hot");
-		registerClickHandler("tbGeniusBtn", "Genius");
-		registerClickHandler("tbBackBtn", "Back");
-		registerClickHandler("tbIconBtn1", "Icon 1");
-		registerClickHandler("tbIconBtn2", "Icon 2");
-		registerClickHandler("tbDomBtn", "Dom");
-	});
+	
+	var config = [{
+			id: "tbDefaultBtn",
+			label: "Default"
+		},{
+			id: "tbRoundBtn",
+			label: "Round"
+		},{
+			id: "tbToggleBtn",
+			label: "Toggle"
+		},{
+			id: "tbNewBtn",
+			label: "New"
+		},{
+			id: "tbHotBtn",
+			label: "What\'s Hot"
+		},{
+			id: "tbGeniusBtn",
+			label: "Genius"
+		},{
+			id: "tbRoundBtn",
+			label: "Round"
+		},{
+			id: "tbBackBtn",
+			label: "Back"
+		},{
+			id: "tbIconBtn1",
+			label: "Icon 1"
+		},{
+			id: "tbIconBtn2",
+			label: "Icon 2"
+		},{
+			id: "tbDomBtn",
+			label: "Dom"
+		}];
+	
+	return {
+		init: function(){
+			new ToolBarButton({
+				icon : (_base.isAndroid ? "images/tab-icons-25.png"
+						: "images/tab-icons.png"),
+						iconPos : (_base.isAndroid ? "24,0,24,24" : "29,0,29,29")
+			}, "tbIconBtn2");
+			
+			mobile.createDomButton(dojo.byId("tbDomBtn"));
+			dojo.forEach(config, function(conf){
+				registerClickHandler(conf.id, conf.label);
+			})
+		}
+	};
 });
