@@ -42,6 +42,12 @@ define(function(){
 					demourl: "views/forms.html",
 					jsmodule: "demos/mobileGallery/src/forms"
 				}, {
+					id: "mobileSwitches",
+					speclevel: "7",
+					iconPos: "29,0,29,29",
+					title: "Switches",
+					demourl: "views/mobileSwitches.html"
+				}, {
 					id: "flippableView",
 					speclevel: "6",
 					iconPos: "58,0,29,29",
@@ -81,6 +87,13 @@ define(function(){
 					title: "Lists",
 					demourl: "views/list.html"
 				}, {
+					id: "mobileLists",
+					speclevel: "7",
+					iconPos: "203,0,29,29",
+					title: "List Data",
+					demourl: "views/mobileListData.html",
+					jsmodule: "demos/mobileGallery/src/mobileListData"
+                }, {
 					href: "../mobileGauges/demo.html",
 					hrefTarget: "_blank",
 					speclevel: "7",
@@ -103,7 +116,20 @@ define(function(){
 					iconPos: "290,0,29,29",
 					title: "Transitions",
 					demourl: "views/animations.html"
-				}]
+				},{
+					id: "mobileTransitions",
+					speclevel: "7",
+					iconPos: "290,0,29,29",
+					title: "Transitions",
+					demourl: "views/mobileTransitions.html"
+				},{
+					id: "css3",
+					speclevel: "6",
+					iconPos: "406,0,29,29",
+					title: "CSS 3",
+					demourl: "views/css3.html",
+					jsmodule: "demos/mobileGallery/src/css3"
+                }]
 			}, {
 				id: "dataList",
 				label: "Data",

@@ -1,0 +1,9 @@
+<div id="mobileLists" dojoType="dojox.mobile.ScrollableView">
+    <ul dojoType="dojox.mobile.RoundRectDataList" id="mobileListsDataList" store="demos.mobile.src.mobileLists.listsStore" query="{label: '*'}"></ul>
+    <p>Show the different set:<br>
+    <input type="button" value="Set1" onclick="demos.mobile.src.mobileLists.switchTo(demos.mobile.src.mobileLists.store1)">
+    <input type="button" value="Set2" onclick="demos.mobile.src.mobileLists.switchTo(demos.mobile.src.mobileLists.store2)">
+    <p>Alter the object store:<br>
+    <input type="button" value="Add" onclick="demos.mobile.src.mobileLists.add1()">
+    <input type="button" value="Delete" onclick="demos.mobile.src.mobileLists.delete1()">
+</div>
