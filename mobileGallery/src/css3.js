@@ -8,18 +8,11 @@ demos.mobileGallery.src.css3 = function() {
         increment: 360,
         angle: 0,
         constructor: function(){
+        	dojo.style("css3ribbon", {
+        		transform: "rotate(-45deg)"
+        	});
 
             var effects = ["flip", "bounce", "shrink", "expand", "rotate", "puff"];
-            var resetBtn = dojo.byId("css3Reset");
-            dojo.connect(resetBtn, "onclick", function(){
-                dojo.query(".css3Box").forEach(function(node){
-                    dojo.style(node, {
-                        transform: "scale(1)",
-                        opacity: "1"
-                    });
-                });
-            });
-
             this.increment = 360 / effects.length;
             var css3Body = dojo.byId('css3Boxes');
             for(var i = 0, l = effects.length; i < l; i++){
@@ -39,13 +32,11 @@ demos.mobileGallery.src.css3 = function() {
                             });
                         });
                         anim.play();
-                    }
+                    };
                 })(box, i));
             }
-
         }
     });
-    
 }();
 
 	return {

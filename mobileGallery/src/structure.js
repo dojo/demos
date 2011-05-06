@@ -100,6 +100,24 @@ define(function(){
 					title: "Gauge",
 					iconPos: "232,0,29,29"
 				}, {
+					href: "../mobileCharting/demo.html",
+					hrefTarget: "_blank",
+					speclevel: "7",
+					title: "Chart",
+					iconPos: "377,0,29,29"
+				}, {
+					href: "../mobileGeoCharting/demo.html",
+					hrefTarget: "_blank",
+					speclevel: "7",
+					title: "Geo Chart",
+					iconPos: "377,0,29,29"
+				}, {
+					href: "../mobileOpenLayers/demos.html",
+					hrefTarget: "_blank",
+					speclevel: "7",
+					title: "OpenLayers Map",
+					iconPos: "174,0,29,29"
+				}, {
 					href: "../../touch/demos/touch/demo.html",
 					hrefTarget: "_blank",
 					speclevel: "7",
@@ -111,12 +129,6 @@ define(function(){
 				label: "Effects",
 				iconBase: "images/navigation_list_all_29.png",
 				views: [{
-					id: "animations",
-					speclevel: "6",
-					iconPos: "290,0,29,29",
-					title: "Transitions",
-					demourl: "views/animations.html"
-				},{
 					id: "mobileTransitions",
 					speclevel: "7",
 					iconPos: "290,0,29,29",

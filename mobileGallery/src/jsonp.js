@@ -31,7 +31,7 @@ define(["dojo", "dijit",
 						preventCache : true,
 						content : {
 							q : dojo.byId("searchKeywords").value,
-							rpp: 10
+							rpp: 5
 						},
 						load : function(data) {
 							prog.stop();

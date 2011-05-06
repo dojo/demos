@@ -9,3 +9,13 @@
 @import url("css/list.css");
 @import url("css/tabs.css");
 @import url("css/css3.css");
+#progDiv {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:999;
+	background-color:transparent;
+	visibility:hidden;
+}

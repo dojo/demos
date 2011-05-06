@@ -6,6 +6,9 @@ define(["dojo", "dijit", "dojox/mobile/parser",
          "demos/mobileGallery/src/Viewport",
          "demos/mobileGallery/src/structure"], function(dojo){
 	
+	// preload images
+	new Image(25,25).src = "images/progress-indicator.gif";
+	
 	function goToView(event) {
 		var currentView = demos.mobileGallery.src.structure.layout.rightPane.currentView;
 		
@@ -213,6 +216,19 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 				},0);
 			}
 			
+			var progDiv = dojo.byId("progDiv");
+			var prog = new dojox.mobile.ProgressIndicator();
+			prog.setImage("images/progress-indicator.gif");
+			progDiv.appendChild(prog.domNode);
+			prog.start();
+			dojo.style(progDiv, "visibility", "visible");
+			
+			function stopProgress(){
+				dojo.style(progDiv, "visibility", "hidden");
+				prog.stop();
+				prog = null;
+			};
+			
 			if (args.jsmodule) {
 				require([args.jsmodule], function(module){
 					var deferred = dojo.xhrGet(xhrArgs);
@@ -220,11 +236,13 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 						parseViewHTML(data);
 						if (module.init)
 							module.init();
-					});
+					}).addCallback(stopProgress);
+					deferred.addErrback(stopProgress);
 				});
 			} else {
 				var deferred = dojo.xhrGet(xhrArgs);
-				deferred.addCallback(parseViewHTML);
+				deferred.addCallback(parseViewHTML).addCallback(stopProgress);
+				deferred.addErrback(stopProgress);
 			}
 		},
 		
@@ -394,8 +412,10 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 		var hideLeftPane = demos.mobileGallery.src.structure.layout.leftPane.hidden;
 		dojo.attr("navigation", "selected", "true");
 		//when the screen is small, only show "navigation"
-		if (!hideLeftPane) 
-			dojo.attr("welcome", "selected", "true");
+		//recently the strategy of view is changed, if there's is no visible view
+		//then the 1st view is selected. So we have to move navigation to the first view.
+		if (hideLeftPane) 
+			dojo.place("navigation", "rightPane", "first");
 		
 		dojox.mobile.parser.parse(dojo.body());
 		dojo.forEach(demos.mobileGallery.src.structure._views, function(view){

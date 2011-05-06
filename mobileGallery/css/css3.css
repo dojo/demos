@@ -20,3 +20,18 @@ div#css3Boxes div.css3Boxwrapper div {
     line-height: 80px;
     cursor: pointer;
 }
+
+#css3ribbon {
+    position: absolute;
+    left: -50px;
+    top: 30px;
+    background: #000;
+    color: #faa;
+    font-size: 1em;
+    height: 1.4em;
+    line-height: 1.4em;
+    border-top: 3px solid #777;
+    border-bottom: 3px solid #777;
+    width: 200px;
+    text-align: center;
+};
