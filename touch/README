@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+dojo.touch & gesture - Dojo touch & gesture demonstration
+-------------------------------------------------------------------------------
+Author: Si Qi Zhong(Siqi), Qi Ruan(Rock)
+-------------------------------------------------------------------------------
+Description:
+
+	A quick demo for Dojo touch & gesture(tap, tap.hold, rotate)
+	It shows how Dojo touch & gesture works well with 
+	Dijit HorizontalSlider, DnD, Charting across mobile and desktop.
+	The demo runs well on Chrome 10+, Safari 5+, iOS 4+ and Andriod 2.1+
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core (dnd, touch, gesture)
+	Dijit (HorizontalSlider)
+	DojoX (Charting)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:-999
