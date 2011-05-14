@@ -10,12 +10,20 @@ dojo.require("dojox.mvc.Generate");
 dojo.require("dojox.mvc.Group");
 dojo.require("dojox.mvc.Repeat");
 dojo.require("dojox.mobile.FlippableView");
+dojo.require("dojox.mobile.ViewController");
 dojo.require("dojox.mobile.TextArea");
 dojo.require("dojox.mobile.Button");
 
+dojo.require("dojox.mobile.FixedSplitter");
+dojo.require("dojox.mobile.EdgeToEdgeList");
+dojo.require("dojox.mobile.EdgeToEdgeCategory");
+dojo.require("dojox.mobile.Heading");
+dojo.require("dojox.mobile.FixedSplitterPane");
+dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
+dojo.requireIf(!dojo.isWebKit, "dojo.fx");
+dojo.requireIf(!dojo.isWebKit, "dojo.fx.easing");
 dojo.require("dojox.mobile.deviceTheme"); // used for device detection
 
-dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
 
 // Initial data for Ship to - Bill demo
 var names = {
@@ -105,7 +113,7 @@ function insertResult(index){
 	}else{
 		setDetailsContext(index-1);                 
 	}
-}
+};
 
 // used in the Generate View demo
 var genmodel;
@@ -123,10 +131,14 @@ function updateView() {
 
 // used in the Generate View demo
 function updateModel() {
-	dojo.byId("modelArea").focus(); // hack: do this to force focus off of the textbox, bug on mobile?
-	dojo.byId("viewArea").style.display = "none";
-	dojo.byId("outerModelArea").style.display = "";
-	dijit.byId("modelArea").set("value",(dojo.toJson(genmodel.toPlainObject(), true)));
+	dojo.byId("outerModelArea").style.display = "";	
+	try{
+		dojo.byId("modelArea").focus(); // hack: do this to force focus off of the textbox, bug on mobile?
+		dojo.byId("viewArea").style.display = "none";
+		dijit.byId("modelArea").set("value",(dojo.toJson(genmodel.toPlainObject(), true)));
+	}catch(e){
+		console.log(e);
+	};
 };
 
 function setup() {

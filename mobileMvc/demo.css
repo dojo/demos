@@ -181,12 +181,9 @@ form#testForm div.field-row, form#repeatTestForm div.field-row {
 }
 
 form#testForm div.field-title, form#repeatTestForm div.field-title {
-	font-size: 18px;
-	font-weight: bold;
-	text-shadow: white 0 1px 1px;
-	margin: 1em .7em .3em;
-	color: #333;
-	font-weight: bold;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 1em .7em .3em;
 }
 
 form#testForm span, form#repeatTestForm span {

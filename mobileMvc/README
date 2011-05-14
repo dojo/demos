@@ -17,12 +17,9 @@ Dependencies:
 -------------------------------------------------------------------------------
 Installation instructions
 
-    Install the patch from this ticket:
-    http://bugs.dojotoolkit.org/ticket/12433
-    
-    Simply run the included demo.html
-    
-    To build, use the supplied demo.profile.js as your profileFile
-    
+	Simply run the included demo.html or iPad-Demo.html
+
+	To build, use the supplied demo.profile.js as your profileFile
+
 -------------------------------------------------------------------------------
 @rank:7
