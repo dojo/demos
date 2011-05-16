@@ -2,6 +2,7 @@ define(["dojo", "dijit", "dojox/mobile/parser",
         "dojo/data/ItemFileReadStore",
         "dojox/mobile/EdgeToEdgeDataList",
          "dojox/mobile/ProgressIndicator",
+         "dojox/mobile/TransitionEvent",
          "demos/mobileGallery/src/_base",
          "demos/mobileGallery/src/Viewport",
          "demos/mobileGallery/src/structure"], function(dojo){
@@ -31,8 +32,13 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 		}
 	};
 	
+	function triggerTransition(comp, moveTo){
+		var transOpts = {"moveTo": moveTo, transition: comp.transition, transitionDir: comp.transitionDir};
+		return new dojox.mobile.TransitionEvent(comp.domNode,transOpts).dispatch();
+	}
 	
-	dojo.provide("demos.mobileGallery.src.base");
+	
+	dojo.getObject("mobileGallery.src.base",true,demos);
 	
 	demos.mobileGallery.src.base = {
 		/**
@@ -212,7 +218,8 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 				// TODO: FIX-ME temp work around for the async startup 
 				setTimeout(function(){
 					demos.mobileGallery.src.base.initView(args);
-					li.transitionTo(args.id);
+//					li.transitionTo(args.id);
+					triggerTransition(li, args.id);
 				},0);
 			}
 			
@@ -253,7 +260,8 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 		 */
 		showView: function(args, li){
 			if (dijit.byId(args.id)) {
-				li.transitionTo(args.id);
+//				li.transitionTo(args.id);
+				triggerTransition(li, args.id);
 			} else {
 				this.loadAndSwitchView(args, li);
 			}
@@ -435,7 +443,7 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 			demos.mobileGallery.src.Viewport.onViewportChange();
 			demos.mobileGallery.src.base.changeLayout(event);
 		});
-		dojo.connect(dojo.global, "onresize", function(){
+		dojo.connect(dojo.global, "onresize", function(event){
 			demos.mobileGallery.src.base.changeLayout(event);
 		});
 		

@@ -4,6 +4,7 @@ div#css3Boxes {
     padding: 0;
     font: 24px sans;
     text-align: center;
+	color: black;
 }
 
 div#css3Boxes div.css3Boxwrapper {

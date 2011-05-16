@@ -64,21 +64,18 @@
 			</div>
 		</div>
 		<div id="progDiv"><div>
-		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: false, mblAlwaysHideAddressBar:true, async:true"></script>
+		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: false, mblAlwaysHideAddressBar:true"></script>
 
 		<script language="JavaScript" type="text/javascript">
-			require([
-				"dojox/mobile",
-				"dojox/mobile/parser",
-				"dojox/mobile/compat",
-				"dojox/mobile/Button",
-				"dojox/mobile/FixedSplitter",
-				"dojox/mobile/ScrollableView",
-				"dojox/mobile/FixedSplitterPane",
-				"dojox/mobile/FlippableView",
-				"dojox/mobile/TabBar",
-				"demos/mobileGallery/src"
-			]);
+			dojo.require("dojox.mobile");
+			dojo.require("dojox.mobile.parser");
+			dojo.require("dojox.mobile.compat");
+			dojo.require("dojox.mobile.Button");
+			dojo.require("dojox.mobile.FixedSplitter");
+			dojo.require("dojox.mobile.ScrollableView");
+			dojo.require("dojox.mobile.TabBar");
+			dojo.require("dojox.mobile.FlippableView");
+			dojo.require("demos.mobileGallery.src");
 		</script>
 	</body>
 </html>

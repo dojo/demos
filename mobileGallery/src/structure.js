@@ -118,7 +118,7 @@ define(function(){
 					title: "OpenLayers Map",
 					iconPos: "174,0,29,29"
 				}, {
-					href: "../../touch/demos/touch/demo.html",
+					href: "../touch/demo.html",
 					hrefTarget: "_blank",
 					speclevel: "7",
 					title: "Touch",
