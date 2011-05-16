@@ -8,7 +8,7 @@
 		
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
         <meta name="apple-mobile-web-app-capable" content="yes" />
-		<script type="text/javascript" djConfig="parseOnLoad:true,gfxRenderer:'svg,canvas,vml,silverlight'"
+		<script type="text/javascript" djConfig="async:true,parseOnLoad:true,gfxRenderer:'svg,canvas,vml,silverlight'"
 				src="../../dojo/dojo.js"></script>
 		<script type="text/javascript" src="src.js" charset="utf-8"></script>
 	</head>
@@ -22,7 +22,7 @@
 	
 			<h1 dojoType="dojox.mobile.Heading" id="mapHeader" >US population from 1960 to 2009</h1>
 
-			<div id="mapWidget" dojoType="dojox.geo.charting.widget.Map" shapeFile="resources/data/US_States_intermediate.json"
+			<div id="mapWidget" dojoType="dojox.geo.charting.widget.Map" shapeData="resources/data/US_States_intermediate.json"
 				 dataStore="csvStore" series="resources/data/series.json"  markerData="resources/data/markers.json" showTooltips="false"
 				 animateOnResize="false" colorAnimationDuration="300"
 				 adjustMapCenterOnResize="true" adjustMapScaleOnResize="true" dataBindingAttribute="2009"
