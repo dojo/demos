@@ -69,19 +69,22 @@ dojo.declare("demos.mobileGauges.src.PlasticGauge", [dojox.gauges.AnalogGauge], 
 
 	startup: function(){
 		this.inherited(arguments);
-		var scale = Math.min((this.width / this._designWidth), (this.height / this._designHeight));
-		this.cx = scale * this._designCx + (this.width - scale * this._designWidth) / 2;
-		this.cy = scale * this._designCy + (this.height - scale * this._designHeight) / 2;
-		this.startAngle = 30,
-		this.endAngle = 90,
-		this.addRange({
-			low: this.min ? this.min : 0,
-					high: this.max ? this.max : 100,
-							color: [0, 0, 0, 0]
-		});
-		this.addIndicator(new demos.mobileGauges.src.PlasticGaugeNeedle({
-			value: this.min ? this.min : 0
-		}));
+
+		if (!this.started) {
+			this.started = true;
+			
+			var scale = Math.min((this.width / this._designWidth), (this.height / this._designHeight));
+			this.cx = scale * this._designCx + (this.width - scale * this._designWidth) / 2;
+			this.cy = scale * this._designCy + (this.height - scale * this._designHeight) / 2;
+			this.startAngle = 30, this.endAngle = 90, this.addRange({
+				low: this.min ? this.min : 0,
+				high: this.max ? this.max : 100,
+				color: [0, 0, 0, 0]
+			});
+			this.addIndicator(new demos.mobileGauges.src.PlasticGaugeNeedle({
+				value: this.min ? this.min : 0
+			}));
+		}
 	},
 
 	drawBackground: function(group){
