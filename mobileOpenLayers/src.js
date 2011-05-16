@@ -3,7 +3,11 @@ dojo.require("dojox.mobile.parser");
 dojo.require("dojox.mobile");
 dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
 dojo.require("demos.mobileOpenLayers.src.NavigationControl");
-
+require(["dojo/_base/sniff", "dojox/mobile", "dojox/mobile/parser"], function(sniff, mobile, parser) {
+	if(!sniff.isWebKit) {
+		require(["dojox/mobile/compat"], function(compat) {
+		});
+	}
 var map;
 var currentLocation;
 
@@ -38,6 +42,7 @@ dojo.addOnLoad(function(){
 	
 	dojo.connect(window, "onresize", resize);
 });
+
 
 function afterTransition(){
 	fitTo();
@@ -79,3 +84,4 @@ function updateMap(){
 		olm.setCenter(center, zoom);
 	}
 }
+});
