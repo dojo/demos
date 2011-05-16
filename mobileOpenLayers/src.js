@@ -1,13 +1,14 @@
-require([ "dojo/_base/sniff", "dojox/mobile", "dojox/mobile/parser",
-		"dojox/geo/openlayers/widget/Map", "demos/mobileOpenLayers/src/NavigationControl" ], function(
-		sniff, mobile, parser){
-	if (!sniff.isWebKit) {
-		require([ "dojox/mobile/compat" ], function(compat){});
-	}
+require([ 
+	"dojox/mobile",
+	"dojox/mobile/parser",
+	"dojox/mobile/compat",
+	"dojox/geo/openlayers/widget/Map", 
+	"demos/mobileOpenLayers/src/NavigationControl" ], function(mobile, parser){
+
 	var map;
 	var currentLocation;
 
-	dojo.addOnLoad(function(){
+	dojo.ready(function(){
 		var options = {
 			baseLayerName : "TheMap",
 			touchHandler : true,
