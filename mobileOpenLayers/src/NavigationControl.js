@@ -1,7 +1,3 @@
-//dojo.provide("demos.mobileOpenLayers.src.NavigationControl");
-
-//dojo.require("dojox.mobile.IconContainer");
-//dojo.require("dojox.mobile.Button");
 define([ "dojox/mobile/IconContainer", "dojox/mobile/Button" ], function(iconcon, button){
 	return dojo.declare("demos.mobileOpenLayers.src.NavigationControl", [ OpenLayers.Control ], {
 		constructor : function(options, element){
