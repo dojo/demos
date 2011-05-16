@@ -1,9 +1,10 @@
 
 require.ready(function(){
 
-	require(["dojo/_base/sniff",
-	 "dojox/mobile/parser", 
+	require([
 	 "dojox/mobile", 
+	 "dojox/mobile/parser", 
+	 "dojox/mobile/compat", 
 	 "dojox/mobile/Button", 
 	 "dojox/gauges/AnalogGauge", 
 	 "dojox/gauges/AnalogArcIndicator", 
@@ -15,12 +16,7 @@ require.ready(function(){
 	 "dojox/gauges/GlossySemiCircularGauge", 
 	 "demos/mobileGauges/src/VistaGauge", 
 	 "demos/mobileGauges/src/PlasticGauge", 
-	 "demos/mobileGauges/src/XpGauge"], function(sniff){
-		if (!sniff.isWebKit) {
-			require(["dojox/mobile/compat", "dojo/fx", "dojo/fx/easing"], function(){
-						
-			});
-		}
+	 "demos/mobileGauges/src/XpGauge"], function(){
 		
 		circularGauge = null;
 		scircularGauge = null;
@@ -317,8 +313,6 @@ require.ready(function(){
 			initBarGauges();
 			
 		}
-		
-		
 		
 		init();
 	});
