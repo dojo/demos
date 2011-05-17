@@ -62,29 +62,19 @@
 		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad:false,mblAlwaysHideAddressBar:true,async:true,mblThemeFiles:['@theme',['demos.mobileGallery.css','gallery']]"></script>
 
 		<script language="JavaScript" type="text/javascript">
-			require.ready(function(){
-				require([
-					"dojo/_base/sniff",
-					"dojox/mobile/parser",
-					"dojox/mobile",
-					"dojox/mobile/deviceTheme",
-					"dojox/mobile/Button",
-					"dojox/mobile/FixedSplitter",
-					"dojox/mobile/ScrollableView",
-					"dojox/mobile/FixedSplitterPane",
-					"dojox/mobile/FlippableView",
-					"dojox/mobile/TabBar"
-				],function(sniff){
-					if(!sniff.isWebKit){
-						require([
-							"dojox/mobile/compat",
-							"dojo/fx",
-							"dojo/fx/easing"
-						], function(){});
-					}
-					require(["demos/mobileGallery/src"], function(){});
-				})
-			});
+			require([
+				"dojox/mobile",
+				"dojox/mobile/parser",
+				"dojox/mobile/compat",
+				"dojox/mobile/deviceTheme",
+				"dojox/mobile/Button",
+				"dojox/mobile/FixedSplitter",
+				"dojox/mobile/ScrollableView",
+				"dojox/mobile/FixedSplitterPane",
+				"dojox/mobile/FlippableView",
+				"dojox/mobile/TabBar",
+				"demos/mobileGallery/src",
+				"domReady!"]);
 		</script>
 	</body>
 </html>
