@@ -1,4 +1,4 @@
-dojo.provide("dojoc.demos.faces.src");
+dojo.provide("demos.faces.src");
 
 dojo.require("dojox.fx.flip");
 dojo.require("demos.faces.src.block");

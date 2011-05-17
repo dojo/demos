@@ -1,4 +1,4 @@
-dojo.provide("beer.api");
+dojo.provide("demos.beer.src.api");
 
 dojo.require("dojox.rpc.Service");
 

@@ -1,3 +1,5 @@
+dojo.provide("demos.touch.src");
+
 dojo.require("dojo.parser");
 dojo.require("dijit.form.HorizontalSlider");
 dojo.require("dijit.form.HorizontalRuleLabels");
@@ -9,7 +11,6 @@ dojo.require("dojo.gesture.tap");
 //dojo.require("dojo.gesture.rotate");
 
 
-dojo.provide("dojox.charting.themes.Lily");
 
 (function(){
 	var dc = dojox.charting, themes = dc.themes, Theme = dc.Theme, g = Theme.generateGradient,

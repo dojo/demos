@@ -1,5 +1,5 @@
 define(["dojo", "dojo/data/ItemFileWriteStore", "dojox/mobile/RoundRectDataList"], function(dojo) {
-dojo.provide("demos.mobile.src.mobileLists");
+
 demos.mobile.src.mobileLists = function() {
     var static_data = { 
                 items: [ 
@@ -37,4 +37,5 @@ demos.mobile.src.mobileLists = function() {
         }
     };
 }();
+	
 });
