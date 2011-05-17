@@ -11,40 +11,32 @@ define(["dojo"], function(){
 	 * parse url parameter to get the device parameter if any. Temporarily use hard
 	 * coded values. We can change to use dojo.hash in the future.
 	 */
-	var href = dojo.global.location.href;
-	if (href) {
-		var idx = href.indexOf("?");
-		if (idx > -1) {
-			var queryStr = href.substr(idx + 1);
-			if (queryStr) {
-				var queryPairs = queryStr.split("&");
-				dojo.forEach(queryPairs, function(pairStr) {
-					if (pairStr && pairStr.indexOf("=") > -1) {
-						var query = pairStr.split("=");
-						if (query[0] === "theme" && query[1]) {
-							// overwrite the agent detection result
-							switch (query[1].toLowerCase()) {
-							case "iphone":
-								_base.isIPhone = true;
-								_base.isWebOS = false;
-								_base.isAndroid = false;
-								break;
-							case "android":
-								_base.isIPhone = false;
-								_base.isWebOS = false;
-								_base.isAndroid = true;
-								break;
-							case "webos":
-								_base.isIPhone = false;
-								_base.isWebOS = true;
-								_base.isAndroid = false;
-								break;
-							};
-						};
-					};
-				});
+	var search = dojo.global.location.search;
+	if (search && search.length > 1) {
+		var queryPairs = search.substr(1).split("&");
+		dojo.forEach(queryPairs, function(pairStr) {
+			var query = pairStr.split("=");
+			if (query[0] === "theme" && query[1]) {
+				// overwrite the agent detection result
+				switch (query[1].toLowerCase()) {
+				case "iphone":
+					_base.isIPhone = true;
+					_base.isWebOS = false;
+					_base.isAndroid = false;
+					break;
+				case "android":
+					_base.isIPhone = false;
+					_base.isWebOS = false;
+					_base.isAndroid = true;
+					break;
+				case "webos":
+					_base.isIPhone = false;
+					_base.isWebOS = true;
+					_base.isAndroid = false;
+					break;
+				};
 			};
-		};
-	};
+		});
+	}
 	return _base;
 });

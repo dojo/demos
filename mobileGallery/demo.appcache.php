@@ -9,8 +9,8 @@ demo.html
 ../../dojox/mobile/themes/iphone/ipad.css
 ../../dojox/mobile/themes/android/android.css
 demo.css
-css/themes/iphone.css
-css/themes/android.css
+css/themes/iphone/gallery.css
+css/themes/android/gallery.css
 ../../dojo/dojo.js
 ../../dijit/dijit.js
 ../../dojox/mobile.js
@@ -22,8 +22,8 @@ images/left-arrow-mask.png
 
 icons-url.html
 views/ajax.html
-views/animations.html
 views/buttons.html
+views/css3.html
 views/flippableViews.html
 views/forms.html
 views/headings.html
@@ -31,7 +31,9 @@ views/icons.html
 views/jsonp.html
 views/list.html
 views/map.html
-views/rowTemplate.html
+views/mobileListData.html
+views/mobileSwitches.html
+views/mobileTransitions.html
 views/tabBar.html
 
 images/flip1.jpg

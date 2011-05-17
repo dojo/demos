@@ -7,9 +7,6 @@ define(["dojo", "dijit", "dojox/mobile/parser",
          "demos/mobileGallery/src/Viewport",
          "demos/mobileGallery/src/structure"], function(dojo){
 	
-	// preload images
-	new Image(25,25).src = "images/progress-indicator.gif";
-	
 	function goToView(event) {
 		var currentView = demos.mobileGallery.src.structure.layout.rightPane.currentView;
 		
@@ -38,7 +35,7 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 	}
 	
 	
-	dojo.getObject("mobileGallery.src.base",true,demos);
+	dojo.provide("demos.mobileGallery.src.base");
 	
 	demos.mobileGallery.src.base = {
 		/**
@@ -225,7 +222,6 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 			
 			var progDiv = dojo.byId("progDiv");
 			var prog = new dojox.mobile.ProgressIndicator();
-			prog.setImage("images/progress-indicator.gif");
 			progDiv.appendChild(prog.domNode);
 			prog.start();
 			dojo.style(progDiv, "visibility", "visible");
@@ -388,20 +384,6 @@ define(["dojo", "dijit", "dojox/mobile/parser",
 	};
 	
 	dojo.ready(function(){
-		// switch themes for specific device
-		dojo.forEach(document.getElementsByTagName('link'), function(link){
-			var category = dojo.attr(link, "category");
-			if (category) {
-				switch (category) {
-				case "android":
-					link.disabled = !demos.mobileGallery.src._base.isAndroid;
-					break;
-				default:
-					link.disabled = demos.mobileGallery.src._base.isAndroid;
-				}
-			}
-		});
-		
 		// set view port size
 		demos.mobileGallery.src.Viewport.onViewportChange();
 		

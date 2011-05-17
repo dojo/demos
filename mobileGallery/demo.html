@@ -6,12 +6,7 @@
         <meta names="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<title>Showcase</title>
-		<link rel="stylesheet" type="text/css" category="ios" href="../../dojox/mobile/themes/iphone/iphone.css"/>
-		<link rel="stylesheet" type="text/css" category="ios" href="../../dojox/mobile/themes/iphone/ipad.css"/>
-		<link rel="stylesheet" type="text/css" category="android" href="../../dojox/mobile/themes/android/android.css"/>
 		<link rel="stylesheet" type="text/css" href="demo.css"/>
-		<link rel="stylesheet" type="text/css" category="ios" href="css/themes/iphone.css"/>
-		<link rel="stylesheet" type="text/css" category="android" href="css/themes/android.css"/>
         <link rel="apple-touch-icon" href="images/MobileShow_App_57.png"/>
         <link rel="apple-touch-icon" sizes="114x114" href="images/MobileShow_App_114.png"/>
         <link rel="shortcut icon" href="images/MobileShow_Fav_16.png"/>
@@ -64,21 +59,32 @@
 			</div>
 		</div>
 		<div id="progDiv"><div>
-		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: false, mblAlwaysHideAddressBar:true, async:true"></script>
+		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad:false,mblAlwaysHideAddressBar:true,async:true,mblThemeFiles:['@theme',['demos.mobileGallery.css','gallery']]"></script>
 
 		<script language="JavaScript" type="text/javascript">
-			require([
-				"dojox/mobile",
-				"dojox/mobile/parser",
-				"dojox/mobile/compat",
-				"dojox/mobile/Button",
-				"dojox/mobile/FixedSplitter",
-				"dojox/mobile/ScrollableView",
-				"dojox/mobile/FixedSplitterPane",
-				"dojox/mobile/FlippableView",
-				"dojox/mobile/TabBar",
-				"demos/mobileGallery/src"
-			]);
+			require.ready(function(){
+				require([
+					"dojo/_base/sniff",
+					"dojox/mobile/parser",
+					"dojox/mobile",
+					"dojox/mobile/deviceTheme",
+					"dojox/mobile/Button",
+					"dojox/mobile/FixedSplitter",
+					"dojox/mobile/ScrollableView",
+					"dojox/mobile/FixedSplitterPane",
+					"dojox/mobile/FlippableView",
+					"dojox/mobile/TabBar"
+				],function(sniff){
+					if(!sniff.isWebKit){
+						require([
+							"dojox/mobile/compat",
+							"dojo/fx",
+							"dojo/fx/easing"
+						], function(){});
+					}
+					require(["demos/mobileGallery/src"], function(){});
+				})
+			});
 		</script>
 	</body>
 </html>
