@@ -1,10 +1,10 @@
 dependencies = {
 	layers: [
 		{
-			name: "../demos/mvcMobile/src.js",
-			resourceName: "demos.mvcMobile.src",
+			name: "../demos/mobileMvc/src.js",
+			resourceName: "demos.mobileMvc.src",
 			dependencies: [
-				"demos.mvcMobile.src"
+				"demos.mobileMvc.src"
 			]
 		}
 	],

@@ -1,32 +1,34 @@
-dojo.provide("demos.mobileMvc.src");
+var repeatModel, setRef, nextIndexToAdd, selectedIndex;
+var setRef, setDetailsContext, insertResult, updateView, updateModel;
 
-//dojo.require("dojo.parser"); // no longer needed for repeat demo
-dojo.require("dojox.mobile.parser");
-dojo.require("dojox.mobile");
-dojo.require("dojox.mobile.ScrollableView");
-dojo.require("dojox.mobile.TextBox");
-dojo.require("dojox.mvc");
-dojo.require("dojox.mvc.Generate");
-dojo.require("dojox.mvc.Group");
-dojo.require("dojox.mvc.Repeat");
-dojo.require("dojox.mobile.FlippableView");
-dojo.require("dojox.mobile.ViewController");
-dojo.require("dojox.mobile.TextArea");
-dojo.require("dojox.mobile.Button");
+require([
+	'dojox/mobile/parser',
+	'dojox/mobile',
+	'dojox/mobile/ScrollableView',
+	'dojox/mobile/Button',
+	'dojox/mobile/TextArea',
+	'dojox/mvc',
+	'dojox/mvc/Group',
+	'dojox/mvc/Generate',
+	'dojox/mvc/Repeat',
+	'dojox/mobile/TextBox',
+	'dojox/mobile/ViewController',
+	'dojox/mobile/FixedSplitter',
+	'dojox/mobile/EdgeToEdgeList',
+	'dojox/mobile/EdgeToEdgeCategory',
+	'dojox/mobile/deviceTheme',
+	'dojox/mobile/RoundRectCategory',
+	'dojox/mobile/Heading'
+], function(sniff){
+	if(!sniff.isWebKit){
+		require([
+			"dojox/mobile/compat" //,
+			//"dojo/fx", 
+			//"dojo/fx/easing"
+		]);
+	}
 
-dojo.require("dojox.mobile.FixedSplitter");
-dojo.require("dojox.mobile.EdgeToEdgeList");
-dojo.require("dojox.mobile.EdgeToEdgeCategory");
-dojo.require("dojox.mobile.Heading");
-dojo.require("dojox.mobile.FixedSplitterPane");
-dojo.requireIf(!dojo.isWebKit, "dojox.mobile.compat");
-dojo.requireIf(!dojo.isWebKit, "dojo.fx");
-dojo.requireIf(!dojo.isWebKit, "dojo.fx.easing");
-dojo.require("dojox.mobile.deviceTheme"); // used for device detection
-
-
-// Initial data for Ship to - Bill demo
-var names = {
+	var names = {
 	"Serial" : "360324",
 	"First"  : "John",
 	"Last"   : "Doe",
@@ -76,27 +78,27 @@ var repeatData = [
 	}
 ];
 
-var selectedIndex = 0;
+selectedIndex = 0;
 
-var model = dojox.mvc.newStatefulModel({ data : names });
-var repeatmodel = dojox.mvc.newStatefulModel({ data : repeatData });
-var nextIndexToAdd = repeatmodel.data.length;
+model = dojox.mvc.newStatefulModel({ data : names });
+repeatmodel = dojox.mvc.newStatefulModel({ data : repeatData });
+nextIndexToAdd = repeatmodel.data.length;
 
-// used in the Ship to - Bill to demo
-function setRef(id, addrRef) {
+ // used in the Ship to - Bill to demo
+setRef = function(id, addrRef) {
 	var widget = dijit.byId(id);
 	widget.set("ref", addrRef);
 }
 
 // used in the Repeat Data binding demo
-function setDetailsContext(index){
+setDetailsContext = function(index){
 	selectedIndex = index;
 	var groupRoot = dijit.byId("detailsGroup");
 	groupRoot.set("ref", index);
 }
 
 // used in the Repeat Data binding demo
-function insertResult(index){
+insertResult = function(index){
 	if (repeatmodel[index-1].First.value !== ""){ // TODO: figure out why we are getting called twice for each click
 		var insert = dojox.mvc.newStatefulModel({ "data" : {
 			"First"   : "",
@@ -117,7 +119,7 @@ function insertResult(index){
 
 // used in the Generate View demo
 var genmodel;
-function updateView() {
+updateView = function() {
 	try {
 		var modeldata = dojo.fromJson(dojo.byId("modelArea").value);
 		genmodel = dojox.mvc.newStatefulModel({ data : modeldata });
@@ -130,19 +132,25 @@ function updateView() {
 };
 
 // used in the Generate View demo
-function updateModel() {
-	dojo.byId("outerModelArea").style.display = "";	
-	try{
+updateModel = function() {
+	dojo.byId("outerModelArea").style.display = "";
+	try {
 		dojo.byId("modelArea").focus(); // hack: do this to force focus off of the textbox, bug on mobile?
 		dojo.byId("viewArea").style.display = "none";
 		dijit.byId("modelArea").set("value",(dojo.toJson(genmodel.toPlainObject(), true)));
-	}catch(e){
+	} catch(e) {
 		console.log(e);
 	};
 };
 
-function setup() {
-	dojox.mobile.parser.parse();
-};
 
-dojo.ready(setup);
+// The dojox.mvc.StatefulModel class creates a data model instance
+// where each leaf within the data model is decorated with dojo.Stateful
+// properties that widgets can bind to and watch for their changes.
+
+require(['domReady!'], function(){
+			dojox.mobile.parser.parse();
+		});
+
+}); // end onload
+
