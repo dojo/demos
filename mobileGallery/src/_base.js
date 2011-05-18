@@ -1,5 +1,9 @@
-define(["dojo"], function(){
-	dojo.provide("demos.mobileGallery.src._base");
+define(["dojo/_base/array", // dojo.forEach
+        "dojo/_base/kernel", // dojo.getObject
+        "dojo/_base/sniff", // dojo.isSafari
+        "dojo/_base/window"], // dojo.global
+        function(){
+	dojo.getObject("demos.mobileGallery.src._base", true);
 	
 	var _base = demos.mobileGallery.src._base;
 	_base.isIPhone = (dojo.isSafari && (navigator.userAgent.indexOf("iPhone") > -1 || navigator.userAgent

@@ -1,4 +1,11 @@
-define(["dojo", "dijit", "dojo/io/script", "dojox/mobile/ProgressIndicator"], function(dojo, dijit, script, ProgressIndicator){
+define(["dojo/_base/connect", // dojo.connect
+        "dojo/_base/declare", // dojo.declare
+        "dojo/_base/html", // dojo.marginBox/byId
+        "dojo/_base/kernel", // dojo.mixin/getObject
+        "dojo/_base/window", // dojo.global
+        "dojo/io/script",
+        "dijit/_base/manager", // dijit.byId
+        "dojox/mobile/ProgressIndicator"], function(){
 	// Map class
 	var Map = dojo.declare(null, {
 		constructor: function(args){
@@ -22,7 +29,7 @@ define(["dojo", "dijit", "dojo/io/script", "dojox/mobile/ProgressIndicator"], fu
 	var isLoaded = false; // flag to indicate whether the map is loaded
 	var prog; // progress bar
 	
-	dojo.provide("demos.mobileGallery.src.map");
+	dojo.getObject("demos.mobileGallery.src.map", true);
 	demos.mobileGallery.src.map.initMap = function(){
 		prog.stop();
 		var googleMap = new Map({
@@ -48,7 +55,7 @@ define(["dojo", "dijit", "dojo/io/script", "dojox/mobile/ProgressIndicator"], fu
 				if (isLoaded)
 					return;
 				
-				prog = ProgressIndicator.getInstance();
+				prog = dojox.mobile.ProgressIndicator.getInstance();
 				var googleMapDiv = dojo.byId("googleMap");
 				var mapMargin = dojo.marginBox("map");
 				mapMargin.h = window.innerHeight - dojo.marginBox("header").h;
@@ -56,7 +63,7 @@ define(["dojo", "dijit", "dojo/io/script", "dojox/mobile/ProgressIndicator"], fu
 				googleMapDiv.appendChild(prog.domNode);
 				prog.start();
 				
-				script.get({
+				dojo.io.script.get({
 					url : "http://maps.google.com/maps/api/js",
 					content : {
 						sensor : false,

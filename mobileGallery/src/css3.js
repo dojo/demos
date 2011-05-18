@@ -1,9 +1,8 @@
-define(["dojo", "dojox/css3/fx", "dojox/fx"], function(dojo) {
+define(["dojo/_base/kernel","dojo/_base/declare", "dojo/_base/html", "dojo/_base/connect","dojo/fx","dojox/css3/fx"], function(dojo) {
 
 demos.mobileGallery.src.css3 = function() {
-    
-    dojo.declare("CSS3Demo", null, {
-        
+ 
+ dojo.declare("CSS3Demo", null, {
         menuNode: null,
         increment: 360,
         angle: 0,

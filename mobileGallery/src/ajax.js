@@ -1,14 +1,17 @@
-define(["dojo", "dojox/mobile/ProgressIndicator"], function(dojo, ProgressIndicator) {
+define(["dojo/_base/kernel", // dojo.getObject
+        "dojo/_base/html", //  dojo.byId
+        "dojo/_base/xhr", // dojo.xhrGet
+        "dojox/mobile/ProgressIndicator"], function() {
 	var prog = null;// progress indicator
 	
-	dojo.provide("demos.mobileGallery.src.ajax");
+	dojo.getObject("demos.mobileGallery.src.ajax", true);
 	demos.mobileGallery.src.ajax = {
 		refreshData : function() {
 			var view = dojo.byId('ajax');
 			var pane = dojo.byId('ajaxPane');
 			if (prog)
 				prog.stop(); // prevent duplicated progress indicators
-			prog = ProgressIndicator.getInstance();
+			prog = dojox.mobile.ProgressIndicator.getInstance();
 			view.appendChild(prog.domNode);
 			prog.start();
 			

@@ -1,5 +1,7 @@
-define(["dojo", "./_base"], function(dojo, _base){
-	dojo.provide("demos.mobileGallery.src.Viewport");
+define(["dojo/_base/html", // dojo.create/attr
+        "dojo/_base/kernel", // dojo.getObject
+        "./_base"], function(dojo, _base){
+	dojo.getObject("demos.mobileGallery.src.Viewport", true);
 	
 	var meta = null;// <meta> tag for viewport
 	

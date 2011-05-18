@@ -1,5 +1,7 @@
-define(["dojo", "dojo/data/ItemFileWriteStore", "dojox/mobile/RoundRectDataList"], function(dojo) {
-
+define(["dojo/_base/lang", // dojo.clone
+        "dojo/_base/kernel", // dojo.getObject
+        "dojo/data/ItemFileWriteStore", "dojox/mobile/RoundRectDataList"], function() {
+dojo.getObject("demos.mobile.src.mobileLists", true);
 demos.mobile.src.mobileLists = function() {
     var static_data = { 
                 items: [ 
@@ -37,5 +39,4 @@ demos.mobile.src.mobileLists = function() {
         }
     };
 }();
-	
 });

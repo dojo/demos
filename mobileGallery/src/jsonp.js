@@ -1,6 +1,10 @@
-define(["dojo", "dijit",
-        "dojo/io/script", "dojo/string",
-        "dojox/mobile/ProgressIndicator"], function(dojo, dijit, script, string, ProgressIndicator){
+define(["dojo/_base/connect", // dojo.connect
+        "dojo/_base/html", // dojo.byId
+        "dojo/_base/array", // dojo.forEach
+        "dojo/string",
+        "dojo/io/script",
+        "dijit/_base/manager", // dijit.byId
+        "dojox/mobile/ProgressIndicator"], function(){
 	
 		// twitter search results visualization template
 		var template = '<div class="searchResult" style="text-align:center;vertical-align:middle;">'
@@ -20,11 +24,11 @@ define(["dojo", "dijit",
 					
 					if (prog)
 						prog.stop();// prevent duplicated indicators
-					prog = ProgressIndicator.getInstance();
+					prog = dojox.mobile.ProgressIndicator.getInstance();
 					jsonpDiv.appendChild(prog.domNode);
 					prog.start();
 					
-					script.get({
+					dojo.io.script.get({
 						url : "http://search.twitter.com/search.json",
 						handleAs : "json",
 						callbackParamName : "callback",
@@ -40,7 +44,7 @@ define(["dojo", "dijit",
 							var results = data.results;
 							if (data.results) {
 								dojo.forEach(data.results, function(result){
-									res += string.substitute(template, {
+									res += dojo.string.substitute(template, {
 										from_user : result.from_user,
 										profile_image_url : result.profile_image_url,
 										text : result.text

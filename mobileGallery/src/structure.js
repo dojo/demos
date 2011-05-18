@@ -1,5 +1,6 @@
-define(function(){
-	dojo.provide("demos.mobileGallery.src.structure");
+define(["dojo/_base/kernel"], // dojo.getObject
+		function(){
+	dojo.getObject("demos.mobileGallery.src.structure", true);
 	
 	var THRESHOLD_WIDTH = 600;
 	demos.mobileGallery.src.structure = {
