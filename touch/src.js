@@ -8,12 +8,12 @@ dojo.require("dojox.charting.Chart2D");
 dojo.require("dojox.charting.widget.Legend");
 
 dojo.require("dojo.gesture.tap");
-//dojo.require("dojo.gesture.rotate");
-
+dojo.require("demos.touch.rotate");
 
 
 (function(){
-	var dc = dojox.charting, themes = dc.themes, Theme = dc.Theme, g = Theme.generateGradient,
+	var dc = dojox.charting, Theme = dc.Theme, g = Theme.generateGradient,
+		themes = dojo.getObject("dojox.charting.themes", true);
 		defaultFill = {type: "linear", space: "shape", x1: 0, y1: 0, x2: 0, y2: 100};
 	
 	themes.Lily = new dc.Theme({
@@ -116,11 +116,11 @@ function changeSlice(fromIndex, toIndex){
 }
 
 function addRotate(){
-	rotateEnd = dojo.connect(dojo.byId("actionArea"), "rotateend", function(event){
+	rotateEnd = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate.end, function(event){
 		rotation += (event.rotation % 360);
 	});
 	
-	rotate = dojo.connect(dojo.byId("actionArea"), "rotate", function(event){
+	rotate = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate, function(event){
 		currentRotation = (rotation + event.rotation) % 360;
 		var transform = "rotate(" + currentRotation + "deg)";
 		pieChartDiv.style.webkitTransform = transform;
@@ -135,7 +135,7 @@ function removeRotate(){
 }
 
 function buildUI(){
-	//addRotate();
+	addRotate();
 	pieChart = new dojox.charting.Chart2D("pieChart1");
 	pieChart.setTheme(dojox.charting.themes.Lily);
 	pieChart.theme.plotarea = {
@@ -226,14 +226,14 @@ function toggleLock(){
 					dojo.byId("actionArea").style.opacity = 1;
 					dijit.byId("slider1").set("disabled", false);
 					dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-lock.png")';
-					//addRotate();
+					addRotate();
 					dojo.removeClass(dojo.byId("layout"), "locked");
 				}
 				else {
 					dojo.byId("actionArea").style.opacity = 0;
 					dijit.byId("slider1").set("disabled", true);
 					dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-unlock.png")';
-					//removeRotate();
+					removeRotate();
 					dojo.addClass(dojo.byId("layout"), "locked");
 				}
 				dojo.fadeIn({
