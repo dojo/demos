@@ -117,10 +117,11 @@ function changeSlice(fromIndex, toIndex){
 
 function addRotate(){
 	rotateEnd = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate.end, function(event){
-		rotation += (event.rotation % 360);
+		rotation += (event.srcEvent.rotation % 360);
 	});
 	
 	rotate = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate, function(event){
+		event = event.srcEvent;
 		currentRotation = (rotation + event.rotation) % 360;
 		var transform = "rotate(" + currentRotation + "deg)";
 		pieChartDiv.style.webkitTransform = transform;
