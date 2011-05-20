@@ -1,17 +1,17 @@
 var customClaroTheme, timeLabelFunction;
 
-require(["dojo/has", "dojo/_base/html", "dojo/_base/fx", 
+require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
 	"dojox/mobile", "dojox/mobile/View", "dojox/mobile/RoundRect", "dojox/mobile/Button", "dojox/mobile/parser", 
 	"dojox/charting/widget/Chart", "dojox/charting/Theme", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Columns",
 	"dojox/charting/plot2d/Areas", "dojox/charting/plot2d/Grid", "dojox/data/CsvStore",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],	
-	function(has, dojo, fx, mobile, View, RoundRect, Button, parser, 
+	function(has, dojo, html, fx, mobile, View, RoundRect, Button, parser, 
 				Chart, Theme, Default, Columns, Areas, Grid, CsvStore, ZoomAndPan, Indicator){
 	
-	if(!dojo.isWebKit){
-		require(["dojox/mobile/compat"]);
-	}
+		if(!dojo.isWebKit){
+			require(["dojox/mobile/compat"]);
+		}			
 	
 		var pHeight = 0;
 		
