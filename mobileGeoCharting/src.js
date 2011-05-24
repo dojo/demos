@@ -28,9 +28,7 @@ require([
 		dijit.byId("yearSlot").setInitialValue();
 		
 		dojo.connect(dojo.doc,"touchmove",this,function(event){
-			console.log("length "+ dojo.NodeList(event.target).parents("#mapLegend").length);
 			if (dojo.NodeList(event.target).parents("#mapLegend").length == 1) {
-				console.log("stop event on legend");
 				dojo.stopEvent(event);
 			}
 				
@@ -51,11 +49,13 @@ require([
 });
 var selectedFeature;
 function onFeatureClick(feature) {
-	console.log("Feature click " + feature);
 	selectedFeature = feature;
-	var map = dijit.byId("mapWidget").getInnerMap();
-	var year = dijit.byId("yearSlot").getValue();
-	var text = map.mapObj.marker.markerData[feature.id] + "\nYear "+  year + " population : " + (feature.value / 1000000) + "M";
+	var text = "US population from 1960 to 2009";
+	if (selectedFeature) {
+		var map = dijit.byId("mapWidget").getInnerMap();
+		var year = dijit.byId("yearSlot").getValue();
+		var text = map.mapObj.marker.markerData[feature.id] + "\nYear " + year + " population : " + (feature.value / 1000000) + "M";
+	}
 	dojo.byId("mapHeader").innerHTML = text;
 };
 

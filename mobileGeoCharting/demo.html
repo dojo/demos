@@ -11,8 +11,7 @@
 		<script type="text/javascript">
 			var djConfig = {
 				parseOnLoad: true,
-				async:true,
-				gfxRenderer:"svg,vml,silverlight"
+				async:true
 			};
 		</script>
 		<script type="text/javascript" src="../../dojo/dojo.js"></script>
@@ -28,7 +27,7 @@
 	
 			<h1 dojoType="dojox.mobile.Heading" id="mapHeader" >US population from 1960 to 2009</h1>
 			<div id="mapWidget" dojoType="dojox.geo.charting.widget.Map" 
-				 shapeFile="resources/data/US_States_intermediate.json"
+				 shapeData="resources/data/US_States_intermediate.json"
 				 dataStore="csvStore" series="resources/data/series.json"  markerData="resources/data/markers.json" showTooltips="false"
 				 animateOnResize="false" colorAnimationDuration="300"
 				 adjustMapCenterOnResize="true" adjustMapScaleOnResize="true" dataBindingAttribute="2009"
