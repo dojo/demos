@@ -265,6 +265,10 @@ dojo.addOnLoad(function(){
 	dojo.connect(dojo.doc, dojo.touch.release, function(){
 		dojo.byId("lockButton").focus();
 	});
+	
+	var slider = dijit.byId('slider1');
+	dojo.connect(slider, 'onChange', updatePieChart);
+	
 	buildUI();
 	pieChartDiv = dojo.byId("pieChart1");
 });
