@@ -5,7 +5,11 @@ Authors: Damien Mandrioli, Christophe Jolif
 -------------------------------------------------------------------------------
 Demo description
 
-	 A stock chart demo showing dojox.charting mobile features including touch interactions
+	 A stock chart demo showing dojox.charting mobile features including touch interactions.
+	 Clicking the Touch mode switches from panning to data indicator modes.
+	 Supports both mouse and touch interactions. Try on a touchscreen device
+	 and use two fingers in data indicator mode to see difference between values
+	 at two points!
 	
 -------------------------------------------------------------------------------
 Dependencies:

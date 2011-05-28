@@ -5,7 +5,8 @@ Author: Ed Chatelain (edchat)
 -------------------------------------------------------------------------------
 Demo description
 
-	This is the mobile MVC demo, showing a three of Mobile MVC Data Binding demos. 
+	This is the mobile MVC demo, showing three basic data binding features
+	of the new dojox.mvc package's. 
 	
 -------------------------------------------------------------------------------
 Dependencies:

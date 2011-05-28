@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
-Mobile Maps - Dojo Mobile OpenLayers Map Demo
+Mobile File Browsing - Dojo Mobile File Browser
 -------------------------------------------------------------------------------
-Authors: Marc Durocher
+Authors: Michael Rheinheimer
 -------------------------------------------------------------------------------
 Demo description
 
-	This is a basic map demo, a mobile application showcasing the dojo openLayers 
-	Map component and mobile navigation.
+	A simple demonstration of building a Mobile File Browser, using parts from
+	dojo.data, dojox.mobile, and dijit's TreeModel
 	
 -------------------------------------------------------------------------------
 Dependencies:

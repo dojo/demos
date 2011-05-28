@@ -5,8 +5,8 @@ Authors: Emmanuel Tissandier, Philippe Toussaint
 -------------------------------------------------------------------------------
 Demo description
 
-	This is the gauges demo, a mobile application showcasing several different 
-	type of gauges.
+	This is a demonstration of various gauges that come with dojo, using 
+	mobile navigation from dojox.mobile.  Try this demo on a touch screen device.
 	
 -------------------------------------------------------------------------------
 Dependencies:

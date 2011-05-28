@@ -1,12 +1,13 @@
 -------------------------------------------------------------------------------
-Mobile Maps - Dojo Mobile OpenLayers Map Demo
+Mobile Gallery - Samples of various Mobile features in Dojo
 -------------------------------------------------------------------------------
-Authors: Marc Durocher
+Authors: Yuan Peng Zhang (Stephen), Ming Zhe Huang (Archer)
 -------------------------------------------------------------------------------
 Demo description
 
-	This is a basic map demo, a mobile application showcasing the dojo openLayers 
-	Map component and mobile navigation.
+	Various mobile features from the Dojo Mobile library.  
+	Make sure to check out other many more new components in the dojox/mobile/tests 
+	directory!
 	
 -------------------------------------------------------------------------------
 Dependencies:
