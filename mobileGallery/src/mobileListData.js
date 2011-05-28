@@ -1,5 +1,6 @@
 define(["dojo/_base/lang", // dojo.clone
         "dojo/_base/kernel", // dojo.getObject
+	"dijit/_base/manager",//dijit.byId
         "dojo/data/ItemFileWriteStore", "dojox/mobile/RoundRectDataList"], function() {
 dojo.getObject("demos.mobile.src.mobileLists", true);
 demos.mobile.src.mobileLists = function() {
@@ -39,4 +40,16 @@ demos.mobile.src.mobileLists = function() {
         }
     };
 }();
+return {
+	init: function() { 
+		var view = dijit.byId("mobileLists");
+		var isInit = false;
+		dojo.connect(view, "onAfterTransitionIn", view, function(){
+			if (!isInit) {
+				this.resize();
+				isInit = true;
+			};
+		});
+	}
+};
 });
