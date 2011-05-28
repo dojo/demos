@@ -5,8 +5,8 @@ Author: Si Qi Zhong(Siqi), Qi Ruan(Rock)
 -------------------------------------------------------------------------------
 Description:
 
-	A quick demo for Dojo touch & gesture(tap, tap.hold, rotate)
-	It shows how Dojo touch & gesture works well with 
+	A demo showing use of Dojo new touch & gesture api (tap, tap.hold, rotate)
+	This demo shows how Dojo touch & gesture works well with 
 	Dijit HorizontalSlider, DnD, Charting across mobile and desktop.
 	The demo runs well on Chrome 10+, Safari 5+, iOS 4+ and Andriod 2.1+
 	
@@ -23,4 +23,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:-999
+@rank:1
