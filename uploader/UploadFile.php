@@ -1,5 +1,5 @@
 <?php
-// summary
+// summary:
 //		Test file to handle image uploads (remove the image size check to upload non-images)
 //
 //		This file handles both Flash and HTML uploads
