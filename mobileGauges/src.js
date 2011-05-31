@@ -1,28 +1,28 @@
 
-require.ready(function(){
+require(["dojo/domReady!"], function(){
 
 	require([
-	 "dojox/mobile", 
-	 "dojox/mobile/parser", 
-	 "dojox/mobile/compat", 
-	 "dojox/mobile/Button", 
-	 "dojox/gauges/AnalogGauge", 
-	 "dojox/gauges/AnalogArcIndicator", 
-	 "dojox/gauges/AnalogNeedleIndicator", 
-	 "dojox/gauges/AnalogCircleIndicator", 
-	 "dojox/gauges/TextIndicator", 
-	 "dojox/gauges/GlossyCircularGauge", 
-	 "dojox/gauges/GlossyHorizontalGauge", 
-	 "dojox/gauges/GlossySemiCircularGauge", 
-	 "demos/mobileGauges/src/VistaGauge", 
-	 "demos/mobileGauges/src/PlasticGauge", 
+	 "dojox/mobile",
+	 "dojox/mobile/parser",
+	 "dojox/mobile/compat",
+	 "dojox/mobile/Button",
+	 "dojox/gauges/AnalogGauge",
+	 "dojox/gauges/AnalogArcIndicator",
+	 "dojox/gauges/AnalogNeedleIndicator",
+	 "dojox/gauges/AnalogCircleIndicator",
+	 "dojox/gauges/TextIndicator",
+	 "dojox/gauges/GlossyCircularGauge",
+	 "dojox/gauges/GlossyHorizontalGauge",
+	 "dojox/gauges/GlossySemiCircularGauge",
+	 "demos/mobileGauges/src/VistaGauge",
+	 "demos/mobileGauges/src/PlasticGauge",
 	 "demos/mobileGauges/src/XpGauge"], function(){
-		
+
 		circularGauge = null;
 		scircularGauge = null;
 		horizontalGauge = null;
-		
-		
+
+
 		function initBarGauges(){
 			horizontalGauge = new dojox.gauges.GlossyHorizontalGauge({
 				background: 'white',
@@ -32,8 +32,8 @@ require.ready(function(){
 			}, dojo.byId("defaultBarGauge"));
 			horizontalGauge.startup();
 		}
-		
-		
+
+
 		/**
 		 * Creates the gauges *
 		 */
@@ -48,7 +48,7 @@ require.ready(function(){
 				height: 300
 			}, dojo.byId("cGauge"));
 			circularGauge.startup();
-			
+
 			// creates a Semi Circular Gauge
 			scircularGauge = new dojox.gauges.GlossySemiCircularGauge({
 				background: [255, 255, 255, 0],
@@ -59,11 +59,11 @@ require.ready(function(){
 				height: 250
 			}, dojo.byId("scGauge"));
 			scircularGauge.startup();
-			
-			
+
+
 			//----------------
 			var gauge = new dojox.gauges.AnalogGauge({
-			
+
 				background: 'white',
 				id: "gauge",
 				width: 250,
@@ -76,14 +76,14 @@ require.ready(function(){
 					high: 100,
 					color: 'black'
 				}],
-				
+
 				majorTicks: {
 					offset: 90,
 					interval: 10,
 					length: 3,
 					color: 'white'
 				},
-				
+
 				indicators: [new dojox.gauges.AnalogArcIndicator({
 					value: 100,
 					width: 30,
@@ -117,14 +117,14 @@ require.ready(function(){
 					color: 'gray'
 				})]
 			}, dojo.byId("gauge"));
-			
+
 			gauge.startup();
-			
+
 			dojo.connect(gauge.indicators[1], "valueChanged", dojo.hitch(gauge, function(){
 				this.indicators[2].update(this.indicators[1].value);
 			}));
-			
-			
+
+
 			gauge = new dojox.gauges.AnalogGauge({
 				id: "gauge2",
 				startAngle: 0,
@@ -141,7 +141,7 @@ require.ready(function(){
 					high: 100,
 					color: 'white'
 				}],
-				
+
 				majorTicks: {
 					offset: 95,
 					interval: 20,
@@ -149,7 +149,7 @@ require.ready(function(){
 					color: 'black',
 					labelPlacement: 'outside'
 				},
-				
+
 				indicators: [new dojox.gauges.AnalogArcIndicator({
 					value: 1000,
 					width: 30,
@@ -184,14 +184,14 @@ require.ready(function(){
 					color: 'gray'
 				})]
 			}, dojo.byId("gauge2"));
-			
+
 			gauge.startup();
-			
+
 			dojo.connect(gauge.indicators[1], "valueChanged", dojo.hitch(gauge, function(){
 				this.indicators[2].update(this.indicators[1].value);
 			}));
-			
-			
+
+
 			gauge = new dojox.gauges.AnalogGauge({
 				id: "gauge3",
 				startAngle: -30,
@@ -207,7 +207,7 @@ require.ready(function(){
 					high: 30,
 					color: 'white'
 				}],
-				
+
 				majorTicks: {
 					offset: 100,
 					interval: 10,
@@ -215,7 +215,7 @@ require.ready(function(){
 					color: 'black',
 					labelPlacement: 'outside'
 				},
-				
+
 				indicators: [new dojox.gauges.AnalogNeedleIndicator({
 					interactionMode: "gauge",
 					value: 0,
@@ -223,13 +223,13 @@ require.ready(function(){
 					length: 100,
 					strokeColor: [100, 100, 100],
 					color: [200, 200, 200]
-				
+
 				})]
 			}, dojo.byId("gauge3"));
-			
+
 			gauge.startup();
-			
-			
+
+
 			gauge = new dojox.gauges.AnalogGauge({
 				id: "gauge4",
 				startAngle: 20,
@@ -245,7 +245,7 @@ require.ready(function(){
 					high: 8,
 					color: [50, 90, 102]
 				}],
-				
+
 				majorTicks: {
 					offset: 70,
 					interval: 1,
@@ -253,7 +253,7 @@ require.ready(function(){
 					color: 'white',
 					labelPlacement: 'outside'
 				},
-				
+
 				indicators: [new dojox.gauges.AnalogCircleIndicator({
 					interactionMode: "gauge",
 					offset: 45,
@@ -261,21 +261,21 @@ require.ready(function(){
 					length: 10,
 					strokeColor: [163, 43, 38],
 					color: [222, 161, 64]
-				
+
 				}), new dojox.gauges.AnalogArcIndicator({
 					value: 7,
 					width: 10,
 					offset: 60,
-					
+
 					color: [255, 248, 178],
 					noChange: true,
 					title: 'value',
 					hideValue: true
 				})]
 			}, dojo.byId("gauge4"));
-			
+
 			gauge.startup();
-			
+
 			var vista = new demos.mobileGauges.src.VistaGauge({
 				id: "vista",
 				color: 'white',
@@ -286,7 +286,7 @@ require.ready(function(){
 				height: 200
 			}, dojo.byId("vista"));
 			vista.startup();
-			
+
 			var plastic = new demos.mobileGauges.src.PlasticGauge({
 				id: "plastic",
 				color: 'white',
@@ -297,7 +297,7 @@ require.ready(function(){
 				height: 200
 			}, dojo.byId("plastic"));
 			plastic.startup();
-			
+
 			var xp = new demos.mobileGauges.src.XpGauge({
 				id: "xp",
 				color: [109, 183, 19],
@@ -308,12 +308,12 @@ require.ready(function(){
 				height: 200
 			}, dojo.byId("xp"));
 			xp.startup();
-			
-			
+
+
 			initBarGauges();
-			
+
 		}
-		
+
 		init();
 	});
 });
