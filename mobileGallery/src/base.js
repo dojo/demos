@@ -4,6 +4,7 @@ define(["dojo/_base/kernel", // dojo.getObject
         "dojo/_base/array", // dojo.forEach
         "dojo/_base/window", // dojo.global
         "dojo/_base/xhr", // dojo.xhrGet
+	"dojo/ready", // dojo.ready
         "dojo/data/ItemFileReadStore",
         "dijit/_base/manager", // dijit.byId/byNode
         "dojox/mobile/parser",

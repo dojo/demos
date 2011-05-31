@@ -9,7 +9,6 @@ require([
 	"dojox/mobile/FixedSplitterPane",
 	"dojox/mobile/FlippableView",
 	"dojox/mobile/TabBar",
-//	"demos/mobileGallery/src",
-	"domReady!"], function(){
+	"dojo/domReady!"], function(){
 		require(["demos/mobileGallery/src/base"]);
 });
