@@ -1,0 +1,14 @@
+.claro .dojoxGridxBody tr {
+	background:url("../../resources/images/row_back.png") #fff repeat-x;
+}
+.claro .dojoxGridxRowOdd tr {
+	background-color: #f7fcff;
+}
+.claro .dojoxGridxBody td{
+	border-color: transparent #E5DAC8 #E5DAC8 transparent;
+}
+.claro .dojoxGridxRowOver .dojoxGridxCell {
+	background:url("../../resources/images/row_back.png") #ABD6FF repeat-x;
+	border-top:1px solid #769DC0;
+	border-bottom:1px solid #769DC0;
+}

@@ -1,0 +1,31 @@
+.dojoxGridxBody {
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+}
+
+.dojoxGridxRow table {
+/*    border-collapse: collapse;*/
+	border-spacing: 0;
+	border: none;
+	table-layout: fixed;
+	width: 1px;
+	empty-cells: show;
+}
+
+.dojoxGridxRow td {
+	border-style: solid;
+	border-color: transparent #ccc #ccc transparent;
+	border-width: 1px;
+	padding: 3px;
+	text-align: left;
+	overflow: hidden;
+/*    word-wrap: break-word;*/
+}
+
+.dojoxGridxRowDummy {
+	height: 24px;
+	width: 100px;
+	background-color: green;
+	border-top: 1px solid red;
+}

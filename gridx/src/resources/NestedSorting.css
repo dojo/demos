@@ -1,0 +1,77 @@
+.dojoxGridxSortNode {
+	overflow: hidden;
+}
+
+.dojoxGridxSortBtn {
+	background: transparent url(images/sprite_icons.png) no-repeat -159px 5px;
+	float: right;
+	cursor: pointer;
+	width: 10px;
+	display: none;
+}
+
+.dojoxGridxSortBtnNested {
+	width: 20px;
+	background-position: -149px 5px;
+}
+
+.dojoxGridxSortBtn:hover {
+	background-color: #ddd;
+}
+
+.dojoxGridxCellSorted .dojoxGridxSortBtnSingle, 
+.dojoxGridxNestedSorted .dojoxGridxCellSorted .dojoxGridxSortBtnNested,
+th.dojoxGridxCell:hover .dojoxGridxSortBtnSingle,
+.dojoxGridxSingleSorted th.dojoxGridxCell:hover .dojoxGridxSortBtn,
+.dojoxGridxNestedSorted th.dojoxGridxCell:hover .dojoxGridxSortBtn,
+.dojoxGridxSingleSorted .dojoxGridxHeaderHover .dojoxGridxCellSortedMain .dojoxGridxSortBtnNested
+{
+	display: block;
+}
+
+.dojoxGridxSingleSorted .dojoxGridxHeader th.dojoxGridxCellSortedMain:hover .dojoxGridxSortBtnNested,
+.dojoxGridxSingleSorted .dojoxGridxHeaderHover th.dojoxGridxCellSortedMain .dojoxGridxSortBtnSingle,
+.dojoxGridxNestedSorted th.dojoxGridxCell .dojoxGridxSortBtnSingle {
+	display: none;
+}
+
+.dojoxGridxSingleSorted .dojoxGridxHeaderHover .dojoxGridxCellSortedMain:hover .dojoxGridxSortBtnSingle {
+	display: block;
+}
+
+th.dojoxGridxCell:hover .dojoxGridxSortBtn {
+	border-left: 1px solid #bbb;
+}
+.dojoxGridxCellSortedAsc .dojoxGridxSortBtnSingle {
+	background-position: -120px 5px;
+}
+.dojoxGridxCellSortedAsc .dojoxGridxSortBtnNested {
+	background-position: -110px 5px;
+}
+.dojoxGridxCellSortedDesc .dojoxGridxSortBtnSingle {
+	background-position: -100px 5px;
+}
+.dojoxGridxCellSortedDesc .dojoxGridxSortBtnNested {
+	background-position: -90px 5px;
+}
+th.dojoxGridxCell:hover.dojoxGridxCellSortedAsc .dojoxGridxSortBtnSingle {
+	background-position: -140px 5px;
+}
+th.dojoxGridxCell:hover.dojoxGridxCellSortedAsc .dojoxGridxSortBtnNested {
+	background-position: -130px 5px;
+}
+th.dojoxGridxCell:hover.dojoxGridxCellSortedDesc .dojoxGridxSortBtnSingle {
+	background-position: -180px 5px;
+}
+th.dojoxGridxCell:hover.dojoxGridxCellSortedDesc .dojoxGridxSortBtnNested {
+	background-position: -170px 5px;
+}
+.dojoxGridxNestedSorted th.dojoxGridxCell:hover .dojoxGridxSortBtnSingle {
+	background-position: -159px 5px;
+}
+
+
+
+
+
+

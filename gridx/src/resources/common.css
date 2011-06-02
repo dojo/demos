@@ -1,0 +1,17 @@
+.dojoxGridx {
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #ddd;
+}
+
+.dojoxGridxHeader,
+.dojoxGridxFooter {
+	overflow: hidden;
+	background-color: #eee;
+}
+
+.dojoxGridxMain {
+	position: relative;
+}
+
+

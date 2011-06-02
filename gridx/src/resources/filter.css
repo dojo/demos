@@ -1,0 +1,127 @@
+.dojoxGridxFilterDialog .dijitAccordionContainer .dijitAccordionContainer-child {
+	padding: 6px 9px;
+}
+
+.dojoxGridxFilterPaneForm {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	font-size: 12px;
+}
+
+.dojoxGridxFilterPaneForm li {
+	margin: 0;
+	padding: 0px;
+	list-style: none;
+}
+
+.dojoxGridxFilterPaneForm .dijitSelect,
+.dojoxGridxFilterPaneForm .dijitTextBox {
+	font-size: 12px;
+}
+
+.dojoxGridxFilterPaneCloseButton {
+	float: right;
+}
+
+.dojoxGridxFilterPaneCloseButton img {
+	background: transparent url(images/sprite_icons.png) no-repeat -198px -18px;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.dojoxGridxFilterPaneCloseButton img:hover {
+	background-position: -198px 2px;
+}
+.dojoxGridxFilterSingleRule .dojoxGridxFilterPaneCloseButton {
+	display: none;
+}
+
+.dojoxGridxFilterBtnAddRule {
+	background: transparent url(images/sprite_icons.png) no-repeat -218px 2px;
+	width: 16px;
+	height: 16px;
+}
+
+.dojoxGridxFilterBarBtnIcon {
+	background: transparent url(images/sprite_icons.png) no-repeat -100px -18px;
+	width: 14px;
+	height: 14px;
+}
+
+.dojoxGridxFilterPaneForm .dojoxGridxFilterPaneFieldWrapper {
+	display: none;
+}
+  
+.dojoxGridxFilterPaneText .dojoxGridxFilterPaneTextWrapper,
+.dojoxGridxFilterPaneDate .dojoxGridxFilterPaneDateWrapper,
+.dojoxGridxFilterPaneDateRange .dojoxGridxFilterPaneDateRangeWrapper,
+.dojoxGridxFilterPaneTime .dojoxGridxFilterPaneTimeWrapper,
+.dojoxGridxFilterPaneTimeRange .dojoxGridxFilterPaneTimeRangeWrapper,
+.dojoxGridxFilterPaneSelect .dojoxGridxFilterPaneDateSelectWrapper,
+.dojoxGridxFilterPaneRadio .dojoxGridxFilterPaneRadioWrapper {
+	display: block;
+}
+
+
+.dojoxGridxFilterBar {
+	cursor: pointer;
+	width: 100%;
+	font-family: arial;
+}
+.dojoxGridxFilterBar a{
+	color: #5B83B6;
+	text-decoration: none;
+}
+.dojoxGridxFilterBar a:hover{
+	text-decoration: underline;
+}
+.dojoxGridxFilterBar .dijitButton {
+	margin: 0;
+	float: left;
+}
+.dojoxGridxFilterBar .dijitButton .dijitButtonNode {
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+	padding-top: 0;
+	padding-bottom: 0;
+	padding-right: 2px;
+}
+
+.dojoxGridxFilterBarStatus {
+	background: -moz-linear-gradient(center top , #F2F9FF, #EAF5FF) repeat scroll 0 0 transparent;
+	border-bottom: 1px solid #BFD6EB;
+    border-top: 1px solid #BFD6EB;
+    padding: 1px 0 0 45px;
+}
+
+.dojoxGridxFilterBarCloseBtn {
+	background: transparent url(images/sprite_icons.png) no-repeat -119px -20px;
+	width: 14px;
+	height: 14px;
+	float: right;
+	margin-right: 3px;
+	cursor: pointer;
+}
+
+.dojoxGridxFilterBarHideCloseBtn .dojoxGridxFilterBarCloseBtn {
+	display: none;
+}
+
+.dojoxGridxFilterBarCloseBtn:hover {
+	background-position: -140px -20px;
+}
+
+.dojoxGridxFilterTooltip table {
+	border: 1px solid #bbb;
+}
+
+.dojoxGridxFilterTooltip table th {
+	background-color: #E8EFF4;
+	padding: 2px 5px;
+}
+
+
+
+

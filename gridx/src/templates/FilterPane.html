@@ -1,0 +1,41 @@
+<ul class="dojoxGridxFilterPaneForm">
+	<li><label>Column</label></li>
+	<li name="sltColumn"><select dojoType="dijit.form.Select" style="width:100%;"></select></li>
+	<li><label>Condition</label></li>
+	<li name="sltCondition"><select dojoType="dijit.form.Select"style="width:100%;"></select></li>
+	<li><label>Value</label></li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneTextWrapper">
+		<input type="text" dojoType="dijit.form.TextBox" intermediateChanges="true" style="width:100%;"/>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneDateWrapper">
+		<div dojoType="dijit.form.DateTextBox" style="width: 100%"></div>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneDateRangeWrapper">
+		<div dojoType="dijit.form.DateTextBox" style="width:80px"></div>
+		&nbsp;to&nbsp;
+		<div dojoType="dijit.form.DateTextBox" style="width:80px"></div>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneTimeWrapper">
+		<div dojoType="dijit.form.TimeTextBox" style="width: 100%"></div>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneTimeRangeWrapper">
+		<div dojoType="dijit.form.TimeTextBox"></div>
+		&nbsp;to&nbsp;
+		<div dojoType="dijit.form.TimeTextBox"></div>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneRadioWrapper">
+		<div dojoType="dijit.form.RadioButton" checked="true"></div><label for="">True</label>
+		&nbsp;&nbsp;
+		<div dojoType="dijit.form.RadioButton"></div><label for="">False</label>
+	</li>
+	
+	<li class="dojoxGridxFilterPaneFieldWrapper dojoxGridxFilterPaneSelectWrapper">
+		<div dojoType="dijit.form.Select" style="width: 100%"></div>
+	</li>
+</ul>

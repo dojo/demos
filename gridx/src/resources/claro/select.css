@@ -1,0 +1,13 @@
+/* row select */
+.claro .dojoxGridxRowSelected td {
+	background:url("../../resources/images/row_back.png") #cee6fa repeat-x;
+}
+
+/* column select */
+.claro .dojoxGridxColumnSelected {
+	background:url("../../resources/images/row_back.png") #cee6fa repeat-x;
+}
+/* cell select */
+.claro .dojoxGridxCellSelected {
+	background:url("../../resources/images/row_back.png") #cee6fa repeat-x;
+}

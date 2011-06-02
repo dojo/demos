@@ -1,0 +1,65 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+		<title>Gridx Demo - AdvancedGrid</title>
+	</head>
+	<style type="text/css">
+		@import "../../dojo/resources/dojo.css";
+		@import "../../dijit/themes/claro/claro.css";
+		@import "src/resources/claro/Gridx.css";
+		
+		body {
+			padding-left:3em;
+		}
+		h1{
+			font-size:1.8em;
+		}
+		.dojoxGridxConfig{
+			width: 250px;
+			position: absolute;
+			right: 2em; 
+			margin: 10px;
+		}
+		.dojoxGridxConfig .dijitSelect{
+			margin: 0;
+			width: 100%;
+			display: inline-table;
+		}
+		.dojoxGridxConfig .dijitSelect .dijitArrowButton{
+			width: 18px;
+		}
+		.dojoxGridxConfig table{
+			border-collapse: collapse;
+			width: 100%;
+		}
+		.dojoxGridxConfig th{
+			padding: 2px;
+			font-weight: bolder;
+		}
+		.dojoxGridxConfig th, .dojoxGridxConfig td{
+			border: 1px solid grey;
+			padding-left: 2px;
+			padding-right: 2px;
+		}
+		#gridDiv{
+			margin: 20px 0 0 0;
+			width: 82em;
+		}
+		#grid{
+			width: 82em;
+			height: 400px;
+		}
+		
+	</style>
+	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="src/_tests/store.js"></script>
+	<script type="text/javascript" src="AdvancedGrid.js"></script>
+	
+	<body class='claro'>
+		<h1 align="center">Gridx Demo - AdvancedGrid</h1>
+		<p>A more powerful AdvancedGrid with rich features(2000 rows in a virtual rendering manner)</p>
+		<div id="gridConfig"></div>
+		<div id="gridDiv"></div>
+	</body>
+</html>

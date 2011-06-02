@@ -1,0 +1,10 @@
+.dojoxGridxVScroller {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	overflow: scroll; 
+	overflow-x: hidden; 
+	width: 20px; 
+	border: none;
+	height: 100%;
+}
