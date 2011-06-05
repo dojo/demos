@@ -40,7 +40,7 @@ dojo.require("dojox.analytics.Urchin");
 dojo.addOnLoad(function(){
 
 	dojo.parser.parse();
-	dijit.setWaiRole(dojo.body(), "application");
+	dojo.body().setAttribute("role", "application");
 
 	var n = dojo.byId("preLoader");
 	dojo.fadeOut({
