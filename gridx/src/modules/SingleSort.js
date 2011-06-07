@@ -2,7 +2,7 @@ define(['dojo', '../core/_Module'], function(dojo, _Module){
 
 return _Module.registerModule(
 dojo.declare('demos.gridx.src.modules.SingleSort', _Module, {
-	name: 'sort',
+	name: 'singleSort',
 	forced: ['header'],
 	required: ['layout'],
 	
