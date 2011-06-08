@@ -6,10 +6,11 @@ Author: Xiao Wen Zhu(Oliver), Pei Wang(Nate), Wei Huang(Evan), Qiang Wang(Elvis)
 Description:
 
 	Gridx is an incubation project as a basis for the next generation of Dojo Grid.
-	The key idea is to set up a highly extensible core and a rich set of modules to be loaded on demand,
-	based on that appropriate modules can be picked up to consist different Grid instances
-	in order to meet a wide range of requirements - MiniGrid(MobileGrid), AdvancedGrid, TreeGrid etc.
-	Check out this demo and see how Gridx is running much more faster and flexible!
+	The key idea is to set up a highly extensible core and a rich set of modules to be loaded on demand.
+	Appropriate modules can be picked up to consist different Grid instances(e.g MiniGrid/MobileGrid, AdvancedGrid etc),
+	and this makes it possible to meet a wide range of requirements.
+
+	Please try the demo and see how Gridx is running more faster and flexible!
 	
 -------------------------------------------------------------------------------
 Dependencies:
@@ -23,4 +24,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:-999
+@rank:1
