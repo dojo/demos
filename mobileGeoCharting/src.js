@@ -12,10 +12,7 @@ require([
 
 	dojo.ready(function(){
 		configureUI();
-		
-		// init widget
-		var mapWidget = dijit.byId("mapWidget");
-		mapWidget.startup();
+
 		
 		var changeYear = function() {
 			var newYear = dijit.byId("yearSlot").getValue();
@@ -34,6 +31,17 @@ require([
 				
 		});
 		
+		// prevent fitToMapContents once any interaction with map widget has occurred
+		var surface = dijit.byId("mapWidget").getInnerMap().surface;
+		var callback1 = surface.connect("touchstart", this, function(event){
+			startedInteraction = true;
+			dojo.disconnect(callback1);
+		});
+		var callback2 = surface.connect("onmousedown", this, function(event){
+			startedInteraction = true;
+			dojo.disconnect(callback2);
+		});
+		
 		dojo.connect(dojo.global,"onresize",this, function(){
 			//console.log(" pageX " + dojo.doc.pageX);
 			configureUI();
@@ -44,17 +52,23 @@ require([
 			configureUI();
 			dojo.global.scrollTo(0,0);
 		});	
+		
+				
+		// init widget
+		var mapWidget = dijit.byId("mapWidget");
+		mapWidget.startup();
 	});
 
 });
 var selectedFeature;
+var startedInteraction = false;
 function onFeatureClick(feature) {
 	selectedFeature = feature;
 	var text = "US population from 1960 to 2009";
 	if (selectedFeature) {
 		var map = dijit.byId("mapWidget").getInnerMap();
 		var year = dijit.byId("yearSlot").getValue();
-		var text = map.mapObj.marker.markerData[feature.id] + "\nYear " + year + " population : " + (feature.value / 1000000) + "M";
+		var text = year + " "  +map.mapObj.marker.markerData[feature.id] +  " pop. : " + (feature.value / 1000000).toFixed(1) + "M";
 	}
 	dojo.byId("mapHeader").innerHTML = text;
 };
@@ -123,5 +137,8 @@ function configureUI() {
 			mapWidgetStyle.left = 2 * spinW*spinnerScale +"px";
 		}
 	}	
-	mapWidget.resize();	
+	mapWidget.resize();
+	if (!startedInteraction) {
+		mapWidget.getInnerMap().fitToMapContents(3);
+	}
 };	
