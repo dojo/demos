@@ -1,9 +1,4 @@
-require([ 
-	"dojox/mobile",
-	"dojox/mobile/parser",
-	"dojox/mobile/compat",
-	"dojox/geo/openlayers/widget/Map", 
-	"demos/mobileOpenLayers/src/NavigationControl" ], function(mobile, parser){
+require(["dojox/mobile", "dojox/mobile/parser", "dojox/mobile/compat", "dojox/geo/openlayers/widget/Map", "demos/mobileOpenLayers/src/NavigationControl"], function(mobile, parser){
 
 	var map;
 	var currentLocation;
@@ -49,14 +44,24 @@ require([
 	}
 
 	var locs = {
-		paris : [ 2.350833, 48.856667, 10 ],
-		newyork : [ -74.00597, 40.71427, 11 ],
-		lacolle : [ 7.1072435, 43.686842, 15 ]
+		paris : [2.350833, 48.856667, 10],
+		newyork : [-74.00597, 40.71427, 11],
+		lacolle : [7.1072435, 43.686842, 15]
+	};
+
+	var locNames = {
+		paris : "Paris",
+		newyork : "New York",
+		lacolle : "La Colle sur Loup"
 	};
 
 	function click(e){
-		currentLocation = this.id;
-	}
+		var id = this.id;
+		currentLocation = id;
+		var name = locNames[id];
+		var header = dijit.byId("mapHeader");
+		header.set("label", name);
+	};
 
 	function fitTo(loc){
 		if (!loc)
@@ -69,7 +74,7 @@ require([
 		var zoom = l[2];
 		olm.zoom = null;
 		olm.setCenter(center, zoom);
-	}
+	};
 
 	function updateMap(){
 		var olm = map.map.getOLMap();
@@ -79,5 +84,5 @@ require([
 			olm.zoom = null;
 			olm.setCenter(center, zoom);
 		}
-	}
+	};
 });
