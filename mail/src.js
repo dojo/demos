@@ -115,9 +115,10 @@ function genIndex(){
 	addChar("ALL", function(){contactTable.setQuery({})}, 'contactIndexAll' );
 }
 
-var paneId = 1;
+// Globals used by demo.html
+paneId = 1;
 
-function onMessageClick(cell){
+onMessageClick = function(cell){
 	// summary: when user clicks a row in the message list pane
 	var item = cell.grid.getItem(cell.rowIndex),
 		sender = this.store.getValue(item, "sender"),
@@ -133,7 +134,7 @@ function onMessageClick(cell){
 	dijit.byId("message").setContent(messageInner);
 }
 
-function searchMessages(){
+searchMessages = function(){
 	// summary: do a custom search for messages across inbox folders
 	var query = {type: "message"};
 	var searchCriteria = searchForm.attr('value');
@@ -147,7 +148,7 @@ function searchMessages(){
 }
 
 // for "new message" tab closing
-function testClose(pane,tab){
+testClose = function(pane,tab){
   return confirm("Are you sure you want to leave your changes?");
 }
 
@@ -170,13 +171,14 @@ var updateFetchStatus = function(x){
 		}).play();
 	}
 }
-var fakeReport = function(percent){
+
+fakeReport = function(percent){
 	// FIXME: can't set a label on an indeterminate progress bar
 	// like if(this.indeterminate) { return " connecting."; }
 	return dojo.string.substitute("Fetching: ${0} of ${1} messages.", [percent * this.maximum, this.maximum]);
 }
 
-var fakeDownload = function(){
+fakeDownload = function(){
 	dojo.byId('fetchMail').style.visibility='visible';
 	numMails = Math.floor(Math.random()*10) + 1;
 	dijit.byId('fakeFetch').update({ maximum: numMails, progress:0 });
@@ -188,20 +190,20 @@ var fakeDownload = function(){
 }
 
 // fake sending dialog progress bar
-var stopSendBar = function(){
+stopSendBar = function(){
 	dijit.byId('fakeSend').update({ indeterminate: false });
 	dijit.byId('sendDialog').hide();
 	tabs.selectedChildWidget.onClose = function(){return true;};  // don't want confirm message
 	tabs.closeChild(tabs.selectedChildWidget);
 }
 	 
-var showSendBar = function(){
+showSendBar = function(){
 	dijit.byId('fakeSend').update({ indeterminate: true });
 	dijit.byId('sendDialog').show();
 	setTimeout(function(){stopSendBar();}, 3000);
 }
 
-var formatDate = function(inDatum){
+formatDate = function(inDatum){
     return dojo.date.locale.format(dojo.date.stamp.fromISOString(inDatum), {selector: "date"});
 }
 
