@@ -40,7 +40,7 @@ require([
 								moveTo: '#',
 								onclick: function() {scope.handleClick(this)},
 								id: "modelRoot",
-								item: item,
+								item: item
 							});
 							list.addChild(listitem);
 							this.addChild(list);
@@ -70,7 +70,7 @@ require([
 								var listItemArgs = {
 									item: item,
 									label: item[scope.model.store.label],
-									transition: "slide",
+									transition: "slide"
 								};
 								if (scope.model.mayHaveChildren(item)) {
 									listItemArgs.moveTo = '#';
@@ -85,12 +85,12 @@ require([
 							var headingArgs = {
 								label: "Dynamic View",
 								back : "Back",
-								moveTo : divParent[0].id,
+								moveTo : divParent[0].id
 							};
 							var heading = new dojox.mobile.Heading(headingArgs);
 							var newView = dojox.mobile.View({
 								id: newViewId,
-								selected: true,
+								selected: true
 							}, dojo.create("DIV", null, dojo.body()));
 							newView.addChild(heading);
 							newView.addChild(list);
