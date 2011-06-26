@@ -24,7 +24,7 @@ dojo.extend(dojo.dnd.Target, extended);
 //dojo.dnd.Target.prototype.onDropExternal = extended.onDropExternal;
 
 createRelated = function(items){
-	var txt = '<span class="relText">Related Items:</span>'
+	var txt = '<span class="relText">Related Items:</span>';
 	dojo.forEach(items, function(m){
 		var id = m.title.replace(/\s/g,"");
 		var path = "media/"+id+".flv";
