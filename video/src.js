@@ -16,7 +16,7 @@ var extended = {
 		if(target.id == "videoOverlay") return;
 		arguments[2] = true;
 		this.inherited("onDropExternal", arguments);
-		
+
 	}
 };
 //dojo.extend(dojo.dnd.Source, extended);
@@ -61,21 +61,21 @@ dojo.addOnLoad(function(){
 				});
 				libNode.innerHTML = txt;
 				lib.sync();
-				
+
 				controls.load(items[0].path);
 			}
 	});
-	
-	
+
+
 	player = new dojox.av.FLVideo({initialVolume:.2, isDebug:false}, "video");
-	
+
 	dojo.connect(player, "onLoad", controls, "init");
 	dojo.connect(player, "onClick", controls, "toggle");
 	dojo.connect(player, "onMetaData", controls.progress, "onMeta");
 	dojo.connect(player, "onEnd", controls, "onEnd");
 	dojo.connect(player, "onStart", controls, "onStart");
 	dojo.connect(player, "onPosition", controls.progress, "onPosition");
-	
+
 	dojo.subscribe("/dnd/source/over", function(evt){
 		//console.log("onDndSourceOver", evt);
 		if(evt){
@@ -103,14 +103,14 @@ dojo.addOnLoad(function(){
 	dojo.subscribe("/dnd/cancel", function(evt){
 		//console.log( "onDndCancel")
 	});
-	
+
 	new dojox.analytics.Urchin({
 		acct: "UA-3572741-1",
 		GAonLoad: function(){
 			this.trackPageView("/demos/video");
 		}
 	});
-	
+
 });
 
 
@@ -158,7 +158,7 @@ controls = {
 		onPosition: function(time){
 			if(this.initialized){
 				this.timeNode.innerHTML = this.timecode(time);
-				
+
 				if(this.duration){
 					if(!this.seeking){
 						// IE freaks if the prgressBar's value goes over 1.0
@@ -169,7 +169,7 @@ controls = {
 			}
 		},
 		timecode: function(time){
-			ts = time.toString()
+			ts = time.toString();
 
 			if(ts.indexOf(".")<0){
 				ts += ".00"
@@ -182,19 +182,19 @@ controls = {
 		}
 	},
 	volume: {
-		
+
 		init:function(){
-			
+
 			this.volNode = dojo.byId("volume");
 			this.volBack = dojo.byId("volBack");
 			dojo.setSelectable(this.volNode, false);
 			dojo.setSelectable(this.volBack, false);
 			dojo.setSelectable(dojo.byId("volMask"), false);
-			
+
 			this.volDim = dojo.coords(this.volNode);
 			var v = player.initialVolume; // returns 0 - 1
 			dojo.style(this.volBack, "backgroundPosition", "-"+(this.volDim.w-(this.volDim.w*v))+"px 0px");
-			
+
 			dojo.connect(this.volNode, "mousedown", this, "begDrag");
 			dojo.connect(dojo.doc, "mouseup", this, "endDrag");
 			dojo.connect(this.volNode, "mouseover", this, "over");
@@ -230,8 +230,8 @@ controls = {
 			}
 		}
 	},
-	
-	
+
+
 	init: function(){
 		this.progress.init();
 		this.volume.init();
@@ -300,7 +300,7 @@ controls = {
 		console.log("VALUE:", val);
 	},
 	load: function(path){
-		
+
 		if(!this.initialized){
 			var c = dojo.connect(this, "init", this, function(){
 				this.load(path);
