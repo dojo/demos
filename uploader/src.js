@@ -6,13 +6,6 @@ dojo.require("dojox.analytics.Urchin");
 //using this early for the forceNoFlash test:
 dojo.require("dojox.embed.Flash");
 
-var passthrough = function(msg){
-	//for catching messages from Flash
-	if(window.console){
-		console.log(msg);
-	}
-}
-
 forceNoFlash = false;
 selectMultipleFiles = false;
 
@@ -30,33 +23,33 @@ if(qs.length>1){
  
 var setLoc = function(href){
 	window.location.href = window.location.href.split("?")[0] + href;
-}
+};
 
-var showWithFlash = function(){
+showWithFlash = function(){
 	if(forceNoFlash){
 		setLoc("");
 	}
-}
+};
 
-var showWithoutFlash = function(){
+showWithoutFlash = function(){
 	if(!forceNoFlash){
 		setLoc((selectMultipleFiles) ? "?forceNoFlash&multiMode" : "?forceNoFlash");
 	}
-}
+};
 
-var showMulti = function(){
+showMulti = function(){
  	if(!selectMultipleFiles){
 		setLoc((forceNoFlash) ? "?forceNoFlash&multiMode" : "?multiMode");
 	}
-}
+};
 
-var showSingle = function(){
+showSingle = function(){
  	if(selectMultipleFiles){
 		setLoc((forceNoFlash) ? "?forceNoFlash" : "");
 	}
-}
+};
 
-var imageHTML = function(data){
+imageHTML = function(data){
 	console.log("DATA:", data);
 	var w = (data.width<320)?data.width:320;
 	if(data.creationDate){
@@ -79,7 +72,8 @@ var imageHTML = function(data){
 				'</div>'+
 				'</div>'
 	return txt;
-}
+};
+
 var uploadUrl = "UploadFile.php";
 var rmFiles = "";
 var fileMask = [
@@ -184,7 +178,7 @@ dojo.addOnLoad(function(){
 	
 });
 
-var cleanUp = function(){
+cleanUp = function(){
 	dojo.byId("rgtCol").innerHTML = "";
 	dojo.byId("uploadedFiles").value = "";
 	dojo.byId("fileToUpload").value = "";
@@ -196,8 +190,7 @@ var cleanUp = function(){
 		}
 	});
 	rmFiles = "";
-	
-}
+};
 
 dojo.addOnUnload(function(){
 	console.log("You're leaving the page");
