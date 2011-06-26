@@ -5,13 +5,6 @@ dojo.require("dojo.dnd.Source");
 dojo.require("dojo.parser");
 dojo.require("dojox.analytics.Urchin");
 
-var passthrough = function(msg){
-	//for catching messages from Flash
-	if(window.console){
-		console.log(msg);
-	}
-}
-
 var player, controls, progress, lib, libNode;
 var dndItem = {};
 
@@ -42,9 +35,7 @@ createRelated = function(items){
 	});
 	txt +='';
 	return txt;
-}
-
-
+};
 
 
 dojo.addOnLoad(function(){
@@ -340,4 +331,4 @@ controls = {
 		dojo.style(dijit.byId("pauseButton").domNode, "display", "");
 		dojo.style(dijit.byId("playButton").domNode, "display", "none");
 	}
-}
+};
