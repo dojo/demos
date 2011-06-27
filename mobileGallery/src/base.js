@@ -275,7 +275,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 				};
 				if (item.demourl){
 					def.moveTo = "#";
-					def.onclick = function(){
+					def.onClick = function(){
 						showView(item, this);
 					};
 				}
