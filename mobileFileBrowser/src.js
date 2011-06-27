@@ -38,7 +38,7 @@ require([
 							var listitem = new dojox.mobile.ListItem({
 								label: scope.model.rootLabel,
 								moveTo: '#',
-								onclick: function() {scope.handleClick(this)},
+								onClick: function() {scope.handleClick(this)},
 								id: "modelRoot",
 								item: item
 							});
@@ -74,7 +74,7 @@ require([
 								};
 								if (scope.model.mayHaveChildren(item)) {
 									listItemArgs.moveTo = '#';
-									listItemArgs.onclick = function() {scope.handleClick(this)};
+									listItemArgs.onClick = function() {scope.handleClick(this)};
 								}
 								var listitem = new dojox.mobile.ListItem(listItemArgs);
 								list.addChild(listitem);
