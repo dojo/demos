@@ -18,9 +18,11 @@ Dependencies:
 -------------------------------------------------------------------------------
 Installation instructions
 
-	Simply run the included demo.html
-	
-	To build, use the supplied demo.profile.js as your profileFile
+    Prerequisites: This demo requires PHP to be installed on the web server hosting dojo,
+    and makes use of dojox/data/FileStore.js.  Make sure FileStore's php test
+    backend is running correctly prior to trying this demo.
+
+	To run this demo, open the demo.html in your browser.
 	
 -------------------------------------------------------------------------------
 @rank:1
