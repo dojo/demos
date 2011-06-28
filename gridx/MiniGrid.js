@@ -44,5 +44,5 @@ require([
 		});
 		grid.placeAt('gridDiv');
 		grid.startup();
-	});	
+	});
 });

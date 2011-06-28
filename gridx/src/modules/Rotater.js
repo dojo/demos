@@ -1,4 +1,9 @@
-define(["dojo", "../core/_Module"], function(dojo, _Module){
+define([
+	"dojo/_base/kernel",
+	"../core/_Module",
+	"dojo/_base/declare",
+	"dojo/_base/html"
+], function(dojo, _Module){
 	return _Module.registerModule(dojo.declare("demos.gridx.src.modules.Rotater", _Module, {
 
 		name: "rotater",
@@ -33,6 +38,5 @@ define(["dojo", "../core/_Module"], function(dojo, _Module){
 				grid.body.refresh();
 			}
 		}
-
 	}));
 });
