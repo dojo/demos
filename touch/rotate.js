@@ -1,4 +1,4 @@
-define(["dojo", "dojo/gesture"], function(dojo, gesture){
+define(["dojo/_base/kernel", "dojo/gesture", "dojo/_base/declare"], function(dojo, gesture){
 // module:
 //		demos/touch/rotate
 // summary:
@@ -67,8 +67,7 @@ var clz = dojo.declare(null, {
 				rotation = (Math.acos(cos) * 180) / Math.PI;
 				if((v1.y * v2.x - v1.x * v2.y) > 0){
 					gestureElement.rotation += rotation;
-				}
-				else{
+				}else{
 					gestureElement.rotation -= rotation;
 				}
 			}
