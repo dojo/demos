@@ -16,7 +16,7 @@ define(["dojo", "../core/_Module", "./VScroller", "dojox/mobile/_ScrollableMixin
 			dojo.style(grid.bodyNode, "height", "auto");
 			dojo.style(grid.headerNode.firstChild.firstChild, "margin-right", "0px"); // FIXME: Header assumes VScroller
 
-			var scrollable = new dojox.mobile.scrollable();
+			var scrollable = new dojox.mobile._ScrollableMixin();
 			scrollable.init({domNode: grid.mainNode, containerNode: grid.bodyNode, noResize: true});
 		}
 

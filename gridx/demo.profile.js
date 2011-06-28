@@ -8,6 +8,13 @@ dependencies = {
 			]
 		},
 		{
+			name: "../demos/gridx/MobileGrid.js",
+			resourceName: "demos.gridx.MobileGrid",
+			dependencies: [
+				"demos.gridx.MobileGrid"
+			]
+		},
+		{
 			name: "../demos/gridx/AdvancedGrid.js",
 			resourceName: "demos.gridx.AdvancedGrid",
 			dependencies: [

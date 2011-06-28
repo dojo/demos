@@ -1,7 +1,7 @@
 -------------------------------------------------------------------------------
 Gridx - Incubation for the next generation of Grid
 -------------------------------------------------------------------------------
-Author: Xiao Wen Zhu(Oliver), Pei Wang(Nate), Wei Huang(Evan), Qiang Wang(Elvis)
+Author: Xiao Wen Zhu(Oliver), Pei Wang(Nate), Masato Noguchi, Wei Huang(Evan), Qiang Wang(Elvis)
 -------------------------------------------------------------------------------
 Description:
 
@@ -17,6 +17,7 @@ Dependencies:
 
 	Dojo Core
 	Dijit
+	Dojox (mobile)
 	
 -------------------------------------------------------------------------------
 Installation instructions

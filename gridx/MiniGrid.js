@@ -6,6 +6,7 @@ dojo.require('demos.gridx.src.modules.VScroller');
 dojo.require('demos.gridx.src.modules.HScroller');
 dojo.require('demos.gridx.src.modules.SingleSort');
 dojo.require('demos.gridx.src.core.model.SyncCache');
+dojo.require('demos.gridx.src.modules.ColumnResizer');
 
 dojo.require("dojo.data.ItemFileWriteStore");
 
@@ -29,13 +30,14 @@ var modules = [
 	mr.Layout,
 	mr.HScroller,
 	mr.VScroller,
-	mr.SingleSort
+	mr.SingleSort,
+	mr.ColumnResizer
 ];
 
 dojo.ready(function(){
 	var grid = new demos.gridx.src.Grid({
 		id: 'grid',
-		store: getStore(500),
+		store: getStore(200),
 		structure: layout,
 		modules: modules
 	});
