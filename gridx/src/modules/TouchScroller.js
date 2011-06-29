@@ -23,7 +23,7 @@ define([
 			dojo.style(grid.bodyNode, "height", "auto");
 			dojo.style(grid.headerNode.firstChild.firstChild, "margin-right", "0px"); // FIXME: Header assumes VScroller
 
-			var scrollable = new dojox.mobile._ScrollableMixin();
+			var scrollable = new dojox.mobile.scrollable(dojo, dojox);
 			scrollable.init({domNode: grid.mainNode, containerNode: grid.bodyNode, noResize: true});
 		}
 
