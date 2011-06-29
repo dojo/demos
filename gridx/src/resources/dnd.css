@@ -1,4 +1,5 @@
 /* dnd */
+.dojoxGridxDnDCursor,
 .dojoxGridxCanNotDnD {
 	cursor: default;
 }

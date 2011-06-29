@@ -8,6 +8,7 @@ require([
 	'demos/gridx/src/modules/SingleSort',
 	'demos/gridx/src/core/model/SyncCache',
 	'demos/gridx/src/modules/ColumnResizer',
+	'demos/gridx/src/modules/select/Row',
 	"dojo/data/ItemFileWriteStore",
 	"dijit/_base"
 ], function(){
@@ -29,6 +30,7 @@ require([
 		mr.Header,
 		mr.Body,
 		mr.Layout,
+		mr.select.Row,
 		mr.HScroller,
 		mr.VScroller,
 		mr.SingleSort,

@@ -191,13 +191,12 @@ define([
 		},
 		
 		_createUI: function(){
-			this._oldCursor = dojo.style(dojo.body(), "cursor");
-			dojo.style(dojo.body(), "cursor", "default");
+			dojo.addClass(dojo.body(), 'dojoxGridxDnDCursor');
 		},
 	
 		_destroyUI: function(){
 			this._unmarkTargetAnchor();
-			dojo.style(dojo.body(), "cursor", this._oldCursor);
+			dojo.removeClass(dojo.body(), 'dojoxGridxDnDCursor');
 		},
 	
 		_createTargetAnchor: function(){

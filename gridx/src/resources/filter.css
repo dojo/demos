@@ -91,6 +91,7 @@
 
 .dojoxGridxFilterBarStatus {
 	background: -moz-linear-gradient(center top , #F2F9FF, #EAF5FF) repeat scroll 0 0 transparent;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F2F9FF), to(#EAF5FF));
 	border-bottom: 1px solid #BFD6EB;
     border-top: 1px solid #BFD6EB;
     padding: 1px 0 0 45px;
