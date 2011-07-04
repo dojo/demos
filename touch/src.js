@@ -115,11 +115,10 @@ require([
 	
 	function addRotate(){
 		rotateEnd = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate.end, function(event){
-			rotation += (event.srcEvent.rotation % 360);
+			rotation += (event.rotation % 360);
 		});
 		
 		rotate = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate, function(event){
-			event = event.srcEvent;
 			currentRotation = (rotation + event.rotation) % 360;
 			var transform = "rotate(" + currentRotation + "deg)";
 			pieChartDiv.style.webkitTransform = transform;
@@ -173,13 +172,13 @@ require([
 		degrees = [];
 		percentages = [];
 		var data = pieChart.series[0].data;
-		var totalVal = 0;
-		for (var i = 0; i < data.length; i++) {
+		var totalVal = 0, i;
+		for(i = 0; i < data.length; i++){
 			totalVal += data[i];
 		}
-		for (var i = 0; i < data.length; i++) {
+		for(i = 0; i < data.length; i++){
 			var currentVal = 0;
-			for (var j = 0; j <= i; j++) {
+			for(var j = 0; j <= i; j++){
 				currentVal += data[j];
 			}
 			degrees.push((currentVal / totalVal) * 360);
@@ -188,8 +187,8 @@ require([
 	}
 	
 	function getDataIndex(degree){
-		for (var i = 0; i < degrees.length; i++) {
-			if (degree < degrees[i]) {
+		for (var i = 0; i < degrees.length; i++){
+			if (degree < degrees[i]){
 				return i;
 			}
 		}
@@ -221,14 +220,13 @@ require([
 				node: dojo.byId("lockButton"),
 				duration: 500,
 				onEnd: function(){
-					if (!locked) {
+					if(!locked){
 						dojo.byId("actionArea").style.opacity = 1;
 						dijit.byId("slider1").set("disabled", false);
 						dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-lock.png")';
 						addRotate();
 						dojo.removeClass(dojo.byId("layout"), "locked");
-					}
-					else {
+					}else{
 						dojo.byId("actionArea").style.opacity = 0;
 						dijit.byId("slider1").set("disabled", true);
 						dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-unlock.png")';
