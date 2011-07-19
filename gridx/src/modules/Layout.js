@@ -1,12 +1,17 @@
 define([
 	"dojo/_base/kernel",
-	"../core/_Module",
+	"dojo/_base/declare",
+	"dojo/_base/html",
 	"dojo/DeferredList",
-	"dojo/_base/html"
-], function(dojo, _Module){
+	"../core/_Module"
+], function(dojo, declare, html, DeferredList, _Module){
 
+/*=====
+	var declare = dojo.declare;
+	var _Module = demos.gridx.src.core._Module;
+ =====*/
 	return _Module.registerModule(
-	dojo.declare('demos.gridx.src.modules.Layout', _Module, {
+	declare('demos.gridx.src.modules.Layout', _Module, {
 		name: 'layout',
 		getAPIPath: function(){
 			return {
