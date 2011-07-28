@@ -1,20 +1,22 @@
 define(["dojo/_base/kernel", // dojo.getObject
         "dojo/_base/html", //  dojo.byId
+        "dojo/_base/connect", // dojo.connect
         "dojo/_base/xhr", // dojo.xhrGet
 	"dijit/_base/manager", // dijit.byId
 
-	"dojox/mobile/ProgressIndicator"], function() {
+	"dojox/mobile/ProgressIndicator"],
+	function(dojo, html, connect, xhr, dijit, ProgressIndicator) {
 	var prog = null;// progress indicator
 	function refreshData() {
-		var view = dojo.byId('ajax');
-		var pane = dojo.byId('ajaxPane');
+		var view = html.byId('ajax');
+		var pane = html.byId('ajaxPane');
 		if (prog)
 			prog.stop(); // prevent duplicated progress indicators
-		prog = dojox.mobile.ProgressIndicator.getInstance();
+		prog = ProgressIndicator.getInstance();
 		view.appendChild(prog.domNode);
 		prog.start();
 		
-		dojo.xhrGet({
+		xhr.get({
 			url : 'views/ajaxLoad.html',
 			handleAs : 'text',
 			load : function(data) {
@@ -32,7 +34,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 
 	return {
 		init: function() {
-			dojo.connect(dojo.byId("ajaxBtn"), "onclick", refreshData);
+			connect.connect(html.byId("ajaxBtn"), "onclick", refreshData);
 		}
 	};
 });

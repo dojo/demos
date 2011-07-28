@@ -22,6 +22,11 @@ div#headings button.backBtn:after {
 	left: -11px;
     -webkit-mask-size: 12px 23px;
 }
+#tbToggleBtn {
+    height: 31px;
+    top: -3px;
+    font-weight: bold;
+}
 
 div#headings button#tbBackBtn {
 	margin-left: 17px;

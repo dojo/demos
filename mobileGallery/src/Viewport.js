@@ -1,6 +1,6 @@
-define(["dojo/_base/html", // dojo.create/attr
-        "dojo/_base/kernel", // dojo.getObject
-        "./_base"], function(dojo, _base){
+define(["dojo/_base/kernel", // dojo.getObject
+        "dojo/_base/html", // dojo.create/attr
+        "./_base"], function(dojo, html, _base){
 	dojo.getObject("demos.mobileGallery.src.Viewport", true);
 	
 	var meta = null;// <meta> tag for viewport
@@ -10,8 +10,8 @@ define(["dojo/_base/html", // dojo.create/attr
 		onViewportChange : function() {
 			var head = document.getElementsByTagName("head")[0];
 			if (!meta) {
-				meta = dojo.create('meta');
-				dojo.attr(meta, "name", "viewport");
+				meta = html.create('meta');
+				html.attr(meta, "name", "viewport");
 				head.appendChild(meta);
 			}
 			var	isPortrait = (window.orientation == 0);
@@ -19,13 +19,14 @@ define(["dojo/_base/html", // dojo.create/attr
 			// also for different kinds of platforms.
 			if (_base.isIPhone) {
 				if (isPortrait) {
-					dojo.attr(meta,"content",
+					html.attr(meta,"content",
 					"width=device-width,height=416,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
 				} else {
-					dojo.attr(meta,"content",
+					html.attr(meta,"content",
 					"width=device-width,height=268,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
 				};
 			}
 		}
 	};
+	return 	demos.mobileGallery.src.Viewport;
 });

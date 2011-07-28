@@ -1,7 +1,12 @@
 define(["dojo/_base/lang", // dojo.clone
+        "dojo/_base/connect", //dojo.connect
+        "dojo/_base/html", // dojo.byId
         "dojo/_base/kernel", // dojo.getObject
-	"dijit/_base/manager",//dijit.byId
-        "dojo/data/ItemFileWriteStore", "dojox/mobile/RoundRectDataList"], function() {
+        "dijit/_base/manager",//dijit.byId
+        "dojo/data/ItemFileWriteStore",
+        "dojox/mobile/common", // dojox.mobile.createDomButton
+        "dojox/mobile/RoundRectDataList"],
+        function(lang, connect, html, dojo, dijit, ItemFileWriteStore, dm, RoundRectDataList) {
 dojo.getObject("demos.mobile.src.mobileLists", true);
 demos.mobile.src.mobileLists = function() {
     var static_data = { 
@@ -17,8 +22,8 @@ demos.mobile.src.mobileLists = function() {
                     {label: "Peach"}
                 ]
             };
-    var _store1 = new dojo.data.ItemFileWriteStore({url: "data/dataList.json", clearOnClose: true});
-    var _store2 = new dojo.data.ItemFileWriteStore({data: dojo.clone(static_data)});
+    var _store1 = new ItemFileWriteStore({url: "data/dataList.json", clearOnClose: true});
+    var _store2 = new ItemFileWriteStore({data: lang.clone(static_data)});
     return {
         store1 : _store1,
         store2 : _store2,
@@ -44,7 +49,7 @@ return {
 	init: function() { 
 		var view = dijit.byId("mobileLists");
 		var isInit = false;
-		dojo.connect(view, "onAfterTransitionIn", view, function(){
+		connect.connect(view, "onAfterTransitionIn", view, function(){
 			if (!isInit) {
 				this.resize();
 				isInit = true;

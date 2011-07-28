@@ -58,6 +58,11 @@ div#headings button.backBtn:after {
     -webkit-mask-size: 12px 21px;
 }
 
+#tbToggleBtn {
+    height: 25px;
+    line-height: 25px;
+    font-weight: bold;
+}
 
 div#headings button#tbBackBtn {
 	margin-left: 14px;
@@ -109,7 +114,6 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 /* Temp fix for wrong icon position in list. */
-#navigation .mblListItemIcon {
-	top: 18px;
-	-webkit-transform: none;
+#navigation .mblListItemSpriteIcon {
+	margin-top: 23px;
 }

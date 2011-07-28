@@ -4,21 +4,24 @@ define(["dojo/_base/kernel", // dojo.getObject
         "dojo/_base/array", // dojo.forEach
         "dojo/_base/window", // dojo.global
         "dojo/_base/xhr", // dojo.xhrGet
-	"dojo/ready", // dojo.ready
+        "dojo/ready", // dojo.ready
         "dojo/data/ItemFileReadStore",
         "dijit/_base/manager", // dijit.byId/byNode
         "dojox/mobile/parser",
+	"dojox/mobile/common",
+	"dojox/mobile/EdgeToEdgeCategory",
         "dojox/mobile/EdgeToEdgeDataList",
-         "dojox/mobile/ProgressIndicator",
-         "dojox/mobile/TransitionEvent",
-         "demos/mobileGallery/src/_base",
-         "demos/mobileGallery/src/Viewport",
-         "demos/mobileGallery/src/structure"], function(dojo){
+        "dojox/mobile/ProgressIndicator",
+        "dojox/mobile/TransitionEvent",
+        "demos/mobileGallery/src/Viewport",
+        "demos/mobileGallery/src/structure"],
+        function(dojo, html, connect, array, win, xhr, ready, ItemFileReadStore, dijit, parser, dm,
+        		 EdgeToEdgeCategory, EdgeToEdgeDataList, ProgressIndicator, TransitionEvent, Viewport, structure){
 
 	dojo.getObject("demos.mobileGallery.src.base", true);
 	
 	function goToView(event) {
-		var currentView = demos.mobileGallery.src.structure.layout.rightPane.currentView;
+		var currentView = structure.layout.rightPane.currentView;
 		
 		if (currentView) {
 			var targetView = "";
@@ -45,7 +48,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 	 */
 	function triggerTransition(comp, moveTo){
 		var transOpts = {"moveTo": moveTo, transition: comp.transition, transitionDir: comp.transitionDir};
-		return new dojox.mobile.TransitionEvent(comp.domNode,transOpts).dispatch();
+		return new TransitionEvent(comp.domNode,transOpts).dispatch();
 	}
 	
 	/**
@@ -94,11 +97,11 @@ define(["dojo/_base/kernel", // dojo.getObject
 		var view = dijit.byId(args.id);
 		var viewType = (args.type) ? args.type : 'demo';
 		
-		dojo.connect(view, "onAfterTransitionIn", view, function(){
-			var headerLabel = dojo.byId('headerLabel');
-			var header = dojo.byId("header");
-			var sourceButton = dojo.byId("sourceButton");
-			var navButton = dojo.byId("navButton");
+		connect.connect(view, "onAfterTransitionIn", view, function(){
+			var headerLabel = html.byId('headerLabel');
+			var header = html.byId("header");
+			var sourceButton = html.byId("sourceButton");
+			var navButton = html.byId("navButton");
 			if (viewType === 'demo') {
 				// after transition in, set the header, source button and load
 				// the source code of current view.						
@@ -108,56 +111,56 @@ define(["dojo/_base/kernel", // dojo.getObject
 				// set the header's moveTo attribute to "navigation"
 				dijit.byNode(header).moveTo = "navigation";
 				// restore sourceButton if applicable
-				if (dojo.hasClass(sourceButton, "hidden")) {
-					dojo.removeClass(sourceButton, "hidden");
+				if (html.hasClass(sourceButton, "hidden")) {
+					html.removeClass(sourceButton, "hidden");
 				}
 				// if leftPane is hidden restore navButton if applicable
-				if (demos.mobileGallery.src.structure.layout.leftPane.hidden) {
-					if (dojo.hasClass(navButton, "hidden")) {
-						dojo.removeClass(navButton, "hidden");
+				if (structure.layout.leftPane.hidden) {
+					if (html.hasClass(navButton, "hidden")) {
+						html.removeClass(navButton, "hidden");
 					}
 				}
 				
 				// TODO: FIX-ME find a better way to handle views which are not loaded
 				// asynchronously or should not show source codes.
 				if (args.srcCode){
-					dojo.byId("sourceContent").innerHTML = args.srcCode;
+					html.byId("sourceContent").innerHTML = args.srcCode;
 				}
 			}
 			else 
 				if (viewType === 'navigation') {
 					//hide the sourceButton when navigation views 
 					//and demo views are in the same holder.
-					if (demos.mobileGallery.src.structure.layout.leftPane.hidden) {
+					if (structure.layout.leftPane.hidden) {
 						// set header label and the moveTo attribute of header to args.back
 						headerLabel.innerHTML = args.title;
 						dijit.byNode(header).moveTo = args.back;
 						// hide or show navigation button, hide sourceButton
-						if (!dojo.hasClass(sourceButton, "hidden")) {
-							dojo.addClass(sourceButton, "hidden");
+						if (!html.hasClass(sourceButton, "hidden")) {
+							html.addClass(sourceButton, "hidden");
 						}
 						if (dijit.byNode(header).moveTo === "") {
-							if (!dojo.hasClass(navButton, "hidden")) {
-								dojo.addClass(navButton, "hidden");
+							if (!html.hasClass(navButton, "hidden")) {
+								html.addClass(navButton, "hidden");
 							}
 						}
 						else {
-							if (dojo.hasClass(navButton, "hidden")) {
-								dojo.removeClass(navButton, "hidden");
+							if (html.hasClass(navButton, "hidden")) {
+								html.removeClass(navButton, "hidden");
 							}
 						}
 					}
 					else {
 						// if leftPane is not hidden then we need to set the back attribute of the leftPane header
-						var leftHeader = dojo.byId("leftHeader");
-						var leftHeaderLabel = dojo.byId("leftHeaderLabel");
+						var leftHeader = html.byId("leftHeader");
+						var leftHeaderLabel = html.byId("leftHeaderLabel");
 						dijit.byNode(leftHeader).moveTo = args.back;
 						// set the header label
 						leftHeaderLabel.innerHTML = args.title;
 					}
 					
 				}
-			demos.mobileGallery.src.structure.layout.setCurrentView(this);
+			structure.layout.setCurrentView(this);
 		});
 	};
 	
@@ -166,13 +169,13 @@ define(["dojo/_base/kernel", // dojo.getObject
 	 * @param data
 	 */
 	function createViewHTMLLoadedHandler(args, li){
-		return function(html){
-			var rightPane = dojo.byId("rightPane");
-			var tmpContainer = dojo.create("DIV");
-			tmpContainer.innerHTML = html;
+		return function(htmlText){
+			var rightPane = html.byId("rightPane");
+			var tmpContainer = html.create("DIV");
+			tmpContainer.innerHTML = htmlText;
 			rightPane.appendChild(tmpContainer);
-			var ws = dojo.parser.parse(tmpContainer);
-			dojo.forEach(ws, function(w){
+			var ws = parser.parse(tmpContainer);
+			array.forEach(ws, function(w){
 				if(w && !w._started && w.startup){
 					w.startup();
 				}
@@ -182,7 +185,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 			for (var i = 0; i < tmpContainer.childNodes.length; i ++) {
 				rightPane.appendChild(tmpContainer.childNodes[i]);
 			}
-			args.srcCode = syntaxHighLight(html);
+			args.srcCode = syntaxHighLight(htmlText);
 			// TODO: FIX-ME temp work around for the async startup 
 			setTimeout(function(){
 				initView(args);
@@ -203,14 +206,14 @@ define(["dojo/_base/kernel", // dojo.getObject
 	
 	function loadAndSwitchView(args, li) {
 		
-		var progDiv = dojo.byId("progDiv");
-		var prog = new dojox.mobile.ProgressIndicator();
+		var progDiv = html.byId("progDiv");
+		var prog = ProgressIndicator.getInstance();
 		progDiv.appendChild(prog.domNode);
 		prog.start();
-		dojo.style(progDiv, "visibility", "visible");
+		html.style(progDiv, "visibility", "visible");
 		
 		function stopProgress(){
-			dojo.style(progDiv, "visibility", "hidden");
+			html.style(progDiv, "visibility", "hidden");
 			prog.stop();
 			prog = null;
 		};
@@ -221,7 +224,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 		};
 		if (args.jsmodule) {
 			require([args.jsmodule], function(module){
-				var deferred = dojo.xhrGet(xhrArgs);
+				var deferred = xhr.get(xhrArgs);
 				deferred.addCallback(function(data){
 					createViewHTMLLoadedHandler(args, li)(data);
 					if (module.init)
@@ -230,7 +233,7 @@ define(["dojo/_base/kernel", // dojo.getObject
 				deferred.addErrback(stopProgress);
 			});
 		} else {
-			var deferred = dojo.xhrGet(xhrArgs);
+			var deferred = xhr.get(xhrArgs);
 			deferred.addCallback(createViewHTMLLoadedHandler(args, li))
 				.addCallback(stopProgress);
 			deferred.addErrback(stopProgress);
@@ -258,14 +261,14 @@ define(["dojo/_base/kernel", // dojo.getObject
 	 */
 	function initNavList(demos){
 		var navView = dijit.byId("navigation");
-		dojo.forEach(demos, function(demo){
+		array.forEach(demos, function(demo){
 			// first, set the category label
-			navView.addChild(new dojox.mobile.EdgeToEdgeCategory({
+			navView.addChild(new EdgeToEdgeCategory({
 				"label": demo.label
 			}));
 			// then, add the list
 			var items = [];
-			dojo.forEach(demo.views, function(item){
+			array.forEach(demo.views, function(item){
 				// mapping "id" to "moveTo" for EdgeToEdgeList
 				var def = {
 						iconPos: item.iconPos,
@@ -281,10 +284,10 @@ define(["dojo/_base/kernel", // dojo.getObject
 				}
 				items.push(def);
 			});
-			var list = new dojox.mobile.EdgeToEdgeDataList({
+			var list = new EdgeToEdgeDataList({
 				id: demo.id,
 				iconBase: demo.iconBase, // TODO: precise clone?
-				store: new dojo.data.ItemFileReadStore({
+				store: new ItemFileReadStore({
 					data: {
 						"items": items
 					}
@@ -293,8 +296,8 @@ define(["dojo/_base/kernel", // dojo.getObject
 			navView.addChild(list);
 		});
 		// move navigation list view under correct parent (right or left pane)
-		var holder = dojo.byId(dojo.global.demos.mobileGallery.src.structure.layout.leftPane.hidden ? "rightPane" : "leftPane");
-		holder.appendChild(dojo.byId("navigation"));
+		var holder = html.byId(structure.layout.leftPane.hidden ? "rightPane" : "leftPane");
+		holder.appendChild(html.byId("navigation"));
 	};
 	
 	/**
@@ -306,109 +309,109 @@ define(["dojo/_base/kernel", // dojo.getObject
 	 * @returns
 	 */
 	function changeLayout(event){
-		var hideLeftPane = (window.innerWidth < demos.mobileGallery.src.structure.layout.threshold) ? true : false;
-		if (hideLeftPane !== demos.mobileGallery.src.structure.layout.leftPane.hidden) {
+		var hideLeftPane = (window.innerWidth < structure.layout.threshold) ? true : false;
+		if (hideLeftPane !== structure.layout.leftPane.hidden) {
 			//change the layout
 			
 			//apply new value to demos.mobileGallery.src.structure.layout.leftPane.hidden
-			demos.mobileGallery.src.structure.layout.leftPane.hidden = hideLeftPane;
+			structure.layout.leftPane.hidden = hideLeftPane;
 			if (hideLeftPane === false) {
 				// move navigation list view from rightPane to leftPane
-				dojo.byId("leftPane").appendChild(dojo.byId("navigation"));
+				html.byId("leftPane").appendChild(html.byId("navigation"));
 				
 				//show leftPane
-				var leftPane = dojo.byId("leftPane");
-				dojo.addClass(leftPane, "navPane");
-				dojo.removeClass(leftPane, "hidden");
+				var leftPane = html.byId("leftPane");
+				html.addClass(leftPane, "navPane");
+				html.removeClass(leftPane, "hidden");
 				
 				var navigationView = dijit.byId("navigation");
-				if ("navigation" === demos.mobileGallery.src.structure.layout.rightPane.currentView.id) {
+				if ("navigation" === structure.layout.rightPane.currentView.id) {
 					//if rightPane currentView is navigation view 
 					//then show default view and remove display:none style
 					var defaultView = dijit.byId("welcome");
-					dojo.style(defaultView.domNode, "display", "");
+					html.style(defaultView.domNode, "display", "");
 					defaultView.onAfterTransitionIn();
 					navigationView.onAfterTransitionIn();
 				}
 				else {
 					//if rightPane currentView is not navigation view 
 					//then show navigation view and remove display:none style in leftPane
-					dojo.style(navigationView.domNode, "display", "");
+					html.style(navigationView.domNode, "display", "");
 					navigationView.onAfterTransitionIn();
 				}
 				
 				//hide navButton if applicable
-				var navButton = dojo.byId("navButton");
-				if (!dojo.hasClass(navButton, "hidden")) {
-					dojo.addClass(navButton, "hidden");
+				var navButton = html.byId("navButton");
+				if (!html.hasClass(navButton, "hidden")) {
+					html.addClass(navButton, "hidden");
 				}
 			}
 			else {
 				//hide leftPane
-				var leftPane = dojo.byId("leftPane");
-				dojo.addClass(leftPane, "hidden");
-				dojo.removeClass(leftPane, "navPane");
+				var leftPane = html.byId("leftPane");
+				html.addClass(leftPane, "hidden");
+				html.removeClass(leftPane, "navPane");
 				//show navButton if applicable
-				var navButton = dojo.byId("navButton");
-				if (dojo.hasClass(navButton, "hidden")) {
-					dojo.removeClass(navButton, "hidden");
+				var navButton = html.byId("navButton");
+				if (html.hasClass(navButton, "hidden")) {
+					html.removeClass(navButton, "hidden");
 				}
 				//move navigation views in demos.mobileGallery.src.structure.navigation from leftPane to rightPane
-				dojo.style(demos.mobileGallery.src.structure.layout.leftPane.currentView.domNode, "display", "none");
-				dojo.byId("rightPane").appendChild(dojo.byId("navigation"));
+				html.style(structure.layout.leftPane.currentView.domNode, "display", "none");
+				html.byId("rightPane").appendChild(html.byId("navigation"));
 			}
 			//refresh the whole page after the layout change
 			dijit.byId('splitter').startup();
 		}//else (the current layout match the screen width, then do nothing)
 	};
 	
-	dojo.ready(function(){
+	ready(function(){
 		// set view port size
-		demos.mobileGallery.src.Viewport.onViewportChange();
+		Viewport.onViewportChange();
 		
-		if (demos.mobileGallery.src.structure.layout.leftPane.hidden) {
+		if (structure.layout.leftPane.hidden) {
 			//hide the leftPane is when the screen is small
 			//define layout, hide leftPane and keep navButton visibile
-			dojo.addClass(dojo.byId('leftPane'), "hidden");
+			html.addClass(html.byId('leftPane'), "hidden");
 		}
 		else {
 			//initialize view with two splitter pane
 			//define layout, show leftPane and hide navButton
-			dojo.addClass(dojo.byId('leftPane'), "navPane");
-			dojo.addClass(dojo.byId('navButton'), "hidden");
+			html.addClass(html.byId('leftPane'), "navPane");
+			html.addClass(html.byId('navButton'), "hidden");
 		}
 		
-		var hideLeftPane = demos.mobileGallery.src.structure.layout.leftPane.hidden;
-		dojo.attr("navigation", "selected", "true");
+		var hideLeftPane = structure.layout.leftPane.hidden;
+		html.attr("navigation", "selected", "true");
 		//when the screen is small, only show "navigation"
 		//recently the strategy of view is changed, if there's is no visible view
 		//then the 1st view is selected. So we have to move navigation to the first view.
 		if (hideLeftPane) 
-			dojo.place("navigation", "rightPane", "first");
+			html.place("navigation", "rightPane", "first");
 		
-		dojox.mobile.parser.parse(dojo.body());
-		dojo.forEach(demos.mobileGallery.src.structure._views, function(view){
+		parser.parse(win.body());
+		array.forEach(structure._views, function(view){
 			initView(view);
 		});
-		initNavList(demos.mobileGallery.src.structure.demos);
-		dojo.connect(dojo.byId("sourceButton"), "onclick",
+		initNavList(structure.demos);
+		connect.connect(html.byId("sourceButton"), "onclick",
 				dijit.byId("header"), goToView);
-		dojo.connect(dojo.byId("navButton"), "onclick", dijit.byId("header"),
+		connect.connect(html.byId("navButton"), "onclick", dijit.byId("header"),
 				goToView);
 		
 		dijit.byId("navigation").onAfterTransitionIn();
 		if (!hideLeftPane) //initialize view with two splitter pane
 			dijit.byId("welcome").onAfterTransitionIn();
 		
-		dojo.connect(dojo.global, "onorientationchange", function(event){
-			demos.mobileGallery.src.Viewport.onViewportChange();
+		connect.connect(win.global, "onorientationchange", function(event){
+			Viewport.onViewportChange();
 			changeLayout(event);
 		});
-		dojo.connect(dojo.global, "onresize", function(event){
+		connect.connect(win.global, "onresize", function(event){
 			changeLayout(event);
 		});
 		
-		dojox.mobile.resizeAll();
+		dm.resizeAll();
 	});
 });
 

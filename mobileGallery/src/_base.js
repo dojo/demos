@@ -2,11 +2,11 @@ define(["dojo/_base/array", // dojo.forEach
         "dojo/_base/kernel", // dojo.getObject
         "dojo/_base/sniff", // dojo.isSafari
         "dojo/_base/window"], // dojo.global
-        function(){
+        function(array, dojo, sniff, win){
 	dojo.getObject("demos.mobileGallery.src._base", true);
 	
 	var _base = demos.mobileGallery.src._base;
-	_base.isIPhone = (dojo.isSafari && (navigator.userAgent.indexOf("iPhone") > -1 || navigator.userAgent
+	_base.isIPhone = (sniff("safari") && (navigator.userAgent.indexOf("iPhone") > -1 || navigator.userAgent
 			.indexOf("iPod") > -1));
 	_base.isWebOS = (navigator.userAgent.indexOf("webOS") > -1);
 	_base.isAndroid = (navigator.userAgent.toLowerCase().indexOf("android") > -1);
@@ -15,10 +15,10 @@ define(["dojo/_base/array", // dojo.forEach
 	 * parse url parameter to get the device parameter if any. Temporarily use hard
 	 * coded values. We can change to use dojo.hash in the future.
 	 */
-	var search = dojo.global.location.search;
+	var search = win.global.location.search;
 	if (search && search.length > 1) {
 		var queryPairs = search.substr(1).split("&");
-		dojo.forEach(queryPairs, function(pairStr) {
+		array.forEach(queryPairs, function(pairStr) {
 			var query = pairStr.split("=");
 			if (query[0] === "theme" && query[1]) {
 				// overwrite the agent detection result

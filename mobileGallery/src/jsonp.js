@@ -4,7 +4,8 @@ define(["dojo/_base/connect", // dojo.connect
         "dojo/string",
         "dojo/io/script",
         "dijit/_base/manager", // dijit.byId
-        "dojox/mobile/ProgressIndicator"], function(){
+        "dojox/mobile/ProgressIndicator"],
+        function(connect, html, array, string, script, dijit, ProgressIndicator){
 	
 		// twitter search results visualization template
 		var template = '<div class="searchResult" style="text-align:center;vertical-align:middle;">'
@@ -15,26 +16,26 @@ define(["dojo/_base/connect", // dojo.connect
 		
 		return {
 			init: function(){
-				dojo.connect(dijit.byId("searchTwitterBtn"), "onClick", function(){
-					var jsonpDiv = dojo.byId("jsonp");
-					var ul = dojo.byId("searchResults");
+				connect.connect(dijit.byId("searchTwitterBtn"), "onClick", function(){
+					var jsonpDiv = html.byId("jsonp");
+					var ul = html.byId("searchResults");
 					if (!ul || !jsonpDiv)
 						return;
 					ul.style.display = "none";
 					
 					if (prog)
 						prog.stop();// prevent duplicated indicators
-					prog = dojox.mobile.ProgressIndicator.getInstance();
+					prog = ProgressIndicator.getInstance();
 					jsonpDiv.appendChild(prog.domNode);
 					prog.start();
 					
-					dojo.io.script.get({
+					script.get({
 						url : "http://search.twitter.com/search.json",
 						handleAs : "json",
 						callbackParamName : "callback",
 						preventCache : true,
 						content : {
-							q : dojo.byId("searchKeywords").value,
+							q : html.byId("searchKeywords").value,
 							rpp: 5
 						},
 						load : function(data) {
@@ -43,8 +44,8 @@ define(["dojo/_base/connect", // dojo.connect
 							var res = "";
 							var results = data.results;
 							if (data.results) {
-								dojo.forEach(data.results, function(result){
-									res += dojo.string.substitute(template, {
+								array.forEach(data.results, function(result){
+									res += string.substitute(template, {
 										from_user : result.from_user,
 										profile_image_url : result.profile_image_url,
 										text : result.text

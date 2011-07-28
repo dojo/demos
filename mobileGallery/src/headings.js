@@ -1,13 +1,17 @@
 define(["dojo/_base/connect", // dojo.connect
 		"dojo/_base/html", // dojo.byId
 		"dojo/_base/array", // dojo.array
-		"dojo/string", "dojox/mobile", "dojox/mobile/ToolBarButton", "./_base"],
-		function(){
+		"dojo/string", // dojo.string
+		"./_base",
+		"dojox/mobile/common", // dojox.mobile.createDomButton
+		"dojox/mobile/ToolBarButton",
+		"dojox/mobile/ToggleButton"],
+		function(connect, html, array, string, _base, dm, ToolBarButton){
 	var template = "User clicked \"${label}\" button.";
 	
 	function registerClickHandler(id, label) {
-		dojo.connect(dojo.byId(id), "click", this, function() {
-			dojo.byId("headingPane").innerHTML = dojo.string.substitute(
+		connect.connect(html.byId(id), "click", this, function() {
+			html.byId("headingPane").innerHTML = string.substitute(
 				template, {"label" : label});
 		});
 	};
@@ -49,14 +53,14 @@ define(["dojo/_base/connect", // dojo.connect
 	
 	return {
 		init: function(){
-			new dojox.mobile.ToolBarButton({
-				icon : (demos.mobileGallery.src._base.isAndroid ? "images/tab-icons-25.png"
+			new ToolBarButton({
+				icon : (_base.isAndroid ? "images/tab-icons-25.png"
 						: "images/tab-icons.png"),
-						iconPos : (demos.mobileGallery.src._base.isAndroid ? "24,0,24,24" : "29,0,29,29")
+						iconPos : (_base.isAndroid ? "24,0,24,24" : "29,0,29,29")
 			}, "tbIconBtn2");
 			
-			dojox.mobile.createDomButton(dojo.byId("tbDomBtn"));
-			dojo.forEach(config, function(conf){
+			dm.createDomButton(html.byId("tbDomBtn"));
+			array.forEach(config, function(conf){
 				registerClickHandler(conf.id, conf.label);
 			})
 		}
