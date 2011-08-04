@@ -1,22 +1,38 @@
 var customClaroTheme, timeLabelFunction;
 
-require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
-	"dojox/mobile", "dojox/mobile/View", "dojox/mobile/RoundRect", "dojox/mobile/Button", "dojox/mobile/parser",
-	"dojox/charting/widget/Chart", "dojox/charting/Theme", "dojox/charting/axis2d/Default", "dojox/charting/plot2d/Columns",
-	"dojox/charting/plot2d/Areas", "dojox/charting/plot2d/Grid", "dojox/data/CsvStore",
+require(["dojo/has", 
+	"dojo/_base/sniff", // ua sniffing
+	"dojo/_base/connect",
+	"dojo/_base/kernel", 
+	"dojo/_base/html", 
+	"dojo/dom", // byId
+	"dojo/_base/fx",
+	"dojox/mobile", 
+	"dojox/mobile/View", 
+	"dojox/mobile/RoundRect", 
+	"dojox/mobile/Button", 
+	"dojox/mobile/parser",
+	"dojox/charting/widget/Chart", 
+	"dojox/charting/Theme", 
+	"dojox/charting/axis2d/Default", 
+	"dojox/charting/plot2d/Columns",
+	"dojox/charting/plot2d/Areas", 
+	"dojox/charting/plot2d/Grid", 
+	"dojox/data/CsvStore",
+	"dijit",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],
-	function(has, dojo, html, fx, mobile, View, RoundRect, Button, parser,
-				Chart, Theme, Default, Columns, Areas, Grid, CsvStore, ZoomAndPan, Indicator){
+	function(has, ua, Hub, dojo, html, DOM, fx, mobile, View, RoundRect, Button, parser,
+			 Chart, Theme, Default, Columns, Areas, Grid, CsvStore, WidgetManager, ZoomAndPan, Indicator){
 
-		if(!dojo.isWebKit){
+		if(!has("webkit")){
 			require(["dojox/mobile/compat"]);
 		}
 
 		var pHeight = 0;
 
 		var resize = function(){
-			if(dojo.byId("view2").style.display == "none"){
+			if(DOM.byId("view2").style.display == "none"){
 				return;
 			}
 			var wsize = mobile.getScreenSize();
@@ -27,7 +43,7 @@ require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
 			}
 			pHeight = wsize.h;
 			var box = { h: wsize.w > wsize.h ? wsize.h - 92 : wsize.h - 196 };
-			dijit.byId("stockChart").resize(box);
+			WidgetManager.byId("stockChart").resize(box);
 		};
 
 		var googStore = new CsvStore({url: "resources/data/goog_prices.csv"});
@@ -47,7 +63,7 @@ require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
 		};
 
 		var hideChartView = function(){
-			var chart1 = dijit.byId("stockChart").chart;
+			var chart1 = WidgetManager.byId("stockChart").chart;
 			chart1.removeSeries("PriceSeries");
 			chart1.removeSeries("VolumeSeries");
 			chart1.render();
@@ -147,10 +163,10 @@ require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
 		};
 
 		var switchMode = function(){
-			var label = dojo.byId("touchLabel");
+			var label = DOM.byId("touchLabel");
 			label.style.display = "";
-			dojo.style("touchLabel", "opacity", "0");
-			dojo.fadeIn({node:"touchLabel", duration:1500}).play();
+			html.style("touchLabel", "opacity", "0");
+			fx.fadeIn({node:"touchLabel", duration:1500}).play();
 
 			setTimeout(function(){label.style.display = "none";}, 2000);
 			var chart = dijit.byId("stockChart").chart;
@@ -191,21 +207,21 @@ require(["dojo/has", "dojo/_base/kernel", "dojo/_base/html", "dojo/_base/fx",
 
 		var init = function(){
 			var view2 = dijit.byId("view2");
-			dojo.connect(view2, "onBeforeTransitionOut", hideChartView);
-			dojo.connect(view2, "onAfterTransitionIn", showChartView);
+			Hub.connect(view2, "onBeforeTransitionOut", hideChartView);
+			Hub.connect(view2, "onAfterTransitionIn", showChartView);
 
-			dojo.connect(dojo.byId("googLink"), "click", onCompanyClick);
-			dojo.connect(dojo.byId("yahooLink"), "click", onCompanyClick);
-			dojo.connect(dojo.byId("msftLink"), "click", onCompanyClick);
-			dojo.connect(dojo.byId("indicatorMode"), "click", switchMode);
+			Hub.connect(DOM.byId("googLink"), "click", onCompanyClick);
+			Hub.connect(DOM.byId("yahooLink"), "click", onCompanyClick);
+			Hub.connect(DOM.byId("msftLink"), "click", onCompanyClick);
+			Hub.connect(DOM.byId("indicatorMode"), "click", switchMode);
 
-			dojo.connect(dijit.byId("zoomButton1").domNode, "click", function(){showRange(90);});
-			dojo.connect(dijit.byId("zoomButton2").domNode, "click", function(){showRange(180);});
-			dojo.connect(dijit.byId("zoomButton3").domNode, "click", function(){showRange(365);});
-			dojo.connect(dijit.byId("zoomButton4").domNode, "click", function(){showRange(0);});
+			Hub.connect(WidgetManager.byId("zoomButton1").domNode, "click", function(){showRange(90);});
+			Hub.connect(WidgetManager.byId("zoomButton2").domNode, "click", function(){showRange(180);});
+			Hub.connect(WidgetManager.byId("zoomButton3").domNode, "click", function(){showRange(365);});
+			Hub.connect(WidgetManager.byId("zoomButton4").domNode, "click", function(){showRange(0);});
 			switchMode();
 
-			dojo.subscribe("/dojox/mobile/resizeAll", resize);
+			Hub.subscribe("/dojox/mobile/resizeAll", resize);
 		};
 
 		customClaroTheme = new Theme({
