@@ -75,7 +75,7 @@ var clz = dojo.declare(null, {
 			data.point1 = point1;
 			data.point2 = point2;
 			e.rotation = data.rotation;
-			gesture.fire(e.target, "rotate", {rotation: data.rotation});
+			gesture.fire(e.currentTarget, e.target, "rotate", {rotation: data.rotation});
 		}
 	},
 	
@@ -85,7 +85,7 @@ var clz = dojo.declare(null, {
 				e.rotation = data.rotation;
 			}
 			data.rotateStart = false;
-			gesture.fire(e.target, "rotate.end", {rotation: data.rotation});
+			gesture.fire(e.currentTarget, e.target, "rotate.end", {rotation: data.rotation});
 			data.rotation = 0;
 		}
 	}
