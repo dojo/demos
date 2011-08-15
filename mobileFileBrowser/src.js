@@ -4,6 +4,8 @@ require([
 	"dojox/mobile/compat",
 	"dojox/mobile/deviceTheme",
 	"dojox/data/FileStore",
+	"dojo/_base/config",	// dojo.config
+	"dijit/_base/manager",	// dijit.byId, dijit.byNode
 	"dijit/tree/ForestStoreModel",
 	"dojox/mobile/ProgressIndicator",
 	"dojox/mobile/View",
