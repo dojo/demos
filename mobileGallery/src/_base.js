@@ -1,15 +1,14 @@
-define(["dojo/_base/array", // dojo.forEach
-        "dojo/_base/kernel", // dojo.getObject
-        "dojo/_base/sniff", // dojo.isSafari
-        "dojo/_base/window"], // dojo.global
-        function(array, dojo, sniff, win){
-	dojo.getObject("demos.mobileGallery.src._base", true);
+define(["dojo/_base/array",
+		"dojo/_base/kernel",
+		"dojo/_base/sniff", 
+		"dojo/_base/window"], 
+		function(array, lang, has, win){
 	
-	var _base = demos.mobileGallery.src._base;
-	_base.isIPhone = (sniff("safari") && (navigator.userAgent.indexOf("iPhone") > -1 || navigator.userAgent
-			.indexOf("iPod") > -1));
-	_base.isWebOS = (navigator.userAgent.indexOf("webOS") > -1);
-	_base.isAndroid = (navigator.userAgent.toLowerCase().indexOf("android") > -1);
+	var _base = lang.getObject("demos.mobileGallery.src._base", true);
+	_base.isIPhone = has("iphone");
+	_base.isIPad = has("ipad");
+	_base.isWebOS = has("webos");
+	_base.isAndroid = has("android");
 	
 	/*
 	 * parse url parameter to get the device parameter if any. Temporarily use hard

@@ -16,12 +16,13 @@ h1#segmentHeading {
 	text-align: justify;
 }
 
-ul#headingTabBar li.mblTabButton {
+#headingTabBar li.mblTabButton {
+	width: 88px;
 	background-color: #5877A2;
     background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
 }
 
-ul#headingTabBar li.mblTabButtonSelected {
+#headingTabBar li.mblTabButtonSelected {
 	background-color: #394D77;
     background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
 }
@@ -62,7 +63,7 @@ button.defaultBtn.backBtn:after {
     background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
 }
 
-button.defaultBtnSelected, button.defaultBtnSelected.backBtn:after {
+#sourceButton.mblColorDefaultSel, #sourceButton.mblColorDefaultSel:after, button.defaultBtnSelected, button.defaultBtnSelected.backBtn:after {
 	background-color: #394D77;
 	background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
 }
@@ -77,7 +78,6 @@ button.defaultBtnSelected, button.defaultBtnSelected.backBtn:after {
 	margin-left: 0px;
 	margin-top: 0px;
 	margin-right: 0px;
-	width: 64px;
 	color: white;
 	font-family: 'Helvetica';
 	font-weight: bold;

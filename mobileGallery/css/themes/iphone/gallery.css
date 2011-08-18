@@ -17,15 +17,13 @@ div#headings button.baseBtn {
 }
 
 /* "Headings" Back Button */
-div#headings button.backBtn:after {
-    height: 23px;
-	left: -11px;
-    -webkit-mask-size: 12px 23px;
-}
-#tbToggleBtn {
-    height: 31px;
-    top: -3px;
-    font-weight: bold;
+#tbBackBtn:after {
+    height: 27px;
+	left: -9px;
+    -webkit-mask-size: 12px 27px;
+	border-left-style: none;
+	border-top-left-radius: 0 0;
+	border-bottom-left-radius: 0 0;
 }
 
 div#headings button#tbBackBtn {
@@ -45,21 +43,57 @@ div#headings #tbDomBtn {
 }
 
 #header button {
-	margin-bottom: 6px;
-	height: 34px;
+	top: 4px;
+	height:34px;
 }
 
 /* back button of "Back" in header */
 #navButton::after {
 	top: 0px;
 	width: 14px;
-	height: 30px;
-	left: -14px;
-	-webkit-mask-size: 14px 30px;
+	height: 32px;
+	left: -13px;
+	-webkit-mask-size: 14px 32px;
+}
+
+#navButton {
+	left: 20px;
+}
+
+#sourceButton {
+	right: 6px;
+	width: 74px;
+}
+
+#tbToggleBtn {
+	position:absolute;
+	top:6px;
+	height:31px;
+	line-height:31px;
 }
 
 /* Temp fix for wrong icon position in list. */
 #navigation .mblListItemIcon {
 	top: 7px;
 	-webkit-transform: none;
+}
+
+/* JSON-P demo */
+#searchKeywords {
+	top: 7px;
+	height: 28px;
+}
+
+#searchTwitterBtn {
+	top: 7px;
+}
+
+@media screen and (max-width: 600px) {
+	#searchTwitterBtn {
+		right: 6px;
+	}
+}
+
+#jsonp .searchResult, #findMoreDiv {
+	color: black;
 }

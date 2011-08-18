@@ -1,6 +1,8 @@
 form#testForm div.fieldset {
     border: 1px solid #ddd;
     border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
     background-color: white;
     margin: 2px 5px;
     padding: 2px 6px;
@@ -25,7 +27,6 @@ form#testForm span {
     text-shadow: rgba(255, 255, 255, 0.25);
     vertical-align: middle;
     width: 140px;
-	vertical-align:middle;
 }
 
 form#testForm input, form#testForm textarea {
@@ -34,7 +35,7 @@ form#testForm input, form#testForm textarea {
     margin-left: 0px;
 	margin-right: 0px;
 }
-
+	
 form#testForm input[type="radio"], form#testForm input[type="checkbox"] {
 	width: 15px;
 }

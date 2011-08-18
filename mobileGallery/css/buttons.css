@@ -153,9 +153,9 @@ button.roundBtn {
 }
 
 button.backBtn {
-    border-bottom-left-radius: 0.4em 0.4em;
+    border-bottom-left-radius: 0.3em 0.3em;
     border-bottom-right-radius: 0.4em 0.4em;
-    border-top-left-radius: 0.4em 0.4em;
+    border-top-left-radius: 0.3em 0.3em;
     border-top-right-radius: 0.4em 0.4em;
     margin-left: 0.893em;
     padding-left: 0.4em;
@@ -163,18 +163,18 @@ button.backBtn {
     overflow: visible;
     position: relative;
     z-index: 1;
+	border-left-style:none;
 }
 
 button.backBtn:after {
     content: "";
     width: 12px;
-    height: 28px;
+    height: 30px;
     position: absolute;
-    top: 1px;
     left: -10px;
     z-index: 2;
     -webkit-mask: 0 0px url('../images/left-arrow-mask.png') no-repeat;
-    -webkit-mask-size: 12px 28px;
+    -webkit-mask-size: 12px 30px;
     overflow: hidden;
 }
 

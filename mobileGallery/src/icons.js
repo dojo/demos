@@ -1,14 +1,12 @@
-define(["./structure",
-        "dojo/_base/connect", // dojo.connect
-        "dijit/_base/manager", // dijit.byId
-        "dojox/mobile/IconContainer"], function(structure, connect, dijit) {
+define(["./structure","dojo/on", 
+		"dijit/registry", // dijit.byId
+		"dojox/mobile/IconContainer"],
+  function(structure, on, registry) {
 	function registerTransitionToHandler(iconId, viewId) {
-		connect.connect(dijit.byId(iconId), "transitionTo", null,
-				function() {
-			structure.layout.rightPane.currentView = dijit.byId(viewId);
+		on(registry.byId(iconId), "iconClicked", function() {
+			structure.layout.rightPane.currentView = viewId;
 		});
 	};
-	
 	return {
 		init : function() {
 			registerTransitionToHandler("moveToIcon", "icons-moveTo");

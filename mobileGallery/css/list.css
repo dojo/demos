@@ -62,3 +62,7 @@ div#list .mblRoundRectList, div#list .mblRoundRect {
 div#listWidget {
 	margin: 3px;
 }
+
+#listTabs .mblTabButton {
+	width: 120px;
+}
