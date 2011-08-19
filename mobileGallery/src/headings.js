@@ -7,7 +7,7 @@ define(["dojo/on","dojo/dom", "dojo/_base/array", "dojo/string",
 	var template = "User clicked \"${label}\" button.";
 	
 	function registerClickHandler(id, label) {
-		on(dom.byId(id), "click", this, function() {
+		on(dom.byId(id), "click", function() {
 			dom.byId("headingPane").innerHTML = string.substitute(
 				template, {"label" : label});
 		});

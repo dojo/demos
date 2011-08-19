@@ -27,7 +27,7 @@ function(lang, connect, dom, domClass, registry, ItemFileWriteStore, mobile, Rou
 			updateItemCount: function(){
 				this.listsStore.fetch({query:{},
 					onBegin: function(size){
-						dom.byId("listLengthLabel").innerHtml = size;
+						dom.byId("listLengthLabel").innerHTML = size;
 					},
 					start: 0,
 					count: 0});
