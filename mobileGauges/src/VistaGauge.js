@@ -1,10 +1,5 @@
-define(["dojo/_base/declare", "dojox/gfx", "dojox/gauges/AnalogGauge", "dojox/gauges/AnalogIndicatorBase"], function(declare, gfx, AnalogGauge, AnalogIndicatorBase){
-
-/*=====
-	var declare = dojo.declare;
-	var AnalogGauge = dojox.gauges.AnalogGauge;
-	var AnalogIndicatorBase = dojox.gauges.AnalogIndicatorBase;
- =====*/
+define(["dojo/_base/declare", "dojox/gfx", "dojox/gauges/AnalogGauge", "dojox/gauges/AnalogIndicatorBase"], 
+function(declare, gfx, AnalogGauge, AnalogIndicatorBase){
 
 	declare("demos.mobileGauges.src.VistaNeedle", [AnalogIndicatorBase], {
 		// summary:
@@ -75,7 +70,7 @@ define(["dojo/_base/declare", "dojox/gfx", "dojox/gauges/AnalogGauge", "dojox/ga
 		
 	});
 	
-	declare("demos.mobileGauges.src.VistaGauge", [AnalogGauge], {
+	return declare("demos.mobileGauges.src.VistaGauge", [AnalogGauge], {
 	
 		// value: Number
 		// The value of the gauge.

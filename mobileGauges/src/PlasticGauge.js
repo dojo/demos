@@ -4,12 +4,6 @@ define(["dojo/_base/declare",
 		"dojox/gauges/AnalogIndicatorBase"],
 function(declare, gfx, AnalogGauge, AnalogIndicatorBase){
 
-/*=====
-	var declare = dojo.declare;
-	var AnalogGauge = dojox.gauges.AnalogGauge;
-	var AnalogIndicatorBase = dojox.gauges.AnalogIndicatorBase;
- =====*/
-
 	declare("demos.mobileGauges.src.PlasticGaugeNeedle", [AnalogIndicatorBase], {
 		// summary:
 		//		The needle for the demos.mobileGauges.src.PlasticGauge.
@@ -55,7 +49,7 @@ function(declare, gfx, AnalogGauge, AnalogIndicatorBase){
 		
 	});
 	
-	declare("demos.mobileGauges.src.PlasticGauge", [AnalogGauge], {
+	return declare("demos.mobileGauges.src.PlasticGauge", [AnalogGauge], {
 	
 		// value: Number
 		// The value of the gauge.
