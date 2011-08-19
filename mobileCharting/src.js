@@ -43,7 +43,6 @@ require(["dojo/has",
 			}
 			pHeight = wsize.h;
 			var box = { h: wsize.w > wsize.h ? wsize.h - 92 : wsize.h - 196 };
-			console.log("new: "+box.h);
 			registry.byId("stockChart").resize(box);
 		};
 
