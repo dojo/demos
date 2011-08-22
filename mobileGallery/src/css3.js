@@ -1,6 +1,6 @@
 define(["dojo/_base/declare","dojo/_base/html","dojo/dom","dojo/dom-construct",
-		"dojo/_base/connect","dojo/fx","dojox/css3/fx"], 
-  function(declare, html, dom, domConstruct, connect, fx, css3fx) {
+		"dojo/on","dojo/fx","dojox/css3/fx"], 
+  function(declare, html, dom, domConstruct, on, fx, css3fx) {
 	demos.mobileGallery.src.css3 = function() {
 		declare("CSS3Demo", null, {
 			menuNode: null,
@@ -20,10 +20,10 @@ define(["dojo/_base/declare","dojo/_base/html","dojo/dom","dojo/dom-construct",
 						className : 'css3Box'
 					}, boxwrapper);
 					html.place(boxwrapper, css3Body, 'last');
-					connect.connect(box, "click", (function(b, x){
+					on(box, "click", (function(b, x){
 						return function(){
 							var anim = fx.chain([ css3fx[effects[x]]({ node: b }) ]);
-							connect.connect(anim, "onEnd", function(){
+							on(anim, "End", function(){
 								html.style(b, {
 									transform: "scale(1)",
 									opacity: "1"
