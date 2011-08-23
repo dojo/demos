@@ -24,7 +24,7 @@ define(["dojo/dom", "dojo/on", "dojo/_base/xhr",
 	};	
 	return {
 		init: function() {
-			on(dom.byId("ajaxBtn"), "onclick", refreshData);
+			on(dom.byId("ajaxBtn"), "click", refreshData);
 		}
 	};
 });
