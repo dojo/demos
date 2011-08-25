@@ -27,6 +27,7 @@ require([
 	function(mobile, parser, compat, deviceTheme, FileStore, array, lang, declare, config, $,
 			window, dom, domConstruct, registry, ForestStoreModel, Heading, View, ListItem, 
 			RoundRectList, ProgressIndicator, View, ScrollableMixin, NodeListTraverse, domReady){
+	dojo.ready(function(){
 		var store = new FileStore({
 			url: "../../dojox/data/demos/stores/filestore_dojotree.php",
 			id: "theStore",
@@ -117,4 +118,5 @@ require([
 			}
 		});
 		new TreeView({model: treeModel, selected: true}, dom.byId("treeView")).startup();
+	});
 });
