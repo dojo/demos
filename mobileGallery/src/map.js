@@ -1,7 +1,7 @@
-define(["dojo/on", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
+define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 		"dojo/dom","dojo/dom-geometry",
         "dojo/io/script", "dijit/registry", "dojox/mobile/ProgressIndicator"],
-        function(on, declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
+        function(declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
 	// Map class
 	var Map = declare(null, {
 		constructor: function(args){
@@ -9,7 +9,7 @@ define(["dojo/on", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 			var opt = (args.options ? args.options : {});
 			this.options = lang.mixin({
 				zoom : 8,
-				mapTypeId : google.maps.MapTypeId.ROADMAP,
+				mapTypeId : google.maps.MapTypeId.ROADMAP
 			}, opt);
 		},
 		load: function(){
@@ -34,7 +34,7 @@ define(["dojo/on", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 		googleMap.load();
 		prog.stop();
 		// fix resize problem after rotation
-		on(registry.byId("map"), "resize", function(){
+		registry.byId("map").on("resize", function(){
 			var mapBox = domGeom.getMarginBox("map");
 			var headerBox = domGeom.getMarginBox("header");
 			mapBox.w = headerBox.w;
@@ -75,9 +75,10 @@ define(["dojo/on", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 	return {
 		init: function(){
 			// lazy load
-			on(registry.byId("map"), "onAfterTransitionIn", function() {
-				if (isLoaded)
+			registry.byId("map").on("AfterTransitionIn", function() {
+				if (isLoaded){
 					return;
+				}
 				var mapMargin = domGeom.getMarginBox("map");
 				mapMargin.h = window.innerHeight - domGeom.getMarginBox("header").h;
 				domGeom.setMarginBox("map", mapMargin);

@@ -1,9 +1,9 @@
-define(["./structure","dojo/on", 
+define(["./structure",
 		"dijit/registry", // dijit.byId
 		"dojox/mobile/IconContainer"],
-  function(structure, on, registry) {
+  function(structure, registry) {
 	function registerTransitionToHandler(iconId, viewId) {
-		on(registry.byId(iconId), "iconClicked", function() {
+		registry.byId(iconId).on("iconClicked", function() {
 			structure.layout.rightPane.currentView = viewId;
 		});
 	};
