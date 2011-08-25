@@ -207,8 +207,8 @@ require(["dojo/has",
 
 		var init = function(){
 			var view2 = registry.byId("view2");
-			on(view2, "onBeforeTransitionOut", hideChartView);
-			on(view2, "onAfterTransitionIn", showChartView);
+			view2.on("BeforeTransitionOut", hideChartView);
+			view2.on("AfterTransitionIn", showChartView);
 
 			on(dom.byId("googLink"), "click", onCompanyClick);
 			on(dom.byId("yahooLink"), "click", onCompanyClick);
