@@ -10,6 +10,7 @@ require([
 	"dojo/_base/config",
 	"dojo/_base/query", 
 	"dojo/_base/window",
+	"dojo/ready",
 	"dojo/dom",
 	"dojo/dom-construct",
 	"dijit/registry",
@@ -25,9 +26,9 @@ require([
 	"dojo/domReady!"
 	], 
 	function(mobile, parser, compat, deviceTheme, FileStore, array, lang, declare, config, $,
-			window, dom, domConstruct, registry, ForestStoreModel, Heading, View, ListItem, 
+			window, ready, dom, domConstruct, registry, ForestStoreModel, Heading, View, ListItem, 
 			RoundRectList, ProgressIndicator, View, ScrollableMixin, NodeListTraverse, domReady){
-	dojo.ready(function(){
+	ready(function(){
 		var store = new FileStore({
 			url: "../../dojox/data/demos/stores/filestore_dojotree.php",
 			id: "theStore",
