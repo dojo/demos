@@ -1,11 +1,11 @@
 require([
 	"dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat",
-	"dojo/dom","dijit/registry","dojo/on","dojo/_base/event","dojo/_base/NodeList",
+	"dojo/dom","dijit/registry","dojo/on","dojo/_base/connect","dojo/_base/event","dojo/_base/NodeList",
 	"dojo/_base/window","dojo/number","dojo/dom-geometry",
 	"dojox/mobile/SpinWheel","dojo/data/ItemFileReadStore","dojox/data/CsvStore",
 	"dojox/geo/charting/widget/Map","dojox/geo/charting/widget/Legend",
 	"dojox/geo/charting/TouchInteractionSupport","dojox/geo/charting/MouseInteractionSupport"
-],function(ready,mobile,parser,compat,dom,widget,on,eventUtil,NodeList,window,number,
+],function(ready,mobile,parser,compat,dom,widget,on,connectUtil,eventUtil,NodeList,window,number,
 		domGeom,SpinWheel,ItemFileReadStore,CsvStore,Map,Legend,
 		TouchInteractionSupport,MouseInteractionSupport){
 
@@ -13,22 +13,30 @@ require([
 	var selectedFeature;
 	var mapWidget, yearSpinner, yearSlot, mapHeader, mapLegend;
 
-	onFeatureClick = function (feature) {
-		selectedFeature = feature;
+	updateHeaderTitle = function(mapFeature){
+		selectedFeature = mapFeature;
 		var text = "US population from 1960 to 2009";
 		if (selectedFeature) {
 			var text = yearSlot.getValue() + 
-				" "  + mapWidget.getInnerMap().mapObj.marker.markerData[feature.id] +
-				" pop. : " + (feature.value / 1000000).toFixed(1) + "M";
+				" "  + mapWidget.getInnerMap().mapObj.marker.markerData[mapFeature.id] +
+				" pop. : " + (mapFeature.value / 1000000).toFixed(1) + "M";
 		}
 		mapHeader.innerHTML = text;
 	};
-	
-	getPopulationForYear = function(data) {
-		return number.parse(data,{locale:"en-us"}) * 1000; // population is expressed in thousands
+
+	updateYear = function(event) {
+		var newYear = yearSlot.getValue();
+		mapWidget.getInnerMap().setDataBindingAttribute(newYear);
+		if(selectedFeature){
+			mapWidget.getInnerMap().onFeatureClick(selectedFeature); 
+		}
 	};
-	
-	layoutUI = function() {
+
+	getPopData = function(data){
+			return number.parse(data,{locale:"en-us"}) * 1000; // population is expressed in thousands
+	};
+
+	layoutUI = function(){
 		var innerW = window.global.innerWidth, innerH = window.global.innerHeight,
 			spinnerScale = 1.0, vertical = innerH < innerW ? false : true;
 
@@ -87,10 +95,10 @@ require([
 		}
 	};	
 
-	init = function (){
+	startDemo = function(){
 		mapWidget = widget.byId("mapWidget");
-		mapWidget.onFeatureClick = onFeatureClick;
-		mapWidget.dataBindingValueFunction = getPopulationForYear;
+		mapWidget.onFeatureClick = updateHeaderTitle;
+		mapWidget.dataBindingValueFunction = getPopData;
 		yearSlot = widget.byId("yearSlot");
 		yearSpinner = dom.byId("yearSpinner");
 		mapHeader = dom.byId("mapHeader");
@@ -98,14 +106,8 @@ require([
 		mapLegend.map = mapWidget.getInnerMap();
 
 		layoutUI();
-			
-		var hYearSlotSpun = on(yearSlot,"FlickAnimationEnd", function(event) {
-			var newYear = yearSlot.getValue();
-			mapWidget.getInnerMap().setDataBindingAttribute(newYear);
-			if(selectedFeature){
-				onFeatureClick(selectedFeature); 
-			}
-		});
+
+		var hYearSlotSpun = yearSlot.on("FlickAnimationEnd", updateYear);
 		yearSlot.setInitialValue();
 		
 		on(window.doc,"touchmove",function(event){
@@ -118,11 +120,11 @@ require([
 		var surface = mapWidget.getInnerMap().surface;
 		var callback1 = surface.connect("touchstart", this, function(event){
 			startedInteraction = true;
-			hYearSlotSpun.remove(callback1);
+			connectUtil.disconnect(callback1);
 		});
 		var callback2 = surface.connect("onmousedown", this, function(event){
 			startedInteraction = true;
-			hYearSlotSpun.remove(callback2);
+			connectUtil.disconnect(callback2);
 		});
 		
 		on(window.global, "resize", function(){
@@ -138,7 +140,7 @@ require([
 		mapWidget.startup();
 	};
 
-	ready(init);
+	ready(startDemo);
 
 });
 
