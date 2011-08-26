@@ -20,14 +20,12 @@ require([
 			background: 'white',
 			id: "defaultBarGauge",
 			width: 300,
-			height: 55
+			height: 55,
+			useTooltip:false
 		}, dom.byId("defaultBarGauge"));
 		horizontalGauge.startup();
 	}
 
-	/**
-	 * Creates the gauges *
-	 */
 	function init(){
 		// create a Circular Gauge
 		circularGauge = GlossyCircularGauge({
@@ -36,7 +34,8 @@ require([
 			min: 0,
 			max: 100,
 			width: 250,
-			height: 250
+			height: 250,
+			useTooltip:false
 		}, dom.byId("cGauge"));
 		circularGauge.startup();
 
@@ -47,7 +46,8 @@ require([
 			min: 0,
 			max: 100,
 			width: 250,
-			height: 150
+			height: 150,
+			useTooltip:false
 		}, dom.byId("scGauge"));
 		scircularGauge.startup();
 
@@ -60,6 +60,7 @@ require([
 			height: 200,
 			cx: 125,
 			cy: 150,
+			useTooltip:false,
 			radius: 125,
 			ranges: [{
 				low: 0,
@@ -123,6 +124,7 @@ require([
 			id: "defaultGauge",
 			width: 250,
 			height: 250,
+			useTooltip:false,
 			cx: 127,
 			cy: 125,
 			radius: 125,
@@ -189,6 +191,7 @@ require([
 			background: 'white',
 			width: 200,
 			height: 180,
+			useTooltip:false,
 			cx: 100,
 			cy: 150,
 			radius: 130,
@@ -227,6 +230,7 @@ require([
 			background: 'white',
 			width: 200,
 			height: 200,
+			useTooltip:false,
 			cx: 100,
 			cy: 100,
 			radius: 95,
@@ -273,7 +277,8 @@ require([
 			min: 0,
 			max: 1000,
 			width: 200,
-			height: 200
+			height: 200,
+			useTooltip:false
 		}, dom.byId("vista"));
 		vista.startup();
 
@@ -284,7 +289,8 @@ require([
 			min: 0,
 			max: 1000,
 			width: 200,
-			height: 200
+			height: 200,
+			useTooltip:false
 		}, dom.byId("plastic"));
 		plastic.startup();
 
@@ -295,7 +301,8 @@ require([
 			min: 0,
 			max: 1000,
 			width: 200,
-			height: 200
+			height: 200,
+			useTooltip:false
 		}, dom.byId("xp"));
 		xp.startup();
 

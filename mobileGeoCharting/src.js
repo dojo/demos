@@ -1,11 +1,11 @@
 require([
-	"dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat",
+	"dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat","dojox/mobile/deviceTheme",
 	"dojo/dom","dijit/registry","dojo/on","dojo/_base/connect","dojo/_base/event","dojo/_base/NodeList",
 	"dojo/_base/window","dojo/number","dojo/dom-geometry",
 	"dojox/mobile/SpinWheel","dojo/data/ItemFileReadStore","dojox/data/CsvStore",
 	"dojox/geo/charting/widget/Map","dojox/geo/charting/widget/Legend",
 	"dojox/geo/charting/TouchInteractionSupport","dojox/geo/charting/MouseInteractionSupport"
-],function(ready,mobile,parser,compat,dom,widget,on,connectUtil,eventUtil,NodeList,window,number,
+],function(ready,mobile,parser,compat,deviceTheme,dom,widget,on,connect,event,NodeList,window,number,
 		domGeom,SpinWheel,ItemFileReadStore,CsvStore,Map,Legend,
 		TouchInteractionSupport,MouseInteractionSupport){
 
@@ -24,7 +24,7 @@ require([
 		mapHeader.innerHTML = text;
 	};
 
-	updateYear = function(event) {
+	updateYear = function(e) {
 		var newYear = yearSlot.getValue();
 		mapWidget.getInnerMap().setDataBindingAttribute(newYear);
 		if(selectedFeature){
@@ -36,9 +36,13 @@ require([
 			return number.parse(data,{locale:"en-us"}) * 1000; // population is expressed in thousands
 	};
 
+
 	layoutUI = function(){
+		
+		var screenSize = mobile.getScreenSize();
+		
 		var innerW = window.global.innerWidth, innerH = window.global.innerHeight,
-			spinnerScale = 1.0, vertical = innerH < innerW ? false : true;
+			spinnerScale = 1.0, vertical = screenSize.h < screenSize.w ? false : true;
 
 		var spinStyle = yearSpinner.style,
 			mapWidgetStyle = mapWidget.domNode.style,
@@ -110,32 +114,35 @@ require([
 		var hYearSlotSpun = yearSlot.on("FlickAnimationEnd", updateYear);
 		yearSlot.setInitialValue();
 		
-		on(window.doc,"touchmove",function(event){
-			if (NodeList(event.target).parents("#mapLegend").length == 1) {
-				eventUtil.stop(event);
+		on(window.doc,"touchmove",function(e){
+			if (NodeList(e.target).parents("#mapLegend").length == 1) {
+				event.stop(e);
 			}
 		});
 		
 		// prevent fitToMapContents once any interaction with map widget has occurred
 		var surface = mapWidget.getInnerMap().surface;
-		var callback1 = surface.connect("touchstart", this, function(event){
+		var callback1 = surface.connect("touchstart", this, function(e){
 			startedInteraction = true;
-			connectUtil.disconnect(callback1);
+			connect.disconnect(callback1);
 		});
-		var callback2 = surface.connect("onmousedown", this, function(event){
+		var callback2 = surface.connect("onmousedown", this, function(e){
 			startedInteraction = true;
-			connectUtil.disconnect(callback2);
+			connect.disconnect(callback2);
 		});
-		
+		on("/dojox/mobile/resizeAll", function(){
+			layoutUI();
+		//	window.global.scrollTo(0,0);
+		});
 		on(window.global, "resize", function(){
-			layoutUI();
-			window.global.scrollTo(0,0);
+	//		layoutUI();
+		//	window.global.scrollTo(0,0);
 		});
 		
-		on(window.global,"orientationchange", function(){
-			layoutUI();
-			window.global.scrollTo(0,0);
-		});
+		//on(window.global,"orientationchange", function(){
+		//	layoutUI();
+		//	window.global.scrollTo(0,0);
+		//});
 		
 		mapWidget.startup();
 	};
