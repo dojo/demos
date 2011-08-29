@@ -4,8 +4,8 @@ define(["dojo/_base/lang",
 		"dijit/registry",
 		"dojo/data/ItemFileWriteStore",
 		"dojox/mobile/common", // dojox.mobile.createDomButton
-		"dojox/mobile/RoundRectDataList"],
-function(lang, connect, dom, domClass, registry, ItemFileWriteStore, mobile, RoundRectDataList) {
+		"dojox/mobile/RoundRectDataList"
+],function(lang, connect, dom, domClass, registry, ItemFileWriteStore, mobile, RoundRectDataList) {
 	lang.getObject("demos.mobile.src.mobileLists", true);
 	demos.mobile.src.mobileLists = function() {
 		var static_data = { 

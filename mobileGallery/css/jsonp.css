@@ -13,9 +13,9 @@
 
 #jsonp .searchResult {
 	border: 2px solid #999;
-    margin: 1%;
-    padding: 15px;
-    list-style-type: none;
+	margin: 1%;
+	padding: 15px;
+	list-style-type: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -23,7 +23,7 @@
 		padding: 5px 0px;
 	}
 	#jsonp .searchResult {
-	    border-radius: 0.5em;
+		border-radius: 0.5em;
 		-webkit-border-radius: 0.5em;
 		-moz-border-radius: 0.5em;
 	}
@@ -34,7 +34,7 @@
 		left: 175px;
 	}
 	#jsonp .searchResult {
-	    border-radius: 15px;
+		border-radius: 15px;
 		-webkit-border-radius: 15px;
 		-moz-border-radius: 15px;
 	}
@@ -48,8 +48,8 @@
 	width:80px;
 }
 #jsonp .userId {
-    font-size: 15px;
-    line-height: 15px;
+	font-size: 15px;
+	line-height: 15px;
 	font-weight: bold;
 	word-wrap:break-word;
 	word-break:break-all;
@@ -62,7 +62,7 @@
 }
 
 #jsonp .tweetText {
-    font-size: 13px;
+	font-size: 13px;
 	word-wrap:break-word;
 	vertical-align: middle;
 }

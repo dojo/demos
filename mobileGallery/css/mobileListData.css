@@ -42,14 +42,14 @@
 
 #mobileListCtrlPanel .mobileListSelected {
 	color:white;
-    background-color: #366EDF;
-    background: -webkit-gradient(linear, left top, left bottom, from(#2362DD), to(#7A9DE9), color-stop(0.5, #366EDF), color-stop(0.5, #215FDC));
+	background-color: #366EDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#2362DD), to(#7A9DE9), color-stop(0.5, #366EDF), color-stop(0.5, #215FDC));
 }
 
 #mobileListCtrlPanel .mobileListUnselected {
 	color:black;
-    background-color: #366EDF;
-    background: -webkit-gradient(linear, left top, left bottom, from(#FFFFED), to(#FFD8B7), color-stop(0.5, #FFF6E5), color-stop(0.5, #FFFBEA));
+	background-color: #366EDF;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFED), to(#FFD8B7), color-stop(0.5, #FFF6E5), color-stop(0.5, #FFFBEA));
 }
 
 #mobileListCtrlPanel #mobileListSet1Btn {
@@ -72,7 +72,7 @@
 
 #dataListHint {
 	left: 50%;
-	width:70px;
+	width:65px;
 	line-height:46px;
 	font-weight:bold;
 	font-size:17px;

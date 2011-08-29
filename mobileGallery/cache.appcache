@@ -70,6 +70,16 @@ images/dojoLogo.png
 ../../dojox/mobile/FixedSplitterPane.js
 ../../dojox/mobile/FlippableView.js
 ../../dojox/mobile/TabBar.js
+# JS codes for demonstration for each demo
+# Note here we aim at built version
+doc/src/ajax.js.txt
+doc/src/css3.js.txt
+doc/src/forms.js.txt
+doc/src/headings.js.txt
+doc/src/icons.js.txt
+doc/src/jsonp.js.txt
+doc/src/map.js.txt
+doc/src/mobileListData.js.txt
 
 NETWORK:
 *

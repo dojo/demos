@@ -17,7 +17,7 @@
 
 /* "Forms": field-set title */
 form#testForm div.field-title {
-    color: white;
+	color: white;
 }
 
 /* source button on the heading */
@@ -52,10 +52,10 @@ div#headings button.baseBtn {
 
 /* "Headings" Back Button */
 div#headings button.backBtn:after {
-    height: 21px;
+	height: 21px;
 	top: 0px;
-    left: -8px;
-    -webkit-mask-size: 12px 21px;
+	left: -8px;
+	-webkit-mask-size: 12px 21px;
 }
 
 
@@ -107,8 +107,8 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 #navButton.backBtn {
-    border-bottom-left-radius: 0.2em 0.2em;
-    border-top-left-radius: 0.2em 0.2em;
+	border-bottom-left-radius: 0.2em 0.2em;
+	border-top-left-radius: 0.2em 0.2em;
 }
 
 #header button {

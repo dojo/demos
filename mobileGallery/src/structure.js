@@ -1,5 +1,4 @@
-define(["dojo/_base/lang"],
-		function(lang){
+define(["dojo/_base/lang"], function(lang){
 	lang.getObject("demos.mobileGallery.src.structure", true);
 	
 	var THRESHOLD_WIDTH = 600;
@@ -41,7 +40,8 @@ define(["dojo/_base/lang"],
 				iconPos: "29,0,29,29",
 				title: "Forms",
 				demourl: "views/forms.html",
-				jsmodule: "demos/mobileGallery/src/forms"
+				jsmodule: "demos/mobileGallery/src/forms",
+				jsSrc: "doc/src/forms.js.txt"
 			}, {
 				id: "mobileSwitches",
 				speclevel: "7",
@@ -60,7 +60,8 @@ define(["dojo/_base/lang"],
 				iconPos: "87,0,29,29",
 				title: "Icons",
 				demourl: "views/icons.html",
-				jsmodule: "demos/mobileGallery/src/icons"
+				jsmodule: "demos/mobileGallery/src/icons",
+				jsSrc: "doc/src/icons.js.txt"
 			}, {
 				id: "tabBar",
 				speclevel: "6",
@@ -73,14 +74,16 @@ define(["dojo/_base/lang"],
 				iconPos: "145,0,29,29",
 				title: "Headings",
 				demourl: "views/headings.html",
-				jsmodule: "demos/mobileGallery/src/headings"
+				jsmodule: "demos/mobileGallery/src/headings",
+				jsSrc: "doc/src/headings.js.txt"
 			}, {
 				id: "map",
 				speclevel: "6",
 				iconPos: "174,0,29,29",
 				title: "Map (Google)",
 				demourl: "views/map.html",
-				jsmodule: "demos/mobileGallery/src/map"
+				jsmodule: "demos/mobileGallery/src/map",
+				jsSrc: "doc/src/map.js.txt"
 			}, {
 				id: "list",
 				speclevel: "6",
@@ -93,7 +96,8 @@ define(["dojo/_base/lang"],
 				iconPos: "203,0,29,29",
 				title: "List Data",
 				demourl: "views/mobileListData.html",
-				jsmodule: "demos/mobileGallery/src/mobileListData"
+				jsmodule: "demos/mobileGallery/src/mobileListData",
+				jsSrc: "doc/src/mobileListData.js.txt"
 			}, {
 				href: "../mobileGauges/demo.html",
 				hrefTarget: "_blank",
@@ -141,7 +145,8 @@ define(["dojo/_base/lang"],
 				iconPos: "406,0,29,29",
 				title: "CSS 3",
 				demourl: "views/css3.html",
-				jsmodule: "demos/mobileGallery/src/css3"
+				jsmodule: "demos/mobileGallery/src/css3",
+				jsSrc: "doc/src/css3.js.txt"
 			}]
 		}, {
 			id: "dataList",
@@ -153,14 +158,16 @@ define(["dojo/_base/lang"],
 				iconPos: "319,0,29,29",
 				title: "JSON P",
 				demourl: "views/jsonp.html",
-				jsmodule: "demos/mobileGallery/src/jsonp"
+				jsmodule: "demos/mobileGallery/src/jsonp",
+				jsSrc: "doc/src/jsonp.js.txt"
 			}, {
 				id: "ajax",
 				speclevel: "6",
 				iconPos: "348,0,29,29",
 				title: "AJAX",
 				demourl: "views/ajax.html",
-				jsmodule: "demos/mobileGallery/src/ajax"
+				jsmodule: "demos/mobileGallery/src/ajax",
+				jsSrc: "doc/src/ajax.js.txt"
 			}]
 		}],
 		/* Below are internal views. */

@@ -4,7 +4,7 @@
 }
 
 #tabBarContent {
-    display: table;
+	display: table;
 	width:100%;
 	height:100%;
 }
@@ -18,7 +18,7 @@
 }
 
 #tabView1 div, #tabView2 div, #tabView3 div {
-    margin: auto;
+	margin: auto;
 	background-image:url("../images/tabbar_all.png");
 	width: 229px;
 	height: 229px;
@@ -33,24 +33,24 @@
 }
 
 div.mblTabButton {
-    height: 61px;
+	height: 61px;
 }
 
 div.mblTabButtonImgDiv {
-    display: block;
-    height: 40px;
+	display: block;
+	height: 40px;
 }
 
 div.mblTabButtonImgDiv IMG {
-    margin-top: 8px;
+	margin-top: 8px;
 }
 
 #tabContainer .mblTabPanelHeader {
-    height: 70px;
+	height: 70px;
 }
 
 #demoTabBar {
-    height: 36px;
+	height: 36px;
 	z-index: 1; /*TODO: Workaround for a overlapping bug in TabBar.*/
 }
 

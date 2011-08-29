@@ -1,7 +1,7 @@
 define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 		"dojo/dom","dojo/dom-geometry",
-        "dojo/io/script", "dijit/registry", "dojox/mobile/ProgressIndicator"],
-        function(declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
+		"dojo/io/script", "dijit/registry", "dojox/mobile/ProgressIndicator"
+],function(declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
 	// Map class
 	var Map = declare(null, {
 		constructor: function(args){

@@ -1,6 +1,8 @@
 define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/array","dojo/_base/window","dojo/_base/xhr", // dojo Base
 		"dojo/dom", "dojo/dom-class","dojo/dom-prop","dojo/dom-construct",
         "dojo/ready", 
+	"dojo/_base/Deferred",
+	"dojo/DeferredList",
         "dojo/data/ItemFileReadStore",
         "dijit/registry", 
         "dojox/mobile/parser",
@@ -14,7 +16,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
         "demos/mobileGallery/src/Viewport",
         "demos/mobileGallery/src/structure"],
   function(lang, html, connect, array, win, xhr, dom, domClass,domProp, domConstruct,
-		   ready, ItemFileReadStore, registry, parser, dm,
+		   ready, Deferred, DeferredList, ItemFileReadStore, registry, parser, dm,
 		   EdgeToEdgeCategory, EdgeToEdgeDataList, ListItem, ProgressIndicator, TransitionEvent, 
 		   _base, Viewport, structure){ 
 
@@ -113,6 +115,22 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 		return data;
 	};
 	
+	// a map containing html and javascript source
+	// codes, indexed by demo view ID. Each entry is
+	// an object with "html" and "js" properties.
+	var DEMO_SOURCES = {};
+	function fillInDemoSource(id, type, src) {
+		if (!DEMO_SOURCES[id])
+			DEMO_SOURCES[id] = {};
+		if (!DEMO_SOURCES[id][type])
+			DEMO_SOURCES[id][type] = src;
+	};
+	function getDemoHtml(id) {
+		return (DEMO_SOURCES[id] && DEMO_SOURCES[id].html ? DEMO_SOURCES[id].html : "");
+	}
+	function getDemoJs(id) {
+		return (DEMO_SOURCES[id] && DEMO_SOURCES[id].js ? DEMO_SOURCES[id].js : "No JavaScript codes.");
+	}
 	/**
 	 * initialize each view page
 	 *
@@ -153,11 +171,8 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 					}
 				}
 				
-				// TODO: FIX-ME find a better way to handle views which are not loaded
-				// asynchronously or should not show source codes.
-				if (args.srcCode){
-					dom.byId("sourceContent").innerHTML = args.srcCode;
-				}
+				dom.byId("htmlContent").innerHTML = getDemoHtml(args.id);
+				dom.byId("jsContent").innerHTML = getDemoJs(args.id);
 			}
 			else 
 				if (viewType === 'navigation') {
@@ -202,6 +217,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 	 */
 	function createViewHTMLLoadedHandler(args, li){
 		return function(htmlText){
+			fillInDemoSource(args.id, "html", syntaxHighLight(htmlText));
 			var rightPane = dom.byId("rightPane");
 			var tmpContainer = domConstruct.create("DIV");
 			tmpContainer.innerHTML = htmlText;
@@ -217,13 +233,6 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			for (var i = 0; i < tmpContainer.childNodes.length; i ++) {
 				rightPane.appendChild(tmpContainer.childNodes[i]);
 			}
-			args.srcCode = syntaxHighLight(htmlText);
-			// TODO: FIX-ME temp work around for the async startup 
-			setTimeout(function(){
-				initView(args);
-//					li.transitionTo(args.id);
-				triggerTransition(li, args.id);
-			},0);
 		};
 	};
 	
@@ -245,8 +254,17 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			inTransitionOrLoading = false;
 		};
 
-		function stopProgress(){
+		function initViewAndTransit() {
 			showProgressIndicator(false);
+			// TODO: FIX-ME temp work around for the async startup 
+			setTimeout(function(){
+				initView(args);
+//					li.transitionTo(args.id);
+				triggerTransition(li, args.id);
+			},0);
+		};
+
+		function stopProgress(){
 		};
 		
 		var xhrArgs = {
@@ -256,17 +274,62 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 		};
 		if (args.jsmodule) {
 			require([args.jsmodule], function(module){
-				var deferred = xhr.get(xhrArgs);
-				deferred.addCallback(function(data){
+				var deferArray = [];
+				// 1. load template HTML
+				var htmlDefer = new Deferred();
+				xhr.get({
+					url: args.demourl,
+				    timeout: 30000,
+				    handleAs: "text",
+				    load: function(data) {
 					createViewHTMLLoadedHandler(args, li)(data);
 					if (module.init)
 						module.init();
-				}).addCallback(stopProgress);
-				deferred.addErrback(handleError);
+					htmlDefer.resolve(true);
+				    },
+				    error: function(err) {
+					htmlDefer.reject(true);
+				    }
+				});
+				deferArray.push(htmlDefer);
+				
+				// 2. load JS codes
+				if (args.jsSrc) {
+				var jsDefer = new Deferred();
+				xhr.get({
+					url: args.jsSrc,
+					timeout: 30000,
+					handleAs: "text",
+					load: function(data) {
+						data = data.replace(/\&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
+						jsDefer.resolve(data);
+					},
+					error: function(err) {
+						jsDefer.reject(true);
+					}
+				});
+				deferArray.push(jsDefer);
+				};
+
+				// put them all in deferred list
+				var deferList = new DeferredList(deferArray);
+				deferList.then(function(res){
+					if (!res[0][0]){
+						handleError();
+						return;
+					}
+					// load JS codes
+					if (res.length > 1 && res[1][0] && res[1][1]) {
+						fillInDemoSource(args.id, "js", res[1][1]);
+					}
+					dijit.byId("htmlSrcView").scrollTo({x:0,y:0});
+					dijit.byId("jsSrcView").scrollTo({x:0,y:0});
+					initViewAndTransit();
+				});
 			});
 		} else {
 			var deferred = xhr.get(xhrArgs);
-			deferred.addCallback(createViewHTMLLoadedHandler(args, li)).addCallback(stopProgress);
+			deferred.addCallback(createViewHTMLLoadedHandler(args, li)).addCallback(initViewAndTransit);
 			deferred.addErrback(handleError);
 		}
 	};
