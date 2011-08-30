@@ -1,0 +1,18 @@
+define(["./structure",
+  "dojo/_base/connect", // dojo.connect
+  "dijit/_base/manager", // dijit.byId
+  "dojox/mobile/IconContainer"], function(structure, connect, dijit) {
+  function registerTransitionToHandler(iconId, viewId) {
+    connect.connect(dijit.byId(iconId), "iconClicked", null,
+        function() {
+      structure.layout.rightPane.currentView = viewId;
+    });
+  };
+  
+  return {
+    init : function() {
+      registerTransitionToHandler("moveToIcon", "icons-moveTo");
+      registerTransitionToHandler("urlIcon", "icons-url");
+    }
+  };
+});
