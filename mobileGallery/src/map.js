@@ -1,7 +1,7 @@
-define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
+define(["dojo/aspect", "dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 		"dojo/dom","dojo/dom-geometry",
 		"dojo/io/script", "dijit/registry", "dojox/mobile/ProgressIndicator"
-],function(declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
+],function(aspect, declare, lang, win, dom, domGeom, script, registry, ProgressIndicator){
 	// Map class
 	var Map = declare(null, {
 		constructor: function(args){
@@ -34,7 +34,7 @@ define(["dojo/_base/declare", "dojo/_base/lang", "dojo/_base/window",
 		googleMap.load();
 		prog.stop();
 		// fix resize problem after rotation
-		registry.byId("map").on("resize", function(){
+		aspect.after(registry.byId("map"), "resize", function(){
 			var mapBox = domGeom.getMarginBox("map");
 			var headerBox = domGeom.getMarginBox("header");
 			mapBox.w = headerBox.w;
