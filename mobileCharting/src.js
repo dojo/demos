@@ -8,6 +8,7 @@ require([
 	"dojo/_base/html", 
 	"dojo/dom", // byId
 	"dojo/_base/fx",
+	"dojo/topic",
 	"dojox/mobile", 
 	"dojox/mobile/deviceTheme", 
 	"dojox/mobile/View", 
@@ -24,7 +25,7 @@ require([
 	"dijit/registry",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],
-	function(ready, has, ua, on, html, dom, fx, mobile, deviceTheme, View, RoundRect, Button, parser,
+	function(ready, has, ua, on, html, dom, fx, topic, mobile, deviceTheme, View, RoundRect, Button, parser,
 			 Chart, Theme, Default, Columns, Areas, Grid, CsvStore, registry, ZoomAndPan, Indicator){
 	if(!has("webkit")){
 		require(["dojox/mobile/compat"]);
@@ -222,7 +223,7 @@ require([
 		registry.byId("zoomButton4").on("click", function(){showRange(0);});
 		switchMode();
 
-		on("/dojox/mobile/resizeAll", resize);
+		topic.on("/dojox/mobile/resizeAll", resize);
 	};
 
 	customClaroTheme = new Theme({

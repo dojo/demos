@@ -1,11 +1,11 @@
 require([
 	"dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat","dojox/mobile/deviceTheme",
-	"dojo/dom","dijit/registry","dojo/on","dojo/_base/connect","dojo/_base/event","dojo/_base/NodeList",
+	"dojo/dom","dijit/registry","dojo/on", "dojo/topic", "dojo/_base/connect","dojo/_base/event","dojo/_base/NodeList",
 	"dojo/_base/window","dojo/number","dojo/dom-geometry",
 	"dojox/mobile/SpinWheel","dojo/data/ItemFileReadStore","dojox/data/CsvStore",
 	"dojox/geo/charting/widget/Map","dojox/geo/charting/widget/Legend",
 	"dojox/geo/charting/TouchInteractionSupport","dojox/geo/charting/MouseInteractionSupport"
-],function(ready,mobile,parser,compat,deviceTheme,dom,widget,on,connect,event,NodeList,window,number,
+],function(ready,mobile,parser,compat,deviceTheme,dom,widget,on,topic,connect,event,NodeList,window,number,
 		domGeom,SpinWheel,ItemFileReadStore,CsvStore,Map,Legend,
 		TouchInteractionSupport,MouseInteractionSupport){
 
@@ -130,7 +130,7 @@ require([
 			startedInteraction = true;
 			connect.disconnect(callback2);
 		});
-		on("/dojox/mobile/resizeAll", function(){
+		topic.on("/dojox/mobile/resizeAll", function(){
 			layoutUI();
 		//	window.global.scrollTo(0,0);
 		});
