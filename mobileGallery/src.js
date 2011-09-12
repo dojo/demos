@@ -7,7 +7,7 @@ require([
 	"dojox/mobile/FixedSplitter",
 	"dojox/mobile/ScrollableView",
 	"dojox/mobile/FixedSplitterPane",
-	"dojox/mobile/FlippableView",
+	"dojox/mobile/SwapView",
 	"dojox/mobile/TabBar",
 	"dojo/domReady!"], function(){
 		require(["demos/mobileGallery/src/base"]);
