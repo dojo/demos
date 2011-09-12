@@ -5,7 +5,7 @@ require([
 	"dijit/form/HorizontalRuleLabels",
 	"dojox/charting/Chart2D",
 	"dojox/charting/widget/Legend",
-	"dojo/gesture/tap",
+	"dojox/gesture/tap",
 	"demos/touch/rotate"
 ], function(){
 
@@ -243,7 +243,7 @@ require([
 	}
 	
 	dojo.ready(function(){
-		dojo.connect(dojo.byId("lockButton"), dojo.gesture.tap.hold, function(){
+		dojo.connect(dojo.byId("lockButton"), dojox.gesture.tap.hold, function(){
 			toggleLock();
 		});
 		dojo.connect(dojo.byId("actionArea"), dojo.touch.press, function(){

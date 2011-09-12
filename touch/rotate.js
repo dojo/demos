@@ -1,4 +1,4 @@
-define(["dojo/_base/kernel", "dojo/gesture", "dojo/_base/declare"], function(dojo, gesture){
+define(["dojo/_base/kernel", "dojox/gesture/Base", "dojo/_base/declare"], function(dojo, Base){
 // module:
 //		demos/touch/rotate
 // summary:
@@ -10,7 +10,7 @@ define(["dojo/_base/kernel", "dojo/gesture", "dojo/_base/declare"], function(doj
 //		|	dojo.connect(node, demos.touch.rotate, function(e){});
 //		|	dojo.connect(node, demos.touch.rotate.end, function(e){});
 
-var clz = dojo.declare(null, {
+var clz = dojo.declare(Base, {
 	defaultEvent: "rotate",
 	
 	subEvents: ['end'],
@@ -75,7 +75,7 @@ var clz = dojo.declare(null, {
 			data.point1 = point1;
 			data.point2 = point2;
 			e.rotation = data.rotation;
-			gesture.fire(e.currentTarget, e.target, "rotate", {rotation: data.rotation});
+			this.fire(e.target, {type: "rotate", rotation: data.rotation});
 		}
 	},
 	
@@ -85,15 +85,13 @@ var clz = dojo.declare(null, {
 				e.rotation = data.rotation;
 			}
 			data.rotateStart = false;
-			gesture.fire(e.currentTarget, e.target, "rotate.end", {rotation: data.rotation});
+			this.fire(e.target, {type: "rotate.end", rotation: data.rotation});
 			data.rotation = 0;
 		}
 	}
 });
 
 var rotate = new clz();
-
-gesture.register(rotate);
 
 var ns = dojo.getObject("demos.touch", true);
 
