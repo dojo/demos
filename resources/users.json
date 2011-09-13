@@ -497,6 +497,15 @@
 			"website":"http://kennethfranqueiro.com/",
 			"imgUrl":"images/users/kgf.jpg",
 			"blameFor":["IRC help", "bad jokes"]
+		},
+		{
+			"name":"Christophe Jolif",
+			"title":"Committer",
+			"handle":"cjolif",
+			"irc":"cjolif",
+			"twitter":"cjolif",
+			"location":"Paris, France",
+			"employer":"IBM",
 		}
 
 		// from ohloh + not above:
