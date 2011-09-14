@@ -506,6 +506,16 @@
 			"twitter":"cjolif",
 			"location":"Paris, France",
 			"employer":"IBM",
+		},
+		{
+			"name":"Patrick Ruzand",
+			"title":"Committer",
+			"handle":"pruzand",
+			"irc":"pruzand",
+			"twitter":"mobicellar",
+			"location":"Paris, France",
+			"employer":"IBM",
+			"coords":{ x:48.7037, y:2.1563 }
 		}
 
 		// from ohloh + not above:
