@@ -505,7 +505,7 @@
 			"irc":"cjolif",
 			"twitter":"cjolif",
 			"location":"Paris, France",
-			"employer":"IBM",
+			"employer":"IBM"
 		},
 		{
 			"name":"Patrick Ruzand",
@@ -516,6 +516,14 @@
 			"location":"Paris, France",
 			"employer":"IBM",
 			"coords":{ x:48.7037, y:2.1563 }
+		},
+		{
+			"name":"Colin Snover",
+			"title":"Committer",
+			"handle":"csnover",
+			"irc":"snover",
+			"twitter":"zetafleet",
+			"employer":"SitePen"
 		}
 
 		// from ohloh + not above:
