@@ -416,6 +416,18 @@
 		},
 		{
 
+			name:"Revin Guillen",
+			title:"Committer",
+			handle:"revin",
+			irc:"banthafodder",
+			location:"Everett, WA",
+			employer: "Sevenite Inc",
+			website: "http://www.sevenite.com/",
+			coords: { x: 47.979, y:-122.202 },
+			imgUrl:"images/users/revin.jpg"
+		},
+		{
+
 			name:"Shane O'Sullivan",
 			title:"Committer",
 			handle:"shaneosullivan",
