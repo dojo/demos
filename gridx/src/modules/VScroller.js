@@ -25,7 +25,6 @@ define([
 			var _this = this, g = this.grid;
 			this.domNode = g.vScrollerNode;
 			this.stubNode = this.domNode.firstChild;
-			dojo.style(this.domNode, 'width', dojox.html.metrics.getScrollbar().w + 'px');
 	
 			this.batchConnect(
 				[this.domNode, 'onscroll', '_doScroll'],
