@@ -1,3 +1,8 @@
+
+var circularGauge = null;
+var scircularGauge = null;
+var horizontalGauge = null;
+	
 require([
 	"dojo/ready","dojox/mobile","dojox/mobile/parser","dojo/_base/connect","dojo/dom",
 	"dojox/mobile/compat","dojox/mobile/deviceTheme","dojox/mobile/Button",
@@ -11,9 +16,7 @@ require([
 	GlossyCircularGauge, GlossyHorizontalGauge, GlossySemiCircularGauge,
 	VistaGauge, PlasticGauge, XpGauge){
 
-	circularGauge = null;
-	scircularGauge = null;
-	horizontalGauge = null;
+
 
 	function initBarGauges(){
 		horizontalGauge = new GlossyHorizontalGauge({
