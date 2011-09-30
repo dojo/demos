@@ -229,7 +229,7 @@ require([
 		registry.byId("zoomButton4").on("click", function(){showRange(0);});
 		switchMode();
 
-		topic.on("/dojox/mobile/resizeAll", resize);
+		topic.subscribe("/dojox/mobile/resizeAll", resize);
 	};
 
 	customClaroTheme = new Theme({
