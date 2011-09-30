@@ -130,7 +130,7 @@ require([
 			startedInteraction = true;
 			connect.disconnect(callback2);
 		});
-		topic.on("/dojox/mobile/resizeAll", function(){
+		topic.subscribe("/dojox/mobile/resizeAll", function(){
 			layoutUI();
 		//	window.global.scrollTo(0,0);
 		});
