@@ -536,8 +536,21 @@
 			"irc":"snover",
 			"twitter":"zetafleet",
 			"employer":"SitePen"
+		},
+		{
+			name:"Evan(Wei Huang)",
+			title:"Committer",
+			handle:"evan",
+			irc:"evanhw",
+			location:"Shanghai, CHINA",
+			employer: "IBM",
+			imgUrl:"images/users/evanhw.jpg",
+			blameFor:[
+				"dojo.touch",
+				"dojox.grid",
+				"dojox.gesture"
+			]
 		}
-
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)
