@@ -5,7 +5,7 @@ var testResourceRe = /\/tests\//,
 			"demos/package.json":1,
 			"demos/README":1
 		};
-		return (mid in list) || /^demos\/resources\//.test(mid);
+		return (mid in list) || (/^demos\/resources\//.test(mid) && !/\.css$/.test(mid));
 	},
 	usesDojoProvideEtAl = function(mid){
 		return /^demos\/(babelChat|beer|castle|cropper|css3|demail|doGeo|faces|fisheye|flashCards|fonts|form|i18n|mail|mojo|nihao|skew|survey|uploader|video)\//.test(mid);
