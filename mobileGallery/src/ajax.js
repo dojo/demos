@@ -1,32 +1,30 @@
-define(["dojo/_base/kernel", // dojo.getObject
-        "dojo/_base/html", //  dojo.byId
-        "dojo/_base/xhr", // dojo.xhrGet
-        "dojox/mobile/ProgressIndicator"], function() {
-	var prog = null;// progress indicator
-	
-	dojo.getObject("demos.mobileGallery.src.ajax", true);
-	demos.mobileGallery.src.ajax = {
-		refreshData : function() {
-			var view = dojo.byId('ajax');
-			var pane = dojo.byId('ajaxPane');
-			if (prog)
-				prog.stop(); // prevent duplicated progress indicators
-			prog = dojox.mobile.ProgressIndicator.getInstance();
-			view.appendChild(prog.domNode);
-			prog.start();
-			
-			dojo.xhrGet({
-				url : 'views/ajaxLoad.html',
-				handleAs : 'text',
-				load : function(data) {
-					prog.stop();
-					prog = null;
-					pane.innerHTML = data;
+define(["dojo/dom", "dojo/on", "dojo/_base/xhr", 
+		"dijit/registry", "dojox/mobile/ProgressIndicator"],
+  function(dom, on, xhr, registry, ProgressIndicator) {
+	function refreshData() {
+		var pane = dom.byId('ajaxPane');
+		var prog = ProgressIndicator.getInstance();
+		prog.stop(); // prevent duplicated progress indicators
+		dom.byId("rightPane").appendChild(prog.domNode);
+		prog.start();
+		xhr.get({
+			url : 'views/ajaxLoad.html',
+			handleAs : 'text',
+			timeout: 30000,
+			load : function(data) {
+				pane.innerHTML = data;
+				registry.byId("ajaxContainer").resize();
+				prog.stop();
 				},
-				error: function(err) {
-					pane.innerHTML = err;
-				}
-			});
+			error: function(err) {
+				pane.innerHTML = err;
+				prog.stop();
+			}
+		});
+	};	
+	return {
+		init: function() {
+			on(dom.byId("ajaxBtn"), "click", refreshData);
 		}
 	};
 });

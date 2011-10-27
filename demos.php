@@ -1,5 +1,5 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html class="dj_webkit dj_chrome dj_contentbox" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	
@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="resources/demos.css" type="text/css" media="all" />
 	
 </head>
-<body class="tundra no-js">
+<body class="claro no-js">
 		
 	<div class="accessibility">
 		<a href="#intro">Skip to Content</a>
@@ -27,13 +27,25 @@
 	<div id="page" class="homePage">
 		<div id="header">
 			<div class="container">
-				<span id="logo"><a href="http://dojotoolkit.org/" title="Dojo Homepage"><img src="http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/logo.png" alt="Dojo Toolkit" /></a></span>
+				<span id="logo"><a href="http://dojotoolkit.org/" title="Dojo Homepage"><img src="http://dojotoolkit.org/images/logo.png" alt="Dojo Toolkit" /></a></span>
 				<ul id="navigation">
 					<li class="download"><a href="http://dojotoolkit.org/download/">Download</a></li>
+					<li class="features"><a href="http://dojotoolkit.org/features/">Features</a></li>
 					<li class="docs"><a href="http://dojotoolkit.org/documentation/">Documentation</a></li>
 					<li class="community"><a href="http://dojotoolkit.org/community/">Community</a></li>
 					<li class="blog"><a href="http://dojotoolkit.org/blog/">Blog</a></li>
 				</ul>
+				<form method="GET" action="http://www.google.com/search" id="search">
+					<span><input type="text" name="q" id="query" value="Search"></input>
+					<button type="submit">Search</buytton>
+					<div id="resultbox" style="display:none">
+						<div class="googleheader"></div>
+						<div id="googlesearch"></div>
+						<div id="searchClose">
+							<a>Close</a>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 		<hr class="hide" />

@@ -1,113 +1,137 @@
+* {
+    outline: none !important;
+}
+
 body {
-	margin:0;
-	padding:0;
-	font-family:Lucida Sans,Lucida Grande,Arial;
-	font-size:62.5%;
+    margin: 0;
+    padding: 0;
+    font-family: Lucida Sans,Lucida Grande,Arial !important;
+    font-size: 13px !important;
+    background: white;
+    color: #333;
 }
+
+body.claro {
+    font-family: "Lucida Sans", "Lucida Grande", Arial !important;
+}
+/*-----------------------------------------------
+SH. Site Header (generic)
+-----------------------------------------------*/
 #header {
-	margin:0;
-	padding:0;
-	background:#142A38 url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/header/header.png) repeat-x scroll center top;
-	border-bottom:3px solid #0099CC;
-	-moz-box-shadow:-3px 0 3px #000;
-	-webkit-box-shadow:-3px 0 3px #000;
-	box-shadow:-3px 0 3px #000;
-	width:100%;
-	display:table;
+    margin: 0;
+    padding: 0;
+    background: url(http://dojotoolkit.org/images/header/header.jpg) repeat-x scroll left bottom;
+    width: 100%;
+    height: 101px;
 }
-	#header .container {
-		width:960px;
-		height:8.3em;
-		text-align:left;
-		margin-left:auto;
-		margin-right:auto;
-		position:relative;
-	}
-	
-	
-	#header #logo {
-		display:inline-block;
-		position:absolute;
-		font-size:3em;
-		line-height:1.65em;
-		font-weight:bold;
-		margin:0;
-	}
-		#header #logo a {
-			color:#fff;
-			text-decoration:none;
-			padding-top:0.7em;
-			display:block;
-		}
-			#header #logo a img {
-				padding:0;
-				border:medium none;
-			}
-	
-	
-	#header ul {
-		position:absolute;
-		right:190px;
-		margin:3.9em 0 0 0;
-		padding:0 0 0 11.55em;
-	}
-		#header ul li {
-			list-style:none;
-			display:inline;
-		}
-			#header ul li a {
-				margin:0 0 0 0.5825em;
-				padding:0 0.76em;
-				display:block;
-				float:left;
-				color:#fff;
-				font-size:1.15em;
-				font-weight:400;
-				line-height:1.5em;
-				text-decoration:none;
-				letter-spacing:-0.0035em;
-			}
-				#header ul li a:link,
-			    #header ul li a:visited,
-			    #header ul li a:hover,
-			    #header ul li a:active {
-			        color:#fff;
-			    }
-				#header ul li a:hover {
-					border-bottom:2px solid #0099CC;
-				}
-			
-			#header ul li.active a {
-				font-weight:bold;
-				border-bottom:2px solid #0099CC;
-			}
-	
-	
-	#header form {
-		position:absolute;
-		right:0px;
-		margin-top:3.5em;
-	}
-		#header form span {
-			display:block;
-			background:transparent url(http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/header/search.gif) no-repeat scroll 0 0;
-			height:25px;
-			width:178px;
-		}
-		
-		#header form input {
-			background:transparent;
-			border:medium none;
-			margin-top:5px;
-			padding-left:14px;
-			width:150px;
-			outline:none;
-			
-		}
-		
-		#header form label, #header form button {
-			display:none;
-		}
+#header .container {
+    width: 960px;
+    height: 8.3em;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+/*-----------------------------------------------
+SHL. Site Header - Logo
+-----------------------------------------------*/
+#header #logo {
+    display: inline-block;
+    position: absolute;
+    font-size: 3em;
+    line-height: 1.65em;
+    font-weight: bold;
+    margin: 0;
+}
+#header #logo a {
+    color: #fff;
+    text-decoration: none;
+    padding-top: 0.7em;
+    display: block;
+}
+#header #logo a img {
+    padding: 0;
+    border: medium none;
+}
+
+/*-----------------------------------------------
+SHN. Site Header - Navigation
+-----------------------------------------------*/
+#header ul {
+    position: absolute;
+    right: 190px;
+    margin: 3.9em 0 0 0;
+    padding: 0 0 0 11.55em;
+    font-family: "Helvetica", "Arial", sans-serif;
+}
+#header ul li {
+    list-style: none;
+    display: inline;
+}
+#header ul li a {
+    margin: 0 0 0 0.5825em;
+    padding: 0 0.76em;
+    display: block;
+    float: left;
+    color: #fff;
+    font-size: 1.15em;
+    font-weight: 400;
+    line-height: 1.5em;
+    text-decoration: none;
+    letter-spacing: -0.0035em;
+
+}
+#header ul li a:link,
+#header ul li a:visited,
+#header ul li a:hover,
+#header ul li a:active {
+    color: #fff;
+}
+#header ul li a:hover {
+    border-bottom: 3px solid #0099CC;
+}
+
+#header ul li.active a {
+    font-weight: bold;
+    border-bottom: 3px solid #0099CC;
+}
+
+/*-----------------------------------------------
+SHS. Site Header - Search
+-----------------------------------------------*/
+#header form {
+    position: absolute;
+    right: 0px;
+    margin-top: 3.5em;
+}
+#header form span {
+    display: block;
+    background: transparent url(http://dojotoolkit.org/images/header/search.gif) no-repeat scroll 0 0;
+    height: 25px;
+    line-height: 25px;
+    width: 178px;
+}
+
+#header form input {
+    background: transparent;
+    border: medium none;
+    padding-left: 14px;
+    width: 150px;
+    outline: none;
+}
+
+#header form label, #header form button {
+    display: none;
+}
+
+
+/*===============================================
+Description:
+The typography for the dojotoolkit website,
+includes all base styles.
+===============================================*/
+
 body {
 	-x-system-font:none;
 	font-family: "Lucida Grande", "Lucida Sans", Geneva, verdana, san-serif;
@@ -268,6 +292,7 @@ body {
 }
 .demosPage #header ul .demos a,
 .downloadPage #header ul .download a,
+.featuresPage #header ul .features a,
 .communityPage #header ul .community a,
 .blogPage #header ul .blog a,
 .docPage #header ul .docs a {

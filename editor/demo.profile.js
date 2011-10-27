@@ -43,7 +43,7 @@ dependencies = {
 				"dojox.editor.plugins.NormalizeStyle",
 				"dojox.editor.plugins.StatusBar"
 			]
-		},
+		}
 	],
 
 	prefixes: [

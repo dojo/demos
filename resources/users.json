@@ -416,6 +416,18 @@
 		},
 		{
 
+			name:"Revin Guillen",
+			title:"Committer",
+			handle:"revin",
+			irc:"banthafodder",
+			location:"Everett, WA",
+			employer: "Sevenite Inc",
+			website: "http://www.sevenite.com/",
+			coords: { x: 47.979, y:-122.202 },
+			imgUrl:"images/users/revin.jpg"
+		},
+		{
+
 			name:"Shane O'Sullivan",
 			title:"Committer",
 			handle:"shaneosullivan",
@@ -492,13 +504,53 @@
 			"irc":"kgf",
 			"twitter":"kfranqueiro",
 			"location":"Mineola, NY",
-			"employer":"FatWire",
+			"employer":"SitePen",
 			"coords": { x:40.7521, y:-73.6235 },
 			"website":"http://kennethfranqueiro.com/",
 			"imgUrl":"images/users/kgf.jpg",
 			"blameFor":["IRC help", "bad jokes"]
+		},
+		{
+			"name":"Christophe Jolif",
+			"title":"Committer",
+			"handle":"cjolif",
+			"irc":"cjolif",
+			"twitter":"cjolif",
+			"location":"Paris, France",
+			"employer":"IBM"
+		},
+		{
+			"name":"Patrick Ruzand",
+			"title":"Committer",
+			"handle":"pruzand",
+			"irc":"pruzand",
+			"twitter":"mobicellar",
+			"location":"Paris, France",
+			"employer":"IBM",
+			"coords":{ x:48.7037, y:2.1563 }
+		},
+		{
+			"name":"Colin Snover",
+			"title":"Committer",
+			"handle":"csnover",
+			"irc":"snover",
+			"twitter":"zetafleet",
+			"employer":"SitePen"
+		},
+		{
+			name:"Evan(Wei Huang)",
+			title:"Committer",
+			handle:"evan",
+			irc:"evanhw",
+			location:"Shanghai, CHINA",
+			employer: "IBM",
+			imgUrl:"images/users/evanhw.jpg",
+			blameFor:[
+				"dojo.touch",
+				"dojox.grid",
+				"dojox.gesture"
+			]
 		}
-
 		// from ohloh + not above:
 		// Doug Hays (doughays) IBM
 		// Scott J Miles - (sjmiles)

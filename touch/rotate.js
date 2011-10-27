@@ -1,4 +1,4 @@
-define(["dojo", "dojo/gesture"], function(dojo, gesture){
+define(["dojo/_base/kernel", "dojox/gesture/Base", "dojo/_base/declare"], function(dojo, Base){
 // module:
 //		demos/touch/rotate
 // summary:
@@ -10,27 +10,27 @@ define(["dojo", "dojo/gesture"], function(dojo, gesture){
 //		|	dojo.connect(node, demos.touch.rotate, function(e){});
 //		|	dojo.connect(node, demos.touch.rotate.end, function(e){});
 
-var clz = dojo.declare(null, {
+var clz = dojo.declare(Base, {
 	defaultEvent: "rotate",
 	
 	subEvents: ['end'],
 
-	press: function(gestureElement, e){
+	press: function(data, e){
 		if(e.touches && e.touches.length == 2){
-			gestureElement.rotateStart = true;
-			gestureElement.rotation = 0;
-			gestureElement.point1 = {
+			data.rotateStart = true;
+			data.rotation = 0;
+			data.point1 = {
 				x: e.touches[0].clientX,
 				y: e.touches[0].clientY
 			}
-			gestureElement.point2 = {
+			data.point2 = {
 				x: e.touches[1].clientX,
 				y: e.touches[1].clientY
 			}
 		}
 	},
 	
-	move: function(gestureElement, e){
+	move: function(data, e){
 		if(e.touches && e.touches.length == 2){
 			var point1 = {
 					x : e.touches[0].clientX,
@@ -41,7 +41,7 @@ var clz = dojo.declare(null, {
 					y : e.touches[1].clientY
 			}
 			if(e.rotation){
-				gestureElement.rotation = e.rotation;
+				data.rotation = e.rotation;
 			}else{
 				//calculate rotation manually if the event does not have rotation property 
 				var rotation = 0;
@@ -50,8 +50,8 @@ var clz = dojo.declare(null, {
 					y: point1.y - point2.y
 				}
 				v2 = {
-					x: gestureElement.point1.x - gestureElement.point2.x,
-					y: gestureElement.point1.y - gestureElement.point2.y
+					x: data.point1.x - data.point2.x,
+					y: data.point1.y - data.point2.y
 				}
 				
 				cos = (v1.x * v2.x + v1.y * v2.y) / (
@@ -66,36 +66,32 @@ var clz = dojo.declare(null, {
 				}
 				rotation = (Math.acos(cos) * 180) / Math.PI;
 				if((v1.y * v2.x - v1.x * v2.y) > 0){
-					gestureElement.rotation += rotation;
-				}
-				else{
-					gestureElement.rotation -= rotation;
+					data.rotation += rotation;
+				}else{
+					data.rotation -= rotation;
 				}
 			}
 			
-			gestureElement.point1 = point1;
-			gestureElement.point2 = point2;
-			
-			e.rotation = gestureElement.rotation;
-			gesture.fire(gestureElement, "rotate", e);
+			data.point1 = point1;
+			data.point2 = point2;
+			e.rotation = data.rotation;
+			this.fire(e.target, {type: "rotate", rotation: data.rotation});
 		}
 	},
 	
-	release: function(gestureElement, e){
-		if(gestureElement.rotateStart){
+	release: function(data, e){
+		if(data.rotateStart){
 			if(!e.rotation){
-				e.rotation = gestureElement.rotation;
+				e.rotation = data.rotation;
 			}
-			gestureElement.rotateStart = false;
-			gesture.fire(gestureElement, "rotate.end", e);
-			gestureElement.rotation = 0;
+			data.rotateStart = false;
+			this.fire(e.target, {type: "rotate.end", rotation: data.rotation});
+			data.rotation = 0;
 		}
 	}
 });
 
 var rotate = new clz();
-
-gesture.register(rotate);
 
 var ns = dojo.getObject("demos.touch", true);
 

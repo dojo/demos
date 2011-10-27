@@ -17,7 +17,7 @@
 
 /* "Forms": field-set title */
 form#testForm div.field-title {
-    color: white;
+	color: white;
 }
 
 /* source button on the heading */
@@ -52,10 +52,10 @@ div#headings button.baseBtn {
 
 /* "Headings" Back Button */
 div#headings button.backBtn:after {
-    height: 21px;
+	height: 21px;
 	top: 0px;
-    left: -8px;
-    -webkit-mask-size: 12px 21px;
+	left: -8px;
+	-webkit-mask-size: 12px 21px;
 }
 
 
@@ -99,17 +99,53 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 
 /* back button of "Back" in header */
 #navButton::after {
-	height: 20px;
-	-webkit-mask-position: 0 1px;
-	-webkit-mask-size: 12px 20px;
+	height: 25px;
+	-webkit-mask-position: 0 0;
+	-webkit-mask-size: 12px 25px;
+	left: -11px;
+	top:0px;
+}
+
+#navButton.backBtn {
+	border-bottom-left-radius: 0.2em 0.2em;
+	border-top-left-radius: 0.2em 0.2em;
 }
 
 #header button {
+	top: 0px;
 	border: 0px;
 }
 
+#navButton {
+	left: 18px;
+}
+
+#sourceButton {
+	right: 12px;
+	width: 72px;
+}
+
+#tbToggleBtn {
+	height:25px;
+	line-height:25px;
+}
+
 /* Temp fix for wrong icon position in list. */
-#navigation .mblListItemIcon {
-	top: 18px;
-	-webkit-transform: none;
+#navigation .mblListItemSpriteIcon {
+	margin-top: 23px;
+}
+
+/* JSON-P demo */
+#searchKeywords {
+	height: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	#searchTwitterBtn {
+		right: 12px;
+	}
+}
+
+#jsonp .searchResult, #findMoreDiv {
+	color: white;
 }

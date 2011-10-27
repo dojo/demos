@@ -1,7 +1,7 @@
-define(["dojo/_base/kernel", "dojox/gfx", "dojox/gauges/AnalogGauge", "dojox/gauges/AnalogIndicatorBase"], 
-function(dojo, gfx, AnalogGauge, AnalogIndicatorBase){
+define(["dojo/_base/declare", "dojox/gfx", "dojox/gauges/AnalogGauge", "dojox/gauges/AnalogIndicatorBase"], 
+function(declare, gfx, AnalogGauge, AnalogIndicatorBase){
 
-	dojo.declare("demos.mobileGauges.src.XpGaugeNeedle", [dojox.gauges.AnalogIndicatorBase], {
+	declare("demos.mobileGauges.src.XpGaugeNeedle", [AnalogIndicatorBase], {
 		// summary:
 		//		The needle for the demos.mobileGauges.src.XpGaugeNeedle.
 		// description:
@@ -44,7 +44,7 @@ function(dojo, gfx, AnalogGauge, AnalogIndicatorBase){
 		
 	});
 	
-	dojo.declare("demos.mobileGauges.src.XpGauge", [dojox.gauges.AnalogGauge], {
+	return declare("demos.mobileGauges.src.XpGauge", [AnalogGauge], {
 	
 		// value: Number
 		// The value of the gauge.

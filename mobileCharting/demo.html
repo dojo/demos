@@ -6,13 +6,10 @@
 <meta name="viewport"
 	content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
 <meta name="apple-mobile-web-app-capable" content="yes" />
-<link rel="stylesheet" type="text/css"
-	href="../../dojox/mobile/themes/iphone/iphone.css">
-<!--				<link rel="stylesheet" type="text/css" href="../../../../dojo_current/dojox/mobile/themes/android/android.css">-->
-<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad:true, async:true, mblAlwaysHideAddressBar: true"></script>
+<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad:true, async:true, mblAlwaysHideAddressBar: true, canvasEvents:false"></script>
 <script type="text/javascript" src="src.js" charset="utf-8"></script>
 </head>
-<body>
+<body style="visibility:hidden;">
 	<div id="view1" data-dojo-type="dojox.mobile.View" selected="true">
 		<h1 data-dojo-type="dojox.mobile.Heading">Mobile Charting Demo</h1>
 		<h2 data-dojo-type="dojox.mobile.RoundRectCategory">Choose a company</h2>
@@ -48,7 +45,7 @@
 				style="-webkit-user-select: none; outline: none"
 				id="stockChart">
 				<div class="plot" name="gridPlot" type="Grid" enableCache="true"></div>
-				<div class="axis" name="x" enableCache="true"
+				<div class="axis" name="x" enableCache="true" htmlLabels="false"
 					font="normal normal normal 11pt Helvetica" fixUpper="major"
 					includeZero="true" majorTickStep="50" labelFunc="timeLabelFunction"></div>
 				<div class="axis" name="y" vertical="true" min="0"

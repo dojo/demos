@@ -1,6 +1,6 @@
 <?php
 //
-//	summary
+//	summary:
 //		Creates/Opens files for logging data
 //		Useful for logging iinformation on a remote server
 //		when you don't have access to log files

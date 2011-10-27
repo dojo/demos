@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
-Dojo Gauges - Dojo Mobile OpenLayers Map Demo
+Mobile Maps - Dojo Mobile OpenLayers Map Demo
 -------------------------------------------------------------------------------
 Authors: Marc Durocher
 -------------------------------------------------------------------------------
 Demo description
 
-	This is the map demo, a mobile application showcasing the dojo openLayers 
-	Map component.
+	This is a basic map demo, a mobile application showcasing the dojo openLayers 
+	Map component and mobile navigation.
 	
 -------------------------------------------------------------------------------
 Dependencies:

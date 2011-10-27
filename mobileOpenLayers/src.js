@@ -1,43 +1,41 @@
-require([ 
-	"dojox/mobile",
-	"dojox/mobile/parser",
-	"dojox/mobile/compat",
-	"dojox/geo/openlayers/widget/Map", 
-	"demos/mobileOpenLayers/src/NavigationControl" ], function(mobile, parser){
+require(["dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat",
+"dojox/mobile/deviceTheme","dojo/on","dojo/_base/connect","dojo/_base/html","dijit/registry",
+"dojox/geo/openlayers/widget/Map","demos/mobileOpenLayers/src/NavigationControl"], 
+function(ready,mobile,parser,compat,deviceTheme,on,connect,html,registry,Map,NavigationControl){
 
 	var map;
 	var currentLocation;
 
-	dojo.ready(function(){
+	ready(function(){
 		var options = {
 			baseLayerName : "TheMap",
 			touchHandler : true,
 			baseLayerType : dojox.geo.openlayers.BaseLayerType.ARCGIS
 		};
 
-		map = new dojox.geo.openlayers.widget.Map(options);
+		map = new Map(options);
 
-		dojo.place(map.domNode, "map");
+		html.place(map.domNode, "map");
 		map.startup();
 
 		var olMap = map.map.getOLMap();
-		var ctrl = new demos.mobileOpenLayers.src.NavigationControl({
+		var ctrl = new NavigationControl({
 			dojoMap : map
 		});
 		olMap.addControl(ctrl);
-		var mapPage = dijit.byId("mapPage");
-		dojo.connect(mapPage, "onAfterTransitionIn", mapPage, afterTransition);
+		var mapPage = registry.byId("mapPage");
+		on(mapPage,"AfterTransitionIn",afterTransition);
+		
+		var paris = registry.byId("paris");
+		connect.connect(paris, "onClick", paris, click);
 
-		var paris = dijit.byId("paris");
-		dojo.connect(paris, "onClick", paris, click);
+		var ny = registry.byId("newyork");
+		connect.connect(ny, "onClick", ny, click);
 
-		var ny = dijit.byId("newyork");
-		dojo.connect(ny, "onClick", ny, click);
+		var lc = registry.byId("lacolle");
+		connect.connect(lc, "onClick", lc, click);
 
-		var lc = dijit.byId("lacolle");
-		dojo.connect(lc, "onClick", lc, click);
-
-		dojo.connect(window, "onresize", resize);
+		on(window, "resize", resize);
 	});
 
 	function afterTransition(){
@@ -49,14 +47,24 @@ require([
 	}
 
 	var locs = {
-		paris : [ 2.350833, 48.856667, 10 ],
-		newyork : [ -74.00597, 40.71427, 11 ],
-		lacolle : [ 7.1072435, 43.686842, 15 ]
+		paris : [2.350833, 48.856667, 10],
+		newyork : [-74.00597, 40.71427, 11],
+		lacolle : [7.1072435, 43.686842, 15]
+	};
+
+	var locNames = {
+		paris : "Paris",
+		newyork : "New York",
+		lacolle : "La Colle sur Loup"
 	};
 
 	function click(e){
-		currentLocation = this.id;
-	}
+		var id = this.id;
+		currentLocation = id;
+		var name = locNames[id];
+		var header = registry.byId("mapHeader");
+		header.set("label", name);
+	};
 
 	function fitTo(loc){
 		if (!loc)
@@ -69,7 +77,7 @@ require([
 		var zoom = l[2];
 		olm.zoom = null;
 		olm.setCenter(center, zoom);
-	}
+	};
 
 	function updateMap(){
 		var olm = map.map.getOLMap();
@@ -79,5 +87,5 @@ require([
 			olm.zoom = null;
 			olm.setCenter(center, zoom);
 		}
-	}
+	};
 });

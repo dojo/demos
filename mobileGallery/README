@@ -1,0 +1,27 @@
+-------------------------------------------------------------------------------
+Mobile Gallery - Samples of various Mobile features in Dojo
+-------------------------------------------------------------------------------
+Authors: Yuan Peng Zhang (Stephen), Ming Zhe Huang (Archer)
+-------------------------------------------------------------------------------
+Demo description
+
+	Various mobile features from the Dojo Mobile library.  
+	Make sure to check out other many more new components in the dojox/mobile/tests 
+	directory!
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo
+	Dijit
+	Dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+	To build, use the supplied demo.profile.js as your profileFile
+	
+-------------------------------------------------------------------------------
+@rank:1
