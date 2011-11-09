@@ -245,6 +245,11 @@ require([
 		series: {
 			outline: null
 		},
+		grid: {
+			majorLine: {
+				color: "rgba(0, 0, 0, 0.2)",
+			}
+		},
 		indicator: {
 			lineStroke:  {width: 1.5, color: "#ff9000"},
 			lineOutline: {width: 0.5, color: "white"},
