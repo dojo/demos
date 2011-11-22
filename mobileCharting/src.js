@@ -10,6 +10,7 @@ require([
 	"dojo/_base/fx",
 	"dojo/topic",
 	"dojox/mobile",
+	"dojox/mobile/compat",
 	"dojox/mobile/deviceTheme", 
 	"dojox/mobile/View", 
 	"dojox/mobile/RoundRect", 
@@ -25,11 +26,8 @@ require([
 	"dijit/registry",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],
-	function(ready, has, ua, on, html, dom, fx, topic, mobile, deviceTheme, View, RoundRect, Button, parser,
+	function(ready, has, ua, on, html, dom, fx, topic, mobile, compat, deviceTheme, View, RoundRect, Button, parser,
 			 Chart, Theme, Default, Columns, Areas, Grid, CsvStore, registry, ZoomAndPan, Indicator){
-	if(!has("webkit")){
-		require(["dojox/mobile/compat"]);
-	}
 
 	var pHeight = 0;
 
@@ -247,7 +245,7 @@ require([
 		},
 		grid: {
 			majorLine: {
-				color: "rgba(0, 0, 0, 0.2)",
+				color: "rgba(0, 0, 0, 0.2)"
 			}
 		},
 		indicator: {
