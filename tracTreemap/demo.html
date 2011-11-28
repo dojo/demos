@@ -1,0 +1,70 @@
+<!DOCTYPE HTML>
+<html>
+    
+    <head>
+		<style type="text/css">
+        	body, html { width:100%; height:100%; margin:0; padding:0 }
+        	#borderContainer { width:100%; height:100% }
+      	</style>
+    
+		<style type="text/css">
+			@import "../../dojo/resources/dojo.css";
+		    @import "../../dojox/treemap/themes/TreeMap.css";
+			@import "../../dijit/themes/claro/claro.css";
+		</style>
+
+		<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: true, async: true">
+    	</script>
+		
+		<script type="text/javascript" src="src.js">
+        </script>
+    
+    </head>
+    
+    <body class="claro">
+      
+	    <div data-dojo-type="dijit.layout.BorderContainer" design="sidebar" gutters="true" liveSplitters="true" id="borderContainer">
+	        <div data-dojo-type="dijit.layout.ContentPane" splitter="true" region="center">
+	            <div id="treeMap" data-dojo-type="MyTreeMap" labelAttr="Name" selectionMode="multiple"
+				    style="width: 100%; height: 100%;">
+	        	</div>        		
+		      </div>
+	        <div data-dojo-type="dijit.layout.ContentPane" splitter="true" region="trailing"  style="width: 200px;">
+	        <label>Group by:</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="groupBy" id="g1" onChange="groupByChanged" />
+	          <label for="g1">None</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="groupBy" id="g2" onChange="groupByChanged" />
+	          <label for="g2">Owner</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="groupBy" id="g3" checked onChange="groupByChanged" />
+	          <label for="g3">Component</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="groupBy" id="g4" onChange="groupByChanged" />
+	          <label for="g4">Milestone</label>			  
+	        <br/>
+	        <br/>
+	        <br/>
+	        <label>Size by:</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="sizeBy" id="s2" onChange="sizeByChanged" />
+	          <label for="s2">Priority</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="sizeBy" id="s3" checked onChange="sizeByChanged" />
+	          <label for="s3">Severity</label>
+	        <br/>
+	        <br/>
+	        <br/>
+	        <label>Color by:</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="colorBy" id="c2" checked onChange="colorByChanged" />
+	          <label for="c2">Priority</label>
+	        <br/>
+	            <input type="radio" data-dojo-type="dijit.form.RadioButton" name="colorBy" id="c3" onChange="colorByChanged" />
+	          <label for="c3">Severity</label>
+	    </div>
+	                  
+    </body>
+
+</html>
