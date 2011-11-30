@@ -13,6 +13,7 @@ var colorByPriorityFunc = function(item){
 		case "lowest":
 			return {r: 0, g: 255, b: 0};
 	}
+	return {};
 };		
 
 var colorBySeverityFunc = function(item){
@@ -75,8 +76,10 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 	"dojox/treemap/DrillDownUp"],
 	function(ready, dom, Color, declare, parser, registry, Tooltip, domStyle, domAttr, domConstruct, BorderContainer, ContentPane, TreeMap, CsvStore, DataStore, RadioButton, Keyboard, DrillDownUp){
 
-		var store = new DataStore({ store: new CsvStore({url: "http://trac.dojotoolkit.org/report/132?asc=1&format=csv"}) });
-		//var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
+		// xhrPlugins.addCrossSiteXhr("http://trac.dojotoolkit.org");
+		// var store = new DataStore({ store: new CsvStore({url: "http://trac.dojotoolkit.org/report/132?asc=1&format=csv"}) });
+		// XSite from archive to trac does not work, use local copy
+		var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
 
 		ready(function(){
 			MyTreeMap=declare([TreeMap, Keyboard, DrillDownUp], {
