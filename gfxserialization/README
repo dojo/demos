@@ -1,6 +1,8 @@
 -------------------------------------------------------------------------------
 GFX Serialization - A demo that shows the gfx serialization capabilities.
 -------------------------------------------------------------------------------
+Author: Patrick Ruzand
+-------------------------------------------------------------------------------
 Demo description
 
 	This demo shows the gfx serialization in action. A drawing is displayed in the
