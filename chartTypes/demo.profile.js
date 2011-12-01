@@ -1,16 +1,17 @@
 dependencies = {
 	layers: [
 		{
-			name: "../demos/chartTypes/src.js",
-			resourceName: "demos.chartTypes.src",
+			name: "../demos/spiderChart/src.js",
+			resourceName: "demos.spiderChart.src",
 			dependencies: [
-				"demos.chartTypes.src"
+				"demos.spiderChart.src"
 			]
 		}
 	],
 
 	prefixes: [
 		[ "dojox", "../dojox" ],
+		[ "dijit", "../dijit" ],
 		[ "demos", "../demos" ]
 	]
 }

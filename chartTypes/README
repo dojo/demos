@@ -1,15 +1,16 @@
 -------------------------------------------------------------------------------
-Chart Plot Types - View each of Dojo charting’s main plot types in different out-of-box themes.
+Spider Chart - This demo lets you try various features of the Dojo spider chart plot type.
 -------------------------------------------------------------------------------
-Authors: Eugene Lazutkin, Christophe Jolif
+Authors: Xiang Zhou
 -------------------------------------------------------------------------------
 Demo description
 
-	View each of Dojo charting’s main plot types in different out-of-box themes.
+	Try various features of the Dojo spider chart plot type.
 	
 -------------------------------------------------------------------------------
 Dependencies:
 	Dojo Core 
+	Dijit
 	DojoX (charting)
 
 -------------------------------------------------------------------------------
