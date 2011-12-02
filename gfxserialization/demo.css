@@ -1,0 +1,50 @@
+body {
+	font-family:sans-serif;
+}
+
+.panel {
+	margin-top:10px;
+	background-color:#ececec;
+	border-width:2px;
+	border-color:gray;
+	border-style:solid;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.canvas {
+	width:300px;
+	height:300px;	
+	display:inline-block;
+}
+
+.dump {
+	width:610px;
+	height:200px;
+	overflow:scroll;
+}
+
+#textview {
+	font-family:sans-serif;
+	font-size:8pt;
+}
+
+.carboncopy {
+}
+
+.serializing {
+	border-style:dashed;
+	border-width:10px;
+	border-color:rgba(0,255,0,.5);
+}
+
+.textview {
+	width:50%;
+	max-width:300px;
+	height:155px;
+	display:inline-block;
+}
+
+.surfaceHeader {
+	text-align:center;
+}
