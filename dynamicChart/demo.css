@@ -1,0 +1,6 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/tests/css/dijitTests.css";
+@import "../../dijit/themes/tundra/tundra.css";
+
+.dojoxLegendNode {border: 1px solid #ccc; margin: 5px 10px 5px 10px; padding: 3px}
+.dojoxLegendText {vertical-align: text-top; padding-right: 10px}
