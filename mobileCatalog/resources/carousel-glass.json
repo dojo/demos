@@ -1,0 +1,20 @@
+{
+	items: [
+		{src:"../../dojox/mobile/tests/images/glass1.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "300yen"},
+		{src:"../../dojox/mobile/tests/images/glass2.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "100yen"},
+		{src:"../../dojox/mobile/tests/images/glass3.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "250yen"},
+		{src:"../../dojox/mobile/tests/images/glass4.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "400yen"},
+		{src:"../../dojox/mobile/tests/images/glass5.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "240yen"},
+		{src:"../../dojox/mobile/tests/images/glass6.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "150yen"},
+		{src:"../../dojox/mobile/tests/images/glass7.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "220yen"},
+		{src:"../../dojox/mobile/tests/images/glass8.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "310yen"},
+		{src:"../../dojox/mobile/tests/images/glass9.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "90yen"},
+		{src:"../../dojox/mobile/tests/images/glass10.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "360yen"},
+		{src:"../../dojox/mobile/tests/images/glass11.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "370yen"},
+		{src:"../../dojox/mobile/tests/images/glass12.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "280yen"},
+		{src:"../../dojox/mobile/tests/images/glass13.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "190yen"},
+		{src:"../../dojox/mobile/tests/images/glass14.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "200yen"},
+		{src:"../../dojox/mobile/tests/images/glass15.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "700yen"},
+		{src:"../../dojox/mobile/tests/images/glass16.jpg", design:"Scott", model: "5659", produced: "2011", size: "H3.5cm W4cm", price: "800yen"}
+	]
+}
