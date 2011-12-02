@@ -11,7 +11,7 @@ define(["dojo/_base/declare",
 		"dojox/geo/openlayers/LineString",
 		"dojox/geo/openlayers/Point",
 		"dojox/geo/openlayers/JsonImport",
-		"dojox/geo/openlayers/tests/sun/Cities"], 
+		"./Cities"], 
 		function(declare, html, lang, connect, date, Sun, Map, timinig, GfxLayer, GeometryFeature, 
 				LineString, Point, JsonImport, Cities){
 

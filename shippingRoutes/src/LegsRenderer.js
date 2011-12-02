@@ -1,12 +1,11 @@
-define(["dojo/_base/kernel",
-        "dojo/_base/declare",
+define(["dojo/_base/declare",
 		"dojo/_base/array",
 		"./EcrRenderer",
 		"dojox/geo/openlayers/GeometryFeature",
 		"dojox/geo/openlayers/LineString",
 		"dojox/geo/openlayers/Point",
 		"dojox/geo/openlayers/GreatCircle"], 
-		function(dojo, declare, arr, EcrRenderer, GeometryFeature, LineString,
+		function(declare, arr, EcrRenderer, GeometryFeature, LineString,
 				Point, GreatCircle){
 
 	return declare(EcrRenderer, {
