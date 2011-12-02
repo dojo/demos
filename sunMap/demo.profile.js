@@ -1,10 +1,10 @@
 dependencies = {
 	layers: [
 		{
-			name: "../demos/mobileCharting/src.js",
-			resourceName: "demos.mobileCharting.src",
+			name: "../demos/sunMap/src.js",
+			resourceName: "demos.sunMap.src",
 			dependencies: [
-				"demos.mobileCharting.src"
+				"demos.sunMap.src"
 			]
 		}
 	],
