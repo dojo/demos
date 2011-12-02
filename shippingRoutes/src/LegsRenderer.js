@@ -1,12 +1,13 @@
 define(["dojo/_base/kernel",
-				"dojo/_base/declare",
-				"dojo/_base/array",
-				"dojox/geo/openlayers/tests/ecr/EcrRenderer",
-				"dojox/geo/openlayers/GeometryFeature",
-				"dojox/geo/openlayers/LineString",
-				"dojox/geo/openlayers/Point",
-				"dojox/geo/openlayers/GreatCircle"], function(dojo, declare, arr, EcrRenderer, GeometryFeature, LineString,
-																											Point, GreatCircle){
+        "dojo/_base/declare",
+		"dojo/_base/array",
+		"./EcrRenderer",
+		"dojox/geo/openlayers/GeometryFeature",
+		"dojox/geo/openlayers/LineString",
+		"dojox/geo/openlayers/Point",
+		"dojox/geo/openlayers/GreatCircle"], 
+		function(dojo, declare, arr, EcrRenderer, GeometryFeature, LineString,
+				Point, GreatCircle){
 
 	return declare("dojox.geo.openlayers.tests.ecr.LegsRenderer", [dojox.geo.openlayers.tests.ecr.EcrRenderer], {
 

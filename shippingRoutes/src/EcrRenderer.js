@@ -1,7 +1,7 @@
-define(	[	"dojo/_base/kernel",
-					"dojo/_base/declare",
-					"dojo/_base/array",
-					"dojo/_base/lang"], function(dojo, declare, arr, lang){
+define(["dojo/_base/kernel",
+		"dojo/_base/declare",
+		"dojo/_base/array",
+		"dojo/_base/lang"], function(dojo, declare, arr, lang){
 
 					return declare("dojox.geo.openlayers.tests.ecr.EcrRenderer", null, {
 

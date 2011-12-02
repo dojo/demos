@@ -1,15 +1,16 @@
 define(["dojo/_base/kernel",
-				"dojo/_base/declare",
-				"dojo/_base/html",
-				"dojo/_base/array",
-				"dojo/_base/lang",
-				"dojo/dom",
-				"dojox/geo/openlayers/Map",
-				"dojox/geo/openlayers/GfxLayer",
-				"dojo/data/ItemFileReadStore",
-				"./PortRenderer",
-				"./LegsRenderer"], function(dojo, declare, html, arr, lang, dom, Map, GfxLayer,
-																																	ItemFileReadStore, PortRenderer, LegsRenderer){
+		"dojo/_base/declare",
+		"dojo/_base/html",
+		"dojo/_base/array",
+		"dojo/_base/lang",
+		"dojo/dom",
+		"dojox/geo/openlayers/Map",
+		"dojox/geo/openlayers/GfxLayer",
+		"dojo/data/ItemFileReadStore",
+		"./PortRenderer",
+		"./LegsRenderer"], 
+		function(dojo, declare, html, arr, lang, dom, Map, GfxLayer,
+					ItemFileReadStore, PortRenderer, LegsRenderer){
 
 	return declare("dojox.geo.openlayers.tests.ecr.Ecr", null, {
 		constructor : function(){
