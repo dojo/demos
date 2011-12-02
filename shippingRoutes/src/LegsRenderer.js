@@ -9,22 +9,22 @@ define(["dojo/_base/kernel",
 		function(dojo, declare, arr, EcrRenderer, GeometryFeature, LineString,
 				Point, GreatCircle){
 
-	return declare("dojox.geo.openlayers.tests.ecr.LegsRenderer", [dojox.geo.openlayers.tests.ecr.EcrRenderer], {
+	return declare(EcrRenderer, {
 
-		constructor : function(opts, context){
+		constructor: function(opts, context){
 			this._geodetic = false;
 			this._greatCircle = null;
 		},
 
-		setGeodetic : function(value){
+		setGeodetic: function(value){
 			this._geodetic = value;
 		},
 
-		getGeodetic : function(){
+		getGeodetic: function(){
 			return this._geodetic;
 		},
 
-		_renderItem : function(o, item){
+		_renderItem: function(o, item){
 			var gf = null;
 			if (o.type == "polyline") {
 				var store = this.getContextValue('store');
@@ -38,22 +38,22 @@ define(["dojo/_base/kernel",
 						if (this.getGeodetic()) {
 							if (lastCoords != null) {
 								var current = {
-									x : coords[0],
-									y : coords[1]
+									x: coords[0],
+									y: coords[1]
 								};
-								var geodetic = dojox.geo.openlayers.GreatCircle.toPointArray(lastCoords, current, 5);
+								var geodetic = GreatCircle.toPointArray(lastCoords, current, 5);
 								pts = pts.concat(geodetic);
 							}
 						} else {
 							var p = new Point({
-								x : coords[0],
-								y : coords[1]
+								x: coords[0],
+								y: coords[1]
 							});
 							pts.push(p);
 						}
 						lastCoords = {
-							x : coords[0],
-							y : coords[1]
+							x: coords[0],
+							y: coords[1]
 						};
 					}
 				}, this);

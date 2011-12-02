@@ -12,8 +12,8 @@ define(["dojo/_base/kernel",
 		function(dojo, declare, html, arr, lang, dom, Map, GfxLayer,
 					ItemFileReadStore, PortRenderer, LegsRenderer){
 
-	return declare("dojox.geo.openlayers.tests.ecr.Ecr", null, {
-		constructor : function(){
+	return declare(null, {
+		constructor: function(){
 
 			var map = new Map("map");
 
@@ -32,16 +32,16 @@ define(["dojo/_base/kernel",
 			this.loadData("data/ecr.json");
 		},
 
-		fitTo : function(where){
+		fitTo: function(where){
 			this._map.fitTo(where);
 		},
 
-		clearLayer : function(layer){
+		clearLayer: function(layer){
 			var fa = layer.getFeatures();
 			layer.removeFeature(fa);
 		},
 
-		clearEcr : function(event){
+		clearEcr: function(event){
 			var layer = this._portLayer;
 			this.clearLayer(layer);
 			layer = this._legLayer;
@@ -49,7 +49,7 @@ define(["dojo/_base/kernel",
 			this.fillPortChooser(null);
 		},
 
-		setDataSet : function(name){
+		setDataSet: function(name){
 			var o = dom.byId(name);
 			var ds = o.value;
 
@@ -63,44 +63,44 @@ define(["dojo/_base/kernel",
 
 		},
 
-		log : function(o){
+		log: function(o){
 			console.log(o);
 		},
 
-		loadError : function(){
+		loadError: function(){
 			this.log(arguments[0]);
 		},
 
-		_portStyle : [{
-			type : "circle",
-			depth : "{radius}",
-			radius : function(ctx){
+		_portStyle: [{
+			type: "circle",
+			depth: "{radius}",
+			radius: function(ctx){
 				var realValue = ctx.store.getValue(this, "offer");
 				var ret = Math.max(1, Math.log(realValue));
 				return 3 * ret;
 			},
-			stroke : {
-				color : "#4c9a06",
-				width : 1
+			stroke: {
+				color: "#4c9a06",
+				width: 1
 			}
 		}, {
-			type : "circle",
-			depth : "{radius}",
-			radius : function(ctx){
+			type: "circle",
+			depth: "{radius}",
+			radius: function(ctx){
 				var realValue = ctx.store.getValue(this, "demand");
 				return 3 * Math.max(1, Math.log(realValue));
 			},
-			stroke : {
-				color : "#bb0000",
-				width : 1
+			stroke: {
+				color: "#bb0000",
+				width: 1
 			}
 		}],
 
-		gotPorts : function(items, request){
+		gotPorts: function(items, request){
 			this.log("got ports " + items.length);
 			var store = request.store;
 			var ctx = {
-				store : store
+				store: store
 			};
 			var renderer = new PortRenderer(this._portStyle, ctx);
 			var layer = this._portLayer;
@@ -118,17 +118,17 @@ define(["dojo/_base/kernel",
 			layer.redraw();
 		},
 
-		_legsStyle : {
-			type : "polyline",
-			stroke : {
-				color : [255, 165, 0]
+		_legsStyle: {
+			type: "polyline",
+			stroke: {
+				color: [255, 165, 0]
 			}
 		},
 
-		gotLegs : function(items, request){
+		gotLegs: function(items, request){
 			//      this.log("got legs " + items.length);
 			var ctx = {
-				store : request.store
+				store: request.store
 			};
 			var renderer = new LegsRenderer(this._legsStyle, ctx);
 			renderer.setGeodetic(true);
@@ -141,54 +141,54 @@ define(["dojo/_base/kernel",
 			layer.redraw();
 		},
 
-		loadData : function(dataSet){
+		loadData: function(dataSet){
 			//      this.log("load " + dataSet);
 			var store = new ItemFileReadStore({
-				url : dataSet,
-				urlPreventCache : true
+				url: dataSet,
+				urlPreventCache: true
 			});
 
 			store.fetch({
-				query : {
-					type : "legs"
+				query: {
+					type: "legs"
 				},
-				onComplete : lang.hitch(this, this.gotLegs),
-				onError : lang.hitch(this, this.loadError),
-				queryOptions : {
-					deep : true
+				onComplete: lang.hitch(this, this.gotLegs),
+				onError: lang.hitch(this, this.loadError),
+				queryOptions: {
+					deep: true
 				}
 			});
 
 			store.fetch({
-				query : {
-					type : "port"
+				query: {
+					type: "port"
 				},
-				onComplete : lang.hitch(this, this.gotPorts),
-				onError : lang.hitch(this, this.loadError)
+				onComplete: lang.hitch(this, this.gotPorts),
+				onError: lang.hitch(this, this.loadError)
 			});
 
 		},
 
-		regionChange : function(event){
+		regionChange: function(event){
 			this.fitTo(event.currentTarget.value);
 		},
 
-		portChange : function(name){
+		portChange: function(name){
 			var o = dom.byId(name);
 			this.fitTo(o.value);
 		},
 
-		fillPortChooser : function(items){
+		fillPortChooser: function(items){
 			var ps = dom.byId("portChooser");
 			var opts = ps.options;
-			var ws = '{"position" : [0, 0], "extent" : 70}';
+			var ws = '{"position": [0, 0], "extent": 70}';
 			if (items == null) {
 				opts.length = 1;
 				opts[0] = new Option("World", ws);
 			} else {
 				opts.length = items.length + 1;
 				opts[0] = new Option("World", ws);
-				var s = '{"position" : [%lo, %la], "extent" : 0.2}';
+				var s = '{"position": [%lo, %la], "extent": 0.2}';
 				for ( var i = 0; i < items.length; i++) {
 					var item = items[i];
 					var lon = parseFloat(item.longitude);
@@ -199,7 +199,7 @@ define(["dojo/_base/kernel",
 			}
 		},
 
-		toggleLayerVisibility : function(name){
+		toggleLayerVisibility: function(name){
 			var cb = dom.byId(name);
 			var a = this._map.getLayer('name', name);
 			arr.forEach(a, function(item, index, array){
