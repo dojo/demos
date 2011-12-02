@@ -1,8 +1,8 @@
 require(["dojox/charting/Chart", "dojox/charting/plot2d/Pie",
-         "dojox/charting/action2d/Highlight", "dojox/charting/action2d/Tooltip", 
+         "dojox/charting/action2d/Tooltip", 
          "dojox/charting/themes/Tom",
          "dojox/charting/widget/Legend", "dojo/ready"], 
-    function(Chart, Pie, Highlight, Tooltip, Tom, Legend, ready){
+    function(Chart, Pie, Tooltip, Tom, Legend, ready){
 
 	var pieChart = null;
 	var legend = null;
@@ -82,7 +82,6 @@ require(["dojox/charting/Chart", "dojox/charting/plot2d/Pie",
             text: "Egypt",
             tooltip: "64 million"
         }]);
-        var anim_b = new Highlight(pieChart, "default");
         var anim_c = new Tooltip(pieChart, "default");
         pieChart.render();
         legend = new Legend({

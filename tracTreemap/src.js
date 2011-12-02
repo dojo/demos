@@ -107,7 +107,7 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 		var treeMap = registry.byId("treeMap");		
 		if(treeMap){
 			treeMap.set("store", store);
-		}
+		}	
 	}, function(err){
 		console.log("could not reach data source");
 	});		
