@@ -38,13 +38,16 @@ require(["dojo/_base/lang", "dojo/ready",
 	
 	var chart1, legend1;
 	makeObjects = function(){
-		chart1 = new dojox.charting.Chart("test1");
+		chart1 = new dojox.charting.Chart("spider");
 		chart1.setTheme(dojox.charting.themes.PlotKit.blue);
+		chart1.theme.plotarea.fill = null;
+		chart1.theme.chart.fill = null;
 		chart1.addPlot("default", {
 			type: "Spider",
 			labelOffset: -10,
 			divisions: divisions,
 			axisColor:      "lightgray",
+			fill: null,
 			spiderColor:    "silver",
             seriesFillAlpha: 0.2,
 			spiderOrigin:	 0.16,

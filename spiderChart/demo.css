@@ -32,3 +32,17 @@
 		border: 2px solid #7dbefa;
 		padding: 1px 3px 0 3px;
 	}
+
+	#spider{
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		border: 1px solid black;
+		background: #e7eef6;
+	}
+
+	body{
+		left: 10px;
+		position: relative;
+		width: 95%;
+	}
