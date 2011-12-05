@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Stock Portfolio - Dojo Mobile Stock Portfolio
+Mobile Stock Portfolio - This simple app displays a split view, with a portfolio on top, and a carousel on the lower half.  Touch swipe left/right in the lower half to see additional detail views and charts.
 -------------------------------------------------------------------------------
 Authors: Yoshiroh Kamiyama (IBM CCLA)
 -------------------------------------------------------------------------------
@@ -21,4 +21,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:195 @categories:mobile

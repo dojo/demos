@@ -22,4 +22,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@display:fullscreen @category:shiny @rank:8
+@display:fullscreen @category:shiny @rank:1 @categories:graphics

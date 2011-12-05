@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Clock - An interactive clock demo
+Clock - A simple interactive clock.  Try grabbing the hands to change the time.  Built with Dojo’s graphics library.
 -------------------------------------------------------------------------------
 Authors: Eugene Lazutkin
 -------------------------------------------------------------------------------
@@ -22,4 +22,4 @@ Installation instructions
 	Simply run the included demo.html
 		
 -------------------------------------------------------------------------------
-@rank:750
+@rank:50 @categories:graphics

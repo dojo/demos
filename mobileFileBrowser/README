@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile File Browsing - Dojo Mobile File Browser
+Mobile File Browsing - A sample remote file browsing application that uses a combination of Mobile edge lists plus dijit Tree Model and databinding via FileStore.
 -------------------------------------------------------------------------------
 Authors: Michael Rheinheimer (IBM CCLA)
 -------------------------------------------------------------------------------
@@ -25,4 +25,4 @@ Installation instructions
 	To run this demo, open the demo.html in your browser.
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:190 @categories:mobile

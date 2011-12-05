@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Dojo Gauges - Dojo Mobile Gauges Demo
+Mobile Gauges - Play around with features of gauges using this gauge feature explorer.  Desktop and Mobile (touch) enabled.
 -------------------------------------------------------------------------------
 Authors: Emmanuel Tissandier, Philippe Toussaint
 -------------------------------------------------------------------------------
@@ -23,4 +23,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:75 @categories:graphics,mobile

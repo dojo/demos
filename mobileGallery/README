@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Gallery - Samples of various Mobile features in Dojo
+Mobile Showcase - A mobile showcase that shows the breadth of widgets available in Dojo Mobile.  It consists of a traditional mobile styled left hand navigation with samples that show in the right pane.
 -------------------------------------------------------------------------------
 Authors: Yuan Peng Zhang (Stephen), Ming Zhe Huang (Archer)
 -------------------------------------------------------------------------------
@@ -24,4 +24,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:200 @categories:mobile

@@ -150,6 +150,3 @@ require([
 	ready(startDemo);
 
 });
-
-
-

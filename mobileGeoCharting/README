@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Dojo Maps - Dojo Mobile Geo Charting Demo
+Geo Charting - A sample application showing demographic data bound to Geo Chart widgets.  Illustrates mobile spin wheel and touch/mouse event handling as well as orientation changes.  Works desktop and mobile.
 -------------------------------------------------------------------------------
 Authors: Erwan Aullas
 -------------------------------------------------------------------------------
@@ -28,4 +28,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 	
 -------------------------------------------------------------------------------
-@rank:99
+@rank:100 @categories:mobile,graphics
