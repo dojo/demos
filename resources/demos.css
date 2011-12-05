@@ -913,17 +913,18 @@ ul.downloadInfo {
 
 #mainlist li img {
 	position:absolute;
-	width:64px;
-	height:64px;
-	left:-80px;
+	width:96px;
+	height:96px;
+	left:-120px;
 	border:0;
 	z-index:8;
 }
 #mainlist li {
 	position:relative;
+	font-size: 13px;
 	float:left;
-	width:160px;
-	height:100px;
+	width:320px;
+	height:128px;
 	list-style:none;
 	margin-right:22px;
 	margin-left:48px;
@@ -934,12 +935,13 @@ ul.downloadInfo {
 	color:#333;
 	padding-top:7px;
 	font-size:90%;
-	display:block; width:135px;
+	display:block; width:250px;
 	text-decoration:none;
 	font-weight:normal;
 }
 #mainlist {
-	margin-top:5px;
+	margin-left:180px;
+	margin-top:30px;
 	height:auto;
 	clear:both;
 	#margin-top:40px;

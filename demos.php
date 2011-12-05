@@ -14,7 +14,38 @@
 	
 	<link rel="shortcut icon" href="http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="resources/demos.css" type="text/css" media="all" />
-	
+
+	<script src="../dojo/dojo.js" data-dojo-config="async: true"></script>
+	<script>
+	require(["dojo/ready", "dojo/query", "dojo/on", "dojo/mouse", "dojo/_base/fx", "dojo/NodeList-dom"],
+		function(ready, query, on, mouse, fx){
+		ready(function(){
+
+			query("body").removeClass("no-js");
+
+			var list = query("#mainlist li");
+			var props = {
+				i: { width:128, height:128, top:-16, left:-136 },
+				o: { width:96, height:96, top:0, left:-120 }
+			};
+
+			list.forEach(function(n){
+
+				var img = query("img", n)[0], a;
+				on(n, mouse.enter, function(e){
+					a && a.stop();
+					a = fx.anim(img, props.i, 175);
+				});
+
+				on(n, mouse.leave, function(e){
+					a && a.stop();
+					a = fx.anim(img, props.o, 175, null, null, 75);
+				});
+
+			});
+		});
+	});
+	</script>
 </head>
 <body class="claro no-js">
 		
@@ -51,6 +82,7 @@
 		<hr class="hide" />
 		<div id="intro">
 			<div class="innerBox">
+			<h1>Demo Index</h1>
 			<!-- end content header -->
 					<?php
 
@@ -67,7 +99,8 @@
 								"link" => $e->link,
 								"img" => $e->img,
 								"rank" => $e->rank,
-								"header" => $e->header
+								"header" => $e->header,
+								"categories" => explode(',', $e->categories)
 							);
 						}
 					}
@@ -83,7 +116,8 @@
 							$title = $demo;
 							$rank = 500;
 							$base = $demo . "/";
-							$link = $base;
+							$link = $base . "demo.html";
+							$categories = array("rich");
 
 							$readme = $base . "README";
 							if(file_exists($readme)){
@@ -100,7 +134,7 @@
 								// so far only @rank:### is used, but can be any @key:value pair on one line
 								// to be used here for organization etc
 								$tagline = $l[count($l)-1];
-								preg_match_all("/@(\w+):([\-a-zA-Z0-9]+)\ ?/", $tagline, $matches);
+								preg_match_all("/@(\w+):([\-a-zA-Z0-9,]+)\ ?/", $tagline, $matches);
 								if(is_array($matches[1]) && is_array($matches[2])){
 									$tags = array_combine($matches[1], $matches[2]);
 								}else{
@@ -112,6 +146,10 @@
 									case -999 : $rank = 0; break;
 									// add the README rank to the overall score
 									default: $rank += $tags['rank']; break;
+								}
+
+								if(array_key_exists('categories', $tags)){
+									$categories = explode(',', $tags['categories']);
 								}
 
 								// with a thumbnail, they are higher ranked too
@@ -126,6 +164,7 @@
 
 								// experimental demos:
 								$rank = 0;
+								$categories = array("rich");
 								$thumb_img = false;
 
 							}
@@ -136,7 +175,8 @@
 								"header" => $title,
 								"link" => $link,
 								"rank" => $rank,
-								"img" => $thumb_img
+								"img" => $thumb_img,
+								"categories" => $categories
 							);
 
 						}
@@ -150,11 +190,53 @@
 					}
 					array_multisort($ranks, SORT_DESC, $d, SORT_ASC, $out);
 
+					print "<h2>Graphics & Charting<h2>";
+					// generate the 1st category list:
+					print "<ul id='mainlist'>";
+					foreach($out as $ranked){
+						if(in_array("graphics", $ranked['categories'])){
+							// generate the demo item
+							print "\n\t<li><a href='".$ranked['link']."'>";
+							if($ranked['img']){
+								print "<img src='". $ranked['img'] . "' />";
+							}
+
+							// split the title in two parts around the first hyphen
+							list($anchor, $desc) = explode("-", $ranked['header'], 2);
+							print $anchor;
+							if($desc){
+								print "<span>" .$desc. "</span>";
+							}
+							print "</a></li>";
+						}
+					}
+					print "</ul>";
+					print "<h2>Mobile<h2>";
+					// generate the 2nd category list:
+					print "<ul id='mainlist'>";
+					foreach($out as $ranked){
+						if(in_array("mobile", $ranked['categories'])){
+							// generate the demo item
+							print "\n\t<li><a href='".$ranked['link']."'>";
+							if($ranked['img']){
+								print "<img src='". $ranked['img'] . "' />";
+							}
+
+							// split the title in two parts around the first hyphen
+							list($anchor, $desc) = explode("-", $ranked['header'], 2);
+							print $anchor;
+							if($desc){
+								print "<span>" .$desc. "</span>";
+							}
+							print "</a></li>";
+						}
+					}
+					print "</ul>";
+					print "<h2>Rich WebApps<h2>";
 					// generate the list:
 					print "<ul id='mainlist'>";
 					$in_experimental = false;
 					foreach($out as $ranked){
-
 						if($ranked['rank'] === 0 && !$in_experimental){
 							// we're done with top demos, close list and make a new one
 							$in_experimental = true;
@@ -163,20 +245,26 @@
 							print "<ul id='explist'>";
 						}
 
-						// generate the demo item
-						print "\n\t<li><a href='".$ranked['link']."'>";
-						if($ranked['img']){
-							print "<img src='". $ranked['img'] . "' />";
-						}
+						if(in_array("rich", $ranked['categories']) || $in_experimental){
+							// generate the demo item
+							print "\n\t<li><a href='".$ranked['link']."'>";
+							if($ranked['img']){
+								print "<img src='". $ranked['img'] . "' />";
+							}
 
-						// split the title in two parts around the first hyphen
-						list($anchor, $desc) = explode("-", $ranked['header'], 2);
-						print $anchor;
-						if($desc){
-							print "<span>" .$desc. "</span>";
+							// split the title in two parts around the first hyphen
+							// some experimental demos do not have header
+							if(strpos($ranked['header'], "-")){
+								list($anchor, $desc) = explode("-", $ranked['header'], 2);
+								print $anchor;
+								if($desc){
+									print "<span>" .$desc. "</span>";
+								}
+							}else{
+								print $ranked['header'];
+							}
+							print "</a></li>";
 						}
-						print "</a></li>";
-
 					}
 					print "</ul>";
 
@@ -192,7 +280,6 @@
 			<div id="content" class="innerBox">
 				<div id="foot">
 					<div class="innerBox">
-						
 							<span class="redundant">&copy;</span> <a href="http://www.dojofoundation.org">The Dojo Foundation</a>, All Rights Reserved.
 						
 					</div>
@@ -202,37 +289,7 @@
 		</div>
 		<hr class="hide" />
 
-  
 	</div>
-
-	<script src="../dojo/dojo.js"></script>
-	<script>
-		window.dojo && dojo.addOnLoad(function(){
-
-			dojo.query("body").removeClass("no-js");
-
-			var list = dojo.query("#mainlist li");
-			var props = {
-				i: { width:96, height:96, top:-16, left:-102 },
-				o: { width:64, height:64, top:0, left:-80 }
-			};
-
-			list.forEach(function(n){
-
-				var img = dojo.query("img", n)[0], a;
-				dojo.connect(n, "onmouseenter", function(e){
-					a && a.stop();
-					a = dojo.anim(img, props.i, 175)
-				});
-
-				dojo.connect(n, "onmouseleave", function(e){
-					a && a.stop();
-					a = dojo.anim(img, props.o, 175, null, null, 75)
-				});
-
-			});
-		});
-	</script>
 	</body>
 </html>
 
