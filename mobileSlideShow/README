@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Mobile Slideshow - Dojo Mobile Slideshow
+-------------------------------------------------------------------------------
+Authors: Yoshiroh Kamiyama (IBM CCLA)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a simple slideshow using dojox.mobile.SwapView.
+	You can swipe the screen left or right to move between the slides.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Mobile
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:1

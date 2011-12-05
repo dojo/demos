@@ -1,0 +1,14 @@
+{
+	items: [
+		{src:"../../dojox/mobile/tests/images/stone1.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "7,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone2.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "3,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone3.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "4,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone4.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "800yen"},
+		{src:"../../dojox/mobile/tests/images/stone5.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "1,200yen"},
+		{src:"../../dojox/mobile/tests/images/stone6.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "2,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone7.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "100yen"},
+		{src:"../../dojox/mobile/tests/images/stone8.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "3,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone9.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "12,000yen"},
+		{src:"../../dojox/mobile/tests/images/stone10.jpg", design:"Tiger", model: "DX167", produced: "2000'", size: "H3.5cm W4cm", price: "10yen"}
+	]
+}

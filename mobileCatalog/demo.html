@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>Carousel</title>
+		<link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/iphone/base.css">
+		<link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/iphone/Carousel.css">
+		<link rel="stylesheet" type="text/css" href="../../dojox/mobile/themes/iphone/PageIndicator.css">
+
+		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: true, async: true, mblAlwaysHideAddressBar: true"></script>
+		<script type="text/javascript" src="src.js"></script>
+	</head>
+	<body style="visibility:hidden;background-color:#6D6D6D">
+		<div id="foo" dojoType="dojox.mobile.ScrollableView">
+			<div id="carousel1" dojoType="dojox.mobile.Carousel" height="150px" navButton="true" store="store1" numVisible="2" title="Category"></div>
+			<div id="carousel2" dojoType="dojox.mobile.Carousel" height="120px" navButton="true"></div>
+			<div id="rect1" dojoType="dojox.mobile.RoundRect" style="display:none"></div>
+		</div>
+	</body>
+</html>

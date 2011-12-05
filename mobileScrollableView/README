@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Mobile Scrollable View - Dojo Mobile Scrollable View
+-------------------------------------------------------------------------------
+Authors: Yoshiroh Kamiyama (IBM CCLA)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a simple mobile application that uses dojox.mobile.ScrollableView
+	and dojox.mobile.TabBar.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Mobile
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:1
