@@ -2,9 +2,8 @@
 <html class="dj_webkit dj_chrome dj_contentbox" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	
-	<title>The Dojo Toolkit - Demos Index</title>
 
+	<title>The Dojo Toolkit - Demos Index</title>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Demo for The Dojo Toolkit, dojo, JavaScript Framework" />
 	<meta name="description" content="The Dojo Toolkit Demo Index" />
@@ -12,43 +11,21 @@
 	<meta name="copyright" content="Copyright 2006-2011 by the Dojo Foundation" />
 	<meta name="company" content="Dojo Foundation" />
 	
-	<link rel="shortcut icon" href="http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="http://dojotoolkit.org/images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="resources/demos.css" type="text/css" media="all" />
-
-	<script src="../dojo/dojo.js" data-dojo-config="async: true"></script>
-	<script>
-	require(["dojo/ready", "dojo/query", "dojo/on", "dojo/mouse", "dojo/_base/fx", "dojo/NodeList-dom"],
-		function(ready, query, on, mouse, fx){
-		ready(function(){
-
-			query("body").removeClass("no-js");
-
-			var list = query("#mainlist li");
-			var props = {
-				i: { width:128, height:128, top:-16, left:-136 },
-				o: { width:96, height:96, top:0, left:-120 }
-			};
-
-			list.forEach(function(n){
-
-				var img = query("img", n)[0], a;
-				on(n, mouse.enter, function(e){
-					a && a.stop();
-					a = fx.anim(img, props.i, 175);
-				});
-
-				on(n, mouse.leave, function(e){
-					a && a.stop();
-					a = fx.anim(img, props.o, 175, null, null, 75);
-				});
-
-			});
-		});
-	});
-	</script>
+<![if gte IE 9]>
+	<link rel="stylesheet" href="resources/desktop.css" type="text/css"/>
+	<link rel="stylesheet" href="resources/phone.css" type="text/css" media="only screen and (min-device-width: 320px) and (max-device-width: 480px)"/>
+	<link rel="stylesheet" href="resources/phone.css" type="text/css" media="only screen and (-webkit-device-pixel-ratio:1.5)"/>
+	<link rel="stylesheet" href="resources/vtablet.css" type="text/css" media="only screen and (min-device-width: 481px) and (max-device-width: 799px) and (orientation: portrait)"/>
+	<link rel="stylesheet" href="resources/htablet.css" type="text/css" media="only screen and (min-device-width: 481px) and (max-device-width: 799px) and (orientation: landscape)"/>
+	<link rel="stylesheet" href="resources/desktop.css" type="text/css" media="(min-device-width: 800px) and (-webkit-device-pixel-ratio:1)" />
+<![endif]>
+<!--[if lte IE 8]>
+	<link rel="stylesheet" href="resources/ie.css" type="text/css" media="all" />
+<![endif]-->
 </head>
-<body class="claro no-js">
-		
+<body>
 	<div class="accessibility">
 		<a href="#intro">Skip to Content</a>
 		|
@@ -58,25 +35,15 @@
 	<div id="page" class="homePage">
 		<div id="header">
 			<div class="container">
-				<span id="logo"><a href="http://dojotoolkit.org/" title="Dojo Homepage"><img src="http://dojotoolkit.org/images/logo.png" alt="Dojo Toolkit" /></a></span>
-				<ul id="navigation">
-					<li class="download"><a href="http://dojotoolkit.org/download/">Download</a></li>
+		        <span id="logo"><a href="http://dojotoolkit.org/" title="Home"><img src="http://staging.dojotoolkit.org/images/logo.png" alt="Dojo Toolkit" /></a></span>
+     			<ul id="navigation">
+					<li class="home"><a href="http://dojotoolkit.org/"><span class="homeIcon"></span></a></li>
+        			<li class="download"><a href="http://dojotoolkit.org/download">Get Dojo</a></li>
 					<li class="features"><a href="http://dojotoolkit.org/features/">Features</a></li>
-					<li class="docs"><a href="http://dojotoolkit.org/documentation/">Documentation</a></li>
-					<li class="community"><a href="http://dojotoolkit.org/community/">Community</a></li>
-					<li class="blog"><a href="http://dojotoolkit.org/blog/">Blog</a></li>
+        			<li class="docs"><a href="http://dojotoolkit.org/documentation">Documentation</a></li>
+        			<li class="community"><a href="http://dojotoolkit.org/community">Community</a></li>
+        			<li class="blog"><a href="http://dojotoolkit.org/blog">Blog</a></li>
 				</ul>
-				<form method="GET" action="http://www.google.com/search" id="search">
-					<span><input type="text" name="q" id="query" value="Search"></input>
-					<button type="submit">Search</buytton>
-					<div id="resultbox" style="display:none">
-						<div class="googleheader"></div>
-						<div id="googlesearch"></div>
-						<div id="searchClose">
-							<a>Close</a>
-						</div>
-					</div>
-				</form>
 			</div>
 		</div>
 		<hr class="hide" />
@@ -88,6 +55,9 @@
 
 					// holder for all the items
 					$out = array();
+					if(!empty($_GET["cat"])){
+						$show = explode(",", $_GET["cat"]);
+					}
 
 					// load the demos described in the resources/ folder that we link but don't ship
 					if(file_exists("resources/ext_demos.json")){
@@ -190,84 +160,93 @@
 					}
 					array_multisort($ranks, SORT_DESC, $d, SORT_ASC, $out);
 
-					print "<h2>Graphics & Charting<h2>";
-					// generate the 1st category list:
-					print "<ul id='mainlist'>";
-					foreach($out as $ranked){
-						if(in_array("graphics", $ranked['categories'])){
-							// generate the demo item
-							print "\n\t<li><a href='".$ranked['link']."'>";
-							if($ranked['img']){
-								print "<img src='". $ranked['img'] . "' />";
-							}
-
-							// split the title in two parts around the first hyphen
-							list($anchor, $desc) = explode("-", $ranked['header'], 2);
-							print $anchor;
-							if($desc){
-								print "<span>" .$desc. "</span>";
-							}
-							print "</a></li>";
-						}
-					}
-					print "</ul>";
-					print "<h2>Mobile<h2>";
-					// generate the 2nd category list:
-					print "<ul id='mainlist'>";
-					foreach($out as $ranked){
-						if(in_array("mobile", $ranked['categories'])){
-							// generate the demo item
-							print "\n\t<li><a href='".$ranked['link']."'>";
-							if($ranked['img']){
-								print "<img src='". $ranked['img'] . "' />";
-							}
-
-							// split the title in two parts around the first hyphen
-							list($anchor, $desc) = explode("-", $ranked['header'], 2);
-							print $anchor;
-							if($desc){
-								print "<span>" .$desc. "</span>";
-							}
-							print "</a></li>";
-						}
-					}
-					print "</ul>";
-					print "<h2>Rich WebApps<h2>";
-					// generate the list:
-					print "<ul id='mainlist'>";
-					$in_experimental = false;
-					foreach($out as $ranked){
-						if($ranked['rank'] === 0 && !$in_experimental){
-							// we're done with top demos, close list and make a new one
-							$in_experimental = true;
-							print "</ul><br class='clear'>";
-							print "<h2>Incomplete / Partial Demos:</h2>";
-							print "<ul id='explist'>";
-						}
-
-						if(in_array("rich", $ranked['categories']) || $in_experimental){
-							// generate the demo item
-							print "\n\t<li><a href='".$ranked['link']."'>";
-							if($ranked['img']){
-								print "<img src='". $ranked['img'] . "' />";
-							}
-
-							// split the title in two parts around the first hyphen
-							// some experimental demos do not have header
-							if(strpos($ranked['header'], "-")){
+					if(empty($show) || in_array("graphics", $show)){
+						print "<h2>Graphics & Charting</h2>";
+						// generate the 1st category list:
+						print "<ul id='mainlist'>";
+						foreach($out as $ranked){
+							if(in_array("graphics", $ranked['categories'])){
+								// generate the demo item
+								print "\n\t<li><a href='".$ranked['link']."'>";
+								print "<span>";
+								// split the title in two parts around the first hyphen
 								list($anchor, $desc) = explode("-", $ranked['header'], 2);
 								print $anchor;
 								if($desc){
 									print "<span>" .$desc. "</span>";
 								}
-							}else{
-								print $ranked['header'];
-							}
-							print "</a></li>";
-						}
-					}
-					print "</ul>";
+								print "</span>";
+								if($ranked['img']){
+									print "<img src='". $ranked['img'] . "' />";
+								}
 
+								print "</a></li>";
+							}
+						}
+						print "</ul>";
+					}
+					if(empty($show) || in_array("mobile", $show)){
+						print "<h2>Mobile</h2>";
+						// generate the 2nd category list:
+						print "<ul id='mainlist'>";
+						foreach($out as $ranked){
+							if(in_array("mobile", $ranked['categories'])){
+								// generate the demo item
+								print "\n\t<li><a href='".$ranked['link']."'>";
+								print "<span>";
+								// split the title in two parts around the first hyphen
+								list($anchor, $desc) = explode("-", $ranked['header'], 2);
+								print $anchor;
+								if($desc){
+									print "<span>" .$desc. "</span>";
+								}
+								print "</span>";
+								if($ranked['img']){
+									print "<img src='". $ranked['img'] . "' />";
+								}
+								print "</a></li>";
+							}
+						}
+						print "</ul>";
+					}
+					if(empty($show) || in_array("rich", $show)){
+						print "<h2>Rich WebApps</h2>";
+						// generate the list:
+						print "<ul id='mainlist'>";
+						$in_experimental = false;
+						foreach($out as $ranked){
+							if($ranked['rank'] === 0 && !$in_experimental && (empty($show) || in_array("exp", $show))){
+								// we're done with top demos, close list and make a new one
+								$in_experimental = true;
+								print "</ul><br class='clear'>";
+								print "<h2>Incomplete / Partial Demos:</h2>";
+								print "<ul id='explist'>";
+							}
+
+							if(in_array("rich", $ranked['categories']) || $in_experimental){
+								// generate the demo item
+								print "\n\t<li><a href='".$ranked['link']."'>";
+								print "<span>";
+								// split the title in two parts around the first hyphen
+								// some experimental demos do not have header
+								if(strpos($ranked['header'], "-")){
+									list($anchor, $desc) = explode("-", $ranked['header'], 2);
+									print $anchor;
+									if($desc){
+										print "<span>" .$desc. "</span>";
+									}
+								}else{
+									print $ranked['header'];
+								}
+								print "</span>";
+								if($ranked['img']){
+									print "<img src='". $ranked['img'] . "' />";
+								}
+								print "</a></li>";
+							}
+						}
+						print "</ul>";
+					}
 				?>
 			<!-- 
 				basic page onload script after dojo.js [if available] - degrades gracefullly 
@@ -281,14 +260,11 @@
 				<div id="foot">
 					<div class="innerBox">
 							<span class="redundant">&copy;</span> <a href="http://www.dojofoundation.org">The Dojo Foundation</a>, All Rights Reserved.
-						
 					</div>
 				</div>
 			</div>
-
 		</div>
 		<hr class="hide" />
-
 	</div>
 	</body>
 </html>
