@@ -37,7 +37,8 @@
 		-moz-border-radius: 10px;
 		-webkit-border-radius: 10px;
 		border-radius: 10px;
-		border: 1px solid black;
+		border: 2px solid gray;
+		border-style:solid;
 		background: #e7eef6;
 	}
 
