@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Catalog - Dojo Mobile Catalog
+Mobile Catalog - Browse a simple catalog of items and view item details using multiple carousel components arranged for multi-level navigation.
 -------------------------------------------------------------------------------
 Authors: Yoshiroh Kamiyama (IBM CCLA)
 -------------------------------------------------------------------------------
@@ -20,4 +20,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:185 @categories:mobile

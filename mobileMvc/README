@@ -23,4 +23,4 @@ Installation instructions
 	To build, use the supplied demo.profile.js as your profileFile
 
 -------------------------------------------------------------------------------
-@rank:7
+@rank:7 @categories:mobile

@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Slideshow - Dojo Mobile Slideshow
+Mobile Slideshow - A simple slideshow that you can browse through photos by flicking left-right.
 -------------------------------------------------------------------------------
 Authors: Yoshiroh Kamiyama (IBM CCLA)
 -------------------------------------------------------------------------------
@@ -20,4 +20,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:180 @categories:mobile

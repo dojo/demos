@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Charting - A simple stock charting demo for mobile devices
+Mobile Stock Charting - This application displays three stock charts.  It works well for both desktop and mobile devices.  On mobile devices, try two-finger touching to display the difference between quote values and touch-scroll across dates.
 -------------------------------------------------------------------------------
 Authors: Damien Mandrioli, Christophe Jolif
 -------------------------------------------------------------------------------
@@ -24,4 +24,4 @@ Installation instructions
 	Simply run the included demo.html
 		
 -------------------------------------------------------------------------------
-@rank:100
+@rank:95 @categories:mobile,graphics

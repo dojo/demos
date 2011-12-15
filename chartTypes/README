@@ -5,7 +5,7 @@ Authors: Tom Trenka, Eugene Lazutkin, Christophe Jolif
 -------------------------------------------------------------------------------
 Demo description
 
-	View each of Dojo charting�s main plot types in different out-of-box themes.
+	View each of Dojo charting's main plot types in different out-of-box themes.
 	
 -------------------------------------------------------------------------------
 Dependencies:
@@ -18,4 +18,4 @@ Installation instructions
 	Simply run the included demo.html
 		
 -------------------------------------------------------------------------------
-@rank:100
+@rank:70 @categories:graphics

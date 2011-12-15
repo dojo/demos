@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Mobile Scrollable View - Dojo Mobile Scrollable View
+Mobile Scrollable View - A simple demo showing touch-scrolling views and header/footer tab bar navigation.
 -------------------------------------------------------------------------------
 Authors: Yoshiroh Kamiyama (IBM CCLA)
 -------------------------------------------------------------------------------
@@ -20,4 +20,4 @@ Installation instructions
 	Simply run the included demo.html
 	
 -------------------------------------------------------------------------------
-@rank:1
+@rank:175 @categories:mobile

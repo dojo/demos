@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
-Butterfly - A demo showing basic matrix operation.
+Butterfly - Scale and rotate the pretty butterfly.  Renderered using GFX.
 -------------------------------------------------------------------------------
 Author: Eugene Lazutkin
 -------------------------------------------------------------------------------
@@ -20,4 +20,4 @@ Installation instructions
 	Simply run the included demo.html
 		
 -------------------------------------------------------------------------------
-@rank:753
+@rank:45 @categories:graphics
