@@ -1,0 +1,54 @@
+.innerBox {
+	margin-left: 15px;
+}
+#mainlist li img {
+	width:96px;
+	height:96px;
+	border:0;
+	margin-right: 22px;
+	z-index:8;
+	-webkit-transform: scale(1);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+	-moz-transform: scale(1);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 500ms;
+	-ms-transform: scale(1);
+	-ms-transition-timing-function: ease-out;
+	-ms-transition-duration: 500ms;
+}
+#mainlist li:hover a img {
+	-webkit-transform: scale(1.33);
+	-webkit-transition-timing-function: ease-out;
+	-webkit-transition-duration: 500ms;
+	-moz-transform: scale(1.33);
+	-moz-transition-timing-function: ease-out;
+	-moz-transition-duration: 500ms;
+	-ms-transform: scale(1.33);
+	-ms-transition-timing-function: ease-out;
+	-ms-transition-duration: 500ms;
+}
+#mainlist li {
+	position:relative;
+	font-size: 13px;
+	float:left;
+	height:128px;
+	list-style:none;
+	margin-right:22px;
+	margin-left: 22px;
+}
+#mainlist li a > span {
+	display: inline;
+	float: right;
+	left: 22px;
+}
+#mainlist li a span span {
+	z-index:9;
+	cursor:pointer;
+	color:#333;
+	padding-top:7px;
+	font-size:90%;
+	display:block; width:230px;
+	text-decoration:none;
+	font-weight:normal;
+}
