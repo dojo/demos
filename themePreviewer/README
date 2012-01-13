@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Theme Previewer - An interactive dijit theme showcase.
+-------------------------------------------------------------------------------
+Authors: Bill Keese et al (copied here as a demo by Doug Hays)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo creates examples of all dijit widgets using the claro theme by default.
+	The theme can be switched to alternate themes of tundra and soria, common to older Dojo releases.
+	The default layout direction can also be changed from left-to-right to right-to-left.
+	A simulated high-contrast (a11y) mode is available as well.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	dijit
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:52
