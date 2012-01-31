@@ -1,72 +1,54 @@
 var groupByChanged, sizeByChanged, colorByChanged, MyTreeMap;
 
+var DAY = 86400000;
+
 var colorByPriorityFunc = function(item){
 	switch(item.priority){
-		case "highest":
+		case "blocker":
 			return {r: 255, g: 0, b: 0};
 		case "high":
-			return {r: 170, g: 0, b: 0};
-		case "normal":
 			return {r: 170, g: 85, b: 0};
 		case "low":
 			return {r: 85, g: 170, b: 0};
-		case "lowest":
+		default:
 			return {r: 0, g: 255, b: 0};
 	}
 	return {};
 };		
 
-var colorBySeverityFunc = function(item){
-	switch(item.severity){
-		case "blocker":
-			return {r: 255, g: 0, b: 0};
-		case "critical":
-			return {r: 170, g: 0, b: 0};
-		case "major":
-			return {r: 170, g: 85, b: 0};
-		case "normal":
-			return {r: 85, g: 170, b: 0};
-		case "minor":
-			return {r: 0, g: 170, b: 0};
-		case "trivial":
-			return {r: 0, g: 255, b: 0};	
+var colorByDateFunc = function(item){
+	var created = new Date(item.created).getTime();
+	// color based on how ancient is the bug
+	var old = new Date().getTime() - created;
+	if(old < 8*DAY){
+		return {r: 0, g: 255, b: 0};
+	}else if(old < 35*DAY){
+		return {r: 85, g: 170, b: 0};
+	}else if(old < 400*DAY){
+		return {r: 170, g: 85, b: 0};
+	}else{
+		return {r: 255, g: 0, b: 0};
 	}
 	return {};
 };		
 
 var sizeByPriorityFunc = function(item){
 	switch(item.priority){
-		case "highest":
-			return 5;
-		case "high":
+		case "blocker":
 			return 4;
-		case "normal":
+		case "high":
 			return 3;
 		case "low":
 			return 2;
-		case "lowest":
-			return 1;			
+		default:
+			return 1;
 	}
 	return 0;
 };		
 
-var sizeBySeverityFunc = function(item){
-	switch(item.severity){
-		case "blocker":
-			return 10;
-		case "critical":
-			return 8;
-		case "major":
-			return 7;
-		case "normal":
-			return 3;
-		case "minor":
-			return 2;
-		case "trivial":
-			return 1;			
-	}
-	return 0;
-};
+var sizeByCcFunc = function(item){
+	return item.cc?item.cc.split(",").length:1;
+}
 
 require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "dojo/parser",
 	"dijit/registry", "dijit/Tooltip", "dojo/dom-style", "dojo/dom-attr", "dojo/dom-construct",
@@ -100,7 +82,7 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 			}
 			return ticket;
 		});			
-		store = Observable(new Memory({data: data}));
+		store = Observable(new Memory({data: data, idProperty: "ticket"}));
 		// depending on when we arrive here treemap
 		// might already been there...
 		// reset data:
@@ -129,7 +111,7 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 		parser.parse();
 		var treeMap = registry.byId("treeMap");
 		treeMap.set("colorFunc", colorByPriorityFunc);
-		treeMap.set("areaFunc", sizeBySeverityFunc);
+		treeMap.set("areaFunc", sizeByCcFunc);
 		treeMap.set("groupAttrs", ["component"]);
 		if(store){
 			treeMap.set("store", store);
@@ -145,16 +127,31 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 	});
 
 	groupByChanged=function(value){
-		var groupBy = null;
+		var groupBy = [];
 		if(dom.byId("g2").checked){
 			groupBy = ["owner"];
 		}else if(dom.byId("g3").checked){
 			groupBy = ["component"];
 		}else if(dom.byId("g4").checked){
 			groupBy = ["milestone"];
+		}else if(dom.byId("g5").checked){
+			groupBy = ["status"];
+		}else if(dom.byId("g6").checked){
+			groupBy = ["version"];
+		}
+		if(dom.byId("g22").checked){
+			groupBy.push(["owner"]);
+		}else if(dom.byId("g23").checked){
+			groupBy.push(["component"]);
+		}else if(dom.byId("g24").checked){
+			groupBy.push(["milestone"]);
+		}else if(dom.byId("g25").checked){
+			groupBy.push(["status"]);
+		}else if(dom.byId("g26").checked){
+			groupBy.push(["version"]);
 		}
 		var treeMap = registry.byId("treeMap");
-		if(groupBy != null){
+		if(groupBy.length > 0){
 			treeMap.set("groupAttrs", groupBy);
 		}else{
 			treeMap.set("groupAttrs", null);
@@ -163,20 +160,20 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 
 	sizeByChanged = function(value){
 		var treeMap = registry.byId("treeMap");
-		if(dom.byId("s2").checked){
+		if(dom.byId("s1").checked){
 			treeMap.set("areaFunc", sizeByPriorityFunc);
-		}else if(dom.byId("s3").checked){
-			treeMap.set("areaFunc", sizeBySeverityFunc);
+		}else if(dom.byId("s2").checked){
+			treeMap.set("areaFunc", sizeByCcFunc);
 		}
 	};
 
 	colorByChanged = function(value){
 		var colorBy = null;
 		var treeMap = registry.byId("treeMap");
-		if(dom.byId("c2").checked){
+		if(dom.byId("c1").checked){
 			treeMap.set("colorFunc", colorByPriorityFunc);
-		}else if(dom.byId("c3").checked){
-			treeMap.set("colorFunc", colorBySeverityFunc);
+		}else if(dom.byId("c2").checked){
+			treeMap.set("colorFunc", colorByDateFunc);
 		}
 	};
 });

@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Treemap - A demo that shows how to use a treemap to visualize Trac data
+-------------------------------------------------------------------------------
+Author: Christophe Jolif
+-------------------------------------------------------------------------------
+Demo description
+
+	A demo that shows how to use a treemap to visualize Trac data.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Treemap
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:36 @categories:graphics
