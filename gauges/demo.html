@@ -4,7 +4,7 @@
 <title>Gauges Demo</title>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="demo.css">
-<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: true,  async:true"></script>
+<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: true, async:true"></script>
 <script type="text/javascript" src="src.js"></script>
 </head>
 <body>
@@ -20,17 +20,17 @@
 		<tr>
 			<td align="center">
 				<div id="CircularGauge" background="{color:'rgba(0,0,0,0)'}" useTooltip="false"
-					data-dojo-type="dojox.gauges.GlossyCircularGauge" width="200" height="200" value="20"></div>
+					data-dojo-type="dojox/dgauges/components/black/CircularLinearGauge" style="width:200px;height:200px" value="20"></div>
 			</td>
 			<td align='center'>
 				<div id="CircularGauge2" background="{color:'rgba(0,0,0,0)'}" useTooltip="false"
-					data-dojo-type="dojox.gauges.GlossySemiCircularGauge" value="60" width="250" height="200"></div>
+					data-dojo-type="dojox/dgauges/components/black/SemiCircularLinearGauge" value="60" style="width:250px;height:200px"></div>
 			</td>
 		</tr>
-		<tr>
+		<tr> 
 			<td valign="middle" align="center" colspan="2">
-				<div id="HGauge3" style="margin:30px 0px 0px 0px" useTooltip="false" background="{color:'rgba(0,0,0,0)'}"
-					data-dojo-type="dojox.gauges.GlossyHorizontalGauge" width="400" height="60" value="20"></div>
+				<div id="HGauge3" style="margin:30px 0px 0px 0px;width:400px;height:60px" useTooltip="false" background="{color:'rgba(0,0,0,0)'}"
+					data-dojo-type="dojox/dgauges/components/black/HorizontalLinearGauge" value="20"></div>
 			</td>
 		</tr>
 	</table>
