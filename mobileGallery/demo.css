@@ -1,4 +1,4 @@
-@import url("../../dojox/mobile/themes/common/FixedSplitter.css");
+@import url("../../dojox/highlight/resources/highlight.css");
 @import url("css/buttons.css");
 @import url("css/flippableViews.css");
 @import url("css/icons.css");
@@ -10,6 +10,7 @@
 @import url("css/tabs.css");
 @import url("css/mobileListData.css");
 @import url("css/css3.css");
+@import url("css/html5.css");
 
 #header button {
 	position:absolute;
@@ -18,6 +19,10 @@
 
 #navButton {
 	width:60px;
+}
+
+#sourceButton {
+	position:absolute;
 }
 
 #loadDiv {
@@ -73,7 +78,10 @@ body .mblProgContainer > div::after {
 }
 
 #jsContent, #htmlContent {
-	padding-left:2px;
+	padding:0px 7px;
+	white-space:pre-wrap;
+	min-width: 800px;
+	min-height:300px;
 }
 
 @media screen and (max-width: 600px) {

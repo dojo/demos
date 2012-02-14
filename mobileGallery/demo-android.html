@@ -23,7 +23,7 @@
 	</head>
 	<body>
 		<div id="splitter" dojoType="dojox.mobile.FixedSplitter" orientation="H">
-			<div id="leftPane" dojoType="dojox.mobile.FixedSplitterPane">
+			<div id="leftPane" dojoType="dojox.mobile.Container">
 				<h1 id="leftHeader" dojoType="dojox.mobile.Heading" fixed="top">
 					<div style="height:42px;float: left;margin-left:6px"></div>
 					<span id="leftHeaderLabel">Showcase</span>
@@ -31,7 +31,7 @@
 				<div id="navigation" dojoType="dojox.mobile.ScrollableView"></div>
 			</div>
 
-			<div dojoType="dojox.mobile.FixedSplitterPane">
+			<div dojoType="dojox.mobile.Container">
 				<h1 id="header" dojoType="dojox.mobile.Heading" fixed="top">
 					<button id="navButton" dojoType="dojox.mobile.Button" class="baseBtn defaultBtn backBtn">Back</button>
 					<span id="headerLabel">Welcome</span>
@@ -49,11 +49,11 @@
 							<li id="jsSrcTab" dojoType="dojox.mobile.TabBarButton" moveTo="jsSrcView">JavaScript</li>
 						</ul>
 						<div>
-							<div id="htmlSrcView" dojoType="dojox.mobile.ScrollableView">
-								<pre id="htmlContent"style="white-space:pre-wrap;"></pre>
+							<div id="htmlSrcView" dojoType="dojox.mobile.ScrollableView" scrollDir="hv">
+								<pre id="htmlContent"></pre>
 							</div>
-							<div id="jsSrcView" dojoType="dojox.mobile.ScrollableView">
-								<pre id="jsContent"style="white-space:pre-wrap;"></pre>
+							<div id="jsSrcView" dojoType="dojox.mobile.ScrollableView" scrollDir="hv">
+								<pre id="jsContent"></pre>
 							</div>
 						</div>
 					</div>
@@ -63,7 +63,14 @@
 		<div id="loadDiv" style="position:absolute;left:0px;top:0px;width:100%;height:100%;z-index:999;"><span>Loading...</span></div>
 		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad:false,mblAlwaysHideAddressBar:true,async:true"></script>
 		<script>
-			require(["./src.js"], function(){});
+			require(["dojox/mobile", "dojox/mobile/parser", "dojo/ready", "demos/mobileGallery/src","dojox/mobile/compat", "dojox/mobile/Button",
+				"dojox/mobile/ToolBarButton", "dojox/mobile/FixedSplitter", "dojox/mobile/Container",
+				"dojox/mobile/ScrollableView", "dojox/mobile/SwapView", "dojox/mobile/TabBar",
+				"dojo/domReady!"], function(mobile, parser, ready, src){
+					ready(function(){
+						src.init();
+					});
+				});
 		</script>
 	</body>
 </html>

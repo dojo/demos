@@ -1,9 +1,9 @@
 define(["dojo/on","dojo/dom", "dojo/_base/array", "dojo/string", 
 		"dojox/mobile/sniff",
-		"dojox/mobile/common", 
+		"dojox/mobile/iconUtils", 
 		"dojox/mobile/ToolBarButton",
 		"dojox/mobile/ToggleButton"],
-  function(on, dom, array, string, has, mobile, ToolBarButton){
+  function(on, dom, array, string, has, iconUtils, ToolBarButton){
 	var template = "User clicked \"${label}\" button.";
 	
 	function registerClickHandler(id, label) {
@@ -50,13 +50,14 @@ define(["dojo/on","dojo/dom", "dojo/_base/array", "dojo/string",
 	
 	return {
 		init: function(){
-			new ToolBarButton({
+			var button = new ToolBarButton({
 				icon : (has("android") ? "images/tab-icons-25.png"
 						: "images/tab-icons.png"),
 						iconPos : (has("android") ? "24,0,24,24" : "29,0,29,29")
 			}, "tbIconBtn2");
+			button.startup();
 			
-			mobile.createDomButton(dom.byId("tbDomBtn"));
+			iconUtils.createDomButton(dom.byId("tbDomBtn"));
 			array.forEach(config, function(conf){
 				registerClickHandler(conf.id, conf.label);
 			})

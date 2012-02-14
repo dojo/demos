@@ -15,6 +15,7 @@ css/themes/android/gallery.css
 ../../dojo/selector/acme.js
 ../../dojox/mobile/deviceTheme.js
 ../../dojox/mobile.js
+../../dojox/highlight.js
 src.js
 # image files for home page
 images/navigation_list_all_29.png
@@ -30,6 +31,8 @@ src/icons.js
 src/jsonp.js
 src/map.js
 src/mobileListData.js
+src/list.js
+src/html5.js
 data/dataList.json
 # html files for individual demo
 icons-url.html
@@ -48,6 +51,7 @@ views/mobileListData.html
 views/mobileSwitches.html
 views/mobileTransitions.html
 views/tabBar.html
+views/html5.html
 
 # other image files
 images/flip1.jpg
@@ -68,7 +72,7 @@ images/dojoLogo.png
 ../../dojox/mobile/FixedSplitter.js
 ../../dojox/mobile/ScrollableView.js
 ../../dojox/mobile/FixedSplitterPane.js
-../../dojox/mobile/FlippableView.js
+../../dojox/mobile/SwapView.js
 ../../dojox/mobile/TabBar.js
 # JS codes for demonstration for each demo
 # Note here we aim at built version
@@ -80,6 +84,8 @@ doc/src/icons.js.txt
 doc/src/jsonp.js.txt
 doc/src/map.js.txt
 doc/src/mobileListData.js.txt
+doc/src/list.js.txt
+doc/src/html5.js.txt
 
 NETWORK:
 *

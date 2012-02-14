@@ -80,7 +80,7 @@ define(["dojo/on",
 		
 		return {
 			init: function(){
-				registry.byId("searchTwitterBtn").on("click", function(){load(true);});
+				on(registry.byId("searchTwitterBtn"), "click", function(){load(true);});
 				on(dom.byId("findMoreLnk"), "click", function(){load(false);});
 			}
 		};

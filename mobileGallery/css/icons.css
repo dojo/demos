@@ -1,3 +1,17 @@
+#icons ul[dojoType="dojox.mobile.IconContainer"] li {
+	float:none;
+}
+#iconsDescList {
+	list-style-type:none;
+	position:absolute;
+	left:80px;
+	padding-left:6px;
+}
+#iconsDescList li {
+	font-size:17px;
+	width:auto;
+	text-align:left;
+}
 #icons .mblIconContentHeading {
 	background: -webkit-gradient(linear, left top, left bottom, from(#FEF39A), to(#E2CD60));
 	border-color: #F7E980;
@@ -44,7 +58,7 @@
 
 /* Temp fix for icon position regression. */
 #icons .mblIconArea IMG {
-	top: 0;
-	left: 0;
-	-webkit-transform: none;
+  top: 0;
+  left: 0;
+  -webkit-transform: none;
 }

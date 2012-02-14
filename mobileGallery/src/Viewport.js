@@ -1,5 +1,6 @@
-define(["dojo/_base/lang", "dojo/dom-construct", "dojo/dom-prop", "dojox/mobile/sniff"
-], function(lang, domConstruct, domProp, has){
+define(["dojo/_base/lang", 
+        "dojo/dom-construct","dojo/dom-prop", 
+        "dojox/mobile/sniff"], function(lang, domConstruct, domProp, has){
 	lang.getObject("demos.mobileGallery.src.Viewport", true);
 	
 	var meta = null;// <meta> tag for viewport

@@ -1,0 +1,54 @@
+#html5Main > div {
+	padding-left: 2%;
+	padding-right: 2%;
+}
+
+#html5Main .label, #noteText, #noteDate, #noteLocRow {
+	width: 96%;
+}
+
+#noteDate, #noteText {
+	display: block;
+}
+
+#html5 .label {
+	text-align: center;
+	font-size: 18px;
+}
+
+#noteLocAddr {
+	display: inline-block;
+}
+
+#noteDate, #noteLocAddr {
+	font-size: 14px;
+}
+
+#showMapBtn {
+	margin: 0px 0px 0px 10px;
+	color: white;
+}
+
+#showMapBtn, #newNoteBtn {
+	font-size: 13px;
+}
+
+#noteText {
+	height: 230px;
+	margin-top: 5px;
+}
+
+#newNoteBtn {
+	color: white;
+	font-weight: bold;
+}
+
+#noteLocMapView {
+	width: 100% !important;
+}
+
+#noteLocMapDiv {
+	width: 100%;
+	height: 100%;
+}
+

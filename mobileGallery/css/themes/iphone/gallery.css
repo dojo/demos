@@ -1,7 +1,7 @@
 * "Forms" field set title */
 form#testForm div.field-title {
-	text-shadow: white 0 1px 1px;
-	color: #333;
+    text-shadow: white 0 1px 1px;
+    color: #333;
 }
 
 /* "Headings" segmented tab bar margin */
@@ -18,9 +18,9 @@ div#headings button.baseBtn {
 
 /* "Headings" Back Button */
 #tbBackBtn:after {
-	height: 27px;
+    height: 27px;
 	left: -9px;
-	-webkit-mask-size: 12px 27px;
+    -webkit-mask-size: 12px 27px;
 	border-left-style: none;
 	border-top-left-radius: 0 0;
 	border-bottom-left-radius: 0 0;
@@ -74,7 +74,6 @@ div#headings #tbDomBtn {
 
 /* Temp fix for wrong icon position in list. */
 #navigation .mblListItemIcon {
-	top: 7px;
 	-webkit-transform: none;
 }
 
@@ -96,4 +95,9 @@ div#headings #tbDomBtn {
 
 #jsonp .searchResult, #findMoreDiv {
 	color: black;
+}
+
+/* for "HTML5" demo */
+#noteLocRow {
+	line-height: 34px;
 }

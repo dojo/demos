@@ -63,6 +63,12 @@ div#listWidget {
 	margin: 3px;
 }
 
-#listTabs .mblTabButton {
+#list .mblTabBarButton {
 	width: 120px;
+}
+#list .roundRect {
+	display:block;
+}
+#list .edgeToEdge {
+	display:none;
 }

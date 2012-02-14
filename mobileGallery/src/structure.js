@@ -1,7 +1,9 @@
-define(["dojo/_base/lang"], function(lang){
+define(["dojo/_base/lang"],
+		function(lang){
 	lang.getObject("demos.mobileGallery.src.structure", true);
 	
 	var THRESHOLD_WIDTH = 600;
+
 	demos.mobileGallery.src.structure = {
 		layout: {
 			threshold: THRESHOLD_WIDTH, // threshold for layout change
@@ -22,6 +24,11 @@ define(["dojo/_base/lang"], function(lang){
 			setCurrentView: function(id) {
 				var holder = this.getViewHolder(id);
 				this[holder].currentView = id;
+			},
+			// last selected demo view
+			currentDemo: {
+				id: "welcome",
+				title: "Welcome"
 			}
 		},
 		demos: [{
@@ -89,7 +96,9 @@ define(["dojo/_base/lang"], function(lang){
 				speclevel: "6",
 				iconPos: "203,0,29,29",
 				title: "Lists",
-				demourl: "views/list.html"
+				demourl: "views/list.html",
+				jsmodule: "demos/mobileGallery/src/list",
+				jsSrc: "doc/src/list.js.txt"
 			}, {
 				id: "mobileLists",
 				speclevel: "7",
@@ -168,6 +177,14 @@ define(["dojo/_base/lang"], function(lang){
 				demourl: "views/ajax.html",
 				jsmodule: "demos/mobileGallery/src/ajax",
 				jsSrc: "doc/src/ajax.js.txt"
+			}, {
+				id: "html5",
+				speclevel: "7",
+				iconPos: "348,0,29,29",
+				title: "HTMl5",
+				demourl: "views/html5.html",
+				jsmodule: "demos/mobileGallery/src/html5",
+				jsSrc: "doc/src/html5.js.txt"
 			}]
 		}],
 		/* Below are internal views. */
@@ -188,7 +205,9 @@ define(["dojo/_base/lang"], function(lang){
 		load: {
 			loaded: 0,
 			target: 0 //target number of views that should be loaded
-		}
+		},
+		// navigation list
+		navRecords: []
 	};
 	return demos.mobileGallery.src.structure;
 });

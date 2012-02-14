@@ -3,9 +3,9 @@ define(["dojo/_base/lang",
 		"dojo/dom","dojo/dom-class",
 		"dijit/registry",
 		"dojo/data/ItemFileWriteStore",
-		"dojox/mobile/common", // dojox.mobile.createDomButton
-		"dojox/mobile/RoundRectDataList"
-],function(lang, connect, dom, domClass, registry, ItemFileWriteStore, mobile, RoundRectDataList) {
+		"dojox/mobile/iconUtils",
+		"dojox/mobile/RoundRectDataList"],
+function(lang, connect, dom, domClass, registry, ItemFileWriteStore, iconUtils, RoundRectDataList) {
 	lang.getObject("demos.mobile.src.mobileLists", true);
 	demos.mobile.src.mobileLists = function() {
 		var static_data = { 
@@ -74,8 +74,8 @@ define(["dojo/_base/lang",
 					isInit = true;
 				};
 			});
-			mobile.createDomButton(dom.byId("mobileListAddBtn"));
-			mobile.createDomButton(dom.byId("mobileListDelBtn"));
+			iconUtils.createDomButton(dom.byId("mobileListAddBtn"));
+			iconUtils.createDomButton(dom.byId("mobileListDelBtn"));
 		}
 	};
 });
