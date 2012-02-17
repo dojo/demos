@@ -3,162 +3,88 @@
 	<head>
 		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<title>Dojo Gauges</title>
-		<link rel="stylesheet" type="text/css" href="demo.css">
-		<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: 1,  async:1">
-		</script>
-		<script type="text/javascript" src="src.js" charset="utf-8">
-		</script>
+		<title>Gauge Mobile Sample</title>
+		<script type="text/javascript" src="../../dojo/dojo.js" djConfig="parseOnLoad: true"></script>
+		<script type="text/javascript" src="src.js"></script>
 	</head>
-	<body style="visibility:collapse;">
+	<body style="-webkit-user-select: none; outline: none; visibility:hidden;">
+
 		<div id="home" data-dojo-type="dojox.mobile.View" selected="true">
 			<h1 data-dojo-type="dojox.mobile.Heading">Gauges</h1>
-			<h2 data-dojo-type="dojox.mobile.RoundRectCategory">Gauges on Mobile</h2>
+			<h2 data-dojo-type="dojox.mobile.RoundRectCategory">Gauges Themes</h2>
 			<ul data-dojo-type="dojox.mobile.RoundRectList">
-				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="#circularGauge" transition="slide">
-					Glossy Circular 
+				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="defaultGauges" transition="slide">
+					Default 
 				</li>
-				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="#semicircularGauge" transition="slide">
-					Glossy Semi Circular 
+				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="classicGauges" transition="slide">
+					Classic 
 				</li>
-				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="#barGauges1" transition="slide">
-					Glossy Horizontal
+				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="blackGauges" transition="slide">
+					Black
 				</li>
-				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="#analog" transition="slide">
-					Simple Analog Gauges
+				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="greyGauges" transition="slide">
+					Grey 
 				</li>
-				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="#analog2" transition="slide">
-					More Analog Gauges
+				<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem" moveTo="greenGauges" transition="slide">
+					Green 
 				</li>
 			</ul>
 		</div>
-		<div id="semicircularGauge" data-dojo-type="dojox.mobile.View" style="background-color:white; height:100%">
-			<h2 data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="#home">Glossy Semi Circular</h2>
-			<div class="content">
-				<div id="scGauge">
-				</div>
-				<ul data-dojo-type="dojox.mobile.RoundRectList">
-					<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem">
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:rgb(100, 100, 100);width:50px;height:50px" onClick="scircularGauge.set('color',[100, 100, 100, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#ff0000;width:50px;height:50px" onClick="scircularGauge.set('color',[255, 0, 0, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#065c4f;width:50px;height:50px" onClick="scircularGauge.set('color',[6,92,79, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#0000ff;width:50px;height:50px" onClick="scircularGauge.set('color',[0, 0, 255, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#993399;width:50px;height:50px" onClick="scircularGauge.set('color',[153, 51, 153, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#000000;width:50px;height:50px" onClick="scircularGauge.set('color',[0, 0, 0, 1])">
-						</button>
-					</li>
-				</ul>
-			</div>
+
+		<div id="defaultGauges" data-dojo-type="dojox.mobile.View">
+			<h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="#home">Default Theme</h1>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.default.CircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:200px"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.default.SemiCircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:150px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.default.HorizontalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:50px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.default.VerticalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:300px;"></div>
 		</div>
-		<div id="circularGauge" data-dojo-type="dojox.mobile.View" style="background-color:white; height:100%">
-			<h2 data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="#home">Glossy Circular</h2>
-			<div class="content">
-				<div id="cGauge">
-				</div>
-				<ul data-dojo-type="dojox.mobile.RoundRectList">
-					<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem">
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:rgb(100, 100, 100);width:50px;height:50px" onClick="circularGauge.set('color',[100, 100, 100, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#ff0000;width:50px;height:50px" onClick="circularGauge.set('color',[255, 0, 0, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#065c4f;width:50px;height:50px" onClick="circularGauge.set('color',[6,92,79, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#0000ff;width:50px;height:50px" onClick="circularGauge.set('color',[0, 0, 255, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#993399;width:50px;height:50px" onClick="circularGauge.set('color',[153, 51, 153, 1])">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#000000;width:50px;height:50px" onClick="circularGauge.set('color',[0, 0, 0, 1])">
-						</button>
-					</li>
-				</ul>
-			</div>
+		<div id="classicGauges" data-dojo-type="dojox.mobile.View">
+			<h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="#home">Classic Theme</h1>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.classic.CircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:200px"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.classic.SemiCircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:150px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.classic.HorizontalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:50px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.classic.VerticalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:300px;"></div>
 		</div>
-		<div id="analog" data-dojo-type="dojox.mobile.View" style="background-color:white;height:100%">
-			<h1 data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="#home">Simple Analog Gauges</h1>
-			<div class="content">
-				<ul class="lst">
-					<li>
-						Circular Gauge made with Arc and Text indicators
-					</li>
-				</ul>
-				<div id="gauge">
-				</div>
-				<ul class="lst">
-					<li>
-						A second example with Arc and Text indicator.
-					</li>
-				</ul>
-				<div id="gauge2">
-				</div>
-				<ul class="lst">
-					<li>
-						A third example with Needle indicator.
-					</li>
-				</ul>
-				<div id="gauge3">
-				</div>
-				<ul class="lst">
-					<li>
-						An example with Circle indicator.
-					</li>
-				</ul>
-				<div id="gauge4">
-				</div>
-			</div>
+		<div id="blackGauges" data-dojo-type="dojox.mobile.View">
+			<h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="#home">Black Theme</h1>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.black.CircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:200px"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.black.SemiCircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:150px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.black.HorizontalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:50px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.black.VerticalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:300px;"></div>
 		</div>
-		<div id="analog2" data-dojo-type="dojox.mobile.View" style="background-color:white;height:100%">
-			<h1 data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="#home">More Analog Gauges</h1>
-			<div class="content">
-				<ul class="lst">
-					<li>
-						Vista Gauge
-					</li>
-				</ul>
-				<div id="vista">
-				</div>
-				<ul class="lst">
-					<li>
-						Plastic Gauge
-					</li>
-				</ul>
-				<div id="plastic">
-				</div>
-				<ul class="lst">
-					<li>
-						XP Gauge
-					</li>
-				</ul>
-				<div id="xp">
-				</div>
-			</div>
+		<div id="greyGauges" data-dojo-type="dojox.mobile.View">
+			<h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="#home">Grey Theme</h1>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.grey.CircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:200px"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.grey.SemiCircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:150px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.grey.HorizontalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:50px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.grey.VerticalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:300px;"></div>
 		</div>
-		<div id="barGauges1" data-dojo-type="dojox.mobile.View" style="background-color:white;height:100%">
-			<h1 data-dojo-type="dojox.mobile.Heading" back="Home" moveTo="#home">Glossy Horizontal</h1>
-			<div class="content">
-				<div id="defaultBarGauge">
-				</div>
-				<ul data-dojo-type="dojox.mobile.RoundRectList">
-					<li class="mblVariableHeight" data-dojo-type="dojox.mobile.ListItem">
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:rgb(100, 100, 100);width:50px;height:50px" onClick="horizontalGauge.set('color',[100, 100, 100, 1]);horizontalGauge.set('markerColor',[100, 100, 100, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#ff0000;width:50px;height:50px" onClick="horizontalGauge.set('color',[255, 0, 0, 1]);horizontalGauge.set('markerColor',[255, 0, 0, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#065c4f;width:50px;height:50px" onClick="horizontalGauge.set('color',[6,92,79, 1]);horizontalGauge.set('markerColor',[6,92,79, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#0000ff;width:50px;height:50px" onClick="horizontalGauge.set('color',[0, 0, 255, 1]);horizontalGauge.set('markerColor',[0, 0, 255, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#993399;width:50px;height:50px" onClick="horizontalGauge.set('color',[153, 51, 153, 1]);horizontalGauge.set('markerColor',[153, 51, 153, 1]);">
-						</button>
-						<button alt='change color of gauge' data-dojo-type="dojox.mobile.Button" style="background:#000000;width:50px;height:50px" onClick="horizontalGauge.set('color',[0, 0, 0, 1]);horizontalGauge.set('markerColor',[0, 0, 0, 1]);">
-						</button>
-					</li>
-				</ul>
-			</div>
-		</div>
+		<div id="greenGauges" data-dojo-type="dojox.mobile.View">
+			<h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="#home">Green Theme</h1>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.green.CircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:200px"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.green.SemiCircularLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:150px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.green.HorizontalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:50px;"></div>
+			<br/>
+			<div data-dojo-type="dojox.dgauges.components.green.VerticalLinearGauge" interactionMode="touch" style="-webkit-user-select: none; outline: none; height:300px;"></div>
+		</div>			
 	</body>
 </html>
