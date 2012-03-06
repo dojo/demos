@@ -61,3 +61,6 @@ p {
 	margin: 0px;
 	list-style-type: square;
 }
+.iphone_theme .mblTabBarSegmentedControl .mblTabBarButtonIconArea {
+	display: none;
+}

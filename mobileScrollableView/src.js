@@ -1,7 +1,7 @@
 require([
 	"dojox/mobile/parser",
 	"dojox/mobile",
+	"dojox/mobile/compat",
 	"dojox/mobile/ScrollableView",
-	"dojox/mobile/TabBar",
-	"dojox/mobile/compat"
+	"dojox/mobile/TabBar"
 ]);
