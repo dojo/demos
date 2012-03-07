@@ -73,7 +73,7 @@ body, html {
 }
 
 .locked .lockIcon {
-    background-image: url("images/icon-lock");
+    background-image: url("images/icon-lock.png");
     height: 25px;
     width: 25px;
     position: absolute;

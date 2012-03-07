@@ -1,4 +1,5 @@
 require([
+	"dojox/charting/Theme",
 	"dojo/parser",
 	"dijit/_base",
 	"dijit/form/HorizontalSlider",
@@ -7,14 +8,13 @@ require([
 	"dojox/charting/widget/Legend",
 	"dojox/gesture/tap",
 	"demos/touch/rotate"
-], function(){
+], function(Theme){
 
 	(function(){
-		var dc = dojox.charting, Theme = dc.Theme, g = Theme.generateGradient,
-			themes = dojo.getObject("dojox.charting.themes", true);
-			defaultFill = {type: "linear", space: "shape", x1: 0, y1: 0, x2: 0, y2: 100};
+		var g = Theme.generateGradient, themes = dojo.getObject("dojox.charting.themes", true);
+		defaultFill = {type: "linear", space: "shape", x1: 0, y1: 0, x2: 0, y2: 100};
 		
-		themes.Lily = new dc.Theme({
+		themes.Lily = new Theme({
 			series: {
 				stroke:  {width: 2.5, color: "#eaf2cb"},
 				outline: null,
