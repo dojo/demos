@@ -117,7 +117,7 @@ define(["dojo/_base/lang"], function(lang){
 				title: "Geo Chart",
 				iconPos: "377,0,29,29"
 			}, {
-				href: "../mobileOpenLayers/demos.html",
+				href: "../mobileOpenLayers/demo.html",
 				hrefTarget: "_blank",
 				speclevel: "7",
 				title: "OpenLayers Map",
