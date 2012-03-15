@@ -17,7 +17,7 @@ require([
 		selectedFeature = mapFeature;
 		var text = "US population from 1960 to 2009";
 		if (selectedFeature) {
-			var text = yearSlot.getValue() + 
+			var text = yearSlot.get("value") + 
 				" "  + mapWidget.getInnerMap().mapObj.marker.markerData[mapFeature.id] +
 				" pop. : " + (mapFeature.value / 1000000).toFixed(1) + "M";
 		}
@@ -25,7 +25,7 @@ require([
 	};
 
 	updateYear = function(e) {
-		var newYear = yearSlot.getValue();
+		var newYear = yearSlot.get("value");
 		mapWidget.getInnerMap().setDataBindingAttribute(newYear);
 		if(selectedFeature){
 			mapWidget.getInnerMap().onFeatureClick(selectedFeature); 
