@@ -55,11 +55,11 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 	"dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojox/treemap/TreeMap",
 	"dijit/form/RadioButton", "dojox/treemap/Keyboard",
 	"dojox/treemap/DrillDownUp", "dojo/store/Memory", "dojo/store/Observable",
-	"dojo/io/script", "dojo/_base/Deferred", "dojo/_base/array"],
+	"dojo/io/script", "dojo/when", "dojo/_base/array"],
 	function(ready, dom, Color, declare, parser, registry, Tooltip, 
 			domStyle, domAttr, domConstruct, 
 			BorderContainer, ContentPane, TreeMap, RadioButton, Keyboard, DrillDownUp,
-			Memory, Observable, script, Deferred, array){
+			Memory, Observable, script, when, array){
 
 	//var store = new DataStore({ store: new CsvStore({url: "http://trac.dojotoolkit.org/report/132?asc=1&format=csv"}) });
 	//var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
@@ -71,7 +71,7 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 	});
 	var store;
 	
-	Deferred.when(request, function(response){
+	when(request, function(response){
 		var results = response.query.results.row;
 		var header = results[0];
 		var rows = results.slice(1);
