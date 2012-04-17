@@ -1,6 +1,6 @@
 @import url("../../dojox/highlight/resources/highlight.css");
 @import url("css/buttons.css");
-@import url("css/flippableViews.css");
+@import url("css/swapView.css");
 @import url("css/icons.css");
 @import url("css/forms.css");
 @import url("css/headings.css");
@@ -9,8 +9,16 @@
 @import url("css/list.css");
 @import url("css/tabs.css");
 @import url("css/mobileListData.css");
+@import url("css/accordion.css");
+@import url("css/gridLayout.css");
+@import url("css/badges.css");
+@import url("css/progress.css");
+@import url("css/rating.css");
+@import url("css/scrollablePane.css");
 @import url("css/css3.css");
 @import url("css/html5.css");
+@import url("css/dialogs.css");
+@import url("css/valuePicker.css")
 
 #header button {
 	position:absolute;
@@ -44,7 +52,7 @@
 	vertical-align:middle;
 }
 
-body .mblProgContainer {
+#mobGalleryProgressIndicator {
 	top:45%;
 	height: 45px;
 	width: 140px;
@@ -58,7 +66,7 @@ body .mblProgContainer {
 	-moz-border-radius: 0.4em;
 }
 
-body .mblProgContainer > div {
+#mobGalleryProgressIndicator > div {
 	height: 100%;
 	width: 100%;
 	line-height: 45px;
@@ -67,12 +75,12 @@ body .mblProgContainer > div {
 	color: #c2c2c2;
 }
 
-body .mblProg {
+#mobGalleryProgressIndicator {
 	left: 3px;
 	top: 3px;
 }
 
-body .mblProgContainer > div::after {
+#mobGalleryProgressIndicator > div::after {
 	padding-left: 42px;
 	content: "Updating...";
 }

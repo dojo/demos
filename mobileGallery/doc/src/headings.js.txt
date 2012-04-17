@@ -1,68 +1,66 @@
-define(["dojo/_base/connect", // dojo.connect
-  "dojo/_base/html", // dojo.byId
-  "dojo/_base/array", // dojo.array
-  "dojo/string", // dojo.string
-  "./_base",
-  "dojox/mobile/common", // dojox.mobile.createDomButton
-  "dojox/mobile/ToolBarButton",
-  "dojox/mobile/ToggleButton"],
-function(connect, html, array, string, _base, dm, ToolBarButton){
-  var template = "User clicked \"${label}\" button.";
-  
-  function registerClickHandler(id, label) {
-    connect.connect(html.byId(id), "click", this, function() {
-      html.byId("headingPane").innerHTML = string.substitute(
-        template, {"label" : label});
-    });
-  };
-  
-  var config = [{
-      id: "tbDefaultBtn",
-      label: "Default"
-    },{
-      id: "tbRoundBtn",
-      label: "Round"
-    },{
-      id: "tbToggleBtn",
-      label: "Toggle"
-    },{
-      id: "tbNewBtn",
-      label: "New"
-    },{
-      id: "tbHotBtn",
-      label: "What\'s Hot"
-    },{
-      id: "tbGeniusBtn",
-      label: "Genius"
-    },{
-      id: "tbRoundBtn",
-      label: "Round"
-    },{
-      id: "tbBackBtn",
-      label: "Back"
-    },{
-      id: "tbIconBtn1",
-      label: "Icon 1"
-    },{
-      id: "tbIconBtn2",
-      label: "Icon 2"
-    },{
-      id: "tbDomBtn",
-      label: "Dom"
-    }];
-  
-  return {
-    init: function(){
-      new ToolBarButton({
-        icon : (_base.isAndroid ? "images/tab-icons-25.png"
-            : "images/tab-icons.png"),
-            iconPos : (_base.isAndroid ? "24,0,24,24" : "29,0,29,29")
-      }, "tbIconBtn2");
-      
-      dm.createDomButton(html.byId("tbDomBtn"));
-      array.forEach(config, function(conf){
-        registerClickHandler(conf.id, conf.label);
-      })
-    }
-  };
+define(["dojo/on","dojo/dom", "dojo/_base/array", "dojo/string", 
+		"dojox/mobile/sniff",
+		"dojox/mobile/iconUtils", 
+		"dojox/mobile/ToolBarButton",
+		"dojox/mobile/ToggleButton"],
+  function(on, dom, array, string, has, iconUtils, ToolBarButton){
+	var template = "User clicked \"${label}\" button.";
+	
+	function registerClickHandler(id, label) {
+		on(dom.byId(id), "click", function() {
+			dom.byId("headingPane").innerHTML = string.substitute(
+				template, {"label" : label});
+		});
+	};
+	
+	var config = [{
+			id: "tbDefaultBtn",
+			label: "Default"
+		},{
+			id: "tbRoundBtn",
+			label: "Round"
+		},{
+			id: "tbToggleBtn",
+			label: "Toggle"
+		},{
+			id: "tbNewBtn",
+			label: "New"
+		},{
+			id: "tbHotBtn",
+			label: "What\'s Hot"
+		},{
+			id: "tbGeniusBtn",
+			label: "Genius"
+		},{
+			id: "tbRoundBtn",
+			label: "Round"
+		},{
+			id: "tbBackBtn",
+			label: "Back"
+		},{
+			id: "tbIconBtn1",
+			label: "Icon 1"
+		},{
+			id: "tbIconBtn2",
+			label: "Icon 2"
+		},{
+			id: "tbDomBtn",
+			label: "Dom"
+		}];
+	
+	return {
+		init: function(){
+			var button = new ToolBarButton({
+				icon : (has("android") ? "images/tab-icons-25.png"
+						: "images/tab-icons.png"),
+						iconPos : (has("android") ? "24,0,24,24" : "29,0,29,29")
+			}, "tbIconBtn2");
+			button.startup();
+			
+			iconUtils.createDomButton(dom.byId("tbDomBtn"));
+			array.forEach(config, function(conf){
+				registerClickHandler(conf.id, conf.label);
+			})
+		}
+	};
 });

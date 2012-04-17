@@ -60,7 +60,7 @@ define(["dojo/on","dojo/dom", "dojo/_base/array", "dojo/string",
 			iconUtils.createDomButton(dom.byId("tbDomBtn"));
 			array.forEach(config, function(conf){
 				registerClickHandler(conf.id, conf.label);
-			})
+			});
 		}
 	};
 });

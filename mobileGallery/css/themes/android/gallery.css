@@ -63,11 +63,6 @@ div#headings button#tbBackBtn {
 	margin-left: 14px;
 }
 
-/* "List" Font Color */
-.mblRoundRect {
-	color: black;
-}
-
 /* "List" Tab Width */
 #listTabs li.mblTabButton {
 	width: 100px;

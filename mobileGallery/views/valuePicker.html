@@ -1,0 +1,47 @@
+<div id="valuePicker" data-dojo-type="dojox.mobile.View">
+
+    <div id="dlg1" data-dojo-type="dojox.mobile.SimpleDialog">
+        <div style="text-align:left;margin:6px">
+            <img src="images/tab-icon-19.png" style="vertical-align:middle">
+            <span id="msg1"></span>
+        </div>
+        <div id="picker1" data-dojo-type="dojox.mobile.ValuePickerDatePicker" data-dojo-props="onValueChanged:onValueChanged1"></div>
+        <div style="background-color:#bdbabd;margin-top:6px;">
+            <span data-dojo-type="dojox.mobile.ToolBarButton" class="dlgBtn" onclick="setDate()">Set</span>
+            <span data-dojo-type="dojox.mobile.ToolBarButton" class="dlgBtn" onclick="cancel('dlg1')">Cancel</span>
+        </div>
+    </div>
+
+    <div id="dlg2" data-dojo-type="dojox.mobile.SimpleDialog">
+        <div style="text-align:left;margin:6px">
+            <img src="images/tab-icon-19.png" style="vertical-align:middle">
+            <span id="msg2"></span>
+        </div>
+        <div id="picker2" data-dojo-type="dojox.mobile.ValuePickerTimePicker" data-dojo-props="is24h:true,onValueChanged:onValueChanged2"></div>
+        <div style="background-color:#bdbabd;margin-top:6px;">
+            <span data-dojo-type="dojox.mobile.ToolBarButton" class="dlgBtn" onclick="setTime()">Set</span>
+            <span data-dojo-type="dojox.mobile.ToolBarButton" class="dlgBtn" onclick="cancel('dlg2')">Cancel</span>
+        </div>
+    </div>
+
+    <div id="view" data-dojo-type="dojox.mobile.View">
+        <ul data-dojo-type="dojox.mobile.EdgeToEdgeList" data-dojo-props='variableHeight:true'>
+            <li data-dojo-type="dojox.mobile.ListItem"
+                data-dojo-props='clickable:true,noArrow:true,onClick:function(){show("dlg1")}'>
+                Set date
+                <div id="dateMsg" class="subtitle">2012/02/23</div>
+            </li>
+            <li data-dojo-type="dojox.mobile.ListItem"
+                data-dojo-props='clickable:true,noArrow:true,onClick:function(){show("dlg2")}'>
+                Set time
+                <div id="timeMsg" class="subtitle">22:34</div>
+            </li>
+            <li id="item1" data-dojo-type="dojox.mobile.ListItem"
+                data-dojo-props='clickable:true,noArrow:true,rightIcon:"mblDomButtonCheckboxOn",onClick:function(){use24h()}'>
+                Use 24-hour format
+                <div id="use24hMsg" class="subtitle">13:00</div>
+            </li>
+        </ul>
+    </div>
+
+</div>

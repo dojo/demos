@@ -1,0 +1,45 @@
+#progressBarStatusMsg {
+	color: #adaead;
+	font-family: Helvetica;
+	font-size: 14px;
+	font-weight: bold;
+	margin-top: 4px;
+}
+
+.mblProgPink .mblProg0Color {
+	background-color: rgba(255,0,255,0.1);
+}
+
+.mblProgPink .mblProg1Color {
+	background-color: rgba(255,0,255,0.1);
+}
+.mblProgPink .mblProg2Color {
+	background-color: rgba(255,0,255,0.1);
+}
+.mblProgPink .mblProg3Color {
+	background-color: rgba(255,0,255,0.1);
+}
+.mblProgPink .mblProg4Color {
+	background-color: rgba(255,0,255,0.1);
+}
+.mblProgPink .mblProg5Color {
+	background-color: rgba(255,0,255,0.1);
+}
+.mblProgPink .mblProg6Color {
+	background-color: rgba(255,0,255,0.2);
+}
+.mblProgPink .mblProg7Color {
+	background-color: rgba(255,0,255,0.3);
+}
+.mblProgPink .mblProg8Color {
+	background-color: rgba(255,0,255,0.4);
+}
+.mblProgPink .mblProg9Color {
+	background-color: rgba(255,0,255,0.5);
+}
+.mblProgPink .mblProg10Color {
+	background-color: rgba(255,0,255,0.6);
+}
+.mblProgPink .mblProg11Color {
+	background-color: rgba(255,0,255,1);
+}

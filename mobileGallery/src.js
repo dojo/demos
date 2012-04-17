@@ -27,6 +27,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 	 */
 	function showProgressIndicator(show){
 		var prog = ProgressIndicator.getInstance();
+		prog.id = "mobGalleryProgressIndicator";
 		// TODO: remove this workaround
 		prog.stop();
 		if (show) {
