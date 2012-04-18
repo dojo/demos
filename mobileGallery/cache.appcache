@@ -96,7 +96,7 @@ images/menu3.jpg
 images/menu4.jpg
 images/menu5.jpg
 images/menu6.jpg
-# workaroud for build tool/or loader cannot merge some JS
+# workaround for build tool/or loader cannot merge some JS
 ../../dojox/mobile/parser.js
 ../../dojox/mobile/compat.js
 ../../dojox/mobile/Button.js
