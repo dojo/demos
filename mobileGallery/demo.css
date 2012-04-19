@@ -18,7 +18,7 @@
 @import url("css/css3.css");
 @import url("css/html5.css");
 @import url("css/dialogs.css");
-@import url("css/valuePicker.css")
+@import url("css/valuePicker.css");
 
 #header button {
 	position:absolute;
@@ -96,4 +96,8 @@
 	#jsContent, #htmlContent {
 		font-size: 14px;
 	}
+}
+
+.mgTranspRoundRect {
+	background-color: transparent;
 }

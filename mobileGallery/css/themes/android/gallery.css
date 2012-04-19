@@ -43,24 +43,38 @@ div#tbIconBtn1 img {
 	margin-bottom: 1px !important;
 }
 
+#headingTabBar {
+	top: 5px;
+}
+
 /* "Headings" Base Button */
 div#headings button.baseBtn {
-	height: 23px;
-	line-height: 23px;
-	margin: 1px 30px;
+	height: 30px;
+	line-height: 25px;
+	margin: 5px 30px;
 }
 
 /* "Headings" Back Button */
 div#headings button.backBtn:after {
-    height: 21px;
+    height: 29px;
 	top: 0px;
     left: -8px;
-    -webkit-mask-size: 12px 21px;
+    -webkit-mask-size: 12px 29px;
 }
 
 
 div#headings button#tbBackBtn {
 	margin-left: 14px;
+}
+
+div#headings div#tbDomBtn {
+	margin-top: 6px;
+}
+
+.roundBtn {
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
 }
 
 /* "List" Tab Width */
@@ -94,9 +108,9 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 
 /* back button of "Back" in header */
 #navButton::after {
-	height: 25px;
+	height: 29px;
 	-webkit-mask-position: 0 0;
-	-webkit-mask-size: 12px 25px;
+	-webkit-mask-size: 12px 29px;
 	left: -11px;
 	top:0px;
 }
@@ -107,7 +121,8 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 #header button {
-	top: 0px;
+	top: 6px;
+	height: 29px;
 	border: 0px;
 }
 
@@ -121,8 +136,9 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 #tbToggleBtn {
-	height:25px;
+	height:30px;
 	line-height:25px;
+	bottom: 4px;
 }
 
 /* Temp fix for wrong icon position in list. */

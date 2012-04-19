@@ -5,7 +5,8 @@ define([
 	"dojox/mobile",
 	"dojox/mobile/compat",
 	"dojox/mobile/IconContainer",
-	"dojox/mobile/Badge"
+	"dojox/mobile/Badge",
+	"dojox/mobile/RoundRect"
 ], function(dom, registry){
 
 

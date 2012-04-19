@@ -3,7 +3,7 @@ define(["dojox/mobile/parser",
 		"dojox/mobile/compat",
 		"dojox/mobile/Rating",
 		"dojox/mobile/ScrollableView"], 
-		function() {
+		function(){
 	return {
 		init: function(){
 			// nothing

@@ -6,7 +6,7 @@ define(["dojox/mobile/parser",
 		"dojox/mobile/SwapView",
 		"dojox/mobile/PageIndicator",
 		"dojox/mobile/ScrollablePane"], 
-		function() {
+		function(){
 	return {
 		init: function(){
 			// nothing

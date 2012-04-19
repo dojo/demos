@@ -1,3 +1,3 @@
-define(["dojox/mobile/Video", "dojox/mobile/Audio"], function(){
+define(["dojox/mobile/Video", "dojox/mobile/Audio", "dojox/mobile/RoundRect"], function(){
 	
 });

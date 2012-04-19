@@ -12,7 +12,8 @@ define(["dojo/dom",
 		"dojox/mobile/ProgressIndicator",
 		"dojox/mobile/TabBar",
 		"dojox/mobile/TabBarButton",
-		"dojox/mobile/Button"], 
+		"dojox/mobile/Button",
+		"dojox/mobile/RoundRect"], 
 	function(dom, domClass, ready, array, registry, on) {
 	return {
 		init: function(){

@@ -13,7 +13,7 @@ define(["dojo/_base/connect",
 		"dojox/mobile/Button",
 		"dojox/mobile/EdgeToEdgeCategory",
 		"dojox/mobile/TextBox"], 
-		function(connect, dom, ready, registry, TransitionEvent, iconUtils) {
+		function(connect, dom, ready, registry, TransitionEvent, iconUtils){
 	return {
 		init: function(){
 			ready(function(){

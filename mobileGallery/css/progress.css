@@ -3,7 +3,12 @@
 	font-family: Helvetica;
 	font-size: 14px;
 	font-weight: bold;
-	margin-top: 4px;
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+
+#progressViewTabBarBtn1, #progressViewTabBarBtn2 {
+	width: 130px;
 }
 
 .mblProgPink .mblProg0Color {

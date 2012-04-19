@@ -166,7 +166,7 @@ define(["dojo/_base/lang"],
 				id: "valuePicker",
 				speclevel: "8",
 				iconPos: "667,0,29,29",
-				title: "Value Picker",
+				title: "Pickers",
 				demourl: "views/valuePicker.html",
 				jsmodule: "demos/mobileGallery/src/valuePicker",
 				jsSrc: "doc/src/valuePicker.js.txt"

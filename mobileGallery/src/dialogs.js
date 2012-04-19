@@ -11,12 +11,11 @@ define([
 	"dojox/mobile/Button",
 	"dojox/mobile/Slider"], function(array, dom, registry, ProgressIndicator){
                  
-
-	show = function(dlg) {
+	show = function(dlg){
 		registry.byId(dlg).show();
 	}
 
-	hide = function(dlg) {
+	hide = function(dlg){
 		registry.byId(dlg).hide();
 	}
 

@@ -5,7 +5,7 @@ define(["dojox/mobile/parser",
 		"dojox/mobile/ContentPane",
 		"dojox/mobile/TabBar",
 		"dojox/mobile/ScrollableView"], 
-		function() {
+		function(){
 	return {
 		init: function(){
 			// nothing
