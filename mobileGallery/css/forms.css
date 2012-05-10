@@ -20,7 +20,7 @@
 	margin: 1em .7em .3em;
 }
 
-#testForm span {
+#testForm span.field-label {
 	display:-moz-inline-box;
 	display:inline-block;
 	font-size: 16px;

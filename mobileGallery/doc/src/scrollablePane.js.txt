@@ -1,4 +1,5 @@
-define(["dojox/mobile/parser",
+define(["dijit/registry",
+		"dojox/mobile/parser",
 		"dojox/mobile",
 		"dojox/mobile/compat",
 		"dojox/mobile/FixedSplitter",
@@ -6,10 +7,10 @@ define(["dojox/mobile/parser",
 		"dojox/mobile/SwapView",
 		"dojox/mobile/PageIndicator",
 		"dojox/mobile/ScrollablePane"], 
-		function() {
+		function(registry){
 	return {
 		init: function(){
-			// nothing
+			setTimeout(function(){ registry.byId("scrollablePane").resize(); }, 100);
 		}
 	};
 });

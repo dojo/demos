@@ -4,16 +4,16 @@
 		<div class="field-title">Personal Data</div>
 		<div class="fieldset">
 			<div class="field-row">
-				<span>Full name</span>
+				<span class="field-label">Full name</span>
 				<input id="forms_name" dojoType="dojox.mobile.TextBox" selectOnClick="true" value="Luke" type=text name="name"></input>
 			</div>
 			<div class="field-row">
-				<span>Hide birthdate</span>
+				<span class="field-label">Hide birthdate</span>
 				<input type=checkbox dojoType="dojox.mobile.CheckBox" name="hidebirth" checked="true" style="margin-left:0px;">
 				</input>
 			</div>
 			<div class="field-row">
-				<span style="line-height:16px;">Goals</span>
+				<span class="field-label" style="line-height:16px;">Goals</span>
 				<textarea name="goals" dojoType="dojox.mobile.TextArea" maxLength="100" cols="20"></textarea>
 			</div>
 		</div>
@@ -23,12 +23,12 @@
 		</div>
 		<div class="fieldset">
 			<div class="field-row">
-				<span>User name*</span>
+				<span class="field-label">User name*</span>
 				<input type=text dojoType="dojox.mobile.TextBox" name="username" required>
 				</input>
 			</div>
 			<div class="field-row">
-				<span>Password*</span>
+				<span class="field-label">Password*</span>
 				<input type=password name="pass" dojoType="dojox.mobile.TextBox">
 				</input>
 			</div>
@@ -38,25 +38,25 @@
 			Alerts
 		</div>
 		<div class="fieldset">
-			<span>Issue alerts for:</span>
+			<span class="field-label">Issue alerts for:</span>
 			<br/>
 			<div class="field-row">
-				<span>All messages</span>
+				<span class="field-label">All messages</span>
 				<input id="alert-all" type=radio name="forwardtype" dojoType="dojox.mobile.RadioButton" value="all">
 				</input>
 			</div>
 			<div class="field-row">
-				<span style="line-height:16px">Urgent messages only</span>
+				<span class="field-label" style="line-height:16px">Urgent messages only</span>
 				<input id="alert-urgent" type=radio name="forwardtype" dojoType="dojox.mobile.RadioButton" checked="true" value="urgent">
 				</input>
 			</div>
 			<div class="field-row">
-				<span style="vertical-align:top;">Audible alerts:</span>
+				<span class="field-label" style="vertical-align:top;">Audible alerts:</span>
 				<div id="alertSwitch" dojoType="dojox.mobile.Switch" value="off">
 				</div>
 			</div>
 			<div class="field-row">
-				<span>Alert volume</span>
+				<span class="field-label">Alert volume</span>
 			</div>
 			<input id="alertSlider" dojoType="dojox.mobile.Slider" name="alertvolume" min="0" max="100" value="0" style="width:50%;">
 			</input>

@@ -119,7 +119,7 @@ define(["dojo/_base/lang"],
 				id: "scrollablePane",
 				speclevel: "8",
 				iconPos: "551,0,29,29",
-				title: "ScrollablePane",
+				title: "Scroll Pane",
 				demourl: "views/scrollablePane.html",
 				jsmodule: "demos/mobileGallery/src/scrollablePane",
 				jsSrc: "doc/src/scrollablePane.js.txt"

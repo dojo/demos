@@ -11,7 +11,8 @@
 #newsScrollPane {
 	font-size: 14px;
 }
-.list1ScrollPane li{
+#scrollablePane .list1ScrollPane, #scrollablePane .mblRoundRect {
+	border-style: none;
 }
 .list1ScrollPane li:nth-child(even){
 	background-color: #00575F;

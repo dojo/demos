@@ -76,7 +76,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 				to: "source",
 				navTitle: "Back"
 			});
-			transitViews(srcBtn.backTo, "source", 1);
+			transitViews(srcBtn.backTo, "source", 1, navigator.userAgent.match(/GT-I9100/) ? "none" : null);
 		} else {
 			navBtnClickHandler();
 		}

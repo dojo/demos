@@ -131,7 +131,7 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 #sourceButton {
-	right: 12px;
+	right: 0px;
 	width: 72px;
 }
 
