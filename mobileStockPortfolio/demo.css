@@ -69,16 +69,7 @@ html,body{
 	margin: auto;
 }
 #tbl1 td {
-	text-align: right;
+	text-align: left;
 	border-bottom: 1px solid #DEE9F5;
 	font: bold 13px arial,helvetica,clean,sans-serif;
-}
-#tbl1 td:first-child {
-	text-align: left;
-}
-#tbl1 td.g {
-	color: #008800
-}
-#tbl1 td.r {
-	color: #CC0000
 }

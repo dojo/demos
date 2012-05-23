@@ -3,59 +3,22 @@
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
 	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>Mobile Stock Portfolio</title>
+	<title>Mobile Stock</title>
 
-	<link href="../../dojox/mobile/themes/common/domButtons/DomButtonBlueCircleArrow.css" rel="stylesheet"/>
+	<link href="http://localhost/dojo-trunk-commit/dojox/mobile/themes/common/domButtons/DomButtonBlueCircleArrow.css"
+		  rel="stylesheet">
 	<link href="demo.css" rel="stylesheet">
-	<script type="text/javascript" src="../../dojox/mobile/deviceTheme.js" data-dojo-config="mblThemeFiles: ['base','PageIndicator','FixedSplitter']"></script>
-	<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true, mblAlwaysHideAddressBar: true"></script>
+	<script type="text/javascript" src="../../dojox/mobile/deviceTheme.js"
+			data-dojo-config="mblThemeFiles: ['base','PageIndicator','FixedSplitter']"></script>
+	<script type="text/javascript" src="../../dojo/dojo.js"
+			data-dojo-config="async: true, parseOnLoad: true"></script>
 	<script type="text/javascript" src="src.js"></script>
 </head>
 <body style="visibility:hidden;">
 	<div data-dojo-type="dojox.mobile.FixedSplitter" data-dojo-props='orientation:"V"'>
-		<div data-dojo-type="dojox.mobile.Container" style="height:50%;overflow:hidden;">
+		<div data-dojo-type="dojox.mobile.Container" style="height:66%;overflow:hidden;">
 			<div id="general" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"inherit"'>
-				<ul data-dojo-type="dojox.mobile.RoundRectList" class="list1" data-dojo-props='stateful:"true"'>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Gold</div>
-						<div class="c2">3,400.20</div>
-						<div class="c3 c3a">+1.57%</div>
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Oil</div>
-						<div class="c2">347.26</div>
-						<div class="c3 c3b">-0.82%</div>
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Commodities</div>
-						<div class="c2">541.77</div>
-						<div class="c3 c3b">-0.43%</div>
-						
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Silver</div>
-						<div class="c2">12,823.94</div>
-						<div class="c3 c3a">+0.17%</div>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Soybeans</div>
-						<div class="c2">18.19</div>
-						<div class="c3 c3a">+2.77%</div>
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Wheat</div>
-						<div class="c2">3,335</div>
-						<div class="c3 c3a">+1.62%</div>
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Corn</div>
-						<div class="c2">29,930</div>
-						<div class="c3 c3a">+1.15%</div>
-					</li>
-					<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
-						<div class="c1">Sugar</div>
-						<div class="c2">172.15</div>
-						<div class="c3 c3a">+0.00%</div>
-					</li>
+				<ul data-dojo-type="dojox.mobile.RoundRectList" class="list1" data-dojo-props='stateful:true' id="stocks">
 				</ul>
 			</div>
 		</div>
@@ -66,67 +29,39 @@
 		<div data-dojo-type="dojox.mobile.Container" style="overflow:hidden;">
 			<div id="swap1" data-dojo-type="dojox.mobile.SwapView">
 				<div data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"100%"'>
-					<ul id="news" data-dojo-type="dojox.mobile.RoundRectList" data-dojo-props='variableHeight:true'>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Oil prices rise as dollar weakens
-							<div class="subtitle">Daily News - 2011/05/02 15:40</div>
-						</li>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Same Old Story For Air Service Costs
-							<div class="subtitle">Daily News - 2011/05/02 14:30</div>
-						</li>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Local stocks mixed despite new trade data
-							<div class="subtitle">Daily News - 2011/05/02 14:10</div>
-						</li>
-
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Stocks point higher after economic data
-							<div class="subtitle">Daily News - 2011/05/02 11:00</div>
-						</li>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Wall St seen higher after industry forecasts
-							<div class="subtitle">Daily News - 2011/05/01 16:05</div>
-						</li>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Stocks drop on slower job creation
-							<div class="subtitle">Daily News - 2011/05/01 15:50</div>
-						</li>
-						<li data-dojo-type="dojox.mobile.ListItem"
-							data-dojo-props='href:"../mobileScrollableView/demo.html", hrefTarget:"_blank", arrowClass:"mblDomButtonBlueCircleArrow"'>
-							Dollar initially falls after revised jobs report
-							<div class="subtitle">Daily News - 2011/05/01 13:20</div>
-						</li>
-					</ul>
+						<ul id="news" data-dojo-type="dojox.mobile.RoundRectList" data-dojo-props='variableHeight:true'>
+						</ul>
 				</div>
 			</div>
 
-			<div id="swap2" data-dojo-type="dojox.mobile.SwapView">
-				<div data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"100%"'>
-					<div data-dojo-type="dojox.mobile.RoundRect" style="position:relative;">
-					<table id="tbl1" style="width:90%">
-						<tr><td>2 Yr Bond</td><td>113.75</td><td>0.00</td><td class="g">0.00%</td></tr>
-						<tr><td>N225</td><td>10,004.20</td><td>154.46</td><td class="g">1.57%</td></tr>
-						<tr><td>JKSE</td><td>3,816.44</td><td>32.87</td><td class="r">-0.85%</td></tr>
-						<tr><td>Seoul</td><td>2,200.73</td><td>28.23</td><td class="g">1.27%</td></tr>
-						<tr><td>TW</td><td>8,946.08</td><td>61.79</td><td class="r">-0.69%</td></tr>
-						<tr><td>Tokyo</td><td>2,932.19</td><td>20.68</td><td class="r">-0.71%</td></tr>
-						<tr><td>All</td><td>4,854.70</td><td>41.50</td><td class="r">-0.85%</td></tr>
-					</table>
+			<div id="swap2" data-dojo-type="dojox.mobile.SwapView" >
+				<div data-dojo-type="dojox.mobile.View" data-dojo-props='height:"100%"' style="overflow: hidden">
+					<div data-dojo-type="dojox.mobile.RoundRect" style="position:relative;" id="figures">
+						<table id="tbl1" style="width:90%">
+							<tr><td>Open</td><td id="open"></td><td>Cap</td><td id="cap"></td></tr>
+							<tr><td>Max</td><td id="max"></td><td>Max/52w</td><td id="max52"></td></tr>
+							<tr><td>Min</td><td id="min"></td><td>Min/52w</td><td id="min52"></td></tr>
+							<tr><td>Vol</td><td id="vol"></td><td>Mean Vol</td><td id="meanvol"></td></tr>
+							<tr><td>PER</td><td id="per"></td><td>Rdt</td><td id="rdt"></td></tr>
+						</table>
 					</div>
 				</div>
 			</div>
 
+
 			<div id="swap3" data-dojo-type="dojox.mobile.SwapView">
-				<div data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"100%"'>
+				<div data-dojo-type="dojox.mobile.View" data-dojo-props='height:"100%"' style="overflow: hidden">
 					<div data-dojo-type="dojox.mobile.RoundRect" style="overflow:hidden">
-						<img src="../../dojox/mobile/tests/images/chart.png" alt="">
+						<div data-dojo-type="dojox.charting.widget.Chart"  id="chart" data-dojo-props="margins:{ l: 0, r: 0, t: 0, b: 0 }"
+								style="height: 100px">
+							<div class="plot" name="gridPlot" type="Grid" enableCache="true" renderOnAxis="false"></div>
+							<div class="axis" name="x" enableCache="true" htmlLabels="false"
+									font="normal normal normal 11pt Helvetica" fixUpper="major" majorTickStep="1"></div>
+							<div class="axis" name="y" vertical="true" min="0"
+									font="normal normal normal 11pt Helvetica"></div>
+							<div class="plot" name="default" type="Lines"></div>
+							<div class="series" name="data" data="0,0"></div>
+						</div>
 					</div>
 				</div>
 			</div>
