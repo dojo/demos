@@ -34,7 +34,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			dom.byId("rightPane").appendChild(prog.domNode);
 			prog.start();
 		}
-	};
+	}
 	
 	// flag indicating whether there's transition
 	var inTransitionOrLoading = false;
@@ -65,7 +65,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 		transitViews(navRecord.to, navRecord.from);
 		if (navRecord.fromTitle)
 			dom.byId("headerLabel").innerHTML = navRecord.fromTitle;
-	};
+	}
 
 	function srcBtnClickHandler() {
 		var srcBtn = registry.byId("sourceButton");
@@ -81,7 +81,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			navBtnClickHandler();
 		}
 
-	};
+	}
 
 	// update label of navigation button
 	function updateNavButtonLabel() {
@@ -92,7 +92,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			dom.byId("navButton").innerHTML = record.navTitle;
 			registry.byId("header").moveTo = record.from;
 		}
-	};
+	}
 
 	// show or hide navigation button
 	// TODO: simplify the logic here or at the caller
@@ -112,19 +112,19 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 				domClass.remove(navButton, "hidden");
 			}
 		}
-	};
+	}
 
 	function updateNavButton() {
 		updateNavButtonLabel();
 		showHideNavButton();
-	};
+	}
 
 	function clearNavRecords() {
 		var navRecords = structure.navRecords;
 		if (navRecords.length == 0)
 			return;
 		navRecords.splice(0, navRecords.length);
-	};
+	}
 	
 	
 	/* 
@@ -169,7 +169,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			regex.lastIndex = idx + replacement.length;
 		}
 		return data;
-	};
+	}
 	
 	// a map containing html and javascript source
 	// codes, indexed by demo view ID. Each entry is
@@ -180,7 +180,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			DEMO_SOURCES[id] = {};
 		if (!DEMO_SOURCES[id][type])
 			DEMO_SOURCES[id][type] = src;
-	};
+	}
 	function getDemoHtml(id) {
 		return (DEMO_SOURCES[id] && DEMO_SOURCES[id].html ? DEMO_SOURCES[id].html : "");
 	}
@@ -193,7 +193,6 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 	 * @param args
 	 *            three parameters: id: id of the view; header:
 	 *            label of the view header; src: URL of the view source
-	 * @returns
 	 */
 	function initView(args){
 		var view = registry.byId(args.id);
@@ -272,7 +271,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			}
 			structure.layout.setCurrentView(this.id);
 		});
-	};
+	}
 	
 	/**
 	 * Callback handler of loading view.
@@ -297,7 +296,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 				rightPane.appendChild(tmpContainer.childNodes[i]);
 			}
 		};
-	};
+	}
 	
 	/**
 	 * Load contents of a view to SplitterPane and switch to it.
@@ -305,7 +304,6 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 	 * 			args should have args.demourl and args.holder
 	 * 			demourl: the url where loader can get the source of view
 	 * 			holder: the id of pane that will hold the view
-	 * @returns
 	 */
 	
 	function loadAndSwitchView(args, li) {
@@ -315,7 +313,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			alert("Failed to load demo.");
 			showProgressIndicator(false);
 			inTransitionOrLoading = false;
-		};
+		}
 
 		function initViewAndTransit() {
 			showProgressIndicator(false);
@@ -325,10 +323,10 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 //					li.transitionTo(args.id);
 				triggerTransition(li, args.id);
 			},0);
-		};
+		}
 
 		function stopProgress(){
-		};
+		}
 		
 		var xhrArgs = {
 				url: args.demourl,
@@ -358,22 +356,22 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 				
 				// 2. load JS codes
 				if (args.jsSrc) {
-				var jsDefer = new Deferred();
-				xhr.get({
-					url: args.jsSrc,
-					timeout: 30000,
-					handleAs: "text",
-					load: function(data) {
-						var src = highlight.processString(data).result;
-						//src = src.replace(/\&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
-						jsDefer.resolve(src);
-					},
-					error: function(err) {
-						jsDefer.reject(true);
-					}
-				});
-				deferArray.push(jsDefer);
-				};
+					var jsDefer = new Deferred();
+					xhr.get({
+						url: args.jsSrc,
+						timeout: 30000,
+						handleAs: "text",
+						load: function(data) {
+							var src = highlight.processString(data).result;
+							//src = src.replace(/\&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/\"/g, "&quot;");
+							jsDefer.resolve(src);
+						},
+						error: function(err) {
+							jsDefer.reject(true);
+						}
+					});
+					deferArray.push(jsDefer);
+				}
 
 				// put them all in deferred list
 				var deferList = new DeferredList(deferArray);
@@ -394,7 +392,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			deferred.addCallback(createViewHTMLLoadedHandler(args, li)).addCallback(initViewAndTransit);
 			deferred.addErrback(handleError);
 		}
-	};
+	}
 	
 	/**
 	 * Show the view of each show case. Load it first, if it's not loaded.
@@ -415,7 +413,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			inTransitionOrLoading = true;
 			loadAndSwitchView(args, li);
 		}
-	};
+	}
 	
 	/**
 	 * Initialize the navigation list items.
@@ -466,15 +464,14 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 		// move navigation list view under correct parent (right or left pane)
 		var holder = dom.byId(structure.layout.leftPane.hidden ? "rightPane" : "leftPane");
 		holder.appendChild(dom.byId("navigation"));
-	};
+	}
 	
 	/**
-	 * Chage the layout according to the new width of screen after resize
+	 * Change the layout according to the new width of screen after resize
 	 * or change orientation.
 	 *
 	 * @param event
 	 * 			event is the onresize or onorientationchange event data
-	 * @returns
 	 */
 	function changeLayout(event){
 		var hideLeftPane = (window.innerWidth < structure.layout.threshold) ? true : false;
@@ -537,7 +534,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 			//refresh the whole page after the layout change
 			registry.byId('splitter').startup();
 		}//else (the current layout match the screen width, then do nothing)
-	};
+	}
 	
 	return {
 		init: function(){
