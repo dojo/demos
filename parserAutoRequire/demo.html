@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Parser Auto-Require Demonstration</title>
+	<link rel="shortcut icon" href="images/favicon.png" />
+
+	<link rel="stylesheet" href="demo.css" type="text/css" />
+	<script type="text/javascript">
+		dojoConfig = {
+			async: true,
+			locale: "en-gb"
+		};
+	</script>
+	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+	<script type="text/javascript" src="src.js" charset="utf-8"></script>
+
+</head>
+<body class="claro">
+	<div id="preloader">Loading Application...</div>
+	<!-- Using Declarative Require to "hang" some modules off demo object for declarative scripting -->
+	<script type="dojo/require">
+	  "demo.dom": "dojo/dom",
+	  "demo.registry": "dijit/registry"
+	</script>
+	<div data-dojo-type="dijit/layout/BorderContainer" id="mainContainer"
+		data-dojo-props="gutters:true">
+		<div data-dojo-type="dijit/layout/ContentPane" id="headerPane"
+			data-dojo-props="splitter:false, region:'top'">Parser
+			Auto-Require Demonstration</div>
+		<div data-dojo-type="dijit/layout/BorderContainer" id="mainSplitter"
+			data-dojo-props="liveSplitters: false, design: 'sidebar', region: 'center'">
+			<div data-dojo-type="dijit/layout/AccordionContainer"
+				id="leftAccordion" data-dojo-props="minSize: 20, region: 'leading'">
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap1"
+					data-dojo-props="title: 'Tabs', href:'ap1.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap2"
+					data-dojo-props="title: 'Dialogs', href:'ap2.html'"
+					class="paneAccordion"></div>
+				<div data-dojo-type="dijit/layout/ContentPane" id="ap3"
+					data-dojo-props="title: 'Other', href:'ap3.html'"
+					class="paneAccordion"></div>
+			</div>
+			<div data-dojo-type="dijit/layout/TabContainer" id="mainTabContainer"
+				data-dojo-props="region: 'center'">
+				<div data-dojo-type="dijit/layout/ContentPane" id="tabWelcome"
+					data-dojo-props="title: 'Welcome', href:'tabWelcome.html'"></div>
+			</div>
+		</div>
+	</div>
+</body>

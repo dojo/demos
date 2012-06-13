@@ -1,0 +1,130 @@
+{
+    "identifier": "id",
+    "label": "label",
+    "items": [
+        {
+            "id": "root",
+            "children": [
+                {
+                    "id": "_1",
+                    "label": "Web Server",
+                    "icon": "ocpIconServer",
+                    "children": [
+                        {
+                            "id": "_3",
+                            "label": "Apache 2.2",
+                            "icon": "ocpIconProcess",
+                            "children": [
+                                {
+                                    "id": "_3.01",
+                                    "label": "Last 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "HTTPD",
+                                    "timeframe": 1
+                                },
+                                {
+                                    "id": "_3.02",
+                                    "label": "Previous 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "HTTPD",
+                                    "timeframe": 2
+                                },
+                                {
+                                    "id": "_3.07",
+                                    "label": "Last 7d [0]",
+                                    "icon": "ocpIconCalendar",
+                                    "process": "HTTPD",
+                                    "timeframe": 7
+                                },
+                                {
+                                    "id": "_3.all",
+                                    "label": "All [70]",
+                                    "icon": "ocpIconPage",
+                                    "process": "HTTPD",
+                                    "timeframe": "all"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": "_2",
+                    "label": "Proxy Server",
+                    "icon": "ocpIconServer",
+                    "children": [
+                        {
+                            "id": "_4",
+                            "label": "Squid Proxy 01",
+                            "icon": "ocpIconProcess",
+                            "children": [
+                                {
+                                    "id": "_4.01",
+                                    "label": "Last 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "PROXY01",
+                                    "timeframe": 1
+                                },
+                                {
+                                    "id": "_4.02",
+                                    "label": "Previous 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "PROXY01",
+                                    "timeframe": 2
+                                },
+                                {
+                                    "id": "_4.07",
+                                    "label": "Last 7d [0]",
+                                    "icon": "ocpIconCalendar",
+                                    "process": "PROXY01",
+                                    "timeframe": 7
+                                },
+                                {
+                                    "id": "_4.all",
+                                    "label": "All [82]",
+                                    "icon": "ocpIconPage",
+                                    "process": "PROXY01",
+                                    "timeframe": "all"
+                                }
+                            ]
+                        },
+                        {
+                            "id": "_5",
+                            "label": "Squid Proxy 02",
+                            "icon": "ocpIconProcess",
+                            "children": [
+                                {
+                                    "id": "_5.01",
+                                    "label": "Last 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "PROXY02",
+                                    "timeframe": 1
+                                },
+                                {
+                                    "id": "_5.02",
+                                    "label": "Previous 24h [0]",
+                                    "icon": "ocpIconDay",
+                                    "process": "PROXY02",
+                                    "timeframe": 2
+                                },
+                                {
+                                    "id": "_5.07",
+                                    "label": "Last 7d [0]",
+                                    "icon": "ocpIconCalendar",
+                                    "process": "PROXY02",
+                                    "timeframe": 7
+                                },
+                                {
+                                    "id": "_5.all",
+                                    "label": "All [10]",
+                                    "icon": "ocpIconPage",
+                                    "process": "PROXY02",
+                                    "timeframe": "all"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

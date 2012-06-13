@@ -1,0 +1,47 @@
+<div class="tabPane">
+	<h1>Sliders</h1>
+	<div class="info">While these aren't the type you find in
+		Chicago, these are pretty good things none the less.</div>
+	<div data-dojo-type="dijit/form/VerticalSlider" id="slider1"
+		data-dojo-props="value:10, maximum:100, minimum:0, discreetValues:11, style:'height:176px; clear:both'">
+		<script type="dojo/on" data-dojo-event="change" data-dojo-args="val">
+			demo.dom.byId("slider1input").value = val;
+		</script>
+		<ol data-dojo-type="dijit/form/VerticalRuleLabels"
+			data-dojo-props="container:'leftDecoration', style:'width:2em;', labelStyle:'right:0px;'">
+			<li>0</li>
+			<li>100</li>
+		</ol>
+		<div data-dojo-type="dijit/form/VerticalRule"
+			data-dojo-props="container:'leftDecoration', style:'width:5px;', count:11"></div>
+		<div data-dojo-type="dijit/form/VerticalRule"
+			data-dojo-props="container:'rightDecoration', style:'width:5px;', count:11"></div>
+		<ol data-dojo-type="dijit/form/VerticalRuleLabels"
+			data-dojo-props="container:'rightDecoration', style:'width:2em;', maximum:100, count:6, numericMargin:1, constraints:{ pattern:'#' }"></ol>
+	</div>
+	<div>
+		Slider1 Value: <input disabled id="slider1input" size="3" value="10"
+			autocomplete="off" />
+	</div>
+	<div data-dojo-type="dijit/form/HorizontalSlider" id="slider2"
+		data-dojo-props="value:10, maximum:100, minimum:0, discreetValues:11, style:'width: 200px;'">
+		<script type="dojo/on" data-dojo-event="change" data-dojo-args="val">
+			demo.dom.byId("slider2input").value = val;
+		</script>
+		<ol data-dojo-type="dijit/form/HorizontalRuleLabels"
+			data-dojo-props="container:'topDecoration', style:'height: 2em;'">
+			<li>0</li>
+			<li>100</li>
+		</ol>
+		<div data-dojo-type="dijit/form/HorizontalRule"
+			data-dojo-props="container: 'topDecoration', style: 'height: 5px;', count: 11"></div>
+		<div data-dojo-type="dijit/form/HorizontalRule"
+			data-dojo-props="container: 'bottomDecoration', style: 'height: 5px;', count: 11"></div>
+		<ol data-dojo-type="dijit/form/HorizontalRuleLabels"
+			data-dojo-props="container: 'bottomDecoration', style: 'height: 2em;', maximum: 100, count: 6, numericMargin: 1, constraints: { pattern: '#' }"></ol>
+	</div>
+	<div>
+		Slider2 Value: <input disabled id="slider2input" size="3" value="10"
+			autocomplete="off" />
+	</div>
+</div>

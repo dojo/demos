@@ -1,0 +1,59 @@
+<style type="text/css">
+#myStackContainer {
+	text-align: left;
+	margin: 0.5em;
+	background-color: #E9F4FE;
+	border: 1px solid #759DC0;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+#myStackContainer p{
+	margin: 0;
+	padding: 1.5em;
+}
+</style>
+<div class="tabPane">
+	<h1>Stack Container</h1>
+	<div>&nbsp;</div>
+	<button id="previous" data-dojo-type="dijit/form/Button">&lt;
+		<script type="dojo/on" data-dojo-event="click">
+			demo.registry.byId("myStackContainer").back();
+		</script>
+	</button>
+	<span data-dojo-type="dijit/layout/StackController"
+		data-dojo-props="containerId:'myStackContainer'"></span>
+	<button id="next" data-dojo-type="dijit/form/Button">&gt;
+		<script type="dojo/on" data-dojo-event="click">
+			demo.registry.byId("myStackContainer").forward();
+		</script>
+	</button>
+	<div id="myStackContainer" data-dojo-type="dijit/layout/StackContainer">
+		<p id="page1" data-dojo-type="dijit/layout/ContentPane"
+			data-dojo-props="title:'Page 1'">Lorem ipsum dolor sit amet,
+			iriure aliquip nostrud et pertineo nulla vulputate autem. Sudo ut,
+			decet minim secundum comis, amet nostrud. Vel olim consequat aliquip
+			saepius illum nulla, odio gravis accumsan. Vero odio accumsan exerci
+			sagaciter ille ut, nulla adsum quis abigo at. Ymo ullamcorper
+			praemitto, macto te reprobo defui, sudo suscipit valde. Proprius
+			aliquip blandit eum loquor praemitto aliquip, commodo feugait bis
+			epulae meus tristique. Quadrum pneum incassum eligo velit facilisi
+			olim qui valetudo. Proprius ulciscor accumsan ut ille opes.</p>
+		<p id="page2" data-dojo-type="dijit/layout/ContentPane"
+			data-dojo-props="title:'Page 2'">Ut nulla fatua accumsan valetudo
+			minim quia quia abico sagaciter ex, feugiat patria melior praemitto.
+			Distineo probo indoles, paratus oppeto nunc venio nullus quidne ut.
+			Vel dignissim volutpat, at wisi premo ex commodo exerci quidne capio
+			saluto duis. Iaceo tum vulputate camur nutus ludus feugait enim.
+			Vulputate oppeto feugiat, sino eum ne causa. Pneum lobortis, tego ut,
+			velit dolore vero lenis jus, sit eligo ingenium causa eum decet.</p>
+		<p id="page3" data-dojo-type="dijit/layout/ContentPane"
+			data-dojo-props="title:'Page 3'">Letalis feugiat vel, wisi
+			iustum, illum tamen, indoles defui. Paratus suscipit foras, tincidunt
+			nostrud brevitas acsi.</p>
+	</div>
+</div>
