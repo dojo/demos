@@ -13,9 +13,7 @@ function(ready,mobile,parser,compat,deviceTheme,on,connect,html,registry,Map,Nav
 			baseLayerType : dojox.geo.openlayers.BaseLayerType.ARCGIS
 		};
 
-		map = new Map(options);
-
-		html.place(map.domNode, "map");
+		map = new Map(options,"map");
 		map.startup();
 
 		var olMap = map.map.getOLMap();
