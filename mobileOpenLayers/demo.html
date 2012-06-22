@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html style="height:100%">
+<html>
     <head profile="http://www.w3.org/2002/12/namespace">
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no" />
@@ -10,7 +10,7 @@
         <script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: 1,  async:1"></script>
         <script type="text/javascript" src="src.js" charset="utf-8"></script>
     </head>
-    <body style='visibility:hidden;height:100%'>
+    <body style='visibility:hidden;'>
         <div id="home" data-dojo-type="dojox.mobile.View" selected="true" >
             <h1 data-dojo-type="dojox.mobile.Heading" label="OpenLayers Map"></h1>
             <h2 data-dojo-type="dojox.mobile.RoundRectCategory">Go To:</h2>
@@ -18,17 +18,17 @@
                 <li id="paris" data-dojo-type="dojox.mobile.ListItem" moveTo="mapPage" transition="slide">
                     Paris
                 </li>
-                <li id="newyork" data-dojo-type="dojox.mobile.ListItem" moveTo="mapPage" transition="flip">
+                <li id="newyork" data-dojo-type="dojox.mobile.ListItem" moveTo="mapPage" transition="slide">
                     New York
                 </li>
-                <li id="lacolle" data-dojo-type="dojox.mobile.ListItem" moveTo="mapPage" transition="fade">
+                <li id="lacolle" data-dojo-type="dojox.mobile.ListItem" moveTo="mapPage" transition="slide">
                     La Colle sur Loup
                 </li>
             </ul>
         </div>
-        <div id="mapPage" data-dojo-type="dojox.mobile.View" style="width: 100%; height: 100%;">
+        <div id="mapPage" data-dojo-type="dojox.mobile.View">
             <h1 data-dojo-type="dojox.mobile.Heading" back="Back" moveTo="home" id="mapHeader"></h1>
-            <div id="map" style="background-color: #b5d0d0; width: 100%; height: 100%;">
+            <div id="map" style="background-color: #b5d0d0;">
             </div>
         </div>
     </body>

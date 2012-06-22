@@ -1,26 +1,44 @@
-require(["dojo/ready","dojox/mobile","dojox/mobile/parser","dojox/mobile/compat",
+require(["dojo/ready", "dojo/dom", "dojo/topic", "dojo/_base/sniff", "dojox/mobile","dojox/mobile/parser","dojox/mobile/compat",
 "dojox/mobile/deviceTheme","dojo/on","dojo/_base/connect","dojo/_base/html","dijit/registry",
 "dojox/geo/openlayers/widget/Map","demos/mobileOpenLayers/src/NavigationControl"], 
-function(ready,mobile,parser,compat,deviceTheme,on,connect,html,registry,Map,NavigationControl){
+function(ready,dom,topic,ua,mobile,parser,compat,deviceTheme,on,connect,html,registry,Map,NavigationControl){
 
 	var map;
 	var currentLocation;
+	var pHeight = 0;
+
+	var resizeView = function(resizeOnly){
+		var view2 = dom.byId("mapPage");
+		
+		if(view2.style.visibility == "hidden" || view2.style.display == "none"){
+			return;
+		}
+		
+		var wsize = mobile.getScreenSize();
+		// needed for IE, because was overriden to 0 at some point
+		if(ua("ie")){
+			dom.byId("map").style.width = "100%";
+		}else{
+			// on Android, the window size is changing a bit when scrolling!
+			// ignore those resize
+			
+			if(wsize.h > pHeight - 64 && wsize.h < pHeight + 64){
+				return;
+			}
+		}
+		
+		pHeight = wsize.h;
+		var box = { h: wsize.h - 45 };
+		var mapget = registry.byId("map");
+		if(mapget){
+			mapget.resize(box);	
+			if(!resizeOnly)
+				updateMap();
+		}
+	};
 
 	ready(function(){
-		var options = {
-			baseLayerName : "TheMap",
-			touchHandler : true,
-			baseLayerType : dojox.geo.openlayers.BaseLayerType.ARCGIS
-		};
-
-		map = new Map(options,"map");
-		map.startup();
-
-		var olMap = map.map.getOLMap();
-		var ctrl = new NavigationControl({
-			dojoMap : map
-		});
-		olMap.addControl(ctrl);
+		
 		var mapPage = registry.byId("mapPage");
 		on(mapPage,"AfterTransitionIn",afterTransition);
 		
@@ -33,15 +51,27 @@ function(ready,mobile,parser,compat,deviceTheme,on,connect,html,registry,Map,Nav
 		var lc = registry.byId("lacolle");
 		connect.connect(lc, "onClick", lc, click);
 
-		on(window, "resize", resize);
+		topic.subscribe("/dojox/mobile/resizeAll", resizeView);
 	});
 
 	function afterTransition(){
+		if (!map){
+			var options = {
+				baseLayerName : "TheMap",
+				touchHandler : true,
+				baseLayerType : dojox.geo.openlayers.BaseLayerType.ARCGIS
+			};
+			map = new Map(options,"map");
+			map.startup();
+	
+			var olMap = map.map.getOLMap();
+			var ctrl = new NavigationControl({
+				dojoMap : map
+			});
+			olMap.addControl(ctrl);
+			resizeView(true);
+		}
 		fitTo();
-	}
-
-	function resize(){
-		setTimeout(updateMap, 0);
 	}
 
 	var locs = {
