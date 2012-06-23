@@ -9,12 +9,14 @@ dojo.require("dojox.image._base");
 	// quick `plugd` plugin:
 	var jankyEv = "mouse" + (d.isIE ? "enter" : "over");
 	d.extend(d.NodeList, {
-		// summary: add hover connections to each node in this list
 		hover:function(func, optFunc){
+			// summary:
+			//		add hover connections to each node in this list
 			return this.onmouseenter(func).onmouseleave(optFunc || func);
 		},
-		// summary: toggle a class on hover automatically for a node
 		hoverClass:function(className){
+			// summary:
+			//		toggle a class on hover automatically for a node
 			return this.hover(function(e){
 				d[(e.type == jankyEv ? "addClass" : "removeClass")](e.target, className);
 			});
@@ -58,8 +60,8 @@ dojo.require("dojox.image._base");
 		var _in = d.fx.combine(_anims), _out = d.fx.combine(_outa);
 		
 		var switchPage = function(arr){
-			// summary: switch out all the thumbnails with src's from this new array of
-			//		urls.
+			// summary:
+			//		switch out all the thumbnails with src's from this new array of urls.
 			
 			var c = d.connect(_in, "onEnd", function(){
 				// when thumbnails are hidden, do this:

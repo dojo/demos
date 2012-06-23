@@ -23,7 +23,8 @@ dojo.require("dojo.window");
 				return c; // Array
 			},
 			dropNodes: function(){
-				// summary: drop all the nodes using the bounce easing function
+				// summary:
+				//		drop all the nodes using the bounce easing function
 
 				_coords = mojo.drop._calcPositions(); // store positions for later
 				// ball is 310px, so the bottom edges are height - 310 roughly.
@@ -44,7 +45,8 @@ dojo.require("dojo.window");
 				dojo.fx.combine(_anims).play();
 			},
 			floatNodes: function(){
-				// summary: reset all the nodes to the orig. positions
+				// summary:
+				//		reset all the nodes to the orig. positions
 				var _anims = [];
 				nodes.forEach(function(n,idx){
 					// push each slide animation in _anims, based on it's stored coords

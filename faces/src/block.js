@@ -6,8 +6,9 @@ dojo.provide("demos.faces.src.block");
 	var d = dojo;
 	
 	d.declare("dojo._Blocker", null, {
-		// summary: The blocker instance used by dojo.block to overlay a node
-		//
+		// summary:
+		//		The blocker instance used by dojo.block to overlay a node
+
 		// duration: Integer
 		//		The duration of the fadeIn/fadeOut for the overlay
 		duration: 400,
@@ -67,7 +68,8 @@ dojo.provide("demos.faces.src.block");
 		},
 		
 		show: function(){
-			// summary: Show this overlay
+			// summary:
+			//		Show this overlay
 			
 			if(this._showing){ return; }
 			var	ov = this.overlay;
@@ -83,7 +85,8 @@ dojo.provide("demos.faces.src.block");
 		},
 		
 		hide: function(){
-			// summary: Hide this overlay
+			// summary:
+			//		Hide this overlay
 			
 			d.fadeOut({
 				node: this.overlay,
@@ -115,17 +118,20 @@ dojo.provide("demos.faces.src.block");
 	var blockers = {}; // hash of all blockers
 	d.mixin(d, {
 		block: function(/* String|DomNode */node, /* dojo.block._blockArgs */args){
-			// summary: Overlay the passed node to prevent further input, creates an
+			// summary:
+			//		Overlay the passed node to prevent further input, creates an
 			//		instance of dojo._Blocker attached to this node byId, or generates a
 			//		unique id if the node doesn't have one already.
-			//
-			//	node: The node to overlay
-			//	args: An object hash of configuration options. See dojo._Blocker for
+			// node:
+			//		The node to overlay
+			// args:
+			//		An object hash of configuration options. See dojo._Blocker for
 			//		a list of parameters mixed in.
-			//
-			//	returns: The dojo._Blocker instance created for the passed node for convenience.
+			// returns:
+			//		The dojo._Blocker instance created for the passed node for convenience.
 			//		You can call var thing = dojo.block("someNode"); thing.hide(); or simply call
 			//		dojo.unblock("someNode"), whichever you prefer.
+
 			var n = d.byId(node);
 			var id = d.attr(n, "id");
 			if(!id){
@@ -140,7 +146,8 @@ dojo.provide("demos.faces.src.block");
 		},
 		
 		unblock: function(node, args){
-			// summary: Unblock the passed node
+			// summary:
+			//		Unblock the passed node
 			var id = d.attr(node, "id");
 			if(id && blockers[id]){
 				blockers[id].hide();

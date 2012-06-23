@@ -227,7 +227,8 @@ dojo.require("dojox.analytics.Urchin");
 	});
 
 	$.declare("profile.Data", dijit._Widget, {
-		// summary: A simple widget we probably don't even need.
+		// summary:
+		//		A simple widget we probably don't even need.
 		constructor: function(){
 			var $$ = $.byId;
 			this.nodeReferences = {

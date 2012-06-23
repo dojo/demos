@@ -125,7 +125,8 @@ dojo.declare(
 	},
 
 	getLabel: function(/*dojo.data.Item*/ item){
-		// summary: get the label for an item
+		// summary:
+		//		get the label for an item
 		return item.name || item.countryName;
 	},
 

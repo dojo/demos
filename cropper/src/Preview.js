@@ -9,7 +9,8 @@ dojo.require("dojox.layout.ResizeHandle");
 	// a simple "wrap" function. availaing in `plugd`
 	// warning: node must be in the DOM before being wrapped.
 	var wrap = function(node, withTag){
-		// summary: wrap some node with a tag type.
+		// summary:
+		//		wrap some node with a tag type.
 			var n = d.create(withTag);
 			d.place(n, node, "before");
 			d.place(node, n, "first");
@@ -22,7 +23,8 @@ dojo.require("dojox.layout.ResizeHandle");
 		_floor = Math.floor;
 	
 	d.declare("image.Preview", dijit._Widget, {
-		// summary: A Behavioral widget adding a preview pane to any `<img>`
+		// summary:
+		//		A Behavioral widget adding a preview pane to any `<img>`
 		
 		// the size of the draggable/moveable window
 		glassSize:150,

@@ -11,7 +11,8 @@ var initChart = function(){
 };
 
 var getResults = function(){
-	// summary: poll the results server, and generate the chart
+	// summary:
+	//		poll the results server, and generate the chart
 	dojo.xhrGet({
 		url:"src/results.php",
 		handleAs:"json",
@@ -22,8 +23,10 @@ var getResults = function(){
 };
 
 var makeChartData = function(/* Object */args){
-	// summary: parse an object and create Arrays of labels and percentages
-	// returns: object with toolkits[] and data[] params
+	// summary:
+	//		parse an object and create Arrays of labels and percentages
+	// returns:
+	//		object with toolkits[] and data[] params
 	var i = 0;
 	//
 	var toolkits = [{value:0,text:""}];

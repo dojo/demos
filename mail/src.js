@@ -82,7 +82,8 @@ dojo.addOnLoad(function(){
 });
 
 function genIndex(){
-	// summary:  generate A-Z push buttons for navigating contact list
+	// summary:
+	//		generate A-Z push buttons for navigating contact list
 	var ci = dojo.byId("contactIndex");
 	
 	function addChar(c, func, cls){
@@ -119,7 +120,8 @@ function genIndex(){
 paneId = 1;
 
 onMessageClick = function(cell){
-	// summary: when user clicks a row in the message list pane
+	// summary:
+	//		when user clicks a row in the message list pane
 	var item = cell.grid.getItem(cell.rowIndex),
 		sender = this.store.getValue(item, "sender"),
 		subject = this.store.getValue(item, "label"),
@@ -132,10 +134,11 @@ onMessageClick = function(cell){
 		"Date: " + sent + "<br><br></span>" +
 		text;
 	dijit.byId("message").setContent(messageInner);
-}
+};
 
 searchMessages = function(){
-	// summary: do a custom search for messages across inbox folders
+	// summary:
+	//		do a custom search for messages across inbox folders
 	var query = {type: "message"};
 	var searchCriteria = searchForm.attr('value');
 	for(var key in searchCriteria){
@@ -145,12 +148,12 @@ searchMessages = function(){
 		}
 		table.setQuery(query, {ignoreCase: true});
 	}
-}
+};
 
 // for "new message" tab closing
 testClose = function(pane,tab){
   return confirm("Are you sure you want to leave your changes?");
-}
+};
 
 // fake mail download code:
 var numMails;
@@ -176,7 +179,7 @@ fakeReport = function(percent){
 	// FIXME: can't set a label on an indeterminate progress bar
 	// like if(this.indeterminate) { return " connecting."; }
 	return dojo.string.substitute("Fetching: ${0} of ${1} messages.", [percent * this.maximum, this.maximum]);
-}
+};
 
 fakeDownload = function(){
 	dojo.byId('fetchMail').style.visibility='visible';
@@ -187,7 +190,7 @@ fakeDownload = function(){
 		var func = dojo.partial(updateFetchStatus, ii);
 		setTimeout(func,  ((ii + 1) * (Math.floor(Math.random()*100) + 400)));
 	}
-}
+};
 
 // fake sending dialog progress bar
 stopSendBar = function(){
@@ -195,15 +198,15 @@ stopSendBar = function(){
 	dijit.byId('sendDialog').hide();
 	tabs.selectedChildWidget.onClose = function(){return true;};  // don't want confirm message
 	tabs.closeChild(tabs.selectedChildWidget);
-}
+};
 	 
 showSendBar = function(){
 	dijit.byId('fakeSend').update({ indeterminate: true });
 	dijit.byId('sendDialog').show();
 	setTimeout(function(){stopSendBar();}, 3000);
-}
+};
 
 formatDate = function(inDatum){
     return dojo.date.locale.format(dojo.date.stamp.fromISOString(inDatum), {selector: "date"});
-}
+};
 

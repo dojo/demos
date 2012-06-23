@@ -3,7 +3,8 @@ dojo.require("dojox.cometd");
     
 
     var handleForm = function(e){
-	// summary: handle the submit data
+	// summary:
+	//		handle the submit data
 	e.preventDefault();
 	dojo.xhrPost({
 	    url: "submit.php",

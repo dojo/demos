@@ -79,7 +79,7 @@ function (lang, connect, declare, win, dom, geometry, Deferred, DeferredList, sc
 		}
 	});
 
-	//  singleton of the google map
+	//		singleton of the google map
 	var googleMap;
 
 	var loadApiResult = new Deferred();

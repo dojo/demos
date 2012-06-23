@@ -37,7 +37,8 @@ dojo.declare("image.Skewed",
 		'</div></div>',
 		
 	postCreate: function(){
-		// summary: start the widget, and fetch the filtered images.
+		// summary:
+		//		start the widget, and fetch the filtered images.
 		this.inherited(arguments);
 		this.imageNode.src = this.filterUrl + "?greyscale=1&src=" + this.imgUrl + "&spacing=" + this.reflectSpacing;
 		this.leftImage.src = this.filterUrl + "?greyscale=1&src=" + this.imgUrl + "&skew=left&angle=" + this.angle + "&spacing=" + this.reflectSpacing;
@@ -55,7 +56,8 @@ dojo.declare("image.Skewed",
 	},
 	
 	center: function(e){
-		// summary: public function to center a particular image
+		// summary:
+		//		public function to center a particular image
 		var p = dijit.getEnclosingWidget(this.domNode.parentNode);
 		p._center(this.domNode);
 	}
@@ -159,7 +161,8 @@ dojo.declare("image.Container",
 	},
 	
 	_center: function(/* DomNode */node){
-		// summary: Main function used to arrage the images based on a selected node
+		// summary:
+		//		Main function used to arrage the images based on a selected node
 		var w = dijit.getEnclosingWidget(node);
 		if(this._centering){
 			this.selectedChild = w;
@@ -261,16 +264,19 @@ dojo.declare("image.Container",
 	},
 	
 	onShow: function(widget){
-		// summary: stub fired when a user triggers a recenter
+		// summary:
+		//		stub fired when a user triggers a recenter
 		// 		this could happen very often!
 	},
 	
 	onSelected: function(widget){
-		// summary: stub fired when a user explictly clicks the already displayed value
+		// summary:
+		//		stub fired when a user explicitly clicks the already displayed value
 	},
 	
 	_handleKey: function(e){
-		// summary: keyboard handling code
+		// summary:
+		//		keyboard handling code
 		var dk = dojo.keys,
 			cur = this.nl.indexOf(this.selectedChild.domNode || this.nl[0]),
 			ni
@@ -301,7 +307,8 @@ dojo.declare("image.Container",
 	},
 	
 	_scroll: function(e){
-		// summary: handle mouse wheel event, and duck type a fake event to pass
+		// summary:
+		//		handle mouse wheel event, and duck type a fake event to pass
 		//		along to _handleKey
 		dojo.stopEvent(e);
 		var scroll = e[(!dojo.isMozilla ? "wheelDelta" : "detail")] * (!dojo.isMozilla ? 1 : -1);

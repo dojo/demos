@@ -126,7 +126,7 @@ define(["dojo/_base/kernel",
 		},
 
 		gotLegs: function(items, request){
-			//      this.log("got legs " + items.length);
+			//		this.log("got legs " + items.length);
 			var ctx = {
 				store: request.store
 			};
@@ -142,7 +142,7 @@ define(["dojo/_base/kernel",
 		},
 
 		loadData: function(dataSet){
-			//      this.log("load " + dataSet);
+			//		this.log("load " + dataSet);
 			var store = new ItemFileReadStore({
 				url: dataSet,
 				urlPreventCache: true

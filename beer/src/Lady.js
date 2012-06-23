@@ -33,7 +33,8 @@ dojo.declare("beer.Lady", [dijit._Widget, dijit._Templated, beer._LadyBehavior],
 	},
 
 	smile: function(/* Boolean */on){
-		// summary: make her happy
+		// summary:
+		//		make her happy
 		var n = this.innerNode;
 		dojo.removeClass(n,"beerLadyAngry");
 		dojo[(on ? "addClass" : "removeClass")](n, "beerLadySmiling");
