@@ -266,7 +266,7 @@ dojo.declare("image.Container",
 	onShow: function(widget){
 		// summary:
 		//		stub fired when a user triggers a recenter
-		// 		this could happen very often!
+		//		this could happen very often!
 	},
 	
 	onSelected: function(widget){

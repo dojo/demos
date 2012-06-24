@@ -37,7 +37,7 @@ dojo.declare(
 
 	getChildren: function(/*dojo.data.Item*/ item, /*function(items)*/ onComplete, /*function*/ onError){
 		// summary:
-		// 		Calls onComplete() with array of child items of given parent item, all loaded.
+		//		Calls onComplete() with array of child items of given parent item, all loaded.
 
 		switch(item.root ?  "top" : item.type){
 			case "top":

@@ -18,7 +18,7 @@ dojo.provide("demos.faces.src.block");
 		opacity: 0.6,
 		
 		// backgroundColor: String
-		// 		The color to set the overlay
+		//		The color to set the overlay
 		backgroundColor: "#fff",
 		
 		// zIndex: Integer
