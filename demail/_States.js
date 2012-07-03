@@ -6,7 +6,8 @@ dojo.declare("acme._States", null, {
 	//		stubs to ease the life of widget users
 	// description:
 	//		supported states:
-	//			* enabled/disabled
-	//			* selected/unselected
-	//			* focused/blured
+	//
+	//		* enabled/disabled
+	//		* selected/unselected
+	//		* focused/blurred
 });
