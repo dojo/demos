@@ -7,7 +7,7 @@ dojo.declare("acme._States", null, {
 	// description:
 	//		supported states:
 	//
-	//		* enabled/disabled
-	//		* selected/unselected
-	//		* focused/blurred
+	//		- enabled/disabled
+	//		- selected/unselected
+	//		- focused/blurred
 });
