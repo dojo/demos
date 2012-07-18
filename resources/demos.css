@@ -478,7 +478,10 @@ The styles for the buttons.
     width: 575px;
     padding-right: 20px;
     position: relative;
+/*
+    the following url does not exist; commented out to quiet build errors; tracked at #15698
     background: url(../images/sepLrg.gif) no-repeat right 30px;
+*/
 }
 
 #contentNavRight {
@@ -495,8 +498,11 @@ The styles for the buttons.
 #contentNavLeft {
     float: left;
     width: 180px;
+/*
+    the following url does not exist; commented out to quiet build errors; tracked at #15698
     background: url(../images/sepLrg.gif) no-repeat right 30px;
-    padding-right: 10px;
+*/
+	padding-right: 10px;
 }
 
 .sidebar h4 {
