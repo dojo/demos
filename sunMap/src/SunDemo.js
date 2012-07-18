@@ -29,9 +29,8 @@ define(["dojo/_base/declare",
 				touchHandler: true
 			};
 
-			var map = new Map(options);
-			html.place(map.domNode, div);
-			map.startup();
+			var map = new Map(options, div);
+ 				map.startup();
 			this.map = map;
 
 			map.map.fitTo([-160, 70, 160, -70]);
