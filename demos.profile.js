@@ -8,7 +8,7 @@ var profile = (function(){
 				"demos/README":1
 			};
 			return (mid in list) || (/^demos\/resources\//.test(mid) && !/\.css$/.test(filename)) || /(png|jpg|jpeg|gif|tiff)$/.test(filename)
-				|| (/demos\/todoApp\/views\//.test(filename));
+				|| /demos\/todoApp\/views\//.test(filename) || /demos\/todoApp\/todoApp.js/.test(filename);
 		},
 
 		usesDojoProvideEtAl = function(mid){
