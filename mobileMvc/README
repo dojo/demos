@@ -12,8 +12,8 @@ Demo description
 Dependencies:
 
 	Dojo Core
-	Dijit (Plus the MVC dijit patch)
-	Dojox (Plus the MVC patch)
+	Dijit 
+	Dojox 
 
 -------------------------------------------------------------------------------
 Installation instructions
