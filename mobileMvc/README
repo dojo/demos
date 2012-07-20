@@ -18,7 +18,7 @@ Dependencies:
 -------------------------------------------------------------------------------
 Installation instructions
 
-	Simply run the included demo.html or iPad-Demo.html
+	Simply run the included demo.html
 
 	To build, use the supplied demo.profile.js as your profileFile
 
