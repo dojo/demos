@@ -56,8 +56,8 @@ dojo.addOnLoad(function(){
 	// (used by "To" field drop-down") is also updated
 	dojo.connect(contactStore, "onSet", function(/* item */ item,
 					/* attribute-name-string */ attribute,
-					/* object | array */ oldValue,
-					/* object | array */ newValue){
+					/* Object|Array */ oldValue,
+					/* Object|Array */ newValue){
 		if(attribute != "display"){
 			contactStore.setValue(item, "display",
 					contactStore.getValue(item, "first") + " " +
