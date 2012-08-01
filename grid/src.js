@@ -449,7 +449,7 @@ require([
 					[
 						{ field: "Genre", width: '10', rowSpan: 2},
 						{ field: "Artist", width: '15'},
-						{ field: "Year", width: '15'},
+						{ field: "Year", width: '15'}
 					],[
 						{ field: "Album", colSpan: 2}
 					]
@@ -463,7 +463,7 @@ require([
 						{ field: "Length", width: '20'},
 						{ field: "Track"}
 					],[
-						{ field: "Composer", colSpan: 2},
+						{ field: "Composer", colSpan: 2}
 						
 					],[
 						{ field: "Download Date"},

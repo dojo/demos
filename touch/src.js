@@ -18,7 +18,7 @@ require([
 			series: {
 				stroke:  {width: 2.5, color: "#eaf2cb"},
 				outline: null,
-				font: "normal normal normal 8pt Helvetica, Arial, sans-serif",
+				font: "normal normal normal 8pt Helvetica, Arial, sans-serif"
 			},
 			seriesThemes: [
 				{fill: g(defaultFill, "#F59908", "#FAD838")},

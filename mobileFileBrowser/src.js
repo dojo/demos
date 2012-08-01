@@ -20,14 +20,13 @@ require([
 	"dojox/mobile/ListItem", 
 	"dojox/mobile/RoundRectList", 
 	"dojox/mobile/ProgressIndicator",
-	"dojox/mobile/View",
 	"dojox/mobile/_ScrollableMixin",
 	"dojo/NodeList-traverse",
 	"dojo/domReady!"
 	], 
 	function(mobile, parser, compat, deviceTheme, FileStore, array, lang, declare, config, $,
 			window, ready, dom, domConstruct, registry, ForestStoreModel, Heading, View, ListItem, 
-			RoundRectList, ProgressIndicator, View, ScrollableMixin, NodeListTraverse, domReady){
+			RoundRectList, ProgressIndicator, ScrollableMixin){
 	ready(function(){
 		var store = new FileStore({
 			url: "../../dojox/data/demos/stores/filestore_dojotree.php",
