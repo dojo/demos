@@ -7,6 +7,8 @@ require([
 	"dojox/charting/Chart2D",
 	"dojox/charting/widget/Legend",
 	"dojox/gesture/tap",
+	"dojox/mobile/compat",
+	"dojox/mobile/Slider",
 	"demos/touch/rotate"
 ], function(Theme){
 
@@ -50,7 +52,8 @@ require([
 		
 		themes.Lily.post = function(theme, elementType){
 			theme = Theme.prototype.post.apply(this, arguments);
-			if((elementType == "slice" || elementType == "circle") && theme.series.fill && theme.series.fill.type == "radial"){
+			if((elementType == "slice" || elementType == "circle") && 
+				theme.series.fill && theme.series.fill.type == "radial"){
 				theme.series.fill = dojox.gfx.gradutils.reverse(theme.series.fill);
 			}
 			return theme;

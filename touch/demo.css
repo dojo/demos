@@ -131,7 +131,7 @@ body, html {
     width: 254px;
     height: 42px;
     left: 23px;
-    margin-top: 30px;
+    margin-top: 15px;
     position: relative;
     z-index: 99999;
     background-image: url("images/bt-lock.png");
