@@ -1,6 +1,6 @@
 define(["dojox/mvc/getStateful"], function(getStateful){
 	// module:
-	//		dojox/mvc/MobileDemoContactListModel
+	//		demos/mobileMvc/MobileDemoContactListModel
 	// summary:
 	//		The data model of contact list info for this demo.
 

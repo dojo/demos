@@ -6,7 +6,7 @@ define([
 	"dojox/mvc/StoreRefController"
 ], function(declare, registry, getStateful, ListController, StoreRefController){
 	// module:
-	//		dojox/mvc/MobileDemoContactListController
+	//		demos/mobileMvc/MobileDemoContactListController
 	// summary:
 	//		The controller for contact list info for this demo.
 

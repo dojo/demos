@@ -4,7 +4,7 @@ define([
 	"dojox/mvc/ListController"
 ], function(declare, EditModelRefController, ListController){
 	// module:
-	//		dojox/mvc/MobileDemoContactController
+	//		demos/mobileMvc/MobileDemoContactController
 	// summary:
 	//		The controller for contact info for this demo.
 

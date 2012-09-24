@@ -4,7 +4,7 @@ define([
 	"dijit/registry"
 ], function(dom, json, registry){
 	// module:
-	//		dojox/mvc/MobileDemoGenerateActions
+	//		demos/mobileMvc/MobileDemoGenerateActions
 	// summary:
 	//		The action handlers for Generate example of this demo.
 
