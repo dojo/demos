@@ -20,12 +20,15 @@
 @import url("css/dialogs.css");
 @import url("css/valuePicker.css");
 
+
 #header button {
 	position:absolute;
 	margin:0px;
 }
 
 #navButton {
+	/* override the position inherited from mblToolBarButton which is relative */
+	position:absolute;
 	width:60px;
 }
 

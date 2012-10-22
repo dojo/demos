@@ -20,7 +20,7 @@ div#headings button.baseBtn {
 #tbBackBtn:after {
     height: 27px;
 	left: -9px;
-    -webkit-mask-size: 12px 27px;
+   	-webkit-mask-size: 12px 27px;
 	border-left-style: none;
 	border-top-left-radius: 0 0;
 	border-bottom-left-radius: 0 0;
@@ -48,6 +48,7 @@ div#headings #tbDomBtn {
 }
 
 /* back button of "Back" in header */
+
 #navButton::after {
 	top: 0px;
 	width: 14px;
@@ -57,7 +58,7 @@ div#headings #tbDomBtn {
 }
 
 #navButton {
-	left: 20px;
+	left: 3px;
 }
 
 #sourceButton {

@@ -54,19 +54,6 @@ div#headings button.baseBtn {
 	margin: 5px 30px;
 }
 
-/* "Headings" Back Button */
-div#headings button.backBtn:after {
-    height: 29px;
-	top: 0px;
-    left: -8px;
-    -webkit-mask-size: 12px 29px;
-}
-
-
-div#headings button#tbBackBtn {
-	margin-left: 14px;
-}
-
 div#headings div#tbDomBtn {
 	margin-top: 6px;
 }
@@ -106,20 +93,6 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 	color: white;
 }
 
-/* back button of "Back" in header */
-#navButton::after {
-	height: 29px;
-	-webkit-mask-position: 0 0;
-	-webkit-mask-size: 12px 29px;
-	left: -11px;
-	top:0px;
-}
-
-#navButton.backBtn {
-    border-bottom-left-radius: 0.2em 0.2em;
-    border-top-left-radius: 0.2em 0.2em;
-}
-
 #header button {
 	top: 6px;
 	height: 29px;
@@ -127,7 +100,7 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 }
 
 #navButton {
-	left: 18px;
+	left: 3px;
 }
 
 #sourceButton {

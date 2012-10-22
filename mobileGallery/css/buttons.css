@@ -251,7 +251,11 @@ button.backBtn {
 }
 
 .dj_gecko button.backBtn{
-    -moz-border-radius: 0.4em;
+    display:none;
+}
+
+.dj_ie button.backBtn{
+    display:none;
 }
 
 button.backBtn:after {

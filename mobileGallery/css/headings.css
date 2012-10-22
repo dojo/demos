@@ -54,16 +54,7 @@ button.defaultBtn {
 	background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
 }
 
-button.defaultBtn.backBtn:before {
-	background: #999;
-}
-
-button.defaultBtn.backBtn:after {
-	background-color: #CCC;
-	background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
-}
-
-#sourceButton.mblColorDefaultSel, #sourceButton.mblColorDefaultSel:after, button.defaultBtnSelected, button.defaultBtnSelected.backBtn:after {
+#sourceButton.mblColorDefaultSel, #sourceButton.mblColorDefaultSel:after {
 	background-color: #394D77;
 	background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
 }

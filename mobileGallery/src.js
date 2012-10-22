@@ -1,26 +1,27 @@
 define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/array","dojo/_base/window","dojo/_base/xhr", // dojo Base
 		"dojo/dom", "dojo/dom-class","dojo/dom-prop","dojo/dom-construct",
-	"dojo/_base/Deferred",
-	"dojo/DeferredList",
-        "dojo/data/ItemFileReadStore",
-        "dijit/registry", 
-	"dojox/highlight",
-	"dojox/highlight/languages/javascript",
-        "dojox/mobile/parser",
-        "dojox/mobile/common",
-        "dojox/mobile/EdgeToEdgeCategory",
-        "dojox/mobile/EdgeToEdgeDataList",
-        "dojox/mobile/ListItem",
-	"dojox/mobile/PageIndicator",
-        "dojox/mobile/ProgressIndicator",
-        "dojox/mobile/TransitionEvent",
-        "demos/mobileGallery/src/base",
-        "demos/mobileGallery/src/Viewport",
-        "demos/mobileGallery/src/structure"],
+		"dojo/_base/Deferred",
+		"dojo/DeferredList",
+		"dojo/data/ItemFileReadStore",
+		"dijit/registry", 
+		"dojox/highlight",
+		"dojox/highlight/languages/javascript",
+		"dojox/mobile/compat",
+		"dojox/mobile/parser",
+		"dojox/mobile/common",
+		"dojox/mobile/EdgeToEdgeCategory",
+		"dojox/mobile/EdgeToEdgeDataList",
+		"dojox/mobile/ListItem",
+		"dojox/mobile/PageIndicator",
+		"dojox/mobile/ProgressIndicator",
+		"dojox/mobile/TransitionEvent",
+		"demos/mobileGallery/src/base",
+		"demos/mobileGallery/src/Viewport",
+		"demos/mobileGallery/src/structure"],
   function(lang, html, connect, array, win, xhr, dom, domClass,domProp, domConstruct,
-		   Deferred, DeferredList, ItemFileReadStore, registry, highlight, jshighlight, parser, dm,
-		   EdgeToEdgeCategory, EdgeToEdgeDataList, ListItem, PageIndicator, ProgressIndicator, TransitionEvent, 
-		   base, Viewport, structure){ 
+			Deferred, DeferredList, ItemFileReadStore, registry, highlight, jshighlight, compat, parser, dm,
+			EdgeToEdgeCategory, EdgeToEdgeDataList, ListItem, PageIndicator, ProgressIndicator, TransitionEvent, 
+			base, Viewport, structure){ 
 
 	/*
 	 * show or hide global progress indicator
@@ -89,7 +90,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 		
 		if (navRecords.length > 0) {
 			var record = navRecords[navRecords.length - 1];
-			dom.byId("navButton").innerHTML = record.navTitle;
+			registry.byId("navButton").set("label", record.navTitle);
 			registry.byId("header").moveTo = record.from;
 		}
 	}

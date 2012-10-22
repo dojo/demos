@@ -37,11 +37,11 @@
 
 			<div dojoType="dojox.mobile.Container">
 				<h1 id="header" dojoType="dojox.mobile.Heading" fixed="top">
-					<button id="navButton" dojoType="dojox.mobile.Button" 
-						class="baseBtn defaultBtn backBtn">Back</button>
-					<span id="headerLabel">Welcome</span>
+					<button id="navButton" dojoType="dojox.mobile.ToolBarButton" 
+							data-dojo-props="arrow:'left'">Back</button>
+					<span id="headerLabel" style="float:center;">Welcome</span>
 					<button id="sourceButton" dojoType="dojox.mobile.ToolBarButton" 
-						toggle="true" class="baseBtn defaultBtn">Source</button>
+						toggle="true">Source</button>
 				</h1>
 				<div id="rightPane" dojoType="dojox.mobile.View" 
 					selected="true" style="overflow:hidden;">
