@@ -15,28 +15,28 @@
 	<script type="text/javascript" src="src.js"></script>
 </head>
 <body style="visibility:hidden;">
-	<div data-dojo-type="dojox.mobile.FixedSplitter" data-dojo-props='orientation:"V"' style="position: absolute; top: 0px; bottom: 0px">
-		<div data-dojo-type="dojox.mobile.Container" style="height:66%;overflow:hidden;">
-			<div id="general" data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"inherit"'>
-				<ul data-dojo-type="dojox.mobile.RoundRectList" class="list1" data-dojo-props='stateful:true' id="stocks">
+	<div data-dojo-type="dojox/mobile/FixedSplitter" data-dojo-props='orientation:"V"' style="position: absolute; top: 0px; bottom: 0px">
+		<div data-dojo-type="dojox/mobile/Container" style="height:66%;overflow:hidden;">
+			<div id="general" data-dojo-type="dojox/mobile/ScrollableView" data-dojo-props='height:"inherit"'>
+				<ul data-dojo-type="dojox/mobile/RoundRectList" class="list1" data-dojo-props='stateful:true' id="stocks">
 				</ul>
 			</div>
 		</div>
 
-		<div data-dojo-type="dojox.mobile.Pane" style="height:10px;overflow:hidden;">
+		<div data-dojo-type="dojox/mobile/Pane" style="height:10px;overflow:hidden;">
 		</div>
 
-		<div data-dojo-type="dojox.mobile.Container" style="overflow:hidden;">
-			<div id="swap1" data-dojo-type="dojox.mobile.SwapView">
-				<div data-dojo-type="dojox.mobile.ScrollableView" data-dojo-props='height:"100%"'>
-						<ul id="news" data-dojo-type="dojox.mobile.RoundRectList" data-dojo-props='variableHeight:true'>
+		<div data-dojo-type="dojox/mobile/Container" style="overflow:hidden;">
+			<div id="swap1" data-dojo-type="dojox/mobile/SwapView">
+				<div data-dojo-type="dojox/mobile/ScrollableView" data-dojo-props='height:"100%"'>
+						<ul id="news" data-dojo-type="dojox/mobile/RoundRectList" data-dojo-props='variableHeight:true'>
 						</ul>
 				</div>
 			</div>
 
-			<div id="swap2" data-dojo-type="dojox.mobile.SwapView" >
-				<div data-dojo-type="dojox.mobile.View" data-dojo-props='height:"100%"' style="overflow: hidden">
-					<div data-dojo-type="dojox.mobile.RoundRect" style="position:relative;" id="figures">
+			<div id="swap2" data-dojo-type="dojox/mobile/SwapView" >
+				<div data-dojo-type="dojox/mobile/View" data-dojo-props='height:"100%"' style="overflow: hidden">
+					<div data-dojo-type="dojox/mobile/RoundRect" style="position:relative;" id="figures">
 						<table id="tbl1" style="width:90%">
 							<tr><td>Open</td><td id="open"></td><td>Cap</td><td id="cap"></td></tr>
 							<tr><td>Max</td><td id="max"></td><td>Max/52w</td><td id="max52"></td></tr>
@@ -49,10 +49,10 @@
 			</div>
 
 
-			<div id="swap3" data-dojo-type="dojox.mobile.SwapView">
-				<div data-dojo-type="dojox.mobile.View" data-dojo-props='height:"100%"' style="overflow: hidden">
-					<div data-dojo-type="dojox.mobile.RoundRect" style="overflow:hidden">
-						<div data-dojo-type="dojox.charting.widget.Chart"  id="chart" data-dojo-props="margins:{ l: 0, r: 0, t: 0, b: 0 }"
+			<div id="swap3" data-dojo-type="dojox/mobile/SwapView">
+				<div data-dojo-type="dojox/mobile/View" data-dojo-props='height:"100%"' style="overflow: hidden">
+					<div data-dojo-type="dojox/mobile/RoundRect" style="overflow:hidden">
+						<div data-dojo-type="dojox/charting/widget/Chart"  id="chart" data-dojo-props="margins:{ l: 0, r: 0, t: 0, b: 0 }"
 								style="height: 100px">
 							<div class="plot" name="gridPlot" type="Grid" enableCache="true" renderOnAxis="false"></div>
 							<div class="axis" name="x" enableCache="true" htmlLabels="false"
@@ -66,7 +66,7 @@
 				</div>
 			</div>
 
-			<div data-dojo-type="dojox.mobile.PageIndicator" data-dojo-props='fixed:"bottom"'></div>
+			<div data-dojo-type="dojox/mobile/PageIndicator" data-dojo-props='fixed:"bottom"'></div>
 		</div>
 	</div>
 </body>
