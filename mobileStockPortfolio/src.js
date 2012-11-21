@@ -20,14 +20,7 @@ require([
 	"dojox/charting/plot2d/Grid"
 ], function(dom, arr, ready, registry, ListItem){
 	function details(event){
-		// get the clicked id
-		var node = event.target;
-		while(node.localName != "li"){
-			node = node.parentNode;
-		}
-		select(node.id);
-	}
-	function select(id){
+		var id = this.id;
 		// get the details (news, figures & chart) for that given id
 		// xhr.get(...) to get back data from the server, here we are faking it
 		var data = {
@@ -155,6 +148,6 @@ require([
 			stocks.addChild(li);
 		});
 		// at init time first stock is always selected
-		select("stock1");
+		details({ id: "stock1"});
 	});
 });
