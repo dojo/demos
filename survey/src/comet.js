@@ -1,12 +1,19 @@
-dojo.provide("demos.survey.src.comet");
-dojo.require("dojox.cometd");
+define([
+	"dojo/ready",
+	"dojox/cometd"
+], function (ready, cometd) {
 
-var startService = function(){
-	dojox.cometd.init("http://cometd.sitepen.com/cometd");
-
-	dojox.cometd.subscribe("/demo/survey/redraw",function(d){
-	    getResults();
-	});
+	var startService = function(){
+		cometd.init("http://cometd.sitepen.com/cometd");
 	
-};
-dojo.addOnLoad(startService);
+		cometd.subscribe("/demo/survey/redraw",function(d){
+		    getResults();
+		});
+		
+	};
+	ready(startService);
+	
+	return {
+		startService: startService
+	};
+});

@@ -1,11 +1,19 @@
-dojo.provide("demos.faces.src.block");
-
-(function(){
+define([
+	"dojo/_base/declare",
+	"dojo/_base/lang",
+	"dojo/dom-style",
+	"dojo/on",
+	"dojo/dom",
+	"dojo/_base/window",
+	"dojo/query",
+	"dojo/dom-geometry",
+	"dojo/_base/fx",
+	"dojo/dom-attr",
+	"dojo/NodeList",
+	"dojo/NodeList-dom"
+], function (declare, lang, domStyle, on, dom, win, query, domGeometry, fx, attr, NodeList) {
 	
-	// a simple shallow alias
-	var d = dojo;
-	
-	d.declare("dojo._Blocker", null, {
+	var Blocker = declare("dojo._Blocker", null, {
 		// summary:
 		//		The blocker instance used by dojo.block to overlay a node
 
@@ -28,16 +36,16 @@ dojo.provide("demos.faces.src.block");
 		constructor: function(node, args){
 			// the constructor function is always called by dojo.declare.
 			// first, mixin any passed args into this instance to override defaults, or hook in custom stuff
-			d.mixin(this, args);
+			lang.mixin(this, args);
 			// in-case someone passed node:"something", force this.node to be the first param
-			this.node = d.byId(node);
+			this.node = dom.byId(node);
 			// create a node for our overlay.
-			this.overlay = d.doc.createElement('div');
+			this.overlay = win.doc.createElement('div');
 
 			// do some chained magic nonsense
-			d.query(this.overlay)
+			query(this.overlay)
 				// make it the last-child of <body>
-				.place(d.body(),"last")
+				.place(win.body(),"last")
 				// give it a common class
 				.addClass("dojoBlockOverlay")
 				// mixin our styles. I'd prefer to do this purly in CSS, but that would
@@ -52,13 +60,13 @@ dojo.provide("demos.faces.src.block");
 		},
 		
 		_position: function(){
-			var pos = d.position(this.node, true);
+			var pos = domGeometry.position(this.node, true);
 			// adjust for margins/padding: (edge case, may only be this demo's styles)
-			pos = dojo.mixin(dojo.marginBox(this.node), {
+			pos = lang.mixin(domGeometry.getMarginBox(this.node), {
 				l: pos.x, t: pos.y
 			});
 	
-			dojo.style(this.overlay,{
+			domStyle.set(this.overlay, {
 				position:"absolute",
 				left: pos.l + "px",
 				width: pos.w + "px",
@@ -76,11 +84,11 @@ dojo.provide("demos.faces.src.block");
 
 			this._position();
 			if(this.keepPosition){
-				this.positionConnect = dojo.connect(window, "onresize", this, "_position");
+				this.positionConnect = on(window, "resize", lang.hitch(this, "_position"));
 			}
 
-			d.style(ov, { opacity:0, display:"block" });
-			d._fade({ node:ov, end: this.opacity, duration: this.duration }).play();
+			domStyle.set(ov, { opacity:0, display:"block" });
+			fx.fadeIn({ node:ov, end: this.opacity, duration: this.duration }).play();
 			this._showing = true;
 		},
 		
@@ -88,14 +96,14 @@ dojo.provide("demos.faces.src.block");
 			// summary:
 			//		Hide this overlay
 			
-			d.fadeOut({
+			fx.fadeOut({
 				node: this.overlay,
 				duration: this.duration,
 				// when the fadeout is done, set the overlay to display:none
-				onEnd: d.hitch(this, function(){
-					d.style(this.overlay, "display", "none");
+				onEnd: lang.hitch(this, function(){
+					domStyle(this.overlay, "display", "none");
 					if(this.keepPosition){
-						dojo.disconnect(this.positionConnect);
+						this.positionConnect.remove();
 					}
 					this._showing = false;
 				})
@@ -111,13 +119,13 @@ dojo.provide("demos.faces.src.block");
 			id;
 		do{
 			id = id_base + "_" + (++id_count);
-		}while(d.byId(id));
+		}while(dom.byId(id));
 		return id;
-	}
+	};
 
 	var blockers = {}; // hash of all blockers
-	d.mixin(d, {
-		block: function(/* String|DomNode */node, /* dojo.block._blockArgs */args){
+	lang.mixin(Blocker, {
+		_block: function(/* String|DomNode */node, /* dojo.block._blockArgs */args){
 			// summary:
 			//		Overlay the passed node to prevent further input, creates an
 			//		instance of dojo._Blocker attached to this node byId, or generates a
@@ -132,14 +140,14 @@ dojo.provide("demos.faces.src.block");
 			//		You can call var thing = dojo.block("someNode"); thing.hide(); or simply call
 			//		dojo.unblock("someNode"), whichever you prefer.
 
-			var n = d.byId(node);
-			var id = d.attr(n, "id");
+			var n = dom.byId(node);
+			var id = attr.set(n, "id");
 			if(!id){
 				id = _uniqueId();
-				d.attr(n, "id", id);
+				attr.set(n, "id", id);
 			}
 			if(!blockers[id]){
-				blockers[id] = new d._Blocker(node, args);
+				blockers[id] = new Blocker(node, args);
 			}
 			blockers[id].show();
 			return blockers[id]; // dojo._Blocker
@@ -148,7 +156,7 @@ dojo.provide("demos.faces.src.block");
 		unblock: function(node, args){
 			// summary:
 			//		Unblock the passed node
-			var id = d.attr(node, "id");
+			var id = attr.set(node, "id");
 			if(id && blockers[id]){
 				blockers[id].hide();
 			}
@@ -156,9 +164,10 @@ dojo.provide("demos.faces.src.block");
 		
 	});
 	
-	d.extend(d.NodeList, {
-		block: d.NodeList._adaptAsForEach("block"),
-		unblock: d.NodeList._adaptAsForEach("unblock")
+	lang.extend(NodeList, {
+		block: NodeList._adaptAsForEach("block"),
+		unblock: NodeList._adaptAsForEach("unblock")
 	});
 	
-})();
+	return Blocker;
+});

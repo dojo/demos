@@ -4,8 +4,6 @@
 	<head>
 		<title>GFX Bezier Playground</title>
 		<link rel="stylesheet" href="demo.css">
-		<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8" data-dojo-config="async:true"></script>
-		<script type="text/javascript" src="src.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<h1>GFX Bezier Playground Demo</h1>
@@ -22,5 +20,10 @@
 		<div id="controls" class="toolbar">
 			<input type="button" value="Clear" id="clear"/>
 		</div>
+		<script src="../config.js"></script>
+		<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
+		<script>
+			require(["demo/src"]);
+		</script>
 	</body>
 </html>

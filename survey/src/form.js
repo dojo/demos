@@ -1,38 +1,34 @@
-dojo.provide("demos.survey.src.form");
-
-dojo.require("dojox.cometd");
-(function(){
+require(["dojox/cometd", "dojo/request", "dojo/dom", "dojo/_base/fx", "dojo/dom-style", "dojo/_base/window", "dojo/on", "dojo/ready"], function (cometd, request, dom, fx, domStyle, win, on, ready) {
     
     var handleForm = function(e){
-	// summary:
-	//		handle the submit data
-	e.preventDefault();
-	dojo.xhrPost({
-	    url: "src/submit.php",
-	    form: "survey",
-	    load: function(data,ioArgs){
-		// when loaded, fadeReplace the content
-		dojo.byId("postSurvey").disabled = true;
-		dojo.fadeOut({
-		    node:"container",
-		    onEnd: function(){
-			var _d = data;
-			dojo.byId("responseText").innerHTML = data;
-			dojo.style("formNode","display","none");
-			dojo.fadeIn({ node: "container",
+		// summary:
+		//		handle the submit data
+		e.preventDefault();
+		request("src/submit.php", {
+			method: "POST",
+		    form: "survey"
+		}).then(function (data) {
+			// when loaded, fadeReplace the content
+			dom.byId("postSurvey").disabled = true;
+			fx.fadeOut({
+			    node:"container",
 			    onEnd: function(){
-				// publish a redraw command, setup listener first:
-				getResults();
-				dojox.cometd.publish("/demo/survey/redraw",{ content: _d });
-    				dojox.cometd.subscribe("/demo/survey/redraw",function(){
-				    getResults();
-				});
+					var _d = data;
+					dom.byId("responseText").innerHTML = data;
+					domStyle("formNode","display","none");
+					fx.fadeIn({ node: "container",
+					    onEnd: function(){
+							// publish a redraw command, setup listener first:
+							getResults();
+							cometd.publish("/demo/survey/redraw",{ content: _d });
+			    				cometd.subscribe("/demo/survey/redraw",function(){
+							    getResults();
+							});
+					    }
+					}).play(5);
 			    }
-			}).play(5);
-		    }
-		}).play();
-	    }
-	});
+			}).play();
+		});
     };
     
     // add elemts to the selectable list
@@ -44,7 +40,7 @@ dojo.require("dojox.cometd");
 	if(!(e.type && e.type == "click")){
 	    choice = e;
 	}else{
-	    var n = dojo.byId("other");
+	    var n = dom.byId("other");
 	    choice = n.value;
 	    n.value = "";
 	    n.focus();
@@ -54,59 +50,57 @@ dojo.require("dojox.cometd");
 	
 	// return if choice exists or empty
 	lc = choice.toLowerCase();
-	if(!choice || dojo.byId(lc)){ return; }
+	if(!choice || dom.byId(lc)){ return; }
 
 	// make the input
-	var cb = dojo.doc.createElement('input');
+	var cb = win.doc.createElement('input');
 	cb["type"] = "checkbox";
 	cb["name"] = lc;
 	cb.id = lc;
 	if(isE){ cb.checked = "checked"; }
 
 	// and label
-	var lab = dojo.doc.createElement('label');
+	var lab = win.doc.createElement('label');
 	lab.setAttribute("for",lc); // must set 'for' this way
 	lab.innerHTML = " "+ choice.replace(/</g, "&lt;"); // added space to match markup
 
 	// and line break, and append them all to the node
 	// with the other checkboxes
-	var br = dojo.doc.createElement('br');
-	var node = dojo.byId("choices");
+	var br = win.doc.createElement('br');
+	var node = dom.byId("choices");
 	node.appendChild(cb);
 	node.appendChild(lab);
 	node.appendChild(br);
 	
 	if(isE){ // only relay our newOptions
-	    dojox.cometd.publish("/demo/survey/newoption", { option:choice });
+	    cometd.publish("/demo/survey/newoption", { option:choice });
 	}
     };
     
-    dojo.addOnLoad(function(){
+    ready(function(){
 	
-	// populate available choices with currently known choices from datafile
-	dojo.xhrGet({
-	   url:"src/results.php",
-	   handleAs:"json",
-	   load:function(data,ioargs){
-		for(var t in data.data){
-		    addChoice(t);
-		}
-	   }
+		// populate available choices with currently known choices from datafile
+		request("src/results.php", {
+			method: "GET",
+		   	handleAs:"json"
+		}).then(function (data) {
+			for(var t in data.data){
+			    addChoice(t);
+			}
+		});
 	});
 	
-	dojox.cometd.init("http://cometd.sitepen.com/cometd");
-	dojox.cometd.subscribe("/demo/survey/newoption",function(o){
+	cometd.init("http://cometd.sitepen.com/cometd");
+	cometd.subscribe("/demo/survey/newoption",function(o){
 	    // just double check this isn't ours or a duplicate someone
 	    // has sent already
 	    var opt = o.data.option;
 	    var lc = opt.toLowerCase();
 	    if(!dojo.byId(lc)){
-		addChoice(opt);
+			addChoice(opt);
 	    }
 	});
-        dojo.connect(dojo.byId("survey"),"onsubmit",handleForm);
-	dojo.connect(dojo.byId("addChoice"),"onclick",addChoice);
-    });
+	on(dom.byId("survey"),"submit",handleForm);
+	on(dom.byId("addChoice"),"click",addChoice);
+});
     
-    
-})();

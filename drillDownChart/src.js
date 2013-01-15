@@ -1,5 +1,3 @@
-var setStyle;
-		
 require(["dojo/_base/declare", "dojo/dom-style", "dojo/ready", "dojox/charting/Chart",
 	"dojo/store/Memory", "dojox/charting/StoreSeries",
 	"dojox/charting/Theme", "dojox/charting/action2d/PlotAction",
@@ -8,8 +6,6 @@ require(["dojo/_base/declare", "dojo/dom-style", "dojo/ready", "dojox/charting/C
 	"dojox/charting/action2d/Tooltip", "dojox/charting/action2d/Highlight"],
 	function(declare, domStyle, ready, Chart, Memory, StoreSeries, Theme, PlotAction, Default, Columns, Lines, Pie, Grid,
 		Tooltip, Highlight){
-			
-	setStyle = domStyle.set;
 		
 	/* JSON information */
 	var sales = [

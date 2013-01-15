@@ -1,22 +1,22 @@
 <div class="dijitTreeNode subNode" role="presentation">
-	<div dojoAttachPoint="rowNode" class="dijitTreeRow" role="presentation"
-		dojoAttachEvent="onmouseenter:_onMouseEnter, onmouseleave:_onMouseLeave">
-		<div dojoAttachPoint="detailNode" class="subNodeDetail">${detail}</div>
-		<img src="${_blankGif}" alt="" dojoAttachPoint="expandoNode" 
+	<div data-dojo-attach-point="rowNode" class="dijitTreeRow" role="presentation"
+		data-dojo-attach-event="onmouseenter:_onMouseEnter, onmouseleave:_onMouseLeave">
+		<div data-dojo-attach-point="detailNode" class="subNodeDetail">${detail}</div>
+		<img src="${_blankGif}" alt="" data-dojo-attach-point="expandoNode" 
 			class="dijitTreeExpando" role="presentation">
-		<span dojoAttachPoint="expandoNodeText" 
+		<span data-dojo-attach-point="expandoNodeText" 
 			class="dijitExpandoText" role="presentation"></span>
-		<span dojoAttachPoint="contentNode" 
+		<span data-dojo-attach-point="contentNode" 
 			class="dijitTreeContent" role="presentation">
-			<img src="${_blankGif}" alt="" dojoAttachPoint="iconNode" 
+			<img src="${_blankGif}" alt="" data-dojo-attach-point="iconNode" 
 				class="dijitTreeIcon" role="presentation">
-			<span dojoAttachPoint="labelNode" 
+			<span data-dojo-attach-point="labelNode" 
 				class="dijitTreeLabel" role="treeitem" tabindex="-1"
 				aria-selected="false"
-				dojoAttachEvent="onfocus:_onLabelFocus, onblur:_onLabelBlur"></span>
+				data-dojo-attach-event="onfocus:_onLabelFocus, onblur:_onLabelBlur"></span>
 		</span>
 	</div>
-	<div dojoAttachPoint="containerNode" 
+	<div data-dojo-attach-point="containerNode" 
 		class="dijitTreeContainer" role="presentation"
 		style="display: none;"></div>
 </div>

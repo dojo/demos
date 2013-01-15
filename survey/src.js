@@ -1,11 +1,10 @@
-dojo.provide("demos.survey.src");
-
-dojo.require("demos.survey.src.chart");
-dojo.require("demos.survey.src.form");
-
-dojo.require("dojox.analytics.Urchin");
-dojo.addOnLoad(function(){
-	new dojox.analytics.Urchin({
+define([
+	"dojox/analytics/Urchin",
+	"demos/survey/src/chart",
+	"demos/survey/src/form",
+	"dojo/domReady!"
+], function (analyticsUrchin) {
+	new analyticsUrchin({
 		acct: "UA-3572741-1",
 		GAonLoad: function(){
 			this.trackPageView("/demos/survey");

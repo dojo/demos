@@ -1,17 +1,21 @@
-// util
-dojo.require("dojo.parser");
+define([
+	"dojo/data/ItemFileReadStore",
+	"dojo/parser",
+	"dijit/tree/ForestStoreModel",
+	"dijit/layout/BorderContainer",
+	"dijit/Tree",
+	"dijit/dijit",
+	"dijit/layout/ContentPane",
+	"dijit/form/Button",
+	"dijit/form/FilteringSelect",
+	"dojox/data/CsvStore",
+	"dojox/grid/DataGrid"
+], function (dataItemFileReadStore, parser, treeForestStoreModel, layoutBorderContainer, Tree, dijit, layoutContentPane, formButton, formFilteringSelect, dataCsvStore, gridDataGrid) {
 
-// widgets
-dojo.require("dijit.dijit");
-dojo.require("dojox.grid.DataGrid");
-dojo.require("dijit.layout.BorderContainer");
-dojo.require("dijit.Tree");
-dojo.require("dijit.tree.ForestStoreModel");
-dojo.require("dijit.layout.ContentPane");
-dojo.require("dijit.form.Button");
-dojo.require("dijit.form.FilteringSelect");
-// dojo.require("dijit.Menu");
-
-// data
-dojo.require("dojo.data.ItemFileReadStore");
-dojo.require("dojox.data.CsvStore");
+	// util
+	// widgets
+	// dojo.require("dijit.Menu");
+	
+	// data
+	
+});

@@ -1,43 +1,50 @@
-dojo.provide("demos.faces.src.webcam");
-dojo.require("dojox.embed.Flash");
+define([
+	"dojo/ready",
+	"dojo/dom",
+	"dojo/dom-class",
+	"dojo/dom-style",
+	"dojo/query",
+	"dojox/embed/Flash"
+], function (ready, dom, domClass, domStyle, query, embedFlash) {
 
-function setImage(data){
-	base64Img = "data:image/jpeg;base64," + data;
-	var found = false;
-	for(i in people){
-		if(people[i]=="webcam"){
-			found = true;
-			break;
+	function setImage(data){
+		base64Img = "data:image/jpeg;base64," + data;
+		var found = false;
+		for(var i in people){
+			if(people[i]=="webcam"){
+				found = true;
+				break;
+			}
 		}
+		if(! found) people.push("webcam");
+		domStyle.set(dom.byId("photoShot"), "display", "none");
+		query("#hair, #eyes, #mouth").forEach(function(item){
+			var image = new Image();
+			image.src = base64Img;
+			//dojo.body().appendChild(image);
+			domStyle.set(item, "backgroundImage", "url(" + image.src + ")");
+		});
 	}
-	if(! found) people.push("webcam");
-	dojo.style(dojo.byId("photoShot"), "display", "none");
-	dojo.query("#hair, #eyes, #mouth").forEach(function(item){
-		var image = new Image();
-		image.src = base64Img;
-		//dojo.body().appendChild(image);
-		dojo.style(item, "backgroundImage", "url(" + image.src + ")");
+	
+	ready(function(){
+	
+		var swf = require.toUrl("dojoc/flash/photo_shot.swf");
+		var args = {
+			path: swf,
+			width:"100%",
+			height:"100%",
+			params:{
+				allowFullScreen:true,
+				wmode:"transparent"
+			}
+		};
+		var flashObj = new embedFlash(args, "photoShot");
+		
+		query("#addPic").onclick(function(e){
+			domStyle.set("photoShot", "display", "");
+		});
+		
+		domClass.remove("addPic","invisible");
+		
 	});
-}
-
-dojo.addOnLoad(function(){
-
-	var swf = dojo.moduleUrl("dojoc.flash", "photo_shot.swf");
-	var args = {
-		path: swf,
-		width:"100%",
-		height:"100%",
-		params:{
-			allowFullScreen:true,
-			wmode:"transparent"
-		}
-	}
-	var flashObj = new dojox.embed.Flash(args, "photoShot");
-	
-	dojo.query("#addPic").onclick(function(e){
-		dojo.style("photoShot", "display", "");
-	});
-	
-	dojo.removeClass("addPic","invisible");
-	
 });

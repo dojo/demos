@@ -1,23 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
 		"http://www.w3.org/TR/html4/strict.dtd">
-<html>
-	<head>
-		<title>Dojo Form Widgets Test</title>
-
-		<link rel="stylesheet" href="demo.css">
-		
-		<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8" djConfig="parseOnLoad: true"></script>
-		<script type="text/javascript" src="src.js" charset="utf-8"></script>
-		
-	</head>
-	<body class="tundra">
-		<div dojoType="dojo.data.ItemFileReadStore" jsId="stateStore"
-			url="states.json"></div>
-
-		<h2 class="pageSubContentTitle">Job Application Form</h2>
-		<p>This is just a little demo of dijit's form widgets</p>
-		<form dojoType="dijit.form.Form" id="myForm"
-			onsubmit="alert('Execute form w/values:\n'+dojo.toJson(this.getValues(),true));return confirm('Show form values in the URL?')">
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>Dojo Form Widgets Test</title><link rel="stylesheet" href="demo.css"></head><body class="tundra"><div data-dojo-id="stateStore" data-dojo-type="dojo/store/Memory" data-dojo-props='"url":"states.json"'></div><h2 class="pageSubContentTitle">Job Application Form</h2><p>This is just a little demo of dijit's form widgets</p><form id="myForm" onsubmit="alert('Execute form w/values:\n'+dojo.toJson(this.getValues(),true));return confirm('Show form values in the URL?')" data-dojo-type="dijit/form/Form">
 			<div class="formQuestion">
 				<span class="noticeMessage">
 					As you type in the text below, notice how your input is auto
@@ -27,51 +10,12 @@
 			</div>
 			<div class="formAnswer">
 				<label class="firstLabel" for="name">Name *</label>
-				<input type="text" id="name" name="name" class="medium"
-					dojoType="dijit.form.ValidationTextBox"
-					required="true" 
-					ucfirst="true" invalidMessage=""/>
-				<br>
-
-				<label class="firstLabel" for="address">Address *</label>
-				<input type="text" id="address" name="address" class="long"
-					dojoType="dijit.form.ValidationTextBox"
-					required="true"
-					trim="true" 
-					ucfirst="true" />
-				<br>
-
-				<label class="firstLabel" for="city">City *</label>
-			 	<select dojoType="dijit.form.ComboBox"
-			 			value=""
-						autocomplete="true"
-						hasDownArrow="false"
-				>
-					<option></option>
-					<option>Chicago</option>
-					<option>Los Angeles</option>
-					<option>New York</option>
-					<option>San Francisco</option>
-					<option>Seattle</option>
-				</select>
-
-				<label class="secondLabel" for="state">State</label>
-				<input dojoType="dijit.form.FilteringSelect"
-					store="stateStore" class="medium" id="state" name="state" />
-
-				<label class="secondLabel" for="zip">Zip *</label>
-				<input type="text" id="zip" name="zip" class="short"
-					dojoType="dijit.form.ValidationTextBox"
-					trim="true" 
-					required="true"
-					regExp="[0-9][0-9][0-9][0-9][0-9]"
-					invalidMessage="5 digit zipcode (ex: 23245)"/>
-				<br>
-
-				<label class="firstLabel" for="dob">DOB *</label>
-				<input id="dob" name="dateOfBirth" dojoType="dijit.form.DateTextBox" required=true/>
-				
-			</div>
+				<input type="text" id="name" name="name" class="medium" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props='"ucfirst":true,"invalidmessage":0'><br><label class="firstLabel" for="address">Address *</label>
+				<input type="text" id="address" name="address" class="long" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props='"trim":true,"ucfirst":true'><br><label class="firstLabel" for="city">City *</label>
+			 	<select value="" autocomplete="true" data-dojo-type="dijit/form/ComboBox" data-dojo-props='"hasdownarrow":false'><option></option><option>Chicago</option><option>Los Angeles</option><option>New York</option><option>San Francisco</option><option>Seattle</option></select><label class="secondLabel" for="state">State</label>
+				<input class="medium" id="state" name="state" data-dojo-type="dijit/form/FilteringSelect" data-dojo-props='"store":"stateStore"'><label class="secondLabel" for="zip">Zip *</label>
+				<input type="text" id="zip" name="zip" class="short" required="true" data-dojo-type="dijit/form/ValidationTextBox" data-dojo-props='"trim":true,"regexp":"[0-9][0-9][0-9][0-9][0-9]","invalidmessage":"5 digit zipcode (ex: 23245)"'><br><label class="firstLabel" for="dob">DOB *</label>
+				<input id="dob" name="dateOfBirth" required="true/" data-dojo-type="dijit/form/DateTextBox"></div>
 
 			<div class="formQuestion">
 				<span class="noticeMessage">Custom checkboxes and radio buttons...</span>
@@ -79,87 +23,67 @@
 			</div>
 			<div class="formAnswer">
 				<label class="firstLabel" for="position">Position</label>
-				<fieldset id="position" class="dijitInline">
-					<input type="checkBox" name="position" id="it" value="it" dojoType="dijit.form.CheckBox" /> <label for="it">IT</label>
-					<input type="checkBox" name="position" id="marketing" value="marketing" dojoType="dijit.form.CheckBox" /> <label for="marketing">Marketing</label>
-					<input type="checkBox" name="position" id="business" value="business" dojoType="dijit.form.CheckBox" /> <label for="business" style="margin-right: 7em;">Business</label>
-				</fieldset>
-
-				<label class="secondLabel" for="hours">Hours</label>
-				<fieldset id="hours" class="dijitInline">
-					<input type="radio" name="hours" id="full" value="full" dojoType="dijit.form.RadioButton" /> <label for="full">Full time</label>
-					<input type="radio" name="hours" id="part" value="part" dojoType="dijit.form.RadioButton" /> <label for="part">Part time</label>
-				</fieldset>
-			</div>
+				<fieldset id="position" class="dijitInline"><input type="checkBox" name="position" id="it" value="it" data-dojo-type="dijit/form/CheckBox"><label for="it">IT</label>
+					<input type="checkBox" name="position" id="marketing" value="marketing" data-dojo-type="dijit/form/CheckBox"><label for="marketing">Marketing</label>
+					<input type="checkBox" name="position" id="business" value="business" data-dojo-type="dijit/form/CheckBox"><label for="business" style="margin-right: 7em;">Business</label>
+				</fieldset><label class="secondLabel" for="hours">Hours</label>
+				<fieldset id="hours" class="dijitInline"><input type="radio" name="hours" id="full" value="full" data-dojo-type="dijit/form/RadioButton"><label for="full">Full time</label>
+					<input type="radio" name="hours" id="part" value="part" data-dojo-type="dijit/form/RadioButton"><label for="part">Part time</label>
+				</fieldset></div>
 
 			<div class="formQuestion">
 				<span class="noticeMessage">slider and spinner ...</span>
 				<span>Education and Experience</span>
 			</div>
 			<div class="formAnswer">
-				<table class="dijitReset">
-					<tr>
-						<td>
+				<table class="dijitReset"><tr><td>
 							<label class="firstLabel" for="school">Education level</label>
 						</td>
 						<td style="padding-left: 2em;">
-							<div dojoType="dijit.form.HorizontalSlider" id="school" name="school"
-								minimum="1"
-								value="2"
-								maximum="4"
-								discreteValues="4"
-								showButtons="false"
-								style="width:200px; height: 40px;"
-							>
-									<span dojoType="dijit.form.HorizontalRule" container="bottomDecoration" count=4 style="height:5px;"></span>
-									<ol dojoType="dijit.form.HorizontalRuleLabels" container="bottomDecoration"style="height:1em;font-size:75%;color:gray;">
-										<li>high school</li>
+							<div id="school" name="school" value="2" style="width:200px; height: 40px;" data-dojo-type="dijit/form/HorizontalSlider" data-dojo-props='"minimum":1,"maximum":4,"discretevalues":4,"showbuttons":false'>
+									<span style="height:5px;" data-dojo-type="dijit/form/HorizontalRule" data-dojo-props='"container":"bottomDecoration","count":4'></span>
+									<ol style="height:1em;font-size:75%;color:gray;" data-dojo-type="dijit/form/HorizontalRuleLabels" data-dojo-props='"container":"bottomDecoration"'><li>high school</li>
 										<li>college</li>
 										<li>masters</li>
 										<li>PhD</li>
-									</ol>
-							</div>
+									</ol></div>
 						</td>
 						<td>
 							<label class="secondLabel" for="experience">Work experience (years, 0-40)</label>
 						</td>
 						<td>
-							<input dojoType="dijit.form.NumberSpinner"
-								id="experience" name="experience" class="short"
-								value="1"
-								constraints="{min: 0, max:40, places:0}"
-								size=3>
-						</td>
-					</tr>
-				</table>
-			</div>
+							<input id="experience" name="experience" class="short" value="1" size="3" data-dojo-type="dijit/form/NumberSpinner" data-dojo-props='"constraints":"{min: 0, max:40, places:0}"'></td>
+					</tr></table></div>
 
 			<div class="formQuestion">
 				<span class="noticeMessage">Rich text editor that expands as you type in text</span>
 				<label for="description">Self description</label>
 			</div>
 			<div class="formAnswer">
-				<textarea dojoType="dijit.Editor" extraPlugins="['|', 'formatBlock']" minHeight="5em" id="description" name="description">
+				<textarea id="description" name="description" data-dojo-type="dijit/Editor" data-dojo-props="&quot;extraplugins&quot;:&quot;['|', 'formatBlock']&quot;,&quot;minheight&quot;:&quot;5em&quot;">
 				Write a brief summary of &lt;i&gt;your&lt;/i&gt; job skills... using &lt;b&gt;rich&lt;/b&gt; text.
-				</textarea>
-			</div>
+				</textarea></div>
 			
 			<div class="formQuestion">
 				<span class="noticeMessage">Text area that expands as you type in text</span>
 				<label for="references">References</label>
 			</div>
 			<div class="formAnswer">
-				<textarea dojoType="dijit.form.Textarea" id="references" name="references">
+				<textarea id="references" name="references" data-dojo-type="dijit/form/Textarea">
 					Write your references here (plain text)
-				</textarea>
-			</div>
+				</textarea></div>
 
 		  	<center>
-				<button dojoType="dijit.form.Button" iconClass="dijitEditorIcon dijitEditorIconSave" type=submit>
+				<button type="submit" data-dojo-type="dijit/form/Button" data-dojo-props='"iconclass":"dijitEditorIcon dijitEditorIconSave"'>
 					OK
 				</button>
 			</center>
 		</form>
-	</body>
-</html>
-
+	<script src="../config.js"></script>
+	<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
+	<script>
+		require(["dojo/parser", "demo/src"], function (parser) {
+			parser.parse();
+		});
+	</script>
+</body></html>

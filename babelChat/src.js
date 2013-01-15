@@ -1,21 +1,30 @@
-dojo.provide("demos.babelChat.src");
+define([
+	"dojo/_base/declare",
+	"dojo/dom",
+	"dojo/fx",
+	"dojo/_base/fx",
+	"dojo/_base/array",
+	"dojo/on",
+	"dojo/keys",
+	"dojo/query",
+	"dojo/ready",
+	"dojo/_base/lang",
+	"dojo/dom-style",
+	"dijit/_TemplatedMixin",
+	"dijit/_WidgetBase",
+	"dijit/_base/place",
+	"dojox/analytics/Urchin",
+	"dojox/cometd",
+	"dojox/io/scriptFrame",
+	"dojox/rpc/Service",
+	"dojox/widget/Dialog",
+	"dojo/domReady!"
+], function (declare, dom, fx, arrayUtil, baseFx, on, keys, query, ready, lang, domStyle, _TemplatedMixin, _WidgetBase, _basePlace, analyticsUrchin, cometd, ioScriptFrame, rpcService, widgetDialog) {
 
-dojo.require("dojox.cometd");
-dojo.require("dojox.rpc.Service");
-dojo.require("dojox.io.scriptFrame");
-dojo.require("dojox.widget.Dialog");
-dojo.require("dojo.fx");
-dojo.require("dijit._base.place");
-dojo.require("dijit._Widget");
-dojo.require("dijit._Templated");
-dojo.require("dojox.analytics.Urchin");
-
-(function(d){
-
-	var user, good, comet = dojox.cometd,
+	var user, good, comet = cometd,
 		chatroom = "/babelchat/messages";
 
-	d.declare("chat.Message", [dijit._Widget, dijit._Templated],{
+	declare("chat.Message", [_WidgetBase, _TemplatedMixin],{
 
 		messageLang:"",
 		message:"",
@@ -34,9 +43,9 @@ dojo.require("dojox.analytics.Urchin");
 			this.inherited(arguments);
 			this._origMessage = this.message;
 			if(this.lang !== this.messageLang){
-				this.connect(this.domNode, "ondblclick", "_toggle");
+				on(this.domNode, "dblclick", "_toggle");
 				// doing this because google API says not to bombard them:
-				setTimeout(d.hitch(this,"_translate"), 700);
+				setTimeout(lang.hitch(this,"_translate"), 700);
 			}else{
 				this._localMessage = this.message;
 			}
@@ -50,7 +59,7 @@ dojo.require("dojox.analytics.Urchin");
 		_translate: function(){
 			var pair = this.messageLang + "|" + this.lang;
 			goog.translate({ q: this._origMessage, langpair: pair })
-				.addBoth(d.hitch(this,"_tcallback"));
+				.addBoth(lang.hitch(this,"_tcallback"));
 		},
 		
 		_tcallback: function(response){
@@ -64,10 +73,10 @@ dojo.require("dojox.analytics.Urchin");
 		
 	});
 
-	d.declare("chat.User", null, {
+	declare("chat.User", null, {
 	
 		constructor: function(args){
-			d.mixin(this, args);
+			lang.mixin(this, args);
 			this.subscriptions = [];
 			this.subscriptions.push(comet.subscribe(chatroom, this, "incomingMessage"));
 		},
@@ -98,40 +107,40 @@ dojo.require("dojox.analytics.Urchin");
 
 		leave: function(message){
 			comet.publish("/babelchat/leaving", { bye: message || "leaving!" });
-			d.forEach(this.subscriptions, function(s){
+			arrayUtil.forEach(this.subscriptions, function(s){
 				comet.unsubscribe(s);
 			});
-			d.fadeOut({ node: "chatRoom" }).play();
+			baseFx.fadeOut({ node: "chatRoom" }).play();
 		}
 		
 	});
 
 	var postLogin = function(){
 		
-		var val = d.byId("user").value,
-			lang = d.query("#langpicker option").filter(function(n){ return n.selected; })[0].value;
+		var val = dom.byId("user").value,
+			language = dom.byId("langpicker").value;
 		
-		if(val && lang){
+		if(val && language){
 
 			comet.init("http://cometd.sitepen.com/cometd");
 
-			user = new chat.User({ name:val, lang:lang });
+			user = new chat.User({ name:val, lang:language });
 
-			d.connect(dojo.byId("quitChat"), "onclick", user, function(){
+			on(dom.byId("quitChat"), "onclick", user, function(){
 				this.leave("bye!");
 			});
 
-			var msg = d.byId("message"),
-				snd = d.hitch(user,function(){
+			var msg = dom.byId("message"),
+				snd = lang.hitch(user,function(){
 				if(msg.value){
 					this.sendMessage(msg.value);
 					msg.value = "";
 				}
 			});
 			
-			d.connect(d.byId("sendMessage"), "onclick", snd);
-			d.connect(msg, "onkeypress", function(e){
-				if(e.charOrCode == d.keys.ENTER && msg.value){
+			on(dom.byId("sendMessage"), "click", snd);
+			on(msg, "keypress", function(e){
+				if(e.charOrCode == keys.ENTER && msg.value){
 					snd();
 				}
 			});
@@ -142,43 +151,37 @@ dojo.require("dojox.analytics.Urchin");
 		}
 
 	};
-	
-	d.addOnLoad(function(){
+
+	goog = new rpcService(
+		require.toUrl("dojox/rpc/SMDLibrary/google.smd"),
+		{ frameDoc: "funkyTransport" }
+	);
 		
-		goog = new dojox.rpc.Service(
-			d.moduleUrl("dojox.rpc", "SMDLibrary/google.smd"),
-			{ frameDoc: "funkyTransport" }
-		);
-				
-		d.query("#starter").onclick(function(e){
-			if(postLogin()){
-				d.fadeOut({
-					node: "loginstuff",
-					onEnd: function(){
-						d.style("chatRoom", { opacity:0, visibility:"visible" });
-						d.fx.combine([
-							d.animateProperty({
-								node: "loginstuff",
-								properties: { height: 1 },
-								onEnd: function(){
-									d.style("loginstuff","display","none");
-								}
-							}),
-							d.fadeIn({ node:"chatRoom" })
-						]).play(25);
-					}
-				}).play();
-			}
-		});
-		
-		new dojox.analytics.Urchin({
-			acct: "UA-3572741-1",
-			GAonLoad: function(){
-				this.trackPageView("/demos/babelChat");
-			}
-		});
-		
-		
+	on(dom.byId("starter"), "click", function(e){
+		if(postLogin()){
+			baseFx.fadeOut({
+				node: "loginstuff",
+				onEnd: function(){
+					domStyle.set("chatRoom", { opacity:0, visibility:"visible" });
+					fx.combine([
+						baseFx.animateProperty({
+							node: "loginstuff",
+							properties: { height: 1 },
+							onEnd: function(){
+								domStyle.set("loginstuff","display","none");
+							}
+						}),
+						baseFx.fadeIn({ node:"chatRoom" })
+					]).play(25);
+				}
+			}).play();
+		}
 	});
-	
-})(dojo);
+
+	new analyticsUrchin({
+		acct: "UA-3572741-1",
+		GAonLoad: function(){
+			this.trackPageView("/demos/babelChat");
+		}
+	});
+});

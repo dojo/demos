@@ -17,8 +17,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Charts</title>
 <link rel="stylesheet" type="text/css" href="demo.css">
-<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="async: true, parseOnLoad: true"></script>
-<script type="text/javascript" src="src.js"></script>
 </head>
 <body class="tundra">
 <h1>Changing Chart Values</h1>
@@ -26,7 +24,7 @@
 	<tr>
 		<td>Plot:</td>
 		<td>
-			<select data-dojo-type="dijit.form.ComboBox" id="plot" onChange="changePlot()">
+			<select data-dojo-type="dijit/form/ComboBox" id="plot" onChange="changePlot()">
 				<option value="Columns">Columns</option>
 				<option value="ClusteredColumns">ClusteredColumns</option>
 				<option value="StackedColumns">StackedColumns</option>
@@ -42,73 +40,73 @@
 	<tr>
 		<td>Grid:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="grid" onChange="changeGrid()">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="grid" onChange="changeGrid()">
 			<label for="grid">include</label>
 		</td>
 	</tr>
 	<tr>
 		<td>X axis:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="hAxis" onChange="changeX()">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="hAxis" onChange="changeX()">
 			<label for="hAxis">include</label>
 		</td>
 	</tr>
 	<tr>
 		<td>Y axis:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="vAxis" onChange="changeY()">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="vAxis" onChange="changeY()">
 			<label for="vAxis">include</label>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 1:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="s1" onChange="changeSeries(1)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="s1" onChange="changeSeries(1)">
 			<label for="s1">include</label>
 			&nbsp;
-			<button data-dojo-type="dijit.form.Button" id="sb1" onClick="addSeries(1)">Randomize</button>
+			<button data-dojo-type="dijit/form/Button" id="sb1" onClick="addSeries(1)">Randomize</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 2:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="s2" onChange="changeSeries(2)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="s2" onChange="changeSeries(2)">
 			<label for="s2">include</label>
 			&nbsp;
-			<button data-dojo-type="dijit.form.Button" id="sb2" onClick="addSeries(2)">Randomize</button>
+			<button data-dojo-type="dijit/form/Button" id="sb2" onClick="addSeries(2)">Randomize</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 3:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="s3" onChange="changeSeries(3)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="s3" onChange="changeSeries(3)">
 			<label for="s3">include</label>
 			&nbsp;
-			<button data-dojo-type="dijit.form.Button" id="sb3" onClick="addSeries(3)">Randomize</button>
+			<button data-dojo-type="dijit/form/Button" id="sb3" onClick="addSeries(3)">Randomize</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 4:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="s4" onChange="changeSeries(4)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="s4" onChange="changeSeries(4)">
 			<label for="s4">include</label>
 			&nbsp;
-			<button data-dojo-type="dijit.form.Button" id="sb4" onClick="addSeries(4)">Randomize</button>
+			<button data-dojo-type="dijit/form/Button" id="sb4" onClick="addSeries(4)">Randomize</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 5:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="true" id="s5" onChange="changeSeries(5)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="true" id="s5" onChange="changeSeries(5)">
 			<label for="s5">include</label>
 			&nbsp;
-			<button data-dojo-type="dijit.form.Button" id="sb5" onClick="addSeries(5)">Randomize</button>
+			<button data-dojo-type="dijit/form/Button" id="sb5" onClick="addSeries(5)">Randomize</button>
 		</td>
 	</tr>
 	<tr>
 		<td>Series 6:</td>
 		<td>
-			<input type="checkbox" data-dojo-type="dijit.form.CheckBox" checked="false" id="s6" onChange="changeSeries(6)">
+			<input type="checkbox" data-dojo-type="dijit/form/CheckBox" checked="false" id="s6" onChange="changeSeries(6)">
 			<label for="s6">include</label>
 			&nbsp;this series contains all 0 values
 		</td>
@@ -116,5 +114,12 @@
 </table>
 <div id="test" style="width: 600px; height: 400px;"></div>
 <div id="legend"></div>
+<script src="../config.js"></script>
+<script type="text/javascript" src="../../dojo/dojo.js"></script>
+<script>
+	require(["dojo/parser", "demo/src", "dijit/form/CheckBox", "dijit/form/ComboBox", "dijit/form/Button"], function (parser) {
+		parser.parse();
+	});
+</script>
 </body>
 </html>

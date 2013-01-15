@@ -1,58 +1,65 @@
-dojo.provide("demos.flashCards.src.Teacher");
+define([
+	"dojo/_base/declare",
+	"dojo/_base/lang",
+	"dojo/dom-class",
+	"dojo/text!demos/flashCards/src/Teacher.html",
+	"dijit/_TemplatedMixin",
+	"dijit/_WidgetBase",
+	"dojox/timing/Sequence"
+], function (declare, lang, domClass, template, _TemplatedMixin, _WidgetBase, timingSequence) {
 
-dojo.require("dijit._Widget");
-dojo.require("dijit._Templated");
-dojo.require("dojox.timing.Sequence");
-
-dojo.declare("demo._TeacherBehavior", null, {
-	
-	constructor: function(){
-		this._batEyes = [
-			{ func: [dojo.hitch(this,"angry",true), this], pauseAfter:200 },
-			{ func: [dojo.hitch(this,"blink",45), this], repeat: 3, pauseAfter: 100 },
-			{ func: [dojo.hitch(this,"angry",false), this], pauseBefore:200 }
-		];
+	declare("demo._TeacherBehavior", null, {
 		
-	},
-	
-	bat: function(){
-		this.actions.go(this._batEyes);
-	}
+		constructor: function(){
+			this._batEyes = [
+				{ func: [lang.hitch(this,"angry",true), this], pauseAfter:200 },
+				{ func: [lang.hitch(this,"blink",45), this], repeat: 3, pauseAfter: 100 },
+				{ func: [lang.hitch(this,"angry",false), this], pauseBefore:200 }
+			];
+			
+		},
 		
-});
-
-dojo.declare("demo.Teacher", [dijit._Widget, dijit._Templated, demo._TeacherBehavior], {
-
-	templatePath: dojo.moduleUrl("demos.flashCards.src","Teacher.html"),
-
-	constructor: function(args, node){
-		dojo.mixin(this, args);
-		this.actions = new dojox.timing.Sequence({});
-	},
+		bat: function(){
+			this.actions.go(this._batEyes);
+		}
+			
+	});
 	
-	frown: function(/* Boolean */on){
-		var n = this.innerNode;
-		dojo[(on ? "addClass" : "removeClass")](n,"teacherBeingAngry");
-	},
+	declare("demo.Teacher", [_WidgetBase, _TemplatedMixin, demo._TeacherBehavior], {
 	
-	blink: function(closeDuration, forced){
-		if(this._blinking && !forced){ clearTimeout(this._blinking); }
-		dojo.addClass(this.innerNode, "teacherBlinking");
-		this._blinking = setTimeout(dojo.hitch(this,function(){
-			dojo.removeClass(this.innerNode,"teacherBlinking");
-		}), closeDuration || 275);
-	},
+		templateString: template,
 	
-	speak: function(speach, timeout){
-		if (!timeout) { timeout = 5000; }
+		constructor: function(args, node){
+			lang.mixin(this, args);
+			this.actions = new timingSequence({});
+		},
 		
-		this.teacherBubble.innerHTML = speach;
-		dojo.addClass(this.teacherBubbleOuter, "teacherSpeaking");
+		frown: function(/* Boolean */on){
+			var n = this.innerNode;
+			domClass[(on ? "add" : "remove")](n,"teacherBeingAngry");
+		},
 		
-		if (this._timeout) { clearTimeout(this._timeout); }
-		this._timeout = setTimeout(dojo.hitch(this, function(){
-			dojo.removeClass(this.teacherBubbleOuter, "teacherSpeaking")
-		}), timeout);
-	}
+		blink: function(closeDuration, forced){
+			if(this._blinking && !forced){ clearTimeout(this._blinking); }
+			domClass.add(this.innerNode, "teacherBlinking");
+			this._blinking = setTimeout(lang.hitch(this,function(){
+				domClass.remove(this.innerNode,"teacherBlinking");
+			}), closeDuration || 275);
+		},
+		
+		speak: function(speach, timeout){
+			if (!timeout) { timeout = 5000; }
+			
+			this.teacherBubble.innerHTML = speach;
+			domClass.add(this.teacherBubbleOuter, "teacherSpeaking");
+			
+			if (this._timeout) { clearTimeout(this._timeout); }
+			this._timeout = setTimeout(lang.hitch(this, function(){
+				domClass.remove(this.teacherBubbleOuter, "teacherSpeaking")
+			}), timeout);
+		}
+		
+	});
 	
+	return demo._TeacherBehavior;
 });

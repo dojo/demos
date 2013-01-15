@@ -5,9 +5,6 @@
 	<title>Dojo.beer() - earn you daily dose</title>
 	<link type="text/css" rel="stylesheet" href="demo.css">
 
-	<script type="text/javascript" src="../../dojo/dojo.js"></script>
-	<script type="text/javascript" src="src.js"></script>
-
 </head>
 <body>
 	<div id="container">
@@ -21,5 +18,10 @@
 		<div id="notice"></div>
 		<div id="top-owners"></div>
 	</div>
+	<script src="../config.js"></script>
+	<script type="text/javascript" src="../../dojo/dojo.js"></script>
+	<script>
+		require(["demo/src"]);
+	</script>
 </body>
 </html>

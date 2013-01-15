@@ -1,9 +1,15 @@
-dojo.require("dojox.widget.FisheyeList");
-dojo.require("dojo.parser");
-dojo.addOnLoad(function(){
-	dojo.parser.parse();
-})
+define([
+	"dojo/ready",
+	"dojo/parser",
+	"dojox/widget/FisheyeList"
+], function (ready, parser, widgetFisheyeList) {
 
-function load_app(id){
-	alert('icon '+id+' was clicked');
-}
+	ready(function(){
+		parser.parse();
+	})
+	
+	function load_app(id){
+		alert('icon '+id+' was clicked');
+	}
+	
+});

@@ -1,62 +1,70 @@
-dojo.provide("demos.beer.src.Lady");
+define([
+	"dojo",
+	"dojo/_base/declare",
+	"dojo/_base/lang",
+	"dojo/dom-class",
+	"dojo/text!demos/beer/src/templates/Lady.html",
+	"dijit/_TemplatedMixin",
+	"dijit/_WidgetBase",
+	"dojox/timing/Sequence"
+], function (dojo, declare, lang, domClass, template, _TemplatedMixin, _WidgetBase, timingSequence) {
 
-dojo.require("dijit._Widget");
-dojo.require("dijit._Templated");
-dojo.require("dojox.timing.Sequence");
-
-dojo.declare("beer._LadyBehavior", null, {
-	
-	constructor: function(){
-
-		console.log(this, arguments);
-		this._batEyes = [
-			{ func: [dojo.hitch(this,"smile",true), this], pauseAfter:200 },
-			{ func: [dojo.hitch(this,"blink",45), this], repeat: 3, pauseAfter: 100 },
-			{ func: [dojo.hitch(this,"smile",false), this], pauseBefore:200 }
-		];
+	declare("beer._LadyBehavior", null, {
 		
-	},
+		constructor: function(){
 	
-	bat: function(){
-		this.actions.go(this._batEyes);
-	}
+			console.log(this, arguments);
+			this._batEyes = [
+				{ func: [lang.hitch(this,"smile",true), this], pauseAfter:200 },
+				{ func: [lang.hitch(this,"blink",45), this], repeat: 3, pauseAfter: 100 },
+				{ func: [lang.hitch(this,"smile",false), this], pauseBefore:200 }
+			];
+			
+		},
 		
-});
-
-dojo.declare("beer.Lady", [dijit._Widget, dijit._Templated, beer._LadyBehavior], {
-
-	templatePath: dojo.moduleUrl("demos.beer.src","templates/Lady.html"),
-
-	constructor: function(args, node){
-		dojo.mixin(this, args);
-		this.actions = new dojox.timing.Sequence({});
-	},
-
-	smile: function(/* Boolean */on){
-		// summary:
-		//		make her happy
-		var n = this.innerNode;
-		dojo.removeClass(n,"beerLadyAngry");
-		dojo[(on ? "addClass" : "removeClass")](n, "beerLadySmiling");
-	},
+		bat: function(){
+			this.actions.go(this._batEyes);
+		}
+			
+	});
 	
-	frown: function(/* Boolean */on){
-		var n = this.innerNode;
-		dojo.removeClass(n,"beerLadySmiling");
-		dojo[(on ? "addClass" : "removeClass")](n,"beerLadyAngry");
-	},
+	declare("beer.Lady", [_WidgetBase, _TemplatedMixin, beer._LadyBehavior], {
 	
-	blink: function(closeDuration, forced){
-		if(this._blinking && !forced){ clearTimeout(this._blinking); }
-		dojo.addClass(this.innerNode, "beerLadyBlinking");
-		this._blinking = setTimeout(dojo.hitch(this,function(){
-			dojo.removeClass(this.innerNode,"beerLadyBlinking");
-		}), closeDuration || 275);
-	},
+		templateString: template,
 	
-	say: function(dialog){
+		constructor: function(args, node){
+			lang.mixin(this, args);
+			this.actions = new timingSequence({});
+		},
+	
+		smile: function(/* Boolean */on){
+			// summary:
+			//		make her happy
+			var n = this.innerNode;
+			domClass.remove(n,"beerLadyAngry");
+			domClass[(on ? "add" : "remove")](n, "beerLadySmiling");
+		},
 		
+		frown: function(/* Boolean */on){
+			var n = this.innerNode;
+			domClass.remove(n,"beerLadySmiling");
+			dojo[(on ? "addClass" : "removeClass")](n,"beerLadyAngry");
+		},
 		
-	}
+		blink: function(closeDuration, forced){
+			if(this._blinking && !forced){ clearTimeout(this._blinking); }
+			domClass.add(this.innerNode, "beerLadyBlinking");
+			this._blinking = setTimeout(lang.hitch(this,function(){
+				domClass.remove(this.innerNode,"beerLadyBlinking");
+			}), closeDuration || 275);
+		},
 		
+		say: function(dialog){
+			
+			
+		}
+			
+	});
+	
+	return beer.Lady;
 });

@@ -106,8 +106,11 @@
 		</div>
 		<hr class="hide" />
 	</div>
+	<script src="../config.js"></script>
 	<script src="../../dojo/dojo.js"></script>
-	<script src="src.js"></script>
+	<script>
+		require(["demo/src"]);
+	</script>
 </body>
 </html><?php
 

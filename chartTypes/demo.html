@@ -17,8 +17,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Dojo Chart Types</title>
 <link rel="stylesheet" href="demo.css">
-<script src="../../dojo/dojo.js" data-dojo-config="async: true, gfxRenderer: 'svg,silverlight,vml,canvas'"></script>
-<script src="src.js"></script>
 </head>
 <body>
 	<h1>Dojo Chart Types</h1>
@@ -87,5 +85,11 @@
 		<div class="chart" id="ohlc"></div>
 		<div class="chart" id="scatter"></div>
 	</div>
+	
+	<script src="../config.js"></script>
+	<script src="../../dojo/dojo.js" data-dojo-config="gfxRenderer: 'svg,silverlight,vml,canvas'"></script>
+	<script>
+		require(["demo/src"]);
+	</script>
 </body>
 </html>

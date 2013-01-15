@@ -1,24 +1,25 @@
-dojo.require("dojo.parser");
-dojo.require("dojo.data.ItemFileReadStore");
+define([
+	"dojo",
+	"dojo/parser",
+	"dojo/data/ItemFileReadStore",
+	"dijit/form/HorizontalSlider",
+	"dijit/form/CurrencyTextBox",
+	"dijit/form/Button",
+	"dijit/form/CheckBox",
+	"dijit/_editor/plugins/FontChoice",
+	"dijit/Editor",
+	"dijit/form/ComboBox",
+	"dijit/form/DateTextBox",
+	"dijit/form/FilteringSelect",
+	"dijit/form/Form",
+	"dijit/form/HorizontalRule",
+	"dijit/form/HorizontalRuleLabels",
+	"dijit/form/NumberSpinner",
+	"dijit/form/RadioButton",
+	"dijit/form/Textarea",
+	"dijit/form/ValidationTextBox"
+], function (dojo, parser, dataItemFileReadStore, formHorizontalSlider, formCurrencyTextBox, formButton, formCheckBox, _editorPluginsFontChoice, Editor, formComboBox, formDateTextBox, formFilteringSelect, formForm, formHorizontalRule, formHorizontalRuleLabels, formNumberSpinner, formRadioButton, formTextarea, formValidationTextBox) {
 
-dojo.require("dijit.form.Form");
-dojo.require("dijit.form.ValidationTextBox");
-dojo.require("dijit.form.ComboBox");
-dojo.require("dijit.form.FilteringSelect");
-dojo.require("dijit.form.CheckBox");
-dojo.require("dijit.form.RadioButton");
-dojo.require("dijit.form.DateTextBox");
-dojo.require("dijit.form.CurrencyTextBox");
-dojo.require("dijit.form.NumberSpinner");
-
-dojo.require("dijit.form.HorizontalSlider");
-dojo.require("dijit.form.HorizontalRule");
-dojo.require("dijit.form.HorizontalRuleLabels");
-
-dojo.require("dijit.form.Textarea");
-dojo.require("dijit.Editor");
-dojo.require("dijit._editor.plugins.FontChoice");
-dojo.require("dijit.form.Button");
-
-// make dojo.toJson() print dates correctly (this feels a bit dirty)
-Date.prototype.json = function(){ return dojo.date.stamp.toISOString(this, {selector: 'date'});};
+	// make dojo.toJson() print dates correctly (this feels a bit dirty)
+	Date.prototype.json = function(){ return dojo.date.stamp.toISOString(this, {selector: 'date'});};
+});

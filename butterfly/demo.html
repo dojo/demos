@@ -3,10 +3,6 @@
 	<head>
 		<title>dojox.gfx: Butterfly</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: true">
-		</script>
-		<script type="text/javascript" src="src.js">
-		</script>
 		<link rel="stylesheet" href="../../dojo/resources/dojo.css">
 		<link rel="stylesheet" href="../../dijit/themes/tundra/tundra.css">
 		<link rel="stylesheet" href="demo.css">
@@ -26,12 +22,12 @@
 			</tr>
 			<tr>
 				<td>
-					<div id="rotatingSlider" data-dojo-type="dijit.form.HorizontalSlider" value="0" minimum="-180" maximum="180" discreteValues="72" showButtons="false" intermediateChanges="true" style="width: 500px;">
-						<div data-dojo-type="dijit.form.HorizontalRule" container="topDecoration" count="73" style="height:5px;">
+					<div id="rotatingSlider" data-dojo-type="dijit/form/HorizontalSlider" value="0" minimum="-180" maximum="180" discreteValues="72" showButtons="false" intermediateChanges="true" style="width: 500px;">
+						<div data-dojo-type="dijit/form/HorizontalRule" container="topDecoration" count="73" style="height:5px;">
 						</div>
-						<div data-dojo-type="dijit.form.HorizontalRule" container="bottomDecoration" count="9" style="height:5px;">
+						<div data-dojo-type="dijit/form/HorizontalRule" container="bottomDecoration" count="9" style="height:5px;">
 						</div>
-						<div data-dojo-type="dijit.form.HorizontalRuleLabels" container="bottomDecoration" labels="-180,-135,-90,-45,0,45,90,135,180" style="height:1.2em;font-size:75%;color:gray;">
+						<div data-dojo-type="dijit/form/HorizontalRuleLabels" container="bottomDecoration" labels="-180,-135,-90,-45,0,45,90,135,180" style="height:1.2em;font-size:75%;color:gray;">
 						</div>
 					</div>
 				</td>
@@ -43,10 +39,10 @@
 			</tr>
 			<tr>
 				<td>
-					<div id="scalingSlider" data-dojo-type="dijit.form.HorizontalSlider" intermediateChanges="true" value="1" minimum="0" maximum="1" showButtons="false" style="width: 500px;">
-						<div data-dojo-type="dijit.form.HorizontalRule" container="bottomDecoration" count="5" style="height:5px;">
+					<div id="scalingSlider" data-dojo-type="dijit/form/HorizontalSlider" intermediateChanges="true" value="1" minimum="0" maximum="1" showButtons="false" style="width: 500px;">
+						<div data-dojo-type="dijit/form/HorizontalRule" container="bottomDecoration" count="5" style="height:5px;">
 						</div>
-						<div data-dojo-type="dijit.form.HorizontalRuleLabels" container="bottomDecoration" labels="10%,18%,32%,56%,100%" style="height:1.2em;font-size:75%;color:gray;">
+						<div data-dojo-type="dijit/form/HorizontalRuleLabels" container="bottomDecoration" labels="10%,18%,32%,56%,100%" style="height:1.2em;font-size:75%;color:gray;">
 						</div>
 					</div>
 				</td>
@@ -54,5 +50,13 @@
 		</table>
 		<div id="gfx_holder" class="panel canvas">
 		</div>
+		<script src="../config.js"></script>
+		<script type="text/javascript" src="../../dojo/dojo.js">
+		</script>
+		<script>
+			require(["dojo/parser", "dijit/form/HorizontalSlider", "dijit/form/HorizontalRuleLabels", "demo/src"], function (parser) {
+				parser.parse();
+			});
+		</script>
 	</body>
 </html>

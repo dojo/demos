@@ -1,29 +1,29 @@
-dojo.provide("demos.i18n.src");
+define([
+	"dojo",
+	"dojo/io/script",
+	"dojo/parser",
+	"dijit/form/ComboBox",
+	"dijit/Tree",
+	"dijit/Menu",
+	"dijit/ColorPalette",
+	"dijit/Calendar",
+	"dijit/form/CurrencyTextBox",
+	"dijit/form/DateTextBox",
+	"dijit/form/NumberSpinner",
+	"dijit/layout/BorderContainer",
+	"dijit/layout/ContentPane",
+	"dojox/analytics/Urchin",
+	"dojox/rpc/Service",
+	"demos/i18n/model"
+], function (dojo, ioScript, parser, formComboBox, Tree, Menu, ColorPalette, Calendar, formCurrencyTextBox, formDateTextBox, formNumberSpinner, layoutBorderContainer, layoutContentPane, analyticsUrchin, rpcService, i18nModel) {
 
-// For accessing Geonames service
-dojo.require("dojo.io.script");
-dojo.require("dojox.rpc.Service");
-
-dojo.require("dijit.Tree");
-dojo.require("dijit.Calendar");
-dojo.require("dijit.layout.BorderContainer");
-dojo.require("dijit.layout.ContentPane");
-dojo.require("dijit.form.DateTextBox");
-dojo.require("dijit.form.CurrencyTextBox");
-dojo.require("dijit.form.NumberSpinner");
-dojo.require("dijit.form.ComboBox");
-dojo.require("dijit.ColorPalette");
-dojo.require("dijit.Menu");
-dojo.require("dojo.parser");
-
-dojo.require("demos.i18n.model");
-
-dojo.require("dojox.analytics.Urchin");
-dojo.addOnLoad(function(){
-	new dojox.analytics.Urchin({
-		acct: "UA-3572741-1",
-		GAonLoad: function(){
-			this.trackPageView("/demos/i18n");
-		}
+	// For accessing Geonames service
+	dojo.addOnLoad(function(){
+		new analyticsUrchin({
+			acct: "UA-3572741-1",
+			GAonLoad: function(){
+				this.trackPageView("/demos/i18n");
+			}
+		});
 	});
 });

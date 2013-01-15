@@ -10,9 +10,6 @@
 	<meta name="Owner" content="info@webreactor.eu" />
 
 	<link rel="stylesheet" href="demo.css" type="text/css"/>
-	
-	<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
-	<script type="text/javascript" src="src.js" charset="utf-8"></script>
 
 </head>
 <body class="tundra">
@@ -208,6 +205,11 @@
 	<div id="content">
 	<img src="images/soon.png" alt="launching soon"/>
 	</div>
-
+	
+	<script src="../config.js"></script>
+	<script type="text/javascript" src="../../dojo/dojo.js" charset="utf-8"></script>
+	<script>
+		require(["demo/src"]);
+	</script>
 </body>
 </html>

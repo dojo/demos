@@ -1,19 +1,29 @@
-dojo.provide("demos.cropper.src.Preview");
-
-dojo.require("dijit._Widget");
-dojo.require("dojo.dnd.move");
-dojo.require("dojox.layout.ResizeHandle");
-
-(function(d, $){
+define([
+	"dojo/has",
+	"dojo/_base/declare",
+	"dojo/dom-style",
+	"dojo/dom-construct",
+	"dojo/_base/lang",
+	"dojo/dnd/move",
+	"dojo/query",
+	"dijit/_WidgetBase",
+	"dojo/dom-geometry",
+	"dojo/_base/window",
+	"dojo/_base/fx",
+	"dojo/topic",
+	"dojo/NodeList",
+	"dojox/layout/ResizeHandle",
+	"dojo/on"
+], function (has, declare, domStyle, domConstruct, lang, move, query, _WidgetBase, domGeometry, win, fx, topic, NodeList, layoutResizeHandle, on) {
 		
 	// a simple "wrap" function. availaing in `plugd`
 	// warning: node must be in the DOM before being wrapped.
 	var wrap = function(node, withTag){
 		// summary:
 		//		wrap some node with a tag type.
-			var n = d.create(withTag);
-			d.place(n, node, "before");
-			d.place(node, n, "first");
+			var n = domConstruct.create(withTag);
+			domConstruct.place(n, node, "before");
+			domConstruct.place(node, n, "first");
 			return n;
 		},
 		// some quick aliases for shrinksafe:
@@ -22,7 +32,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		pixels = "px",
 		_floor = Math.floor;
 	
-	d.declare("image.Preview", dijit._Widget, {
+	declare("image.Preview", _WidgetBase, {
 		// summary:
 		//		A Behavioral widget adding a preview pane to any `<img>`
 		
@@ -58,15 +68,15 @@ dojo.require("dojox.layout.ResizeHandle");
 				s = this.scale;
 			
 			// wrap the target in a div so we can control it with dnd.
-			var mb = d.marginBox(this.domNode);
+			var mb = domGeometry.getMarginBox(this.domNode);
 			this.currentSize = mb;
 
 			// wrap the domNode in antoher div so parentDnd works
 			this.container = wrap(this.domNode, "div");
-			d.marginBox(this.container, mb);
+			domGeometry.setMarginBox(this.container, mb);
 			
 			// create a draggable handle thing over our target
-			this.picker = d.create('div', {
+			this.picker = domConstruct.create('div', {
 				"class":"imageDragger",
 				style: {
 					opacity: this.hoverable ? 0 : this.opacity,
@@ -76,32 +86,32 @@ dojo.require("dojox.layout.ResizeHandle");
 			}, this.domNode, "before");
 			
 			// create the preview node. _positionPicker places it.
-			this.preview = d.create('div', {
+			this.preview = domConstruct.create('div', {
 				style:{
 					position:abs,
 					overflow:"hidden",
 					width: _floor(gs * s) + pixels,
 					height: _floor(gs * s) + pixels
 				}
-			}, d.body());
+			}, win.body());
 
 			// wrap the full image, so we can position it easily relative
 			// to the outer node. embedded position:rel/absolute/rel/abs here
-			var n = wrap(d.create('img', {
+			var n = wrap(domConstruct.create('img', {
 						style:{ position: abs },
 				 		src: this.altSrc || this.domNode.src
 					}, this.preview), "div");
-			d.style(n, pos, "relative");
-			d.style(this.domNode, pos, abs);
+			domStyle.set(n, pos, "relative");
+			domStyle.set(this.domNode, pos, abs);
 			
-			this.image = d.query('img', this.preview)
+			this.image = query('img', this.preview)
 				// when it is loaded, use those numbers:
-				.onload(d.hitch(this, "_adjustImage"))[0]; // the [0] is for the array
+				.onload(lang.hitch(this, "_adjustImage"))[0]; // the [0] is for the array
 			
 			this._positionPicker();
 			
 			// setup dnd for the picker:
-			this.mover = new d.dnd.move.parentConstrainedMoveable(this.picker,
+			this.mover = new move.parentConstrainedMoveable(this.picker,
 				// Safari and IE seem to be pickup up paddings and whatnot
 				// as container? ugh.
 				{ area: "content", within: true }
@@ -109,7 +119,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			
 			if(this.resizeable){
 				// create the resize handle for the glass:
-				this._handle = new dojox.layout.ResizeHandle({
+				this._handle = new layoutResizeHandle({
 					
 					// the draggable node is the one to resize.
 					// maintain aspect to keep inline with preview
@@ -119,7 +129,7 @@ dojo.require("dojox.layout.ResizeHandle");
 					// rescale the image often, activeResize is true
 					intermediateChanges: true,
 					activeResize: true,
-					onResize: d.hitch(this, function(e,f){
+					onResize: lang.hitch(this, function(e,f){
 						this._adjustImage(e,f);
 						this._whileMoving();
 					}),
@@ -137,21 +147,23 @@ dojo.require("dojox.layout.ResizeHandle");
 			}
 			
 			// setup dnd behavior
-			d.subscribe("/dnd/move/start", this, "_startDnd");
-			d.subscribe("/dnd/move/stop", this, "_stopDnd");
+			topic.subscribe("/dnd/move/start", this, "_startDnd");
+			topic.subscribe("/dnd/move/stop", this, "_stopDnd");
 			
 			// janky IE src issue fix:
-			d.isIE && (this.image.src = this.image.src);
+			if (has("ie")) {	
+				this.image.src = this.image.src;
+			}
 			
 			// only because our layout is fluid:
-			this.connect(d.global, "onresize", "_positionPicker");
+			this.connect(dojo.global, "onresize", "_positionPicker");
 			
 			if(this.hoverable){
 				this.connect(this.container, "onmouseenter", "_enter");
 				this.connect(this.container, "onmouseleave", "_leave");
 			}
 			
-			setTimeout(dojo.hitch(this, "_positionPicker"), 125);
+			setTimeout(lang.hitch(this, "_positionPicker"), 125);
 			
 		},
 		
@@ -162,11 +174,11 @@ dojo.require("dojox.layout.ResizeHandle");
 			
 			// if we were called from the resizehandle, we probably need to adjust our scale.
 			if(e && e.type && (e.type == "mouseup" || e.type == "mousemove")){
-				var xy = d.coords(this.picker);
-				this.scale = d.coords(this.preview).w / xy.w;
+				var xy = domGeometry.position(this.picker);
+				this.scale = domGeometry.position(this.preview).w / xy.w;
 			}else if(e && e.type && e.type == "load" && this.imageReady(e)){ /* noop, imageReady fired */ }
 				
-			d.style(this.image, {
+			domStyle.set(this.image, {
 				height: _floor(tc.h * s) + pixels,
 				width: _floor(tc.w * s) + pixels
 			});
@@ -176,8 +188,8 @@ dojo.require("dojox.layout.ResizeHandle");
 		_positionPicker: function(e){
 			// place the preview thinger somewhere relative to the container
 			// we wrapped around the orig image.
-			var tc = this.coords = d.coords(this.container, true);
-			d.style(this.preview,{
+			var tc = this.coords = domGeometry.position(this.container, true);
+			domStyle.set(this.preview,{
 				left: tc.x + tc.w + 10 + pixels,
 				top: tc.y + pixels
 			});
@@ -187,7 +199,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			// listen for dnd Start, determine if we care:
 			if(!this._interval && n && n.node == this.picker){
 				// listen to doc onmousemove
-				this._interval = this.connect(d.doc, "onmousemove", "_whileMoving");
+				this._interval = on(win.doc, "mousemove", "_whileMoving");
 			}
 		},
 		
@@ -206,7 +218,7 @@ dojo.require("dojox.layout.ResizeHandle");
 					this._handle.maxSize = {
 						h: _floor(tc.h - (this._lastXY.t - tc.t)),
 						w: _floor(tc.w - (this._lastXY.l - tc.l))
-					}
+					};
 				}
 			}
 		},
@@ -214,7 +226,7 @@ dojo.require("dojox.layout.ResizeHandle");
 		_whileMoving: function(){
 			// while dnd in progress, adjust the backgroundPosition of the preview
 			
-			var xy = this._lastXY = d.coords(this.picker),
+			var xy = this._lastXY = domGeometry.position(this.picker),
 				tc = this.coords,
 				r = this.image.width / tc.w,
 				x = _floor((xy.l - tc.l) * r),
@@ -222,7 +234,7 @@ dojo.require("dojox.layout.ResizeHandle");
 			
 			// position the image relative to the picker's position
 			// in the container.
-			d.style(this.image, {
+			domStyle.set(this.image, {
 				top: "-" + y + pixels,
 				left: "-" + x + pixels
 			});
@@ -231,9 +243,9 @@ dojo.require("dojox.layout.ResizeHandle");
 		destroy: function(){
 			// destroy our domNodes. this is a behavioral widget.
 			// we can .destroy(true) and leave the image in tact
-			d.place(this.domNode, this.container, "before");
-			d.forEach(["preview","picker","container","image"], function(n){
-				d.destroy(this[n]);
+			domConstruct.place(this.domNode, this.container, "before");
+			arrayUtil.forEach(["preview","picker","container","image"], function(n){
+				domConstruct.destroy(this[n]);
 				delete this[n];
 			}, this);
 			this.inherited(arguments);
@@ -246,25 +258,26 @@ dojo.require("dojox.layout.ResizeHandle");
 		_enter: function(e){
 			// handler for mouseenter event
 			this._anim && this._anim.stop();
-			this._anim = d.anim(this.picker, { opacity: this.opacity });
+			this._anim = fx.anim(this.picker, { opacity: this.opacity });
 		},
 		
 		_leave: function(e){
 			// handler for mouseleave event
 			if(!this._interval && !this._handle._isSizing){
 				this._anim && this._anim.stop();
-				this._anim = d.anim(this.picker, { opacity: 0 });
+				this._anim = fx.anim(this.picker, { opacity: 0 });
 			}
 		}
 		
 	});
 	
 	// setup the query "plugin"
-	d.extend(d.NodeList, {
+	lang.extend(NodeList, {
 		preview: function(args){
 			// example: dojo.query(".something").preview();
 			return this.instantiate(image.Preview, args);
 		}
 	});
 	
-})(dojo, dojo.query);
+	return image.Preview;
+});
