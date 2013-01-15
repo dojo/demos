@@ -112,17 +112,6 @@ require([
 		chart1.render();
 	};
 
-	var onCompanyClick = function(event){
-		var view2title;
-		switch (event.currentTarget.id){
-		case "googLink": view2title="Google Inc."; selectedStore=googStore; break;
-		case "yahooLink": view2title="Yahoo! Inc."; selectedStore=yahooStore; break;
-		case "msftLink": view2title="Microsoft Corp."; selectedStore=msftStore; break;
-		}
-		var chartHeader = registry.byId("view2head1");
-		chartHeader.set("label", view2title);
-	};
-
 	timeLabelFunction = function(v){
 		if(currentData == null){
 			return "";
@@ -209,17 +198,24 @@ require([
 		}
 		chart.render();
 	};
-
+	
+	var companySelect = function(store, label){
+		return function(event){
+			selectedStore = store;
+			registry.byId("view2head1").set("label", label);
+		}
+	};
 
 	var init = function(){
 		var view2 = registry.byId("view2");
 		view2.on("BeforeTransitionOut", hideChartView);
 		view2.on("AfterTransitionIn", showChartView);
 
-		on(dom.byId("googLink"), "click", onCompanyClick);
-		on(dom.byId("yahooLink"), "click", onCompanyClick);
-		on(dom.byId("msftLink"), "click", onCompanyClick);
 		on(dom.byId("indicatorMode"), "click", switchMode);
+		
+		registry.byId("googLink").onClick = companySelect(googStore, "Google Inc.");
+		registry.byId("yahooLink").onClick = companySelect(yahooStore, "Yahoo! Inc.");
+		registry.byId("msftLink").onClick = companySelect(msftStore, "Microsoft Corp.");
 
 		registry.byId("zoomButton1").on("click", function(){showRange(90);});
 		registry.byId("zoomButton2").on("click", function(){showRange(180);});
