@@ -12,9 +12,9 @@
 </head>
 <body class="claro" role="application">
 	<div id="preLoader"><p></p></div>
-	<div dojoType="dojo.data.ItemFileWriteStore" jsId="mailStore"
+	<div dojoType="dojo.data.ItemFileWriteStore" data-dojo-id="mailStore"
 		url="mail.json"></div>
-	<div dojoType="dojo.data.ItemFileWriteStore" jsId="contactStore"
+	<div dojoType="dojo.data.ItemFileWriteStore" data-dojo-id="contactStore"
 		url="contacts.php"></div>
 
 	<!-- Inline declaration for programmatically created "New Message" tabs -->
@@ -125,7 +125,7 @@
 			<div dojoType="dijit.Tooltip" connectId="options">Set various options</div>
 		</div>
 		
-		<div dojoType="dijit.layout.TabContainer" id="tabs" jsId="tabs" region="center" tabStrip="true">
+		<div dojoType="dijit.layout.TabContainer" id="tabs" data-dojo-id="tabs" region="center" tabStrip="true">
 			<!-- main section with tree, table, and preview -->
 			<div dojoType="dijit.layout.BorderContainer" id="inbox" title="Inbox" design="sidebar">
 				<div dojoType="dijit.layout.AccordionContainer" id="accordion"
@@ -149,7 +149,7 @@
 						</div>
 					</div>
 					<div dojoType="dijit.layout.AccordionPane" title="Search Messages">
-						<form dojoType="dijit.form.Form" jsId="searchForm">
+						<form dojoType="dijit.form.Form" data-dojo-id="searchForm">
 							<table>
 								<tr>
 									<td><label for="subjectSearch">Subject:</label></td>
@@ -174,7 +174,7 @@
 				<!-- list of messages pane -->
 				<table dojoType="dojox.grid.DataGrid"
 					region="top" minSize="20" splitter="true"
-					jsId="table"
+					data-dojo-id="table"
 					id="table"
 					store="mailStore" query="{ type: 'message' }"
 					onRowClick="onMessageClick"
@@ -218,7 +218,7 @@
 				<div dojoType="dijit.layout.ContentPane" region="top">
 					<center id="contactIndex"></center>
 				</div>
-				<table dojoType="dojox.grid.DataGrid" jsId="contactTable" store="contactStore" region="center" editable="true">
+				<table dojoType="dojox.grid.DataGrid" data-dojo-id="contactTable" store="contactStore" region="center" editable="true">
 					<thead>
 						<tr>
 							<th field="first" width="25%" editable="true">First Name</th>

@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="demo.css">
 
 	<script type="text/javascript" src="../../dojo/dojo.js"
-    	djConfig="isDebug:true, popup:true, parseOnLoad: true, debugAtAllCosts:false"></script>
+    	data-dojo-config="isDebug:true, popup:true, parseOnLoad: true, debugAtAllCosts:false"></script>
 
 	<script type="text/javascript" src="src.js" charset="utf-8"></script>
 
@@ -17,7 +17,7 @@
 	<div id="player">
     <div id="vidContainer">
 	<div id="video"></div>
-  <div id="videoOverlay" dojoType="dojo.dnd.Target" jsId="c2" accept="blue,darkred">
+  <div id="videoOverlay" dojoType="dojo.dnd.Target" data-dojo-id="c2" accept="blue,darkred">
     	<div id="relatedBack" style="display:none;"></div>
         <div id="relatedContainer" style="display:none;">
             <div class="topRow">
@@ -83,11 +83,11 @@
 </div>
 
 <div id="libContainer">
-    <div id="library" jsId="dnd_library" dojoType="dojo.dnd.Source" class="source" copyOnly="true"></div>
+    <div id="library" data-dojo-id="dnd_library" dojoType="dojo.dnd.Source" class="source" copyOnly="true"></div>
     <div id="libDesc"><em>To play a video from the list, drag and drop it on the player.</em></div>
 </div>
 
-<!--<div id="timeline" dojoType="dojo.dnd.Source" jsId="c2" class="target" accept="blue,darkred" horizontal="true"></div> -->
+<!--<div id="timeline" dojoType="dojo.dnd.Source" data-dojo-id="c2" class="target" accept="blue,darkred" horizontal="true"></div> -->
 
 
 </body>

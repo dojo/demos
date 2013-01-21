@@ -108,7 +108,7 @@
 		<div dojoType="dijit.layout.ContentPane" 
 			class="leftTree"
 			region="leading" 
-			jsId="leading"
+			data-dojo-id="leading"
 			splitter="true">
 			<!--
 			<div id="treeContainer"></div>
@@ -120,7 +120,7 @@
 		<table dojoType="dojox.grid.DataGrid"
 			store="csvStore" query="{ Date: '*' }"
 			splitter="true" height="auto"
-			region="center" jsId="csvGrid">
+			region="center" data-dojo-id="csvGrid">
 			<script type="dojo/method" event="onCellContextMenu">
 				return true; // allow context menus
 			</script>
@@ -145,7 +145,7 @@
 	</div>
 
 	<!--
-	<div dojoType="dijit.Menu" jsId="rightClick" style="display: none;">
+	<div dojoType="dijit.Menu" data-dojo-id="rightClick" style="display: none;">
 		<script type="dojo/method">
 			this.bindDomNode(csvGrid.domNode);
 		</script>
