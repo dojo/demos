@@ -58,7 +58,7 @@
 			<div dojoType="dijit.layout.ContentPane" region="bottom" style="height:32px" align="center">
 				<button dojoType="dijit.form.Button" iconClass="mailIconOk"
 				>Send
-				<script type="dojo/method" event="onClick">
+				<script type="dojo/method" data-dojo-event="onClick">
 					var toField = dojo.byId("${id}_to");
 					if (toField.value == ""){
 						alert("Please enter a recipient address");
@@ -69,7 +69,7 @@
 				</button>
 				<button dojoType="dijit.form.Button" iconClass="mailIconCancel" 
 				>Cancel
-				<script type="dojo/method" event="onClick">
+				<script type="dojo/method" data-dojo-event="onClick">
 					tabs.closeChild(tabs.selectedChildWidget);
 				</script>
 				</button>
@@ -84,7 +84,7 @@
 		<div dojoType="dijit.Toolbar" region="top">
 			<div id="getMail" dojoType="dijit.form.ComboButton"
 				iconClass="mailIconGetMail" optionsTitle="Mail Source Options">
-				<script type="dojo/method" event="onClick">
+				<script type="dojo/method" data-dojo-event="onClick">
 					fakeDownload();
 				</script>
 				<span>Get Mail</span>
@@ -99,7 +99,7 @@
 				id="newMsg" dojoType="dijit.form.Button"
 				iconClass="mailIconNewMessage">
 				New Message
-				<script type="dojo/method" event="onClick">
+				<script type="dojo/method" data-dojo-event="onClick">
 					/* make a new tab for composing the message */
 					var newTab = new mail.NewMessage({id: "new"+paneId  }).container;
 					dojo.mixin(newTab,
@@ -117,7 +117,7 @@
 
 			<button id="options" dojoType="dijit.form.Button" iconClass="mailIconOptions">
 			 &nbsp;Options	
-				<script type="dojo/method" event="onClick">
+				<script type="dojo/method" data-dojo-event="onClick">
 					dijit.byId('optionsDialog').show();
 				</script>
 			</button>
@@ -132,7 +132,7 @@
 					<div dojoType="dijit.layout.AccordionPane" title="Folders">
 						<div dojoType="dijit.Tree" id="mytree" store="mailStore"
 							childrenAttr="folders" query="{type:'folder'}" label="Folders">
-							<script type="dojo/method" event="onClick" args="item">
+							<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="item">
 								if(!item){
 									return;	// top level node in tree doesn't correspond to any item
 								}
@@ -142,7 +142,7 @@
 									folder: mailStore.getValue(item, "id")
 								});
 							</script>
-							<script type="dojo/method" event="getIconClass" args="item">
+							<script type="dojo/method" data-dojo-event="getIconClass" data-dojo-args="item">
 								return (item && mailStore.getValue(item, "icon")) || "mailIconFolderDocuments";
 							</script>
 						</div>

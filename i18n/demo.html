@@ -81,20 +81,20 @@
 		<div dojoType="dijit.layout.ContentPane" region="leading" style="width: 30%" splitter="true">
 			<div dojoType="dijit.Tree" id="mytree" model="model" openOnClick="true">
 				<!-- override functions for display of each node -->
-				<script type="dojo/method" event="getIconClass" args="item">
+				<script type="dojo/method" data-dojo-event="getIconClass" data-dojo-args="item">
 					var icon =
 						item.countryName ?
 						("countryIcon country" + item.countryCode + "Icon") :
 						dijit.Tree.prototype.getIconClass.apply(this, arguments);
 					return icon;
 				</script>
-				<script type="dojo/method" event="getLabel" args="item">
+				<script type="dojo/method" data-dojo-event="getLabel" data-dojo-args="item">
 					if(item.root){ return "Continents"; }
 					return item.name || item.countryName || item;  // language items are just strings... change?
 				</script>
 	
 				<!-- clicking a node refreshes the page with new locale setting -->
-				<script type="dojo/method" event="onClick" args="item, node">
+				<script type="dojo/method" data-dojo-event="onClick" data-dojo-args="item, node">
 					if(item.type=="locale") {	// language
 						var locale = item.iso, lang = locale.replace(/-.*/, ""),
 							dir = (/ar|fa|he|ps|ur|yi/i).test(lang) ? "rtl" : "ltr";
