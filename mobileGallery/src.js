@@ -58,9 +58,12 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 
 	function navBtnClickHandler() {
 		var navRecord = structure.navRecords.pop();
+		if (!navRecord){ // #16565: happens when double-clicking/touching the back button.
+			return;
+		}
 		// only hide navigation button DIRECTLY if in two column mode
 		// otherwise, "onAfterTransitionIn" of "navigation" view will hide it
-		// TODO:simply the logic here
+		// TODO: simplify the logic here
 		if (structure.navRecords.length == 0 && !structure.layout.leftPane.hidden)
 			showHideNavButton();
 		transitViews(navRecord.to, navRecord.from);
