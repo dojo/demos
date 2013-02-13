@@ -5,7 +5,7 @@ define(["dojo/_base/array",
 		function(array, lang, has, win){
 	
 	var _base = lang.getObject("demos.mobileGallery.src._base", true);
-	_base.isIPhone = has("iphone");
+	_base.isIPhone = has("ios");
 	_base.isIPad = has("ipad");
 	_base.isWebOS = has("webos");
 	_base.isAndroid = has("android");

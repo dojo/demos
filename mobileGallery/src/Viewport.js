@@ -17,7 +17,7 @@ define(["dojo/_base/lang",
 			var isPortrait = (window.orientation == 0);
 			// TODO: decide best dimension for full/non-full screen, 
 			// also for different kinds of platforms.
-			if (has("iphone")) {
+			if (has("ios")) {
 				if (isPortrait) {
 					domProp.set(meta,"content",
 					"width=device-width,height=416,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
