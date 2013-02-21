@@ -2,11 +2,10 @@ var customClaroTheme, timeLabelFunction;
 
 require([
 	"dojo/ready",
-	"dojo/has", 
-	"dojo/_base/sniff", // ua sniffing
+	"dojo/sniff", // ua sniffing
 	"dojo/on",
-	"dojo/_base/html", 
 	"dojo/dom", // byId
+	"dojo/dom-style",
 	"dojo/_base/fx",
 	"dojo/topic",
 	"dojox/mobile",
@@ -26,7 +25,7 @@ require([
 	"dijit/registry",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],
-	function(ready, has, ua, on, html, dom, fx, topic, mobile, compat, deviceTheme, View, RoundRect, Button, parser,
+	function(ready, has, on, dom, domStyle, fx, topic, mobile, compat, deviceTheme, View, RoundRect, Button, parser,
 			 Chart, Theme, Default, Columns, Areas, Grid, CsvStore, registry, ZoomAndPan, Indicator){
 
 	var pHeight = 0;
@@ -38,7 +37,7 @@ require([
 		}
 		var wsize = mobile.getScreenSize();
 		// needed for IE, because was overriden to 0 at some point
-		if(ua("ie")){
+		if(has("ie")){
 			dom.byId("stockChart").style.width = "100%";
 		}else{
 			// on Android, the window size is changing a bit when scrolling!
@@ -160,7 +159,7 @@ require([
 	var switchMode = function(){
 		var label = dom.byId("touchLabel");
 		label.style.display = "";
-		html.style("touchLabel", "opacity", "0");
+		domStyle.set(label, "opacity", 0);
 		fx.fadeIn({node:"touchLabel", duration:1500}).play();
 
 		setTimeout(function(){label.style.display = "none";}, 2000);
