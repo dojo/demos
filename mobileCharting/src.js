@@ -10,8 +10,7 @@ require([
 	"dojo/topic",
 	"dojox/mobile",
 	"dojox/mobile/compat",
-	"dojox/mobile/deviceTheme", 
-	"dojox/mobile/View", 
+	"dojox/mobile/View",
 	"dojox/mobile/RoundRect", 
 	"dojox/mobile/Button", 
 	"dojox/mobile/parser",
@@ -25,7 +24,7 @@ require([
 	"dijit/registry",
 	"dojo/has!touch?dojox/charting/action2d/TouchZoomAndPan:dojox/charting/action2d/MouseZoomAndPan",
 	"dojo/has!touch?dojox/charting/action2d/TouchIndicator:dojox/charting/action2d/MouseIndicator"],
-	function(ready, has, on, dom, domStyle, fx, topic, mobile, compat, deviceTheme, View, RoundRect, Button, parser,
+	function(ready, has, on, dom, domStyle, fx, topic, mobile, compat, View, RoundRect, Button, parser,
 			 Chart, Theme, Default, Columns, Areas, Grid, CsvStore, registry, ZoomAndPan, Indicator){
 
 	var pHeight = 0;
