@@ -44,12 +44,14 @@
 	color:white;
 	background-color: #366EDF;
 	background: -webkit-gradient(linear, left top, left bottom, from(#2362DD), to(#7A9DE9), color-stop(0.5, #366EDF), color-stop(0.5, #215FDC));
+	background: linear-gradient(to bottom, #2362DD 0%, #366EDF 50%, #215FDC 50%, #7A9DE9 100%);
 }
 
 #mobileListCtrlPanel .mobileListUnselected {
 	color:black;
 	background-color: #366EDF;
 	background: -webkit-gradient(linear, left top, left bottom, from(#FFFFED), to(#FFD8B7), color-stop(0.5, #FFF6E5), color-stop(0.5, #FFFBEA));
+	background: linear-gradient(to bottom, #FFFFED 0%, #FFF6E5 50%, #FFFBEA 50%, #FFD8B7 100%);
 }
 
 #mobileListCtrlPanel #mobileListSet1Btn {

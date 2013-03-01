@@ -48,11 +48,13 @@
 	border: 2px solid #598F3A;
 	background-color: #6FB248;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#6FB248), to(#54972D), color-stop(0.5, #5FA238), color-stop(0.5, #54972D));
+	background-image: linear-gradient(to bottom, #6FB248 0%, #5FA238 50%, #54972D 50%, #54972D 100%);
 }
 .c3bScrollPane {
 	border: 2px solid #9B322D;
 	background-color: #C13E37;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#C13E37), to(#A6231C), color-stop(0.5, #B6332C), color-stop(0.5, #A8251E));
+	background-image: linear-gradient(to bottom, #C13E37 0%, #B6332C 50%, #A8251E 50%, #A6231C 100%);
 }
 #tbl1ScrollPane {
 	margin: auto;

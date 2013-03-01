@@ -25,6 +25,7 @@
 	border: 2px groove #959da0;
 	padding: 0px 7px 0px 5px;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(#959da0), to(#515761));
+	background-image: linear-gradient(to bottom, #959da0 0%, #515761 100%);
 	color: white;
 	font-size: 18px;
 }

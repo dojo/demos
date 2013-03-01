@@ -20,11 +20,13 @@ h1#segmentHeading {
 	width: 88px;
 	background-color: #5877A2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
+	background: linear-gradient(to bottom, #8EA4C1 0%, #5877A2 50%, #476999 50%, #4A6C9B 100%);
 }
 
 #headingTabBar li.mblTabButtonSelected {
 	background-color: #394D77;
 	background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
+	background: linear-gradient(to bottom, #7C87A4 0%, #394D77 50%, #243B69 50%, #263E6C 100%);
 }
 
 div#headings button.baseBtn {
@@ -52,11 +54,13 @@ button.defaultBtn {
 	border-color: #9CACC0;
 	background-color: #5877A2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#8EA4C1), to(#4A6C9B), color-stop(0.5, #5877A2), color-stop(0.5, #476999));
+	background: linear-gradient(to bottom, #8EA4C1 0%, #5877A2 50%, #476999 50%, #4A6C9B 100%);
 }
 
 #sourceButton.mblColorDefaultSel, #sourceButton.mblColorDefaultSel:after {
 	background-color: #394D77;
 	background: -webkit-gradient(linear, left top, left bottom, from(#7C87A4), to(#263E6C), color-stop(0.5, #394D77), color-stop(0.5, #243B69));
+	background: linear-gradient(to bottom, #7C87A4 0%, #394D77 50%, #243B69 50%, #263E6C 100%);
 }
 
 #headingPane {
