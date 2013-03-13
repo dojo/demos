@@ -3,7 +3,8 @@ define(["dojo/dom","dojo/on","dijit/registry",
 		"dojox/mobile/TextArea",
 		"dojox/mobile/CheckBox",
 		"dojox/mobile/RadioButton",
-		"dojox/mobile/Slider"], function(dom, on, registry) {
+		"dojox/mobile/Slider",
+		"dojox/mobile/FormLayout"], function(dom, on, registry) {
 	return {
 		init: function(){
 			registry.byId("alertSlider").focus = function(){};

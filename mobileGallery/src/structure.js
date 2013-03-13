@@ -100,6 +100,22 @@ define(["dojo/_base/lang"],
 				jsmodule: "demos/mobileGallery/src/mobileListData",
 				jsSrc: "doc/src/mobileListData.js.txt"
 			}, {
+				id: "filteredLists",
+				speclevel: "9",
+				iconPos: "203,0,29,29",
+				title: "Filtered Lists",
+				demourl: "views/filteredLists.html",
+				jsmodule: "demos/mobileGallery/src/filteredLists",
+				jsSrc: "doc/src/filteredLists.js.txt"
+			}, {
+				id: "longLists",
+				speclevel: "9",
+				iconPos: "203,0,29,29",
+				title: "Long Lists",
+				demourl: "views/longLists.html",
+				jsmodule: "demos/mobileGallery/src/longLists",
+				jsSrc: "doc/src/longLists.js.txt"
+			}, {
 				id: "accordion",
 				speclevel: "8",
 				iconPos: "464,0,29,29",
