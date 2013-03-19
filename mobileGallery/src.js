@@ -439,7 +439,7 @@ define(["dojo/_base/lang","dojo/_base/html","dojo/_base/connect","dojo/_base/arr
 				// mapping "id" to "moveTo" for EdgeToEdgeList
 				var def = {
 						iconPos: item.iconPos,
-						label: item.title + "<sup>1." + item.speclevel + "</sup>",
+						label: item.title,
 						href: item.href,
 						hrefTarget: item.hrefTarget
 				};

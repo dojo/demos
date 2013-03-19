@@ -37,13 +37,11 @@ define(["dojo/_base/lang"],
 			iconBase: "images/navigation_list_all_29.png",
 			views: [{
 				id: "buttons",
-				speclevel: "6",
 				iconPos: "0,0,29,29",
 				title: "Buttons",
 				demourl: "views/buttons.html"
 			}, {
 				id: "forms",
-				speclevel: "6",
 				iconPos: "29,0,29,29",
 				title: "Forms",
 				demourl: "views/forms.html",
@@ -51,19 +49,16 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/forms.js.txt"
 			}, {
 				id: "mobileSwitches",
-				speclevel: "7",
 				iconPos: "29,0,29,29",
 				title: "Switches",
 				demourl: "views/mobileSwitches.html"
 			}, {
 				id: "swapView",
-				speclevel: "7",
 				iconPos: "58,0,29,29",
 				title: "Swap View",
 				demourl: "views/swapView.html"
 			}, {
 				id: "icons",
-				speclevel: "6",
 				iconPos: "87,0,29,29",
 				title: "Icons",
 				demourl: "views/icons.html",
@@ -71,13 +66,11 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/icons.js.txt"
 			}, {
 				id: "tabBar",
-				speclevel: "6",
 				iconPos: "116,0,29,29",
 				title: "Tab Bar",
 				demourl: "views/tabBar.html"
 			}, {
 				id: "headings",
-				speclevel: "6",
 				iconPos: "145,0,29,29",
 				title: "Headings",
 				demourl: "views/headings.html",
@@ -85,7 +78,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/headings.js.txt"
 			}, {
 				id: "list",
-				speclevel: "6",
 				iconPos: "203,0,29,29",
 				title: "Lists",
 				demourl: "views/list.html",
@@ -93,7 +85,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/list.js.txt"
 			}, {
 				id: "mobileLists",
-				speclevel: "7",
 				iconPos: "203,0,29,29",
 				title: "List Data",
 				demourl: "views/mobileListData.html",
@@ -101,7 +92,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/mobileListData.js.txt"
 			}, {
 				id: "filteredLists",
-				speclevel: "9",
 				iconPos: "203,0,29,29",
 				title: "Filtered Lists",
 				demourl: "views/filteredLists.html",
@@ -109,7 +99,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/filteredLists.js.txt"
 			}, {
 				id: "longLists",
-				speclevel: "9",
 				iconPos: "203,0,29,29",
 				title: "Long Lists",
 				demourl: "views/longLists.html",
@@ -117,7 +106,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/longLists.js.txt"
 			}, {
 				id: "accordion",
-				speclevel: "8",
 				iconPos: "464,0,29,29",
 				title: "Accordion",
 				demourl: "views/accordion.html",
@@ -125,7 +113,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/accordion.js.txt"
 			}, {		
 				id: "gridLayout",
-				speclevel: "8",
 				iconPos: "580,0,29,29",
 				title: "GridLayout",
 				demourl: "views/gridLayout.html",
@@ -133,7 +120,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/gridLayout.js.txt"
 			}, {
 				id: "scrollablePane",
-				speclevel: "8",
 				iconPos: "551,0,29,29",
 				title: "Scroll Pane",
 				demourl: "views/scrollablePane.html",
@@ -141,7 +127,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/scrollablePane.js.txt"
 			}, {				
 				id: "progress",
-				speclevel: "8",
 				iconPos: "493,0,29,29",
 				title: "Progress",
 				demourl: "views/progress.html",
@@ -149,14 +134,12 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/progress.js.txt"
 			}, {					
 				id: "media",
-				speclevel: "8",
 				iconPos: "435,0,29,29",
 				title: "Media",
 				demourl: "views/mobileMedia.html",
 				jsmodule: "demos/mobileGallery/src/media"
 			}, {
 				id: "badges",
-				speclevel: "8",
 				iconPos: "522,0,29,29",
 				title: "Badges",
 				demourl: "views/badges.html",
@@ -164,7 +147,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/badges.js.txt"				
 			}, {
 				id: "rating",
-				speclevel: "8",
 				iconPos: "609,0,29,29",
 				title: "Rating",
 				demourl: "views/rating.html",
@@ -172,7 +154,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/rating.js.txt"
 			}, {
 				id: "dialogs",
-				speclevel: "8",
 				iconPos: "638,0,29,29",
 				title: "Dialogs",
 				demourl: "views/dialogs.html",
@@ -180,7 +161,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/dialogs.js.txt"
 			}, {
 				id: "valuePicker",
-				speclevel: "8",
 				iconPos: "667,0,29,29",
 				title: "Pickers",
 				demourl: "views/valuePicker.html",
@@ -188,7 +168,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/valuePicker.js.txt"
 			}, {				
 				id: "map",
-				speclevel: "6",
 				iconPos: "174,0,29,29",
 				title: "Map (Google)",
 				demourl: "views/map.html",
@@ -197,31 +176,26 @@ define(["dojo/_base/lang"],
 			}, {			
 				href: "../mobileGauges/demo.html",
 				hrefTarget: "_blank",
-				speclevel: "7",
 				title: "Gauge",
 				iconPos: "232,0,29,29"
 			}, {
 				href: "../mobileCharting/demo.html",
 				hrefTarget: "_blank",
-				speclevel: "7",
 				title: "Chart",
 				iconPos: "377,0,29,29"
 			}, {
 				href: "../mobileGeoCharting/demo.html",
 				hrefTarget: "_blank",
-				speclevel: "7",
 				title: "Geo Chart",
 				iconPos: "377,0,29,29"
 			}, {
 				href: "../mobileOpenLayers/demo.html",
 				hrefTarget: "_blank",
-				speclevel: "7",
 				title: "OpenLayers Map",
 				iconPos: "174,0,29,29"
 			}, {
 				href: "../touch/demo.html",
 				hrefTarget: "_blank",
-				speclevel: "7",
 				title: "Touch",
 				iconPos: "261,0,29,29"
 			}]
@@ -231,13 +205,11 @@ define(["dojo/_base/lang"],
 			iconBase: "images/navigation_list_all_29.png",
 			views: [{
 				id: "mobileTransitions",
-				speclevel: "7",
 				iconPos: "290,0,29,29",
 				title: "Transitions",
 				demourl: "views/mobileTransitions.html"
 			},{
 				id: "css3",
-				speclevel: "6",
 				iconPos: "406,0,29,29",
 				title: "CSS 3",
 				demourl: "views/css3.html",
@@ -250,7 +222,6 @@ define(["dojo/_base/lang"],
 			iconBase: "images/navigation_list_all_29.png",
 			views: [{
 				id: "jsonp",
-				speclevel: "6",
 				iconPos: "319,0,29,29",
 				title: "JSON P",
 				demourl: "views/jsonp.html",
@@ -258,7 +229,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/jsonp.js.txt"
 			}, {
 				id: "ajax",
-				speclevel: "6",
 				iconPos: "348,0,29,29",
 				title: "AJAX",
 				demourl: "views/ajax.html",
@@ -266,7 +236,6 @@ define(["dojo/_base/lang"],
 				jsSrc: "doc/src/ajax.js.txt"
 			}, {
 				id: "html5",
-				speclevel: "7",
 				iconPos: "348,0,29,29",
 				title: "HTML5",
 				demourl: "views/html5.html",
