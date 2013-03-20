@@ -17,10 +17,17 @@ define(["dojo/_base/lang",
 			var isPortrait = (window.orientation == 0);
 			// TODO: decide best dimension for full/non-full screen, 
 			// also for different kinds of platforms.
+
 			if (has("ios")) {
 				if (isPortrait) {
-					domProp.set(meta,"content",
-					"width=device-width,height=416,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
+					var iphone5 = window.screen.height == 568;
+					if(iphone5){
+						domProp.set(meta,"content",
+							"width=device-width,height=504,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
+					}else{
+						domProp.set(meta,"content",
+							"width=device-width,height=416,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
+					}
 				} else {
 					domProp.set(meta,"content",
 					"width=device-width,height=268,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no");
