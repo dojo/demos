@@ -326,6 +326,11 @@ button.greyBtnSelected, button.greyBtnSelected.backBtn:after {
 	background-image:linear-gradient(top,#a1a1a1 0,#adadad 10%,#bababa 65%,#bbb 100%);
 }
 
+button.greyBtnSelected.backBtn:after {
+	background-image:-webkit-gradient(linear,0% 0,100% 100%,color-stop(0%,#a1a1a1),color-stop(10%,#adadad),color-stop(65%,#bababa),color-stop(100%,#bbb)) !important;
+	background-image:linear-gradient(to right bottom,#a1a1a1 0%,#adadad 10%,#bababa 65%,#bbb 100%) !important;
+}
+
 .dj_gecko button.greyBtnSelected, .dj_gecko button.greyBtnSelected.backBtn:after {
     background-image: -moz-linear-gradient(270deg, #a1a1a1, #adadad 10%, #BABABA 65%, #BBBBBB);
 }
