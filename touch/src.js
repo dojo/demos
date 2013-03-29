@@ -1,5 +1,6 @@
 require([
 	"dojox/charting/Theme",
+	"dojo/dom",
 	"dojo/parser",
 	"dijit/_base",
 	"dijit/form/HorizontalSlider",
@@ -10,7 +11,7 @@ require([
 	"dojox/mobile/compat",
 	"dojox/mobile/Slider",
 	"demos/touch/rotate"
-], function(Theme){
+], function(Theme, dom){
 
 	(function(){
 		var g = Theme.generateGradient, themes = dojo.getObject("dojox.charting.themes", true);
@@ -77,7 +78,7 @@ require([
 	function changeSlice(fromIndex, toIndex){
 		setTimeout(function(){
 			dojo.animateProperty({
-				node: dojo.byId("log"),
+				node: dom.byId("log"),
 				duration: 500,
 				properties: {
 					backgroundColor: {
@@ -89,7 +90,7 @@ require([
 		}, 0);
 		setTimeout(function(){
 			dojo.animateProperty({
-				node: dojo.byId("tooltip"),
+				node: dom.byId("tooltip"),
 				duration: 500,
 				properties: {
 					backgroundColor: {
@@ -102,12 +103,12 @@ require([
 		
 		setTimeout(function(){
 			dojo.fadeOut({
-				node: dojo.byId("text"),
+				node: dom.byId("text"),
 				duration: 250,
 				onEnd: function(){
-					dojo.byId("text").innerHTML = texts[toIndex] + ":" + percentages[toIndex] + "%";
+					dom.byId("text").innerHTML = texts[toIndex] + ":" + percentages[toIndex] + "%";
 					dojo.fadeIn({
-						node: dojo.byId("text"),
+						node: dom.byId("text"),
 						duration: 250
 					}).play();
 				}
@@ -117,11 +118,11 @@ require([
 	}
 	
 	function addRotate(){
-		rotateEnd = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate.end, function(event){
+		rotateEnd = dojo.connect(dom.byId("actionArea"), demos.touch.rotate.end, function(event){
 			rotation += (event.rotation % 360);
 		});
 		
-		rotate = dojo.connect(dojo.byId("actionArea"), demos.touch.rotate, function(event){
+		rotate = dojo.connect(dom.byId("actionArea"), demos.touch.rotate, function(event){
 			currentRotation = (rotation + event.rotation) % 360;
 			var transform = "rotate(" + currentRotation + "deg)";
 			pieChartDiv.style.webkitTransform = transform;
@@ -159,11 +160,11 @@ require([
 			horizontal: true
 		}, "legend");
 		calculateDeg();
-		dojo.byId("text").innerHTML = texts[0] + ":" + percentages[0] + "%";
+		dom.byId("text").innerHTML = texts[0] + ":" + percentages[0] + "%";
 	}
 	
 	function rotate(val){
-		var div = dojo.byId("pieChart1");
+		var div = dom.byId("pieChart1");
 		currentRotation = (rotation + val) % 360;
 		var transform = "rotate(" + currentRotation + "deg)";
 		div.style.webkitTransform = transform;
@@ -203,13 +204,13 @@ require([
 		pieChart.render();
 		calculateDeg();
 		updateLog(360 - currentRotation);
-		dojo.byId("text").innerHTML = texts[currentIndex] + ":" + percentages[currentIndex] + "%";
+		dom.byId("text").innerHTML = texts[currentIndex] + ":" + percentages[currentIndex] + "%";
 	}
 	
 	function updateLog(rotation){
 		rotation = rotation % 360;
 		var index = getDataIndex(rotation);
-		var logNode = dojo.byId("log")
+		var logNode = dom.byId("log")
 		if(index != currentIndex){
 			changeSlice(currentIndex, index);
 			currentIndex = index;
@@ -220,24 +221,24 @@ require([
 		locked = !locked;
 		setTimeout(function(){
 			dojo.fadeOut({
-				node: dojo.byId("lockButton"),
+				node: dom.byId("lockButton"),
 				duration: 500,
 				onEnd: function(){
 					if(!locked){
-						dojo.byId("actionArea").style.opacity = 1;
+						dom.byId("actionArea").style.opacity = 1;
 						dijit.byId("slider1").set("disabled", false);
-						dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-lock.png")';
+						dom.byId("lockButton").style.backgroundImage = 'url("images/bt-lock.png")';
 						addRotate();
-						dojo.removeClass(dojo.byId("layout"), "locked");
+						dojo.removeClass(dom.byId("layout"), "locked");
 					}else{
-						dojo.byId("actionArea").style.opacity = 0;
+						dom.byId("actionArea").style.opacity = 0;
 						dijit.byId("slider1").set("disabled", true);
-						dojo.byId("lockButton").style.backgroundImage = 'url("images/bt-unlock.png")';
+						dom.byId("lockButton").style.backgroundImage = 'url("images/bt-unlock.png")';
 						removeRotate();
-						dojo.addClass(dojo.byId("layout"), "locked");
+						dojo.addClass(dom.byId("layout"), "locked");
 					}
 					dojo.fadeIn({
-						node: dojo.byId("lockButton"),
+						node: dom.byId("lockButton"),
 						duration: 500
 					}).play();
 				}
@@ -246,29 +247,29 @@ require([
 	}
 	
 	dojo.ready(function(){
-		dojo.connect(dojo.byId("lockButton"), dojox.gesture.tap.hold, function(){
+		dojo.connect(dom.byId("lockButton"), dojox.gesture.tap.hold, function(){
 			toggleLock();
 		});
-		dojo.connect(dojo.byId("actionArea"), dojo.touch.press, function(){
+		dojo.connect(dom.byId("actionArea"), dojo.touch.press, function(){
 			if(!locked){
-				dojo.byId("actionArea").style.opacity = 0.4;
+				dom.byId("actionArea").style.opacity = 0.4;
 			}
 		});
-		dojo.connect(dojo.byId("actionArea"), dojo.touch.release, function(e){
+		dojo.connect(dom.byId("actionArea"), dojo.touch.release, function(e){
 			if(e.touches && e.touches.length <= 0){
 				if(!locked){
-					dojo.byId("actionArea").style.opacity = 1;
+					dom.byId("actionArea").style.opacity = 1;
 				}
 			}
 		});
 		dojo.connect(dojo.doc, dojo.touch.release, function(){
-			dojo.byId("lockButton").focus();
+			dom.byId("lockButton").focus();
 		});
 		
 		var slider = dijit.byId('slider1');
 		dojo.connect(slider, 'onChange', updatePieChart);
 		
 		buildUI();
-		pieChartDiv = dojo.byId("pieChart1");
+		pieChartDiv = dom.byId("pieChart1");
 	});
 });
