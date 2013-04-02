@@ -17,7 +17,7 @@
 	<!-- demo styles, and dynamic styles inline: -->
 	<link rel="stylesheet" href="demo.css">
 
-	<style type="text/css"><?php 
+	<style><?php 
 		foreach($files as $file){
 			// print out each file as a background image with a match className
 			print "\n\t\t." . $file . " div { background-image:url(images/". $file .".jpg); }";
@@ -25,7 +25,7 @@
 	?></style>
 	
 	<!-- load dojo, and requirements: -->
-	<script type="text/javascript">
+	<script>
 		// use PHP to create a JavaScript Array of people:
 		var people = [<?php 
 				$out = "";
@@ -46,16 +46,18 @@
 	<hr class="hide" />
 	<div id="page" class="homePage">
 		<div id="header">
-			<div class="container">
-				<span id="logo"><a href="http://dojotoolkit.org/" title="Dojo Homepage"><img src="http://dojotoolkit.org/dojango/dojo-media/release/1.4.0-20100212/dtk/images/logo.png" alt="Dojo Toolkit" /></a></span>
-				<ul id="navigation">
-					<li class="download"><a href="/download/">Download</a></li>
-					<li class="docs"><a href="/documentation/">Documentation</a></li>
-					<li class="community"><a href="/community/">Community</a></li>
-					<li class="blog"><a href="/blog/">Blog</a></li>
-				</ul>
-			</div>
-		</div>
+            <div class="container">
+                <span id="logo"><a href="/" title="Home"><img src="/images/logo.png" alt="Dojo Toolkit" /></a></span>
+                <ul id="navigation">
+        			<li class="home"><a href="/"><span class="homeIcon"></span></a></li>
+        			<li class="download"><a href="/download/">Download</a></li>
+        			<li class="features"><a href="/features/">Features</a></li>
+                	<li class="docs"><a href="/documentation">Documentation</a></li>
+                	<li class="community"><a href="/community">Community</a></li>
+                	<li class="blog"><a href="/blog">Blog</a></li>
+                </ul>
+            </div>
+        </div>
 		<hr class="hide" />
 		<div id="intro">
 			<div class="innerBox">
