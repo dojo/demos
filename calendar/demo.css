@@ -14,6 +14,11 @@
 	background: #166B81;
 }
 
+.claro .dojoxCalendarEvent.Edited.Invalid .bg.bg {
+	background: #FFF;
+}
+
+
 .claro .dojoxCalendarColumnView .dojoxCalendarEvent.Calendar2 .startTime {
   font-weight: bold;
   border-top-left-radius: 5px;
@@ -75,10 +80,31 @@ html, body {
 }
 
 label{
-	vertical-align:center;
+	vertical-align: middle;
 }
 
 .propertyTitle {
 	font-weight: bold;
 	font-size:0.9em;
+}
+
+.formTable {
+	width:100%;
+}
+
+.formTable .dijitTextBox {
+	width: 80px;
+}
+
+.formTable td.right {
+	width:80px;
+	text-align: right;
+}
+
+.dijitCalendar .Highlighted {
+	background-color: #fff0b4 !important;
+}
+.dijitCalendar .Highlighted .dijitCalendarDateLabel {
+	color: red !important;
+	border: solid 1px #fff0b4 !important;				
 }

@@ -7,80 +7,43 @@
 		<title>Calendar Sample: Desktop</title>				
 		<style type="text/css">
 			@import "../../dojox/calendar/themes/claro/Calendar.css";
+			@import "../../dojox/calendar/themes/claro/MonthColumnView.css";
 			@import "demo.css";
 			@import "../../dojo/resources/dojo.css";
 			@import "../../dijit/themes/dijit.css";
-			@import "../../dijit/themes/claro/claro.css";
-		</style>
-		<script type="text/javascript"
-						data-dojo-config="async: true, parseOnLoad: true"
-		 				src="../../dojo/dojo.js"></script>
-
-		<script type="text/javascript" src="src.js"></script>
+			@import "../../dijit/themes/claro/claro.css";							
+		</style>			
 	</head>
 	
 	<body class="claro">
+		<script type="text/javascript" data-dojo-config="async: true, parseOnLoad: true" src="../../dojo/dojo.js"></script>
+		<script type="text/javascript" src="src.js"></script>
 
 		<div id="loadingPanel" style="position:absolute;z-index:10;width:100%;height:100%;background:#ffffff">
 			<span style="background: #DBEB8F;padding:2px">Loading...</span>
 		</div>
+		
+		<div data-dojo-type="dijit/layout/BorderContainer" style="width:100%;height:100%" data-dojo-props="design:'sidebar', gutters:true" >
+			<div data-dojo-type="dijit/layout/AccordionContainer" data-dojo-props="splitter:false, region:'leading'">
+				<div data-dojo-type="dijit/layout/ContentPane" title="Main properties" style="width:250px">
+					<div data-dojo-id="mainProperties" data-dojo-type="demos/calendar/MainProperties" style="width:230px" ></div>
+				</div>
+				<div data-dojo-type="dijit/layout/ContentPane" title="Column view properties">
+					<div data-dojo-id="columnViewProperties" data-dojo-type="demos/calendar/ColumnViewProperties" style="width:250px" ></div>
+				</div>
+				<div data-dojo-type="dijit/layout/ContentPane" title="Matrix view properties">
+					<div data-dojo-id="matrixViewProperties" data-dojo-type="demos/calendar/MatrixViewProperties" style="width:250px" ></div>
+				</div>
+				<div data-dojo-type="dijit/layout/ContentPane" title="Month column view properties">
+					<div data-dojo-id="monthColumnViewProperties" data-dojo-type="demos/calendar/MonthColumnViewProperties" style="width:250px" ></div>
+				</div>
+			</div>							    		        			  
+			<div data-dojo-type="dijit/layout/ContentPane" data-dojo-props="splitter:false, region:'center'">
+				<div data-dojo-id="calendar" data-dojo-type="demos/calendar/ExtendedCalendar" 
+					style="position:absolute;left:10px;top:10px;bottom:30px;right:10px"></div>	
+				<div id="hint" style="position:absolute;left:10px;height:15px;bottom:10px;right:10px;color:#999;overflow:auto"></div>
+			</div>		   
+		</div>																		
 
-		<div data-dojo-type="dijit.layout.BorderContainer" style="width:100%;height:100%" data-dojo-props="design:'sidebar', gutters:true" >
-	    <div data-dojo-type="dijit.layout.ContentPane" style="width:200px" data-dojo-props="splitter:false, region:'leading'">
-	        <div data-dojo-id="dateChooser" data-dojo-type="dijit.Calendar" style="width:100%"></div>
-					<div data-dojo-type="dijit.TitlePane" data-dojo-props="title:'Calendars', style:'margin-top:10px;'" >
-						<div>
-							<input type="checkbox" id="calendar1CB" data-dojo-id="calendar1CB" data-dojo-type="dijit.form.CheckBox" checked="true"/>
-							<label for="calendar1CB">Calendar 1</label>
-						</div>
-
-						<div style="margin-top:5px">
-							<input type="checkbox" id="calendar2CB" data-dojo-id="calendar2CB" data-dojo-type="dijit.form.CheckBox" checked="true"/>
-							<label for="calendar2CB">Calendar 2</label>
-						</div>
-					</div>
-					<div data-dojo-type="dijit.TitlePane" data-dojo-props="title:'Event properties', style:'margin-top:10px;'" >
-						<div><span class="propertyTitle">Summary:</span></div>
-						<div data-dojo-id="itemSummaryEditor" data-dojo-type="dijit.form.TextBox" style="width:165px;" data-dojo-props="disabled:true"></div>
-						<div style="margin-top:10px"><span class="propertyTitle">Start:</span></div>
-						<div>
-							<div data-dojo-id="itemStartDateEditor" data-dojo-type="dijit.form.DateTextBox" style="width:90px;"  data-dojo-props="disabled:true"></div>
-							<div data-dojo-id="itemStartTimeEditor" data-dojo-type="dijit.form.TimeTextBox" style="width:70px;" data-dojo-props="disabled:true" ></div>
-						</div>
-						<div style="margin-top:10px"><span class="propertyTitle">End:</span></div>
-						<div>
-							<div data-dojo-id="itemEndDateEditor" data-dojo-type="dijit.form.DateTextBox" style="width:90px;" data-dojo-props="disabled:true" ></div>
-							<div data-dojo-id="itemEndTimeEditor" data-dojo-type="dijit.form.TimeTextBox" style="width:70px;" data-dojo-props="disabled:true" ></div>
-						</div>
-						<div style="margin-top:10px"><span class="propertyTitle">Calendar:</span></div>
-						<select data-dojo-id="calendarEditor" data-dojo-type="dijit.form.ComboBox"  style="width:165px;" data-dojo-props="disabled:true" >
-							<option>Calendar 1</option>
-							<option>Calendar 2</option>
-						</select>
-						<div style="margin-top:10px">
-							<input type="checkbox" id="allDayCB" data-dojo-id="allDayCB" data-dojo-type="dijit.form.CheckBox" checked="false" data-dojo-props="disabled:true" />
-							<label for="allDayCB">All day</label>
-						</div>
-						<div style="margin-top:10px; text-align:right">
-							<span style="text-align:left">
-								<button data-dojo-id="deleteItemButton" class="deleteButton" data-dojo-type="dijit.form.Button"  data-dojo-props="disabled:true">Delete</button>
-							</span>
-							<span style="text-align:right">
-								<button data-dojo-id="updateItemButton" data-dojo-type="dijit.form.Button" data-dojo-props="disabled:true" >Update</button>
-							</span>
-						</div>
-					</div>
-	    </div>
-	    <div data-dojo-type="dijit.layout.ContentPane" data-dojo-props="splitter:false, region:'center'">
-	        <div data-dojo-id="calendar" data-dojo-type="dojox.calendar.Calendar"
-				style="position:absolute;left:10px;top:10px;bottom:30px;right:10px">
-				<div data-dojo-type="dijit.Menu" data-dojo-id="calendarContextMenu" style="display: none;">
-	                <div data-dojo-type="dijit.MenuItem" data-dojo-id="contextMenuDelete" data-dojo-props="iconClass:'dijitIcon dijitIconDelete'">Delete</div>
-	            </div>
-			</div>
-			<div id="hint" style="position:absolute;left:10px;height:15px;bottom:10px;right:10px;color:#999;overflow:auto"></div>
-	    </div>
-
-	</div>
-</body>
+	</body>
 </html>
