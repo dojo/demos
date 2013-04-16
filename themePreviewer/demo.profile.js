@@ -1,17 +1,25 @@
-dependencies = {
-	layers: [
-		{
-			name: "../demos/themePreviewer/src.js",
-			resourceName: "demos.themePreviewer.src",
-			dependencies: [
-				"demos.themePreviewer.src"
-			]
-		}
-	],
+var profile = (function(){
+	return {
+		releaseDir:"../../release",
 
-	prefixes: [
-		[ "dijit", "../dijit" ],
-		[ "dojox", "../dojox" ],
-		[ "demos", "../demos" ]
-	]
-}
+		packages:[{
+			name:"dojo",
+			location:"../../dojo"
+		},{
+			name:"dijit",
+			location:"../../dijit"
+		},{
+			name:"dojox",
+			location:"../../dojox"
+		},{
+			name:"demos",
+			location:"../../demos"
+		}],
+
+		layers:{
+			"demos/themePreviewer/src":{
+				noref:1
+			}
+		}
+	};
+})();
