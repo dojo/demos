@@ -150,17 +150,6 @@ button.baseBtn {
 	position: relative;
 }
 
-#buttons button.mblButton:not(.mblToggleButton):before {
-	content: '';
-	position: absolute;
-	border: 2px solid white;
-	width: calc(100% - 4px);
-	height: 28px;
-	margin-left: -10px;
-	margin-top: -14.5px;
-}
-
-
 /* Forms tab, Switches tab */
 
 .fieldset{
