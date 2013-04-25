@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+GFX Serialization - A demo that shows the gfx serialization capabilities.
+-------------------------------------------------------------------------------
+Author: Patrick Ruzand
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo shows the gfx serialization in action. A drawing is displayed in the
+	left canvas and replicated via the gfx serialization in the right canvas. A text 
+	representation is also displayed in the text area at the bottom. 
+	You can drag any shapes of the left canvas to modify their positions. Any changes on
+	the left canvas immediatly triggers a new replication to the right canvas
+	(unless the 'Buffered updates' check box is checked - in this case replications 
+	are batched) .
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core (dom, on, aspect, json)
+	DojoX Gfx (gfx, Moveable, utils)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:15 @categories:graphics

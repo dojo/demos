@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Image Zoomer - Interactive Image demonstration
+-------------------------------------------------------------------------------
+Author: Peter Higgins (dante)
+-------------------------------------------------------------------------------
+Demo description
+
+	A small demo showing off some of the capabilities of the Dojo Toolkit.
+	Valid HTML, Custom Widgetry, degrades down to single image and list 
+	of thumbnails. Does Drag and Drop to show a zoomed region of a full-size
+	image.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core (dnd)
+	Dijit _Widget foundation
+	DojoX ResizeHandle
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+			
+-------------------------------------------------------------------------------
+@rank:19

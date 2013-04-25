@@ -1,0 +1,133 @@
+CACHE MANIFEST
+
+CACHE:
+demo.html
+# all dojo mobile theme files on supported platforms
+../../dojox/mobile/themes/iphone/iphone.css
+../../dojox/mobile/themes/iphone/ipad.css
+../../dojox/mobile/themes/android/android.css
+# demo theme files
+demo.css
+css/themes/iphone/gallery.css
+css/themes/android/gallery.css
+# core js files [Note] they are built layer files
+../../dojo/dojo.js
+../../dojo/selector/acme.js
+../../dojox/mobile/deviceTheme.js
+../../dojox/mobile.js
+../../dojox/highlight.js
+src.js
+# image files for home page
+images/navigation_list_all_29.png
+images/welcomeLogo.png
+images/left-arrow-mask.png
+
+# js files for individual demo
+src/accordion.js
+src/ajax.js
+src/css3.js
+src/forms.js
+src/gridLayout.js
+src/progress.js
+src/media.js
+src/badges.js
+src/rating.js
+src/dialogs.js
+src/valuePicker.js
+src/scrollablePane.js
+src/headings.js
+src/icons.js
+src/jsonp.js
+src/map.js
+src/mobileListData.js
+src/list.js
+src/html5.js
+data/dataList.json
+# html files for individual demo
+icons-url.html
+views/accordion.html
+views/ajax.html
+views/ajaxLoad.html
+views/buttons.html
+views/css3.html
+views/swapView.html
+views/forms.html
+views/headings.html
+views/icons.html
+views/jsonp.html
+views/list.html
+views/map.html
+views/mobileListData.html
+views/mobileSwitches.html
+views/mobileTransitions.html
+views/tabBar.html
+views/html5.html
+views/gridLayout.html
+views/progress.html
+views/mobileMedia.html
+views/badges.html
+views/rating.html
+views/dialogs.html
+views/valuePicker.html
+views/scrollablePane.html
+
+# other image files
+images/flip1.jpg
+images/flip2.jpg
+images/flip3.jpg
+images/tabbar_all.png
+images/i-icon-all.png
+images/a-icon-12.png
+images/tab-icons.png
+images/tab-icons-25.png
+images/iconitems-all.png
+images/dojoLogo.png
+images/icons16.png
+images/tab-icon-11.png
+images/tab-icon-11h.png
+images/tab-icon-11w.png
+images/tab-icon-15.png
+images/tab-icon-15h.png
+images/tab-icon-16.png
+images/tab-icon-16h.png
+images/menu1.jpg
+images/menu2.jpg
+images/menu3.jpg
+images/menu4.jpg
+images/menu5.jpg
+images/menu6.jpg
+# workaround for build tool/or loader cannot merge some JS
+../../dojox/mobile/parser.js
+../../dojox/mobile/compat.js
+../../dojox/mobile/Button.js
+../../dojox/mobile/ToolBarButton.js
+../../dojox/mobile/FixedSplitter.js
+../../dojox/mobile/ScrollableView.js
+../../dojox/mobile/FixedSplitterPane.js
+../../dojox/mobile/SwapView.js
+../../dojox/mobile/TabBar.js
+../../dojox/mobile/Accordion.js
+# JS codes for demonstration for each demo
+# Note here we aim at built version
+doc/src/accordion.js.txt
+doc/src/ajax.js.txt
+doc/src/css3.js.txt
+doc/src/forms.js.txt
+doc/src/headings.js.txt
+doc/src/icons.js.txt
+doc/src/jsonp.js.txt
+doc/src/map.js.txt
+doc/src/mobileListData.js.txt
+doc/src/list.js.txt
+doc/src/html5.js.txt
+doc/src/gridLayout.js.txt
+doc/src/progress.js.txt
+doc/src/badges.js.txt
+doc/src/rating.js.txt
+doc/src/dialogs.js.txt
+doc/src/valuePicker.js.txt
+doc/src/scrollablePane.js.txt
+
+NETWORK:
+*
+# built on @timestamp@

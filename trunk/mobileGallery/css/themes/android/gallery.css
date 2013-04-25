@@ -1,0 +1,144 @@
+/* Below is for TabBar. */
+/* do not show icons for tab bar tabs*/
+.mblTabButton .mblTabBarButtonDiv {
+	display: none;
+}
+.mblTabButton, .mblTabBarButtonAnchor {
+	height: 34px;
+	line-height: 29px;
+}
+.mblTabPanelHeader {
+	height: 36px;
+}
+
+#tabView1, #tabView2, #tabView3 {
+	background-color: #F9F2E9;
+}
+
+/* "Forms": field-set title */
+form#testForm div.field-title {
+    color: white;
+}
+
+/* source button on the heading */
+button#sourceButton, button#navButton {
+	height: 25px;
+	line-height: 25px;
+}
+
+/* "Headings": height */
+div#tbIconBtn1 img {
+	height: 23px;
+}
+
+#segmentHeading .mblTabButton, #segmentHeading .mblTabBarButtonAnchor {
+	height: 23px;
+	line-height: 23px;
+}
+#segmentHeading .mblTabPanelHeader {
+	height: 23px;
+}
+#segmentHeading li {
+	margin-top: 1px !important;
+	margin-bottom: 1px !important;
+}
+
+#headingTabBar {
+	top: 5px;
+}
+
+/* "Headings" Base Button */
+div#headings button.baseBtn {
+	height: 30px;
+	line-height: 25px;
+	margin: 5px 30px;
+}
+
+div#headings div#tbDomBtn {
+	margin-top: 6px;
+}
+
+.roundBtn {
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+/* "List" Tab Width */
+#listTabs li.mblTabButton {
+	width: 100px;
+}
+
+/* "Transition" Background Color */
+div#animationView2 .mblListItem {
+	background-color: transparent;
+}
+div#animationView2 .mblListItemAnchor {
+	color: black;
+}
+
+/* Button in headings in "JSONP" and "AJAX" */
+.headingBtn {
+	color:black;
+	font-weight:bold;
+	height: 25px;
+	line-height: 25px;
+	margin-top:0px;
+	margin-bottom:0px;
+	margin-left:10px;
+}
+
+/* Color of <a> */
+a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
+	color: white;
+}
+
+#header button {
+	top: 6px;
+	height: 29px;
+	border: 0px;
+}
+
+#navButton {
+	left: 3px;
+}
+
+#sourceButton {
+	right: 0px;
+	width: 72px;
+}
+
+#tbToggleBtn {
+	height:30px;
+	line-height:25px;
+	bottom: 4px;
+}
+
+/* Temp fix for wrong icon position in list. */
+#navigation .mblListItemSpriteIcon {
+	margin-top: 23px;
+}
+
+/* JSON-P demo */
+#searchKeywords {
+	height: 25px;
+}
+
+@media screen and (max-width: 600px) {
+	#searchTwitterBtn {
+		right: 12px;
+	}
+}
+
+#jsonp .searchResult, #findMoreDiv {
+	color: white;
+}
+
+/* for "HTML5" */
+#noteLocRow {
+	line-height: 25px;
+}
+#showMapBtn, #newNoteBtn {
+	height: 25px;
+	line-height: 25px;
+}

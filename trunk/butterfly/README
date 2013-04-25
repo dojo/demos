@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Butterfly - Scale and rotate the pretty butterfly.  Renderered using GFX.
+-------------------------------------------------------------------------------
+Author: Eugene Lazutkin
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a drawing of a butterfly using the dojox.gfx API.
+	Move the Rotatation (resp. Scaling) slider to rotate (resp. scale)
+	the drawing of the corresponding value.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	DojoX Gfx
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:45 @categories:graphics

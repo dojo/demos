@@ -1,0 +1,46 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/claro/claro.css";		
+@import "../../dijit/themes/claro/document.css";
+@import "../../dojox/grid/enhanced/resources/claro/EnhancedGrid.css";
+@import "../../dojox/grid/enhanced/resources/EnhancedGrid_rtl.css";
+
+body {
+	font-size: 0.9em;
+	font-family: Geneva, Arial, Helvetica, sans-serif;
+	padding-right: 5em;
+}
+.title {
+	text-align:center;
+	margin:1em;
+}
+.supporter {
+	display: block;
+	border: 3px solid #ccc;
+	width: 100em;
+	padding: 1em 3em; 
+	cursor: default;
+	radius: 8pt;
+	background: #fff;
+	-moz-border-radius: 8pt 8pt;
+}
+.selectReport {
+	display: inline-block;
+}
+.tutor h2{
+	font-weight: bolder;
+}
+.tutor td:first-child{
+	font-weight: bolder;
+}
+	#gridContainer{
+	width: 100em;
+	height: 35em;
+	border: 1px solid #D5CDB5;
+}
+/*Sample - overwrite default cell style
+.claro .dojoxGridCell{
+	border-color: transparent #D5CDB5 #D5CDB5 transparent !important;
+}
+.dj_ie6 .claro .dojoxGridCell{
+	border: 1px solid #F1F1F1 !important;
+}*/

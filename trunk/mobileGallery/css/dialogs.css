@@ -1,0 +1,35 @@
+.mblSimpleDialogInput {
+	margin: 7px 0 14px;
+	width: 260px;
+}
+.mblSimpleDialogButton {
+	margin: 7px 0 0;
+	width: 262px;
+	font-size: 17px;
+	font-weight: bold;
+	opacity: 0.95;
+}
+.mblSimpleDialogButton2l {
+	float: left;
+	width: 127px;
+	margin: 7px 0 0;
+	font-size: 17px;
+	font-weight: bold;
+	opacity: 0.95;
+}
+.mblSimpleDialogButton2r {
+	float: right;
+	width: 127px;
+	margin: 7px 0 0;
+	font-size: 17px;
+	font-weight: bold;
+	opacity: 0.95;
+}
+.mblSimpleDialog .mblProgressIndicator {
+	position: relative;
+	margin: 14px 0 7px;
+	top: 0;
+}
+.mblSimpleDialog .mblListItem {
+	text-align: left;
+}

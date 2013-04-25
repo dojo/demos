@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Mobile Catalog - Browse a simple catalog of items and view item details using multiple carousel components arranged for multi-level navigation.
+-------------------------------------------------------------------------------
+Authors: Yoshiroh Kamiyama (IBM CCLA)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a simple catalog using dojox.mobile.Carousel.
+	You can swipe the screen left or right to slide the images.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Mobile
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:185 @categories:mobile

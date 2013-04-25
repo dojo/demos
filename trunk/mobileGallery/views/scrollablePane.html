@@ -1,0 +1,133 @@
+<div id="scrollablePane" dojoType="dojox.mobile.View">
+	<div data-dojo-type="dojox.mobile.ScrollablePane" 
+		data-dojo-props='height:"180px",roundCornerMask:true'>
+		<ul data-dojo-type="dojox.mobile.RoundRectList" class="list1ScrollPane" 
+			data-dojo-props='stateful:true' selected="true">
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Gold</div>
+				<div class="c2ScrollPane">3,400.20</div>
+				<div class="c3ScrollPane c3aScrollPane">+1.57%</div>
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Oil</div>
+				<div class="c2ScrollPane">347.26</div>
+				<div class="c3ScrollPane c3bScrollPane">-0.82%</div>
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Commodities</div>
+				<div class="c2ScrollPane">541.77</div>
+				<div class="c3ScrollPane c3bScrollPane">-0.43%</div>
+				
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Silver</div>
+				<div class="c2ScrollPane">12,823.94</div>
+				<div class="c3ScrollPane c3aScrollPane">+0.17%</div>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Soybeans</div>
+				<div class="c2ScrollPane">18.19</div>
+				<div class="c3ScrollPane c3aScrollPane">+2.77%</div>
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Wheat</div>
+				<div class="c2ScrollPane">3,335</div>
+				<div class="c3ScrollPane c3aScrollPane">+1.62%</div>
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Corn</div>
+				<div class="c2ScrollPane">29,930</div>
+				<div class="c3ScrollPane c3aScrollPane">+1.15%</div>
+			</li>
+			<li data-dojo-type="dojox.mobile.ListItem" data-dojo-props='moveTo:"#"'>
+				<div class="c1ScrollPane">Sugar</div>
+				<div class="c2ScrollPane">172.15</div>
+				<div class="c3ScrollPane c3aScrollPane">+0.00%</div>
+			</li>
+		</ul>
+	</div>
+
+	<div style="position:relative">
+		<div id="swap1" data-dojo-type="dojox.mobile.SwapView">
+			<div data-dojo-type="dojox.mobile.ScrollablePane" 
+				data-dojo-props='height:"160px",roundCornerMask:true'>
+				<ul id="news" class="list1ScrollPane" 
+					data-dojo-type="dojox.mobile.RoundRectList" 
+					data-dojo-props='variableHeight:true'>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Oil prices rise as dollar weakens
+						<div class="subtitleScrollPane">Daily News - 2011/05/02 15:40</div>
+					</li>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Same Old Story For Air Service Costs
+						<div class="subtitleScrollPane">Daily News - 2011/05/02 14:30</div>
+					</li>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Local stocks mixed despite new trade data
+						<div class="subtitleScrollPane">Daily News - 2011/05/02 14:10</div>
+					</li>
+
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Stocks point higher after economic data
+						<div class="subtitleScrollPane">Daily News - 2011/05/02 11:00</div>
+					</li>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Wall St seen higher after industry forecasts
+						<div class="subtitleScrollPane">Daily News - 2011/05/01 16:05</div>
+					</li>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Stocks drop on slower job creation
+						<div class="subtitleScrollPane">Daily News - 2011/05/01 15:50</div>
+					</li>
+					<li data-dojo-type="dojox.mobile.ListItem"
+						data-dojo-props='arrowClass:"mblDomButtonBlueCircleArrow"'>
+						Dollar initially falls after revised jobs report
+						<div class="subtitleScrollPane">Daily News - 2011/05/01 13:20</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div id="swap2" data-dojo-type="dojox.mobile.SwapView">
+			<div data-dojo-type="dojox.mobile.ScrollablePane" 
+				data-dojo-props='height:"160px",roundCornerMask:true'>
+				<div data-dojo-type="dojox.mobile.RoundRect" 
+					style="position:relative;background-color:#00575F;color:white;">
+				<table id="tbl1" style="width:90%">
+					<tr><td>2 Yr Bond</td><td>113.75</td><td>0.00</td><td class="gScrollPane">0.00%</td></tr>
+					<tr><td>N225</td><td>10,004.20</td><td>154.46</td><td class="gScrollPane">1.57%</td></tr>
+					<tr><td>JKSE</td><td>3,816.44</td><td>32.87</td><td class="rScrollPane">-0.85%</td></tr>
+					<tr><td>Seoul</td><td>2,200.73</td><td>28.23</td><td class="gScrollPane">1.27%</td></tr>
+					<tr><td>TW</td><td>8,946.08</td><td>61.79</td><td class="rScrollPane">-0.69%</td></tr>
+					<tr><td>Tokyo</td><td>2,932.19</td><td>20.68</td><td class="rScrollPane">-0.71%</td></tr>
+					<tr><td>Osaka</td><td>113.75</td><td>0.00</td><td class="gScrollPane">0.00%</td></tr>
+					<tr><td>HSI</td><td>10,004.20</td><td>154.46</td><td class="gScrollPane">1.57%</td></tr>
+					<tr><td>AORD</td><td>3,816.44</td><td>32.87</td><td class="rScrollPane">-0.85%</td></tr>
+					<tr><td>BSESN</td><td>2,200.73</td><td>28.23</td><td class="gScrollPane">1.27%</td></tr>
+					<tr><td>PSEI</td><td>8,946.08</td><td>61.79</td><td class="rScrollPane">-0.69%</td></tr>
+					<tr><td>STI</td><td>2,932.19</td><td>20.68</td><td class="rScrollPane">-0.71%</td></tr>
+					<tr><td>All</td><td>4,854.70</td><td>41.50</td><td class="rScrollPane">-0.85%</td></tr>
+				</table>
+				</div>
+			</div>
+		</div>
+
+		<div id="swap3" data-dojo-type="dojox.mobile.SwapView">
+			<div data-dojo-type="dojox.mobile.ScrollablePane" 
+				data-dojo-props='height:"160px",roundCornerMask:true'>
+				<div data-dojo-type="dojox.mobile.RoundRect" 
+					style="overflow:hidden;background-color:#00575F;">
+					<img src="images/chart.png" alt="">
+				</div>
+			</div>
+		</div>
+
+		<div data-dojo-type="dojox.mobile.PageIndicator" 
+			data-dojo-props='fixed:"bottom"' style="bottom:0px"></div>
+	</div>
+</div>

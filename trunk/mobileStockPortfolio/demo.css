@@ -1,0 +1,75 @@
+html,body{
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.subtitle {
+	color: gray;
+	font-size: 12px;
+}
+#news {
+	font-size: 14px;
+}
+.list1 li{
+	color: black;
+}
+.list1 li.mblListItemSelected {
+	color: white;
+}
+.list1 li:nth-child(even){
+	background-color: #EAEAEA;
+}
+.list1 li:nth-child(odd){
+	background-color: white;
+}
+.list1 .mblListItemTextBox {
+	padding-right: 5px;
+}
+.c1 {
+	width: 120px;
+	float: left;
+}
+.c2 {
+	width: 80px;
+	text-align: right;
+	float: left;
+}
+.c3 {
+	text-align: right;
+	width: 70px;
+	color: white;
+	padding: 0px 4px;
+	margin-top: 4px;
+	height: 30px;
+	line-height: 32px;
+	float: right;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+}
+.android_theme .c3 {
+	margin-top: 15px;
+}
+.android_theme .mblRoundRectList {
+	border-color: #666666;
+}
+.blackberry_theme .c3 {
+	margin-top: 13px;
+}
+.c3a {
+	border: 2px solid #598F3A;
+	background-color: #6FB248;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#6FB248), to(#54972D), color-stop(0.5, #5FA238), color-stop(0.5, #54972D));
+}
+.c3b {
+	border: 2px solid #9B322D;
+	background-color: #C13E37;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#C13E37), to(#A6231C), color-stop(0.5, #B6332C), color-stop(0.5, #A8251E));
+}
+#tbl1 {
+	margin: auto;
+}
+#tbl1 td {
+	text-align: left;
+	border-bottom: 1px solid #DEE9F5;
+	font: bold 13px arial,helvetica,clean,sans-serif;
+}

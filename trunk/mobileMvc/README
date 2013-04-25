@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Mobile MVC Demo - Create data-bound forms and views for typical UI patterns.
+-------------------------------------------------------------------------------
+Author: Ed Chatelain (edchat)
+-------------------------------------------------------------------------------
+Demo description
+
+	This is the mobile MVC demo, showing three basic data binding features
+	of the new dojox.mvc package's. 
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dijit 
+	Dojox 
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+
+	To build, use the supplied demo.profile.js as your profileFile
+
+-------------------------------------------------------------------------------
+@rank:7 @categories:mobile

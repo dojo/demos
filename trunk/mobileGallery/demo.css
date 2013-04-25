@@ -1,0 +1,106 @@
+@import url("../../dojox/highlight/resources/highlight.css");
+@import url("css/buttons.css");
+@import url("css/swapView.css");
+@import url("css/icons.css");
+@import url("css/forms.css");
+@import url("css/headings.css");
+@import url("css/jsonp.css");
+@import url("css/layout.css");
+@import url("css/list.css");
+@import url("css/tabs.css");
+@import url("css/mobileListData.css");
+@import url("css/accordion.css");
+@import url("css/gridLayout.css");
+@import url("css/badges.css");
+@import url("css/progress.css");
+@import url("css/rating.css");
+@import url("css/scrollablePane.css");
+@import url("css/css3.css");
+@import url("css/html5.css");
+@import url("css/dialogs.css");
+@import url("css/valuePicker.css");
+
+
+#header button {
+	position:absolute;
+	margin:0px;
+}
+
+#navButton {
+	/* override the position inherited from mblToolBarButton which is relative */
+	position:absolute;
+	width:60px;
+}
+
+#sourceButton {
+	position:absolute;
+}
+
+#loadDiv {
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:100%;
+	height:100%;
+	z-index:999;
+}
+#loadDiv {
+	display:table;
+	font-size: 20px;
+	text-align:center;
+	background-color:white;
+}
+#loadDiv span {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+#mobGalleryProgressIndicator {
+	top:45%;
+	height: 45px;
+	width: 140px;
+	margin-left:-70px;
+	background-color: #2A2A28;
+	border-style: solid;
+	border-width: 2px;
+	border-color: #666666;
+	border-radius: 0.4em;
+	-webkit-border-radius: 0.4em;
+	-moz-border-radius: 0.4em;
+}
+
+#mobGalleryProgressIndicator > div {
+	height: 100%;
+	width: 100%;
+	line-height: 45px;
+	vertical-align: middle;
+	font-size: 20px;
+	color: #c2c2c2;
+}
+
+#mobGalleryProgressIndicator {
+	left: 3px;
+	top: 3px;
+}
+
+#mobGalleryProgressIndicator > div::after {
+	padding-left: 42px;
+	content: "Updating...";
+}
+
+#jsContent, #htmlContent {
+	padding:0px 7px;
+	white-space:pre-wrap;
+	min-width: 800px;
+	min-height:300px;
+}
+
+@media screen and (max-width: 600px) {
+	#jsContent, #htmlContent {
+		font-size: 14px;
+	}
+}
+
+.mgTranspRoundRect {
+	background-color: transparent;
+}

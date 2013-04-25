@@ -1,0 +1,288 @@
+<h1 style="background-color: rgb(240, 240, 240);">
+   The dijit.Editor
+</h1>
+<p style="margin-left: 40px;">
+   The dijit.Editor is a powerful and flexible editor that is part of the <a
+   href="http://www.dojotoolkit.org/" target="_blank">Dojo Toolkit</a>.  This
+   page is a fully-functional example of the Rich Text editor in action with
+   numerous plugins enabled (61 plugins, to be exact).  Feel free to experiment
+   with the content in this pane to see how the various toolbar actions affect
+   its content.
+</p>
+<h2 style="background-color: rgb(240, 240, 240);">
+   Enabled Plugins
+</h2>
+<table style="font-size: 0.8em; width: 90%;">
+   <tbody>
+      <tr>
+         <td>
+            <ul>
+               <li>
+                  New Page
+               </li>
+               <li>
+                  Save (The implementation used opens a dialog with the editor content)
+               </li>
+               <li>
+                  View Source
+               </li>
+               <li>
+                  Show Block Nodes
+               </li>
+               <li>
+                  Full Screen
+               </li>
+               <li>
+                  Preview
+               </li>
+               <li>
+                  Print
+               </li>
+               <li>
+                  Select All
+               </li>
+               <li>
+                  Cut
+               </li>
+               <li>
+                  Copy
+               </li>
+               <li>
+                  Paste
+               </li>
+               <li>
+                  Paste From Word <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+               <li>
+                  Delete
+               </li>
+               <li>
+                  Undo
+               </li>
+               <li>
+                  Redo
+               </li>
+               <li>
+                  Bold
+               </li>
+               <li>
+                  Italic
+               </li>
+               <li>
+                  Underline
+               </li>
+               <li>
+                  Strikethrough
+               </li>
+               <li>
+                  Superscript
+               </li>
+               <li>
+                  Subscript
+               </li>
+               <li>
+                  Page Break
+               </li>
+               <li>
+                  Insert Horizontal Line
+               </li>
+               <li>
+                  Insert Table
+               </li>
+               <li>
+                  Modify Table
+               </li>
+               <li>
+                  Insert Table Row Before
+               </li>
+               <li>
+                  Insert Table Row After
+               </li>
+               <li>
+                  Insert Table Column Before
+               </li>
+               <li>
+                  Insert Table Column After
+               </li>
+               <li>
+                  Delete Table Row
+               </li>
+               <li>
+                  Normalize Style <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+            </ul>
+         </td>
+         <td>
+            <ul>
+               <li>
+                  Insert Ordered List
+               </li>
+               <li>
+                  Insert Unordered List
+               </li>
+               <li>
+                  Indent
+               </li>
+               <li>
+                  Outdent
+               </li>
+               <li>
+                  Blockquote <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+               <li>
+                  Normalize Indent and Outdent Behavior
+               </li>
+               <li>
+                  Align Left
+               </li>
+               <li>
+                  Align Right
+               </li>
+               <li>
+                  Center
+               </li>
+               <li>
+                  Justify
+               </li>
+               <li>
+                  Toggle Direction (RTL mode)
+               </li>
+               <li>
+                  Insert Entity
+               </li>
+               <li>
+                  Insert/Edit Link
+               </li>
+               <li>
+                  Insert Anchor <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+               <li>
+                  Unlink
+               </li>
+               <li>
+                  Insert/Edit Image
+               </li>
+               <li>
+                  Find and Replace <span style="font-weight: bold; font-style: italic; color: red;">Augmented in Dojo 1.5!  Better layout</span>
+               </li>
+               <li>
+                  Change Font
+               </li>
+               <li>
+                  Change Font Size
+               </li>
+               <li>
+                  Change Block Style <span style="font-weight: bold; font-style: italic; color: red;">Augmented in Dojo 1.5!  Block styles can be removed.</span>
+               </li>
+               <li>
+                  Remove Format
+               </li>
+               <li>
+                  Change Text Color (Foreground color) <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5: Dojox version using the dojox.widget.ColorPicker!</span>
+               </li>
+               <li>
+                  Change Background Color <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5: Dojox version using the dojox.widget.ColorPicker!</span>
+               </li>
+               <li>
+                  EnterKeyHandling (Normalizes enter key behavior across browsers)
+               </li>
+               <li>
+                  Pretty Print (Headless plugin that formats the HTML output cleanly)
+               </li>
+               <li>
+                  Delete Table Column
+               </li>
+               <li>
+                  Color Table Cell
+               </li>
+               <li>
+                  Table Context Menu
+               </li>
+               <li>
+                  Insert Smiley <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+               <li>
+                  Collapsible Toolbar <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+               <li>
+                  Status Bar <span style="font-weight: bold; font-style: italic; color: red;">New in Dojo 1.5!</span>
+               </li>
+            </ul>
+         </td>
+      </tr>
+   </tbody>
+</table>
+<h2 style="background-color: rgb(240, 240, 240);">
+   Example Text and Images
+</h2>
+<p style="margin-left: 40px;">
+   <span style="float: left;">
+   <img alt="The Dojo Tooolkit Logo" src="./editorDemoImages/dojologo.jpg">
+   </span> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
+   sodales nulla id erat venenatis auctor. Donec eget dui purus. Fusce nec augue
+   velit, non luctus dui. Nullam eros lorem, egestas nec laoreet id, feugiat et
+   ipsum. Morbi dignissim, enim quis placerat euismod, turpis diam imperdiet
+   eros, ac vehicula magna nulla sed enim. Vestibulum ante ipsum primis in
+   faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse turpis
+   sapien, dapibus nec pretium a, tincidunt vitae justo. Pellentesque malesuada
+   ultricies lacus sed vestibulum. Integer dapibus, eros ac tincidunt mattis,
+   risus orci accumsan eros, non interdum risus orci vel quam. Maecenas quis
+   purus id nunc aliquam auctor non sit amet elit. Suspendisse gravida, augue ac
+   mattis luctus, massa elit tincidunt neque, a ullamcorper velit arcu vel
+   felis. Suspendisse cursus pretium nibh, ac consequat ligula viverra feugiat.
+   Donec mattis ullamcorper accumsan. Aliquam non nisl massa. Fusce augue quam,
+   suscipit vel lacinia eget, sagittis sit amet justo. Suspendisse commodo neque
+   ac tortor tempus et condimentum dolor aliquam.
+</p>
+<p style="margin-left: 40px;">
+   Proin vel purus sed justo sollicitudin pellentesque. Duis id odio nec felis
+   porttitor rhoncus. Nunc luctus lorem luctus lorem placerat pellentesque.
+   Proin vel orci vel diam molestie vestibulum. Cras aliquet adipiscing
+   porttitor. Quisque elit sem, viverra id malesuada in, porttitor in elit.
+   Morbi blandit, metus in malesuada iaculis, augue turpis sagittis leo, quis
+   vestibulum erat ipsum eu dui. Quisque quis mi odio, a ultricies ante. In
+   eleifend mollis commodo. Mauris lacinia nisi tellus. Curabitur gravida
+   placerat mi nec eleifend. Cras non turpis non purus sagittis congue. Ut
+   accumsan, purus at consectetur porta, massa nunc euismod nulla, in
+   sollicitudin neque diam id dui. Duis consectetur feugiat arcu, sed
+   sollicitudin eros vulputate eu.
+</p>
+<p style="margin-left: 40px;">
+   Nulla vitae augue eros, non egestas nisi. Quisque pellentesque, nisl id
+   sagittis placerat, lorem justo luctus lacus, sed euismod nisl diam eget
+   massa. Donec eget arcu neque. Suspendisse sem quam, consectetur ut semper
+   auctor, iaculis eu metus. Nam sit amet semper massa. Aenean id ipsum
+   pellentesque mauris scelerisque accumsan. Aliquam at sapien elit. Phasellus
+   ac faucibus dui. Ut ac enim sit amet neque sollicitudin blandit at vel
+   tortor. Sed nec suscipit urna. Aliquam erat volutpat. Proin varius sem ac
+   massa feugiat euismod.
+</p>
+<p style="margin-left: 40px;">
+   Suspendisse ipsum sapien, hendrerit sodales scelerisque vitae, facilisis sed
+   tortor. Nam mollis lacinia diam et hendrerit. Cras velit massa, sollicitudin
+   id facilisis id, ultricies in velit. Vivamus molestie, enim ut cursus tempus,
+   sapien nisl fermentum ipsum, eu vestibulum orci nisl sed tellus. Curabitur
+   fermentum nunc eget mi pulvinar nec venenatis nibh faucibus. Maecenas vel
+   dolor ante. Pellentesque aliquet tempus massa, nec molestie felis
+   pellentesque non. Ut id auctor risus. Maecenas eu elit eros, id vestibulum
+   turpis. Maecenas dictum arcu nec felis tincidunt ac iaculis turpis dignissim.
+   Vivamus id metus velit, pulvinar ultricies leo. Phasellus condimentum, ipsum
+   ac mattis convallis, sapien mi rutrum enim, a ultricies sem metus quis
+   ligula. In vulputate fermentum lectus a vestibulum. Vestibulum ante ipsum
+   primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer et
+   tellus dolor, eu volutpat ligula. Sed et eros massa.
+</p>
+<p style="margin-left: 40px;">
+   Etiam adipiscing mi sed purus cursus eu porttitor urna cursus. Class aptent
+   taciti sociosqu ad litora torquent per conubia nostra, per inceptos
+   himenaeos. Duis sollicitudin urna sapien. Aenean sed enim a lectus dapibus
+   imperdiet at a nisi. Praesent quis magna vitae ipsum molestie consequat a
+   quis lectus. Nullam eu sapien metus. Maecenas ultricies ultrices libero
+   mattis malesuada. Integer neque lectus, vehicula sed facilisis a, pharetra ut
+   nulla. Etiam mattis eleifend diam commodo pellentesque. Nunc enim ante,
+   mollis ac accumsan a, scelerisque ut dolor. Nam purus mauris, vehicula eu
+   vestibulum ut, viverra eu erat. Proin consequat purus et nibh blandit
+   lobortis. Nullam id velit quam. Maecenas ut ipsum arcu. Etiam purus ipsum,
+   venenatis nec porttitor sit amet, faucibus vehicula ligula.
+</p>
+

@@ -1,0 +1,38 @@
+div#css3Boxes {
+	width: 300px;
+	margin: 100px auto 0 auto;
+	padding: 0;
+	font: 24px sans;
+	text-align: center;
+	color: black;
+}
+
+div#css3Boxes div.css3Boxwrapper {
+	width: 100px;
+	height: 100px;
+	float: left;
+}
+
+div#css3Boxes div.css3Boxwrapper div {
+	width: 80px;
+	height: 80px;
+	background: white;
+	border: 4px solid #CCC;
+	line-height: 80px;
+	cursor: pointer;
+}
+
+#css3ribbon {
+	position: absolute;
+	left: -50px;
+	top: 30px;
+	background: #000;
+	color: #faa;
+	font-size: 1em;
+	height: 1.4em;
+	line-height: 1.4em;
+	border-top: 3px solid #777;
+	border-bottom: 3px solid #777;
+	width: 200px;
+	text-align: center;
+}

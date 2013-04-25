@@ -1,0 +1,138 @@
+@import "../../dijit/themes/claro/claro.css";
+
+body, html {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 90%;
+    -webkit-user-select: none;
+}
+
+.layout {
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    margin-left: -150px;
+    left: 50%;
+}
+
+.tooltip {
+    width: 20px;
+    height: 20px;
+    left: 50%;
+    margin-left: -14.14px;
+    position: relative;
+    z-index: 10;
+    border: none;
+    top: -14.2px;
+    -webkit-transform: rotate(45deg);
+    background-color: #FF9701;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.1s;
+}
+
+.locked .tooltip {
+    opacity: 0;
+}
+
+.actionArea {
+    opacity: 1;
+    margin-top: -15px;
+    left: 0;
+    position: relative;
+    z-index: 8;
+    width: 300px;
+    height: 200px;
+    background-image: url('images/hint-rotation.png');
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.5s;
+}
+
+.locked .actionArea {
+    opacity: 0;
+}
+
+.legend {
+    width: 250px;
+    height: 50px;
+    left: 25px;
+    position: absolute;
+    z-index: 9;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.25s;
+    opacity: 0;
+    margin-top: -10px;
+}
+
+.locked .legend {
+    opacity: 1;
+    z-index: 11;
+}
+
+.lockIcon {
+    visibility: hidden;
+    display: none;
+}
+
+.locked .lockIcon {
+    background-image: url("images/icon-lock.png");
+    height: 25px;
+    width: 25px;
+    position: absolute;
+    top: 25px;
+    left: 20px;
+    visibility: visible;
+    display: block;
+		z-index: 7;
+}
+
+.log {
+    width: 250px;
+    height: 50px;
+    left: 25px;
+    position: relative;
+    -webkit-box-shadow: 0px 1px 4px #4E4E4E;
+    z-index: 9;
+    -webkit-border-radius: 10px;
+    font-weight: bold;
+    font: "Agency FB";
+    color: white;
+    font-size: 1.5em;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FF9701;
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.25s;
+}
+
+.locked .log {
+    opacity: 0;
+}
+
+.slider {
+    -webkit-transition-property: opacity;
+    -webkit-transition-duration: 0.25s;
+    z-index: 10;
+}
+
+.locked .slider {
+    opacity: 0;
+}
+
+.pieChart {
+    margin-top: -15px;
+    -webkit-transition-property: margin-top;
+    -webkit-transition-duration: 0.5s;
+}
+
+.locked .pieChart {
+    margin-top: -55px;
+}
+
+.lockButton {
+    width: 254px;
+    height: 42px;
+    left: 23px;
+    margin-top: 15px;
+    position: relative;
+    z-index: 99999;
+    background-image: url("images/bt-lock.png");
+}

@@ -1,0 +1,643 @@
+/* General*/
+
+body {
+	font-family: "Segoe WP", "Segoe UI" !important;
+}
+
+.link, a {
+	color: #fffffe !important;
+}
+
+.mblView .mblView {
+	padding: 0px !important;
+	width: 100% !important;
+}
+
+button:not(.mblToggleButton),
+input[type='button'],
+.mblButton,
+.mblToolBarButton {
+	font-weight: normal !important;
+	text-shadow: none !important;
+	font-size: 11pt !important;
+	font-family: "Segoe WP", "Segoe UI" !important;
+	background-color: transparent;
+	color: white;
+}
+
+button:not(.mblToggleButton):active,
+button.greyBtn:active,
+input[type='button']:active,
+.mblButton:active,
+.mblToolBarButton:active,
+.mblToolBarButtonSelected img,
+#resetBtn:active {
+	background-color: highlight !important;
+}
+
+.mblButton,
+button:not(.mblToggleButton),
+input[type='button'] {
+	border: 2px solid white !important;
+	padding: 0px 10px 3px 10px !important;
+	height: 32px !important;
+}
+
+#htmlContent,
+#jsContent {
+	-ms-user-select: none !important;
+}
+
+#htmlContent *,
+#jsContent * {
+	color: white !important;
+	font-family: "Segoe WP", "Segoe UI" !important;
+}
+
+/* Main menu*/
+
+sup {
+	position: absolute;
+}
+
+.mblEdgeToEdgeCategory {
+	width: 100% !important;
+	-ms-user-select: none !important;
+}
+
+#controls .mblSpriteIcon,
+#effects .mblSpriteIcon,
+#dataList .mblSpriteIcon {
+	margin-top: 8px;
+}
+
+#rightPane {
+	padding: 0px !important;
+}
+
+#splitter .mblContainer {
+	padding: 0px 10px 0px 12px;
+}
+
+/* Headings */
+
+.mblHeading {
+	padding: 0px !important;
+	height: 47px !important;
+	z-index: auto;
+}
+
+.mblHeading * {
+	z-index: auto;
+}
+
+.mblHeading .mblToolBarButton:first-child:not(#navButton) {
+	margin-left: 0px !important;
+}
+
+.mblHeading .mblToggleButton {
+	margin: 6px !important;
+	white-space: normal;
+}
+
+#headingTabBar {
+	padding: 0px;
+}
+
+#header {
+	display: -ms-flexbox;
+}
+
+#headerLabel {
+	display: block;
+	-ms-flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+#navButton {
+	width: 27px !important;
+	margin-right: 12px;
+	position: relative !important;
+}
+
+#sourceButton {
+	margin-right: 0px;
+	position: relative !important;
+}
+
+#sourceButton:after {
+	background-color: transparent !important;
+}
+
+/* Buttons tab */
+
+#buttons .mblView {
+	padding-left: 0px !important;
+}
+
+#buttons .mblButton:not(.roundBtn),
+button.baseBtn {
+	border-radius: 0px !important;
+}
+
+#textureBtnView .mblButton {
+	color: black !important;
+}
+
+#buttons button.mblButton:not(.mblToggleButton) {
+	border: none !important;
+	position: relative;
+}
+
+/* Forms tab, Switches tab */
+
+.fieldset{
+	padding: 0px !important;
+	margin: 0px !important;
+	background-color: transparent !important;
+	border-radius: 0 !important;
+	border: 0 !important;
+}
+
+.field-row {
+	min-height: 50px;
+}
+
+.field-title {
+	font-weight: normal !important;
+	font-size: 17pt !important;
+	margin: 0 !important;
+	-ms-user-select: none !important;
+}
+
+.field-label {
+	color: white !important;
+	font-weight: normal !important;
+	font-size: 11pt !important;
+	margin-top: 4px;
+	-ms-user-select: none !important;
+	width: auto !important;
+	line-height: 30px !important;
+	text-shadow: none !important;
+}
+
+.mblRoundRect {
+	padding: 0px !important;
+	margin: 0px !important;
+	min-height: 100px;
+}
+
+.mblSwitch {
+	float: right !important;
+	margin: 6px 0px !important;
+}
+
+.mblColorDefaultSel{
+	background-color: transparent !important;
+	background-image: none !important;
+}
+
+input[type='text'],
+input[type='password'],
+textarea {
+	padding-left: 3px !important;
+	width: 100% !important;
+}
+
+.mblCheckBox,
+.mblCheckBox + span,
+.mblRadioButton,
+.mblRadioButton + span {
+	float: left;
+}
+
+.mblCheckBox + span:before {
+	margin-left: -34px;
+}
+
+.mblRadioButton + span:before {
+	margin-left: -30px;
+}
+
+#testForm .fieldset:nth-of-type(6) .field-row:nth-of-type(3) .field-label {
+	float: left;
+	margin-bottom: -10px;
+}
+
+#testForm .fieldset:nth-of-type(6) .field-row:nth-of-type(4) .field-label {
+	position: absolute;
+	display: block;
+	margin-top: 8px;
+}
+
+#alertSlider {
+	margin: -10px 0px 10px 5px !important;
+}
+
+#resetBtn {
+	background-color: transparent !important;
+	border-radius: 0px !important;
+	color: white;
+}
+
+#mobileSwitches .bold {
+	font-weight: normal !important;
+	font-size: 17pt;
+	position: absolute;
+	-ms-user-select: none;
+}
+
+/* SwapView tab*/
+
+#swapView .mblView {
+	width: 100%;
+}
+
+/* Lists tab */
+
+.mblRoundRectCategory {
+	font-size: 24pt;
+}
+
+#list .mblTabBarButton,
+#progress .mblTabBarButton {
+	width: auto !important;
+	max-width: 50%;
+}
+
+#mainListView{
+	padding: 0px !important;
+}
+
+.mblRoundRectList,
+#iconsDescList,
+#mobileListCtrlPanel {
+	margin: 0px !important;
+}
+
+#mobileListCtrlPanel input {
+	background-color: transparent !important;
+	color: grey !important;
+}
+
+#mobileListCtrlPanel .mobileListSelected {
+	color: white !important;
+}
+
+#mobileLists .mblDomButton > div,
+.mblDomButtonDarkBluePlus > div,
+.mblDomButtonBluePlus > div,
+.mblDomButtonBlueMinus > div {
+	background-image: none !important;
+	border:  2px solid white;
+	border-radius: 0px !important;
+}
+
+#mobileLists .mblDomButton > div:active,
+.mblDomButtonDarkBluePlus > div:active,
+.mblDomButtonBluePlus > div:active ,
+.mblDomButtonBlueMinus > div:active {
+	background-color: highlight !important;
+}
+
+#mobileListSetBtns {
+	padding-top: 5px;
+}
+
+#mobileListSet1Btn,
+#mobileListSet2Btn {
+	border: none !important;
+}
+
+/* Progress tab */
+
+#progress button {
+	margin-right: 8px;
+}
+
+/* Dialogs tab */
+
+#dlg_login input.mblTextBox.mblSimpleDialogInput {
+	margin: 8px 0px !important;
+	width: calc(100% - 10px) !important;
+}
+
+#dlg_volume .mblSlider > div:before {
+	background-color: black;
+}
+
+#view button {
+	display: block;
+	margin: 8px 0px !important;
+}
+
+#dlg_select .mblListItemChecked {
+	color: highlight !important;
+}
+
+#dlg_select .mblDomButtonSilverCircleGrayButton > div,
+#dlg_select .mblDomButtonSilverCircleGreenButton > div {
+	background-color: transparent !important;
+	background-image: none !important;
+	border: 2px solid white;
+	border-radius: 25px;
+}
+
+#dlg_select .mblDomButtonSilverCircleGrayButton > div > div {
+	background-color: transparent !important;
+	background-image: none !important;
+	border: none !important;
+}
+
+#dlg_select .mblDomButtonSilverCircleGreenButton > div > div {
+	background-color: white !important;
+}
+
+#view .mblRoundRect {
+	min-height: 0px;
+	margin: 12px 0px !important;
+	border: none !important;
+}
+
+/* Pickers tab*/
+
+.mblSpinWheel {
+	color: white !important;
+}
+
+#valuePicker .mblView {
+	min-height: 500px;
+}
+
+#picker1,
+#picker2 {
+	margin: auto !important;
+}
+
+#picker3,
+#picker4 {
+	margin-left: 0px !important;
+}
+
+.mblValuePickerSlotInput {
+	color: white;
+}
+
+/* Grid tab*/
+
+.lineGridLayout {
+	border: 0px !important;
+	display: -ms-flexbox;
+	-ms-flex-align: center
+}
+
+.lineGridLayout * {
+	margin-top: 0px !important;
+}
+
+.lineGridLayout *:active {
+	color: Highlight;
+}
+
+.lineGridLayout .SubCategoryGridLayout {
+	margin-left: 10px;
+}
+
+.lineGridLayout .Description {
+	width: 100%;
+}
+
+#numGridLayout {
+	height: 2em !important;
+	font-size: 11pt !important;
+}
+
+.OrderItemGridLayout {
+	width: 100%;
+}
+
+.myIconGridLayout {
+	border-radius: 0px !important;
+}
+
+.titleGridLayout {
+	text-shadow: none !important;
+	font-style: normal !important;
+	position: static !important;
+	white-space: nowrap;
+	font-size: 29pt !important;
+}
+
+.titleGridLayout br {
+	display: none;
+}
+
+.mblPane.mblGridItemFirstColumn.mblGridItemLastColumn.mblGridItemFirstRow {
+	height: auto !important;
+}
+
+.mblPane.mblGridItemFirstColumn.mblGridItemLastColumn.mblGridItemFirstRow img {
+	display: none;
+}
+
+/* Scrollable pane tab */
+.mblScrollablePane {
+	margin-top: 0px !important;
+	margin-bottom: 30px !important;
+}
+
+.mblScrollablePaneMask > svg {
+	display: none;
+}
+
+.c1ScrollPane,
+.c2ScrollPane {
+	margin-left: 10px;
+	margin-right: 10px;
+	-ms-flex: 1;
+	-ms-flex-preferred-size: 0px;
+}
+
+.c2ScrollPane{
+	-ms-flex-preferred-size: auto;
+}
+
+.c3ScrollPane {
+	padding-right: 12px !important;
+}
+
+#scrollablePane .mblListItem {
+	display: -ms-flexbox;
+}
+
+#scrollablePane .subtitleScrollPane {
+	position: absolute;
+}
+
+#scrollablePane .mblVariableHeight {
+	padding: 0px 0px 25px 8px;
+}
+
+/* Icons tab */
+
+#iconsMain .mblContainer,
+#badges .mblContainer {
+	padding: 0px;
+}
+
+#icons-url .mblRoundRectList li {
+	font-size: 14pt !important;
+}
+
+/* Tabbar tab*/
+
+#tabBar .mblTabBarButton {
+	border-radius: 0px !important;
+}
+
+.mblContent > .box {
+	padding: 8px 0px 8px !important;
+}
+
+.mblContent > .box:empty {
+	display: none;
+}
+
+/* Accordion tab */
+
+#accordion .mblAccordionTitleAnchor {
+	color: #fffffe !important;
+}
+
+#accordion .mblAccordionPane {
+	background-color: transparent !important;
+	padding-left: 50px !important;
+	font-family: "Segoe WP", "Segoe UI" !important;
+}
+
+#accordion .mblAccordionPane div {
+	color: white !important;
+	padding: 0px !important;
+}
+
+/* Rating tab*/
+
+.ratingGroup {
+	border: none !important;
+	margin: 10px 0px !important;
+	padding: 0px !important;
+}
+
+/* Badges tab*/
+
+#badges input[type='text'],
+#jsonp input[type='search'] {
+	background-color: #BFBFBF;
+	border: 2px solid #BFBFBF;
+	height: 2em;
+	margin: 8px 0px;
+}
+
+#badges input[type='text']:focus,
+#jsonp input[type='search']:focus {
+	background-color: white;
+	border-color: highlight;
+}
+
+#badges input[type='button'] {
+	margin-right: 10px;
+}
+
+/* JSON P tab */
+
+#jsonp .mblHeading {
+	display: -ms-flexbox;
+}
+
+#jsonp .mblHeading * {
+	position: relative;
+	height: 32px;
+	left: 0px !important;
+}
+
+#jsonp .mblHeading input {
+	padding: 0px 3px !important;
+	margin: 0px 8px 0px 0px !important;
+	-ms-flex: 1;
+	font-size: 11pt !important;
+}
+
+#jsonp .mblHeading .mblHeadingDivTitle {
+	display: none;
+}
+
+#jsonp .searchResult {
+	border: none !important;
+	padding: 0px !important;
+	margin: 10px 0px !important;
+}
+
+#jsonp .userId,
+#findMoreLnk,
+#jsonp .mblHeading input {
+	font-weight: normal !important;
+}
+
+/* AJAX tab*/
+
+#ajaxPane > div * {
+	font-weight: normal !important;
+	font-family: "Segoe WP", "Segoe UI" !important;
+}
+
+#ajaxPane > div > div:nth-child(2) {
+	position: relative;
+	left: -50%;
+}
+
+#ajaxPane img {
+	left: 50%;
+	display: block;
+	position: relative;
+}
+
+#ajaxPane a:active {
+	background-color: transparent !important;
+	color: highlight !important;
+}
+
+button.greyBtn {
+	background-color: transparent !important;
+}
+
+button.baseBtn {
+	margin-left: 0px !important;
+}
+
+#noteLocAddr,
+#noteDate {
+	font-size: 11pt !important;
+}
+
+#noteLocAddr {
+	margin-right: 8px;
+}
+
+#noteDate {
+	margin: 10px 0px;
+}
+
+/* HTML5 tab*/
+
+#html5Main button.defaultBtn {
+	background-color: transparent;
+}
+
+#html5Main > div {
+	padding: 0px !important;
+}
+
+#html5Main .label {
+	font-size: 17pt !important;
+}

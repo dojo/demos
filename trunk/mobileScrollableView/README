@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+Mobile Scrollable View - A simple demo showing touch-scrolling views and header/footer tab bar navigation.
+-------------------------------------------------------------------------------
+Authors: Yoshiroh Kamiyama (IBM CCLA)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a simple mobile application that uses dojox.mobile.ScrollableView
+	and dojox.mobile.TabBar.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Mobile
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:175 @categories:mobile

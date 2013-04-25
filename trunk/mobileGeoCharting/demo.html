@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>US demographics</title>
+		<link rel="stylesheet" type="text/css" href="demo.css">
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"/>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="parseOnLoad: 1,  async:1, mblAlwaysHideAddressBar: true"></script>
+		<script type="text/javascript" src="src.js" charset="utf-8"></script>
+	</head>
+	<body style="visibility:hidden;">
+		<!-- csv dataStore -->
+		<div data-dojo-type="dojox.data.CsvStore" data-dojo-id="csvStore" url="resources/data/USPopulation.csv"
+					identifier="Id" label="State"></div>
+		
+		<!-- map display page -->
+		<div id="mapView" data-dojo-type="dojox.mobile.View" selected="true" style="width: 100%; height:100%; background: rgb(120, 120, 120);">
+	
+			<h1 data-dojo-type="dojox.mobile.Heading" id="mapHeader" >US population from 1960 to 2009</h1>
+			<div id="mapWidget" data-dojo-type="dojox.geo.charting.widget.Map" 
+				 shapeData="resources/data/US_States_intermediate.json"
+				 dataStore="csvStore" series="resources/data/series.json"  markerData="resources/data/markers.json" showTooltips="false"
+				 animateOnResize="false" colorAnimationDuration="0"
+				 adjustMapCenterOnResize="true" adjustMapScaleOnResize="true" dataBindingAttribute="2009"
+				 onFeatureClick="updateHeaderTitle" dataBindingValueFunction="getPopData" enableMouseSupport="true"
+				 enableMousePan="true" enableMouseZoom="true" enableFeatureZoom="false" enableTouchSupport="true"
+				 >
+			</div>
+			<div id="mapLegend" data-dojo-type="dojox.geo.charting.widget.Legend" map="dijit.byId('mapWidget').getInnerMap()"
+				swatchSize="10" horizontal="false">
+			</div>
+			<div id="yearSpinner" data-dojo-type="dojox.mobile.SpinWheel">
+				<div id="yearSlot" data-dojo-type="dojox.mobile.SpinWheelSlot"
+					labels="1960,1970,1980,1990,2000,2009"
+					value = "2009"
+					style="text-align:center;width:100%;">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

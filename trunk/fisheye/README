@@ -1,0 +1,23 @@
+-------------------------------------------------------------------------------
+FishEye - Demonstration of the DojoX FisheyeList widget
+-------------------------------------------------------------------------------
+Author: Dojo Toolkit (?)
+-------------------------------------------------------------------------------
+Demo description
+
+	A small demo showing off some of the capabilities of the Dojo Toolkit,
+	namely the dojox.widget.FisheyeList component.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dijit Framework
+	DojoX (FisheyeList)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:1

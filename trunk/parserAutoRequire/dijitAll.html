@@ -1,0 +1,26 @@
+<div class="tabPane">
+	<h1>Sliders</h1>
+	<div data-dojo-command="require" data-dojo-args="dijit/dijit-all"></div>
+	<div class="info">
+		<p>
+			This particular content pane invokes the loading of <span
+				class="code">dijit/dijit-all</span> via declarative markup. This is
+			intended to simulate that invoking of loading an application layer
+			from a custom build. Once your application layer is loaded, if your
+			module is included in that, then it will not be loaded again.
+		</p>
+		<p>This means that you can load application layers declaratively
+			and only when first needed by including them in your declaritive
+			markup.</p>
+		<p>
+			The way this is accomplish is that the parser now supports the
+			ability to run the <span class="code">require();</span> command in
+			declarative markup without instantiating an object by using the <span
+				class="code">data-dojo-command</span> attribute like this:
+		</p>
+		<pre>
+&lt;div data-dojo-command="require" data-dojo-args="dijit/dijit-all"&gt;&lt;/div&gt;
+</pre>
+	</div>
+</div>
+

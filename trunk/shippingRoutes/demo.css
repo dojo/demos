@@ -1,0 +1,16 @@
+.menuItem {
+	border-color: grey;
+	border-style: solid;
+	padding: 1;
+	vertcal-align: middle;
+	border-width: 1;
+}
+
+.menuBar {
+	border-color: #deadbeef;
+	border-style: solid;
+	padding: 1;
+	vertcal-align: middle;
+	border-width: 1;
+	background-color: #e0e0e0;
+}

@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+The Dojo Times - SVG fonts with dojox.gfx
+-------------------------------------------------------------------------------
+Author: Tom Trenka (ttrenka)
+-------------------------------------------------------------------------------
+Demo description
+
+	A set of demos showing off the new SVG font rendering capabilities
+	available with DojoX GFX (since Dojo Toolkit 1.2).  Includes a typical
+	sIFR usage, a set of pie charts (demonstrating scaling and rotation) and
+	and interactive comic demonstration.
+
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Base
+	DojoX (gfx)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@display:fullscreen @category:shiny @rank:1 @categories:graphics

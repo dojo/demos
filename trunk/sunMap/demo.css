@@ -1,0 +1,8 @@
+.text {
+	font-size: .7em;
+	vertical-align: bottom;
+}
+
+.nobr {
+	white-space: nowrap
+}

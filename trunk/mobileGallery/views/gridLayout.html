@@ -1,0 +1,134 @@
+<div id="gridLayout" data-dojo-type="dojox.mobile.View">	
+	<div id="view1GridLayout" data-dojo-type="dojox.mobile.ScrollableView">
+		<div data-dojo-type="dojox.mobile.GridLayout" data-dojo-props='cols:1' style="height:600px;">
+			<div data-dojo-type="dojox.mobile.Pane" style="width:100%;position:relative">
+				<img alt="" src='images/Mountain.jpg' style="width:100%;height:100%"/>
+				<div style="position:absolute;top:40%;left:10%;" class="titleGridLayout">
+					Airport lounge <br>cafe
+				</div>
+			</div>
+			<div data-dojo-type="dojox.mobile.GridLayout" 
+				data-dojo-props='cols:2' style="height: 300px;">
+				<div id="pane1GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToSubMenu(1)">
+					<div class="lineGridLayout"><img alt="" src='images/menu1.jpg' 
+						class="myIconGridLayout"/><div class="SubCategoryGridLayout">Coffee</div>
+					</div>
+				</div>
+				<div id="pane2GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToSubMenu(2)">
+					<div class="lineGridLayout">
+						<img alt="" src='images/menu2.jpg' 
+							class="myIconGridLayout"/>
+						<div class="SubCategoryGridLayout">Bakery</div>
+					</div>
+				</div>
+				<div id="pane3GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPane" onclick="goToSubMenu(3)">
+					<div class="lineGridLayout"><img alt="" src='images/menu3.jpg' 
+						class="myIconGridLayout"/><div class="SubCategoryGridLayout">Tea</div></div>
+				</div>
+				<div id="pane4GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPane" onclick="goToSubMenu(4)">
+					<div class="lineGridLayout"><img alt="" src='images/menu4.jpg' 
+						class="myIconGridLayout"/><div class="SubCategoryGridLayout">Cake</div></div>
+				</div>
+				<div id="pane5GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPane" onclick="goToSubMenu(5)">
+					<div class="lineGridLayout"><img alt="" src='images/menu5.jpg' 
+						class="myIconGridLayout"/><div class="SubCategoryGridLayout">Beverage</div></div>
+				</div>
+				<div id="pane6GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPane" onclick="goToSubMenu(6)">
+					<div class="lineGridLayout"><img alt="" src='images/menu6.jpg' 
+						class="myIconGridLayout"/><div class="SubCategoryGridLayout">Icecream</div></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="view2GridLayout" data-dojo-type="dojox.mobile.ScrollableView">
+		<div data-dojo-type="dojox.mobile.Heading" 
+			data-dojo-props='back:"Menu", moveTo:"view1GridLayout"'></div>
+			<div data-dojo-type="dojox.mobile.GridLayout" 
+				data-dojo-props='cols:2' style="height: 300px;">
+				<div id="pane2-1GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(1)">
+					<div class="lineGridLayout"><div class="Description">Coffee
+						<div class="priceGridLayout">4.00</div>
+					</div>
+				</div>
+				</div>
+				<div id="pane2-2GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(2)">
+					<div class="lineGridLayout"><div class="Description">Cappuccino
+						<div class="priceGridLayout">5.00</div></div></div>
+				</div>
+				<div id="pane2-3GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(3)">
+					<div class="lineGridLayout"><div class="Description">
+						Caf&#233; au lait<div class="priceGridLayout">5.00</div></div></div>
+				</div>
+				<div id="pane2-4GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(4)">
+					<div class="lineGridLayout"><div class="Description">Espresso
+						<div class="priceGridLayout">4.00</div></div></div>
+				</div>
+				<div id="pane2-5GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(5)">
+					<div class="lineGridLayout"><div class="Description">Ice Coffee
+						<div class="priceGridLayout">4.00</div></div></div>
+				</div>
+				<div id="pane2-6GridLayout" data-dojo-type="dojox.mobile.Pane" 
+					class="myPaneGridLayout" onclick="goToOrder(6)">
+					<div class="lineGridLayout"><div class="Description">Ice Caf&#233; au lait
+						<div class="priceGridLayout">5.00</div></div></div>
+				</div>
+			</div>
+	</div>
+	<div id="view3GridLayout" data-dojo-type="dojox.mobile.ScrollableView">
+		<div data-dojo-type="dojox.mobile.GridLayout" data-dojo-props='cols:2'>
+			<div data-dojo-type="dojox.mobile.Pane">
+				<div data-dojo-type="dojox.mobile.EdgeToEdgeCategory">Order</div>
+				<div id="pane7GridLayout" style="width:100%;height:50px;position:relative"">
+					<div class="lineGridLayout">
+						<div class="OrderItemGridLayout">
+							<span id="OrderItem">Espresso</span>
+							<div id="OrderPrice" class="priceGridLayout">
+								5.00
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div data-dojo-type="dojox.mobile.Pane">
+				<div data-dojo-type="dojox.mobile.EdgeToEdgeCategory">Count</div>
+
+				<table style="position:relative;width:100%">
+					<tr>
+						<td><input id="numGridLayout" data-dojo-type="dojox.mobile.TextBox" 
+							data-dojo-props='value:1, placeHolder:"Count", size:3' 
+							style="width:80%;height:40px;text-align:right;font-size: 18px;"></td>
+						<td><div id="PlusGridLayout" class="mblDomButtonBluePlus" onclick="plus()" 
+							style="margin:0 auto 0 auto;"></div></td>
+						<td><div id="MinusGridLayout" class="mblDomButtonBlueMinus" onclick="minus()" 
+							style="margin:0 auto 0 auto;"></div></td>
+					</tr>
+				</table>
+			</div>
+			<div data-dojo-type="dojox.mobile.Pane">
+				<button id="cancelGridLayout" data-dojo-type="dojox.mobile.Button" 
+					class="mblRedButton" onclick="cancel()" 
+					style="margin-top:10px;margin-left:5%;margin-right:5%;width:90%;height:40px;">
+					Cancel
+				</button>
+			</div>
+			<div data-dojo-type="dojox.mobile.Pane">
+				<button id="okGridLayout" data-dojo-type="dojox.mobile.Button" 
+					class="mblBlueButton" onclick="ok()" 
+					style="margin-top:10px;margin-left:5%;margin-right:5%;width:90%;height:40px;">
+					OK
+				</button>
+			</div>
+		</div>
+	</div>
+</div>

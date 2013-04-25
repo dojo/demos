@@ -1,0 +1,25 @@
+@import "../../dojo/resources/dojo.css";
+
+#chartContainer {
+	position: relative;
+	height: 660px;
+}
+.chart {
+	position: absolute;
+	top:	0;
+	left:	0;
+	width:	300px;
+	height: 200px;
+} 
+#lines, #area, #columns {
+	left: 320px;
+}
+#bubbles, #area, #pieLin {
+	top: 220px;
+}
+#pieLin, #pieFan, #ohlc {
+	left:  640px;
+}
+#candle, #columns, #ohlc {
+	top: 440px;
+}

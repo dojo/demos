@@ -1,0 +1,44 @@
+<div id="progress" data-dojo-type="dojox.mobile.View">
+	<ul data-dojo-type="dojox.mobile.TabBar" style="width:100%, height:100%"
+		data-dojo-props='barType:"segmentedControl", fixed:"top"'>
+		<li data-dojo-type="dojox.mobile.TabBarButton" id="progressViewTabBarBtn1"
+			data-dojo-props='moveTo:"progressBarView", selected:true'>ProgressBar
+		</li>
+		<li data-dojo-type="dojox.mobile.TabBarButton" id="progressViewTabBarBtn2"
+			data-dojo-props='moveTo:"progressIndicatorView"'>ProgressIndicator
+		</li>
+	</ul>
+    
+	<div id="progressBarView" data-dojo-type="dojox.mobile.ScrollableView">
+        <div dojoType="dojox.mobile.RoundRect" shadow="false" class="mgTranspRoundRect">
+		<div id="progressBar1" data-dojo-type="dojox.mobile.ProgressBar"
+		     data-dojo-props='maximum:200' style="width:275px">
+		</div>
+		<div id="progressBarStatusMsg">0% 0/200</div>
+		<button dojoType="dojox.mobile.Button" onclick="update('0')">0</button>
+		<button dojoType="dojox.mobile.Button" onclick="update('70')">70</button>
+		<button dojoType="dojox.mobile.Button" onclick="update('100')">100</button>
+		<button dojoType="dojox.mobile.Button" onclick="update('200')">200</button>
+		</div>
+	</div>
+
+	<div id="progressIndicatorView" data-dojo-type="dojox.mobile.ScrollableView">
+        <div dojoType="dojox.mobile.RoundRect" shadow="false" class="mgTranspRoundRect">
+		<div id="progressIndicator1" data-dojo-type="dojox.mobile.ProgressIndicator" 
+			startSpinning="true" removeOnStop="false" size="15" center="false"></div>
+		<div id="progressIndicator2" data-dojo-type="dojox.mobile.ProgressIndicator" 
+			startSpinning="true" removeOnStop="false" size="30" center="false" 
+			class="mblProgWhite"></div>
+		<div id="progressIndicator3" data-dojo-type="dojox.mobile.ProgressIndicator"
+			startSpinning="true" removeOnStop="false" size="60" center="false" 
+			class="mblProgPink"></div>
+		<div id="progressIndicator4" data-dojo-type="dojox.mobile.ProgressIndicator" 
+			startSpinning="true" removeOnStop="false" size="120" center="false"
+	     	colors="['red','yellow','pink','orange','green','magenta',
+	     			 'cyan','black','white','blue','gray','lightgreen']">
+        </div>
+	    <button dojoType="dojox.mobile.Button" onclick="startProgressIndicator()">Start</button>
+	    <button dojoType="dojox.mobile.Button" onclick="stopProgressIndicator()">Stop</button>
+        </div>
+	</div>
+</div>

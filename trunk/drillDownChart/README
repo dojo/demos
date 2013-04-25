@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Drill Down Chart - A simple demo demonstrating how to drill down on data from a column chart to a pie chart. Click on columns to drill down.
+-------------------------------------------------------------------------------
+Authors: Christophe Jolif
+-------------------------------------------------------------------------------
+Demo description
+
+ 	A simple demo demonstrating how to drill down on data from a column chart to a pie chart
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	DojoX (charting)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:30 @categories:graphics

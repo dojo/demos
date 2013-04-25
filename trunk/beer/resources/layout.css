@@ -1,0 +1,30 @@
+body {
+    
+}
+#container {
+    background: url("images/bg.png") no-repeat;
+    width: 1001px;
+    height: 705px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+#lady {
+    background: url("images/barmate.png");
+    width: 140px;
+    height: 192px;
+    position: absolute;
+    top: 278px;
+    left: 300px;
+}
+
+#shelf-offer {
+	top:75px;
+	left:42px;
+	position:absolute;
+}
+
+#shelf-offer div {
+	position:relative;
+}

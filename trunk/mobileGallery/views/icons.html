@@ -1,0 +1,21 @@
+<div id="icons" dojoType="dojox.mobile.View">
+	<div id="iconsMain" dojoType="dojox.mobile.ScrollableView">
+		<ul dojoType="dojox.mobile.IconContainer" iconBase="images/iconitems-all.png">
+			<li dojoType="dojox.mobile.IconItem" iconPos="0,0,65,65" lazy="true">
+				<div class="box" style="padding: 20px 30px;">
+					Click/touch the close icon in the top-left corner to close this box.
+				</div>
+			</li>
+			<li dojoType="dojox.mobile.IconItem" id="moveToIcon" iconPos="65,0,65,65" moveTo="icons-moveTo" transition="slide"></li> 
+			<li dojoType="dojox.mobile.IconItem" id="urlIcon" iconPos="130,0,65,65" url="icons-url.html" transition="slide" sync="false"></li>
+		</ul>
+		<ul id="iconsDescList" style="position:absolute;left:80px;top:20px;list-disc-type:none;">
+			<li class="mblIconArea">Opens a box with an expanding transition</li>
+			<li class="mblIconArea">Moves to another view using a sliding transition</li>
+			<li class="mblIconArea">Opens another web page using a sliding transition</li>
+		</ul>
+	</div>
+	<div id="icons-moveTo" dojoType="dojox.mobile.View"> 
+		<div><img src="images/flip1.jpg"/></div> 
+	</div>
+</div>

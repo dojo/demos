@@ -1,0 +1,1246 @@
+ticket,summary,owner,component,milestone,status,version,created,priority,cc
+14661,invalid test ticket,,General,tbd,new,1.7.1,2012-01-22T12:09:41-08:00,undecided,
+14669,swap in dojox.mobile.SwapView does not trigger dojo/event,,General,tbd,new,1.7.1,2012-01-24T08:35:13-08:00,undecided,
+14674,dojox/mobile/app/_event.js does not replace dojo.connect correctly,,General,tbd,new,1.7.1,2012-01-25T05:35:01-08:00,undecided,
+14699,BorderContainer: dragging vertical splitter between two panes causes <object> based graphics to diplay double images,,Dijit,tbd,new,1.6.1,2012-01-30T14:27:53-08:00,undecided,
+14120,An Error of ExpandoPane,,DojoX Layout,tbd,new,1.6.1,2011-10-19T00:33:01-07:00,blocker,
+4284,Tooltips: hideDelay not supported any longer?,,Dijit,future,new,0.9,2007-08-24T08:37:33-07:00,high,
+4300,"Tree: dijit._TreeNode does not call ""_afterExpand"" and ""_afterCollapse"" methods",,Dijit,future,reopened,0.9,2007-08-26T23:18:11-07:00,high,lukelalo@…
+6613,dojox.layout.ContentPane adjustHtmlPath does not work when you have href and style on the same tag.,,DojoX Layout,future,new,1.0,2008-04-25T17:01:04-07:00,high,
+6920,Form element states not getting saved after submitting in FF,,Dijit,2.0,new,1.1.1,2008-06-09T14:59:40-07:00,high,
+7540,InlineEditBox: should not shift position when going into edit mode,,Dijit - LnF,2.0,new,1.1.1,2008-08-27T12:50:34-07:00,high,
+7872,Tooltip: will not follow node,,Dijit,2.0,new,1.2.0,2008-10-15T11:33:32-07:00,high,
+7971,Tree: fast cursor movement can break Drag and Drop,,Dijit,future,new,1.2.0,2008-10-27T08:07:20-07:00,high,elazutkin
+8201,TextBox: doesn't remember login data (i.e Firefox Password-Store),,Dijit - Form,2.0,reopened,1.2.1,2008-12-01T01:20:40-08:00,high,
+8398,Dijit Tooltip Conflicts with Advanced TinyMCE Editor,,Dijit,future,new,1.2.3,2009-01-12T09:07:19-08:00,high,floyd_ism@…
+8408,"[dojox.layout] FloatingPane does not respect ContentPane._isShown, _onShow, _loadCheck...",,DojoX Layout,future,new,1.2.3,2009-01-13T19:20:45-08:00,high,
+8424,"_Templated: bug with <ol>, <li> and <fieldset> (IE)",,Dijit,2.0,new,1.2.3,2009-01-15T08:41:43-08:00,high,
+8545,Tree: presentation issue with showRoot=false when root's children are leaf nodes.,,Dijit,future,new,1.2.3,2009-02-01T12:35:41-08:00,high,
+9024,Dialog: dragging to edge of viewport causes window to start scrolling,,Dijit,future,new,1.3.0rc2,2009-04-01T06:52:01-07:00,high,elazutkin
+10462,IE8 (windows 7) hangs with 2 iFrames when returning to main window,,Dijit,tbd,new,1.3.2,2009-12-03T13:16:35-08:00,high,
+10716,Menu: don't highlight first MenuItem on open via mouse click,,Dijit,future,new,1.4.0,2010-02-04T11:54:38-08:00,high,
+10721,MenuBar: hovering MenuBarItem should make previously opened menu disappear immediately,,Dijit,future,new,1.4.0,2010-02-05T09:05:46-08:00,high,
+10764,Tree in an AccordionPane not yet focused will call fetch() from its store and render itself,,Dijit,future,new,1.4.0,2010-02-17T15:20:15-08:00,high,
+10797,[IE 6] Dijit.Dialog sticks to the right side of the page when using html fieldsets  OR  div elements width specified height  value,,Dijit,tbd,new,1.4.0,2010-03-01T01:02:37-08:00,high,
+10815,[patch][cla]dijit.Tree dndSource can never set pure dnd target,,Dijit,tbd,new,1.4.0,2010-03-03T21:24:49-08:00,high,
+11226,"Uncaught exception in dijit/focus.js if current focus on input with ""display: none""",,Dijit,future,new,1.4.1,2010-05-27T03:10:55-07:00,high,
+11479,Gray Out Check Box and Radio Button Labels,,Dijit - LnF,future,new,1.5,2010-07-23T11:36:28-07:00,high,
+11713,dojo.query docs,,Documentation,tbd,new,1.5,2010-09-10T11:38:24-07:00,high,ttrenka
+11736,dijit.Editor IE8: Scrollbars appear when selecting an image,,Editor,future,new,1.5,2010-09-15T08:12:47-07:00,high,
+11758,dojox GridContainer DragHandle Problem,,DojoX Layout,tbd,new,1.5,2010-09-19T18:38:46-07:00,high,
+11759,[PATCH][CLA]GridContainerLite postCreate call twice unnessary,,DojoX Layout,tbd,new,1.5,2010-09-19T20:44:04-07:00,high,
+11811,FloatingPane DockIcon dojoxDockRestoreButton missing arrowUp.png,,DojoX Layout,tbd,new,1.5,2010-10-01T06:37:17-07:00,high,
+11924,Dialog: first open with href content doesn't auto resize,,Dijit,tbd,new,1.5,2010-11-05T13:13:24-07:00,high,
+11988,_Widgets have no way to reliably determine whether they are visible,,Dijit,future,new,1.5,2010-11-30T02:22:28-08:00,high,
+11989,_Templated: call resize() on _supportingWidgets,,Dijit,future,reopened,1.5,2010-11-30T02:24:31-08:00,high,
+12160,Dialog widget with action bar interaction issue,,Dijit,tbd,new,1.6.0b1,2011-01-13T21:33:42-08:00,high,"polomm@…, doughays"
+12241,Content Pane has problems if ioMethod='dojo.xhrPost',,DojoX Layout,tbd,new,1.5,2011-02-02T09:45:57-08:00,high,
+12298,TooltipDialog: unable to focus iframe inside of dijit.TooltipDialog,,Dijit,future,new,1.6.0b1,2011-02-16T03:20:20-08:00,high,
+12350,"Tooltip: when rendered 'above' an anchor, mis-renders on IE7",,Dijit - LnF,future,new,1.6.0rc1,2011-02-25T01:26:21-08:00,high,
+12403,ContenPane does not add scripts onto the DOM in Firefox 4,,DojoX Layout,tbd,new,1.5,2011-03-08T00:21:56-08:00,high,
+12533,dojox.layout.TableContainer ignores programmatic lables and titles,,DojoX Layout,tbd,new,1.6.0,2011-03-25T03:44:01-07:00,high,
+12612,"XHR attribute ""failOk"" still not surpress all browser console error messages",,Core,tbd,new,1.6.0,2011-04-06T07:14:59-07:00,high,
+12684,"dojo.query, dojo.getObject, dojo.setObject API-docs is missing",,Documentation,tbd,new,1.6.0,2011-04-15T00:06:28-07:00,high,
+12747,Nested object serialization with objectToQuery,,Core,tbd,new,1.6.0,2011-04-21T20:48:31-07:00,high,
+12802,Menu: broken when declared inside a TitlePane,,Dijit,2.0,reopened,1.6.0,2011-04-28T04:00:53-07:00,high,
+12843,Dialog: does not show when you set css display to none in external stylesheet vs inline,,Dijit,future,new,1.6.0,2011-05-03T08:36:26-07:00,high,
+12953,Tree: node cache can interfere with the appearance of a re-added node,,Dijit,tbd,new,1.6.1,2011-05-16T09:40:35-07:00,high,
+12982,GridContainer offsets column index when manually organized,,DojoX Layout,tbd,new,1.6.1,2011-05-18T08:52:55-07:00,high,
+13070,dojox.form.uploader.plugins.Flash given URL cannot include several parameters,,General,tbd,new,1.6.1,2011-05-25T03:14:45-07:00,high,
+13112,"TabContainer: very slow tab changed, if content is big",,Dijit,future,new,1.6.1,2011-05-30T12:15:18-07:00,high,
+13141,Tree: selection box is limited only by the visible width of the tree (claro),,Dijit - LnF,tbd,new,1.6.1,2011-06-01T01:08:12-07:00,high,
+13175,Menu: programmatic example fails (Opera 11.11),,Dijit,future,new,1.6.1,2011-06-05T01:38:27-07:00,high,
+13247,FF first load of iframes nested in TabContainer renders iframes in wrong place,,Dijit,tbd,new,1.7.0b1,2011-06-16T06:38:32-07:00,high,
+13356,tree.dndSource.onDndRop: Parameter childItem is undefined when calling model.isItem(childItem),,Dijit,tbd,new,1.6.0,2011-07-03T02:09:37-07:00,high,
+13395,scripts_evals_in_global_scope failure in dojox.layout.ContentPane,,DojoX Layout,tbd,new,1.7.0b1,2011-07-10T00:04:22-07:00,high,
+13425,dojox.mdnd.AreaManager Can't handle multiple dragHandleClass,,General,tbd,new,1.6.1,2011-07-12T11:12:33-07:00,high,amuraco@…
+13427,dijit.Editor does not allow single quotes in an img alt attribute in IE,,Editor,tbd,new,1.6.0,2011-07-12T17:03:21-07:00,high,
+13460,Emoticon breaks if set as image again after double clicking the emotion,,Editor,tbd,new,1.7.0b1,2011-07-17T20:11:15-07:00,high,
+13479,Dijit layout needs page refresh in Opera 11.50,,Dijit,future,new,1.6.0,2011-07-19T10:01:50-07:00,high,
+13726,"Tree: items dropped in order they were selected, rather than order before drag",,Dijit,future,new,1.6.1,2011-08-19T01:27:31-07:00,high,"liucougar, zhongsq@…"
+13744,dijit.Editor make IE crash using EnterKeyHandling plugin,,Editor,tbd,new,1.6.1,2011-08-23T11:09:17-07:00,high,
+13947,"TitlePane: closing then opening makes text in !ValidationTextBox disappear (IE6, IE7)",,Dijit,2.0,new,1.6.1,2011-09-20T07:33:24-07:00,high,sdas@…
+14017,ExpandoPane showing/hiding animation wrong when in right/bottom/trailing region,,DojoX Layout,tbd,new,1.6.1,2011-09-28T17:19:58-07:00,high,
+14111,hovering a dropdown causes mouseout event on anchor widget,,Dijit,future,new,1.6.1,2011-10-18T04:51:09-07:00,high,
+14114,Chrome / Webkit removing event.layerX and event.layerY,,General,tbd,new,1.6.1,2011-10-18T12:11:05-07:00,high,
+14208,Firebug shows a correct line number and incorrect (parent) file name in reporting a JavaScript error when a script is loaded dynamically with Dojo Toolkit,,Core,tbd,new,1.6.1,2011-11-03T11:33:45-07:00,high,
+14233,Dojox.mobile.Swapview not restored correctly,,General,1.8,new,1.6.1,2011-11-06T23:13:03-08:00,high,
+14255,Dojox: dojox.layout.ContentPane loads iframes twice,,DojoX Layout,tbd,new,1.7.0,2011-11-11T07:34:31-08:00,high,
+14267,TooltipDialog: width not correctly set in its first display when there are left and/or right paddings set,,Dijit,tbd,new,1.6.1,2011-11-15T12:21:15-08:00,high,
+14275,dojo.safeMixin can fail in IE,,General,tbd,new,1.6.1,2011-11-17T09:12:21-08:00,high,
+14295,"Calendar: month drop down's right border not visible for IE8, quirks mode",,Dijit,tbd,new,1.6.1,2011-11-22T18:38:30-08:00,high,
+14355,http://dojotoolkit.org/api/,,Documentation,tbd,new,1.7.0,2011-12-01T01:08:52-08:00,high,
+14379,[patch][cla] GridContainerLite - publish restriction only on keyboard event,,DojoX Layout,1.8,new,1.7.0,2011-12-03T11:56:56-08:00,high,
+14380,[patch][cla] GridContainerLite reduce duplicateCode to compute colWidth,,DojoX Layout,1.8,new,1.7.0,2011-12-04T03:08:54-08:00,high,
+14443,Tree: must fail gracefully when last selected node no longer exists,,Dijit,tbd,new,1.7.1,2011-12-10T07:23:29-08:00,high,"Simon, Speich"
+14493,"""expires"" key in cookieProps object gets overwritten by dojo.cookie()",,General,tbd,new,1.6.0,2011-12-16T11:57:58-08:00,high,
+14584,"dojox.layout.ContentPane: ""first Dojo wins"" policy should not throw ""defineAlreadyDefined"" error",,DojoX Layout,tbd,new,1.7.1,2012-01-09T08:50:49-08:00,high,rcgill
+14596,Reference guide updates to use AMD loader,,Documentation,tbd,new,1.7.1,2012-01-11T04:29:18-08:00,high,peter.kokot@…
+14612,OpenSocial gadgets using dojo cannot use dojo/xhr to do xhr.,,Core,1.8,new,1.7.1,2012-01-12T12:30:03-08:00,high,BryanForbes
+14613,dojo.back.init() with amd asynch mode,,General,tbd,new,1.7.1,2012-01-12T14:06:24-08:00,high,
+14625,dojox.form.Uploader uses different filenames for IE vs other (filenames0 vs filenames[]),,General,1.7.2,new,1.7.1,2012-01-16T05:30:42-08:00,high,
+12233,Tooltop position wrong with body position: relative + margin: auto,,Dijit,tbd,new,1.5,2011-01-31T15:51:30-08:00,low,
+12330,Dialog: doesn't work on WebOS browser,,Dijit,future,new,1.5,2011-02-22T12:34:42-08:00,low,
+13896,"Tab container not supporting width and height auto or 100% in browser like chrome, IE, Safari",,Dijit,tbd,new,1.6.1,2011-09-13T02:35:54-07:00,low,
+14057,Editor leaves artifacts from deleted characters,,Editor,tbd,new,1.6.1,2011-10-04T17:44:20-07:00,low,
+5698,error inputting negative numbers for ar locale,,Dijit,future,new,1.0,2008-01-27T20:03:34-08:00,blocker,hwcdl@…
+8509,IE8: header highlighting too short,,DojoX Grid,future,new,1.2.3,2009-01-26T21:16:51-08:00,blocker,
+12207,Error message from loader.js with the uri which contains German characters in IE8,,Core,tbd,new,1.5,2011-01-25T04:09:05-08:00,blocker,
+12222,Error in one dojo.ready() or dojo.addOnLoad() will break all following calls,,General,tbd,new,1.5,2011-01-28T14:16:26-08:00,blocker,
+2408,Escape key in browser kills cometd connection,,DojoX Cometd,future,new,0.4.1,2007-02-05T06:22:31-08:00,high,
+4513,"honor style=""..."" tags to widgets",,Dijit,future,new,0.9,2007-09-19T20:21:03-07:00,high,
+4641,Chronic leak in dijit.Menu(destroy won't destroy),,Dijit,future,new,0.9,2007-10-04T18:36:43-07:00,high,
+5605,"Implement or document ""i18n best practices"" for mail demo",,Dijit,future,new,1.0,2008-01-16T16:31:15-08:00,high,
+5653,InlineEditBox: blur of editor switches to view mode,,Dijit,2.0,new,1.0,2008-01-24T05:54:38-08:00,high,
+6391,RichText specifies height as attribute,,Editor,2.0,new,1.1.0,2008-04-03T06:11:49-07:00,high,"bill, alex"
+6493,Range support for Date and Timepicker,,DojoX Form,future,new,1.1.0,2008-04-10T07:56:08-07:00,high,
+6788,dojo._setOpacity will remove other filters on the domnodes when opacity==1,,General,future,new,1.1.0,2008-05-19T18:44:49-07:00,high,
+6814,"Error in ""load"" callback triggers ""error"" callback even though xhr request was successful.",,General,future,new,1.1.0,2008-05-23T11:38:51-07:00,high,"attila.lendvai, justin.driscoll@…"
+6834,Square brackets handled improperly in dojo attribute queries,,Core,future,new,1.1.1,2008-05-26T23:44:16-07:00,high,
+6848,dojo.io.script should have a way to explicitly provide errors,,Core,future,new,1.1.1,2008-05-29T14:58:40-07:00,high,"alex, jayant.b.sai@…"
+6897,backbutton with iframes breaks cometd connection,,General,future,new,1.1.1,2008-06-05T01:59:10-07:00,high,
+6901,console.debug fails when dealing with XML node lists in IE,,Core,future,new,1.1.1,2008-06-05T21:27:31-07:00,high,
+7076,Support deferred in DOH setUp/tearDown,,General,future,new,1.1.1,2008-06-27T16:02:28-07:00,high,"alex@…, jayant.b.sai@…"
+7932,dojox.form.MultiComboBox drop down menu resets selection,,DojoX Form,future,new,1.2.0,2008-10-22T03:41:13-07:00,high,
+8130,dojo.setSelectable should be dojo.attr('selectable'),,General,2.0,new,1.2.1,2008-11-19T15:49:17-08:00,high,"jburke, elatzukin"
+8242,Grid content does not display once containing div exceeds height threshold on FF3,,DojoX Grid,future,new,1.2.1,2008-12-07T18:22:17-08:00,high,
+8489,disallow id's with spaces,,Dijit,2.0,new,1.2.3,2009-01-23T20:03:29-08:00,high,
+8494,_Templated: remove whitespace from templates,,Dijit,future,new,1.2.3,2009-01-25T02:34:35-08:00,high,
+8519,layout widget addChild()/removeChild() try to do layout even when hidden,,Dijit,future,new,1.2.3,2009-01-27T10:29:50-08:00,high,
+8525,dojo.io.iframe.send should create a form if one isn't passed but POST is required,,Core,future,new,1.2.3,2009-01-27T15:16:59-08:00,high,alex
+8953,RTL broken in quirks mode (IE),,Core,future,new,1.3.0b3,2009-03-21T19:07:06-07:00,high,
+9106,keyboard column resizing bugs,,DojoX Grid,future,new,1.3.0,2009-04-10T07:55:24-07:00,high,becky
+9122,[patch] [cla] dojox.grid.DataGrid: setStore doesn't resize the grid if there are no items in the store,,DojoX Grid,future,new,1.3.0,2009-04-13T20:28:49-07:00,high,
+9160,RangeSlider: attr('value') has reversed return value in RTL mode,,DojoX Form,future,new,1.3.0,2009-04-17T20:13:10-07:00,high,
+9224,DataGrid will jump to the pageNode which has the selected row,,DojoX Grid,future,new,1.3.0,2009-04-29T19:20:52-07:00,high,
+9298,"FF3, dojo release 1.3, scroll position not persisted after render finished",,DojoX Grid,future,new,1.3.0,2009-05-14T04:33:09-07:00,high,"toonetown@…, BryanForbes@…, drschwar@…, hwcdl@…, hongg@…"
+9329,dojox.form.RangeSlider RTL bug,,DojoX Form,future,new,1.3.1,2009-05-22T10:50:20-07:00,high,tklipstien
+9375,support for WebKit's displayName feature of naming anonymous functions,,General,future,new,1.3.0,2009-06-04T06:39:25-07:00,high,
+9413,Tree: nodes initially show + expando icon even when no children,,Dijit,2.0,new,1.3.0,2009-06-15T20:14:23-07:00,high,
+9458,DataGrid disappears in a TabContainer,,DojoX Grid,future,new,1.3.0,2009-06-25T09:44:26-07:00,high,
+9464,vertical scroll position is reset when resizing columns of a grid,,DojoX Grid,future,new,1.3.0,2009-06-26T03:05:30-07:00,high,
+9530,Edit dijit Bug within http://archive.dojotoolkit.org/nightly/dojotoolkit/dojox/grid/tests/test_edit_dijit.html,,DojoX Grid,future,new,1.3.1,2009-07-10T03:14:10-07:00,high,doughays
+9547,[PATCH][CCLA] Editor:  IE Horizontal scrollbar calc in view returns incorrectly.,,DojoX Grid,future,reopened,1.3.0,2009-07-13T10:10:11-07:00,high,
+9595,Page Up and Page Down functions don't behave properly in DataGrid,,DojoX Grid,future,new,1.3.2,2009-07-22T09:01:00-07:00,high,"becky, jaredj"
+9722,can't scroll grid in grid_hideHdr test on FF,,DojoX Grid,future,reopened,1.3.2,2009-08-15T14:55:55-07:00,high,
+9723,grid passing _item to a formatter has trouble when defaultValue is set,,DojoX Grid,future,new,1.3.2,2009-08-15T21:56:55-07:00,high,
+9728,Grid automated tests,,DojoX Grid,future,new,1.3.2,2009-08-17T01:13:01-07:00,high,
+9736,"Tree: initial drag over tree node shows red avatar, should show green",,Dijit,future,new,1.3.2,2009-08-18T05:46:36-07:00,high,
+9749,[patch][cla]Column DnD to same spot = sort?,,DojoX Grid,future,new,1.3.2,2009-08-20T13:49:08-07:00,high,
+9868,dojo grid memory leak on ShowAll/HideAll,,DojoX Grid,future,new,1.3.2,2009-09-10T21:21:45-07:00,high,
+9874,[patch][cla]ComboBox Grid Cell does not close popup when editing is cancelled,,DojoX Grid,future,new,1.3.2,2009-09-11T10:36:52-07:00,high,
+9942,[patch] [cla] Dojo array iteration methods deviate from spec on sparse arrays,,General,2.0,new,1.3.2,2009-09-22T18:42:54-07:00,high,elazutkin
+10006,"_CheckedMultiSelectItem should not capture ""onmousedown"" event",,DojoX Form,future,new,1.3.2,2009-10-01T13:24:45-07:00,high,
+10064,Grid:  Keyboard scrolling through header doesn't always work correctly,,DojoX Grid,future,new,1.3.2,2009-10-08T14:01:39-07:00,high,
+10065,Grid: scrolling issue with Firefox,,DojoX Grid,future,new,1.3.2,2009-10-08T14:26:31-07:00,high,becky
+10119,[meta] Update API cheet sheet for new APIs,,Documentation,future,new,1.4.0b,2009-10-15T06:56:22-07:00,high,
+10133,DataGrid - Year is clipped,,DojoX Grid,future,new,1.4.0b,2009-10-16T14:35:56-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…"
+10134,IE8: No keyboard focus shown in edit field within grid,,DojoX Grid,future,new,1.4.0b,2009-10-16T14:42:46-07:00,high,
+10144,Base Data Grid - Keyboard focus incomplete,,DojoX Grid,future,new,1.4.0b,2009-10-19T10:47:38-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…"
+10149,Datagrid - Probles to navigate between cells using JAWS,,DojoX Grid,future,new,1.4.0b,2009-10-19T14:54:00-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…"
+10151,Base DataGrid - Problems when reading form elements using JAWS,,DojoX Grid,future,new,1.4.0b,2009-10-19T18:26:37-07:00,high,"drschwartz, tmayeur@…, toonetown, Evan, becky"
+10158,Datagrid Accessibility- Mouse pointer is not displayed using high contrast.,,DojoX Grid,future,new,1.4.0b,2009-10-20T11:23:09-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…, becky"
+10180,Grid row selector icon does not show in a dialog,,DojoX Grid,future,new,1.4.0b,2009-10-22T01:12:23-07:00,high,
+10185,Datagrid Accessibility - Problems reading column headers with JAWS,,DojoX Grid,future,new,1.4.0b,2009-10-22T10:49:06-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…, becky"
+10520,dojox.date.timezone inline docs needed,,Dojox,tbd,new,1.4.0,2009-12-16T11:07:01-08:00,high,
+10546,Menu: menu closes after mousing past popup MenuItem (IE6),,Dijit,tbd,new,1.4.0,2009-12-21T17:49:55-08:00,high,
+10564,Grid breaks DND in dojox.layout.GridContainer when columns are sortable,,DojoX Layout,tbd,new,1.4.0,2009-12-26T06:48:40-08:00,high,
+10722,queryToObject throws exception for malformed URI sequence,,Core,tbd,new,1.4.0,2010-02-05T10:28:05-08:00,high,mlogan@…
+10941,Removing nodes should remove event handlers to prevent memory leaks.,,Core,future,new,1.4.0,2010-04-03T18:06:20-07:00,high,
+11064,clicking disabled widgets focuses them (webkit),,Dijit,future,new,1.5.0b1,2010-04-29T06:15:45-07:00,high,
+11230,Dojo fails to detect successfully loaded resources (chrome-extension),,Core,tbd,reopened,1.4.3,2010-05-28T05:23:18-07:00,high,
+11445,Defered loading in Firefox produces: 'console is not defined' error,,General,tbd,new,1.4.3,2010-07-15T09:30:10-07:00,high,philip@…
+11448,"""Type mismatch"" error when loading dojo 1.4 in IE 6",,General,tbd,new,1.4.0,2010-07-16T10:50:13-07:00,high,
+11452,[meta] remove attr() as a getter setter in dojox,,Dojox,future,new,1.5,2010-07-18T09:55:59-07:00,high,
+11460,"Array.prototype.sort is unstable in some versions of V8, leading to weird behavior inside Dojo",,General,tbd,new,1.5,2010-07-19T04:02:10-07:00,high,phiggins
+11462,"claro: right/left tabs unusable (IE, RTL mode)",,Dijit - LnF,tbd,new,1.5,2010-07-19T18:17:47-07:00,high,
+11523,CSS loading race condition,,Dijit,2.0,new,1.5,2010-08-02T08:18:45-07:00,high,
+11672,API tool doesn't show ComboBox pageSize,,Documentation,tbd,new,1.5,2010-09-02T07:52:06-07:00,high,
+11715,Missing closing tags (mostly test) files.,,General,future,new,1.5,2010-09-11T23:26:51-07:00,high,
+11718,dynamic treegrid for multiple dojo in one page,,General,tbd,new,1.5,2010-09-13T02:29:11-07:00,high,
+11752,dojo._base.html dojo._getMarginBox problem with FireFox,,Core,tbd,new,1.4.3,2010-09-17T07:29:22-07:00,high,"elazutkin, doughays"
+11812,dojo.create fails to add all attributes of input type=hidden in IE 7,,General,tbd,new,1.5,2010-10-01T06:57:07-07:00,high,
+11828,dojo.coords not deprecated in docs,,Documentation,tbd,new,1.5,2010-10-04T18:30:54-07:00,high,ttrenka
+11858,IE9: viewport dimensions incorrect with larger font DPI,,General,tbd,new,1.5,2010-10-13T15:15:09-07:00,high,
+11909,Tree: dead zone dropping between nodes (IE Tree_Dnd.html test failure),,Dijit,tbd,new,1.5,2010-11-03T06:19:53-07:00,high,
+12059,firebug.js: replacements for console logging functions break if defined more than once,,General,tbd,new,1.4.3,2010-12-08T12:27:28-08:00,high,steve.pemberton@…
+12102,relative urls in copy/paste documentation examples,,Documentation,tbd,new,1.5,2010-12-17T15:11:40-08:00,high,"phiggins, nonken, klipstein"
+12121,"dojo.indexOf uses ==, should use ===",,Core,tbd,new,1.5,2010-12-27T12:23:38-08:00,high,
+12156,13 nested dojo.require calls can cause stack overflow on MSIE 7,,General,tbd,new,1.5,2011-01-12T16:12:38-08:00,high,
+12227,dojo.fieldToObject Not Working for Radio Button Group,,General,tbd,new,1.5,2011-01-31T02:24:34-08:00,high,
+12260,Fix debugAtAllCosts with DOH for 1.5,,TestFramework,future,new,1.5,2011-02-05T21:03:06-08:00,high,dave@…
+12324,__XhrArgs.load called without 'loadOrError' parameter,,Core,tbd,new,1.4.3,2011-02-20T20:40:59-08:00,high,
+12479,Dialog: clicking underlay then pressing tab focuses objects behind dialog,,Dijit,future,new,1.6.0,2011-03-18T22:03:29-07:00,high,
+12565,Nodelist.traverse tests (closest and parents) fail on opera 11,,Core,tbd,new,1.6.0,2011-03-29T14:17:49-07:00,high,
+12566,tests.window.viewportQuirks fails on opera 11,,Core,tbd,new,1.6.0,2011-03-29T14:18:40-07:00,high,
+12760,dojox.layout.scrollPane has scrollbar on left instead of right,,DojoX Layout,tbd,new,1.6.0,2011-04-23T12:31:17-07:00,high,
+12997,[docs] Update examples to explicitly require dojo.parser,,Documentation,1.8,new,,2011-05-19T09:07:35-07:00,high,
+13036,[meta] lint fixes,,General,tbd,new,1.6.1,2011-05-21T20:18:20-07:00,high,
+13411,TabContainer tab renders with huge (51000px) width,,Dijit,tbd,new,1.6.1,2011-07-11T10:08:34-07:00,high,
+13791,Tree: support DnD between trees/plain containers connected to different stores,,Dijit,future,new,1.6.1,2011-08-31T06:37:34-07:00,high,
+14093,dojo.i18n.getLocalization() not working in Rhino environment,,Core,tbd,new,1.7.0b1,2011-10-13T07:49:50-07:00,high,"rcgill, peller"
+14193,pagedown button works poorly on chrome,,Editor,future,new,1.6.1,2011-11-01T19:44:51-07:00,high,
+14240,Tooltip dialog and dropdown button problem in IE,,Dijit,tbd,new,1.6.1,2011-11-07T20:37:44-08:00,high,
+14251,use CSS transitions instead of javascript animations,,Dijit,2.0,new,1.6.1,2011-11-10T13:36:52-08:00,high,
+14306,missing reference doc for radiostack,,Documentation,tbd,new,1.7.0,2011-11-23T23:57:00-08:00,high,
+14321,quirks tests run in standards mode on IE9,,TestFramework,tbd,new,1.7.0,2011-11-24T20:08:09-08:00,high,haysmark
+14322,[meta] IE9 test fixes,,General,1.8,new,1.7.0,2011-11-24T20:10:34-08:00,high,
+14519,User-specified format lost,,Editor,tbd,new,1.5,2011-12-21T14:55:52-08:00,high,
+14535,dojo.mixin generates inconsistent mixins,,Core,tbd,new,1.7.1,2011-12-28T08:44:17-08:00,high,
+5903,BorderContainer splitter minimum goes beyond border width,,Dijit,future,new,1.0,2008-02-18T21:34:04-08:00,low,
+6117,wrap certain constructs in tables for browser bidi quirks,,Dijit,future,new,1.0,2008-03-07T17:41:39-08:00,low,
+12965,NodeList.filter() doesn't work in webkitMobile builds,alex,Query,tbd,new,1.6.1,2011-05-17T06:35:22-07:00,high,
+11433,dojo.toJson returns invalid JSON for undefined element,anonymous,General,tbd,reopened,1.4.3,2010-07-12T14:27:19-07:00,high,
+13155,dojox.drawing exceptions on startup,asaelh,Dojox,tbd,new,1.6.1,2011-06-01T22:52:44-07:00,high,"mwilcox, liucougar"
+14396,grid accessibility:  need to be able to add a summary attribute to a DataGrid,becky,Accessibility,1.7.2,new,1.7.0,2011-12-05T10:35:33-08:00,blocker,evan
+13554,dojo.css breaks IE8 text size changes,becky,a11y - review,tbd,new,1.6.1,2011-08-01T14:30:34-07:00,high,"itorrey, nonken, becky"
+5382,Memory leak on new() and destroy() widget,bill,Dijit,future,new,1.0,2007-12-13T22:16:01-08:00,blocker,
+11923,JAWS form mode does not announce tab label on tabcontainer,bill,Accessibility,tbd,new,1.4.1,2010-11-05T13:03:24-07:00,blocker,
+1096,Tooltips don't work on image maps,bill,Dijit,future,new,0.2,2006-07-06T23:25:43-07:00,high,
+3138,On mouse click menu close browser scrolls to last focused item,bill,Dijit,future,new,0.9,2007-05-24T10:34:06-07:00,high,
+3300,"Dialog, Tooltip: problems because they are moved to document.body",bill,Dijit,future,new,0.9,2007-06-06T11:57:33-07:00,high,tk
+3383,ProgressBar: can't be inlined,bill,Dijit,2.0,new,0.9,2007-06-12T10:52:25-07:00,high,
+3905,"Patch dojo.parser, OR  stop putting widget code in event callbacks such as onShow, onRezised etc",bill,Dijit,2.0,new,0.9,2007-07-30T13:03:27-07:00,high,
+3957,Tooltips do not have ARIA markup,bill,Accessibility,future,new,0.9,2007-08-02T09:55:56-07:00,high,
+4560,layout widgets don't react to browser font-size adjustments correctly,bill,Accessibility,future,new,0.9,2007-09-25T12:28:06-07:00,high,
+4768,[meta] update dijit test files for proper a11y,bill,Accessibility,future,new,0.9,2007-10-17T14:26:51-07:00,high,
+4793,menu: menu gets clipped when screen is too small,bill,Accessibility,future,new,0.9,2007-10-19T09:40:58-07:00,high,
+4798,ColorPalette: Window-Eyes screen reader not speaking color names,bill,Accessibility,future,new,0.9,2007-10-19T12:13:35-07:00,high,
+5005,can't insert templated widget's DOM tree into an iframe,bill,Dijit,future,new,0.9,2007-11-03T23:19:17-07:00,high,
+5494,InlineEditBox: fails to appear inline for absolutely positioned node,bill,Dijit,future,new,1.0,2008-01-02T17:22:35-08:00,high,
+6236,Tree: focus not updated correctly in various cases,bill,Accessibility,future,assigned,1.0,2008-03-17T14:49:54-07:00,high,mwilcox
+6346,Tree DnD: drop twice the same object results in obscure error message.,bill,Dijit,future,new,0.9,2008-03-28T00:53:20-07:00,high,
+7225,[patch][cla]DnD highlighting is not sensitive to the direction of the container (horizontal vs. vertical),bill,themes,1.8,new,1.1.1,2008-07-17T10:04:56-07:00,high,elazutkin
+8083,TabContainer: aria-expanded state missing or improperly implemented,bill,Accessibility,future,new,1.2.1,2008-11-13T08:21:41-08:00,high,davidb
+8267,"Combined bug when the tooltip is placed overlapping the ""around"" node.",bill,Dijit,future,new,1.2.3,2008-12-10T19:13:06-08:00,high,
+8306,Tree: destroy()  does not cancel request,bill,Dijit,2.0,new,1.2.3,2008-12-22T05:17:22-08:00,high,
+8464,MenuItem:  shouldn't be able to invoke context menu when focus is on a menu item.,bill,Accessibility,future,new,1.2.3,2009-01-20T11:31:15-08:00,high,"becky, bill, davidb"
+8513,Menu: reversed focus events on menu and menu items when menu is first opened,bill,Accessibility,future,new,1.2.3,2009-01-27T07:21:06-08:00,high,"davidb, clown"
+9226,Tree: reverting underlying datastore doesn't refresh tree,bill,Dijit,future,new,1.3.0,2009-04-30T02:40:35-07:00,high,jaredj
+9475,Tree: drag and drop is defect if you drop outside a node,bill,Dijit,future,new,1.3.1,2009-06-29T02:11:33-07:00,high,
+9610,Menu: targetNodeIds value is stale,bill,Dijit,future,new,1.3.2,2009-07-24T23:14:44-07:00,high,
+9638,RichText emits textarea element into HTML head when included in a layer,bill,Dijit - Form,2.0,assigned,1.3.2,2009-07-31T10:23:57-07:00,high,
+9743,Menu: appears in wrong position when attached to an node inside of an iframe,bill,Dijit,future,new,1.3.2,2009-08-20T09:24:55-07:00,high,
+9982,"tooltip display error in dojox.charting test case on IE6,7,8",bill,Dijit,future,new,1.3.2,2009-09-27T06:21:53-07:00,high,elazutkin
+9988,ToggleButton:  changed label not spoken properly by screen reader,bill,Accessibility,future,new,1.3.2,2009-09-28T14:01:12-07:00,high,
+10030,ContentPane: default to 0 padding when single child widget,bill,Dijit,future,new,1.3.2,2009-10-06T04:25:48-07:00,high,toonetown
+10296,Menu: Destroying menu items with focus leaves widget in a bad state,bill,Dijit,future,assigned,1.4.0b,2009-11-09T07:57:55-08:00,high,
+10777,Dialog: dialog containing VML object causes errors requiring browser restart in IE8,bill,Dijit,future,assigned,1.4.0,2010-02-22T11:30:56-08:00,high,navtej.sadhal@…
+10799,Using jsID in declarative objects doesn't cause the Object to delete it's variable when destoryed.,bill,Parser,future,new,1.4.0,2010-03-01T05:44:23-08:00,high,
+11060,Editor font size smaller than page when browser set to small font size (FF),bill,Dijit,future,new,1.5.0b1,2010-04-28T15:46:52-07:00,high,
+11145,TextArea: placeHolder parameter does not work for dijit.form.SimpleTextarea widgets,bill,Dijit - Form,2.0,assigned,1.5.0b2,2010-05-14T03:42:44-07:00,high,
+11154,TabContainer: mouse over menu button scrolls tab list (IE7 RTL),bill,Dijit,future,new,1.5.0b2,2010-05-18T06:58:47-07:00,high,
+11242,style disparity (string vs. hash),bill,Parser,2.0,new,1.5.0b2,2010-05-31T01:55:29-07:00,high,dante
+11421,Select: drop down mis-positioned when drop down causes window scrollbar to appear (RTL mode),bill,Dijit - Form,future,new,1.5.0b2,2010-07-06T09:08:21-07:00,high,
+11701,dojo.parser.parse ignores dojoType on the root element; cannot process document fragments,bill,Parser,tbd,new,1.5,2010-09-08T10:30:06-07:00,high,
+11822,BackgroundIFrame: applet over underlay,bill,Dijit,future,new,1.5,2010-10-04T00:09:41-07:00,high,ksv
+11830,ValidationTextBox: label node surrounding ValidationTextBox / focus problems after validation error,bill,Dijit - Form,tbd,new,1.5,2010-10-05T02:04:59-07:00,high,
+11866,TabContainer: odd behavior in canceling in-flight XHRs,bill,Dijit,tbd,new,1.4.3,2010-10-19T01:38:25-07:00,high,
+12643,Tree: function pasteItem breaks if newParentItem is null,bill,Dijit,tbd,new,1.6.0,2011-04-11T08:03:22-07:00,high,WienerDog
+12791,Dialog: forces start zIndex to 950,bill,Dijit,tbd,new,1.6.0,2011-04-26T07:49:35-07:00,high,
+12877,"MenBar: after selecting menu choice, arrow navigation jumps back to first item",bill,Accessibility,1.8,new,1.6.1,2011-05-08T03:50:00-07:00,high,
+13064,IE6: TooltipDialog renders badly,bill,Dijit,tbd,new,1.6.1,2011-05-24T07:01:36-07:00,high,
+13493,Dialog: TextBox content disappears (IE6/claro),bill,Dijit,tbd,new,1.7.0b1,2011-07-21T04:12:05-07:00,high,
+13604,hidden popup menu can cause scroll bar,bill,Dijit,1.8,new,1.5,2011-08-07T23:42:10-07:00,high,
+14433,[regression] TextBox: layout quirks on IE7/quirksmode (TextBox_sizes.html test failures),bill,Dijit - Form,1.7.2,new,1.7.0,2011-12-09T04:47:53-08:00,high,doughays
+13385,NumberSpinner: lingering hover state when mouse moved quickly,bill,Dijit,2.0,new,1.6.1,2011-07-07T20:06:01-07:00,low,doughays
+2361,dojo.undo.browser: Consider making convenience methods for getting/setting current state.,blowery,General,future,new,0.4.1,2007-01-23T14:13:07-08:00,high,
+2481,dojo.undo.browser: Expand Opera and Safari support,blowery,General,future,new,0.4.1,2007-02-21T10:16:12-08:00,high,
+2973,Dojo's back button with bookmarking only saves the last page when another site is visited,blowery,Core,2.0,new,0.4.2,2007-05-09T19:15:11-07:00,high,
+3418,dojo.undo.browser with bookmarking bug,blowery,Core,future,new,0.4,2007-06-13T23:51:54-07:00,high,
+5955,back button support acting really strange in IE6,blowery,Core,future,new,1.0,2008-02-22T22:42:36-08:00,high,
+7844,dojo.back not functional in IE8,blowery,General,future,new,1.2.0,2008-10-10T22:28:57-07:00,high,blowery
+8038,Cannot set cookie for various conditions under IE6 or IE7,blowery,Core,future,assigned,1.2.0,2008-11-07T02:34:14-08:00,high,
+9217,dojo.cookie can not change window scope.,blowery,Core,future,assigned,1.3.0,2009-04-28T22:17:41-07:00,high,
+7273,"After sort, scroller reset to (0,0)",BryanForbes,DojoX Grid,1.8,reopened,1.6.0,2008-07-24T08:27:31-07:00,blocker,"becky, davidb"
+7815,FF3 does not display editor toolbar,BryanForbes,DojoX Grid,future,new,1.2.0,2008-10-07T15:00:55-07:00,blocker,
+8263,[patch]dojox.grid.DataGrid does not honor sortDesc of cell,BryanForbes,DojoX Grid,future,new,1.2.2,2008-12-10T12:35:31-08:00,blocker,
+11370,DataGrid leaks memory when scrolling and does not respect keepRows attribute.,BryanForbes,DojoX Grid,tbd,new,1.4.3,2010-06-24T15:51:13-07:00,blocker,"Evan, jaredj, ptwobrusell"
+11821,Class Attribute Overriden When Attaching DataGrids to divs.,BryanForbes,DojoX Grid,tbd,new,1.5,2010-10-03T15:34:04-07:00,blocker,
+12812,dojo.fx animation functions leak connections,BryanForbes,fx,tbd,new,1.6.0,2011-04-29T07:49:57-07:00,blocker,
+5627,Grid and dijit.form.CheckBox format error,BryanForbes,DojoX Grid,future,new,1.0,2008-01-21T00:32:14-08:00,high,
+6774,Possibly better handling of heights in dojo.fx.wipeIn,BryanForbes,fx,future,new,1.1.0,2008-05-16T15:51:51-07:00,high,
+7230,Grid: add advanced keyboard support,BryanForbes,Accessibility,future,new,1.1.1,2008-07-17T10:47:45-07:00,high,clown
+7286,Navigating through cells with keyboard,BryanForbes,DojoX Grid,future,new,1.1.0,2008-07-25T15:17:25-07:00,high,
+7812,complete the documentation of the grid,BryanForbes,Documentation,future,new,1.2beta,2008-10-07T04:07:37-07:00,high,"remi, nathan, toonetown"
+8104,grid passes field name to onApplyCellEdit - should be integer,BryanForbes,DojoX Grid,future,new,1.2.1,2008-11-16T18:16:08-08:00,high,
+8208,grid.rowHeightChanged(rownum) does nothing,BryanForbes,DojoX Grid,future,new,1.1.1,2008-12-02T06:00:13-08:00,high,
+8264,"Dojo Grid editable field not displaying ""<something""",BryanForbes,DojoX Grid,future,new,1.1.1,2008-12-10T12:45:04-08:00,high,
+8351,onApplyCellEdit for cells with dojox.grid.cells.Bool type is called 2 times (except the first time),BryanForbes,DojoX Grid,future,new,1.2.3,2009-01-05T08:20:09-08:00,high,
+8360,autoHeigh does not work property if grid has horizontal scroll bar,BryanForbes,DojoX Grid,future,new,1.2.3,2009-01-06T14:39:18-08:00,high,
+8361,dijit validation in grid error state doesn't blur,BryanForbes,DojoX Grid,future,new,1.2.3,2009-01-06T14:44:38-08:00,high,
+8376,Grid does not automatically refresh after you delete large numbers of items that back it,BryanForbes,DojoX Grid,future,new,1.2.3,2009-01-08T14:35:41-08:00,high,
+8529,problem with debugAtAllCost and _Grid.js,BryanForbes,DojoX Grid,future,new,1.2.3,2009-01-28T02:00:24-08:00,high,
+8637,[patch]Key Selection Bug in the DataGrid,BryanForbes,DojoX Grid,future,new,1.2.3,2009-02-12T08:08:25-08:00,high,
+8641,dojox.grid title column not lined up with data column,BryanForbes,DojoX Grid,future,new,1.2.3,2009-02-12T14:07:49-08:00,high,
+8711,dojox.grid.DataGrid API doc for rowSelector,BryanForbes,DojoX Grid,future,new,1.3.0b1,2009-02-20T13:21:54-08:00,high,
+8714,"dojox.grid,DataGrid column sizes do not line up with headers",BryanForbes,DojoX Grid,1.6,reopened,1.3.0b1,2009-02-20T16:36:15-08:00,high,
+8740,dojox.grid.DataGrid cells can't mix colspan & rowspan,BryanForbes,DojoX Grid,future,new,1.3.0b1,2009-02-24T23:07:53-08:00,high,
+8759,edit mode is lost  when transitioning to a new row,BryanForbes,DojoX Grid,future,new,1.3.0b1,2009-02-26T12:19:11-08:00,high,becky
+8825,There needs to be a keyboard mechanism to change column order,BryanForbes,DojoX Grid,future,new,1.3.0b2,2009-03-06T11:12:00-08:00,high,becky
+8861,IE8:  empty data grid doesn't render properly,BryanForbes,DojoX Grid,future,new,1.3.0b3,2009-03-11T07:22:02-07:00,high,becky
+8886,DataGrid Focus Issue with Select Cell When Always Editing,BryanForbes,DojoX Grid,tbd,new,1.3.0b3,2009-03-13T12:45:43-07:00,high,
+9144,Grid: Down and Up Arrows Stop Working in IE 6,BryanForbes,DojoX Grid,future,new,1.3.0,2009-04-16T11:14:04-07:00,high,"toonetown, becky"
+9157,DataGrid selection invalid after items removed,BryanForbes,DojoX Grid,future,reopened,1.3.0,2009-04-17T12:56:12-07:00,high,
+9181,dojox.grid.cells.Bool no longer renders as alwaysEditing when declared in markup,BryanForbes,DojoX Grid,tbd,new,1.3.0,2009-04-21T19:13:33-07:00,high,
+9237,[patch][cla]DataGrid Bool click discards same row in-progress edit,BryanForbes,DojoX Grid,tbd,new,1.3.0,2009-05-02T13:11:14-07:00,high,frank.fortson@…
+9265,keyboard focus not visible in IE6 using tundra theme,BryanForbes,DojoX Grid,future,new,1.3.0,2009-05-07T11:49:02-07:00,high,becky
+9485,tabing into grid data that contains a checkbox sets focus to the checkbox rather than 1st cell,BryanForbes,DojoX Grid,tbd,new,1.2.0,2009-06-30T14:00:51-07:00,high,clown
+9573,"Grid misleading keyboard focus indicator - dojo latest svn(090720)/FF3, IE7, Chrome2, Safari4",BryanForbes,Accessibility,future,new,1.3.0,2009-07-20T02:21:28-07:00,high,"toonetown@…, Becky_Gibson@…, drschwar@…, hwcdl@…, hongg@…"
+9579,dataGrid marks cells as dirty when editing finishes though value isn't changed,BryanForbes,DojoX Grid,tbd,new,1.3.1,2009-07-21T00:00:54-07:00,high,
+9706,[regression] Reduce measurements in the grid,BryanForbes,DojoX Grid,1.8,reopened,1.3.2,2009-08-12T08:32:19-07:00,high,
+9844,dojox.grid.DataGrid dijit widget calls setValue to the store with invalid values,BryanForbes,DojoX Grid,tbd,new,1.3.2,2009-09-07T07:31:50-07:00,high,
+9912,"[Latest trunk / DataGrid / Editable Feature / FF3.0,3.5] - RTE not rendered in editable cell",BryanForbes,DojoX Grid,future,new,1.3.2,2009-09-17T08:39:56-07:00,high,"toonetown@…, drschwar@…, hwcdl@…, hongg@…"
+9998,DataGrid when after cell edit enter pressed fires onClickEvent with undefined rowIndex,BryanForbes,DojoX Grid,tbd,new,1.3.2,2009-09-30T11:33:43-07:00,high,
+10044,"Cannot set DataGrid.onRowClick directly, have to connect",BryanForbes,DojoX Grid,future,new,1.3.2,2009-10-07T08:22:41-07:00,high,
+10713,ItemFileWriteStore::setValue cause lost GridCellFocus on DataGrid,BryanForbes,DojoX Grid,tbd,new,1.4.0,2010-02-04T05:18:33-08:00,high,
+10853,grid:  datagrid inside of a border container with splitter grabs focus from splitter,BryanForbes,DojoX Grid,future,new,1.4.0,2010-03-18T08:58:46-07:00,high,
+10866,DataGrid in tab dropping items from DataStore when data changes,BryanForbes,DojoX Grid,tbd,new,1.4.0,2010-03-20T07:54:40-07:00,high,
+10926,DataGrid Header taking focus from other elements when refreshed,BryanForbes,DojoX Grid,tbd,new,1.4.1,2010-03-31T12:20:16-07:00,high,
+10983,a bug in dojox.grid.DataGrid.filter,BryanForbes,DojoX Grid,tbd,new,1.4.0,2010-04-12T00:35:23-07:00,high,
+11136,Checkstate in checkbox doesn't reflect the cells value after browser backward/forward,BryanForbes,DojoX Grid,tbd,new,1.4.2,2010-05-12T00:20:47-07:00,high,
+11186,Dojox.grid.DataGrid does work properly for hidden column after resizing column,BryanForbes,DojoX Grid,tbd,new,1.5.0b2,2010-05-21T04:54:10-07:00,high,
+11228,[patch]Grid column resize issues in Safari,BryanForbes,DojoX Grid,future,new,1.5.0b2,2010-05-27T13:08:53-07:00,high,
+11306,"treegrid's defaultOpen=""false"" not working properly",BryanForbes,DojoX Grid,tbd,new,1.5.0b2,2010-06-13T21:34:54-07:00,high,
+11328,memory growing when I click sort column of a grid in IE and FF,BryanForbes,DojoX Grid,tbd,new,1.4.3,2010-06-17T01:23:11-07:00,high,
+11343,a bug in the grid when populating cells with widgets (as in test_grid_formatters.html),BryanForbes,DojoX Grid,tbd,new,1.4.1,2010-06-21T09:06:03-07:00,high,
+11412,grid.loadingMessage is removed even though items have not been loaded yet,BryanForbes,DojoX Grid,tbd,new,1.5.0b2,2010-07-04T02:38:33-07:00,high,
+11437,dojox.grid.cells.DateTextBox problem in Dialog Box,BryanForbes,DojoX Grid,tbd,new,1.4.1,2010-07-13T10:40:43-07:00,high,
+11509,dojox.grid.cell.Editor toolbar non-functioning,BryanForbes,DojoX Grid,tbd,new,1.5,2010-07-30T08:09:01-07:00,high,
+11583,Missing DataGrid table header left border line in both IE/FF,BryanForbes,DojoX Grid,tbd,new,1.5,2010-08-17T13:12:56-07:00,high,
+11627,Grid rowSelector width issue,BryanForbes,DojoX Grid,future,new,1.5,2010-08-24T20:52:43-07:00,high,wangqsh@…
+11628,Grid header double click event can not be fired,BryanForbes,DojoX Grid,future,new,1.5,2010-08-24T21:04:54-07:00,high,wangqsh@…
+11681,"DataGrid, multiple view - rows not aligned when images inserted into cell using formatted",BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-03T05:07:11-07:00,high,hwcdl@…
+11698,cursor style incorrect in dojoxGrid when it finishes to load. (It shows loading hour glass cursor when its already done),BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-08T08:02:08-07:00,high,
+11721,Dojox Data Grid Rows and Dotted Borders not working under Google Chrome Windows,BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-13T19:03:37-07:00,high,
+11739,dojox.html.metrics.getTextBox() returns wrong height for texts including white-spaces,BryanForbes,Dojox,tbd,new,1.5,2010-09-16T04:59:17-07:00,high,schatz
+11753,dojox/grid/tests/test_subgrid.html has javascript error when grid expanded,BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-17T14:42:15-07:00,high,
+11778,Background broken by mouseover of high grid rows,BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-24T04:21:13-07:00,high,
+11804,Can't resize Grid columns in Opera 10.62.,BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-30T01:54:34-07:00,high,
+11809,dijit.form.CheckBox in cell in datagrid,BryanForbes,DojoX Grid,tbd,new,1.5,2010-09-30T21:34:26-07:00,high,
+11841,Grid header does not scroll when scrolling the contents of the x-axis in Opera 10.62.,BryanForbes,DojoX Grid,tbd,new,1.5,2010-10-08T03:59:09-07:00,high,
+11867,FocusManager tries to focus a node that is not visible,BryanForbes,DojoX Grid,tbd,new,1.5,2010-10-19T02:46:46-07:00,high,
+11878,doApplyCellEdit : _by_idx[inRowIndex] is undefined,BryanForbes,DojoX Grid,tbd,new,1.5,2010-10-22T14:47:42-07:00,high,
+11892,Split view datagrid throws up error when window is resized,BryanForbes,DojoX Grid,tbd,new,1.5,2010-10-27T21:13:01-07:00,high,
+11990,DataGrid rerenders even when it's not visible,BryanForbes,DojoX Grid,tbd,new,1.5,2010-11-30T02:28:15-08:00,high,
+11993,input value not filtered in dojox.grid.cells.Cell.formatEditing(),BryanForbes,DojoX Grid,tbd,new,1.5,2010-11-30T05:23:43-08:00,high,"goriol@…, Evan"
+12224,Grid scoll position reset to top in Webkit browsers when grid resized or rerendered,BryanForbes,DojoX Grid,tbd,new,1.5,2011-01-29T12:55:21-08:00,high,
+12248,Select cell in DataGrid does not support one item.,BryanForbes,DojoX Grid,tbd,new,1.4.3,2011-02-03T14:36:24-08:00,high,
+12296,"dojox.grid.DataGrid if rowHeight is set, the head row is shown incorrectly.",BryanForbes,DojoX Grid,tbd,new,1.5,2011-02-16T00:57:47-08:00,high,
+12371,QueryReadStore pagination updating broken past the first page,BryanForbes,DojoX Grid,tbd,new,1.4.3,2011-03-02T05:27:41-08:00,high,
+13561,gotoPercent has no effect on animations return by dojo.fx.chain,BryanForbes,fx,tbd,new,1.6.1,2011-08-03T09:26:04-07:00,high,
+13752,Moved from 1.7.0B1 to 1.7.0B2 and now has a bug with dojox.uuid.generateRandomUuid,BryanForbes,Dojox,tbd,new,1.6.1,2011-08-24T07:46:51-07:00,high,
+13798,[patch] [cla] dojo.Animation produces inconsistent results with duration:0,BryanForbes,fx,tbd,new,1.6.1,2011-08-31T14:39:26-07:00,high,
+14481,dojo.fx.wipeOut onEnd race condition due to connect(),BryanForbes,fx,tbd,reopened,1.7.1,2011-12-15T10:39:33-08:00,high,
+14636,Chained animation not so chained,BryanForbes,fx,tbd,new,1.7.1,2012-01-18T00:58:30-08:00,high,
+14641,Animation.stop(gotoEnd = true) doesn't fire onEnd event,BryanForbes,fx,tbd,new,1.7.1,2012-01-18T15:32:13-08:00,high,
+9386,Treegrid: unable to edit child rows in Treegrid,BryanForbes,DojoX Grid,1.8,assigned,,2009-06-10T09:17:45-07:00,low,
+11659,Fix for test_subgrid.html,BryanForbes,DojoX Grid,tbd,new,1.5,2010-08-27T15:24:29-07:00,low,
+14430,dojox.image.LightboxNano is broken in IE8--,cb1kenobi,Dojox,tbd,new,1.7.0,2011-12-09T02:53:06-08:00,high,
+13091,Problem in optimized build of Dojo with dijit.layout.BorderContainer,chrism,General,1.8,new,1.6.1,2011-05-27T08:17:11-07:00,high,
+13325,[patch] mobileGallery Firefox 5 compatibility update,chrism,DojoX Mobile,1.8,new,1.7.0b1,2011-06-27T13:25:26-07:00,high,
+13508,dojox/fx module return values are inconsistent,chrism,Dojox,1.8,new,1.7.0b1,2011-07-24T19:36:58-07:00,high,
+14351,Selectable Legend doesn't function properly with Mouse Indicator,cjolif,Charting,2.0,assigned,1.7.1,2011-11-30T13:23:04-08:00,high,
+14572,Axis Label overflow bug,cjolif,Charting,future,assigned,1.7.1,2012-01-06T13:23:28-08:00,high,pruzand
+12908,Pie Chart & Legend does not render when all slices with a value of 0.,cjolif,Charting,1.8,new,1.6.1,2011-05-11T08:46:30-07:00,low,
+14583,[patch][cla]dojox.charting.spiderchart problem with drawing one polygon,cjolif,Charting,1.8,assigned,1.7.1,2012-01-09T03:55:40-08:00,low,martinerko@…
+14680,BusyButton runs makeBusy when disabled,dante,DojoX Form,tbd,new,1.7.1,2012-01-25T14:27:43-08:00,undecided,
+11335,dojox.widget._RollerHover stops animation whenever you fire onMouseEnter and does not recover,dante,DojoX Widgets,future,reopened,1.5.0rc1,2010-06-17T19:41:17-07:00,blocker,
+12781,dojox.form.CheckedMultiSelect - no focus cursor on checkboxes,dante,DojoX Form,tbd,new,1.6.0,2011-04-26T00:22:26-07:00,blocker,
+12958,dojox.form.FileInput + dojo.io.iframe.send does not work with Google Chrome,dante,DojoX Form,tbd,new,1.6.1,2011-05-17T00:25:24-07:00,blocker,
+13090,dojox.widget.RollingList breaks with IE8,dante,DojoX Widgets,1.8,new,1.6.1,2011-05-27T06:38:14-07:00,blocker,
+14318,[regression] dojox.fx no longer aliases various base/core api's,dante,Dojox,1.7.2,new,1.7.0,2011-11-24T06:43:02-08:00,blocker,"BryanForbes, chrism"
+5796,make destroy() work recursively,dante,Dijit,2.0,new,1.0,2008-02-08T11:25:28-08:00,high,tk
+5849,[dojox.layout] FloatingPane increases size with each show() call,dante,DojoX Layout,future,new,1.0,2008-02-13T17:51:10-08:00,high,
+6293,dojox.widget.FileInputAuto in test_FileInput.html not working in FF 2.0,dante,DojoX Widgets,future,new,1.1b1,2008-03-24T03:36:23-07:00,high,
+6303,test_animateClass fails for dojox.fx in IE7,dante,Dojox,future,new,1.1b1,2008-03-24T11:54:32-07:00,high,
+6340,[dojox.layout] Dragging of floatingpane doesn't work,dante,DojoX Layout,future,reopened,1.1b1,2008-03-27T05:39:15-07:00,high,
+6488,dojox.layout.FloatingPane fails on FF2/Mac,dante,DojoX Layout,future,new,1.1.0,2008-04-09T14:16:20-07:00,high,
+7018,[dojox] FlickrRestStore regression or SlideShow onLoad issue in IE7,dante,Dojox,future,new,1.1.1,2008-06-20T10:12:15-07:00,high,
+7553,[meta] unit test additions,dante,General,future,new,1.1.1,2008-08-28T12:54:02-07:00,high,
+7778,dojox.widget.Dialog window resizing issues on ie6,dante,DojoX Widgets,future,new,1.2beta,2008-10-02T08:24:30-07:00,high,
+8012,[dojox.widget] Pager cleanups and enhancements,dante,DojoX Widgets,future,new,1.2.0,2008-11-03T06:00:31-08:00,high,
+8199,[dojox.layout] ScrollPane doesn't layout properly when containing dynamic contents,dante,DojoX Layout,future,new,1.2.1,2008-11-28T14:52:18-08:00,high,
+9626,ColorPicker onChange event fires even if no change happened,dante,DojoX Widgets,future,assigned,1.3.2,2009-07-30T03:14:02-07:00,high,
+9759,ExpandoPane: closes all the way when placed in a hidden pane,dante,DojoX Widgets,future,new,1.3.2,2009-08-22T09:30:38-07:00,high,
+9796,ExpandoPane has no addChild method,dante,DojoX Widgets,future,new,1.3.2,2009-08-31T08:53:06-07:00,high,
+10075,Stale dojox.fx.slideBy Parameters,dante,fx,future,new,1.3.2,2009-10-09T18:39:25-07:00,high,ole.ersoy@…
+10077,dojox.fx.wipeTo Cannot Wipe to 0 width,dante,fx,future,new,1.3.2,2009-10-10T16:29:13-07:00,high,ole.ersoy@…
+10146,"ResizeHandle maxSize and fixedAspect errors, _checkConstraints() bug?",dante,Dojox,1.8,assigned,1.3.2,2009-10-19T12:13:14-07:00,high,
+10217,dojo.connectPublisher simplification,dante,Core,future,new,1.4.0b,2009-10-27T11:13:52-07:00,high,"jburke, alex, elatzukin"
+10299,"errors during Sphinx ""make html"" process",dante,Documentation,1.8,assigned,1.4.0b,2009-11-09T09:03:14-08:00,high,
+10465,ExpandoPane with 'liveSplitters' set to false - dragged splitter disappears behind contents,dante,Dojox,tbd,new,1.3.2,2009-12-04T03:15:44-08:00,high,dojo@…
+10544,[patch][ccla]dojox.form.CheckedMultiSelect does not set name attribute for form submission,dante,DojoX Form,1.8,assigned,1.4.0,2009-12-21T13:46:00-08:00,high,
+10715,dojox Rangeslider _onKeyPress error,dante,DojoX Form,tbd,new,1.4.0b,2010-02-04T09:04:17-08:00,high,
+10931,dojox.form.CheckedMultiSelect does not work if the values in store are typeof number,dante,DojoX Form,tbd,new,1.4.2,2010-04-02T01:38:40-07:00,high,mcmatrix
+11018,ScrollPane doens't  scroll <div> content only,dante,Dojox,future,new,1.4.0,2010-04-22T02:25:36-07:00,high,
+11303,dojox/form has some wrong CSS images path for Claro theme,dante,DojoX Form,1.8,assigned,1.5.0rc1,2010-06-13T03:34:49-07:00,high,mikeb
+11391,FileInputAuto hangs on Safari 5,dante,General,tbd,new,1.5.0b2,2010-07-01T10:24:59-07:00,high,liucougar
+11405,Safari5: focus strangeness on dojo/form/tests/test_RangeSlider.html,dante,DojoX Form,tbd,new,1.5.0b2,2010-07-02T11:18:45-07:00,high,
+11525,Legend image for plot on graph shows nothing,dante,DojoX Widgets,future,new,1.5,2010-08-03T08:44:59-07:00,high,
+11626,Lightbox issue when create programmatically,dante,Dojox,tbd,new,1.5,2010-08-24T19:49:32-07:00,high,
+11762,Calling this.inherited (arguments) on the Expando results in currentSize not defined message.,dante,DojoX Layout,tbd,new,1.5,2010-09-20T18:40:05-07:00,high,
+11785,"ThumbnailPicker does not scroll to ""next"" page if last image on current page ends exactly at the right side of the scroller",dante,Dojox,tbd,new,1.5,2010-09-27T10:37:06-07:00,high,
+11870,dojox.form.Rating mouseout event broken in dojo 1.5.0,dante,DojoX Form,tbd,new,1.5,2010-10-20T06:18:29-07:00,high,
+11985,Thumbnailpicker inside dojo dialog does not work correctly,dante,Dojox,tbd,new,1.5,2010-11-29T21:32:23-08:00,high,
+12023,Multiple LightboxDialog instances on one page share groups and don't hide properly,dante,Dojox,1.8,assigned,1.5,2010-12-05T08:46:26-08:00,high,
+12086,Writing your own widget Examples do not display correctly,dante,Documentation,1.8,assigned,1.5,2010-12-13T09:50:29-08:00,high,
+12198,dojox.image.LightBox loading animation issue,dante,Dojox,future,new,1.6.0b1,2011-01-23T14:54:55-08:00,high,
+12235,MultiComboBox multi selection does not work as expected,dante,DojoX Form,tbd,new,1.5,2011-02-01T05:14:25-08:00,high,
+12285,[patch][cla] ListInput: _onCloseEdit not called after edit,dante,DojoX Form,tbd,new,1.6.0b1,2011-02-13T04:44:10-08:00,high,
+12286,ListInput: regExp not validated correctly,dante,DojoX Form,future,new,1.6.0b1,2011-02-13T05:05:14-08:00,high,
+12346,missing node on overlay after _handleSend(),dante,DojoX Form,tbd,new,1.6.0rc1,2011-02-24T03:30:26-08:00,high,
+12400,dojox.Pager store,dante,DojoX Widgets,tbd,new,1.6.0rc1,2011-03-07T14:58:00-08:00,high,
+12524,dojox.form.PasswordValidator fails regression tests in 1.6,dante,DojoX Form,tbd,new,1.6.0,2011-03-24T00:24:11-07:00,high,
+12525,dojox.form.SelectStack fails regression in 1.6,dante,DojoX Form,tbd,new,1.6.0,2011-03-24T00:25:50-07:00,high,
+12630,[regression] dojox.Layout.FloatingPane is moved / resized on browser window resize when it shouldn't be,dante,DojoX Layout,1.8,new,1.6.0,2011-04-08T14:39:46-07:00,high,
+12634,dojox.form.MonthTextBox ignores datePattern constraint,dante,DojoX Form,tbd,new,1.6.0,2011-04-10T16:32:42-07:00,high,
+12652,dojox.image.preload() Can cause horizontal scroll,dante,Dojox,tbd,new,1.6.0,2011-04-12T20:36:59-07:00,high,noxryan@…
+12716,Selection error in dojox.widget.RollingList,dante,DojoX Widgets,tbd,new,1.6.0,2011-04-18T18:51:30-07:00,high,
+12769,FloatingPane reverts to old location when DateTextBox dropdown opened,dante,DojoX Layout,tbd,new,1.6.0,2011-04-24T12:47:39-07:00,high,mtyson@…
+13021,Body text selection broken after GridContainer drag and drop,dante,DojoX Layout,tbd,new,1.6.1,2011-05-20T07:51:43-07:00,high,jfcunat
+13071,ThumbnailPicker reload html as image,dante,Dojox,tbd,new,1.6.1,2011-05-25T03:58:28-07:00,high,
+13101,Beat the doc parser into understanding AMD,dante,General,1.8,new,1.6.1,2011-05-29T04:53:36-07:00,high,
+13172,PasswordValidator unit test broken,dante,DojoX Form,tbd,new,1.6.1,2011-06-04T01:46:07-07:00,high,
+13187,_getBorderExtents gone,dante,General,1.8,new,1.6.1,2011-06-07T04:55:34-07:00,high,
+13188,api.xml/json not getting copied to release,dante,General,1.8,new,1.7.0b1,2011-06-07T04:57:02-07:00,high,
+13268,dojox.widget.ColorPicker does not work in IE9 or Opera 11,dante,DojoX Widgets,tbd,new,1.6.1,2011-06-21T13:21:38-07:00,high,
+13280,dojox.form.BusyButton onClick is broken,dante,DojoX Form,tbd,new,1.7.0b1,2011-06-22T08:15:00-07:00,high,
+13302,FloatingPane defect on resize on IE8,dante,DojoX Layout,tbd,new,1.6.1,2011-06-24T02:00:36-07:00,high,
+13303,FloatingPane defect on resize browser window (on FF5),dante,DojoX Layout,tbd,new,1.6.1,2011-06-24T02:21:20-07:00,high,
+13304,FloatingPane problem with mouse moving (out of window) in FF5,dante,DojoX Layout,tbd,new,1.6.1,2011-06-24T02:42:38-07:00,high,
+13312,faces demo broken link,dante,General,tbd,new,1.7.0b1,2011-06-25T17:11:28-07:00,high,
+13359,dojox.form.TriStateCheckbox setting value on creation,dante,DojoX Form,tbd,new,1.7.0b1,2011-07-03T12:37:42-07:00,high,
+13363,dojox.form.BusyButton set disabled don't prevent onClick handlers,dante,DojoX Form,tbd,new,1.7.0b1,2011-07-04T06:34:33-07:00,high,
+13549,RadioGroup - no code to reorder buttons if changes made dynamically,dante,DojoX Layout,tbd,new,1.7.0b1,2011-07-29T11:51:00-07:00,high,
+13553,Several PNG files for the Dojox Gantt Chart widget are miscapitalized in gantt.css file,dante,DojoX Widgets,tbd,new,1.6.1,2011-08-01T14:25:25-07:00,high,
+13590,dojox.widget.Loader broken in 1.7,dante,DojoX Widgets,tbd,new,1.7.0b1,2011-08-04T12:56:43-07:00,high,
+13719,IE: dojox.form.RangeSlider: Hard to click on RangeSlider handles,dante,DojoX Form,tbd,new,1.6.1,2011-08-18T06:34:20-07:00,high,
+13868,dojox.image.Magnifier doesn't seem to work,dante,Dojox,tbd,new,1.7.0b1,2011-09-08T01:46:29-07:00,high,
+13890,api doc preview breaks with anonymous declared classes,dante,Doc parser,1.8,new,1.7.0b1,2011-09-12T07:11:47-07:00,high,"cjolif, Evan"
+14019,The 1.7 docscripts does not generate the doc for properties.,dante,Documentation,1.7.2,new,1.7.0b1,2011-09-28T22:25:13-07:00,high,cjolif
+14197,MultiSelectCalendar does not accept ISO dates,dante,DojoX Widgets,tbd,new,1.7.0,2011-11-02T11:51:52-07:00,high,
+14227,[CLA][PATCH] Portlet New inheritance syntax,dante,DojoX Widgets,1.8,new,1.7.0,2011-11-06T15:25:00-08:00,high,
+14301,DateTextBox input two digit number as year will appear NaN-NaN-0NaN,dante,DojoX Form,tbd,new,1.6.1,2011-11-23T23:26:42-08:00,high,
+14302,missing dojox/fx pages in reference doc,dante,Documentation,tbd,new,1.7.0,2011-11-23T23:43:36-08:00,high,
+14377,onKeyDown and onKeyPress event in dojox.widget.portlet not fired,dante,DojoX Widgets,tbd,new,1.7.0,2011-12-02T20:24:24-08:00,high,
+14453,Regression in dojox.form.Rating,dante,DojoX Form,tbd,new,1.6.1,2011-12-12T15:48:36-08:00,high,cjolif
+14562,"Why no entry for ""io-query"" in API doc?",dante,Doc parser,tbd,new,1.7.1,2012-01-04T23:02:11-08:00,high,
+14616,dojox.form.RangeSlider drag operation on the range interval bar not working,dante,DojoX Form,tbd,new,1.7.1,2012-01-13T06:21:30-08:00,high,doughays
+14620,benchtool has unnecessary escape() and urldecode() calls,dante,Dijit,tbd,new,1.7.1,2012-01-14T04:14:54-08:00,high,
+11245,ColorPicker percentage does not observe cultural conventions,dante,Dojox,future,new,1.5.0b2,2010-05-31T09:09:54-07:00,low,
+13449,dojox.form.Manager - observer is not valid HTML5 attribute,dante,DojoX Form,tbd,new,1.7.0b1,2011-07-16T02:17:44-07:00,low,
+11027,DataPresentation dojo.data support broken,deanw,DojoX Widgets,tbd,new,1.4.0,2010-04-23T10:49:51-07:00,high,
+11028,DataPresentation Hybrid chart renders wrong values,deanw,DojoX Widgets,tbd,new,1.4.0,2010-04-23T11:25:02-07:00,high,
+14588,xmppSession.js has duplicate case but different code paths,dmachi,Dojox,1.7.2,new,1.7.1,2012-01-10T05:12:31-08:00,blocker,BryanForbes
+6383,List of committers,dmachi,Website,future,new,1.1.0,2008-04-02T13:42:49-07:00,high,
+6666,create a11y review post-commit hook,dmachi,Operations,future,new,1.1.0,2008-04-30T16:43:32-07:00,high,dmachi
+7307,dojox.xmpp presence bug prevents buddy list from displaying properly,dmachi,Dojox,future,new,1.1.1,2008-07-28T17:58:30-07:00,high,
+7325,[patch] dojox.xmpp doesn't work in IE when using script src due to iframe onload bug,dmachi,Dojox,future,new,1.1.1,2008-07-29T15:08:01-07:00,high,
+7499,dojo-checkins mailing list has incorrect links,dmachi,Operations,future,new,1.1.1,2008-08-21T09:40:09-07:00,high,
+8936,test failures in JsonRPC-EchoTest (Safari/win),dmachi,RPC,tbd,new,1.3.0b3,2009-03-19T16:51:01-07:00,high,
+10919,CodeGlass for attributeMap on the Writing Widgets Quickstart is empty,dmachi,Website,tbd,new,1.4.0,2010-03-30T10:28:45-07:00,high,
+11482,dojox.data.jsonPathStore docs need to be updated,dmachi,Documentation,tbd,new,1.5,2010-07-25T11:37:36-07:00,high,
+12289,Style guide is missing,dmachi,Website,tbd,new,1.6.0b1,2011-02-14T06:41:40-08:00,high,itorrey
+12454,img.tut_preview on tutorials too high in Opera,dmachi,Website,tbd,new,1.6.0,2011-03-16T08:32:38-07:00,high,
+12568,"themeTester broken on website, works in release",dmachi,Website,tbd,new,1.6.0,2011-03-29T14:34:24-07:00,high,
+12765,Cannot add myseld to the CC field of tickets,dmachi,Operations,,assigned,,2011-04-24T05:17:25-07:00,high,
+12845,Mailing list message-footers are not removed when quoting,dmachi,Operations,future,new,,2011-05-03T12:01:58-07:00,high,
+13031,dojox.analytics: failure in test_analytics.html,dmachi,Dojox,tbd,new,1.6.1,2011-05-21T01:10:37-07:00,high,
+13040,unreachable code in rpc.js test,dmachi,RPC,tbd,new,1.6.1,2011-05-21T22:58:25-07:00,high,
+13451,"ga.js updated, Urchin broke?",dmachi,Dojox,tbd,new,1.7.0b1,2011-07-16T07:53:52-07:00,high,
+13910,invalid HTML in dojox/app/tests/multiSceneApp/views/simple/second.html,dmachi,DojoX App,1.8,new,1.7.0b1,2011-09-14T15:30:02-07:00,high,
+13987,Disable default timeout in RpcService,dmachi,RPC,tbd,new,1.6.1,2011-09-23T08:19:10-07:00,high,
+14125,duplicate case statement in dojox.xmpp.xmppSession (1.7rc1),dmachi,Dojox,tbd,new,1.7.0b1,2011-10-19T13:26:31-07:00,high,
+14534,dojox.analytics.Urchin throws error in 1.7.1,dmachi,Dojox,1.7.2,new,1.7.1,2011-12-28T00:41:05-08:00,high,"chrism1, dante, cjolif, edchat"
+5529,"""rss feed"" link at bottom of bug pages brings up download dialog",dmachi,Operations,future,new,1.0,2008-01-07T14:35:34-08:00,low,
+14701,Menu: Cascading menu is not top aligned the previous menu.,doughays,Dijit,tbd,assigned,1.7.1,2012-01-30T23:27:33-08:00,undecided,
+4578,FilteringSelect and ComboBox: Add support for Alt up/down,doughays,Accessibility,future,new,0.9,2007-09-27T16:42:42-07:00,high,brunet@…
+5424,page refresh erases input values (dijit.form.FilteringSelect),doughays,Dijit - Form,2.0,new,1.0,2007-12-18T15:36:18-08:00,high,
+5703,Inconsistent naming dijit.form.TextBox but Textarea,doughays,Dijit - Form,2.0,new,1.0,2008-01-28T06:43:14-08:00,high,"doughays, bill"
+5783,slider: add aria-valuetext attribute,doughays,Accessibility,future,new,1.0,2008-02-06T20:06:05-08:00,high,"davidb, wwalker"
+6343,"ComboBox: Impossible to set to an empty value using the keyboard when there is no ""blank"" choice",doughays,Accessibility,future,new,1.0,2008-03-27T14:09:10-07:00,high,"davidb, doughays"
+7176,slider:  should round the valuenow to 2 decimal places before setting,doughays,Accessibility,future,new,1.1.1,2008-07-14T13:11:19-07:00,high,
+7866,Spinner:  inconsistency with null value and aria-valuenow property,doughays,Accessibility,future,new,1.2.0,2008-10-14T14:46:25-07:00,high,davidb
+8619,CheckBox: getValue() method return code is strange,doughays,Dijit - Form,2.0,new,1.2.3,2009-02-10T21:55:09-08:00,high,
+9089,add aria-autocomplete to ComboBox and FilteringSelect,doughays,Accessibility,future,new,1.3.0,2009-04-07T07:58:36-07:00,high,doughays
+9210,VerticalSlider: height inaccurate in IE7/8 strict mode,doughays,Dijit - Form,future,reopened,1.3.0,2009-04-27T16:38:44-07:00,high,
+9973,[patch] [ccla] Select: does not allow empty value options,doughays,Dijit - Form,future,new,1.3.2,2009-09-25T13:59:07-07:00,high,
+10582,dijit.form.NumberTextBox incorrectly handle percentages,doughays,Dijit - Form,future,new,1.4.0,2010-01-02T10:15:25-08:00,high,
+10718,"TimeTextBox-popup shivers, when mousepointer stays between to entries",doughays,Dijit - Form,future,reopened,1.4.0,2010-02-05T05:53:39-08:00,high,
+10922,Select: support fixed width,doughays,Dijit - LnF,future,new,1.4.0,2010-03-31T01:00:31-07:00,high,
+10927,select: screen reader speaks html for rich text items,doughays,Accessibility,future,new,1.4.0,2010-03-31T12:48:10-07:00,high,
+11206,"Select: no borders when in TooltipDialog (safari, tundra)",doughays,Dijit - Form,1.8,new,1.5.0b2,2010-05-25T01:51:01-07:00,high,
+11380,MultiSelect: A readOnly widget is not really read-only,doughays,Dijit - Form,future,new,1.4.3,2010-06-30T08:15:18-07:00,high,
+11676,"dijit.form.Select uses a custom setStore rather than select.set('store', store);",doughays,Dijit - Form,future,new,1.5,2010-09-02T11:06:55-07:00,high,
+12021,TimeTextBox does not work correctly in some timezones,doughays,Dijit - Form,2.0,reopened,1.5,2010-12-03T01:50:41-08:00,high,
+13433,set regExp on running time,doughays,Dijit - Form,1.8,new,1.6.1,2011-07-13T07:39:44-07:00,high,
+13790,filteringselect focus problem,doughays,Dijit - Form,tbd,new,1.6.1,2011-08-31T05:41:10-07:00,high,
+14312,missing reference doc for dojox.atom.widgets,doughays,Documentation,tbd,new,1.7.0,2011-11-24T00:08:23-08:00,high,mnesbitt@…
+14488,Choppy scrolling of expanded combo box in scrollable view on desktop browsers,doughays,DojoX Mobile,tbd,new,1.7.1,2011-12-16T00:57:08-08:00,high,
+14500,Problem with comma sign in number format,doughays,Dijit - Form,tbd,new,1.7.0,2011-12-18T06:28:41-08:00,high,hhelena
+14523,CheckBox: Chrome is using -webkit-appearance on checkboxes and radio buttons,doughays,Dijit - Form,tbd,new,1.7.1,2011-12-22T05:45:10-08:00,high,
+5187,clean up spotlight on new web site,dylan,Website,1.8,new,0.9,2007-11-18T16:17:18-08:00,blocker,"dylan, tk, sfoster"
+1144,Dojo leaks in frames in IE,dylan,Core,future,new,0.3,2006-07-20T15:38:57-07:00,high,sol@…
+1273,Tree: Node edit should complete on other operations,dylan,Dojox,future,new,0.3,2006-08-11T08:56:09-07:00,high,
+5847,add documentation for using Dojo under rhino,dylan,Documentation,future,new,1.0,2008-02-13T15:26:13-08:00,high,
+6212,Cannot define ItemFileWriteStore._saveCustom with dojo/method SCRIPT tag,dylan,Parser,future,new,1.0,2008-03-13T21:03:32-07:00,high,ptwobrussell@…
+6500,Toolbar: should provide wrapping for separated sections,dylan,Dijit - LnF,future,new,1.1.0,2008-04-10T09:34:33-07:00,high,liucougar
+6760,reduce the # of images used by dojox.fx.Shadow,dylan,Dojox,future,new,1.1.0,2008-05-15T05:23:05-07:00,high,phiggins
+6929,Dojo Offline sometimes create invalid database names for Gears,dylan,Offline,future,new,1.1.1,2008-06-10T13:48:14-07:00,high,
+7093,dojox.offline widget says it is offline when gears is not installed even when online,dylan,Offline,future,new,1.1.1,2008-06-30T09:35:40-07:00,high,
+7207,Rhino: setTimeout / clearTimeout implementation is dangerous,dylan,General,future,new,1.1.1,2008-07-15T23:16:38-07:00,high,mark-wubben
+7345,dojo.query I.E children property not document object,dylan,Query,future,reopened,1.1.1,2008-08-01T07:36:04-07:00,high,
+7462,Browser Does Not Resize When Running With Testrunner,dylan,TestFramework,future,new,1.1.1,2008-08-16T16:52:18-07:00,high,ole.ersoy@…
+7479,"[patch][cla] dojo.query breaks for expressions like ""a[href*='foo=bar']""",dylan,Query,future,new,1.1.1,2008-08-19T15:23:52-07:00,high,
+7850,Moxie offline demo still not working,dylan,Offline,future,new,1.2.0,2008-10-12T09:29:48-07:00,high,
+7940,expand inline docs for NodeList methods,dylan,Core,future,new,1.2.0,2008-10-22T22:44:32-07:00,high,dante
+7941,auto prefix detection is over-broad,dylan,BuildSystem,future,new,1.2.0,2008-10-23T00:42:40-07:00,high,jburke
+8105,instances created by dojox.widget.Iterator have no way to see their data,dylan,DojoX Widgets,future,new,1.2.1,2008-11-16T23:03:51-08:00,high,
+8223,"dojo.query: results reversed for "".foo .bar""",dylan,Query,future,new,1.2.1,2008-12-03T17:11:20-08:00,high,
+8313,dijit.layout._LayoutWidget should cache more,dylan,Dijit,future,new,1.2.3,2008-12-23T07:24:20-08:00,high,
+8631,dojo.query does not like the = character,dylan,Query,future,new,1.2.3,2009-02-11T22:36:10-08:00,high,
+8668,"missing setInterval, clearInterval in rhino environment",dylan,General,future,new,1.3.0b1,2009-02-17T02:22:49-08:00,high,
+8938,dojo.query unit test failures on opera,dylan,Query,future,new,1.3.0b3,2009-03-19T17:01:13-07:00,high,
+9045,Weird condition in query.js file (dojo/base),dylan,Query,future,new,1.3.0,2009-04-02T07:54:22-07:00,high,
+9138,dojo.query does not parse commas correctly,dylan,Query,future,new,1.2.3,2009-04-15T12:12:59-07:00,high,
+9193,dojo.query fails to recognize attributes having certain kinds of brackets in their values,dylan,Query,future,new,1.3.0,2009-04-23T14:40:31-07:00,high,
+9497,dojo.query of [attr$='suffix'] returns non-matching hidden fields,dylan,Query,future,new,1.3.1,2009-07-02T11:50:29-07:00,high,
+9698,"webkitMobile=true with profile=standardCustomBase build causes ""d is not defined"" runtime error",dylan,BuildSystem,future,new,1.3.2,2009-08-10T23:00:33-07:00,high,
+10017,dojo.query accepts invalid syntax,dylan,Query,future,new,1.3.2,2009-10-03T09:08:09-07:00,high,
+10066,"dojo.query(""tag > :not(tag)"") returns empty results",dylan,Query,future,new,1.3.2,2009-10-09T00:27:19-07:00,high,
+11195,DOH browser UI left-aligns reported times and progress,dylan,TestFramework,tbd,new,1.5.0b2,2010-05-23T09:57:49-07:00,high,
+11196,[meta] improve DOH visual formatting,dylan,TestFramework,future,assigned,1.5.0b2,2010-05-23T10:09:32-07:00,high,
+11471,DOH in Chrome5/Mac triggers a print dialog when run locally,dylan,TestFramework,tbd,new,1.5,2010-07-21T09:01:24-07:00,high,
+13318,survey demo broken,dylan,Website,tbd,new,1.7.0b1,2011-06-25T23:18:41-07:00,high,
+14700,_DataBindingMixin.updateChildBindings doesn't update all children widgets,edchat,DojoX MVC,tbd,new,1.7.1,2012-01-30T22:06:32-08:00,undecided,
+13263,dojox.mvc - ref doesn't work in a templated widget,edchat,DojoX MVC,tbd,reopened,1.7.0b1,2011-06-20T13:24:27-07:00,blocker,rahul
+13685,dojox.mvc - mobile widgets cannot startup in dojox.mvc.Group / dojox.mvc.Repeat,edchat,DojoX MVC,tbd,new,1.7.0b1,2011-08-14T19:50:44-07:00,blocker,rahul
+13372,MVC does not work with dijit.form.Select,edchat,DojoX MVC,1.8,new,1.7.0b1,2011-07-06T10:03:35-07:00,high,rahul
+14423,dojox.mvc.Group prevents dojox.mobile.RoundRectList and dojox.mobile.ListItem select action,edchat,DojoX MVC,1.8,new,1.7.0,2011-12-08T22:44:11-08:00,high,
+14427,dojox.mvc.Group prevents CSS style to be applied as expected,edchat,DojoX MVC,1.8,new,1.7.0,2011-12-08T23:38:24-08:00,high,
+14447,mvc.Repeat ignores widgets created by first parser run,edchat,DojoX MVC,tbd,new,1.7.1,2011-12-12T00:08:26-08:00,high,
+14448,Select with store in a Repeat does no set initial value properly,edchat,DojoX MVC,tbd,new,1.7.0,2011-12-12T00:19:21-08:00,high,
+14449,Validierung by Form.validate does not work with group and Repeat,edchat,DojoX MVC,tbd,new,1.7.0,2011-12-12T00:24:31-08:00,high,
+14451,dijit.form.Checkbox does not work with mvc,edchat,DojoX MVC,tbd,new,1.7.0,2011-12-12T00:42:17-08:00,high,
+14514,MVC reference-doc examples broken,edchat,Documentation,tbd,new,1.7.1,2011-12-20T17:27:29-08:00,high,
+13723,dojo mvc tests LoanWizardModel minor fix,edchat,DojoX MVC,1.8,new,,2011-08-18T10:44:39-07:00,low,rahul
+5795,[Patch] [CLA] Prevent Moveable widgets from moving out of reach and make autoScroll behavior configurable.,elazutkin,DnD,future,assigned,1.0,2008-02-08T10:23:32-08:00,blocker,
+7903,Document dojox.lang,elazutkin,Dojox,future,assigned,1.2.0,2008-10-19T22:09:27-07:00,blocker,
+9277,Document dojox.gfx.fx,elazutkin,DojoX GFX,future,assigned,1.3.0,2009-05-10T14:20:27-07:00,blocker,
+13469,dojox.form.Manager.reset() exception,elazutkin,DojoX Form,tbd,new,1.6.1,2011-07-18T03:52:07-07:00,blocker,
+13718,Internet explorer 8 hangs up at page reload,elazutkin,HTML,tbd,new,1.6.1,2011-08-18T04:25:31-07:00,blocker,
+14155,dojo.byId returns DispHTMLDivElement instead of HTMLDivElement on IE9.,elazutkin,HTML,tbd,new,1.6.1,2011-10-25T16:48:36-07:00,blocker,
+14274,dojox.mdnd prevents TextBox.selectOnClick working in IE when input is in Dialog,elazutkin,DnD,tbd,new,1.6.1,2011-11-17T06:37:38-08:00,blocker,
+14320,dojox.gfx.vml pattern fill bug,elazutkin,DojoX GFX,tbd,new,1.6.1,2011-11-24T12:09:47-08:00,blocker,
+14340,Axis shortening when labels are longer,elazutkin,Charting,tbd,new,1.6.1,2011-11-30T01:00:17-08:00,blocker,cjolif
+3961,[meta] base size reductions,elazutkin,Core,future,new,0.9,2007-08-03T04:49:47-07:00,high,"alex, elazutkin"
+5051,Safari graphic text and events problems,elazutkin,DojoX GFX,future,assigned,0.9,2007-11-08T04:19:12-08:00,high,
+5255,cant select matter on dnd item in IE 6.0+ only.,elazutkin,DnD,future,new,0.9,2007-11-28T04:03:21-08:00,high,manisha.jagtap@…
+6058,Creating dojo.dnd.Moveable on divs with scroll bars,elazutkin,DnD,future,assigned,1.0,2008-03-02T15:31:01-08:00,high,
+6355,Charting theme anti-aliasing has no effect,elazutkin,Charting,future,assigned,1.1.0,2008-03-29T09:29:03-07:00,high,
+7289,dojox.charting.Chart2D : The VML rendering of polylines is not as smooth as SVG rendering,elazutkin,Charting,future,new,1.1.1,2008-07-25T18:55:36-07:00,high,elazutkin
+7341,"Dragging a rectangle or rounded rectangle makes the shape flash / blink or go blank, in IE",elazutkin,DojoX GFX,future,assigned,1.1.1,2008-07-31T11:07:03-07:00,high,eugene
+7388,DnD scrolls the window the wrong way,elazutkin,DnD,future,new,1.1.1,2008-08-06T13:35:42-07:00,high,
+7394,Charting does not show in ContentPane,elazutkin,Charting,future,new,1.1.1,2008-08-07T10:31:52-07:00,high,
+7909,Wrong parent of dojo.dnd.Moveable,elazutkin,DnD,future,new,1.2.0,2008-10-20T07:32:13-07:00,high,
+8070,Pie Chart   - Label Position Bug in RTL,elazutkin,Charting,future,assigned,1.2.1,2008-11-12T10:30:24-08:00,high,cjolif
+8371,dojox.gfx mouseover/setShape bug in IE VML,elazutkin,DojoX GFX,future,assigned,1.2.3,2009-01-08T10:18:54-08:00,high,
+8423,DnD: contrained moveables lose constraints in fluid layout,elazutkin,DnD,future,new,1.2.3,2009-01-15T07:28:36-08:00,high,
+8554,test_GridContainer does not work with IE7,elazutkin,DnD,future,assigned,1.2.3,2009-02-03T00:40:12-08:00,high,dante
+8610,"Apply transform to small circles works in Firefox, not in IE",elazutkin,DojoX GFX,future,new,1.2.3,2009-02-10T01:22:35-08:00,high,
+8853,dojo.dnd.autoscroll getViewport algorithm in Opera 9.64,elazutkin,DnD,future,new,1.3.0b2,2009-03-10T11:03:04-07:00,high,
+8919,Charts within different documents throw an error,elazutkin,DojoX GFX,future,assigned,1.2.3,2009-03-18T07:28:01-07:00,high,
+8996,Odd behavior with custom axis labels for Chart2D line chart,elazutkin,Charting,future,assigned,1.2.3,2009-03-26T16:24:20-07:00,high,
+9168,Images are not rendered on FF 3.5.2.,elazutkin,DojoX GFX,future,assigned,1.3.0,2009-04-20T18:12:45-07:00,high,
+9342,"dojo1.3: dojo.attr() did not work for attribute ""src"" in IE8.",elazutkin,HTML,future,new,1.3.0,2009-05-25T19:09:31-07:00,high,
+9343,[dojox.Chart2D][dojox.gfx] Confirmed memory leak - all browsers,elazutkin,DojoX GFX,future,assigned,1.3.0,2009-05-25T23:07:45-07:00,high,
+9451,Cannot draw shapes in a spawned window in IE7,elazutkin,DojoX GFX,future,assigned,1.3.0,2009-06-24T17:18:28-07:00,high,
+9628,dojo.attr not working on IE8 for xml dom node,elazutkin,HTML,future,assigned,1.3.2,2009-07-30T11:12:29-07:00,high,
+9935,Pie chart rendering in Modal windows,elazutkin,Charting,future,assigned,1.3.2,2009-09-21T18:03:22-07:00,high,
+10467,Methods advised with AOP do not handle dojo.connect listeners correctly,elazutkin,Dojox,future,assigned,1.3.2,2009-12-04T13:29:09-08:00,high,
+10674,marginBox in dojox.charting.Chart2D and multiple render calls with a negative left margin...,elazutkin,Charting,future,assigned,1.4.0,2010-01-25T14:27:57-08:00,high,
+10703,the Weird Behavior of dojo.dnd.Moveable !,elazutkin,DnD,future,assigned,1.4.0,2010-02-03T03:25:47-08:00,high,
+10724,dojo.position return different values on WebKit based platforms,elazutkin,Core,tbd,assigned,1.4.0,2010-02-05T13:24:51-08:00,high,
+10732,dojox.gfx.Moveable used with delay can get into bad state,elazutkin,DojoX GFX,future,assigned,1.4.0,2010-02-08T10:40:11-08:00,high,
+10774,Selecting dropped option in dNd MultiSelect widget,elazutkin,DnD,future,assigned,1.4.0,2010-02-22T05:28:47-08:00,high,
+10868,scaler/common::eq function broken for large values,elazutkin,Charting,future,assigned,1.4.2,2010-03-21T05:36:32-07:00,high,
+10887,dojox.gfx3d createViewport fails on Android,elazutkin,DojoX GFX,future,assigned,1.4.2,2010-03-23T10:11:40-07:00,high,
+10942,Pattern bugs,elazutkin,DojoX GFX,future,assigned,1.4.0,2010-04-04T00:00:02-07:00,high,
+11128,"dojo.dnd Internet Explorer 6, 7 & 8 text selection issues",elazutkin,DnD,future,assigned,1.4.2,2010-05-11T03:11:53-07:00,high,
+11200,dojo/tests/_base/html_docScroll.html::t::testSpeed failure (IE8),elazutkin,HTML,1.8,new,1.5.0b2,2010-05-23T20:15:47-07:00,high,dgurney@…
+11240,dojox.gfx doesn't work in iframe on IE,elazutkin,DojoX GFX,future,assigned,1.4.3,2010-05-30T20:37:57-07:00,high,
+11266,IE: Chart2D rendering problem,elazutkin,Charting,future,assigned,1.5.0b2,2010-06-05T12:12:31-07:00,high,"jason_hays22, ktiedt, cjolif"
+11274,"Impossible to set ""value"" attribute of <meter> tags via dojo.attr()",elazutkin,HTML,future,new,1.4.3,2010-06-08T03:07:00-07:00,high,
+11345,dojox.gfx.Image setShape memory leak in IE 8,elazutkin,DojoX GFX,future,assigned,1.5.0b2,2010-06-22T15:38:10-07:00,high,
+11359,dojox.gfx.Surface clear() IE 8,elazutkin,DojoX GFX,future,assigned,1.5.0b2,2010-06-23T21:57:48-07:00,high,
+11388,Axis should be able to use different fonts for major/minor labels.,elazutkin,Charting,future,assigned,1.5.0b2,2010-06-30T23:59:46-07:00,high,
+11531,Silverlight renderer boken on FF >= 3.6.4,elazutkin,DojoX GFX,1.8,reopened,1.7.0b1,2010-08-04T03:44:07-07:00,high,
+11552,IE8 calling setShape on dojox.gfx.Rect erases all registered events,elazutkin,DojoX GFX,future,assigned,1.5,2010-08-09T14:22:49-07:00,high,
+11563,IE VML text letters rotated 90 degrees counter-clockwise,elazutkin,DojoX GFX,future,assigned,1.5,2010-08-12T09:54:27-07:00,high,
+11577,SVGWEB: moveToBack () throws an error if object has no sibling,elazutkin,DojoX GFX,future,assigned,1.5,2010-08-16T20:32:17-07:00,high,
+11619,dojox dnd testing,elazutkin,Dojox,future,new,1.5,2010-08-23T15:35:51-07:00,high,
+11639,IE: dojo gfx text's event handle issue,elazutkin,DojoX GFX,future,assigned,1.5,2010-08-25T22:47:59-07:00,high,xiangxz@…
+11787,DnD Moveable stuck to cursor on right-click in Chrome,elazutkin,DnD,1.8,new,1.5,2010-09-27T13:14:13-07:00,high,
+11824,dojo.charting not working with FF 3.5.3 for Ubuntu,elazutkin,Charting,future,assigned,1.5,2010-10-04T05:58:02-07:00,high,
+11854,dojox chart plot and axis do not get along well when the chart is zoomed in with Animation,elazutkin,Charting,future,assigned,1.5,2010-10-12T15:21:33-07:00,high,
+11973,dojo Chart rendering performance is bad in IE and cause IE to prompt stop script dialog,elazutkin,Charting,future,assigned,1.5,2010-11-23T21:32:45-08:00,high,"shiwcsdl@…, xiangxz@…"
+12010,dojox.charting.chart2d - margins don't work correctly,elazutkin,Charting,future,assigned,1.5,2010-12-01T18:07:31-08:00,high,uhop
+12011,dojox.charting.chart2d - can't connect tooltip to chart,elazutkin,Charting,future,assigned,1.5,2010-12-01T18:15:35-08:00,high,uhop
+12080,Dojox gfx silverlight resize defect,elazutkin,DojoX GFX,future,assigned,1.5,2010-12-12T22:12:02-08:00,high,
+12081,Customized dojox.chart theme with silverlight  error,elazutkin,DojoX GFX,future,assigned,1.5,2010-12-12T22:28:44-08:00,high,
+12174,dojox.math.BigInteger not usable with base 10,elazutkin,Dojox,future,assigned,1.6.0b1,2011-01-18T01:29:13-08:00,high,
+12180,Dojo charting raises exception when data series is all zeros,elazutkin,Charting,future,assigned,1.6.0b1,2011-01-19T01:35:25-08:00,high,
+12215,"Memory ""leak"" using Chart2D actions with silverlight gfx renderer",elazutkin,DojoX GFX,future,assigned,1.6.0b1,2011-01-26T09:12:47-08:00,high,
+12279,dojox.charting.Chart2D destroy not working as designed,elazutkin,Charting,future,assigned,1.5,2011-02-10T04:29:34-08:00,high,
+12342,IE9: tests/_base/html.html failures,elazutkin,Core,1.8,assigned,1.6.0rc1,2011-02-23T18:32:30-08:00,high,
+12384,IE8 keeps throwing 'nodeType' is not null error,elazutkin,DojoX GFX,future,assigned,1.6.0rc1,2011-03-04T16:59:47-08:00,high,
+12408,Problem with chart's tooltip,elazutkin,Charting,future,assigned,1.6.0rc1,2011-03-08T05:55:18-08:00,high,
+12507,dojo/tests/_base/html.html::t::attr_reconnect fails on ie9,elazutkin,Core,1.8,assigned,1.6.0,2011-03-22T14:37:39-07:00,high,
+12564,tests.html fails on opera 11,elazutkin,HTML,tbd,new,1.6.0,2011-03-29T14:15:56-07:00,high,
+12590,[patch][cla] missing `this` in dojox.form.manager._Mixin formWidgetValue,elazutkin,DojoX Form,tbd,new,1.6.0,2011-04-01T10:06:09-07:00,high,
+12694,[regression] Dojox Charting: Gradient not working as expected in Dojo 1.6,elazutkin,Charting,tbd,assigned,1.6.0,2011-04-15T12:37:31-07:00,high,cjolif
+12940,dojo.dnd.Moveable creates extra movers when used with delay,elazutkin,DnD,tbd,new,1.6.1,2011-05-15T03:11:01-07:00,high,
+13029,[regression] dojox.lang.tests.async fails smoketest (FF3.6),elazutkin,Dojox,tbd,new,1.6.1,2011-05-21T01:06:51-07:00,high,
+13030,[regression] dojox.lang.tests gets error about dojo._extraNames is undefined,elazutkin,Dojox,tbd,new,1.6.1,2011-05-21T01:08:49-07:00,high,kzyp
+13143,dojo.dnd.Moveable publishing before updating,elazutkin,DnD,tbd,new,1.6.1,2011-06-01T01:19:19-07:00,high,
+13253,DijitTreeRow becoming detached from the tree using Drag and Drop,elazutkin,DnD,tbd,new,1.6.0,2011-06-17T09:06:17-07:00,high,
+13323,dojo.(add|remove|toggle|has)Class doesn't handle newline delimiters,elazutkin,HTML,tbd,new,1.6.1,2011-06-27T11:16:21-07:00,high,
+13393,[regression] html_box test failure in FF3.6,elazutkin,HTML,tbd,new,1.7.0b1,2011-07-08T12:21:59-07:00,high,
+13402,Claro theme blocks the Highlight action,elazutkin,Charting,tbd,new,1.6.1,2011-07-10T23:29:29-07:00,high,
+13408,html_rtl test failures,elazutkin,HTML,tbd,new,1.7.0b1,2011-07-11T08:29:13-07:00,high,
+13423,dojox.charting.plot2d.Columns/Bars and subclass with animation crashed on FF with canvas if one of the value is 0,elazutkin,Charting,tbd,new,1.7.0b1,2011-07-12T09:28:46-07:00,high,
+13488,Dialog: unable to close on an iPad,elazutkin,Dijit,tbd,new,1.6.1,2011-07-20T14:40:49-07:00,high,
+13522,Radio button created with dojo.create can't be selected in IE7,elazutkin,HTML,tbd,new,1.6.1,2011-07-26T12:59:48-07:00,high,
+13689,Can't draw lines on element that has not yet been attached to the DOM in IE,elazutkin,DojoX GFX,tbd,new,1.6.1,2011-08-15T00:14:16-07:00,high,
+13738,"dojo.attr(node, 'required') inconsistent in different browsers",elazutkin,HTML,tbd,new,1.6.1,2011-08-23T02:43:01-07:00,high,
+13745,dojo.marginBox wrong result when margin negative percentage in safari 5,elazutkin,HTML,tbd,new,1.6.1,2011-08-23T11:55:07-07:00,high,
+13750,"dojo.style gets inconsistent values for top, left, right, bottom",elazutkin,HTML,tbd,new,1.6.1,2011-08-24T04:14:57-07:00,high,
+13769,Circular dependency in dojo/dom-attr,elazutkin,BuildSystem,1.8,reopened,,2011-08-29T03:36:31-07:00,high,"rcgill, jburke"
+13864,dojo.declare does not properly handle get set accessors,elazutkin,Core,tbd,new,1.6.1,2011-09-07T12:34:00-07:00,high,
+13919,dojox.form.manager unregisterWidgetDescendants,elazutkin,DojoX Form,tbd,new,1.6.1,2011-09-15T20:33:50-07:00,high,
+13920,removeAttr() sometimes silently fails in webkit,elazutkin,HTML,1.8,new,1.7.0b1,2011-09-16T06:24:02-07:00,high,
+13964,scrollbar activates DnD,elazutkin,DnD,tbd,new,1.7.0b1,2011-09-21T07:49:43-07:00,high,elazutkin
+14029,[patch][cla]dojox.mdnd Moveable throwning error,elazutkin,Dojox,tbd,new,1.6.1,2011-09-29T17:49:18-07:00,high,
+14036,Change deprecated djConfig to dojoConfig in gfxSvgProxyFrame.html,elazutkin,DojoX GFX,tbd,new,1.7.0b1,2011-10-01T07:56:00-07:00,high,
+14037,Remove defs reference when related object is removed,elazutkin,DojoX GFX,tbd,new,1.7.0b1,2011-10-01T08:04:55-07:00,high,
+14116,"dojo.replaceClass arguments are un-intuitive replace(new, old) vs replace(old, new)",elazutkin,HTML,tbd,new,1.7.0b1,2011-10-18T13:10:40-07:00,high,
+14191,dojo.style() causes error for DOM node types that do not have a style property,elazutkin,HTML,tbd,new,1.6.1,2011-11-01T09:51:02-07:00,high,
+14257,[patch] dojo.byId return undefined in IE,elazutkin,HTML,tbd,new,1.6.1,2011-11-13T23:37:13-08:00,high,
+14282,Avatar.update() does not respect Source.generateText property,elazutkin,DnD,tbd,new,1.7.0,2011-11-18T07:51:09-08:00,high,
+14303,missing dojox/gfx pages in reference doc,elazutkin,Documentation,tbd,new,1.7.0,2011-11-23T23:45:08-08:00,high,
+14307,missing reference doc for HTML methods,elazutkin,Documentation,tbd,new,1.7.0,2011-11-23T23:58:02-08:00,high,
+14317,missing reference doc for dnd,elazutkin,Documentation,tbd,new,1.7.0,2011-11-24T00:21:11-08:00,high,
+14339,missing pixel.gif image in dojox/mdnd CSS,elazutkin,DnD,tbd,new,1.7.0,2011-11-29T15:25:02-08:00,high,
+14526,Tooltips do not position correctly on charts after scroll,elazutkin,Charting,tbd,new,1.7.1,2011-12-22T11:50:23-08:00,high,
+14551,"divide by 0 errors in gradient, matrix code",elazutkin,DojoX GFX,tbd,new,1.7.1,2012-01-02T11:17:14-08:00,high,
+14558,VML doesn't apply scale transform to stroke,elazutkin,DojoX GFX,tbd,new,1.7.1,2012-01-03T20:18:03-08:00,high,
+14640,svg2gfx.xsl fails to detect exsl:node-set capability,elazutkin,DojoX GFX,tbd,new,1.7.1,2012-01-18T12:16:41-08:00,high,torsten.crass@…
+7209,Moveable drag breaks when using delay property,elazutkin,DnD,future,new,1.1.1,2008-07-16T07:58:23-07:00,low,
+7995,DnD still highlights text in IE,elazutkin,DnD,future,new,1.2.0,2008-10-30T09:05:11-07:00,low,
+8458,dojox.gfx does not work in AIR,elazutkin,DojoX GFX,future,new,1.2.3,2009-01-19T13:12:27-08:00,low,dylan
+9549,DOH doesn't start tests automatically when dojo is not present.,elazutkin,TestFramework,future,assigned,1.3.0,2009-07-14T22:54:49-07:00,low,
+9822,"dojo.attr(li, ""value"") returns number on IE7",elazutkin,HTML,future,assigned,1.3.2,2009-09-02T17:13:04-07:00,low,
+9991,Unable to check if object is an instance of dojo.NodeList,elazutkin,Core,future,new,1.3.2,2009-09-29T11:53:49-07:00,low,
+10585,Tree: scrolling triggers a drag,elazutkin,Dijit,future,assigned,1.4.0,2010-01-03T17:11:47-08:00,low,jbondc
+10876,Pattern fill does not work with Silverlight renderer,elazutkin,DojoX GFX,future,assigned,1.4.0,2010-03-22T14:13:15-07:00,low,chymchymx@…
+10885,Silverlight Surface.getDimensions seems to break?,elazutkin,DojoX GFX,future,assigned,1.4.2,2010-03-23T08:26:00-07:00,low,
+12327,Allow dojo.Animation to have a duration of zero or throw an error,elazutkin,Core,future,assigned,1.6.0rc1,2011-02-21T09:04:12-08:00,low,
+14250,IconItem top size is negative,EricWang,DojoX Mobile,tbd,pending,1.7.0,2011-11-09T21:32:23-08:00,high,onoat
+14657,dojox.grid steals focus when it gets updated,Evan,DojoX Grid,tbd,new,1.7.1,2012-01-21T13:41:17-08:00,undecided,
+11386,[patch]the datagrid's editable cell can't save when click on area outside the grid.,Evan,DojoX Grid,future,new,1.4.2,2010-06-30T20:19:52-07:00,blocker,
+12998,Grid destroys tab order,Evan,DojoX Grid,1.8,new,1.6.1,2011-05-19T10:14:40-07:00,blocker,
+13487,Long title in the header of DataGrid is chopped off with autoWidth is set.,Evan,DojoX Grid,tbd,new,1.7.0b1,2011-07-20T12:57:00-07:00,blocker,
+13547,DOJO grid with JAWS issue,Evan,DojoX Grid,tbd,new,1.6.1,2011-07-29T02:16:17-07:00,blocker,
+14145,focus of editable cell is lost in IE8,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-24T07:07:41-07:00,blocker,stella.jia@…
+14171,dijit.Menu with leftClickToOpen does not open on a grid,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-29T15:22:57-07:00,blocker,
+10135,Enhanced grid -  Unsorted element (x) doesn't have 6px padding,Evan,DojoX Grid,future,new,1.4.0b,2009-10-16T14:54:15-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…"
+10145,EnhancedGrid - Column size sensivity too great,Evan,DojoX Grid,future,new,1.4.0b,2009-10-19T10:59:49-07:00,high,"drschwartz, tmayeur@…, toonetown, hwcdl@…"
+10356,EnhancedGrid: Keyboard focus lost when moving selected columns via keyboard,Evan,DojoX Grid,future,new,1.4.0b,2009-11-17T09:46:49-08:00,high,"evan, toonetown, peller"
+10438,DataGrid large selection doesn't work,Evan,DojoX Grid,future,new,1.4.0b,2009-12-01T03:14:24-08:00,high,"brianforbes, toonetown"
+10454,Grid:  Home and end keys do not set focus when used with keyboard,Evan,DojoX Grid,future,new,1.4.0b,2009-12-02T07:22:24-08:00,high,
+10484,grids inside of dialogs don't work,Evan,DojoX Grid,1.8,new,1.5,2009-12-10T12:33:17-08:00,high,
+10485,Incorrect blur event management on Internet Explorer,Evan,DojoX Grid,future,new,1.4.0b,2009-12-10T13:05:19-08:00,high,
+10487,DataGrid.scrollToRow() does not work for bottom rows,Evan,DojoX Grid,1.8,new,1.4.0,2009-12-10T13:53:07-08:00,high,
+10500,DataGrid rowSelector messed up when in TabContainer,Evan,DojoX Grid,1.8,new,1.4.0,2009-12-14T09:15:06-08:00,high,
+10515,Grid:  focus leaves grid if press shift+F10 on a data cell,Evan,DojoX Grid,future,new,1.4.0,2009-12-16T08:17:12-08:00,high,
+10522,Possible DataGrid Performance Problem..,Evan,DojoX Grid,future,new,1.4.0,2009-12-16T12:33:35-08:00,high,
+10535,Grid:  default context menu is displayed in Safari4/win when header contextMenu invoked via keyboard,Evan,DojoX Grid,future,new,1.4.0,2009-12-18T08:29:46-08:00,high,
+10620,dojox.DataGrid onRowStyle render problem,Evan,DojoX Grid,future,new,1.4.0,2010-01-10T15:06:20-08:00,high,
+10638,Bottom row of the grid is cut in Firefox,Evan,DojoX Grid,1.8,new,1.3.2,2010-01-17T01:30:13-08:00,high,
+10734,ComboBox as cell of DataGrid does not page correctly through options on ENTER key,Evan,DojoX Grid,future,new,1.4.0,2010-02-09T12:52:29-08:00,high,
+10796,[patch] [cla] fix focus omission in Grid,Evan,DojoX Grid,future,new,1.4.0,2010-02-26T14:24:54-08:00,high,
+11294,[patch][cla] Add filtering to data grid,Evan,DojoX Grid,future,new,1.5.0b2,2010-06-10T06:48:37-07:00,high,
+11572,DataGrid generates runtime errors when you delete rows in a particular order,Evan,DojoX Grid,1.8,new,1.5,2010-08-14T16:33:20-07:00,high,
+12118,"dojox.grid.TreeGrid, rowHeight integer value aren't used in sub level rows",Evan,DojoX Grid,tbd,new,1.5,2010-12-23T13:40:57-08:00,high,"treegrid, rowheight"
+12178,Lose focus when navigating editable cells using TAB key,Evan,DojoX Grid,future,new,1.6.0b1,2011-01-18T22:26:36-08:00,high,
+12305,Enhanced Grid Accessibility - JAWS unable to read the check status for check boxes in Firefox,Evan,DojoX Grid,1.8,new,1.5,2011-02-16T19:53:04-08:00,high,
+12481,Invalid call to cell.restore() in dojox/grid/_EditManager.js,Evan,DojoX Grid,tbd,new,1.6.0,2011-03-19T04:44:34-07:00,high,
+12555,Selecting a on DataGrid in a ContentPane works on 1.5 but not 1.6,Evan,DojoX Grid,tbd,new,1.6.0,2011-03-28T16:16:53-07:00,high,jajubear@…
+12714,Bug when dropdownbutton menu is added in the EnhancedGrid,Evan,DojoX Grid,1.8,new,1.6.0,2011-04-18T11:37:06-07:00,high,
+12787,Unable to manually resize DataGrid column width when inside Accordion,Evan,DojoX Grid,tbd,new,1.5,2011-04-26T05:39:18-07:00,high,
+12820,can't parse data-dojo-props on sub-nodes,Evan,DojoX Grid,tbd,new,1.6.0,2011-05-01T12:25:47-07:00,high,
+12898,DataGrid: Column widths to small with Chrome,Evan,DojoX Grid,1.8,new,1.6.1,2011-05-09T21:48:19-07:00,high,
+12938,Infinite loop of events with gridContainer and IE8,Evan,DojoX Grid,tbd,new,1.6.0,2011-05-15T00:17:34-07:00,high,
+13003,erroneous horizontal scroll bar,Evan,DojoX Grid,tbd,new,1.6.1,2011-05-19T18:25:58-07:00,high,
+13048,dojo.touch doesn't handle devices w/touch and mouse,Evan,Events,tbd,new,1.6.1,2011-05-22T21:21:07-07:00,high,
+13054,EnhancedGrid/QueryReadStore sorting reversed/lost on new data query,Evan,DojoX Grid,tbd,new,1.6.1,2011-05-23T05:15:35-07:00,high,kevin@…
+13082,DataGrid: Discrepancy with editing cells when using setItems vs query,Evan,DojoX Grid,tbd,new,1.6.0,2011-05-26T07:17:39-07:00,high,
+13138,Enhanced Grid Paginator: Focus Problem,Evan,DojoX Grid,tbd,new,1.6.1,2011-05-31T21:33:03-07:00,high,
+13181,Setting the DataGrid rowHeight attribute creates empty space between each page row.,Evan,General,tbd,new,1.6.1,2011-06-06T09:58:06-07:00,high,
+13271,"Tree grid items should use datastore identity, not DOM itemId.",Evan,DojoX Grid,tbd,new,1.6.1,2011-06-21T23:33:49-07:00,high,
+13296,Error when using DataGrid in an HTA,Evan,DojoX Grid,tbd,new,1.6.1,2011-06-23T09:24:28-07:00,high,Glen.Ditchfield@…
+13308,Scrollbar on OSX Lion browsers cannot be manually grabbed when set to show on scroll,Evan,DojoX Grid,tbd,new,1.7.0b1,2011-06-24T10:52:48-07:00,high,
+13330,Clicking outside the grid in IE doesn't get rid of a cell's editor,Evan,DojoX Grid,1.8,new,1.7.0b1,2011-06-27T15:01:58-07:00,high,
+13401,Treegrid won't open/close nodes with several attributes,Evan,DojoX Grid,tbd,new,1.6.1,2011-07-10T23:23:45-07:00,high,
+13421,Whole Screen Flicker Caused by Dojo Grid,Evan,DojoX Grid,tbd,new,1.6.1,2011-07-11T13:50:16-07:00,high,josh.harness@…
+13502,Hidden columns cause javascript timeout,Evan,DojoX Grid,tbd,new,1.6.1,2011-07-22T10:43:14-07:00,high,
+13617,TreeGrid will not expand rows when defaultOpen is false and store identifiers are not strings,Evan,DojoX Grid,tbd,new,1.6.1,2011-08-08T19:00:54-07:00,high,
+13655,LocalImage editor plugin breaks after one successful upload,Evan,Editor,tbd,new,1.7.0b1,2011-08-10T10:37:37-07:00,high,
+13771,Wrong row index in dojox.grid.enhanced.plugins.CellMerge mergeCells method,Evan,DojoX Grid,tbd,new,1.6.1,2011-08-29T06:59:00-07:00,high,
+13795,dojox.grid.DataGrid does not implement set() API across the board,Evan,DojoX Grid,tbd,new,1.6.1,2011-08-31T10:56:54-07:00,high,
+13862,Enhanced Datagrid Search Plugin Only retuns one result,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-07T06:07:04-07:00,high,
+13908,DataGrid doesn't render composite widgets when adding new items to its store,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-14T13:48:11-07:00,high,
+13912,First selection of a cell type:dojox.grid.cells.Editor in the DataGrid deletes the value in Chrome 13,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-15T07:34:45-07:00,high,
+13913,No tool bar for cell type:dojox.grid.cells.Editor in a grid when using FireFox,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-15T07:43:45-07:00,high,
+13914,IE8 dojox.grid.cells.Editor will not close when selecting anypart of the page except for another cell,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-15T07:59:08-07:00,high,
+13943,DataGrid does not render data after setStore(),Evan,DojoX Grid,tbd,new,1.6.1,2011-09-19T23:24:12-07:00,high,
+13974,ValidationTextBox inside DataGrid,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-22T07:26:09-07:00,high,
+13975,Deleting value in DateTextBox inside DataGrid,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-22T08:11:12-07:00,high,
+13981,dojox.grid._View._cleanupRowWidgets damages nested widgets,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-22T21:36:21-07:00,high,
+13983,Issue in calculation of default page height,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-23T02:00:40-07:00,high,
+13984,Bug with focus at DataGrid,Evan,DojoX Grid,tbd,new,1.6.1,2011-09-23T02:13:00-07:00,high,
+13985,Issue with row height when fetching data,Evan,DojoX Grid,future,new,1.6.1,2011-09-23T02:21:35-07:00,high,
+13991,1.7.0b5: FilteringSelect widget in dojox.grid.DataGrid error in Firefox 6 Mac,Evan,DojoX Grid,tbd,new,1.7.0b1,2011-09-23T14:30:44-07:00,high,
+13998,Horizontal scrollbar in grid,Evan,DojoX Grid,tbd,new,1.7.0b1,2011-09-26T03:41:30-07:00,high,
+14000,onRowMouseOver is triggered when moving from cell to cell in the same row,Evan,DojoX Grid,1.8,new,1.7.0b1,2011-09-26T14:01:26-07:00,high,
+14102,dojox.grid._Layout problem on header's colSpan using JsonRestStore,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-16T00:19:26-07:00,high,
+14118,LazyTreeGrid - a11y related defects,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-18T23:36:27-07:00,high,
+14141,"[patch][cla] ValidationTextBox in Grid can't get ""required:true"" setting",Evan,DojoX Grid,tbd,new,1.7.0b1,2011-10-23T23:48:57-07:00,high,
+14146,[patch][cla] TreeGrid - _by_idty_paths{} is not updated in time,Evan,DojoX Grid,tbd,new,1.7.0b1,2011-10-24T07:44:26-07:00,high,
+14156,Dojox EnhancedGrid Filter is not working with _item field,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-26T03:02:08-07:00,high,
+14180,EnhancedGrid - Pagination: grid.setQuery() works not properly with pagination,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T19:50:15-07:00,high,
+14181,"EnhancedGrid - Pagination: when total records are less than the page size and on server if records added exceeds page size, all records are displayed on refresh",Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T19:53:02-07:00,high,
+14182,EnhancedGrid - Pagination: The page size array should be preprocessed,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T19:56:07-07:00,high,
+14183,"EnhancedGrid - Pagination: g18n issue, the string ""all"" is not translated, and there is no singular for the data item description",Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T20:02:40-07:00,high,
+14184,EnhancedGrid - Pagination: Throw error when click non-activated page button,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T20:05:56-07:00,high,
+14185,EnhancedGrid - Pagination: Incorrect status of goto page dialog open button,Evan,DojoX Grid,tbd,new,1.6.1,2011-10-31T22:40:15-07:00,high,
+14283,"Lack translate ""statusTipRelAny"" and ""statusTipRelAll""",Evan,DojoX Grid,1.7.2,reopened,1.7.0,2011-11-20T09:03:25-08:00,high,ardemiranda@…
+14326,DataGrid header not aligned with data rows in rtl mode using firefox,Evan,DojoX Grid,1.6.2,new,1.6.1,2011-11-26T05:03:45-08:00,high,
+14391,listening for gestures prevent some other events to be received,Evan,Events,tbd,new,1.7.0,2011-12-05T04:15:12-08:00,high,
+14457,"DataGrid with no scroll rows and autoHeight/rowHeight alignment problems, and column resize problems.",Evan,DojoX Grid,tbd,new,1.7.0,2011-12-13T12:07:56-08:00,high,dojo@…
+14528,Problem while using filtering in advanced Grid with IE 7,Evan,DojoX Grid,tbd,new,1.7.1,2011-12-22T20:33:30-08:00,high,yogesh_edekar@…
+14621,Can not bind data to grid from CSV store,Evan,DojoX Grid,tbd,new,1.7.1,2012-01-14T07:07:08-08:00,high,
+14645,Grid column resizing/reordering breaks in IE8 standards mode,Evan,DojoX Grid,tbd,new,1.6.1,2012-01-19T12:34:38-08:00,high,BryanForbes
+14556,Dojox Grid - Column Re-Size In IE9,Evan,DojoX Grid,tbd,new,1.7.1,2012-01-03T10:18:19-08:00,low,
+12946,Dojo CometD Documentation has a bad CometD init URL making the example difficult to use,gregw,DojoX Cometd,tbd,new,1.6.1,2011-05-15T17:27:07-07:00,blocker,
+9243,doh.robot.typeKeys and doh.robot.KeyPress seems not support backslash key,haysmark,TestFramework,future,new,1.3.0,2009-05-04T10:16:08-07:00,blocker,
+7279,FilteringSelect does not correctly set value when two or more options have the same display (but different values),haysmark,Dijit - Form,future,new,1.1.1,2008-07-25T05:08:40-07:00,high,thecatwhisperer@…
+7439,robot: scrolling sometimes not reset on refresh,haysmark,TestFramework,future,new,1.1.1,2008-08-14T16:19:19-07:00,high,
+12484,ComboBox: apparently memory leak,haysmark,Dijit - Form,tbd,new,1.6.0,2011-03-21T01:31:18-07:00,high,
+12487,DOH tearDown not working as expected,haysmark,TestFramework,tbd,new,1.5,2011-03-21T07:04:45-07:00,high,
+12544,robot crashes FF4 on mac,haysmark,TestFramework,1.8,reopened,1.6.0,2011-03-27T05:34:26-07:00,high,
+12956,focus_mouse test locks up IE9,haysmark,Dijit,tbd,new,1.6.1,2011-05-16T14:30:51-07:00,high,
+13189,BorderContainer_complex locks up IE9,haysmark,Dijit,tbd,new,1.7.0b1,2011-06-07T09:27:17-07:00,high,
+14123,DOH Robot iframe timing issue on IE8?,haysmark,TestFramework,1.8,new,1.7.0b1,2011-10-19T05:02:21-07:00,high,
+1880,Tree: node content isn't selected on the 1st node edit on the page,ilia,Dojox,future,new,0.4,2006-11-13T18:30:19-08:00,high,sol@…
+5807,Create a resources on how to theme and provide PSDs for themeing widgets,itorrey,themes,future,new,1.0,2008-02-09T08:23:34-08:00,high,
+11661,update opera logo on dojotoolkit.org,itorrey,Website,future,new,1.5,2010-08-29T12:24:42-07:00,high,
+13111,Dojo HTML5 Data-Attribute Support description typos,itorrey,Website,tbd,new,1.6.1,2011-05-30T09:18:30-07:00,high,
+13170,FireFox 4 support not noted on dtk.org,itorrey,Website,tbd,new,1.6.1,2011-06-03T11:03:20-07:00,high,
+14134,http://dojotoolkit.org/license - wrong president of the Dojo Foundation,itorrey,Website,tbd,new,,2011-10-22T10:51:13-07:00,high,
+14553,bug in http://dojotoolkit.org/documentation/tutorials/1.6/data_modeling/demo/demo.html,itorrey,Website,tbd,new,1.7.1,2012-01-03T02:47:37-08:00,high,
+14557,Error in slider tutorial,itorrey,Website,tbd,new,,2012-01-03T13:15:46-08:00,high,
+14593,Symfony link pointing to old site,itorrey,Website,tbd,new,,2012-01-11T00:12:38-08:00,high,peter.kokot@…
+14599,"On website Download page, shouldn't give unexplained URL of whole SVN repo",itorrey,Website,tbd,new,,2012-01-11T13:44:43-08:00,high,
+14600,Website page on SVN could use some more details,itorrey,Website,tbd,new,,2012-01-11T13:52:08-08:00,high,
+14607,dojotoolkit.org/getting-involved,itorrey,Website,tbd,new,,2012-01-12T04:20:14-08:00,high,peter.kokot@…
+14624,dojotoolkit.org/reference-guide has wrong footer,itorrey,Website,tbd,new,,2012-01-15T10:47:49-08:00,high,peter.kokot@…
+14628,dojotoolkit.org/blog has different footer,itorrey,Website,tbd,new,,2012-01-17T04:32:26-08:00,high,peter.kokot@…
+12971,Tundra theme images corrupted,jamesthomas,WebBuilder,1.8,new,1.6.0,2011-05-17T14:40:04-07:00,blocker,
+12985,Sorting breaks selection + others,jamesthomas,WebBuilder,future,new,1.6.0,2011-05-18T12:10:49-07:00,high,
+13006,Auto-analysis failure,jamesthomas,WebBuilder,1.8,new,1.6.1,2011-05-20T04:50:51-07:00,high,
+13399,EDITOR: Bullet-List Problems in IE,jaredj,Editor,tbd,new,1.6.0,2011-07-10T18:45:12-07:00,blocker,matthewcarltyson@…
+10534,Dynamically Loading Editor.js/RichText.js Fails Without useXDomain,jaredj,Editor,future,new,1.4.0,2009-12-18T08:17:33-08:00,high,
+11297,font family and size choices auto-removed.,jaredj,Editor,future,new,1.5.0rc1,2010-06-11T05:35:47-07:00,high,
+11406,Safari5: dojox.wire.tests.ml.Service test failures,jaredj,DojoX Wires,future,new,1.5.0b2,2010-07-02T11:38:06-07:00,high,
+14314,missing reference doc for SnapLogic data store,jaredj,Documentation,tbd,new,1.7.0,2011-11-24T00:12:17-08:00,high,
+10741,dojo.cldr not fully built in 1.4 CDN,jburke,BuildSystem,1.4.3,new,1.4.0,2010-02-10T19:18:42-08:00,blocker,
+11189,"dojo query escape '[' ',' ']' and '.' with \\ don't work for form input field name property",jburke,Core,future,new,1.5.0b2,2010-05-21T07:45:09-07:00,blocker,
+11953,dojo.io.script.attach lack of async param breaks FF 3.6 concurrent DOM manipulation,jburke,IO,tbd,new,1.5,2010-11-18T01:15:23-08:00,blocker,antti@…
+12750,[patch][ccla]allow null content type on dojo.xhr when ioArgs.query is a FormData object,jburke,IO,tbd,new,1.6.0,2011-04-22T20:45:16-07:00,blocker,
+13228,Dojo 1.6.x xhr problem with Safari 5.x,jburke,IO,tbd,new,1.7.0b1,2011-06-13T12:23:26-07:00,blocker,
+1663,fix loader.js comments and function names,jburke,General,future,new,0.3,2006-10-16T16:49:32-07:00,high,
+2102,Custom build with empty template file,jburke,General,future,new,0.4,2006-12-05T09:08:31-08:00,high,
+2319,memory leak in ScriptSrcTransport,jburke,IO,future,new,0.4.1,2007-01-15T09:23:33-08:00,high,
+2429,intern-strings should ignore code in comments,jburke,BuildSystem,future,new,0.4.1,2007-02-07T13:31:11-08:00,high,
+2536,dojo.requireIf fails in custom build with parentheses condition,jburke,BuildSystem,future,new,0.4.2rc1,2007-03-04T16:04:45-08:00,high,
+3195,IE issue with DOMContentLoaded?,jburke,Core,future,new,0.4.2,2007-05-30T07:16:52-07:00,high,
+3814,Errors in sync xhr are squelched,jburke,IO,2.0,new,0.9,2007-07-19T14:51:30-07:00,high,sjmiles
+4163,strip all whitespace from flattened nls resources,jburke,BuildSystem,future,new,0.9,2007-08-14T13:02:29-07:00,high,
+5049,Add more layers for CDN build,jburke,BuildSystem,future,new,1.0,2007-11-07T21:05:25-08:00,high,
+5189,Discard layers with same name as a dependency causes problems?,jburke,BuildSystem,future,new,0.9,2007-11-18T21:32:18-08:00,high,
+6172,Upgrade packer to v3.0,jburke,BuildTools,future,new,1.1b1,2008-03-12T08:29:28-07:00,high,
+6411,Consider better options for preventing addOnUnload functions from being called,jburke,Core,future,new,1.1.0,2008-04-04T09:59:03-07:00,high,
+7077,Build in GFX requireIf code into layer file,jburke,General,future,new,1.1.1,2008-06-27T16:59:13-07:00,high,"alex@…, jayant.b.sai@…, elazutkin"
+7610,dojo.require calls from a layerDependency should stay in the dependent layer,jburke,BuildSystem,future,new,1.2beta,2008-09-06T09:29:53-07:00,high,dante
+7685,Suggestions for improving build system usability,jburke,BuildSystem,2.0,new,1.2beta,2008-09-19T09:59:31-07:00,high,
+7689,Have dojo.js detect for already loaded dojo,jburke,Core,future,new,1.2beta,2008-09-19T13:03:25-07:00,high,
+7744,adding BASE tag to test file should load dojo,jburke,General,future,new,1.2beta,2008-09-26T14:49:15-07:00,high,peller
+7750,Deferred squelches errors,jburke,Core,future,new,1.2beta,2008-09-28T09:10:03-07:00,high,"jburke, alex, dylan, kzyp"
+7764,Specific value instead of .length property uses in hostenv_browser.js,jburke,Core,future,new,1.2beta,2008-09-30T10:28:16-07:00,high,
+7894,building with standard scopeMap breaks dojo,jburke,BuildSystem,future,new,1.2.0,2008-10-19T05:45:14-07:00,high,
+7904,Builds system: consider supporting top-level modules with same names as prefix directory,jburke,BuildSystem,future,new,1.2.0,2008-10-19T22:42:33-07:00,high,
+7935,dojo._Url broken for more than two args,jburke,Core,future,new,1.2.0,2008-10-22T13:26:53-07:00,high,
+8046,customBase build should have option not to inject dojo._base dependencies,jburke,BuildSystem,future,new,1.2.0,2008-11-08T15:22:57-08:00,high,
+8049,Weird timing issue with firebug stubs in bootstrap.js when loading XHTML document causes exception during load,jburke,Core,future,new,1.2.0,2008-11-09T12:57:45-08:00,high,
+8062,Error in custom build with 1.2.1,jburke,BuildTools,future,new,1.2.1,2008-11-11T09:28:33-08:00,high,
+8179,Typo in loader_xd localization,jburke,BuildSystem,future,new,1.2.1,2008-11-26T16:22:52-08:00,high,
+8329,Consider expanding dojo.provide/getObject calls in build layer for speed,jburke,BuildSystem,future,new,1.2.3,2008-12-30T14:41:05-08:00,high,
+8465,Auto-register custom modules prefixes for xdomain builds inside of dojo.xd.js,jburke,BuildSystem,future,new,1.2.3,2009-01-20T14:41:27-08:00,high,
+8467,dojo.xhr() is not atomic,jburke,IO,future,new,1.2.3,2009-01-21T05:16:06-08:00,high,alex
+8547,Allow Sizzle as a query build option for dojo,jburke,Query,future,new,1.2.3,2009-02-01T21:22:46-08:00,high,
+8588,Cross Domain build exception,jburke,BuildSystem,future,new,1.2.3,2009-02-06T06:11:10-08:00,high,vbaudry@…
+9008,expandProvide and xdomain builds do not work,jburke,BuildSystem,future,new,1.3.0rc2,2009-03-29T07:47:42-07:00,high,
+9032,Consider allowing setting local variables via Loader trickery,jburke,Core,future,new,1.3.0,2009-04-01T11:10:11-07:00,high,
+9035,build: scope params cannot be set in profile,jburke,BuildSystem,future,new,1.3.0,2009-04-01T18:01:38-07:00,high,
+9206,expandProvide failing on intermediate object,jburke,General,future,new,1.3.0,2009-04-26T13:46:01-07:00,high,
+9395,layer file in nonexistent directory breaks build,jburke,BuildSystem,future,new,1.3.1,2009-06-12T03:12:44-07:00,high,
+9656,NodeList-traverse add find,jburke,Core,future,new,1.3.2,2009-08-04T12:45:27-07:00,high,
+9711,Can not make custom build.,jburke,BuildTools,future,reopened,1.3.2,2009-08-13T00:36:33-07:00,high,
+10022,Do not pick up non-string literal dojo.require calls in the build system.,jburke,BuildSystem,future,new,1.3.2,2009-10-04T21:25:44-07:00,high,
+10029,NodeList children() and filter() query fails,jburke,General,future,new,1.3.2,2009-10-05T14:28:18-07:00,high,"dante, elazutkin, alex"
+10156,miscalced dojo root when working from source,jburke,General,future,new,1.3.2,2009-10-20T06:41:13-07:00,high,
+10203,Consider using a custom object for NodeList instead of augmented Array,jburke,Core,2.0,new,1.4.0b,2009-10-23T20:33:12-07:00,high,
+10354,XHR should pass errors to dfd.errBack and not let them bubble up,jburke,Core,future,new,1.4.0b,2009-11-17T08:14:08-08:00,high,
+10592,dojo.config.require files required after dojo base but before modules in a dojo build,jburke,BuildSystem,future,new,1.4.0,2010-01-05T14:44:53-08:00,high,
+10700,dojo.moduleUrl bug,jburke,Core,future,new,1.4.0,2010-02-02T09:04:53-08:00,high,
+10795,Dojo build messes up flattened nls bundles for layers with prefix path duplication,jburke,BuildSystem,future,new,1.4.0,2010-02-26T10:42:56-08:00,high,
+10879,Same localization could be included more than one time in a build,jburke,BuildSystem,future,new,1.4.0,2010-03-23T02:49:43-07:00,high,
+10901,i18nUtil.flattenLayerFileBundles regular expression not general enough,jburke,BuildSystem,future,new,1.4.2,2010-03-25T06:28:07-07:00,high,
+11324,dojo.io.iframe First request does not work in Opera.,jburke,IO,tbd,new,1.4.3,2010-06-15T15:19:24-07:00,high,
+11365,'not wellformed' warning from firefox when working on locale files,jburke,Core,future,new,1.4.3,2010-06-24T06:45:08-07:00,high,
+11407,tests.cache test failure,jburke,BuildTools,tbd,new,1.5.0b2,2010-07-02T14:37:32-07:00,high,
+11568,"[patch][ccla]XHR attribute ""failOk"" isn't surpressing all error messages",jburke,Core,tbd,new,1.5,2010-08-13T09:29:03-07:00,high,
+11593,Error on call of dojo.requireLocalization when resource is missing (only with CDN),jburke,BuildTools,tbd,new,1.4.0,2010-08-18T13:38:03-07:00,high,jburke
+11900,[Regression] Big profile build makes StackOverflowError,jburke,BuildSystem,1.8,new,1.5,2010-10-30T02:42:21-07:00,high,
+12113,Base class undefined in build with circular references,jburke,BuildSystem,tbd,new,1.5,2010-12-22T03:09:03-08:00,high,
+12164,Browser back button has iframe history for dojo.io.iframe,jburke,IO,tbd,new,1.6.0b1,2011-01-15T09:04:44-08:00,high,
+12225,"Problem with xdomain loading, setTimeout and IE",jburke,General,tbd,new,1.5,2011-01-29T15:39:24-08:00,high,
+12230,"OAuth, Slash symbol in request parameters",jburke,IO,tbd,new,1.5,2011-01-31T13:43:46-08:00,high,
+12559,IO pipline topics: TypeError when subscribed to /dojo/io/error/,jburke,IO,tbd,new,1.6.0,2011-03-29T02:38:19-07:00,high,
+12563,tests.io.iframe fails on opera 11,jburke,IO,tbd,new,1.6.0,2011-03-29T14:14:22-07:00,high,
+14309,missing reference doc for jaxer,jburke,Documentation,tbd,new,1.7.0,2011-11-24T00:02:23-08:00,high,
+7822,"optimize=shrinksafe runs over all _base/_loader/ files, generating an error",jburke,BuildSystem,future,new,1.2.0,2008-10-08T20:38:31-07:00,low,
+13483,"mdnd test failures in Acceptance, VerticalDropMode",jfcunat,Dojox,tbd,new,1.7.0b1,2011-07-19T20:56:37-07:00,high,elazutkin
+11815,Opera: hang in dijit/tests/layout/test_StackContainer.html,ksv,Dijit,future,new,1.5,2010-10-01T10:06:44-07:00,high,doughays
+12025,Opera: base.module tabindex test failures,ksv,Dijit,future,new,1.5,2010-12-06T12:05:06-08:00,high,doughays
+12026,Opera: base.module FocusManager test hangs,ksv,Dijit,future,new,1.5,2010-12-06T12:07:07-08:00,high,doughays
+12027,Opera: infrastructure_module Widget_ondijitclick_a11y test failure,ksv,Dijit,future,new,1.5,2010-12-06T12:18:12-08:00,high,doughays
+12028,Opera: general-module Dialog_a11y test failures,ksv,Dijit,future,new,1.5,2010-12-06T12:44:15-08:00,high,doughays
+12029,Opera: general-module TooltipDialog_a11y test failures,ksv,Dijit,future,new,1.5,2010-12-06T13:31:01-08:00,high,doughays
+12030,Opera: general-module InlineEditBox test failures,ksv,Dijit,future,new,1.5,2010-12-06T14:19:28-08:00,high,doughays
+12032,Opera: general-module ColorPalette test failure,ksv,Dijit,future,new,1.5,2010-12-07T10:52:10-08:00,high,doughays
+12033,Opera: general-module TitlePane test failures,ksv,Dijit,future,new,1.5,2010-12-07T10:57:37-08:00,high,doughays
+12034,Opera: editor.module Editor_mouse test failures,ksv,Dijit,future,new,1.5,2010-12-07T11:37:29-08:00,high,doughays
+12035,Opera: editor.module Editor_LinkDialog test failures,ksv,Dijit,future,new,1.5,2010-12-07T12:17:15-08:00,high,doughays
+12036,Opera: editor.module Editor_FontChoice test failures,ksv,Dijit,future,new,1.5,2010-12-07T12:42:26-08:00,high,doughays
+12038,Opera: editor.module BackForwardState test failure,ksv,Dijit,future,new,1.5,2010-12-07T14:04:05-08:00,high,doughays
+12039,Opera: editor.module EnterKeyHandling test does not run,ksv,Dijit,future,new,1.5,2010-12-07T14:12:48-08:00,high,doughays
+12040,Opera: editor.module Editor_Misc test failure,ksv,Dijit,future,new,1.5,2010-12-07T14:24:42-08:00,high,doughays
+12041,Opera: editor.module Editor_a11y test failures,ksv,Dijit,future,new,1.5,2010-12-07T14:33:19-08:00,high,doughays
+12044,Opera: form.module FilteringSelect_a11y test failure,ksv,Dijit - Form,future,new,1.5,2010-12-08T06:59:20-08:00,high,doughays
+12045,Opera: form.module MultiSelect test failure,ksv,Dijit - Form,future,new,1.5,2010-12-08T07:03:38-08:00,high,doughays
+12046,Opera: form.module Slider_mouse test failure,ksv,Dijit - Form,future,new,1.5,2010-12-08T07:07:46-08:00,high,doughays
+12047,Opera: form.module Button_a11y test failures,ksv,Dijit - Form,future,new,1.5,2010-12-08T07:30:37-08:00,high,doughays
+12048,Opera: form.module ComboBox_a11y test failures,ksv,Dijit - Form,future,new,1.5,2010-12-08T07:54:45-08:00,high,doughays
+12049,Opera: form.module CheckBox_a11y test failures,ksv,Dijit - Form,future,new,1.5,2010-12-08T08:06:10-08:00,high,doughays
+12050,"Opera: form.module tests hang in runner, but pass when run individually",ksv,Dijit,future,new,1.5,2010-12-08T08:14:25-08:00,high,doughays
+12051,Opera: layout.module TabContainer_a11y test failure,ksv,Dijit,future,new,1.5,2010-12-08T08:45:34-08:00,high,doughays
+12052,Opera: layout.module TabContainer_mouse test failure,ksv,Dijit,future,new,1.5,2010-12-08T08:52:08-08:00,high,doughays
+12053,Opera: layout.module AccordionContainer_a11y test failure,ksv,Dijit,future,new,1.5,2010-12-08T08:57:38-08:00,high,doughays
+12054,Opera: layout.module BorderContainer test failures,ksv,Dijit,future,new,1.5,2010-12-08T09:05:02-08:00,high,doughays
+12055,Opera: layout.module GUI test failures,ksv,Dijit,future,new,1.5,2010-12-08T11:04:18-08:00,high,doughays
+12056,Opera: layout.module tests fail in runner but pass individually,ksv,Dijit,future,new,1.5,2010-12-08T11:12:19-08:00,high,doughays
+13856,need more a11y support on dijit.timetextbox widget,ksv,Dijit - Form,tbd,new,1.6.1,2011-09-06T23:12:20-07:00,high,xiangxz@…
+14695,Observable does not place objects in position in the result set.,kzyp,Data,tbd,new,1.6.1,2012-01-30T02:08:35-08:00,undecided,
+11470,JsonRestStore and creating items with parents,kzyp,DojoX Data,tbd,new,1.3.2,2010-07-21T03:15:53-07:00,blocker,
+12703,duplicates are shown after add items to DataGrid when used with ClientFilter and JsonRestStore,kzyp,DojoX Data,tbd,new,1.4.3,2011-04-16T16:49:15-07:00,blocker,
+12704,Deleted item remains in cache when using JsonRestStore and ClientFilter,kzyp,DojoX Data,tbd,new,1.4.3,2011-04-16T17:01:20-07:00,blocker,
+14440,"[regression] ""use strict"" issue with FireFox and ASP.NET",kzyp,General,tbd,new,1.7.0,2011-12-09T14:51:03-08:00,blocker,
+3849,dojo.query does not work on imported nodes,kzyp,Query,future,new,0.9,2007-07-24T21:37:48-07:00,high,keithpk@…
+7743,"deleted items remain in cache, new items not added",kzyp,DojoX Data,1.3,reopened,1.2beta,2008-09-26T14:45:10-07:00,high,
+7869,Dojo.query on XML in IE 7 fails for nth-child selectors,kzyp,Query,1.8,new,1.2.0,2008-10-15T07:47:19-07:00,high,alex
+7963,Preserving value types in default grid editor,kzyp,DojoX Grid,future,new,1.2.0,2008-10-25T20:20:12-07:00,high,BryanForbes
+9523,dojox.json.ref resolveJson does not correctly handle deletion from array properties,kzyp,Dojox,tbd,new,1.3.1,2009-07-08T12:07:16-07:00,high,
+9688,[patch] dojo._getIeDispatcher() doesn't return value.,kzyp,Events,future,new,1.3.2,2009-08-10T02:32:30-07:00,high,
+9801,JsonRestStore: onNew() notification should pass parentInfo,kzyp,DojoX Data,tbd,reopened,1.3.2,2009-08-31T18:08:57-07:00,high,simpli
+10260,someProperty search/replace gone wild in dojox.data test files,kzyp,DojoX Data,future,new,1.4.0b,2009-11-03T09:15:44-08:00,high,
+10320,changeContentTable test errors in Opera,kzyp,Query,1.8,new,1.3.2,2009-11-12T05:28:19-08:00,high,
+10432,JsonQuery.js sort part generation,kzyp,DojoX Data,tbd,new,1.4.0b,2009-11-30T09:05:56-08:00,high,
+10456,Invalid data got from concurrent fetchs on ClientFilter,kzyp,DojoX Data,tbd,new,1.4.0b,2009-12-02T12:05:21-08:00,high,
+10651,[regression] [patch] [cla] dojo.query not working for attribute selector that includes a tilda (~) character,kzyp,Query,future,new,1.4.0,2010-01-20T18:41:04-08:00,high,ktiedt
+10664,windowName causes a warning in IE6 when doing sends from https domains,kzyp,Dojox,tbd,new,1.4.0,2010-01-22T11:02:02-08:00,high,
+10688,JsonRestStore referential integrity problem on immediate deleteItem,kzyp,DojoX Data,tbd,new,1.4.0,2010-01-28T01:31:55-08:00,high,
+10691,windowName transport is not working on HTTPS to HTTP configuration using FireFox,kzyp,Dojox,tbd,new,1.4.0,2010-01-29T07:32:09-08:00,high,
+10740,[patch][cla] dojox.json.ref.toJson handles references unsafely,kzyp,Dojox,tbd,new,1.4.0,2010-02-10T11:54:08-08:00,high,
+10905,Method isDirty returns undefined instead of false,kzyp,DojoX Data,tbd,new,1.4.0,2010-03-25T14:59:37-07:00,high,
+11305,stack overflow from dojo.fromJson during de-serializing of JSON into javascript object,kzyp,Dojox,tbd,new,1.4.2,2010-06-13T15:42:49-07:00,high,
+11410,[regression] getValues produces error: args.item is undefined,kzyp,DojoX Data,tbd,new,1.5.0rc1,2010-07-03T01:54:19-07:00,high,
+11546,CouchDBRestStore expects a string query parameter,kzyp,DojoX Data,tbd,new,1.5,2010-08-06T17:00:52-07:00,high,
+11584,Support for packages,kzyp,General,1.8,new,1.5,2010-08-17T19:47:11-07:00,high,
+11652,null return value for JsonRestStore.getValue(..) cause error,kzyp,DojoX Data,tbd,new,1.5,2010-08-26T20:42:28-07:00,high,
+11700,dojox.json.query collects properties and methods from the object's prototype along with the instance properties,kzyp,Dojox,tbd,new,1.5,2010-09-08T10:20:10-07:00,high,
+11733,receiving onSet notification on __isDirty attribute when reverting a JsonRestStore,kzyp,DojoX Data,tbd,new,1.5,2010-09-15T05:05:50-07:00,high,goriol@…
+11738,dojo.Stateful calls watch callbacks if value did not change,kzyp,Core,tbd,reopened,1.5,2010-09-15T10:50:02-07:00,high,
+11751,PersevereStore Inconsistent Behavior,kzyp,DojoX Data,,new,1.4.1,2010-09-17T06:45:58-07:00,high,
+11766,JsonRestStore.getIdentity(): order of precedence is wrong?,kzyp,DojoX Data,tbd,new,1.5,2010-09-21T11:42:55-07:00,high,
+11838,CouchDBRestStore adding invalid item attributes after save,kzyp,DojoX Data,tbd,new,1.5,2010-10-07T08:54:24-07:00,high,alan.plante@…
+11851,dojox.rpc.JsonRest should wait before the last request,kzyp,DojoX Data,tbd,new,1.5,2010-10-12T08:54:25-07:00,high,
+11865,dojox.socket.LongPoll does not work with xhrGet and preventCache=true,kzyp,Dojox,tbd,new,1.5,2010-10-18T20:39:08-07:00,high,
+11868,CouchDBRestStore Delete Not Working (409),kzyp,DojoX Data,tbd,new,1.5,2010-10-20T05:24:33-07:00,high,alan.plante@…
+11873,dojox.socket.LongPoll close() error,kzyp,Dojox,tbd,new,1.5,2010-10-21T22:25:23-07:00,high,
+11945,Telling deferred.errback from deferred.cancel,kzyp,Core,tbd,new,1.5,2010-11-15T07:13:57-08:00,high,
+12217,query.js defines a _wrap function on the Array native,kzyp,Query,1.8,new,1.6.0b1,2011-01-26T10:39:31-08:00,high,
+12385,Dojo Data Documentation Cleanup,kzyp,Documentation,1.8,new,1.6.0,2011-03-05T02:01:06-08:00,high,
+12407,JSonRestStore doesn't compute the results count correctly,kzyp,DojoX Data,tbd,new,1.6.0rc1,2011-03-08T04:59:10-08:00,high,
+12572,store.JsonRest with enhancedgrid cause undefined in url,kzyp,Data,tbd,new,1.6.0,2011-03-29T21:55:27-07:00,high,
+12593,dojox.cometd.RestChannels - disconnect(),kzyp,DojoX Cometd,tbd,new,1.6.0,2011-04-01T12:28:59-07:00,high,
+12679,Webkit sends keycode 10 for Enter when ctrl is held at same time,kzyp,Events,tbd,new,1.6.0,2011-04-14T16:20:12-07:00,high,
+12744,dojox.data.JsonQueryRestStore requires dojox.data.ClientFilter,kzyp,DojoX Data,tbd,new,1.6.0,2011-04-21T12:04:12-07:00,high,
+12879,dojox.rpc modules need proper wrapping for 1.6 builds,kzyp,Dojox,1.8,new,1.6.1,2011-05-08T11:42:57-07:00,high,dmachi
+12930,ref.js resolveJSON schema look fails for object id's with [ or / characters,kzyp,Dojox,tbd,new,1.6.1,2011-05-13T08:16:01-07:00,high,
+12968,dojox.data.JsonRestStore should have a public method to clear its cache,kzyp,DojoX Data,tbd,new,1.6.1,2011-05-17T10:20:03-07:00,high,
+13079,infinitely recursive object when calling dojo.toJson(dojo),kzyp,Core,1.8,new,1.6.1,2011-05-25T12:56:13-07:00,high,
+13084,Query attribute selector with square bracket fails in IE7,kzyp,Query,tbd,new,1.6.1,2011-05-26T10:41:42-07:00,high,
+13144,dojo.store.Observable fails to correctly notify with dojo.store.Store transaction API,kzyp,Data,tbd,new,1.6.1,2011-06-01T02:22:33-07:00,high,
+13162,JSON extended schema problem,kzyp,Dojox,tbd,new,1.6.1,2011-06-02T08:51:48-07:00,high,
+13213,dojo.Stateful internal functions name collision with holding object properties,kzyp,Core,tbd,new,1.7.0b1,2011-06-09T12:06:17-07:00,high,
+13235,"JsonRestStore+DataGrid: fetch data, count = rowsPerPage => rowCount = 2 * count",kzyp,DojoX Data,tbd,new,1.6.1,2011-06-14T10:38:02-07:00,high,
+13240,JsonRest Store Custom Headers,kzyp,Data,tbd,new,1.7.0b1,2011-06-15T04:05:01-07:00,high,
+13282,Stateful: Calling unwatch multiple times removes arbitrary callbacks,kzyp,General,tbd,new,1.5,2011-06-22T09:46:22-07:00,high,
+13346,JSON Schema Validation does not support circular relationships,kzyp,Dojox,tbd,new,1.6.1,2011-06-30T06:58:25-07:00,high,
+13357,ObjectStore: isItem(item) could also test for identity,kzyp,Data,tbd,new,1.7.0b1,2011-07-03T02:22:25-07:00,high,
+13445,Problem with the Dojo.Store.Memory,kzyp,Data,tbd,new,1.6.1,2011-07-15T10:35:49-07:00,high,
+13500,ClientFilter does not use comparatorMap for sorts,kzyp,DojoX Data,tbd,new,1.6.1,2011-07-22T08:54:15-07:00,high,
+13539,[COMPAT] dojo.subscribe/publish can't handle topic names with ':',kzyp,Core,1.8,new,1.7.0b1,2011-07-28T08:13:21-07:00,high,
+13716,dojo.data.ObjectStore compatible with the old labelAttribute,kzyp,Data,,new,,2011-08-18T02:35:33-07:00,high,
+13743,Subscribing to on.Evented events from event handler,kzyp,Core,tbd,new,1.7.0b1,2011-08-23T10:50:08-07:00,high,
+13774,DeferredList consumeErrors parameter is ignored,kzyp,Core,tbd,new,1.6.1,2011-08-29T11:02:14-07:00,high,
+13827,The scope of _dirtyObjects in ObjectStore,kzyp,Data,tbd,new,1.6.1,2011-09-05T06:56:35-07:00,high,
+13936,JsonRestStore - path broken,kzyp,DojoX Data,1.8,new,,2011-09-17T14:29:57-07:00,high,
+13953,dojo.store.util.QueryResults bug?,kzyp,Data,tbd,new,1.6.1,2011-09-20T09:21:40-07:00,high,
+13955,dojox.json.schema.validate doesn't take into account default values from the schema when calculating validity,kzyp,Dojox,tbd,new,1.6.1,2011-09-20T10:39:05-07:00,high,
+14084,JsonRestStore.isDirty() returns same value for all stores.,kzyp,DojoX Data,tbd,new,1.6.1,2011-10-11T13:33:42-07:00,high,
+14094,Deferred.progress should check finished,kzyp,General,tbd,new,1.6.1,2011-10-13T11:54:40-07:00,high,
+14129,aspect.before bypasses aspect.around,kzyp,Events,tbd,new,1.7.0b1,2011-10-20T02:08:08-07:00,high,
+14206,dojo.data.ObjectStore.save() problem selecting the request method,kzyp,Data,tbd,new,1.6.1,2011-11-03T10:00:50-07:00,high,
+14305,missing reference doc for dojox/rpc,kzyp,Documentation,tbd,new,1.7.0,2011-11-23T23:54:51-08:00,high,
+14539,[DOCS] Wrong examples in dojo/topic article,kzyp,Documentation,tbd,new,1.7.1,2011-12-29T09:37:26-08:00,high,
+14555,[regression] dojo.NodeList.concat([]) is broken,kzyp,Query,tbd,new,1.7.1,2012-01-03T07:10:51-08:00,high,
+14606,"Dojo 1.7.1 AMD mode and Prototype 1.7 ""on"" problem",kzyp,Events,tbd,new,1.7.1,2012-01-11T23:43:32-08:00,high,
+14622,npm with dijit/dojox fails because of package.json's dojo version,kzyp,Dijit,tbd,new,1.7.1,2012-01-14T09:41:59-08:00,high,
+784,Editor: add auto-save via dojo.storage to Editor2,liucougar,Dojox,future,new,0.3,2006-05-22T16:50:37-07:00,high,elijahlofgren@…
+7056,Drawing trace and the mouse trace not match,liucougar,Dojox,future,assigned,1.1.1,2008-06-25T22:29:24-07:00,high,ttrenka
+8295,dijit.Editor breaks forms under IE7,liucougar,Dijit,future,new,1.2.3,2008-12-18T06:12:34-08:00,high,
+14304,missing reference doc page for dojox/sketch,liucougar,Documentation,tbd,new,1.7.0,2011-11-23T23:53:05-08:00,high,
+14685,dojo.Deferred exhausts stack for long chains,markwubben,Core,tbd,assigned,1.7.1,2012-01-27T12:40:20-08:00,undecided,neonstalwart
+14154,"Cannot set ""url"" in dojox.form.uploader in IE 7",mwilcox,DojoX Uploader,tbd,new,1.6.1,2011-10-25T14:07:54-07:00,blocker,
+14585,Uncaught Syntax error on upload,mwilcox,DojoX Uploader,tbd,new,1.7.1,2012-01-09T16:43:33-08:00,blocker,
+8336,firebug lite popup issues,mwilcox,General,future,new,1.2.3,2008-12-31T13:49:36-08:00,high,
+9582,Invalid iconClassPrefix in TablePlugins.js and UploadImage.js,mwilcox,Dojox,future,new,1.3.0,2009-07-21T04:34:36-07:00,high,
+9583,Table editor plugin uses non-localized strings,mwilcox,Dojox,future,new,1.3.0,2009-07-21T08:47:45-07:00,high,
+9871,dojox.drawing inline docs break doc parsing,mwilcox,Documentation,future,new,1.3.2,2009-09-11T06:13:14-07:00,high,
+9921,dojox.drawing breaks keyboard browser tab navigation,mwilcox,Dojox,future,new,1.3.2,2009-09-18T04:35:19-07:00,high,
+11135,dojox.drawing horizontal toolbar still draws vertically,mwilcox,DojoX Drawing,future,new,1.5.0b2,2010-05-11T23:25:41-07:00,high,
+11140,File Uploader destroyed in ie8 when using href with javascript:,mwilcox,DojoX Uploader,1.8,new,1.3.2,2010-05-12T09:56:45-07:00,high,
+11197,DataChart doesn't mixin markers: false,mwilcox,Charting,future,new,1.5.0b2,2010-05-23T10:50:53-07:00,high,
+11199,_bootstrap/hasConsole test failure,mwilcox,Core,1.8,new,1.5.0b2,2010-05-23T20:12:30-07:00,high,
+11826,dijit.FileUploader,mwilcox,Dojox,1.8,new,1.5,2010-10-04T13:39:55-07:00,high,
+11885,FileUploader: remove deprecated button,mwilcox,DojoX Form,1.8,new,1.5,2010-10-26T11:57:41-07:00,high,
+11902,Fileuploader uploads files in reverse order (flash multifile mode),mwilcox,DojoX Uploader,1.8,new,1.5,2010-11-01T02:05:46-07:00,high,vladimir.razuvaev@…
+12101,flaudio example in docs is broken,mwilcox,Dojox,future,new,1.5,2010-12-17T15:10:23-08:00,high,ttrenka
+12182,"Dojox.charting.DataChart  doesn't support x,y coordinants from server",mwilcox,Charting,1.8,new,1.5,2011-01-19T10:30:19-08:00,high,
+13440,[patch]dojox.form.uploader.plugins.Flash url timestamp,mwilcox,DojoX Form,tbd,new,1.7.0b1,2011-07-14T02:13:23-07:00,high,
+13453,Flash Uploader plugin doesn't send onComplete for 2nd concurrent upload,mwilcox,DojoX Uploader,tbd,new,1.6.1,2011-07-16T19:10:17-07:00,high,
+13458,Flash uploader _fileMap isn't reset when flashReset is called,mwilcox,DojoX Uploader,tbd,new,1.6.1,2011-07-17T18:52:09-07:00,high,
+13799,dojox.Drawing side effect,mwilcox,DojoX Drawing,tbd,new,1.6.1,2011-08-31T17:39:13-07:00,high,
+14075,Uploader: console.warn in buildRendering,mwilcox,DojoX Form,1.8,new,1.6.1,2011-10-08T20:02:33-07:00,high,
+14150,Uploader - focus breaks IE7,mwilcox,DojoX Uploader,1.8,new,1.6.1,2011-10-24T12:08:07-07:00,high,
+14237,dojox.form.uploader.plugins.Flash Return Data is not escaped,mwilcox,DojoX Uploader,tbd,new,1.6.1,2011-11-07T12:00:51-08:00,high,
+14245,Dojox Uploader sends empty file using IFrame plugin,mwilcox,DojoX Uploader,tbd,new,1.6.1,2011-11-08T08:55:43-08:00,high,
+14502,[regression] dojo1.7 dojox audio not working,mwilcox,Dojox,1.7.2,reopened,1.7.1,2011-12-18T17:24:39-08:00,high,ttrenka
+6951,grid's horizontal scrolling broken in opera,nathan,DojoX Grid,,reopened,1.1.1,2008-06-12T07:31:20-07:00,high,sidlon@…
+7555,[dojox.fx] flip animation does not allow mixing,nic,Dojox,future,new,1.1.1,2008-08-28T19:08:03-07:00,low,
+7868,Grid 1.2 wrong display of rows after scrolling down,nonken,Documentation,future,assigned,1.2.0,2008-10-15T03:03:21-07:00,blocker,marcus@…
+6938,ExpandoPane theme upgrades needed,nonken,Dojox,future,assigned,1.1.1,2008-06-11T04:15:46-07:00,high,
+7342,dojox.widget.Toaster not direct child of body,nonken,DojoX Widgets,future,reopened,1.1.1,2008-07-31T13:08:42-07:00,high,
+8591,Pager scrolls one pixel more when scrolling to the right side,nonken,DojoX Widgets,future,new,1.2.3,2009-02-07T07:23:59-08:00,high,
+10335,number spinner value in grid cell invisible,nonken,themes,future,new,1.4.0b,2009-11-14T06:05:12-08:00,high,
+10587,[patch][cla]dijit.Tree loosing nodes when dragging really fast,nonken,Dijit,future,new,1.4.0,2010-01-04T07:49:56-08:00,high,bill
+10644,dojox.form.BusyButton label can't be changed permanently,nonken,DojoX Form,tbd,new,1.4.0,2010-01-19T04:13:59-08:00,high,mangelp@…
+11749,[tundra] Missing bottom & right border in dijit.Menu in webkit,nonken,themes,tbd,new,1.5,2010-09-17T02:03:59-07:00,high,
+2431,Editor: Image selection box is not updated properly when changing alignment.,nonken,Dojox,future,new,0.4.1,2007-02-08T17:12:34-08:00,low,
+14687,dijit widgets do not respect browser language settings when html lang is set,peller,Internationalization,tbd,assigned,1.7.1,2012-01-28T08:32:58-08:00,undecided,
+14420,"dojo.number.parse() doesn't recognize numbers in ""012,677.00"" pattern",peller,Core,tbd,new,1.6.1,2011-12-08T20:12:28-08:00,blocker,jianqin@…
+2476,Missing Locales in build.xml,peller,BuildSystem,future,new,0.4.1,2007-02-21T08:39:10-08:00,high,
+3809,Normalize Arabic/Hindi numerals,peller,Internationalization,future,new,0.9,2007-07-19T12:35:07-07:00,high,hwcdl@…
+3946,figure out why invalid UTF-8 is accepted by Parse.java in the pre-commit hook,peller,Operations,future,new,0.9,2007-08-01T15:28:18-07:00,high,
+5089,dojo.date.add weekday routine assumes Saturday/Sunday,peller,Internationalization,future,new,0.9,2007-11-11T19:57:48-08:00,high,
+5149,testUrl runs default tests,peller,TestFramework,future,reopened,1.0,2007-11-14T08:09:39-08:00,high,
+5509,popups/dnd placement off by a scrollbar width in themeTester,peller,HTML,future,new,1.0,2008-01-04T12:49:23-08:00,high,hwcdl@…
+5630,[patch] [ccla] Not able to run DOH tests from outside of the dojo/tests directory,peller,TestFramework,future,new,1.0,2008-01-21T09:31:18-08:00,high,ptwobrussell@…
+6241,dojox.date.posix.getIsoWeekOfYear: Week 53 in 2007?,peller,Dojox,future,new,1.1b1,2008-03-18T00:16:01-07:00,high,haavikko@…
+7523,DOH failures under Rhino,peller,General,1.8,new,1.1.1,2008-08-25T11:24:54-07:00,high,"phiggins, jburke"
+7969,CLDR build script performance: catalog failing with latest version of ant,peller,BuildTools,future,new,1.2.0,2008-10-26T21:10:57-07:00,high,
+8756,dojo.number.format returning an incorrect value or large exponentials,peller,Core,future,reopened,1.3.0b1,2009-02-25T14:26:19-08:00,high,
+9017,dojo.number.format with 0 leading zeros shows one leading zero,peller,General,future,new,1.3.0rc2,2009-03-31T04:54:53-07:00,high,
+9120,dojo.date.stamp default time is not zulu,peller,Date,future,new,1.3.0,2009-04-13T16:54:10-07:00,high,doughays
+10032,Use sprites in dojox.editor.plugins.Smiley,peller,Dojox,future,new,1.3.2,2009-10-06T07:52:53-07:00,high,
+10843,dojo.number.format does not support spaces,peller,General,future,assigned,1.4.0,2010-03-15T12:12:40-07:00,high,
+10865,"dojox.date.timezone loads TZ data via XHR, and synchronously",peller,Dojox,future,new,1.4.0,2010-03-19T14:42:38-07:00,high,toonetown
+11190,dojo.date.locale.parse handles 'S' token incorrectly,peller,Date,tbd,new,1.5.0b2,2010-05-21T10:47:37-07:00,high,
+11212,dojox.validate.isUrl doesn't validate certain urls correctly,peller,Dojox,tbd,new,1.4.3,2010-05-25T07:30:37-07:00,high,
+11435,dojox.validate.regexp.url is too specific with fragment identifiers,peller,Dojox,tbd,new,1.5.0rc1,2010-07-13T06:52:18-07:00,high,doughays peller dante
+11519,dojox.uuid.generateTimeBasedUuid() issue on Mac OS,peller,Dojox,tbd,new,1.4.3,2010-08-01T22:03:23-07:00,high,"huangyim@…, skinner"
+11884,Update to CLDR 1.9,peller,Internationalization,1.8,reopened,1.5,2010-10-26T07:24:07-07:00,high,LQQI@…
+12749,Error: dojo.date.locale.format: invalid pattern char: LLL y,peller,Internationalization,tbd,new,1.6.0,2011-04-22T11:15:27-07:00,high,
+13032,dojox.date.timezone tests failing,peller,Date,tbd,new,1.6.1,2011-05-21T01:22:35-07:00,high,
+13174,"Error Bundle not found: gregorian in dojo.cldr , locale=es-es with dojo 1.5 and firefox 4",peller,Internationalization,tbd,new,1.5.0b1,2011-06-04T16:00:43-07:00,high,
+13373,toISOString of Invalid date should produce 'null',peller,Date,tbd,new,1.7.0b1,2011-07-06T10:47:14-07:00,high,
+13495,Wrong l10n information in dojo.cldr.supplemental,peller,Internationalization,1.8,new,1.7.0b1,2011-07-21T12:10:04-07:00,high,
+13940,Calls to getLocalization prevent removal of legacy loader,peller,Internationalization,tbd,new,1.7.0b1,2011-09-18T19:34:58-07:00,high,"bill, rcgill"
+14001,Various fixes for dojo/nls,peller,Internationalization,1.8,new,1.7.0b1,2011-09-26T14:40:19-07:00,high,
+14044,"[patch]Timezone shows IST time for ""Asia/Dhaka"" in place of ""BDT""",peller,Dojox,tbd,new,1.6.1,2011-10-02T22:24:14-07:00,high,peller
+14200,[task] create separate tests for transition modules in dojox/css3,peller,Dojox,1.8,new,1.7.0,2011-11-02T19:09:45-07:00,high,"peller, chrism, nic"
+14244,[patch][cla][meta] mdnd baseless conversion,peller,Dojox,1.8,new,1.7.0,2011-11-08T08:20:49-08:00,high,
+14376,regression in dojox.widget.MultiSelectCalendar,peller,DojoX Widgets,tbd,new,1.7.0,2011-12-02T19:12:01-08:00,high,
+14513,"dojo.number.format returning ""-0""",peller,General,1.8,assigned,1.7.1,2011-12-20T08:56:16-08:00,high,
+14646,dojox.date examples not working on CDN,peller,Dojox,1.7.2,new,1.6.0,2012-01-19T19:59:31-08:00,high,
+7020,Regression in dijit.form.CurrencyTextBox.constraints API docs,pottedmeat,Doc parser,future,assigned,1.1.1,2008-06-20T13:34:55-07:00,blocker,
+10516,djConfig base documentation missing from api.xml,pottedmeat,Doc parser,tbd,new,1.4.0,2009-12-16T09:24:03-08:00,blocker,ttrenka
+11561,dojo.parser missing from docs,pottedmeat,Doc parser,future,new,1.5,2010-08-11T19:10:29-07:00,blocker,"ttrenka, phiggins"
+4525,Implement all tags in dojox.dtl,pottedmeat,DojoX DTL,future,assigned,0.9,2007-09-20T17:03:31-07:00,high,
+6986,doctool/API pages newlines stripped,pottedmeat,Doc parser,future,assigned,1.1.1,2008-06-18T09:34:13-07:00,high,
+7291,dojox.help -- server-side PHP Notice invalidates jsonp results,pottedmeat,Dojox,future,assigned,1.1.1,2008-07-26T12:37:47-07:00,high,wolfram
+7558,[api doc] modulePaths no longer recognized,pottedmeat,Doc parser,future,assigned,1.1.1,2008-08-29T15:41:20-07:00,high,
+7663,Problem with api viewer and dojo.data.*,pottedmeat,Doc parser,future,assigned,1.1.1,2008-09-14T11:57:01-07:00,high,
+7751,dojox.dtl.filter.strings.slugify bug,pottedmeat,DojoX DTL,future,assigned,1.2beta,2008-09-28T10:59:34-07:00,high,
+8723,dojox.dtl: style is not preserved,pottedmeat,DojoX DTL,future,assigned,1.3.0b1,2009-02-22T19:52:23-08:00,high,
+8840,"[patch][cla] dojox.dtl: in IE, tabIndex parsing error",pottedmeat,DojoX DTL,future,assigned,1.3.0b2,2009-03-09T15:56:15-07:00,high,
+8912,[patch] [cla] serious memory leak in dojox.dtl in IE,pottedmeat,DojoX DTL,future,assigned,1.3.0b3,2009-03-17T11:40:06-07:00,high,
+9251,DTL: Extending a block inside a for loop doesn't work,pottedmeat,DojoX DTL,future,assigned,1.3.0,2009-05-05T11:38:14-07:00,high,
+9255,DTL extends doesnt work with objects,pottedmeat,DojoX DTL,future,assigned,1.3.0,2009-05-06T04:38:24-07:00,high,
+9292,DTL problem with nested widgets inside,pottedmeat,DojoX DTL,future,assigned,1.3.1,2009-05-13T06:07:00-07:00,high,
+9382,DTL: Error when a block is inside an IF that refers to an undefined variable,pottedmeat,DojoX DTL,future,new,1.3.0,2009-06-08T03:26:29-07:00,high,
+9623,Cache issue with dojox.dtl._Templated,pottedmeat,DojoX DTL,future,new,1.3.2,2009-07-29T01:42:15-07:00,high,
+9696,"Widget won't run on IE7 with ""object does not support this property or method error"" while it runs correctly at other browser",pottedmeat,DojoX DTL,future,new,1.3.2,2009-08-10T12:51:44-07:00,high,
+9716,[patch] [cla] DTL variables in attribute nodes not replaced when empty,pottedmeat,DojoX DTL,future,new,1.3.2,2009-08-13T20:06:01-07:00,high,
+9841,[regression] DTL doh test failure in test_tag_ifequal on FF3.5/mac,pottedmeat,DojoX DTL,future,new,1.3.2,2009-09-04T21:37:09-07:00,high,
+10012,"""Constraints"" mixins not documented with type info",pottedmeat,Doc parser,future,new,1.3.2,2009-10-02T08:20:39-07:00,high,
+10118,[patch][cla] timesince filter fails if delta < 60000,pottedmeat,DojoX DTL,future,new,1.4.0b,2009-10-15T03:45:45-07:00,high,pottedmeat
+10199,DnD parsing on a DTL template doesn't work,pottedmeat,DojoX DTL,future,new,1.4.0b,2009-10-23T11:58:54-07:00,high,welldamn@…
+10258,Variable evaluation inconsistencies with official DTL (if-tag),pottedmeat,DojoX DTL,future,new,1.4.0b,2009-11-03T06:19:40-08:00,high,pottedmeat
+10518,"dojo.subscribe/unsubscribe/publish should be methods, not properties",pottedmeat,Doc parser,1.4.3,new,1.4.0,2009-12-16T10:45:43-08:00,high,"ttrenka, dante"
+10519,type info for dojo.is* does not parse right,pottedmeat,Doc parser,tbd,new,1.4.0,2009-12-16T10:50:49-08:00,high,dante
+10560,unable to access/load dojox.dtl._DomTemplated from CDN,pottedmeat,DojoX DTL,tbd,new,1.4.0,2009-12-24T11:40:00-08:00,high,
+10775,IE6 DTL re-render for Select Option does not refresh to newer values,pottedmeat,DojoX DTL,tbd,new,1.4.0,2010-02-22T10:07:19-08:00,high,
+10830,[regression] dojox.dtl has a problem with script tags on IE6,pottedmeat,DojoX DTL,tbd,new,1.4.0,2010-03-09T14:00:29-08:00,high,
+11202,IE8 multiple DTL test failures,pottedmeat,DojoX DTL,tbd,new,1.5.0b2,2010-05-24T11:12:44-07:00,high,
+11220,[patch][cla] dojox.dtl.contrib.dijit - widgets are not destroyed,pottedmeat,DojoX DTL,tbd,assigned,1.5.0b2,2010-05-26T12:37:57-07:00,high,
+11231,dtl - dojoAttachEvent doesn't work for parsed widgets,pottedmeat,DojoX DTL,tbd,new,1.5.0b2,2010-05-28T06:58:31-07:00,high,
+11260,function phptemplate_jsdoc_object_form($form) is defined twice in util/jsdoc/template.php,pottedmeat,Doc parser,tbd,new,1.5.0b2,2010-06-03T12:14:57-07:00,high,
+11475,[patch][cla] dojox.dtl.tag.logic - for loop does not unrender properly when iterating an object,pottedmeat,DojoX DTL,tbd,new,1.5,2010-07-22T12:35:03-07:00,high,
+11576,[patch] [cla] dtl.test_annoying_nest fail in FF 4.0 beta 3,pottedmeat,DojoX DTL,tbd,new,1.5,2010-08-16T15:53:10-07:00,high,
+11667,"[patch][cla] dojox.dtl time filter fails with ""g"" formatter",pottedmeat,DojoX DTL,tbd,new,1.5,2010-08-31T09:57:06-07:00,high,
+12151,dojo.Deferred docs missing,pottedmeat,Doc parser,tbd,new,1.5,2011-01-10T13:28:03-08:00,high,ttrenka
+12301,docscripts makeCix.php fails to produce output,pottedmeat,Doc parser,tbd,new,1.6.0b1,2011-02-16T09:22:28-08:00,high,
+12304,[patch][cla] DTL: With tag doesn't unrender correctly.,pottedmeat,DojoX DTL,tbd,new,1.5,2011-02-16T10:11:05-08:00,high,pottedmeat
+12467,xhrGet rawBody docs not parsing,pottedmeat,Doc parser,tbd,new,1.4.0,2011-03-17T08:43:49-07:00,high,ttrenka
+12618,[regression]dialog widget losing nested content attachpoints with dojox.dtl._Templated,pottedmeat,DojoX DTL,tbd,new,1.6.0,2011-04-07T04:22:18-07:00,high,
+12644,dojox.dtl._DomTemplated breaks when included in a template,pottedmeat,DojoX DTL,tbd,reopened,1.6.0,2011-04-11T08:50:30-07:00,high,
+12886,djConfig api description misses entries,pottedmeat,Doc parser,tbd,new,1.6.1,2011-05-09T06:35:21-07:00,high,
+13517,[patch][cla] dojox.dtl.contrib.dijit.AttachNode doesn't update attach points on re-render,pottedmeat,DojoX DTL,tbd,new,1.6.1,2011-07-26T01:42:39-07:00,high,
+13669,"Urlencode string filter should add ""0"" padding on values 0 to 9",pottedmeat,DojoX DTL,1.8,new,1.6.1,2011-08-11T02:26:23-07:00,high,
+12932,[patch][trivial]dojox.dtl.filter.string._urlquote incorrectly encodes chars < 16,pottedmeat,DojoX DTL,tbd,new,1.6.1,2011-05-13T13:55:06-07:00,low,"cjolif, chrism1"
+14271,in GFX/VML the shape of a path that has been removed then added back to the surface can't be updated,pruzand,DojoX GFX,tbd,new,1.7.0,2011-11-16T07:50:48-08:00,high,
+9828,Variable named 'yield' causes problems in shrinksafe,rbackhouse,ShrinkSafe,future,new,1.3.2,2009-09-03T08:46:00-07:00,blocker,"BryanForbes, peller"
+2298,Shrinksafe removes comments containing IE's propietary conditional compilation code,rbackhouse,ShrinkSafe,future,new,0.4.1,2007-01-09T12:11:29-08:00,high,
+5436,ShrinkSafe appears to not handle '$super' in this code,rbackhouse,ShrinkSafe,future,new,0.9,2007-12-20T07:35:15-08:00,high,
+8691,Bug with non-anon function properties,rbackhouse,ShrinkSafe,future,new,1.3.0b1,2009-02-19T03:30:22-08:00,high,rbackhouse
+11673,problem with shrinksafe and recursing using named functions,rbackhouse,ShrinkSafe,tbd,new,1.5,2010-09-02T07:53:24-07:00,high,
+13806,Shrinksafe stripConsole missing methods,rbackhouse,ShrinkSafe,tbd,new,1.7.0b1,2011-09-01T15:43:25-07:00,high,
+14501,Shrinksafe parse errors should report line number,rbackhouse,ShrinkSafe,tbd,new,1.7.1,2011-12-18T10:48:22-08:00,high,
+6105,"Compressor breaks ""FOR EACH"" loops",rbackhouse,ShrinkSafe,future,new,1.0,2008-03-06T09:10:29-08:00,low,
+9682,ShrinkSafe obfuscates _ character when it shouldn't,rbackhouse,ShrinkSafe,future,new,1.3.2,2009-08-09T09:48:43-07:00,low,
+14675,"Dojo build fails with ""location"" is not defined",rcgill,BuildSystem,tbd,new,1.7.1,2012-01-25T05:48:46-08:00,undecided,
+14690,AMD counterpart for dojo.global,rcgill,Documentation,tbd,assigned,1.7.1,2012-01-28T14:15:11-08:00,undecided,
+14693,dijit.byId not available when async:true,rcgill,Dijit,tbd,assigned,1.7.1,2012-01-29T22:25:59-08:00,undecided,
+14260,Build crashes with node.js version 0.6+,rcgill,BuildSystem,1.8,assigned,1.7.0,2011-11-14T08:18:25-08:00,blocker,
+14406,[regression] dojo.eval no longer uses dojo.global,rcgill,Core,1.7.2,assigned,1.7.0,2011-12-06T17:15:37-08:00,blocker,"jhpedemonte, neonstalwart, jburke"
+14459,[regression] Cannot load a local module alongside xd dojo using legacy APIs,rcgill,Loader,1.7.2,assigned,1.7.0,2011-12-13T19:08:58-08:00,blocker,
+14545,build system miss the dependencies declared in AMD's require() call,rcgill,BuildSystem,tbd,assigned,1.7.1,2011-12-31T02:03:02-08:00,blocker,
+12619,"Builds fails when prefixes are not matching the prefixpath scheme ""../prefix""",rcgill,BuildSystem,1.8,assigned,1.5,2011-04-07T06:51:58-07:00,high,m.reiprecht@…
+13457,dojo tests fail in node,rcgill,General,1.8,assigned,1.7.0b1,2011-07-17T15:07:52-07:00,high,
+13825,dojo.ready does not fire after faulty require,rcgill,Loader,1.8,assigned,,2011-09-05T05:29:17-07:00,high,
+13956,Doh 1.7.0b5 scopeTest errors,rcgill,TestFramework,1.8,assigned,1.7.0b1,2011-09-20T11:41:20-07:00,high,asmodehn@…
+14005,build system includes cruft and names left over from bdBuild,rcgill,BuildSystem,1.8,assigned,1.7.0b1,2011-09-27T03:07:24-07:00,high,
+14048,"""Error: Bundle not found"" for locale=de-DE",rcgill,General,1.8,assigned,1.6.1,2011-10-04T00:53:42-07:00,high,
+14077,"layerOptimize ""closure.keepLines"" does not keep lines",rcgill,BuildSystem,1.8,assigned,1.7.0b1,2011-10-10T04:49:04-07:00,high,
+14107,"Parameter ""--package"" doesn't work with value ""../../dijit""",rcgill,BuildSystem,1.8,assigned,1.7.0b1,2011-10-17T08:56:15-07:00,high,neonstalwart
+14115,[patch][cla]use module.url for hint to vm.runInThisContext,rcgill,Loader,1.8,assigned,1.7.0b1,2011-10-18T12:27:41-07:00,high,
+14127,builder fails silently (exit code is still 0),rcgill,BuildSystem,1.8,assigned,1.7.0b1,2011-10-19T18:12:39-07:00,high,
+14153,dojo/test/i18n not working in rhino,rcgill,TestFramework,1.8,assigned,1.6.1,2011-10-25T10:37:30-07:00,high,chrism
+14167,"when builder is interrupted by ctrl+c, orphan procs are left in node",rcgill,BuildSystem,1.8,assigned,1.7.0,2011-10-28T17:51:11-07:00,high,
+14169,[regression] build does not create layer-specific nls bundles,rcgill,BuildSystem,1.8,assigned,1.7.0,2011-10-28T20:16:00-07:00,high,cjolif
+14187,Google Map API is somehow broken,rcgill,Loader,1.8,assigned,1.7.0,2011-11-01T03:04:47-07:00,high,zhangyp
+14198,Incorrect param passed to defineModule in some scenarios when IE is in use,rcgill,Loader,1.7.2,assigned,1.7.0b1,2011-11-02T12:06:15-07:00,high,
+14210,Remove unused build scripts,rcgill,BuildSystem,1.8,assigned,1.7.0,2011-11-03T13:22:35-07:00,high,
+14226,i18n extraLocales async test failure,rcgill,Internationalization,1.8,assigned,1.7.0,2011-11-06T01:32:01-08:00,high,peller
+14298,missing loader/builder documentation pages,rcgill,Documentation,1.8,assigned,1.7.0,2011-11-23T20:27:17-08:00,high,
+14299,legacy.rst missing link,rcgill,Documentation,1.8,assigned,1.7.0,2011-11-23T20:38:19-08:00,high,
+14375,'invalid label' error when loading i18n resource file,rcgill,Loader,1.7.2,assigned,1.7.0,2011-12-02T13:46:02-08:00,high,
+14378,"Build option ""log="" breaks the build",rcgill,BuildSystem,1.8,assigned,1.7.0,2011-12-02T23:00:31-08:00,high,
+14402,"[regression] page loaded via file:// uses XHR for dojo.require() to CDN, should use script-io",rcgill,Loader,1.7.2,assigned,1.7.0,2011-12-06T05:49:57-08:00,high,
+14510,"[regression] ""non-standard"" modules attempt to load from wrong folder against standard build (same-domain)",rcgill,Loader,1.7.2,assigned,1.7.0,2011-12-19T19:54:18-08:00,high,
+14544,build system doesn't work with  --writeProfile option,rcgill,BuildSystem,tbd,assigned,1.7.1,2011-12-31T01:47:17-08:00,high,
+14564,build.bat fails depending on release path format,rcgill,BuildSystem,tbd,assigned,1.7.1,2012-01-05T14:47:56-08:00,high,
+14580,"""first Dojo wins"" policy breaks in the built version",rcgill,BuildSystem,tbd,assigned,1.6.1,2012-01-08T21:41:57-08:00,high,
+14581,Sibling directory to the dojo directory still need to register module path in 1.7.1 built version.,rcgill,BuildSystem,tbd,assigned,1.7.1,2012-01-08T21:49:17-08:00,high,
+14619,"Problem with setting dojoConfig.packages, loading dojo with IE in async loading mode",rcgill,Loader,tbd,new,1.7.1,2012-01-13T15:39:02-08:00,high,
+13563,symbol build option causes memory leak on IE,rcgill,BuildSystem,1.8,assigned,1.6.1,2011-08-03T12:28:49-07:00,low,"BryanForbes, liucougar"
+13967,shrinksafe fails when code uses 'final' keyword,rcgill,ShrinkSafe,1.8,assigned,1.6.1,2011-09-21T15:42:33-07:00,low,rbackhouse
+14262,[regression] built layer doesn't include everything,rcgill,BuildSystem,1.7.2,assigned,1.7.0,2011-11-14T11:08:57-08:00,low,
+13081,"OperationalError: (1213, 'Deadlock found when trying to get lock; try restarting transaction')",rchady,Operations,tbd,new,1.6.1,2011-05-25T23:40:10-07:00,high,
+10176,dojo.hash throws exceptions in IE6 and IE7 if the server becomes unreachable,retchless,Core,1.4,new,1.4.0b,2009-10-21T14:46:17-07:00,high,
+11100,dojo.hash breaks when there's a base tag,retchless,General,1.8,new,1.5.0b2,2010-05-07T06:51:07-07:00,high,websmith@…
+13677,dojo.hash uses wrong base URL when used from outside an iframe in Google Chrome,retchless,General,tbd,new,1.6.1,2011-08-12T08:24:14-07:00,high,
+14078,[patch] [cla] dojo.hash doesn't work on IE for sites using document.domain,retchless,Core,1.8,new,1.6.1,2011-10-10T05:09:20-07:00,high,
+14668,dojox.layout.ContentPane adjustPath doesn't work in IE,ruegerth,DojoX Layout,tbd,pending,1.7.0,2012-01-24T02:46:49-08:00,undecided,
+11578,dojox.widget.Portlet Icons CSS for claro theme missing,santilli,themes,future,new,1.5,2010-08-17T04:21:18-07:00,high,
+1441,[patch] [cla] ContentPane: fixPathsInCssText issues in MSIE,sfoster,Dojox,future,assigned,0.3,2006-09-13T20:26:50-07:00,high,robert.coup@…
+7567,dojox.html._ContentSetter should evaluate scripts prior to the call of the super class method,sfoster,Dojox,future,assigned,,2008-09-02T01:31:33-07:00,high,
+9263,dijit.layout.ContentPane doesn't allow replacing invalid content when setter fails,sfoster,Dijit,future,new,1.3.0,2009-05-07T00:09:31-07:00,high,
+9578,dojo.html._ContentSetter should use dojo.addOnLoad in the _parse method?,sfoster,Core,future,new,1.3.0,2009-07-20T21:37:12-07:00,high,
+9954,dojox.layout.ContentPane parseOnLoad with cross domain,sfoster,DojoX Layout,future,new,1.3.1,2009-09-24T01:41:42-07:00,high,"vbaudry@…, mumme"
+11964,[Patch] dojox.html._snarfScripts() should use dojo._getText() instead of dojo.xhrGet(),sfoster,Dojox,tbd,new,1.5,2010-11-21T05:28:06-08:00,high,
+11966,[patch] dojox.html.set(): Workaround for a breaking change/bug in Firefox 4.0b7,sfoster,Dojox,1.8,new,1.5,2010-11-21T14:47:02-08:00,high,
+8765,Remove dojox.storage dependency  on dojox.sql,shaneosullivan,Dojox,future,new,1.3.0b1,2009-02-26T19:20:39-08:00,blocker,ttrenka
+9195,dojox.storage.FlashStorageProvider fails in IE with modal dialogs,shaneosullivan,Storage/Flash,future,new,1.3.0,2009-04-24T01:00:03-07:00,blocker,
+9519,TableContainer + Textarea + TabContainer = Error on IE,shaneosullivan,Dojox,future,new,1.3.1,2009-07-07T22:16:54-07:00,blocker,
+11881,dojox.image.ThumbnailPicker produces incorrect animation,shaneosullivan,Dojox,tbd,assigned,1.5,2010-10-24T14:02:05-07:00,blocker,
+11949,Issues with dojox.mobile.app.List into dojox.mobile.TabPane,shaneosullivan,DojoX Mobile,tbd,new,1.5,2010-11-16T07:39:49-08:00,blocker,
+6633,callback function not getting called when no match found for criteria in select query with use of dojox.sql.DECRYPT,shaneosullivan,Storage/Flash,future,new,1.0,2008-04-28T13:22:20-07:00,high,
+7627,Dojo Storage Can Sometimes Fail With Flash Storage Provider + Internet Explorer,shaneosullivan,Storage/Flash,future,new,1.2beta,2008-09-08T16:15:28-07:00,high,
+7840,Storage.swf throws 13 runtime errors when exiting IE,shaneosullivan,Storage/Flash,future,new,1.2.0,2008-10-10T09:12:45-07:00,high,mpirnat@…
+7996,Gallery breaks if prototype.js is present,shaneosullivan,Dojox,future,new,1.2.0,2008-10-30T11:55:16-07:00,high,sos
+8444,dojox.image.SlideShow don't show navigation bar on IE and contains some errors on firefox when attached to dailog,shaneosullivan,Dojox,future,new,1.2.3,2009-01-17T13:17:56-08:00,high,
+8534,dojox.storage.manager.addOnLoad(handler); handler may be multiply called,shaneosullivan,Storage/Flash,future,new,1.2.3,2009-01-28T10:44:43-08:00,high,
+9544,Problem with gears storage in Firefox 3.5,shaneosullivan,Storage/Flash,future,new,1.3.1,2009-07-13T05:34:33-07:00,high,
+9594,broken link in feature explorer on dojocampus.org,shaneosullivan,Website,future,new,1.3.2,2009-07-22T08:02:01-07:00,high,
+9959,Custom sized dojox.image.SlideShow doesn't work in Opera 9.64 (MacOSX) and 10.00 (Linux),shaneosullivan,Dojox,future,new,1.3.2,2009-09-24T08:31:11-07:00,high,
+10094,spacing on inline type declarations,shaneosullivan,CheckStyle,future,new,1.4.0b,2009-10-13T05:45:43-07:00,high,
+10114,ThumbnailPicker is not scrolling with many thumbs.,shaneosullivan,Dojox,future,new,1.3.2,2009-10-14T23:50:38-07:00,high,
+10120,"""Today"" not localized in DojoX calendar",shaneosullivan,DojoX Widgets,future,new,1.4.0b,2009-10-15T11:23:36-07:00,high,"ttrenka, Evan"
+10490,Month names are not localized properly in dojox.Calendar widget for Japanese locale,shaneosullivan,DojoX Widgets,tbd,new,1.4.0,2009-12-11T04:03:02-08:00,high,
+10763,GridContainer - focus problem when contains non-toggleable TitlePane,shaneosullivan,Dojox,tbd,new,1.4.0,2010-02-17T11:15:07-08:00,high,
+11025,ExpandoPane programmatic test broken in IE6,shaneosullivan,Dojox,future,new,1.4.2,2010-04-23T02:22:22-07:00,high,
+11050,dojox.storage.Provider.clear API incorrect,shaneosullivan,Dojox,tbd,new,1.4.0,2010-04-28T06:49:05-07:00,high,
+11166,Add setting to Checkstyle to enable ignoring folders,shaneosullivan,CheckStyle,future,new,1.5.0b2,2010-05-19T09:13:09-07:00,high,
+11222,Portlet throws exception on pressing Back in IE8,shaneosullivan,DojoX Widgets,tbd,new,1.5.0b2,2010-05-26T14:25:29-07:00,high,
+11233,Fix errors thrown when opening an app in dojox.mobile.app,shaneosullivan,DojoX Mobile,tbd,new,1.5.0b2,2010-05-29T03:46:32-07:00,high,jaredj
+11281,Header onChange not getting fired in dojox.widget.Calendar,shaneosullivan,DojoX Widgets,tbd,reopened,1.4.2,2010-06-08T23:31:09-07:00,high,
+11347,ButtonList test results in display of Location & Security Settings,shaneosullivan,DojoX Mobile,tbd,new,1.5.0b2,2010-06-22T16:23:41-07:00,high,
+11350,Android switch sticks,shaneosullivan,DojoX Mobile,tbd,new,1.5.0b2,2010-06-22T16:44:49-07:00,high,
+11444,"Many dijits use dojo.marginBox just to get the width or height, which is very expensive",shaneosullivan,Dijit,2.0,new,1.5.0b2,2010-07-15T08:31:03-07:00,high,doughays
+11508,dojox mobile AlertDialog and ListSelector (popupSubMenu) positioned incorrectly,shaneosullivan,DojoX Mobile,tbd,new,1.5,2010-07-30T03:14:50-07:00,high,
+11548,Multiple calls to setDataStore breaks page scrolling in ThumbnailPicker,shaneosullivan,DojoX Widgets,tbd,new,1.5,2010-08-07T15:18:00-07:00,high,"shaneosullivan, dante"
+11674,PortletSettings don't work with Portlet and dynamic content,shaneosullivan,DojoX Widgets,1.8,new,1.5,2010-09-02T08:19:03-07:00,high,shaneosullivan
+11834,dojox.mobile.app.SceneController & dojox.form.FileUploader,shaneosullivan,DojoX Mobile,tbd,new,1.5,2010-10-06T00:09:16-07:00,high,
+11864,dojox/widget/tests/test_PortletInGridContainer.html is Broken.,shaneosullivan,DojoX Widgets,tbd,new,1.5,2010-10-18T20:34:54-07:00,high,
+11882,dojox.image.ThumbnailPicker makes connections twice,shaneosullivan,Dojox,1.8,new,1.5,2010-10-24T14:47:48-07:00,high,
+12163,Handle 404 errors in ThumbnailPicker,shaneosullivan,Dojox,tbd,new,1.6.0b1,2011-01-14T16:40:34-08:00,high,dante
+12599,dijit.Editor in dojox.layout.TableContainer resize/layout bug,shaneosullivan,DojoX Layout,tbd,new,1.6.0,2011-04-04T09:22:34-07:00,high,
+12768,dojox.mobile.app Image browsing test page is broken,shaneosullivan,DojoX Mobile,1.8,new,1.6.0,2011-04-24T09:14:33-07:00,high,
+12806,dojox.image.Gallery thumb navigation bug,shaneosullivan,Dojox,tbd,new,1.6.0,2011-04-28T14:41:04-07:00,high,
+13176,meaningless code in AlertDialog,shaneosullivan,DojoX Mobile,tbd,new,1.6.1,2011-06-05T20:38:56-07:00,high,
+13310,doGeo demo broken,shaneosullivan,General,tbd,new,1.7.0b1,2011-06-25T16:47:02-07:00,high,
+13859,Several issues with dojox.mobile.app.ImageViewer,shaneosullivan,DojoX Mobile,tbd,new,1.7.0b1,2011-09-07T05:57:57-07:00,high,
+13873,dojox.mobile.app and stylesheets,shaneosullivan,DojoX Mobile,tbd,new,1.7.0b1,2011-09-09T00:32:04-07:00,high,
+14083,dojox.mobile.app._event does not enable touch eventMap for iPad,shaneosullivan,DojoX Mobile,tbd,new,1.7.0b1,2011-10-11T08:30:27-07:00,high,
+14465,[patch] [cla] dojox.storage in async mode,shaneosullivan,Storage/Flash,tbd,new,1.7.1,2011-12-14T00:24:30-08:00,high,jensarps
+14590,dojox.image.SlideShow problem Dojo 1.7.1,shaneosullivan,Dojox,1.7.2,new,1.7.1,2012-01-10T13:30:03-08:00,high,
+12153,IE6 - continuous memory increase when repeating connecting/disconnecting events,sjmiles,Events,tbd,new,1.5,2011-01-10T23:30:15-08:00,blocker,
+3671,parentConstrainedMover: body margin not taken into account by IE 6,sjmiles,HTML,future,new,0.9,2007-07-09T07:04:56-07:00,high,
+4356,dojo.style: return values,sjmiles,HTML,future,new,0.9,2007-09-04T05:08:34-07:00,high,
+4782,[patch][ccla]IFrame relative offset problem in dojo.coords(),sjmiles,HTML,future,new,0.9,2007-10-18T15:14:03-07:00,high,"amimalik@…, doughays, bill"
+5096,event.layerX/Y sometimes incorrect,sjmiles,Events,future,new,1.0,2007-11-12T09:38:28-08:00,high,
+6362,Event: onmouseenter and onmouseleave support bug?,sjmiles,Events,future,new,1.0,2008-03-31T12:10:36-07:00,high,"ole.ersoy@…, elazutkin"
+6728,"Safari3, dojo._getMarginExtents error.",sjmiles,HTML,future,new,1.1.0,2008-05-11T03:55:40-07:00,high,
+7504,[Event System] OnMouseEnter and MouseLeave Defect,sjmiles,Events,future,new,1.0,2008-08-22T12:06:25-07:00,high,ole
+9143,dojo.hitch and this.inherited don't play well together.,sjmiles,Core,2.0,new,1.3.0,2009-04-16T09:00:40-07:00,high,elazutkin
+9510,spurious warnings about charCode access (FF3.5/firebug 1.4),sjmiles,Events,future,reopened,1.3.0,2009-07-07T01:35:47-07:00,high,
+9511,ctrl-punctuation normalization broken,sjmiles,Events,future,new,1.3.0,2009-07-07T07:05:08-07:00,high,
+9527,[patch][cla] ctrl-q not handled correctly on safari 4,sjmiles,Events,future,new,1.3.0,2009-07-08T19:22:34-07:00,high,
+9609,"dojo.connect(iframe, ""onload"", ...) ineffective on IE",sjmiles,Events,future,new,1.3.2,2009-07-24T20:57:23-07:00,high,
+11614,"dojo.style(node, 'display', 'inherit') fails in IE6 and IE7",sjmiles,HTML,2.0,new,1.5,2010-08-22T08:58:19-07:00,high,
+11663,dojo.marginBox results imply it does not handle negative margins correctly,sjmiles,HTML,tbd,new,1.4.3,2010-08-30T14:57:58-07:00,high,
+12445,chrome 10 test failure in HTML test (styleObject),sjmiles,HTML,tbd,new,1.6.0,2011-03-14T21:03:44-07:00,high,
+10410,"Problem with keyboard shortcuts that involve ""tab"" on safari",sjmiles,Events,future,new,1.4.0b,2009-11-26T00:31:56-08:00,low,
+12847,Possible memory leak with dojo Gauge widgets,tissandier,DojoX Widgets,tbd,assigned,1.6.0,2011-05-03T13:03:21-07:00,high,dmoor2@…
+11918,misspelled filename RecieveFile.php,toonetown,DojoX Widgets,tbd,new,1.5,2010-11-04T08:58:17-07:00,high,dante
+14665,dojox/embed/Quicktime Clobbers Page,Ttrenka,Dojox,tbd,assigned,1.7.1,2012-01-23T13:52:24-08:00,undecided,
+6308,MD5 encoding is not done on strings using UTF8,ttrenka,Dojox,future,assigned,1.0,2008-03-24T16:25:45-07:00,high,
+7264,Blowfish: sign extension bit issue (UTF encoding),ttrenka,Dojox,future,assigned,1.1.1,2008-07-23T07:56:04-07:00,high,
+7703,dojox.xml: unit test failure,ttrenka,Dojox,future,new,1.2beta,2008-09-21T22:32:25-07:00,high,
+8608,innerXML serializes outer node in some cases,ttrenka,Dojox,future,new,1.2.3,2009-02-09T19:34:41-08:00,high,
+10697,dojox.xml.parser.parse ReferenceError: nativeDoc is not defined.,ttrenka,Dojox,tbd,new,1.4.0,2010-02-01T07:32:40-08:00,high,"RGagne@…, jmargaris@…"
+11940,dojox.Colorspace typos,ttrenka,Dojox,tbd,new,1.5,2010-11-13T15:53:00-08:00,high,
+12223,Generic fixes to the documentation parser,ttrenka,Doc parser,tbd,new,1.0,2011-01-29T10:16:25-08:00,high,
+12269,parser crash when using Dojo Documentation Tools,ttrenka,Doc parser,tbd,new,1.6.0b1,2011-02-08T06:32:49-08:00,high,peller
+12727,Dojo Toolkit API for 1.6 does not list dojo.version,ttrenka,Doc parser,tbd,new,1.6.0,2011-04-19T07:47:09-07:00,high,
+13434,ContentPane and others: evaluation fails if scripts are not semicolon-terminated,ttrenka,DojoX Layout,tbd,new,1.6.1,2011-07-13T10:34:47-07:00,high,
+13569,SimpleAES has bad chars in comments,ttrenka,Dojox,1.8,new,1.6.1,2011-08-03T14:18:53-07:00,high,"jhpedemonte, neonstalwart"
+13705,dojox.color.toHsl might give bad results,ttrenka,Dojox,tbd,new,1.6.1,2011-08-17T03:13:16-07:00,high,ttrenka
+13706,dojox.color.fromHsl L stands for lightness not luminosity,ttrenka,Dojox,tbd,new,1.6.1,2011-08-17T03:18:45-07:00,high,
+14290,dojox.xml.DomParser ignores spaces if there is two or more consecutive spaces,ttrenka,Dojox,tbd,new,,2011-11-22T10:47:21-08:00,high,
+14313,missing reference doc for colorspace,ttrenka,Documentation,tbd,new,1.7.0,2011-11-24T00:09:36-08:00,high,
+14338,soria CSS images deleted but references remain,ttrenka,Dojox,tbd,new,1.7.0,2011-11-29T15:16:34-08:00,high,
+6056,"Dojox.widget.Rating support for required=""true""",wolfram,Dojox,future,new,1.0,2008-03-02T15:05:30-08:00,high,nonken
+6082,Make Rating widget work for RTL,wolfram,DojoX Widgets,future,new,1.0,2008-03-05T00:25:54-08:00,high,
+7369,"QueryReadStore.php returns full result list on query for """"",wolfram,DojoX Data,future,new,1.1.1,2008-08-04T11:19:19-07:00,high,paulprince
+14194,Widget briefly flashes and then disappearing(Only on iPad),ykami,DojoX Mobile,tbd,new,0.4.2rc1,2011-11-01T20:40:03-07:00,blocker,onoat
+14232,SwapView contents a input element,ykami,DojoX Mobile,tbd,new,1.7.0,2011-11-06T22:39:41-08:00,blocker,
+13118,simultaneous animations of overlay hide and view transition makes no animation effect,ykami,DojoX Mobile,1.8,new,1.6.1,2011-05-31T08:12:59-07:00,high,"doughays@…, onoat"
+13383,Transition Animation: Randomly Scrolling is disabled after many transitions,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-07-07T19:22:31-07:00,high,onoat
+13518,IconItem's contents are not displayed in some condition,ykami,DojoX Mobile,tbd,accepted,1.7.0b1,2011-07-26T02:08:20-07:00,high,
+13672,Dojox.mobile.parser bugs out if dijit._Templated is required.,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-08-11T13:15:46-07:00,high,
+13786,Icons - Cannot Scroll to Top if Open Box in Scrollable View,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-08-31T01:24:50-07:00,high,onoat
+13846,Cannot edit dojox.mobile.TextBox when inside dojox.mobile.Heading,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-09-06T05:55:17-07:00,high,
+13865,dojox.mobile.Opener should scroll page to keep field in view,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-09-07T16:48:58-07:00,high,
+13875,"joAdding hrefTarget=""_self"" breaks page animation",ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-09-09T02:40:28-07:00,high,
+13996,Disruptive interpage transition on Phongap app in iPad simulator,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-09-25T11:39:56-07:00,high,onoat
+14028,Loading a bookmarkable view hides Panes in FixedSplitters,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-09-29T15:33:19-07:00,high,onoat
+14097,ComboBox in dojox.mobile.Opener hidden behind Opener,ykami,DojoX Mobile,tbd,new,1.7.0b1,2011-10-14T04:13:54-07:00,high,
+14124,scrollable stops touchstart from bubbling,ykami,DojoX Mobile,1.8,reopened,1.6.1,2011-10-19T06:31:06-07:00,high,onoat
+14175,Focus on textare and then you cannot scroll to the top of view,ykami,DojoX Mobile,tbd,new,1.7.0,2011-10-30T22:36:52-07:00,high,
+14195,dojox.mobile.Heading moveTo not taking into consideration when used in a dojox.app application,ykami,DojoX Mobile,tbd,new,1.7.0,2011-11-02T01:51:38-07:00,high,
+14252,virtual keyboard may disappear if focus on a text box in a scrollable view,ykami,DojoX Mobile,tbd,new,1.7.0,2011-11-11T00:39:04-08:00,high,onoat
+14261,Support other vendor-specific CSS,ykami,DojoX Mobile,tbd,new,1.6.1,2011-11-14T09:30:57-08:00,high,jferrai@…
+14264,"problems of ""mblAndroidWorkaround""",ykami,DojoX Mobile,tbd,new,1.7.0,2011-11-15T00:58:59-08:00,high,onoat
+14361,Uncaught TypeError when using mobile ListItem,ykami,DojoX Mobile,tbd,new,1.7.0,2011-12-01T07:35:44-08:00,high,
+14413,The entire page always resizes quite a while when loading background picture(on mobile device),ykami,DojoX Mobile,tbd,new,1.7.0,2011-12-07T23:34:30-08:00,high,onoat
+14421,Page layout is screwed up when popping up the device keyboard,ykami,DojoX Mobile,tbd,new,1.7.0,2011-12-08T21:02:45-08:00,high,onoat
+14463,dojox.mobile.Button failed in dojox.mobile.RoundRectCategory,ykami,DojoX Mobile,1.8,new,1.7.1,2011-12-13T23:56:32-08:00,high,
+14474,Animation between read-only mode and edit mode in a form,ykami,DojoX Mobile,1.8,new,1.7.1,2011-12-14T20:50:11-08:00,high,
+14475,Create missing HTML5 input widgets,ykami,DojoX Mobile,1.8,new,1.7.1,2011-12-14T21:28:54-08:00,high,
+14496,Mobile app view-resources module not loading,ykami,DojoX Mobile,tbd,new,1.7.1,2011-12-17T20:39:14-08:00,high,epoulin@…
+14516,Arrow of Back Button is distorted in webkit under iphone theme compat mode,ykami,DojoX Mobile,tbd,new,1.7.1,2011-12-21T04:30:16-08:00,high,
+14532,"dojox mobile ScrollableView in a SwapView, events fires twice",ykami,DojoX Mobile,tbd,new,1.7.0,2011-12-27T00:50:26-08:00,high,
+14598,dojox.mobile.ToolBarButton should be inline style,ykami,DojoX Mobile,1.8,new,1.7.1,2012-01-11T06:34:14-08:00,high,
+14626,Screen flicker when switch tabs from a tabBar in scrollable view,ykami,DojoX Mobile,tbd,new,1.7.1,2012-01-16T19:24:44-08:00,high,onoat
+14651,SwapView breaks as soon as you use another method to change views,ykami,DojoX Mobile,tbd,new,1.7.1,2012-01-20T09:41:22-08:00,high,
+14547,OpenGL ES API,ykami,DojoX Mobile,tbd,new,1.7.1,2011-12-31T08:49:59-08:00,low,onoat
+13606,app AMD fixes,zhangyp,Dojox,1.8,new,1.6.1,2011-08-08T00:45:25-07:00,high,
+13757,dojox/app doesn't run on FF,zhangyp,DojoX App,tbd,new,1.6.1,2011-08-25T20:57:12-07:00,high,
+14315,missing reference doc for dojox/app,zhangyp,DojoX App,tbd,new,1.7.0,2011-11-24T00:19:32-08:00,high,cjolif

@@ -1,0 +1,126 @@
+
+	/* these are the core requirements: */
+	@import "../resources/demos.css";
+
+	@import "../../dijit/themes/dijit.css";
+
+	/* custom styling: dojo.block() function */
+	.dojoBlockOverlay {
+		background:#000 url('resources/loading.gif') no-repeat center center;
+		z-index:999;
+		position:absolute;
+		top:0; left:0;
+	}
+
+	/* all page styles: */
+	body {
+		background-color: #fff;
+	}
+
+	/* core styles for each region in the flip box */
+	#hair { height:120px; width:230px; background-position:0 0; }
+	#eyes { height:94px; width:230px; background-position:0 -118px; }
+	#mouth { height:112px; width:230px; background-position:0 -211px; }
+
+	/* make the flipbox exactly the right size to prevent click bleeding */
+	#flipper, 
+	#flipper div { 
+		width:230px; 
+		z-index:990;
+		zoom:1;
+	}
+
+	/* the main content area */
+	#bodyWrap {
+		margin:0 auto;
+		width:745px;
+		background:#ccc;
+		padding:15px;
+		-moz-border-radius:8pt;
+	}
+
+	/* offset the faceContainer within the bodyWrap node */
+	#faceContainer {
+		width:230px;
+		z-index:990;
+		zoom: -1;
+		float:left;
+		margin-right:15px;
+	}
+
+	.container {
+		width:230px;
+	}
+
+	/* this is visible when the webcam code gets enabled */
+	#photoShoot {
+		display:none;
+		position:absolute; 
+		top:0; 
+		width:230px;
+		height:326px;
+	}
+
+	/* a convenience class to remove from a node to show it */
+	.invisible {
+		display:none;
+	}
+
+	/* a conveince div, set way offscreen for temporarily holding content */
+	#offScreen {
+		position:absolute;
+		top:-9999px;
+		left:-9999px;
+		visibility:hidden;
+	}
+
+	#thumbnails { 
+		height:295px;
+		overflow:auto;
+		padding:15px;
+		border:1px solid #ededed;
+		background:#fff;
+		position:relative;
+	}
+	.clan li.thumbnail { float:left; padding-right:7px; }
+	.clan ul { 
+		list-style-type:none;
+		margin:0; padding:0;
+	}
+	.clan ul a img { border:0; }
+	
+	.clan { clear:both; }
+	
+	#thumbnails .clan h2 {
+		margin:0; padding:0;
+		color:#666;
+	}
+	
+	#contentArea {
+		display:none;
+	}
+	
+	#footer { padding-bottom:20px !important; }
+	
+	#saveAs {
+		margin-top:10px;
+		line-height:1.3em;
+		cursor:pointer;
+		padding:9px;
+		color:#fff;
+		font-weight:bold;
+		background:#455058;
+		border:1px solid #ccc;
+	}
+	#saveAs:hover {
+		color:#455058;
+		background:#DFE8EE;
+	}
+	
+	h2 a { text-decoration:none; color:#455058; cursor:pointer; margin-bottom:8px; }
+	h2 a:link { text-decoration:none; color:#455058; }
+	h2 a:visited { text-decoration:none; color:#455058; }
+	h2 a:hover { text-decoration:none; color:#000; }
+	h2 a:active { color:#000; }
+	
+	.clan ul { margin-top:4px; }

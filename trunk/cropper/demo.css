@@ -1,0 +1,174 @@
+/* space is to trick build to exlucde inline (in theory)
+	these are for Lightbox.js:
+
+@  import "../../dijit/themes/dijit.css";
+@  import "../../dijit/themes/tundra/Dialog.css";
+@  import "../../dojox/image/resources/Lightbox.css"; 
+
+*/
+
+@import "../../dojox/layout/resources/ResizeHandle.css";
+
+/* Generic Demo Styles: */
+body, html { margin:0; padding:0; background:#fff; }
+h1 { margin-top:0; margin-bottom:0; }
+.clear { clear:both; }
+
+#loader {
+	float:right;
+	height:32px;
+	width:32px;
+	background:url('../../dojox/image/resources/images/loading.gif') no-repeat center center;
+}
+
+#body {
+	padding:0;
+	margin:0 auto;
+	width:710px;
+}
+
+#title {
+	font:21pt Arial,sans-serif;
+	color:#888;
+	font-weight:bold;
+}
+
+#demo { 
+	margin:0; 
+	padding:0; 
+	/* janky: IE6 lays out oddly, but FF breaks with pos:rel on the parent? */
+	#position:relative;
+}
+
+#pager {
+	line-height:1.45em;
+	text-align:center;
+	margin-right:0;
+}
+
+#heading {
+	margin-top:1em;
+	border-bottom:1px solid #ccc;
+	margin-bottom:10px;
+	padding-bottom:5px;
+}
+
+/* footer styles: thumbnails */
+#footing {
+	margin-top:10px;
+	margin-bottom:8px;
+	border-top:1px solid #ccc; 
+	border-bottom:1px solid #ccc;
+	height:99px;
+	background:#ededed;
+	overflow:hidden;
+}
+p.notas { 
+	clear:both;
+	text-align:center;
+	color:#aaa;
+	font:9pt Arial,sans-serif;
+}
+p.copyright {
+	color:#888;
+	font:9pt Arial,sans-serif;
+	text-align:center;
+}
+#exif { clear:both; height:2em; }
+
+#footing img { border:none; }
+#footing ul {
+	margin:0;
+	text-align:center;
+	padding:0;
+	margin-left:15px;
+	margin-top:10px;
+	list-style-type:none;
+}
+
+#pager {
+	float:right;
+	z-index:996;
+	height: 1.5em;
+	margin:0;
+	margin-right:-4px;
+	list-style-type:none;
+}
+#pager li { 
+	float:left; 
+	border-bottom:4px solid #ccc;
+	margin-top:2px;
+	margin-left:5px; margin-right:5px;
+	padding-left:5px; padding-right:5px;
+	cursor:pointer;
+	font-weight:bold;
+	color:#ccc;
+}
+#pager li.selected {
+	color:#888;
+	border-bottom:4px solid #888;
+}
+#pager li.over {
+	color:#666;
+	border-bottom:4px solid #666;
+}
+
+#picker li { 
+	float:left; 
+	padding:0;
+	padding-right:9px;
+}
+#picker li a {
+	border-bottom:3px solid #ededed;
+}
+#picker li a:hover {
+	border-bottom:3px solid #ccc;
+}
+
+li.navButton {
+	position:relative;
+	line-height:79px;
+	cursor:pointer;
+	font-weight:bold;
+	color:#777;
+}
+
+/* style the image */
+#me {
+	width:400px;
+	height:300px;
+}
+
+/* part of the widget: drag handle styles */
+.imageDragger {
+	/* required: */
+	position:absolute;
+	/* optional: */
+	cursor:move;
+	z-index:999;
+	background:#fff;
+/*	border:1px solid #000; */
+}
+
+/* test: Resizer Widget Styles */
+/*
+.overlayTotal { position:absolute; }
+.overlayInner { position:relative; }
+
+.handleTL, .handleT, .handleTR,
+.handleML, .handleMR,
+.handleBL, .handleB, .handleBR {
+	position:absolute;
+	height:8px;
+	border:1px solid #000;
+	background:#fff;	
+}
+
+.handleTL, .handleT, .handleTR { 
+	top:-5px;
+}
+
+.handleBL, .handleBR {
+	bottom:-5px;
+}
+*/

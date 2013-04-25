@@ -1,0 +1,8 @@
+.hidden {
+	display:none;
+}
+
+div .navPane {
+	width:250px;
+	border-right:1px solid black;
+}

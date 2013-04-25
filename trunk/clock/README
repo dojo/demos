@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Clock - A simple interactive clock.  Try grabbing the hands to change the time.  Built with Dojo’s graphics library.
+-------------------------------------------------------------------------------
+Authors: Eugene Lazutkin
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays an interactive analog clock drawn using the dojox.gfx API.
+	Drag one of the clock needles to set your own time (the new time is displayed
+	in the "Current Time" text).
+	Press the Reset button to reset the clock time to the real time.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core (dom, locale)
+	DojoX Gfx
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:50 @categories:graphics

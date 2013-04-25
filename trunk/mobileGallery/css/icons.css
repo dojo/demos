@@ -1,0 +1,64 @@
+#icons ul[dojoType="dojox.mobile.IconContainer"] li {
+	float:none;
+}
+#iconsDescList {
+	list-style-type:none;
+	position:absolute;
+	left:80px;
+	padding-left:6px;
+}
+#iconsDescList li {
+	font-size:17px;
+	width:auto;
+	text-align:left;
+}
+#icons .mblIconContentHeading {
+	background: -webkit-gradient(linear, left top, left bottom, from(#FEF39A), to(#E2CD60));
+	border-color: #F7E980;
+}
+
+#icons .mblIconItemSub {
+	background-color: #F7E980;
+	margin-left: 10px;
+	margin-right: 10px;
+	max-width: 300px;
+}
+
+#icons .mblIconContentHeading .mblDomButtonBlueMinus.mblDomButton {
+	background-color: transparent;
+	border: 0px;
+	right: 4px;
+	left: auto !important; /* clear the hard-coded one */
+}
+
+#icons .mblIconContentHeading .mblDomButtonBlueMinus.mblDomButton > div {
+	background-image: url("../images/iconitems-all.png");
+	background-repeat: no-repeat;
+	background-position: 0 -196px;
+	margin-right: auto !important;
+	margin-left: 7px;
+}
+
+#icons .mblIconContentHeading .mblDomButtonBlueMinus div {
+	background-image: none;
+	background-color: transparent;
+	border: 0px;
+}
+
+#icons-moveTo > div {
+	width: 100%;
+	text-align: center;
+	height:100%;
+}
+
+#icons-moveTo img {
+	margin-top: 20px;
+	height: 60%;
+}
+
+/* Temp fix for icon position regression. */
+#icons .mblIconArea IMG {
+  top: 0;
+  left: 0;
+  -webkit-transform: none;
+}

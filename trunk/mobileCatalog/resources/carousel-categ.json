@@ -1,0 +1,8 @@
+{
+	items: [
+		{src:"../../dojox/mobile/tests/images/dish1.jpg", value:"dish", headerText:"dish"},
+		{src:"../../dojox/mobile/tests/images/glass1.jpg", value:"glass", headerText:"glass"},
+		{src:"../../dojox/mobile/tests/images/stone1.jpg", value:"stone", headerText:"stone"},
+		{src:"../../dojox/mobile/tests/images/shell1.jpg", value:"shell", headerText:"shell"}
+	]
+}

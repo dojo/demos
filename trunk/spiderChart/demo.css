@@ -1,0 +1,49 @@
+	@import "../../dojo/resources/dojo.css";
+	@import "../../dijit/themes/claro/claro.css";
+	@import "../../dojox/charting/resources/Legend.css";
+	
+	.dojoxLegendItem{
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendItem .dojoxLegendText{
+		float: right;
+		margin-top: 2px;
+	}
+	.dojoxLegendItem .dojoxLegendIcon{
+		float: left;
+	}
+	.dojoxLegendItemRtl{
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendItemRtl .dojoxLegendText{
+		float: left;
+		margin-top: 2px;
+	}
+	.dojoxLegendItemRtl .dojoxLegendIcon{
+		float: right;
+	}
+	.dojoxLegendHover{
+		background-color: #afd9ff;
+		cursor: pointer;
+		padding: 3px 5px 2px 5px;
+	}
+	.dojoxLegendActive{
+		cursor: pointer;
+		border: 2px solid #7dbefa;
+		padding: 1px 3px 0 3px;
+	}
+
+	#spider{
+		-moz-border-radius: 10px;
+		-webkit-border-radius: 10px;
+		border-radius: 10px;
+		border: 2px solid gray;
+		border-style:solid;
+		background: #e7eef6;
+	}
+
+	body{
+		left: 10px;
+		position: relative;
+		width: 95%;
+	}

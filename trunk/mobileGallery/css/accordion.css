@@ -1,0 +1,11 @@
+.accordionPane {
+	font-family: Times New Roman, Helvetica;
+}
+
+/* The accordion title are "a" elements. The rule below aims to override the 
+   color specified in the rule for "a" elements in css/themes/android/gallery.css 
+   (and similar for iphone theme), thus restoring the default color from 
+   dojox.mobile themes (all platforms). */
+#accordion .mblAccordionTitleAnchor {
+	color: black;
+}

@@ -1,0 +1,23 @@
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/dijit.css";
+@import "../../dijit/themes/claro/claro.css";
+@import "../../dojox/charting/resources/Legend.css";
+
+body {
+	background: #181818;
+}
+
+.dojoxLegendNode {
+	background-color:#181818;
+	border:1px solid #CCCCCC;
+	margin:0;
+	padding:0;	
+}
+
+.dojoxLegendText {
+	color: rgb(204, 204, 204);
+}
+
+h1, p {
+	color: rgb(204, 204, 204);
+}

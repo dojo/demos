@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Mobile Stock Portfolio - This simple app displays a split view, with a portfolio on top, and a carousel on the lower half.  Touch swipe left/right in the lower half to see additional detail views and charts.
+-------------------------------------------------------------------------------
+Authors: Yoshiroh Kamiyama, Christophe Jolif (IBM CCLA)
+-------------------------------------------------------------------------------
+Demo description
+
+	This demo displays a simple stock portfolio using dojox.mobile.SwapView.
+	The screen is split into two panes using dojox.mobile.FixedSplitter.
+	The lower pane can be scrolled both horizontally and vertically.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	Dojox Mobile
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+-------------------------------------------------------------------------------
+@rank:195 @categories:mobile

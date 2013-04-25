@@ -1,0 +1,33 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<title>dojox.gfx: interactive analog clock</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script type="text/javascript" src="../../dojo/dojo.js" data-dojo-config="async:true">
+		</script>
+		<script type="text/javascript" src="src.js">
+		</script>
+		<style type="text/css">
+			body {
+			    font-family: sans-serif;
+			}
+			
+			.movable {
+			    cursor: hand;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Interactive analog clock</h1>
+		<p>
+			Grab hands and set your own time. Current time: <span id="time"></span>.
+		</p>
+		<div id="gfx_holder" style="width: 385px; height: 385px;">
+		</div>
+		<p>
+			<button id="reset">
+				Reset
+			</button>
+		</p>
+	</body>
+</html>

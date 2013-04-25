@@ -1,0 +1,26 @@
+-------------------------------------------------------------------------------
+Mobile Maps - Simple Mobile mapping demo, making use of OpenLayers and Dojo Mobile for navigation.
+-------------------------------------------------------------------------------
+Authors: Marc Durocher
+-------------------------------------------------------------------------------
+Demo description
+
+	This is a basic map demo, a mobile application showcasing the dojo openLayers 
+	Map component and mobile navigation.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo
+	Dijit
+	Dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+	
+	To build, use the supplied demo.profile.js as your profileFile
+	
+-------------------------------------------------------------------------------
+@rank:75 @categories:mobile,graphics

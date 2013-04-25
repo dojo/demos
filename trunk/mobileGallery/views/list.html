@@ -1,0 +1,239 @@
+<div id="list" dojoType="dojox.mobile.View">
+	<div id="mainListView" dojoType="dojox.mobile.View">
+		<ul dojoType="dojox.mobile.EdgeToEdgeList">
+			<li dojoType="dojox.mobile.ListItem" moveTo="filmListView" transition="slide">Films</li>
+			<li dojoType="dojox.mobile.ListItem" moveTo="musicListView" transition="slide">Music</li>
+		</ul>
+	</div>
+	<div id="filmListView" dojoType="dojox.mobile.View">
+		<ul id="filmListTabBar" dojoType="dojox.mobile.TabBar" bartype="segmentedControl">
+			<li id="filmListRndTab" dojoType="dojox.mobile.TabBarButton" selected="true">Round Rectangle</li>
+			<li id="filmListEdgeTab" dojoType="dojox.mobile.TabBarButton">Edge to Edge</li>
+		</ul>
+		<div id="mainFilmListView" dojoType="dojox.mobile.ScrollableView" selected="true">
+			<ul dojoType="dojox.mobile.RoundRectList" class="roundRect roundRectList">
+				<li dojoType="dojox.mobile.ListItem" moveTo="actionFilmView" transition="slide">Action</li>
+				<li dojoType="dojox.mobile.ListItem" moveTo="comedyFilmView" transition="slide">Comedy</li>
+				<li dojoType="dojox.mobile.ListItem" moveTo="scienceFilmView" transition="slide">Sci-Fi</li>
+			</ul>
+			<ul dojoType="dojox.mobile.EdgeToEdgeList" class="edgeToEdge edgeToEdgeList">
+				<li dojoType="dojox.mobile.ListItem" moveTo="actionFilmView" transition="slide">Action</li>
+				<li dojoType="dojox.mobile.ListItem" moveTo="comedyFilmView" transition="slide">Comedy</li>
+				<li dojoType="dojox.mobile.ListItem" moveTo="scienceFilmView" transition="slide">Sci-Fi</li>
+			</ul>
+		</div>
+		<div id="actionFilmView" dojoType="dojox.mobile.ScrollableView">
+			<ul dojoType="dojox.mobile.RoundRectList" class="roundRect roundRectList">
+				<li dojoType="dojox.mobile.ListItem">Braveheart</li>
+				<li dojoType="dojox.mobile.ListItem">Hellboy</li>
+				<li dojoType="dojox.mobile.ListItem">Iron Man</li>
+				<li dojoType="dojox.mobile.ListItem">Kill Bill</li>
+				<li dojoType="dojox.mobile.ListItem">Rambo</li>
+				<li dojoType="dojox.mobile.ListItem">Spider-Man</li>
+				<li dojoType="dojox.mobile.ListItem">Terminator</li>
+				<li dojoType="dojox.mobile.ListItem">The Dark Knight</li>
+				<li dojoType="dojox.mobile.ListItem">Transformers</li>
+				<li dojoType="dojox.mobile.ListItem">True Lies</li>
+			</ul>
+			<ul dojoType="dojox.mobile.EdgeToEdgeList" class="edgeToEdge edgeToEdgeList">
+				<li dojoType="dojox.mobile.ListItem">Braveheart</li>
+				<li dojoType="dojox.mobile.ListItem">Hellboy</li>
+				<li dojoType="dojox.mobile.ListItem">Iron Man</li>
+				<li dojoType="dojox.mobile.ListItem">Kill Bill</li>
+				<li dojoType="dojox.mobile.ListItem">Rambo</li>
+				<li dojoType="dojox.mobile.ListItem">Spider-Man</li>
+				<li dojoType="dojox.mobile.ListItem">Terminator</li>
+				<li dojoType="dojox.mobile.ListItem">The Dark Knight</li>
+				<li dojoType="dojox.mobile.ListItem">Transformers</li>
+			</ul>
+		</div>
+		<div id="comedyFilmView" dojoType="dojox.mobile.ScrollableView">
+			<ul dojoType="dojox.mobile.RoundRectList" class="roundRect roundRectList">
+				<li dojoType="dojox.mobile.ListItem">Ace Ventura</li>
+				<li dojoType="dojox.mobile.ListItem">Pineapple Express</li>
+				<li dojoType="dojox.mobile.ListItem">Schrek</li>
+				<li dojoType="dojox.mobile.ListItem">Superbad</li>
+				<li dojoType="dojox.mobile.ListItem">The Simpsons Movie</li>
+			</ul>
+			<ul dojoType="dojox.mobile.EdgeToEdgeList" class="edgeToEdge edgeToEdgeList">
+				<li dojoType="dojox.mobile.ListItem">Ace Ventura</li>
+				<li dojoType="dojox.mobile.ListItem">Pineapple Express</li>
+				<li dojoType="dojox.mobile.ListItem">Schrek</li>
+				<li dojoType="dojox.mobile.ListItem">Superbad</li>
+				<li dojoType="dojox.mobile.ListItem">The Simpsons Movie</li>
+			</ul>
+		</div>
+		<div id="scienceFilmView" dojoType="dojox.mobile.ScrollableView">
+			<ul dojoType="dojox.mobile.RoundRectList" class="roundRect roundRectList">
+				<li dojoType="dojox.mobile.ListItem">Alien</li>
+				<li dojoType="dojox.mobile.ListItem">Avatar</li>
+				<li dojoType="dojox.mobile.ListItem">Back to the Future</li>
+				<li dojoType="dojox.mobile.ListItem">Blade Runner</li>
+				<li dojoType="dojox.mobile.ListItem">District9</li>
+				<li dojoType="dojox.mobile.ListItem">Inception</li>
+				<li dojoType="dojox.mobile.ListItem">Star Wars</li>
+				<li dojoType="dojox.mobile.ListItem">The Matrix</li>
+			</ul>
+			<ul dojoType="dojox.mobile.EdgeToEdgeList" class="edgeToEdge edgeToEdgeList">
+				<li dojoType="dojox.mobile.ListItem">Alien</li>
+				<li dojoType="dojox.mobile.ListItem">Avatar</li>
+				<li dojoType="dojox.mobile.ListItem">Back to the Future</li>
+				<li dojoType="dojox.mobile.ListItem">Blade Runner</li>
+				<li dojoType="dojox.mobile.ListItem">District9</li>
+				<li dojoType="dojox.mobile.ListItem">Inception</li>
+				<li dojoType="dojox.mobile.ListItem">Star Wars</li>
+				<li dojoType="dojox.mobile.ListItem">The Matrix</li>
+			</ul>
+		</div>
+	</div>
+	<div id="musicListView" dojoType="dojox.mobile.View">
+		<ul id="musicListTabBar" dojoType="dojox.mobile.TabBar" bartype="segmentedControl">
+			<li id="musicListRndTab" dojoType="dojox.mobile.TabBarButton" selected="true">Round Rectangle</li>
+			<li id="musicListEdgeTab" dojoType="dojox.mobile.TabBarButton">Edge to Edge</li>
+		</ul>
+		<div id="mainMusicListView" dojoType="dojox.mobile.ScrollableView" selected="true">
+			<div class="roundRect">
+				<h2 dojoType="dojox.mobile.RoundRectCategory">Classical</h2>
+				<ul dojoType="dojox.mobile.RoundRectList" class="roundRectList">
+					<li dojoType="dojox.mobile.ListItem" moveTo="baroqueMusicView" transition="slide">Baroque</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="romanticMusicView" transition="slide">Romantic</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="modernMusicView" transition="slide">Modern</li>
+				</ul>
+					<h2 dojoType="dojox.mobile.RoundRectCategory">Rock</h2>
+				<ul dojoType="dojox.mobile.RoundRectList" class="roundRectList">
+					<li dojoType="dojox.mobile.ListItem" moveTo="alternativeMusicView" transition="slide">Alternative</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="metalMusicView" transition="slide">Mental</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="progressiveMusicView" transition="slide">Progressive</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="rbMusicView" transition="slide">R&B</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<h2 dojoType="dojox.mobile.EdgeToEdgeCategory">Classical</h2>
+				<ul dojoType="dojox.mobile.EdgeToEdgeList" class="roundRectList">
+					<li dojoType="dojox.mobile.ListItem" moveTo="baroqueMusicView" transition="slide">Baroque</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="romanticMusicView" transition="slide">Romantic</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="modernMusicView" transition="slide">Modern</li>
+				</ul>
+				<h2 dojoType="dojox.mobile.EdgeToEdgeCategory">Rock</h2>
+				<ul dojoType="dojox.mobile.EdgeToEdgeList" class="roundRectList">
+					<li dojoType="dojox.mobile.ListItem" moveTo="alternativeMusicView" transition="slide">Alternative</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="metalMusicView" transition="slide">Mental</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="progressiveMusicView" transition="slide">Progressive</li>
+					<li dojoType="dojox.mobile.ListItem" moveTo="rbMusicView" transition="slide">R&B</li>
+				</ul>
+			</div>
+		</div>
+		<div id="baroqueMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Antonio Vivaldi</li>
+					<li dojoType="dojox.mobile.ListItem">Henry Purceli</li>
+					<li dojoType="dojox.mobile.ListItem">Johann Sebastian Bach</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Antonio Vivaldi</li>
+					<li dojoType="dojox.mobile.ListItem">Henry Purceli</li>
+					<li dojoType="dojox.mobile.ListItem">Johann Sebastian Bach</li>
+				</ul>
+			</div>
+		</div>
+		<div id="romanticMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Ludwig van Beethoven</li>
+					<li dojoType="dojox.mobile.ListItem">Hector Berlioz</li>
+					<li dojoType="dojox.mobile.ListItem">Modest Petrovich Mussorgsky</li>
+					<li dojoType="dojox.mobile.ListItem">Mussorgsky</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Ludwig van Beethoven</li>
+					<li dojoType="dojox.mobile.ListItem">Hector Berlioz</li>
+					<li dojoType="dojox.mobile.ListItem">Modest Petrovich Mussorgsky</li>
+					<li dojoType="dojox.mobile.ListItem">Mussorgsky</li>
+				</ul>
+			</div>
+		</div>
+		<div id="modernMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Aaron Copeland</li>
+					<li dojoType="dojox.mobile.ListItem">Igor Stravinksy</li>
+					<li dojoType="dojox.mobile.ListItem">Philip Glass</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Aaron Copeland</li>
+					<li dojoType="dojox.mobile.ListItem">Igor Stravinksy</li>
+					<li dojoType="dojox.mobile.ListItem">Philip Glass</li>
+				</ul>
+			</div>
+		</div>
+		<div id="alternativeMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Nirvana</li>
+					<li dojoType="dojox.mobile.ListItem">R.E.M</li>
+					<li dojoType="dojox.mobile.ListItem">The White Stripes</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Nirvana</li>
+					<li dojoType="dojox.mobile.ListItem">R.E.M</li>
+					<li dojoType="dojox.mobile.ListItem">The White Stripes</li>
+				</ul>
+			</div>
+		</div>
+		<div id="metalMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Led Zeppelin</li>
+					<li dojoType="dojox.mobile.ListItem">Metalica</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Led Zeppelin</li>
+					<li dojoType="dojox.mobile.ListItem">Metalica</li>
+				</ul>
+			</div>
+		</div>
+		<div id="progressiveMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">King Crimson</li>
+					<li dojoType="dojox.mobile.ListItem">Pink Floyd</li>
+					<li dojoType="dojox.mobile.ListItem">Yes</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">King Crimson</li>
+					<li dojoType="dojox.mobile.ListItem">Pink Floyd</li>
+					<li dojoType="dojox.mobile.ListItem">Yes</li>
+				</ul>
+			</div>
+		</div>
+		<div id="rbMusicView" dojoType="dojox.mobile.ScrollableView">
+			<div class="roundRect">
+				<ul dojoType="dojox.mobile.RoundRectList">
+					<li dojoType="dojox.mobile.ListItem">Chuck Berry</li>
+					<li dojoType="dojox.mobile.ListItem">Elvis Presley</li>
+					<li dojoType="dojox.mobile.ListItem">Sam Cooke</li>
+				</ul>
+			</div>
+			<div class="edgeToEdge">
+				<ul dojoType="dojox.mobile.EdgeToEdgeList">
+					<li dojoType="dojox.mobile.ListItem">Chuck Berry</li>
+					<li dojoType="dojox.mobile.ListItem">Elvis Presley</li>
+					<li dojoType="dojox.mobile.ListItem">Sam Cooke</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,24 @@
+#testForm div.section-title {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 1em .7em .3em;
+}
+
+#testForm input[type="radio"], #testForm input[type="checkbox"] {
+	width: 30px;
+	height: 30px;
+}
+
+#testForm .mblRadioButtonChecked::after, #testForm .mblRadioButton:checked::after,
+#testForm .mblCheckBoxChecked::after, #testForm .mblCheckBox:checked:after {
+	width: 0.45em;
+	height: 1em;
+	top: 2px;
+	left: 9px;
+	border-width: 0.2em;
+}
+
+#testForm input[data-dojo-type="dojox/mobile/TextInput"],
+#testForm input[data-dojo-type="dojox/mobile/TextBox"] {
+	width: 40%;
+}

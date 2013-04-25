@@ -1,0 +1,22 @@
+<div data-dojo-type="dojox.mobile.View" id="media">
+	<div dojoType="dojox.mobile.RoundRect" shadow="true">
+		<span class="bold">Audio</span>
+		<br>
+		<audio data-dojo-type="dojox.mobile.Audio" controls>
+			<source src="audio/sample.mp3" type="audio/mpeg">
+			<source src="audio/sample.ogg" type="audio/ogg">
+			<source src="audio/sample.wav" type="audio/wav">
+			<p>To play the music, a browser that supports the 'audio' tag is required.</p>
+		</audio>
+	</div>
+	<div dojoType="dojox.mobile.RoundRect" shadow="true">
+		<span class="bold">Video</span>
+		<br>
+		<video id="video" data-dojo-type="dojox.mobile.Video" width="280" height="210" controls>
+			<source src="video/sample.mp4" type="video/mp4">
+			<source src="video/sample.ogv" type="video/ogg">
+			<source src="video/sample.webm" type="video/webm">
+			<p>To show the movie, a browser that supports the 'video' tag is required.</p>
+		</video>
+	</div>
+</div>

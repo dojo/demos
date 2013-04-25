@@ -1,0 +1,41 @@
+.mblRoundRect.detail-view {
+	height: 300px;
+	background-color: black;
+}
+
+
+.mblDropDownButton span {
+	background-image: url(../images/dropdown-icon.png);
+	padding-right: 15px;
+	background-position: 4px right;
+	background-repeat: no-repeat;
+}
+
+#container {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	/*background-color: rgb(25, 25, 25);*/
+}
+
+.backfaces {
+	display: none;
+}
+
+.backface {
+	color: #000;
+	background-color: #999;
+	font-size: 20px;
+	text-align: center;
+}
+
+.titles {
+	display: none;
+}
+
+.title {
+	color: #FFF;
+	background-color: transparent;
+	font-size: 40px;
+	text-align: center;
+}

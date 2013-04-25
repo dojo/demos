@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+Parser Auto Require - A rich declarative webapp using auto-require
+-------------------------------------------------------------------------------
+Authors: Kitson P. Kelly
+-------------------------------------------------------------------------------
+Demo description
+
+	A rich webapp fully leveraging declarative markup and minimising the amount 
+	of modules initially loaded, therefore using the auto-require feature of 
+	the parser when required.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo Core
+	dijit
+	dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:10

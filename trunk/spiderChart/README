@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+Spider Chart - This demo lets you try various features of the Dojo spider chart plot type.
+-------------------------------------------------------------------------------
+Authors: Xiang Zhou
+-------------------------------------------------------------------------------
+Demo description
+
+	Try various features of the Dojo spider chart plot type.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+	Dojo Core 
+	Dijit
+	DojoX (charting)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html
+		
+-------------------------------------------------------------------------------
+@rank:65 @categories:graphics

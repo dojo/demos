@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Editor - Demonstration of the dijit.Editor + all plugins
+-------------------------------------------------------------------------------
+Author: Dojo Toolkit (Jared Jurkiewicz - jared.jurkiewicz@gmail.com)
+-------------------------------------------------------------------------------
+Demo description
+
+	A demo that shows off the dijit.Editor + all the plugins in dijit and
+	dojox.  Demonstrates how powerful and useful the dijit.Editor is.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dijit Framework
+	DojoX (editor and widget subprojects)
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html to see the animated intro.
+	To bypass the animated intro, load demoFast.html
+		
+-------------------------------------------------------------------------------
+@rank:1

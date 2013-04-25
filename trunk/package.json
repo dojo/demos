@@ -1,0 +1,13 @@
+{
+	"name": "demos",
+	"version":"1.8.0dev",
+	"directories": {
+		"lib": "."
+	},
+	"main": "main",
+	"description": "A rollup of several applications that demonstrate dojo, dijit, and dojox.",
+	"bugs": "http://bugs.dojotoolkit.org/",
+	"keywords": ["JavaScript", "Dojo", "Dijit", "Dojox", "Demos", "Demonstrations", "Toolkit"],
+	"homepage": "http://dojotoolkit.org/",
+	"dojoBuild": "demos.profile.js"
+}

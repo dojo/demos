@@ -1,0 +1,18 @@
+html {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background-repeat: no-repeat;
+	background: #003366;
+	/* gecko based browsers */
+	background: -moz-linear-gradient(top,  #003366, #000000);
+	/* webkit based browsers */
+	background: -webkit-gradient(linear, left top, left bottom, from(#003366), to(#000000));
+}
+
+.footer {
+	position:absolute;
+	bottom:0;
+}

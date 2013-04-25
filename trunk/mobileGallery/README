@@ -1,0 +1,37 @@
+-------------------------------------------------------------------------------
+Mobile Showcase - A mobile showcase that shows the breadth of widgets available 
+in Dojo Mobile (dojox/mobile).
+It consists of a traditional mobile styled left-hand navigation pane with samples 
+that show in the right pane. The showcase adapts its layout for mobile phones by 
+showing only one pane at a time. 
+-------------------------------------------------------------------------------
+Authors: 
+       Yuan Peng Zhang (Stephen)
+       Ming Zhe Huang (Archer)
+       Soyhy Lim
+       Eric Durocher
+       Sergey Grebnov
+       Christophe Jolif
+       Damien Mandrioli
+       Adrian Vasiliu
+-------------------------------------------------------------------------------
+Demo description
+
+	Various mobile features from the Dojo Mobile library (dojox/mobile).
+	Many other features are showcased by applications that can be found in the 
+	dojox/mobile/tests directory.
+	
+-------------------------------------------------------------------------------
+Dependencies:
+
+	Dojo
+	Dijit
+	Dojox
+
+-------------------------------------------------------------------------------
+Installation instructions
+
+	Simply run the included demo.html.
+	
+-------------------------------------------------------------------------------
+@rank:200 @categories:mobile

@@ -1,0 +1,172 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<title>dijit.Editor Demo</title>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+
+	<style type="text/css">
+		@import "../../dijit/themes/claro/claro.css";
+		@import "../../dojox/editor/plugins/resources/css/Save.css";
+		@import "../../dojox/editor/plugins/resources/css/Preview.css";
+		@import "../../dojox/editor/plugins/resources/css/ShowBlockNodes.css";
+		@import "../../dojox/editor/plugins/resources/css/InsertEntity.css";
+		@import "../../dojox/editor/plugins/resources/css/PageBreak.css";
+		@import "../../dojox/editor/plugins/resources/css/Breadcrumb.css";
+		@import "../../dojox/editor/plugins/resources/css/FindReplace.css";
+		@import "../../dojox/editor/plugins/resources/css/InsertAnchor.css";
+		@import "../../dojox/editor/plugins/resources/css/Breadcrumb.css";
+		@import "../../dojox/editor/plugins/resources/css/TextColor.css";
+		@import "../../dojox/editor/plugins/resources/css/CollapsibleToolbar.css";
+		@import "../../dojox/editor/plugins/resources/css/Blockquote.css";
+		@import "../../dojox/editor/plugins/resources/css/InsertAnchor.css";
+		@import "../../dojox/editor/plugins/resources/css/PasteFromWord.css";
+		@import "../../dojox/editor/plugins/resources/css/Smiley.css";
+		@import "../../dojox/editor/plugins/resources/css/StatusBar.css";
+		@import "../../dojox/editor/plugins/resources/css/SafePaste.css";
+		@import "../../dojox/editor/plugins/resources/editorPlugins.css";
+		body, html { width:100%; height:100%; margin:0; padding:0; overflow: hidden}
+
+		.banner { 
+			background-image: url('editorDemoImages/bannerBackground.jpg'); 
+			background-repeat: repeat-x;
+		}
+	</style>
+
+	<!-- required: dojo.js -->
+	<script type="text/javascript" src="../../dojo/dojo.js"
+		data-dojo-config="parseOnLoad: true"></script>
+        <script type="text/javascript" src="layer.js"></script>
+	
+	<script type="text/javascript">
+		dojo.require("dijit.layout.BorderContainer");
+		dojo.require("dijit.layout.ContentPane");
+		dojo.require("dijit.layout.AccordionContainer");
+		dojo.require("dijit.layout.ContentPane");
+		dojo.require("dojox.fx.text");
+
+		// Load the editor and all its plugins.
+		dojo.require("dijit.Editor");
+
+		// Commom plugins
+		dojo.require("dijit._editor.plugins.FullScreen");
+		dojo.require("dijit._editor.plugins.LinkDialog");
+		dojo.require("dijit._editor.plugins.Print");
+		dojo.require("dijit._editor.plugins.ViewSource");
+		dojo.require("dijit._editor.plugins.FontChoice");
+		//dojo.require("dijit._editor.plugins.TextColor");
+		dojo.require("dijit._editor.plugins.NewPage");
+		dojo.require("dijit._editor.plugins.ToggleDir");
+
+		//Extension (Less common) plugins
+		dojo.require("dojox.editor.plugins.ShowBlockNodes");
+		dojo.require("dojox.editor.plugins.ToolbarLineBreak");
+		dojo.require("dojox.editor.plugins.Save");
+		dojo.require("dojox.editor.plugins.InsertEntity");
+		dojo.require("dojox.editor.plugins.Preview");
+		dojo.require("dojox.editor.plugins.PageBreak");
+		dojo.require("dojox.editor.plugins.PrettyPrint");
+		dojo.require("dojox.editor.plugins.InsertAnchor");
+		dojo.require("dojox.editor.plugins.CollapsibleToolbar");
+		dojo.require("dojox.editor.plugins.Blockquote");
+		dojo.require("dojox.editor.plugins.InsertAnchor");
+
+		// Experimental Plugins
+		dojo.require("dojox.editor.plugins.NormalizeIndentOutdent");
+		dojo.require("dojox.editor.plugins.FindReplace");
+		dojo.require("dojox.editor.plugins.TablePlugins");
+		dojo.require("dojox.editor.plugins.TextColor");
+		dojo.require("dojox.editor.plugins.Breadcrumb");
+		dojo.require("dojox.editor.plugins.PasteFromWord");
+		dojo.require("dojox.editor.plugins.Smiley");
+		dojo.require("dojox.editor.plugins.NormalizeStyle");
+		dojo.require("dojox.editor.plugins.StatusBar");
+		dojo.require("dojox.editor.plugins.SafePaste");
+        
+		dojo.addOnLoad(function(){
+			try{
+				var plugins = [
+					'collapsibletoolbar', 'breadcrumb', 'newpage', 'save',
+					{name: 'viewSource', stripScripts: true, stripComments: true}, 
+					'showBlockNodes', '|',
+					{name: 'fullscreen', zIndex: 900}, 'preview', 'print', '|',
+					'findreplace', 'selectAll', 'cut', 'copy','paste', 'pastefromword', 'delete', '|', 'undo', 'redo', '|',
+					'pageBreak', 'insertHorizontalRule', 'insertOrderedList', 'insertUnorderedList', 'indent', 'outdent', 'blockquote', '|',
+					'justifyLeft', 'justifyRight', 'justifyCenter', 'justifyFull', 'toggleDir', '|',
+					'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript', 'foreColor', 'hiliteColor', 'removeFormat', '||',
+					'fontName', {name: 'fontSize', plainText: true}, {name: 'formatBlock', plainText: true}, '||' ,
+					'insertEntity', 'smiley', 'createLink', 'insertanchor', 'unlink', 'insertImage', '|', 
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'insertTable'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'modifyTable'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'InsertTableRowBefore'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'InsertTableRowAfter'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'insertTableColumnBefore'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'insertTableColumnAfter'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'deleteTableRow'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'deleteTableColumn'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'colorTableCell'},
+					{name: 'dojox.editor.plugins.TablePlugins', command: 'tableContextMenu'}, 
+					{name: 'prettyprint', indentBy: 3, lineLength: 80, entityMap: dojox.html.entities.html.concat(dojox.html.entities.latin)},
+					{name: 'dijit._editor.plugins.EnterKeyHandling', blockNodeForEnter: "P"},
+					'normalizeindentoutdent', 'normalizestyle', {name: 'statusbar', resizer: false}, "safepaste"
+				];
+				
+				// Declare my own so I can pass in my plugins list without resoring to globals.
+				dojo.declare("custom.Editor", [dijit.Editor], {
+					constructor: function(){
+						this.plugins = plugins;
+						this.height = "100%";
+						this.inherited(arguments);
+					}
+				});
+				
+
+				//Configure some default states.
+				var deferred = dojo.xhrGet({
+				   url: "editorDemoInfo/editorContent.html",
+				   handleAs: "text",
+				   preventCache: true
+				});
+				deferred.addCallback(function(text){
+					// Build the content pane text.
+					var eText = "<div id='editor' dojoType='custom.Editor'></div>";
+					var cPane = dijit.byId("editorPane");
+					// Config the pane to be hidden until the editor loads.
+					dojo.style(cPane.domNode, "visibility", "hidden");
+					cPane.set("content", eText);
+					var editor = dijit.byId("editor");
+					dojo.style(editor.domNode, "opacity", 0);
+					dojo.style(cPane.domNode, "visibility", "");
+					cPane.resize();
+					editor.onLoadDeferred.addCallback(function() { editor.set("value", text) });
+					var uCount = 0;
+					setInterval(function(){
+						editor.statusBar.set("value", "<b><i>Status updated [" + uCount++ + "] times.</i></b>");
+					}, 5000);
+
+					dijit.byId("editorContainer").resize();
+					dojo.animateProperty({
+						node: editor.domNode,
+						duration: 1000,
+						properties: {
+							"opacity" : {start: 0, end: 1}
+						}
+					}).play();
+				});
+			}catch(e){
+				console.log(e);
+			}
+		});
+
+	</script>
+</head>
+
+<body class="claro">
+	<div dojoType="dijit.layout.BorderContainer" style="width: 100%; height: 100%" gutters="false" id="editorContainer">
+		<div dojoType="dijit.layout.ContentPane" region="top" style="height: 75px; padding: 0px; margin: 0px; overflow: hidden" splitter="false" role="banner" class="banner">
+			<img src="editorDemoImages/editorBanner.jpg" alt="dijit.Editor: A rich text editor for the new web." />
+		</div>
+	    <div id="editorPane" dojoType="dijit.layout.ContentPane" region="center" style="overflow: hidden;">
+		</div>
+	</div>
+</body>
+</html>

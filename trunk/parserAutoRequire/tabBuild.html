@@ -1,0 +1,45 @@
+<style type="text/css">
+.tabBuild {
+	text-align: center;
+}
+
+.tabBuild h1 {
+	font-size: 24px;
+}
+</style>
+<div class="tabBuild">
+	<h1>Building Declaratively</h1>
+	<div class="info">
+		<p>There is a specific transform that is part of the Dojo Builder that can be used to scan your application 
+			code for dependencies.  The build profile in this demo (<code>parserAutoRequire.profile.js</code>) is 
+			designed to allow you to build all the declarative application dependecies into a single layer.  It tags 
+			the <code>html</code> resources as <code>declarative</code> which means they will be parsed for 
+			auto-requirement and declarative requirement dependencies.  It also then flags a layer as the layer where 
+			those dependencies will be included (<code>declarativeIncludes: true</code>):</p>
+<pre>
+var profile = {    
+    /* Other Build Profile Configuration */
+
+    layers: {
+		"dojo/dojo": {
+			include: [ "dojo/dojo" ],
+			customBase: true,
+			boot: true
+		},
+		"parserAutoRequire/src": {
+			include: [],
+			declarativeIncludes: true
+		}
+	},
+
+	resourceTags: {
+		declarative: function(filename){
+			return /\.htm(l)?$/.test(filename);
+		},
+		amd: function(filename, mid){
+			return /\.js$/.test(filename);
+		}
+	}
+};</pre>
+	</div>
+</div>

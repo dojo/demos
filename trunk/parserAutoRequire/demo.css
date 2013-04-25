@@ -1,0 +1,151 @@
+@CHARSET "UTF-8";
+
+@import "../../dojo/resources/dojo.css";
+@import "../../dijit/themes/claro/document.css";
+@import "../../dijit/themes/claro/claro.css";
+@import "../../dojox/grid/resources/claroGrid.css";
+
+html, body {	
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	padding: 0 0 0 0;
+	margin: 0 0 0 0;
+}
+
+body{
+	background-color: #E9F4FE;
+}
+
+#preloader {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 1em;
+	background: #fff url('../../dijit/themes/claro/images/loadingAnimation.gif') no-repeat center center;
+	position: absolute;
+	z-index: 999;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#mainContainer {
+	height: 100%;
+	width: 100%;
+}
+
+#headerPane {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#leftAccordion {
+	width: 200px;
+}
+
+.paneAccordion {
+	margin: 0 auto 0 auto !important;
+	text-align: center;
+}
+
+.commandButton .dijitButtonNode {
+	width: 150px;
+	margin-bottom: 7px;
+}
+
+pre {
+	white-space: pre-wrap;
+	white-space: -moz-pre-wrap;
+	white-space: -webkit-pre-wrap;
+	white-space: o-pre-wrap;
+	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+	overflow: auto;
+	padding: 1em;
+	margin: 1em;
+	border: 1px solid black;
+	background-color: #EEEEEE;
+}
+
+code,
+.code {
+	border: 1px solid black;
+	font-size: 11px;
+	font-family: Consolas,Menlo,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New,monospace,serif;
+	background-color: #EEEEEE;
+	padding: 2px;
+}
+
+.tabPane{
+	padding: 1em;
+}
+
+.instructionBox{
+	text-align: left;
+	margin: 2px auto 7px;
+	padding: 8px;
+	max-width: 300px;
+	background-color: #E9F4FE;
+	border: 1px solid #759DC0;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.info {
+	text-align: left;
+	margin: 1em;
+	padding: 1em;
+	background-color: #E9F4FE;
+	border: 1px solid #759DC0;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.formInfo {
+	text-align: left;
+	margin: 1em;
+	padding: 1em;
+	background-color: #E9F4FE;
+	border: 1px solid #759DC0;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	border-radius: 4px 4px 4px 4px;
+	-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	-moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.demoJSFile{
+	background-image: url("../resources/silk/icons/page_white_code.png");
+	background-repeat: no-repeat;
+	height: 18px;
+	text-align: center;
+	width: 18px;
+	margin: 0 auto;
+}
+
+.demoFolder{
+	background-image: url("../resources/silk/icons/folder.png");
+	background-repeat: no-repeat;
+	height: 18px;
+	text-align: center;
+	width: 18px;
+	margin: 0 auto;
+}
+
+#fileGridTreePane {
+	width: 240px;
+}
+
+#fileGridGridPane {
+	margin: 0;
+	padding: 0;
+	border: none;
+}

@@ -1,0 +1,69 @@
+@import "../../dijit/themes/dijit.css";
+@import "resources/layout.css";
+
+div.beerBox-small {
+	background:url('resources/images/bottles_small.png') no-repeat;
+	height:44px;
+	width:18px;
+}
+
+div.beerBox-big, 
+div.beerBox-large {
+	background:url('resources/images/bottles_big.png') no-repeat;
+	height:96px;
+	width:35px;
+}
+
+div.beerLady {
+	background: url("resources/images/barmate.png");
+	width: 140px;
+	height: 192px;
+	position: absolute;
+}
+
+div.beerLadyInner {
+	width: 140px;
+	height: 192px;
+	position:relative;
+	top:0; left:0;
+}
+
+div.beerLadyMouth,
+div.beerLadySmile {
+	background:url('resources/images/mouth.png') no-repeat center center;
+	height:33px; width:35px;
+	top:59px;
+	left:49px;
+}
+div.beerLadyMouth {
+	background:url('resources/images/mouth_angry.png') no-repeat center center;
+	top: 59px;
+	left: 50px;
+}
+
+div.beerLadyBlink {
+	background:url('resources/images/eyes.png') no-repeat center center;
+	height:32px;
+	width:55px;
+	top:40px;
+	left:39px;
+}
+
+div.beerLadyMouth,
+div.beerLadyBlink,
+div.beerLadySmile {
+	visibility:hidden;
+	position:absolute;
+}
+
+div.beerLady .beerLadyAngry .beerLadyMouth,
+div.beerLady .beerLadyBlinking .beerLadyBlink,
+div.beerLady .beerLadySmiling .beerLadySmile {
+	visibility:visible;
+}
+
+/*
+div.beerLady .beerLadyBlinking .beerLadyBlink {
+	visibility:visible;
+}
+*/

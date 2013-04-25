@@ -1,0 +1,60 @@
+@CHARSET "UTF-8";
+#tabBar > div.mblScrollableViewContainer {
+	height:90%;
+}
+
+#tabBarContent {
+	display: table;
+	width:100%;
+	height:100%;
+}
+
+#tabView1, #tabView2, #tabView3 {
+	width:100%;
+	height:100%;
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+}
+
+#tabView1 div, #tabView2 div, #tabView3 div {
+	margin: auto;
+	background-image:url("../images/tabbar_all.png");
+	width: 229px;
+	height: 229px;
+}
+
+#tabView2 div {
+	background-position-y: -229px;
+}
+
+#tabView3 div {
+	background-position-y: -458px;
+}
+
+div.mblTabButton {
+	height: 61px;
+}
+
+div.mblTabButtonImgDiv {
+	display: block;
+	height: 40px;
+}
+
+div.mblTabButtonImgDiv IMG {
+	margin-top: 8px;
+}
+
+#tabContainer .mblTabPanelHeader {
+	height: 70px;
+}
+
+#demoTabBar {
+	height: 36px;
+	z-index: 1; /*TODO: Workaround for a overlapping bug in TabBar.*/
+}
+
+#demoTabBar div.mblTabBarButtonDivInner {
+	top: 2px;
+	height: 30px;
+}

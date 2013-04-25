@@ -1,0 +1,9 @@
+{
+  "items" : [
+    { "label" : "Wi-Fi",                         },
+    { "label" : "Brightness & Wallpaper",        },
+    { "label" : "Picture Frame",                 },
+    { "label" : "General",                       },
+    { "label" : "Mail, Contacts, Calendars",     }
+  ]
+}
