@@ -1,7 +1,0 @@
-{
-	"name": "parserAutoRequire",
-	"description": "A rich webapp fully leveraging declarative mark-up and minimising the amount of modules initially loaded, therefore using the auto-require feature of the parser when required.",
-	"version": "1.8.0",
-	"main": "src",
-	"dojoBuild": "parserAutoRequire.profile.js"
-}

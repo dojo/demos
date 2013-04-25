@@ -1,5 +1,0 @@
-<?php
-
-	/* send json stuff */ 
-
-?>
