@@ -1,0 +1,3 @@
+[submodule "todoApp"]
+	path = todoApp
+	url = https://github.com/cjolif/dojo-todo-app.git
