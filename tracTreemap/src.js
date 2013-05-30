@@ -61,16 +61,16 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 			BorderContainer, ContentPane, TreeMap, RadioButton, Keyboard, DrillDownUp,
 			Memory, Observable, script, when, array){
 
-	//var store = new DataStore({ store: new CsvStore({url: "http://trac.dojotoolkit.org/report/132?asc=1&format=csv"}) });
+	//var store = new DataStore({ store: new CsvStore({url: "https://trac.dojotoolkit.org/query?status=assigned&status=new&status=open&status=pending&status=reopened&type=defect&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&order=priority&report=179&format=csv"}) });
 	//var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
 
-	var query = 'select * from csv where url="http://trac.dojotoolkit.org/report/132?asc=1&format=csv"';
+	var query = 'select * from csv where url="https://trac.dojotoolkit.org/query?status=assigned&status=new&status=open&status=pending&status=reopened&type=defect&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&order=priority&report=179&format=csv"';
 	var request = script.get({
 		url: "http://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(query) + "&format=json",
 		jsonp: "callback"
 	});
 	var store;
-	
+
 	when(request, function(response){
 		var results = response.query.results.row;
 		var header = results[0];
