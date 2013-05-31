@@ -54,46 +54,16 @@ require(["dojo/ready", "dojo/dom", "dojo/_base/Color", "dojo/_base/declare", "do
 	"dijit/registry", "dijit/Tooltip", "dojo/dom-style", "dojo/dom-attr", "dojo/dom-construct",
 	"dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojox/treemap/TreeMap",
 	"dijit/form/RadioButton", "dojox/treemap/Keyboard",
-	"dojox/treemap/DrillDownUp", "dojo/store/Memory", "dojo/store/Observable",
+	"dojox/treemap/DrillDownUp", "dojo/store/DataStore", "dojox/data/CsvStore",
 	"dojo/io/script", "dojo/when", "dojo/_base/array"],
 	function(ready, dom, Color, declare, parser, registry, Tooltip, 
 			domStyle, domAttr, domConstruct, 
 			BorderContainer, ContentPane, TreeMap, RadioButton, Keyboard, DrillDownUp,
-			Memory, Observable, script, when, array){
+			DataStore, CsvStore){
 
 	//var store = new DataStore({ store: new CsvStore({url: "https://trac.dojotoolkit.org/query?status=assigned&status=new&status=open&status=pending&status=reopened&type=defect&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&order=priority&report=179&format=csv"}) });
-	//var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
+	var store = new DataStore({ store: new CsvStore({url: "report_132.csv"}) });
 
-	var query = 'select * from csv where url="https://trac.dojotoolkit.org/query?status=assigned&status=new&status=open&status=pending&status=reopened&type=defect&col=id&col=summary&col=status&col=type&col=priority&col=milestone&col=component&order=priority&report=179&format=csv"';
-	var request = script.get({
-		url: "http://query.yahooapis.com/v1/public/yql?q=" + encodeURIComponent(query) + "&format=json",
-		jsonp: "callback"
-	});
-	var store;
-
-	when(request, function(response){
-		var results = response.query.results.row;
-		var header = results[0];
-		var rows = results.slice(1);
-		var data = array.map(rows, function (row) {
-			var ticket = {};
-			for(var prop in row){
-				ticket[header[prop]] = row[prop];
-			}
-			return ticket;
-		});			
-		store = Observable(new Memory({data: data, idProperty: "ticket"}));
-		// depending on when we arrive here treemap
-		// might already been there...
-		// reset data:
-		var treeMap = registry.byId("treeMap");		
-		if(treeMap){
-			treeMap.set("store", store);
-		}	
-	}, function(err){
-		console.log("could not reach data source");
-	});		
-		
 	ready(function(){
 		MyTreeMap = declare([TreeMap, Keyboard, DrillDownUp], {
 			createRenderer: function(item, level, kind){
