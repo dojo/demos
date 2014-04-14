@@ -1,14 +1,6 @@
 {
 	"external":[
 		{
-			"demo" : "explorer",
-			"link" : "http://dojocampus.org/explorer/",
-			"img" : "resources/images/explorer.png",
-			"rank" : 900,
-			"header" : "Feature Explorer - Comprehensive collection of small examples",
-			"categories": "rich"
-		},
-		{
 			"demo": "dnd",
 			"link": "http://sitepen.github.com/sp-dnd-demo/4-dnd.html",
 			"header": "Shopping Cart - Dylan's Original Junk Outlet, with DND",
