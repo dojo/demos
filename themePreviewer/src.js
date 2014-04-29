@@ -1,150 +1,45 @@
 require([
-	"require",
-	"dojo/_base/array",
-	"dojo/_base/config",
-	"dojo/dom",
-	"dojo/dom-class",
-	"dojo/dom-construct",
-	"dojo/_base/kernel",
-	"dojo/query",
-	"dojo/ready",
-	"dojo/_base/window",
-	"dojo/_base/fx",
-	"dijit/registry",
-	"dijit/MenuItem",
-	"dojo/date/locale",
-	"dojo/parser",
-	"dojo/data/ItemFileReadStore",
-	"dijit/tree/ForestStoreModel",
-	"dojo/number", // dojo.number.format
-	"dojo/dnd/Source", // dojo.dnd.Source
-	"dojo/_base/json", // dojo.toJson
-	"dijit/dijit-all" // dijit.*
-], function(require, array, config, dom, domClass, domConstruct, kernel, query, ready, win, fx, registry, MenuItem, locale, parser, ItemFileReadStore, ForestStoreModel){
+	"dojo/_base/array", "dojo/_base/fx", "dojo/_base/window", "dojo/dom", "dojo/dom-class", "dojo/dom-geometry", "dojo/dom-style",
+	"dojo/hccss", "dojo/date/locale", "dojo/parser", "dojo/store/Memory",
+	"dijit/registry", "dijit/tree/ObjectStoreModel",
 
-	continentStore = new ItemFileReadStore({ data: {
-		identifier: 'id',
-		label: 'name',
-		items: [
-		        { id: 'AF', name:'Africa', type:'continent', population:'900 million', area: '30,221,532 sq km',
-		        		timezone: '-1 UTC to +4 UTC',
-		        		children:[{_reference:'EG'}, {_reference:'KE'}, {_reference:'SD'}] },
-		        	{ id: 'EG', name:'Egypt', type:'country' },
-		        	{ id: 'KE', name:'Kenya', type:'country',
-		        			children:[{_reference:'Nairobi'}, {_reference:'Mombasa'}] },
-		        		{ id: 'Nairobi', name:'Nairobi', type:'city' },
-		        		{ id: 'Mombasa', name:'Mombasa', type:'city' },
-		        	{ id: 'SD', name:'Sudan', type:'country',
-		        			children:{_reference:'Khartoum'} },
-		        		{ id: 'Khartoum', name:'Khartoum', type:'city' },
-		        	{ id: 'AS', name:'Asia', type:'continent',
-		        			children:[{_reference:'CN'}, {_reference:'IN'}, {_reference:'RU'}, {_reference:'MN'}] },
-		        		{ id: 'CN', name:'China', type:'country' },
-		        		{ id: 'IN', name:'India', type:'country' },
-		        		{ id: 'RU', name:'Russia', type:'country' },
-		        		{ id: 'MN', name:'Mongolia', type:'country' },
-		        	{ id: 'OC', name:'Oceania', type:'continent', population:'21 million',
-		        			children:{_reference:'AU'}},
-		        	{ id: 'AU', name:'Australia', type:'country', population:'21 million'},
-		        	{ id: 'EU', name:'Europe', type:'continent',
-		        			children:[{_reference:'DE'}, {_reference:'FR'}, {_reference:'ES'}, {_reference:'IT'}] },
-		        	{ id: 'DE', name:'Germany', type:'country' },
-		        	{ id: 'FR', name:'France', type:'country' },
-		        	{ id: 'ES', name:'Spain', type:'country' },
-		        	{ id: 'IT', name:'Italy', type:'country' },
-		        { id: 'NA', name:'North America', type:'continent',
-		        		children:[{_reference:'MX'}, {_reference:'CA'}, {_reference:'US'}] },
-		        	{ id: 'MX', name:'Mexico', type:'country',  population:'108 million', area:'1,972,550 sq km',
-		        			children:[{_reference:'Mexico City'}, {_reference:'Guadalajara'}] },
-		        		{ id: 'Mexico City', name:'Mexico City', type:'city', population:'19 million', timezone:'-6 UTC'},
-		        		{ id: 'Guadalajara', name:'Guadalajara', type:'city', population:'4 million', timezone:'-6 UTC' },
-		        	{ id: 'CA', name:'Canada', type:'country',  population:'33 million', area:'9,984,670 sq km',
-		        			children:[{_reference:'Ottawa'}, {_reference:'Toronto'}] },
-		        		{ id: 'Ottawa', name:'Ottawa', type:'city', population:'0.9 million', timezone:'-5 UTC'},
-		        		{ id: 'Toronto', name:'Toronto', type:'city', population:'2.5 million', timezone:'-5 UTC' },
-		        	{ id: 'US', name:'United States of America', type:'country' },
-		        { id: 'SA', name:'South America', type:'continent',
-		        		children:[{_reference:'BR'}, {_reference:'AR'}] },
-		        	{ id: 'BR', name:'Brazil', type:'country', population:'186 million' },
-		        	{ id: 'AR', name:'Argentina', type:'country', population:'40 million' }
-		]
-	}});
-	stateStore = new ItemFileReadStore({ data: {
-		identifier:"abbreviation",
-		label: "name",
-		items: [
-			{name:"Alabama", label:"<img width='97px' height='127px' src='images/Alabama.jpg'/>Alabama",abbreviation:"AL"},
-			{name:"Alaska", label:"Alaska",abbreviation:"AK"},
-			{name:"American Samoa", label:"American Samoa",abbreviation:"AS"},
-			{name:"Arizona", label:"Arizona",abbreviation:"AZ"},
-			{name:"Arkansas", label:"Arkansas",abbreviation:"AR"},
-			{name:"Armed Forces Europe", label:"Armed Forces Europe",abbreviation:"AE"},
-			{name:"Armed Forces Pacific", label:"Armed Forces Pacific",abbreviation:"AP"},
-			{name:"Armed Forces the Americas", label:"Armed Forces the Americas",abbreviation:"AA"},
-			{name:"California", label:"California",abbreviation:"CA"},
-			{name:"Colorado", label:"Colorado",abbreviation:"CO"},
-			{name:"Connecticut", label:"Connecticut",abbreviation:"CT"},
-			{name:"Delaware", label:"Delaware",abbreviation:"DE"},
-			{name:"District of Columbia", label:"District of Columbia",abbreviation:"DC"},
-			{name:"Federated States of Micronesia", label:"Federated States of Micronesia",abbreviation:"FM"},
-			{name:"Florida", label:"Florida",abbreviation:"FL"},
-			{name:"Georgia", label:"Georgia",abbreviation:"GA"},
-			{name:"Guam", label:"Guam",abbreviation:"GU"},
-			{name:"Hawaii", label:"Hawaii",abbreviation:"HI"},
-			{name:"Idaho", label:"Idaho",abbreviation:"ID"},
-			{name:"Illinois", label:"Illinois",abbreviation:"IL"},
-			{name:"Indiana", label:"Indiana",abbreviation:"IN"},
-			{name:"Iowa", label:"Iowa",abbreviation:"IA"},
-			{name:"Kansas", label:"Kansas",abbreviation:"KS"},
-			{name:"Kentucky", label:"Kentucky",abbreviation:"KY"},
-			{name:"Louisiana", label:"Louisiana",abbreviation:"LA"},
-			{name:"Maine", label:"Maine",abbreviation:"ME"},
-			{name:"Marshall Islands", label:"Marshall Islands",abbreviation:"MH"},
-			{name:"Maryland", label:"Maryland",abbreviation:"MD"},
-			{name:"Massachusetts", label:"Massachusetts",abbreviation:"MA"},
-			{name:"Michigan", label:"Michigan",abbreviation:"MI"},
-			{name:"Minnesota", label:"Minnesota",abbreviation:"MN"},
-			{name:"Mississippi", label:"Mississippi",abbreviation:"MS"},
-			{name:"Missouri", label:"Missouri",abbreviation:"MO"},
-			{name:"Montana", label:"Montana",abbreviation:"MT"},
-			{name:"Nebraska", label:"Nebraska",abbreviation:"NE"},
-			{name:"Nevada", label:"Nevada",abbreviation:"NV"},
-			{name:"New Hampshire", label:"New Hampshire",abbreviation:"NH"},
-			{name:"New Jersey", label:"New Jersey",abbreviation:"NJ"},
-			{name:"New Mexico", label:"New Mexico",abbreviation:"NM"},
-			{name:"New York", label:"New York",abbreviation:"NY"},
-			{name:"North Carolina", label:"North Carolina",abbreviation:"NC"},
-			{name:"North Dakota", label:"North Dakota",abbreviation:"ND"},
-			{name:"Northern Mariana Islands", label:"Northern Mariana Islands",abbreviation:"MP"},
-			{name:"Ohio", label:"Ohio",abbreviation:"OH"},
-			{name:"Oklahoma", label:"Oklahoma",abbreviation:"OK"},
-			{name:"Oregon", label:"Oregon",abbreviation:"OR"},
-			{name:"Pennsylvania", label:"Pennsylvania",abbreviation:"PA"},
-			{name:"Puerto Rico", label:"Puerto Rico",abbreviation:"PR"},
-			{name:"Rhode Island", label:"Rhode Island",abbreviation:"RI"},
-			{name:"South Carolina", label:"South Carolina",abbreviation:"SC"},
-			{name:"South Dakota", label:"South Dakota",abbreviation:"SD"},
-			{name:"Tennessee", label:"Tennessee",abbreviation:"TN"},
-			{name:"Texas", label:"Texas",abbreviation:"TX"},
-			{name:"Utah", label:"Utah",abbreviation:"UT"},
-			{name:"Vermont", label:"Vermont",abbreviation:"VT"},
-			{name: "Virgin Islands, U.S.",label:"Virgin Islands, U.S.",abbreviation:"VI"},
-			{name:"Virginia", label:"Virginia",abbreviation:"VA"},
-			{name:"Washington", label:"Washington",abbreviation:"WA"},
-			{name:"West Virginia", label:"West Virginia",abbreviation:"WV"},
-			{name:"Wisconsin", label:"Wisconsin",abbreviation:"WI"},
-			{name:"Wyoming", label:"Wyoming",abbreviation:"WY"}
-		]
-	}});
-	continentModel = new ForestStoreModel({store:continentStore, query:{type:"continent"},rootId:"continentRoot", rootLabel:"Continents", childrenAttrs:["children"]});
+	"dijit/CheckedMenuItem", "dijit/RadioMenuItem", "dijit/MenuSeparator",
 
+	// Editors used by InlineEditBox.  Must be pre-loaded.
+	"dijit/form/Textarea", "dijit/form/DateTextBox", "dijit/form/TimeTextBox", "dijit/form/FilteringSelect",
+
+	// These plugins are used by the Editor, and need to be pre-loaded
+	"dijit/_editor/plugins/LinkDialog", // for createLink
+	"dijit/_editor/plugins/FontChoice", // for fontName
+
+	// Modules referenced by the parser
+	"dijit/Menu", "dijit/PopupMenuItem", "dijit/ColorPalette", "dijit/layout/BorderContainer", "dijit/MenuBar",
+	"dijit/PopupMenuBarItem", "dijit/layout/AccordionContainer", "dijit/layout/ContentPane", "dijit/TooltipDialog",
+	"dijit/Tree", "dijit/layout/TabContainer", "dijit/form/ComboButton", "dijit/form/ToggleButton",
+	"dijit/form/CheckBox", "dijit/form/RadioButton", "dijit/form/CurrencyTextBox", "dijit/form/NumberSpinner",
+	"dijit/form/Select", "dijit/Editor", "dijit/form/VerticalSlider", "dijit/form/VerticalRuleLabels",
+	"dijit/form/VerticalRule", "dijit/form/HorizontalSlider", "dijit/form/HorizontalRuleLabels",
+	"dijit/form/HorizontalRule", "dijit/TitlePane", "dijit/ProgressBar", "dijit/InlineEditBox", "dojo/dnd/Source",
+	"dijit/Dialog",
+
+	// Don't call the parser until the DOM has finished loading
+	"dojo/domReady!"
+], function(array, baseFx, win, dom, domClass, domGeom, domStyle, has, locale, parser, Memory, registry, ObjectStoreModel,
+			CheckedMenuItem, RadioMenuItem, MenuSeparator){
+	// If you are doing box-model sizing then need to tell dom-geometry, see #15104
+	if(domStyle.get(document.body, "boxSizing") == "border-box" ||
+		domStyle.get(document.body, "MozBoxSizing") == "border-box"){
+		domGeom.boxModel = "border-box";
+	}
+
+	// various function ripped out of inline script type=dojo/* blocks
 	showDialog = function(){
 		var dlg = registry.byId('dialog1');
 		dlg.show();
 		// avoid (trying to) restore focus to a closed menu, go to MenuBar instead
 		dlg._savedFocus = dom.byId("header");
 	};
-	
+
 	showDialogAb = function(){
 		var dlg = registry.byId('dialogAB');
 		dlg.show();
@@ -152,9 +47,10 @@ require([
 		dlg._savedFocus = dom.byId("header");
 	};
 
+	//var setTextBoxPadding;
 	// current setting (if there is one) to override theme default padding on TextBox based widgets
 	var currentInputPadding = "";
-	
+
 	setTextBoxPadding = function(){
 		// summary:
 		//		Handler for when a MenuItem is clicked to set non-default padding for
@@ -186,158 +82,140 @@ require([
 		}, this);
 	};
 
-	ready(function(){
-		// Delay parsing until the dynamically injected theme <link>'s have had time to finish loading
-		setTimeout(function(){
-			parser.parse(dom.byId('container'));
+	// Data for Tree, ComboBox, InlineEditBox
+	var data = [
+		{ id: "earth", name: "The earth", type: "planet", population: "6 billion"},
+		{ id: "AF", name: "Africa", type: "continent", population: "900 million", area: "30,221,532 sq km",
+			timezone: "-1 UTC to +4 UTC", parent: "earth"},
+		{ id: "EG", name: "Egypt", type: "country", parent: "AF" },
+		{ id: "KE", name: "Kenya", type: "country", parent: "AF" },
+		{ id: "Nairobi", name: "Nairobi", type: "city", parent: "KE" },
+		{ id: "Mombasa", name: "Mombasa", type: "city", parent: "KE" },
+		{ id: "SD", name: "Sudan", type: "country", parent: "AF" },
+		{ id: "Khartoum", name: "Khartoum", type: "city", parent: "SD" },
+		{ id: "AS", name: "Asia", type: "continent", parent: "earth" },
+		{ id: "CN", name: "China", type: "country", parent: "AS" },
+		{ id: "IN", name: "India", type: "country", parent: "AS" },
+		{ id: "RU", name: "Russia", type: "country", parent: "AS" },
+		{ id: "MN", name: "Mongolia", type: "country", parent: "AS" },
+		{ id: "OC", name: "Oceania", type: "continent", population: "21 million", parent: "earth"},
+		{ id: "AU", name: "Australia", type: "country", population: "21 million", parent: "OC"},
+		{ id: "EU", name: "Europe", type: "continent", parent: "earth" },
+		{ id: "DE", name: "Germany", type: "country", parent: "EU" },
+		{ id: "FR", name: "France", type: "country", parent: "EU" },
+		{ id: "ES", name: "Spain", type: "country", parent: "EU" },
+		{ id: "IT", name: "Italy", type: "country", parent: "EU" },
+		{ id: "NA", name: "North America", type: "continent", parent: "earth" },
+		{ id: "MX", name: "Mexico", type: "country", population: "108 million", area: "1,972,550 sq km",
+			parent: "NA" },
+		{ id: "Mexico City", name: "Mexico City", type: "city", population: "19 million", timezone: "-6 UTC", parent: "MX"},
+		{ id: "Guadalajara", name: "Guadalajara", type: "city", population: "4 million", timezone: "-6 UTC", parent: "MX" },
+		{ id: "CA", name: "Canada", type: "country", population: "33 million", area: "9,984,670 sq km", parent: "NA" },
+		{ id: "Ottawa", name: "Ottawa", type: "city", population: "0.9 million", timezone: "-5 UTC", parent: "CA"},
+		{ id: "Toronto", name: "Toronto", type: "city", population: "2.5 million", timezone: "-5 UTC", parent: "CA" },
+		{ id: "US", name: "United States of America", type: "country", parent: "NA" },
+		{ id: "SA", name: "South America", type: "continent", parent: "earth" },
+		{ id: "BR", name: "Brazil", type: "country", population: "186 million", parent: "SA" },
+		{ id: "AR", name: "Argentina", type: "country", population: "40 million", parent: "SA" }
+	];
 
-			dom.byId('loaderInner').innerHTML += " done.";
-			setTimeout(function hideLoader(){
-				fx.fadeOut({ 
-					node: 'loader', 
-					duration:500,
-					onEnd: function(n){
-						n.style.display = "none";
-					}
-				}).play();
-			}, 250);
-
-			// Fill in menu/links to get to other themes.		
-			// availableThemes[] is just a list of 'official' dijit themes, you can use ?theme=String
-			// for 'un-supported' themes, too. (eg: yours)
-			var availableThemes = [
-				{ theme:"claro", author:"Dojo", baseUri:"../../dijit/themes/" },
-				{ theme:"tundra", author:"Dojo", baseUri:"../../dijit/themes/" },
-				{ theme:"soria", author:"nikolai", baseUri:"../../dijit/themes/" },
-				{ theme:"nihilo", author:"nikolai", baseUri:"../../dijit/themes/" }
-			];
-
-			var tmpString='';
-			array.forEach(availableThemes,function(theme){
-				tmpString += 
-					'<a href="?theme='+theme.theme+'">'+theme.theme+'</'+'a> (' +
-					'<a href="?theme='+theme.theme+'&dir=rtl">RTL</'+'a> ' +
-					'<a href="?theme='+theme.theme+'&a11y=true">high-contrast</'+'a> ' +
-					'<a href="?theme='+theme.theme+'&dir=rtl&a11y=true">RTL+high-contrast</'+'a> )' +
-					' - by: '+theme.author+' <br>';
-				registry.byId('themeMenu').addChild(new MenuItem({
-					label: theme.theme,
-					onClick: function(){ location.search = "?theme=" + theme.theme; }
-				}))
-			});
-			dom.byId('themeData').innerHTML = tmpString;
-
-			// It's the server's responsibility to localize the date displayed in the (non-edit) version of an InlineEditBox,
-			// but since we don't have a server we'll hack it in the client
-			registry.byId("backgroundArea").set('value', locale.format(new Date(2005, 11, 30), { selector: 'date' }));
-
-			var nineAm = new Date(0);
-			nineAm.setHours(9);
-			registry.byId("timePicker").set('value', locale.format(nineAm, { selector: 'time' }));
-		}, 320);
+	// Create test store.
+	continentStore = new Memory({
+		data: data
 	});
 
-//		you should NOT be using this in a production environment. include
-//		your css and set your classes manually. for test purposes only ...
-
-	var dir = "",
-		theme = false,
-		themeModule = "dijit",
-		testMode = null,
-		defTheme = "claro",
-		vars={};
-
-	if(window.location.href.indexOf("?") > -1){
-		var str = window.location.href.substr(window.location.href.indexOf("?")+1).split(/#/);
-		var ary  = str[0].split(/&/);
-		for(var i=0; i<ary.length; i++){
-			var split = ary[i].split("="),
-				key = split[0],
-				value = (split[1]||'').replace(/[^\w]/g, "");	// replace() to prevent XSS attack
-			switch(key){
-				case "locale":
-					// locale string | null
-					kernel.locale = config.locale = locale = value;
-					break;
-				case "dir":
-					// rtl | null
-					document.getElementsByTagName("html")[0].dir = value;
-					dir = value;
-					break;
-				case "theme":
-					// tundra | soria | nihilo | claro | null
-					theme = value;
-					break;
-				case "a11y":
-					if(value){ testMode = "dijit_a11y"; }
-					break;
-				case "themeModule":
-					// moduleName | null
-					if(value){ themeModule = value; }
-			}
-			vars[key] = value;
-		}
-	}
-	kernel._getVar = function(k, def){	// TODO: not sure what this is
-		return vars[k] || def;
+	// Since dojo.store.Memory doesn't have various store methods we need, we have to add them manually
+	continentStore.getChildren = function(object){
+		// Add a getChildren() method to store for the data model where
+		// children objects point to their parent (aka relational model)
+		return this.query({parent: this.getIdentity(object)});
 	};
 
-	// BIDI
-	if(dir == "rtl"){
-		ready(0, function(){
-			// pretend all the labels are in an RTL language, because
-			// that affects how they lay out relative to inline form widgets
-			query("label").attr("dir", "rtl");
-		});
-	}
+	// Create the model for the Tree
+	continentModel = new ObjectStoreModel({store: continentStore, query: {id: "earth"}});
 
-	// a11y
-	if(testMode){
-		ready(0, function(){
-			var b = win.body();
-			if(testMode){
-				domClass.add(b, testMode);
+	parser.parse(dom.byId('container')).then(function(){
+		dom.byId('loaderInner').innerHTML += " done.";
+		setTimeout(function hideLoader(){
+			baseFx.fadeOut({
+				node: 'loader',
+				duration: 500,
+				onEnd: function(n){
+					n.style.display = "none";
+				}
+			}).play();
+		}, 250);
+
+		// availableThemes[] is just a list of 'official' dijit themes, you can use ?theme=String
+		// for 'un-supported' themes, too. (eg: yours)
+		var availableThemes = [
+			{ theme: "claro", author: "Dojo", baseUri: "../themes/" },
+			{ theme: "tundra", author: "Dojo", baseUri: "../themes/" },
+			{ theme: "soria", author: "nikolai", baseUri: "../themes/" },
+			{ theme: "nihilo", author: "nikolai", baseUri: "../themes/" }
+		];
+
+		// Get current theme, a11y, and dir setting for page
+		var curTheme = location.search.replace(/.*theme=([a-z]+).*/, "$1") || "claro",
+			a11y = has("highcontrast") || /a11y=true/.test(location.search),
+			rtl = document.body.parentNode.dir == "rtl";
+		
+		function setUrl(theme, rtl, a11y){
+			// Function to reload page with specified theme, rtl, and a11y settings
+			location.search = "?theme=" + theme + (rtl ? "&dir=rtl" : "") + (a11y ? "&a11y=true" : "");
+		}
+
+		// Create menu choices and links to test other themes
+		var tmpString = '';
+		array.forEach(availableThemes, function(theme){
+			if(theme != curTheme){
+				tmpString +=
+					'<a href="?theme=' + theme.theme + '">' + theme.theme + '</' + 'a> (' +
+					'<a href="?theme=' + theme.theme + '&dir=rtl">RTL</' + 'a> ' +
+					'<a href="?theme=' + theme.theme + '&a11y=true">high-contrast</' + 'a> ' +
+					'<a href="?theme=' + theme.theme + '&dir=rtl&a11y=true">RTL+high-contrast</' + 'a> )' +
+					' - by: ' + theme.author + ' <br>';
 			}
 		});
-	}
+		dom.byId('themeData').innerHTML = tmpString;
 
-	// If URL specifies a non-claro theme then pull in those theme CSS files and modify
-	// <body> to point to that new theme instead of claro.
-	//
-	// Also defer parsing and any dojo.ready() calls that the test file makes
-	// until the CSS has finished loading.
-	if(theme){
-		// Wait until JS modules have finished loading so this doesn't confuse
-		// AMD loader.
-		ready(1, function(){
-			// Reset <body> to point to the specified theme
-			var b = win.body();
-			domClass.replace(b, theme, defTheme);
-
-			// Remove claro CSS
-			query('link[href$="claro.css"]').orphan();
-			query('link[href$="claro/document.css"]').orphan();
-
-			// Load theme CSS.
-			// Eventually would like to use [something like]
-			// https://github.com/unscriptable/curl/blob/master/src/curl/plugin/css.js
-			// to load the CSS and then know exactly when it finishes loading.
-			var modules = [
-				require.toUrl(themeModule+"/themes/"+theme+"/"+theme+".css"),
-				require.toUrl(themeModule+"/themes/"+theme+"/"+theme+"_rtl.css"),
-				require.toUrl("dojo/resources/dojo.css")
-			];
-			var head = query("head")[0];
-			array.forEach(modules, function(css){
-				if(document.createStyleSheet){
-					// For IE
-					document.createStyleSheet(css);
-				}else{
-					// For other browsers
-					domConstruct.place('<link rel="stylesheet" type="text/css" href="'+css+'"/>',
-						head);
+		// Create menu choices to test other themes
+		array.forEach(availableThemes, function(theme){
+			registry.byId('themeMenu').addChild(new RadioMenuItem({
+				id: theme.theme + "_radio",
+				label: theme.theme,
+				group: "theme",
+				checked: theme.theme == curTheme,
+				onClick: function(){
+					// Change theme, keep current a11y and rtl settings
+					setUrl(theme.theme, a11y, rtl);
 				}
-			});
+			}));
 		});
-	}
+		registry.byId('themeMenu').addChild(new MenuSeparator({}));
+		registry.byId('themeMenu').addChild(new CheckedMenuItem({
+			label: "RTL",
+			checked: rtl,
+			onChange: function(val){
+				// Keep current theme and a11y setting, but use new dir setting
+				setUrl(curTheme, val, a11y);
+			}
+		}));
+		registry.byId('themeMenu').addChild(new CheckedMenuItem({
+			label: "high contrast",
+			checked: a11y,
+			onChange: function(val){
+				// Keep current theme and dir setting, but use high-contrast (or not-high-contrast) setting
+				setUrl(curTheme, rtl, val);
+			}
+		}));
+
+		// It's the server's responsibility to localize the date displayed in the (non-edit) version of an InlineEditBox,
+		// but since we don't have a server we'll hack it in the client
+		registry.byId("backgroundArea").set('value', locale.format(new Date(2005, 11, 30), { selector: 'date' }));
+
+		var nineAm = new Date(0);
+		nineAm.setHours(9);
+		registry.byId("timePicker").set('value', locale.format(nineAm, { selector: 'time' }));
+	});
 });
