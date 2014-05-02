@@ -37,9 +37,10 @@
 			<div class="container">
 		        <span id="logo"><a href="http://dojotoolkit.org/" title="Home"><img src="http://dojotoolkit.org/images/logo.png" alt="Dojo Toolkit" /></a></span>
      			<ul id="navigation">
-					<li class="home"><a href="http://dojotoolkit.org/"><span class="homeIcon"></span></a></li>
+				<li class="home"><a href="http://dojotoolkit.org/"><span class="homeIcon"></span></a></li>
         			<li class="download"><a href="http://dojotoolkit.org/download">Download</a></li>
-					<li class="features"><a href="http://dojotoolkit.org/features/">Features</a></li>
+				<li class="features"><a href="http://dojotoolkit.org/features/">Features</a></li>
+				<li class="demos"><a href="http://demos.dojotoolkit.org/demos/">Demos</a></li>
         			<li class="docs"><a href="http://dojotoolkit.org/documentation">Documentation</a></li>
         			<li class="community"><a href="http://dojotoolkit.org/community">Community</a></li>
         			<li class="blog"><a href="http://dojotoolkit.org/blog">Blog</a></li>
