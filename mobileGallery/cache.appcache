@@ -4,6 +4,7 @@ CACHE:
 demo.html
 # all dojo mobile theme files on supported platforms
 ../../dojox/mobile/themes/iphone/iphone.css
+../../dojox/mobile/themes/ios7/ios7.css
 ../../dojox/mobile/themes/iphone/ipad.css
 ../../dojox/mobile/themes/android/android.css
 # demo theme files
