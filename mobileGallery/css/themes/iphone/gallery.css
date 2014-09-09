@@ -78,26 +78,6 @@ div#headings #tbDomBtn {
 	-webkit-transform: none;
 }
 
-/* JSON-P demo */
-#searchKeywords {
-	top: 7px;
-	height: 28px;
-}
-
-#searchTwitterBtn {
-	top: 7px;
-}
-
-@media screen and (max-width: 600px) {
-	#searchTwitterBtn {
-		right: 6px;
-	}
-}
-
-#jsonp .searchResult, #findMoreDiv {
-	color: black;
-}
-
 /* for "HTML5" demo */
 #noteLocRow {
 	line-height: 34px;

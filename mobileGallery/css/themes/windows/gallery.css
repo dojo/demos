@@ -531,57 +531,20 @@ textarea {
 
 /* Badges tab*/
 
-#badges input[type='text'],
-#jsonp input[type='search'] {
+#badges input[type='text'] {
 	background-color: #BFBFBF;
 	border: 2px solid #BFBFBF;
 	height: 2em;
 	margin: 8px 0px;
 }
 
-#badges input[type='text']:focus,
-#jsonp input[type='search']:focus {
+#badges input[type='text']:focus {
 	background-color: white;
 	border-color: highlight;
 }
 
 #badges input[type='button'] {
 	margin-right: 10px;
-}
-
-/* JSON P tab */
-
-#jsonp .mblHeading {
-	display: -ms-flexbox;
-}
-
-#jsonp .mblHeading * {
-	position: relative;
-	height: 32px;
-	left: 0px !important;
-}
-
-#jsonp .mblHeading input {
-	padding: 0px 3px !important;
-	margin: 0px 8px 0px 0px !important;
-	-ms-flex: 1;
-	font-size: 11pt !important;
-}
-
-#jsonp .mblHeading .mblHeadingDivTitle {
-	display: none;
-}
-
-#jsonp .searchResult {
-	border: none !important;
-	padding: 0px !important;
-	margin: 10px 0px !important;
-}
-
-#jsonp .userId,
-#findMoreLnk,
-#jsonp .mblHeading input {
-	font-weight: normal !important;
 }
 
 /* AJAX tab*/
