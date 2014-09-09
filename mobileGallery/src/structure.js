@@ -221,13 +221,6 @@ define(["dojo/_base/lang"],
 			label: "Data",
 			iconBase: "images/navigation_list_all_29.png",
 			views: [{
-				id: "jsonp",
-				iconPos: "319,0,29,29",
-				title: "JSON P",
-				demourl: "views/jsonp.html",
-				jsmodule: "demos/mobileGallery/src/jsonp",
-				jsSrc: "doc/src/jsonp.js.txt"
-			}, {
 				id: "ajax",
 				iconPos: "348,0,29,29",
 				title: "AJAX",

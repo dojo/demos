@@ -119,21 +119,6 @@ a:link, a:visited, a:active, a:-webkit-any-link:active, a:-webkit-any-link {
 	margin-top: 23px;
 }
 
-/* JSON-P demo */
-#searchKeywords {
-	height: 25px;
-}
-
-@media screen and (max-width: 600px) {
-	#searchTwitterBtn {
-		right: 12px;
-	}
-}
-
-#jsonp .searchResult, #findMoreDiv {
-	color: white;
-}
-
 /* for "HTML5" */
 #noteLocRow {
 	line-height: 25px;
