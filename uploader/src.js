@@ -137,14 +137,17 @@ dojo.addOnLoad(function(){
 	}
 	dojo.connect(f0, "onChange", function(data){
 		console.log("DATA:", data);
-		dojo.forEach(data, function(d){
-			//file.type no workie from flash selection (Mac?)
-			if(selectMultipleFiles){
-				dojo.byId("fileToUpload").value += d.name+" "+Math.ceil(d.size*.001)+"kb \n";
-			}else{
-				dojo.byId("fileToUpload").value = d.name+" "+Math.ceil(d.size*.001)+"kb \n";
-			}
-		});
+		//file.type no workie from flash selection (Mac?)
+		var listNode = dojo.byId("fileToUpload");
+		if(selectMultipleFiles){
+			dojo.forEach(data, function(d){
+				listNode.value += d.name+" "+Math.ceil(d.size*.001)+"kb \n";
+			});
+		}else{
+			var file = data[0];
+			listNode.value = file ? (file.name+" "+Math.ceil(file.size*.001)+"kb \n") : "";
+		}
+		
 	});
 
 	dojo.connect(f0, "onProgress", function(data){
