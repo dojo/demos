@@ -1,5 +1,5 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
-<html class="dj_webkit dj_chrome dj_contentbox" xmlns="http://www.w3.org/1999/xhtml">
+<!doctype html>
+<html class="dj_webkit dj_chrome dj_contentbox">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
@@ -8,9 +8,9 @@
 	<meta name="keywords" content="Demo for The Dojo Toolkit, dojo, JavaScript Framework" />
 	<meta name="description" content="The Dojo Toolkit Demo Index" />
 	<meta name="author" content="Dojo Foundation" />
-	<meta name="copyright" content="Copyright 2006-2011 by the Dojo Foundation" />
+	<meta name="copyright" content="Copyright 2006-2014 by the Dojo Foundation" />
 	<meta name="company" content="Dojo Foundation" />
-	
+
 	<link rel="shortcut icon" href="http://dojotoolkit.org/images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="resources/demos.css" type="text/css" media="all" />
 <![if gte IE 9]>
@@ -32,7 +32,7 @@
 		<a href="#nav">Skip to Navigation</a>
 	</div>
 	<hr class="hide" />
-	<div id="page" class="homePage">
+	<div id="page" class="demosPage">
 		<div id="header">
 			<div class="container">
 		        <span id="logo"><a href="http://dojotoolkit.org/" title="Home"><img src="http://dojotoolkit.org/images/logo.png" alt="Dojo Toolkit" /></a></span>
@@ -101,7 +101,7 @@
 								$rank++;
 
 								// the last line of the README is supposed to be tags etc
-								// 
+								//
 								// so far only @rank:### is used, but can be any @key:value pair on one line
 								// to be used here for organization etc
 								$tagline = $l[count($l)-1];
@@ -249,8 +249,8 @@
 						print "</ul>";
 					}
 				?>
-			<!-- 
-				basic page onload script after dojo.js [if available] - degrades gracefullly 
+			<!--
+				basic page onload script after dojo.js [if available] - degrades gracefullly
 				though none of the demos will "work" without JavaScript enabled / dojo.js
 			-->
 			<!-- begin footer -->
