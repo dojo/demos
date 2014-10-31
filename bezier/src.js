@@ -257,7 +257,7 @@ require([
 	
 	ready(function(){
 		var box = domgeom.getContentBox(dom.byId("surface"));
-		surface = gfx.createSurface("surface", box.width, box.height);
+		surface = gfx.createSurface("surface", box.w, box.h);
 		initSurface();
 		reset();
 		
