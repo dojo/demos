@@ -2,6 +2,7 @@ dojo.require("dojox.av.FLVideo");
 dojo.require("dijit.form.Button");
 dojo.require("dijit.form.HorizontalSlider");
 dojo.require("dojo.dnd.Source");
+dojo.require("dojo.dnd.Target");
 dojo.require("dojo.parser");
 dojo.require("dojox.analytics.Urchin");
 
