@@ -436,6 +436,7 @@ The styles for the buttons.
 
 #main {
     padding: 0px 0px;
+    clear: both;
 }
 
 #main .firstUnit {
