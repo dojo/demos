@@ -56,6 +56,7 @@
 
 					// holder for all the items
 					$out = array();
+					$show = false;
 					if(!empty($_GET["cat"])){
 						$show = explode(",", $_GET["cat"]);
 					}
@@ -114,7 +115,7 @@
 
 								switch($tags['rank']){
 									// marked experimental
-									case -999 : $rank = 0; break;
+									case -999 : $rank = 0; $categories = array("exp"); break;
 									// add the README rank to the overall score
 									default: $rank += $tags['rank']; break;
 								}
@@ -135,7 +136,7 @@
 
 								// experimental demos:
 								$rank = 0;
-								$categories = array("rich");
+								$categories = array("exp");
 								$thumb_img = false;
 
 							}
@@ -161,93 +162,43 @@
 					}
 					array_multisort($ranks, SORT_DESC, $d, SORT_ASC, $out);
 
-					if(empty($show) || in_array("graphics", $show)){
-						print "<h2>Graphics & Charting</h2>";
-						// generate the 1st category list:
-						print "<ul id='mainlist'>";
-						foreach($out as $ranked){
-							if(in_array("graphics", $ranked['categories'])){
-								// generate the demo item
-								print "\n\t<li><a href='".$ranked['link']."'>";
-								print "<span>";
-								// split the title in two parts around the first hyphen
-								list($anchor, $desc) = explode("-", $ranked['header'], 2);
-								print $anchor;
-								if($desc){
-									print "<span>" .$desc. "</span>";
-								}
-								print "</span>";
-								if($ranked['img']){
-									print "<img src='". $ranked['img'] . "' />";
-								}
-
-								print "</a></li>";
-							}
-						}
-						print "</ul>";
-					}
-					if(empty($show) || in_array("mobile", $show)){
-						print "<h2>Mobile</h2>";
-						// generate the 2nd category list:
-						print "<ul id='mainlist'>";
-						foreach($out as $ranked){
-							if(in_array("mobile", $ranked['categories'])){
-								// generate the demo item
-								print "\n\t<li><a href='".$ranked['link']."'>";
-								print "<span>";
-								// split the title in two parts around the first hyphen
-								list($anchor, $desc) = explode("-", $ranked['header'], 2);
-								print $anchor;
-								if($desc){
-									print "<span>" .$desc. "</span>";
-								}
-								print "</span>";
-								if($ranked['img']){
-									print "<img src='". $ranked['img'] . "' />";
-								}
-								print "</a></li>";
-							}
-						}
-						print "</ul>";
-					}
-					if(empty($show) || in_array("rich", $show)){
-						print "<h2>Rich WebApps</h2>";
-						// generate the list:
-						print "<ul id='mainlist'>";
-						$in_experimental = false;
-						foreach($out as $ranked){
-							if($ranked['rank'] === 0 && !$in_experimental && (empty($show) || in_array("exp", $show))){
-								// we're done with top demos, close list and make a new one
-								$in_experimental = true;
-								print "</ul><br class='clear'>";
-								print "<h2>Incomplete / Partial Demos:</h2>";
-								print "<ul id='explist'>";
-							}
-
-							if(in_array("rich", $ranked['categories']) || $in_experimental){
-								// generate the demo item
-								print "\n\t<li><a href='".$ranked['link']."'>";
-								print "<span>";
-								// split the title in two parts around the first hyphen
-								// some experimental demos do not have header
-								if(strpos($ranked['header'], "-")){
-									list($anchor, $desc) = explode("-", $ranked['header'], 2);
-									print $anchor;
-									if($desc){
-										print "<span>" .$desc. "</span>";
+					function makeList($out, $show, $cat, $title, $type) {
+						if(empty($show) || in_array($cat, $show)){
+							print "<h2>$title</h2>";
+							// generate the list:
+							print "<ul id='$type'>";
+							foreach($out as $ranked){
+								if(in_array($cat, $ranked['categories'])){
+									// generate the demo item
+									print "\n\t<li><a href='".$ranked['link']."'>";
+									print "<span>";
+									// split the title in two parts around the first hyphen
+									// some experimental demos do not have header
+									if(strpos($ranked['header'], "-")){
+										list($anchor, $desc) = explode("-", $ranked['header'], 2);
+										print $anchor;
+										if($desc){
+											print "<span>" .$desc. "</span>";
+										}
+									}else{
+										print $ranked['header'];
 									}
-								}else{
-									print $ranked['header'];
+									print "</span>";
+									if($ranked['img']){
+										print "<img src='". $ranked['img'] . "' />";
+									}
+									print "</a></li>";
 								}
-								print "</span>";
-								if($ranked['img']){
-									print "<img src='". $ranked['img'] . "' />";
-								}
-								print "</a></li>";
 							}
+							print "</ul>";
 						}
-						print "</ul>";
 					}
+
+					makeList($out, $show, "graphics", "Graphics & Charting", "mainlist");
+					makeList($out, $show, "mobile", "Mobile", "mainlist");
+					makeList($out, $show, "rich", "Rich WebApps", "mainlist");
+					makeList($out, $show, "external", "3rd Party Demos", "mainlist");
+					makeList($out, $show, "exp", "Incomplete / Partial Demos:", "explist");
 				?>
 			<!--
 				basic page onload script after dojo.js [if available] - degrades gracefullly
