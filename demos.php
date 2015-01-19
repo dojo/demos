@@ -8,7 +8,7 @@
 	<meta name="keywords" content="Demo for The Dojo Toolkit, dojo, JavaScript Framework" />
 	<meta name="description" content="The Dojo Toolkit Demo Index" />
 	<meta name="author" content="Dojo Foundation" />
-	<meta name="copyright" content="Copyright 2006-2014 by the Dojo Foundation" />
+	<meta name="copyright" content="Copyright 2006-2015 by the Dojo Foundation" />
 	<meta name="company" content="Dojo Foundation" />
 
 	<link rel="shortcut icon" href="http://dojotoolkit.org/images/favicon.ico" type="image/x-icon" />
