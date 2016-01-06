@@ -8,7 +8,7 @@ var profile = (function(){
 				"demos/README":1
 			};
 			return (mid in list) || (/^demos\/resources\//.test(mid) && !/\.css$/.test(filename)) || /(png|jpg|jpeg|gif|tiff)$/.test(filename)
-				|| /demos\/todoApp\/configuration\//.test(filename) 
+				|| /demos\/todoApp\/configuration\//.test(filename)
 				|| /demos\/todoApp\/details\//.test(filename)
 				|| /demos\/todoApp\/items\//.test(filename)
 				|| /demos\/todoApp\/tablet\//.test(filename)
@@ -16,7 +16,7 @@ var profile = (function(){
 		},
 
 		usesDojoProvideEtAl = function(mid){
-			return /^demos\/(babelChat|beer|castle|cropper|css3|demail|doGeo|faces|fisheye|flashCards|fonts|form|i18n|mail|mojo|nihao|skew|survey|uploader|video)\//.test(mid);
+			return /^demos\/(beer|castle|cropper|css3|demail|doGeo|faces|fisheye|flashCards|fonts|form|i18n|mail|mojo|nihao|skew|uploader|video)\//.test(mid);
 		};
 
 	return {
