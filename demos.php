@@ -7,9 +7,9 @@
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="Demo for The Dojo Toolkit, dojo, JavaScript Framework" />
 	<meta name="description" content="The Dojo Toolkit Demo Index" />
-	<meta name="author" content="Dojo Foundation" />
-	<meta name="copyright" content="Copyright 2006-2016 by the Dojo Foundation" />
-	<meta name="company" content="Dojo Foundation" />
+	<meta name="author" content="JS Foundation" />
+	<meta name="copyright" content="Copyright 2006-2016 by the JS Foundation" />
+	<meta name="company" content="JS Foundation" />
 
 	<link rel="shortcut icon" href="http://dojotoolkit.org/images/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" href="resources/demos.css" type="text/css" media="all" />
@@ -211,7 +211,7 @@
 			<div id="content" class="innerBox">
 				<div id="foot">
 					<div class="innerBox">
-							<span class="redundant">&copy;</span> <a href="http://www.dojofoundation.org">The Dojo Foundation</a>, All Rights Reserved.
+							<span class="redundant">&copy;</span> <a href="http://js.foundation">The JS Foundation</a>, All Rights Reserved.
 					</div>
 				</div>
 			</div>
