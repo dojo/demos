@@ -101,7 +101,7 @@
 			<div id="content" class="innerBox">
 				<div id="foot">
 					<div class="innerBox">
-							<span class="redundant">&copy;</span> <a href="http://www.dojofoundation.org">The Dojo Foundation</a>, All Rights Reserved.
+							<span class="redundant">&copy;</span> <a href="http://js.foundation">The JS Foundation</a>, All Rights Reserved.
 					</div>
 				</div>
 			</div>
