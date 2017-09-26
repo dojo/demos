@@ -1,6 +1,6 @@
 {
 	"name": "demos",
-	"version":"1.10.9-pre",
+	"version":"1.10.9",
 	"directories": {
 		"lib": "."
 	},
