@@ -106,4 +106,4 @@ Building the Demos
 	./build.sh action=release profile=demos-all cssOptimize=comments.keepLines version=1.x.x
 	
 -------------------------------------------------------------------------------
-@rank:-999
+@rank:-999demos/README
